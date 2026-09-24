@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2018_P21",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 21
+  },
+  "topic": "algebra",
+  "subtopic": "Intersecting curves",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10A_2018_P21.png",
+    "text": "Which of the following describes the set of values of $a$ for which the curves $x^2+y^2=a^2$ and $y=x^2-a$ in the real $xy$-plane intersect at exactly $3$ points?",
+    "choices": {
+      "A": "$a=\\frac{1}{4}$",
+      "B": "$\\frac{1}{4}<a<\\frac{1}{2}$",
+      "C": "$a>\\frac{1}{4}$",
+      "D": "$a=\\frac{1}{2}$",
+      "E": "$a>\\frac{1}{2}$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$a>\\frac{1}{2}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: get rid of $x^2$",
+      "body": "Both equations contain $x$ only as $x^2$. The parabola tells you exactly what $x^2$ is: $x^2=y+a$. Putting that into the circle leaves an equation in $y$ alone, which is much easier to solve than the original system.",
+      "your_turn": {
+        "prompt": "Replace $x^2$ by $y+a$ in $x^2+y^2=a^2$. What equation in $y$ do you get?",
+        "answer": "$y+a+y^2=a^2$, that is, $y^2+y+a-a^2=0$."
+      }
+    },
+    {
+      "title": "Factor the equation in $y$",
+      "body": "This quadratic factors nicely:\n$$y^2+y+a-a^2=(y+a)(y+1-a)=0.$$\nSo every intersection point has $y=-a$ or $y=a-1$. To find the points, go back to $x^2=y+a$ for each value of $y$.",
+      "your_turn": {
+        "prompt": "What is $x^2$ when $y=-a$? What is $x^2$ when $y=a-1$?",
+        "answer": "$y=-a$ gives $x^2=0$. $y=a-1$ gives $x^2=2a-1$."
+      }
+    },
+    {
+      "title": "Count the points from each $y$",
+      "body": "An equation $x^2=k$ gives two points if $k>0$, one point if $k=0$, and none if $k<0$. So $y=-a$ always gives exactly one point, $(0,-a)$, which is the vertex of the parabola. All the other points must come from $x^2=2a-1$. Careful: the two values of $y$ might turn out to be equal, and then the extra points from $x^2 = 2a - 1$ would not be new. Check that edge case.",
+      "your_turn": {
+        "prompt": "Take $a=\\frac12$. What are the two values of $y$, and what points do they give?",
+        "answer": "Both are $y=-\\frac12$, and $x^2=0$ in both cases. They give the same single point $(0,-\\frac12)$, so there is only 1 intersection point."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "To get exactly $3$ points, $x^2=2a-1$ must give two new points, so $2a-1>0$, that is, $a>\\frac12$. Then $y=a-1$ is different from $y=-a$, so those two points are really new. Check $a=1$: the points are $(0,-1)$ and $(\\pm1,0)$, all on both curves. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "At $a=\\frac12$ the second value $y=a-1$ equals $-\\frac12=-a$, so the \"new\" points collapse onto the vertex and there is only $1$ point. You need $2a-1>0$, not $2a-1=0$."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Hole found by adversarial verifier, fixed, and re-verified by a fresh verifier."
+  }
+}

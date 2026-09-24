@@ -1,0 +1,64 @@
+{
+  "id": "AMC_10A_2018_P10",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 10
+  },
+  "topic": "algebra",
+  "subtopic": "Radicals",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P10.png",
+    "text": "Suppose that real number $x$ satisfies $$\\sqrt{49-x^2}-\\sqrt{25-x^2}=3.$$ What is the value of $\\sqrt{49-x^2}+\\sqrt{25-x^2}$?",
+    "choices": {
+      "A": "$8$",
+      "B": "$\\sqrt{33}+3$",
+      "C": "$9$",
+      "D": "$2\\sqrt{10}+4$",
+      "E": "$12$"
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$8$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: give the two roots names",
+      "body": "We are told the difference of two square roots and asked for their sum. A difference times a sum is a difference of squares, and squaring a square root removes the root. So let $a = \\sqrt{49-x^2}$ and $b = \\sqrt{25-x^2}$, and look at $a^2$ and $b^2$.",
+      "your_turn": {
+        "prompt": "Compute $a^2 - b^2$.",
+        "answer": "$(49 - x^2) - (25 - x^2) = 24$. The $x^2$ cancels, so it is $24$ for every $x$."
+      }
+    },
+    {
+      "title": "Careful: do not plug in $x = 0$",
+      "body": "It is tempting to try $x = 0$, since it makes both roots whole numbers. But the answer has to come from an $x$ that satisfies the given equation, so test it first.",
+      "your_turn": {
+        "prompt": "Does $x = 0$ satisfy $\\sqrt{49-x^2}-\\sqrt{25-x^2}=3$?",
+        "answer": "No. It gives $7 - 5 = 2$, not $3$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Factor the difference of squares and use $a - b = 3$:\n$$24 = a^2 - b^2 = (a-b)(a+b) = 3(a+b).$$\nSo $a + b = 8$. Such an $x$ really exists: $a = 5.5$ and $b = 2.5$ give $x^2 = 18.75$ in both roots. The answer is **(A)** $8$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "This comes from plugging in $x = 0$ to get $7 + 5 = 12$. But $x = 0$ gives a difference of $7 - 5 = 2$, not $3$, so it does not satisfy the equation."
+  },
+  "verification": {
+    "official_answer": "A",
+    "solver_answer": "A",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

@@ -12,9 +12,6 @@ from pathlib import Path
 
 import fitz  # PyMuPDF
 
-HEADER_Y = 62      # page header ("2022 AMC 10 A Problems  2") sits above this
-FOOTER_MARGIN = 50  # page footer sits within this distance of the bottom
-LEFT, RIGHT = 60, 560
 ZOOM = 2.5
 NUM_RE = re.compile(r"^(\d{1,2})\.(\s|$)")
 
@@ -29,6 +26,8 @@ def problem_starts(doc):
     """
     run = []
     for pno, page in enumerate(doc):
+        if len(run) == 25:
+            break
         for block in page.get_text("dict")["blocks"]:
             for line in block.get("lines", []):
                 text = "".join(s["text"] for s in line["spans"]).strip()
@@ -48,9 +47,23 @@ def problem_starts(doc):
     return run
 
 
-def content_bottom(page):
+def page_frame(doc):
+    """Return (left, right, header_y, footer_margin) for this PDF's layout.
+
+    Older contests are printed as a small booklet (396 x 612) rather than on
+    letter paper, so the margins come from the running header ("2022 AMC 10 A
+    Problems  2") instead of being fixed. On a 2022 page this gives 60, 560, 53.
+    """
+    for page in doc:
+        for x0, y0, x1, y1, text, *_ in page.get_text("blocks"):
+            if re.search(r"AMC\s*10\s*[AB]?\s*Problems", text):
+                return x0 - 12, x1 + 20, y1 + 4, y0 / 2
+    raise SystemExit("could not find the page header")
+
+
+def content_bottom(page, footer_margin):
     """Lowest y of real content on the page, ignoring the footer."""
-    limit = page.rect.height - FOOTER_MARGIN
+    limit = page.rect.height - footer_margin
     ys = [b[3] for b in page.get_text("blocks") if b[3] < limit]
     ys += [d["rect"].y1 for d in page.get_drawings() if d["rect"].y1 < limit]
     ys += [i["bbox"][3] for i in page.get_image_info() if i["bbox"][3] < limit]
@@ -63,6 +76,7 @@ def main(pdf_path):
     out_dir = pdf.parent.parent / "images"
     out_dir.mkdir(exist_ok=True)
     doc = fitz.open(pdf)
+    left, right, header_y, footer_margin = page_frame(doc)
     starts = problem_starts(doc)
     for i, (pno, y0, number_rect) in enumerate(starts):
         page = doc[pno]
@@ -70,8 +84,8 @@ def main(pdf_path):
             # Only changes the in-memory copy; the PDF on disk is untouched.
             page.draw_rect(number_rect + (-1, -1, 1, 1), color=None, fill=(1, 1, 1), overlay=True)
         nxt = starts[i + 1] if i + 1 < len(starts) else None
-        y1 = nxt[1] - 4 if nxt and nxt[0] == pno else content_bottom(page) + 6
-        clip = fitz.Rect(LEFT, max(y0 - 6, HEADER_Y), RIGHT, y1)
+        y1 = nxt[1] - 4 if nxt and nxt[0] == pno else content_bottom(page, footer_margin) + 6
+        clip = fitz.Rect(left, max(y0 - 6, header_y), right, y1)
         pix = page.get_pixmap(matrix=fitz.Matrix(ZOOM, ZOOM), clip=clip)
         out = out_dir / f"{test_id}_P{i + 1:02d}.png"
         pix.save(out)

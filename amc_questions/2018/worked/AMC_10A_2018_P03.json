@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2018_P03",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 3
+  },
+  "topic": "arithmetic_logic",
+  "subtopic": "Time conversion",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P03.png",
+    "text": "A unit of blood expires after $10! = 10\\cdot 9\\cdot 8\\cdots 1$ seconds. Yasin donates a unit of blood at noon on January $1$. On what day does his unit of blood expire?",
+    "choices": {
+      "A": "January $2$",
+      "B": "January $12$",
+      "C": "January $22$",
+      "D": "February $11$",
+      "E": "February $12$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "February $12$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: divide out the time units using the factors",
+      "body": "To turn seconds into days, divide by $60$ (to minutes), by $60$ again (to hours), and by $24$ (to days). You do not need to multiply out $10!$. Since $10!$ is a product, you can group its factors so that some groups make exactly $60$ and cancel them.",
+      "your_turn": {
+        "prompt": "Find two separate groups of the factors $1, 2, \\dots, 10$ that each multiply to $60$.",
+        "answer": "For example $10 \\cdot 6 = 60$ and $3 \\cdot 4 \\cdot 5 = 60$."
+      }
+    },
+    {
+      "title": "Convert to hours, then to days",
+      "body": "Removing those two groups of $60$ turns seconds into hours. The factors left over are $2, 7, 8, 9$ (and $1$), so the number of hours is their product.\n$$10! = (10 \\cdot 6)\\cdot(3 \\cdot 4 \\cdot 5)\\cdot(2 \\cdot 7 \\cdot 8 \\cdot 9)$$",
+      "your_turn": {
+        "prompt": "Compute $2 \\cdot 7 \\cdot 8 \\cdot 9$, then divide by $24$ to get days.",
+        "answer": "$1008$ hours, and $1008 \\div 24 = 42$ days."
+      }
+    },
+    {
+      "title": "Count on the calendar carefully",
+      "body": "Adding $n$ days to noon on January $1$ lands at noon on January $1+n$. Careful: do not count January $1$ itself as day $1$ of the wait; after one full day it is January $2$, not January $1$. Since the blood is donated at noon, $42$ whole days later is also at noon, so there is no partial day to worry about.",
+      "your_turn": {
+        "prompt": "What date is $10$ days after noon on January $1$?",
+        "answer": "Noon on January $11$, since $1 + 10 = 11$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Forty-two days after January $1$ is \"January $43$\". January has $31$ days, so this is $43 - 31 = 12$ days into February. The blood expires at noon on February $12$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "This comes from counting January $1$ as the first of the $42$ days. After one full day it is already January $2$, so $42$ days later is January $43$, which is February $12$."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

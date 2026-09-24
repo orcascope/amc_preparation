@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2018_P04",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 4
+  },
+  "topic": "counting_probability",
+  "subtopic": "Arrangements with gaps",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P04.png",
+    "text": "How many ways can a student schedule $3$ mathematics courses—algebra, geometry, and number theory—in a $6$-period day if no two mathematics courses can be taken in consecutive periods? (What courses the student takes during the other $3$ periods is of no concern here.)",
+    "choices": {
+      "A": "$3$",
+      "B": "$6$",
+      "C": "$12$",
+      "D": "$18$",
+      "E": "$24$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$24$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: split the job into two stages",
+      "body": "The rule \"no two consecutive\" is only about *which* periods hold math, not which course goes where. So first choose the $3$ periods for math, then decide which course goes in each. Count each stage and multiply.",
+      "your_turn": {
+        "prompt": "Is the set of periods $\\{1, 3, 6\\}$ allowed? What about $\\{2, 3, 5\\}$?",
+        "answer": "$\\{1,3,6\\}$ is allowed (no two are next to each other). $\\{2,3,5\\}$ is not, because $2$ and $3$ are consecutive."
+      }
+    },
+    {
+      "title": "Choose the periods using gaps",
+      "body": "Line up the $3$ non-math periods. They leave $4$ gaps: one before, two between, and one after. Putting each math course in a different gap guarantees no two are adjacent, so we choose $3$ of the $4$ gaps, $\\binom{4}{3} = 4$ ways. Careful: it is easy to find only the alternating sets $\\{1,3,5\\}$ and $\\{2,4,6\\}$ and miss the others.",
+      "your_turn": {
+        "prompt": "List all $4$ allowed sets of periods.",
+        "answer": "$\\{1,3,5\\}$, $\\{1,3,6\\}$, $\\{1,4,6\\}$, $\\{2,4,6\\}$."
+      }
+    },
+    {
+      "title": "Assign the courses",
+      "body": "The three courses are different, so once the periods are fixed, swapping two courses gives a new schedule. The number of ways to place $3$ different courses into $3$ chosen periods is the number of orderings of the courses.",
+      "your_turn": {
+        "prompt": "In how many ways can algebra, geometry and number theory fill periods $1$, $3$, $5$?",
+        "answer": "$3! = 3 \\cdot 2 \\cdot 1 = 6$ ways."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each of the $4$ period sets can be filled in $6$ ways, so there are $4 \\cdot 6 = 24$ schedules. The answer is **(E)** $24$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "This comes from using only the alternating sets $\\{1,3,5\\}$ and $\\{2,4,6\\}$, giving $2 \\cdot 6 = 12$. The sets $\\{1,3,6\\}$ and $\\{1,4,6\\}$ also avoid consecutive periods.",
+    "D": "This comes from finding only $3$ of the $4$ allowed period sets, giving $3 \\cdot 6 = 18$. The gap method, $\\binom{4}{3} = 4$, makes sure none is missed."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

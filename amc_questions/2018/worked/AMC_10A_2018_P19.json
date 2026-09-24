@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2018_P19",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 19
+  },
+  "topic": "counting_probability",
+  "subtopic": "Probability with units digits",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2018_P19.png",
+    "text": "A number $m$ is randomly selected from the set $\\{11,13,15,17,19\\}$, and a number $n$ is randomly selected from $\\{1999,2000,2001,\\ldots,2018\\}$. What is the probability that $m^n$ has a units digit of $1$?",
+    "choices": {
+      "A": "$\\frac{1}{5}$",
+      "B": "$\\frac{1}{4}$",
+      "C": "$\\frac{3}{10}$",
+      "D": "$\\frac{7}{20}$",
+      "E": "$\\frac{2}{5}$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$\\frac{2}{5}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: only the last digit of m matters",
+      "body": "The units digit of $m^n$ depends only on the units digit of $m$. There are $5$ choices of $m$ and $20$ choices of $n$, so $5\\cdot 20=100$ equally likely pairs. Count the pairs that work, one value of $m$ at a time.",
+      "your_turn": {
+        "prompt": "For which $n$ does $15^n$ end in $1$? And $11^n$?",
+        "answer": "$15^n$ always ends in $5$, so never. $11^n$ always ends in $1$, so for all $20$ values of $n$."
+      }
+    },
+    {
+      "title": "Find the repeating patterns",
+      "body": "Powers of $3$ end in $3, 9, 7, 1$, then repeat. Powers of $7$ end in $7, 9, 3, 1$, then repeat. So $13^n$ and $17^n$ end in $1$ exactly when $n$ is a multiple of $4$. Powers of $9$ end in $9, 1, 9, 1, \\ldots$",
+      "your_turn": {
+        "prompt": "For which $n$ does $19^n$ end in $1$?",
+        "answer": "When $n$ is even, since the pattern $9, 1$ repeats every $2$ steps."
+      }
+    },
+    {
+      "title": "Count the good values of n",
+      "body": "Careful: $19$ works for every even $n$, not only multiples of $4$, so do not lump it in with $13$ and $17$. The list $1999, \\ldots, 2018$ has $20$ numbers, so $10$ of them are even.",
+      "your_turn": {
+        "prompt": "How many multiples of $4$ are in $1999, \\ldots, 2018$?",
+        "answer": "$5$: $2000, 2004, 2008, 2012, 2016$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Add up the good pairs: $20$ for $m=11$, $5$ for $13$, $0$ for $15$, $5$ for $17$, and $10$ for $19$. That is $40$ out of $100$ pairs, so the probability is $\\frac{40}{100}=\\frac{2}{5}$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "$\\frac{7}{20}$ comes from treating $19$ like $13$ and $17$, counting only multiples of $4$ for it. But $19^n$ ends in $1$ for every even $n$.",
+    "C": "$\\frac{3}{10}$ comes from leaving out the $19$ case entirely. Powers of $9$ end in $1$ every second time."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

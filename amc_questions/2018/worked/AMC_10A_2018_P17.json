@@ -1,0 +1,74 @@
+{
+  "id": "AMC_10A_2018_P17",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 17
+  },
+  "topic": "number_theory",
+  "subtopic": "Divisibility",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2018_P17.png",
+    "text": "Let $S$ be a set of $6$ integers taken from $\\{1,2,\\dots,12\\}$ with the property that if $a$ and $b$ are elements of $S$ with $a<b$, then $b$ is not a multiple of $a$. What is the least possible value of an element of $S$?",
+    "choices": {
+      "A": "$2$",
+      "B": "$3$",
+      "C": "$4$",
+      "D": "$5$",
+      "E": "$7$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$4$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: group the numbers into chains",
+      "body": "The rule forbids two elements where one divides the other. So sort $1$ to $12$ into chains in which each number divides every later one. Then $S$ can take at most one number from each chain.\n$$\\{1,2,4,8\\},\\ \\{3,6,12\\},\\ \\{5,10\\},\\ \\{7\\},\\ \\{9\\},\\ \\{11\\}$$",
+      "your_turn": {
+        "prompt": "Why can $S$ not contain two numbers from the chain $\\{1,2,4,8\\}$?",
+        "answer": "Any two of them have the smaller one dividing the larger one, which the rule forbids."
+      }
+    },
+    {
+      "title": "Six chains, six elements",
+      "body": "There are exactly $6$ chains and $S$ has $6$ elements, so $S$ takes exactly one number from each chain. The chains $\\{7\\}$, $\\{9\\}$ and $\\{11\\}$ have only one choice, so $7$, $9$ and $11$ must be in $S$.",
+      "your_turn": {
+        "prompt": "Can $1$ be in $S$?",
+        "answer": "No. $1$ divides every other number, so it would clash with $7$, for example."
+      }
+    },
+    {
+      "title": "The forced 9 knocks out 3",
+      "body": "Careful: it is easy to overlook that $9$ is forced. Since $9$ is in $S$ and $9$ is a multiple of $3$, the number $3$ cannot be in $S$. So from the chain $\\{3,6,12\\}$, $S$ must take one of the other two numbers.",
+      "your_turn": {
+        "prompt": "Which numbers can $S$ take from the chain $\\{3,6,12\\}$, and what do they have in common?",
+        "answer": "$6$ or $12$. Both are even."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Whichever of $6$ or $12$ is in $S$ is a multiple of $2$, so $2$ is out too. With $1$, $2$ and $3$ all ruled out, every element is at least $4$. The set $\\{4,5,6,7,9,11\\}$ works (no element divides another), so $4$ really happens. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "$2$ comes from starting with the primes $\\{2,3,5,7,11\\}$ and assuming a sixth number can be added. No sixth number fits, and in fact no valid $6$-element set can contain $2$.",
+    "B": "$3$ comes from missing that $9$ is forced into $S$. Once $9$ is in, $3$ cannot be, because $9$ is a multiple of $3$.",
+    "E": "$7$ comes from stopping at the easy set $\\{7,8,9,10,11,12\\}$. It works, but the question asks for the least value possible over all such sets."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

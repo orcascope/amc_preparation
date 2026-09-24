@@ -69,11 +69,17 @@ def update_progress(sid, pid, **fields):
     db().commit()
 
 
-def topic_problems(topic):
-    """Problems of one type in study order: easiest first."""
+def year_filter():
+    """The ?year= filter as an int, or None for all years."""
+    year = request.args.get("year", "")
+    return int(year) if year.isdigit() else None
+
+
+def topic_problems(topic, year=None):
+    """Problems of one type in study order: easiest first. year=None means every year."""
     return db().execute(
-        "SELECT id, subtopic, difficulty FROM problems WHERE topic = ? "
-        "ORDER BY difficulty, year, contest, session, number", (topic,)).fetchall()
+        "SELECT id, subtopic, difficulty FROM problems WHERE topic = ? AND (? IS NULL OR year = ?) "
+        "ORDER BY difficulty, year, contest, session, number", (topic, year, year)).fetchall()
 
 
 def step_dict(row):
@@ -134,11 +140,15 @@ def add_student():
 @app.get("/api/topics")
 def topics():
     sid = student_id()
+    years = [r[0] for r in db().execute("SELECT DISTINCT year FROM problems ORDER BY year")]
+    year = year_filter()
+    if year not in years:
+        year = None
     prog = {r["problem_id"]: r for r in db().execute(
         "SELECT * FROM progress WHERE student_id = ?", (sid,))}
     out, totals = [], {"total": 0, "solved_own": 0, "solved_hints": 0, "shown": 0}
     for key, name in TOPIC_NAMES.items():
-        rows = topic_problems(key)
+        rows = topic_problems(key, year)
         if not rows:
             continue
         counts = {"solved_own": 0, "solved_hints": 0, "shown": 0, "trying": 0, "new": 0}
@@ -154,15 +164,16 @@ def topics():
     cont = db().execute(
         "SELECT p.problem_id, pr.topic, pr.subtopic, p.attempts FROM progress p "
         "JOIN problems pr ON pr.id = p.problem_id "
-        "WHERE p.student_id = ? AND NOT p.completed ORDER BY p.updated_at DESC LIMIT 1",
-        (sid,)).fetchone()
+        "WHERE p.student_id = ? AND NOT p.completed AND (? IS NULL OR pr.year = ?) "
+        "ORDER BY p.updated_at DESC LIMIT 1",
+        (sid, year, year)).fetchone()
     resume = None
     if cont:
-        ids = [r["id"] for r in topic_problems(cont["topic"])]
+        ids = [r["id"] for r in topic_problems(cont["topic"], year)]
         resume = {"id": cont["problem_id"], "topic": cont["topic"],
                   "topic_name": TOPIC_NAMES[cont["topic"]], "subtopic": cont["subtopic"],
                   "number": ids.index(cont["problem_id"]) + 1, "attempts": cont["attempts"]}
-    return jsonify(topics=out, totals=totals, resume=resume)
+    return jsonify(topics=out, totals=totals, resume=resume, years=years, year=year)
 
 
 @app.get("/api/topics/<topic>")
@@ -174,7 +185,7 @@ def topic_detail(topic):
         "SELECT * FROM progress WHERE student_id = ?", (sid,))}
     problems = [{"id": r["id"], "number": i, "subtopic": r["subtopic"],
                  "difficulty": r["difficulty"], "status": display_status(prog.get(r["id"]))}
-                for i, r in enumerate(topic_problems(topic), 1)]
+                for i, r in enumerate(topic_problems(topic, year_filter()), 1)]
     return jsonify(key=topic, name=TOPIC_NAMES[topic], problems=problems)
 
 
@@ -184,7 +195,9 @@ def topic_detail(topic):
 def problem(pid):
     sid = student_id()
     p = problem_row(pid)
-    ids = [r["id"] for r in topic_problems(p["topic"])]
+    ids = [r["id"] for r in topic_problems(p["topic"], year_filter())]
+    if pid not in ids:  # opened from outside the current year filter
+        ids = [r["id"] for r in topic_problems(p["topic"])]
     i = ids.index(pid)
     prog = db().execute("SELECT * FROM progress WHERE student_id = ? AND problem_id = ?",
                         (sid, pid)).fetchone()
@@ -194,7 +207,7 @@ def problem(pid):
     n_steps = db().execute("SELECT COUNT(*) FROM steps WHERE problem_id = ?", (pid,)).fetchone()[0]
     data = {
         "id": pid, "topic": p["topic"], "topic_name": TOPIC_NAMES[p["topic"]],
-        "subtopic": p["subtopic"], "difficulty": p["difficulty"],
+        "subtopic": p["subtopic"], "difficulty": p["difficulty"], "year": p["year"],
         "number": i + 1, "of": len(ids),
         "next": ids[i + 1] if i + 1 < len(ids) else None,
         "image": f"/images/{p['image']}", "text": p["text"],

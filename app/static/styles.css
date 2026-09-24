@@ -107,6 +107,13 @@ button { font: inherit; cursor: pointer; }
 .resume .title { font-size: 19px; font-weight: 700; }
 .resume .sub { font-size: 14px; color: #F1EDFF; }
 .section-title { font-size: 24px; margin-bottom: 16px; }
+.section-title .year-note { font-family: var(--body); font-size: 17px; font-weight: 600; color: var(--muted); }
+.year-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 20px; }
+.year-filter .label { font-weight: 700; color: var(--ink-2); margin-right: 4px; }
+.chip { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 2px solid var(--line-strong);
+  background: var(--surface); color: var(--ink); font-weight: 700; text-decoration: none; }
+.chip:hover { border-color: var(--violet); color: var(--ink); }
+.chip.on { background: var(--violet); border-color: var(--violet); color: #fff; }
 .topic-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .topic { padding: 22px; border-radius: 22px; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 14px;
   border: 2px solid transparent; }

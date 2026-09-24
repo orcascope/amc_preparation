@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2018_P15",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 15
+  },
+  "topic": "geometry",
+  "subtopic": "Tangent circles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2018_P15.png",
+    "text": "Two circles of radius $5$ are externally tangent to each other and are internally tangent to a circle of radius $13$ at points $A$ and $B$, as shown in the diagram. The distance $AB$ can be written in the form $\\tfrac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?",
+    "choices": {
+      "A": "$21$",
+      "B": "$29$",
+      "C": "$58$",
+      "D": "$69$",
+      "E": "$93$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$69$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: draw the centers",
+      "body": "With tangent circles, the key fact is that the point of tangency lies on the line through the two centers. So mark the big center $O$ and the small centers $P$ (left) and $Q$ (right). Then $A$ lies on ray $OP$, beyond $P$, and $B$ lies on ray $OQ$, beyond $Q$, with $OA = OB = 13$.",
+      "your_turn": {
+        "prompt": "How far is $P$ from $O$? (Walk from $O$ out to $A$, then back from $A$ to $P$.)",
+        "answer": "$OP = 13 - 5 = 8$, and likewise $OQ = 8$."
+      }
+    },
+    {
+      "title": "Use the tangency of the two small circles",
+      "body": "The two small circles touch each other, and their touching point lies on segment $PQ$. So $PQ$ is made of one radius from each small circle.",
+      "your_turn": {
+        "prompt": "How long is $PQ$?",
+        "answer": "$PQ = 5 + 5 = 10$."
+      }
+    },
+    {
+      "title": "Find two similar triangles",
+      "body": "Triangles $OPQ$ and $OAB$ share the angle at $O$, because $A$ is on ray $OP$ and $B$ is on ray $OQ$. The sides around that angle are in the same ratio: $\\frac{OA}{OP} = \\frac{OB}{OQ} = \\frac{13}{8}$. So the triangles are similar, and $AB$ is $PQ$ scaled by that same factor. Careful: use the factor the right way up.",
+      "your_turn": {
+        "prompt": "Should $AB$ be longer or shorter than $PQ$? So should you multiply $PQ$ by $\\frac{13}{8}$ or by $\\frac{8}{13}$?",
+        "answer": "Longer, since $A$ and $B$ are farther from $O$ than $P$ and $Q$. Multiply by $\\frac{13}{8}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "$$AB = 10 \\cdot \\frac{13}{8} = \\frac{65}{4}.$$\nSince $65 = 5 \\cdot 13$ and $4 = 2^2$ share no factor, $m = 65$ and $n = 4$. So $m + n = 69$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$93$ comes from using the ratio upside down: $10 \\cdot \\frac{8}{13} = \\frac{80}{13}$. But $AB$ must be longer than $PQ$, because $A$ and $B$ are farther from $O$."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

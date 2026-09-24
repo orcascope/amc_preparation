@@ -1,0 +1,64 @@
+{
+  "id": "AMC_10A_2018_P06",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 6
+  },
+  "topic": "algebra",
+  "subtopic": "Linear equations",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P06.png",
+    "text": "Sangho uploaded a video to a website where viewers can vote that they like or dislike a video. Each video begins with a score of $0$, and the score increases by $1$ for each like vote and decreases by $1$ for each dislike vote. At one point Sangho saw that his video had a score of $90$, and that $65\\%$ of the votes cast on his video were like votes. How many votes had been cast on Sangho's video at that point?",
+    "choices": {
+      "A": "$200$",
+      "B": "$300$",
+      "C": "$400$",
+      "D": "$500$",
+      "E": "$600$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$300$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: call the total number of votes $N$",
+      "body": "The problem gives a percent of the votes, and the question asks for the total. So let $N$ be the total number of votes and write the likes and dislikes in terms of $N$. Every vote is either a like or a dislike.",
+      "your_turn": {
+        "prompt": "What percent of the votes were dislikes? Write the number of likes and dislikes in terms of $N$.",
+        "answer": "$35\\%$, since $100\\% - 65\\% = 35\\%$. Likes are $0.65N$ and dislikes are $0.35N$."
+      }
+    },
+    {
+      "title": "The score is likes minus dislikes",
+      "body": "Each like adds $1$ and each dislike subtracts $1$, so the score is the number of likes minus the number of dislikes.\n$$\\text{score} = 0.65N - 0.35N = 0.30N$$\nCareful: the score compares likes to dislikes, not likes to half the votes. The gap is $65\\% - 35\\% = 30\\%$ of $N$, not $65\\% - 50\\% = 15\\%$.",
+      "your_turn": {
+        "prompt": "Test the formula: if there were $100$ votes with $65\\%$ likes, what would the score be?",
+        "answer": "$30$: there are $65$ likes and $35$ dislikes, and $65 - 35 = 30$, which is $30\\%$ of $100$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The score is $90$, so $0.30N = 90$ and $N = 300$. Check: $195$ likes and $105$ dislikes give a score of $195 - 105 = 90$, and $195/300 = 65\\%$. Another way to see it: every $20$ votes are $13$ likes and $7$ dislikes, which adds $6$ to the score, so we need $90/6 = 15$ blocks of $20$. The answer is **(B)** $300$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "This comes from using $65\\% - 50\\% = 15\\%$ of the votes as the score. The score is likes minus dislikes, which is $65\\% - 35\\% = 30\\%$ of the votes."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

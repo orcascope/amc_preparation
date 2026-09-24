@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2018_P16",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 16
+  },
+  "topic": "geometry",
+  "subtopic": "Right triangles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2018_P16.png",
+    "text": "Right triangle $ABC$ has leg lengths $AB=20$ and $BC=21$. Including $\\overline{AB}$ and $\\overline{BC}$, how many line segments with integer length can be drawn from vertex $B$ to a point on hypotenuse $\\overline{AC}$?",
+    "choices": {
+      "A": "$5$",
+      "B": "$8$",
+      "C": "$12$",
+      "D": "$13$",
+      "E": "$15$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$13$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: slide the endpoint along the hypotenuse",
+      "body": "Picture a point $X$ moving along $\\overline{AC}$ from $A$ to $C$, with the segment $BX$ attached to $B$. Its length changes smoothly, so the clue is to find where it is shortest and how it grows on each side of that point. First we need the hypotenuse.",
+      "your_turn": {
+        "prompt": "Find the length of $AC$.",
+        "answer": "$AC=\\sqrt{20^2+21^2}=\\sqrt{841}=29$."
+      }
+    },
+    {
+      "title": "The shortest segment is the altitude",
+      "body": "The shortest segment from $B$ to the line $AC$ is the altitude $BH$, which meets $AC$ at a right angle. Computing the area two ways, $\\tfrac12\\cdot 20\\cdot 21=\\tfrac12\\cdot 29\\cdot BH$, gives its length.\n$$BH=\\frac{20\\cdot 21}{29}=\\frac{420}{29}$$",
+      "your_turn": {
+        "prompt": "Between which two whole numbers does $\\frac{420}{29}$ lie?",
+        "answer": "Between $14$ and $15$, since $14\\cdot 29=406$ and $15\\cdot 29=435$."
+      }
+    },
+    {
+      "title": "Count the A side",
+      "body": "As $X$ slides from $A$ to $H$, $BX$ shrinks steadily from $20$ down to about $14.48$, taking each length in between exactly once. So each whole number in that range gives exactly one segment. Careful: the same length can appear again on the other side of $H$, and that is a different segment, so it must be counted again.",
+      "your_turn": {
+        "prompt": "How many integer lengths does $BX$ take while $X$ goes from $A$ to $H$, including $AB$ itself?",
+        "answer": "$6$: the lengths $15, 16, 17, 18, 19, 20$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "From $H$ to $C$, $BX$ grows steadily from about $14.48$ up to $21$, so it hits $15, 16, \\ldots, 21$: that is $7$ segments, including $BC$. The altitude is not a whole number, so no segment is counted on both sides. The total is $6+7=13$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "$12$ comes from counting the lengths $15$ through $20$ on both sides but forgetting that the $C$ side goes all the way up to $21$, which is $BC$ itself."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

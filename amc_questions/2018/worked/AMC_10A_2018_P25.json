@@ -1,0 +1,70 @@
+{
+  "id": "AMC_10A_2018_P25",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 25
+  },
+  "topic": "number_theory",
+  "subtopic": "Repdigits",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10A_2018_P25.png",
+    "text": "For a positive integer $n$ and nonzero digits $a$, $b$, and $c$, let $A_n$ be the $n$-digit integer each of whose digits is equal to $a$; let $B_n$ be the $n$-digit integer each of whose digits is equal to $b$; and let $C_n$ be the $2n$-digit (not $n$-digit) integer each of whose digits is equal to $c$. What is the greatest possible value of $a+b+c$ for which there are at least two values of $n$ such that $C_n - B_n = A_n^2$?",
+    "choices": {
+      "A": "$12$",
+      "B": "$14$",
+      "C": "$16$",
+      "D": "$18$",
+      "E": "$20$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$18$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: write repdigits with powers of $10$",
+      "body": "A number made of $n$ ones is $\\frac{10^n-1}{9}$ (for example $111=\\frac{999}{9}$). Every number in this problem is a digit times such a number, so write everything with $x=10^n$. That turns a statement about digits into ordinary algebra in $x$.",
+      "your_turn": {
+        "prompt": "Write $A_n$, $B_n$ and $C_n$ in terms of $x=10^n$. (Remember $C_n$ has $2n$ digits.)",
+        "answer": "$A_n=\\frac{a(x-1)}{9}$, $B_n=\\frac{b(x-1)}{9}$, $C_n=\\frac{c(x^2-1)}{9}$, since $10^{2n}=x^2$."
+      }
+    },
+    {
+      "title": "Simplify the equation",
+      "body": "Put these into $C_n-B_n=A_n^2$. Every term has a factor $\\frac{x-1}{9}$, which is never $0$, so divide it out; $x^2-1=(x-1)(x+1)$ helps. Then multiply by $9$ and collect terms.",
+      "your_turn": {
+        "prompt": "After dividing by $\\frac{x-1}{9}$, you get $c(x+1)-b=\\frac{a^2(x-1)}{9}$. Multiply by $9$ and write it as (something)$\\cdot x$ + (something) $=0$.",
+        "answer": "$(9c-a^2)\\,x+(9c-9b+a^2)=0$."
+      }
+    },
+    {
+      "title": "Two values of $n$ force both coefficients to be $0$",
+      "body": "This equation is linear in $x$. A linear equation that is not $0=0$ has at most one solution, but two different $n$ give two different $x$. So both coefficients are $0$: $a^2=9c$ and $9b=9c+a^2=2a^2$. Then the equation holds for every $n$. Careful: $a$, $b$, $c$ must all be single nonzero digits.",
+      "your_turn": {
+        "prompt": "Why must $a$ be a multiple of $3$? Find $b$ and $c$ when $a=3$.",
+        "answer": "$a^2=9c$ is a multiple of $9$, so $3\\mid a$. For $a=3$: $c=1$ and $b=\\frac{2\\cdot9}{9}=2$, a sum of $6$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The only other options are $a=6$ and $a=9$. For $a=9$, $b=\\frac{2\\cdot81}{9}=18$, which is not a digit. For $a=6$: $c=\\frac{36}{9}=4$ and $b=\\frac{2\\cdot36}{9}=8$. Check: $44-8=36=6^2$ and $4444-88=4356=66^2$. The greatest sum is $6+8+4=18$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}
