@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2018_P23",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 23
+  },
+  "topic": "geometry",
+  "subtopic": "Distance to a line",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10A_2018_P23.png",
+    "text": "Farmer Pythagoras has a field in the shape of a right triangle. The right triangle's legs have lengths of $3$ and $4$ units. In the corner where those sides meet at a right angle, he leaves a small unplanted square $S$ so that from the air it looks like the right angle symbol. The rest of the field is planted. The shortest distance from $S$ to the hypotenuse is $2$ units. What fraction of the field is planted?",
+    "choices": {
+      "A": "$\\frac{25}{27}$",
+      "B": "$\\frac{26}{27}$",
+      "C": "$\\frac{73}{75}$",
+      "D": "$\\frac{145}{147}$",
+      "E": "$\\frac{74}{75}$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$\\frac{145}{147}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: find the side of the square",
+      "body": "The planted part is the whole field minus the square, so everything depends on the square's side $s$. The only clue about $s$ is the dashed segment of length $2$ in the picture. It runs from the square's far corner $P$ (the corner away from the right angle) to the hypotenuse, and meets the hypotenuse at a right angle. So $2$ is the distance from $P$ to the hypotenuse.",
+      "your_turn": {
+        "prompt": "What is the area of the whole field? How far is $P$ from each leg, in terms of $s$?",
+        "answer": "The area is $\\frac12\\cdot3\\cdot4=6$. $P$ is a distance $s$ from each leg, because the square's sides lie along the legs."
+      }
+    },
+    {
+      "title": "Split the field into three triangles",
+      "body": "Join $P$ to the three corners of the field. This cuts the field into three triangles, one on each side of the field. Each has a side of the field as its base, and its height is the distance from $P$ to that side. Careful: do not assume the square's diagonal points along the altitude from the right angle. The diagonal bisects the right angle, and that is the altitude direction only when the legs are equal.",
+      "your_turn": {
+        "prompt": "Write the areas of the three triangles, with bases $3$, $4$ and $5$.",
+        "answer": "$\\frac12\\cdot3\\cdot s$, $\\frac12\\cdot4\\cdot s$, and $\\frac12\\cdot5\\cdot2=5$."
+      }
+    },
+    {
+      "title": "Solve for $s$",
+      "body": "The three triangles fill the field exactly, so their areas add up to $6$:\n$$\\frac{3s}{2}+\\frac{4s}{2}+5=6.$$\n(You can check with coordinates too: with the legs on the axes, the hypotenuse is $3x+4y=12$ and $P=(s,s)$.)",
+      "your_turn": {
+        "prompt": "Solve this equation for $s$. What is the area of the square?",
+        "answer": "$\\frac{7s}{2}=1$, so $s=\\frac27$, and the square has area $\\frac{4}{49}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The planted fraction is\n$$\\frac{6-\\frac{4}{49}}{6}=1-\\frac{4}{294}=1-\\frac{2}{147}=\\frac{145}{147}.$$\nThe answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "This comes from putting the square's diagonal along the altitude from the right angle (length $\\frac{12}{5}$), which gives diagonal $\\frac25$, area $\\frac{2}{25}$ and fraction $\\frac{74}{75}$. The diagonal bisects the right angle, which is not the altitude direction because the legs are not equal."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

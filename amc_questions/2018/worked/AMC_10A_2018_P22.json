@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2018_P22",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 22
+  },
+  "topic": "number_theory",
+  "subtopic": "LCM and GCD",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10A_2018_P22.png",
+    "text": "Let $a$, $b$, $c$, and $d$ be positive integers such that $\\gcd(a,b)=24$, $\\gcd(b,c)=36$, $\\gcd(c,d)=54$, and $70<\\gcd(d,a)<100$. Which of the following must be a divisor of $a$?",
+    "choices": {
+      "A": "$5$",
+      "B": "$7$",
+      "C": "$11$",
+      "D": "$13$",
+      "E": "$17$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$13$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: look at powers of $2$ and $3$",
+      "body": "All three given gcds are built only from $2$s and $3$s:\n$$24=2^3\\cdot3,\\quad 36=2^2\\cdot3^2,\\quad 54=2\\cdot3^3.$$\nA gcd takes the smaller power of each prime from the two numbers. So track exactly how many $2$s and $3$s each of $a,b,c,d$ has; that will pin down part of $\\gcd(d,a)$.",
+      "your_turn": {
+        "prompt": "From $\\gcd(a,b)=24$ and $\\gcd(b,c)=36$, what is the least power of $3$ that $b$ must have? And the least power of $2$?",
+        "answer": "$b$ has at least $3^2$ (from $36$) and at least $2^3$ (from $24$)."
+      }
+    },
+    {
+      "title": "Find the exact powers in $a$, $c$, and $d$",
+      "body": "$b$ has at least $3^2$, but $\\gcd(a,b)$ has only $3^1$, so the smaller power must come from $a$: $a$ has exactly one $3$. In the same way, $b$ has at least $2^3$ but $\\gcd(b,c)$ has only $2^2$, so $c$ has exactly $2^2$.",
+      "your_turn": {
+        "prompt": "Now use $\\gcd(c,d)=54=2\\cdot3^3$. How many $2$s does $d$ have exactly?",
+        "answer": "Exactly one: $c$ has $2^2$, but the gcd has only $2^1$, so the smaller power $2^1$ comes from $d$."
+      }
+    },
+    {
+      "title": "What $\\gcd(d,a)$ looks like",
+      "body": "Also $a$ has at least $2^3$ (from $24$) and $d$ has at least $3^3$ (from $54$). So in $\\gcd(d,a)$ the power of $2$ is $\\min(1,\\text{at least }3)=1$ and the power of $3$ is $\\min(\\text{at least }3,1)=1$. That means $\\gcd(d,a)=6k$, where $k$ is not divisible by $2$ or $3$. Careful: \"a multiple of $6$\" is not enough; $k$ may not add any more $2$s or $3$s.",
+      "your_turn": {
+        "prompt": "List the multiples of $6$ strictly between $70$ and $100$.",
+        "answer": "$72, 78, 84, 90, 96$, that is, $6k$ for $k=12,13,14,15,16$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Of $k=12,13,14,15,16$, the numbers $12,14,16$ are even and $15$ is a multiple of $3$. Only $k=13$ works, so $\\gcd(d,a)=78=2\\cdot3\\cdot13$ and $13$ divides $a$. For example, $a=312$, $b=72$, $c=108$, $d=702$ fits every condition, and $312$ is not divisible by $5$, $7$, $11$ or $17$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This comes from taking $\\gcd(d,a)=90$ because it is a multiple of $6$. But $90=2\\cdot3^2\\cdot5$ has two $3$s, and $a$ has only one.",
+    "B": "This comes from taking $\\gcd(d,a)=84$ because it is a multiple of $6$. But $84=2^2\\cdot3\\cdot7$ has two $2$s, and $d$ has only one."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

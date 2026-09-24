@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2018_P13",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 13
+  },
+  "topic": "geometry",
+  "subtopic": "Folding",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2018_P13.png",
+    "text": "A paper triangle with sides of lengths $3$, $4$, and $5$ inches, as shown, is folded so that point $A$ falls on point $B$. What is the length in inches of the crease?",
+    "choices": {
+      "A": "$1+\\frac{1}{2}\\sqrt{2}$",
+      "B": "$\\sqrt{3}$",
+      "C": "$\\frac{7}{4}$",
+      "D": "$\\frac{15}{8}$",
+      "E": "$2$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$\\frac{15}{8}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: what does the crease do?",
+      "body": "When you fold $A$ onto $B$, each point on the crease stays put. So every point on the crease is the same distance from $A$ as from $B$. The points equally far from $A$ and $B$ form the perpendicular bisector of $AB$: the line through the midpoint of $AB$ at a right angle to it.",
+      "your_turn": {
+        "prompt": "Let $M$ be where the crease meets $AB$. How long is $AM$?",
+        "answer": "$M$ is the midpoint of the hypotenuse, so $AM = \\frac{5}{2}$."
+      }
+    },
+    {
+      "title": "Find where the crease ends",
+      "body": "The crease starts at $M$ on the hypotenuse and runs down to one of the legs. Points closer to $B$ are on one side of the bisector, and points closer to $A$ are on the other. Careful: joining $M$ to the midpoint of $BC$ looks like a natural crease, but that segment is not perpendicular to $AB$.",
+      "your_turn": {
+        "prompt": "Is $C$ closer to $A$ or to $B$? What does that tell you about which leg the crease crosses?",
+        "answer": "$CB = 3 < CA = 4$, so $C$ is on $B$'s side. $A$ is on the other side, so the crease crosses leg $AC$ at some point $D$."
+      }
+    },
+    {
+      "title": "Spot the similar triangles",
+      "body": "Triangle $AMD$ has a right angle at $M$, and triangle $ACB$ has a right angle at $C$. They also share the angle at $A$, so they are similar. Match the sides by position: $AM$ is the leg next to angle $A$ in the small triangle, and $MD$ is the leg across from angle $A$.",
+      "your_turn": {
+        "prompt": "In triangle $ACB$, which leg is next to angle $A$ and which is across from it? Write the ratio that $\\frac{MD}{AM}$ must equal.",
+        "answer": "$AC = 4$ is next to $A$ and $BC = 3$ is across, so $\\frac{MD}{AM} = \\frac{BC}{AC} = \\frac{3}{4}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So the crease has length\n$$MD = \\frac{5}{2} \\cdot \\frac{3}{4} = \\frac{15}{8}.$$\nCheck: $AD = \\frac{5}{2} \\cdot \\frac{5}{4} = \\frac{25}{8}$, which is less than $4$, so $D$ really is on $AC$, and $\\left(\\frac{15}{8}\\right)^2 + \\left(\\frac{5}{2}\\right)^2 = \\left(\\frac{25}{8}\\right)^2$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$2$ is the length of the segment joining the midpoints of $AB$ and $BC$. That segment is parallel to $AC$, not perpendicular to $AB$, so it is not the crease."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

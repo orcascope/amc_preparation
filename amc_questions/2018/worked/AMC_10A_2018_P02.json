@@ -1,0 +1,64 @@
+{
+  "id": "AMC_10A_2018_P02",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 2
+  },
+  "topic": "arithmetic_logic",
+  "subtopic": "Percents",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P02.png",
+    "text": "Liliane has $50\\%$ more soda than Jacqueline, and Alice has $25\\%$ more soda than Jacqueline. What is the relationship between the amounts of soda that Liliane and Alice have?",
+    "choices": {
+      "A": "Liliane has $20\\%$ more soda than Alice.",
+      "B": "Liliane has $25\\%$ more soda than Alice.",
+      "C": "Liliane has $45\\%$ more soda than Alice.",
+      "D": "Liliane has $75\\%$ more soda than Alice.",
+      "E": "Liliane has $100\\%$ more soda than Alice."
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "Liliane has $20\\%$ more soda than Alice."
+  },
+  "steps": [
+    {
+      "title": "Where to start: write both amounts in terms of Jacqueline's",
+      "body": "Both percents are measured from Jacqueline, so her amount is the natural starting point. Call it $J$. Then $50\\%$ more is $1.5J$ and $25\\%$ more is $1.25J$. A friendly value such as $J = 4$ makes the numbers whole.\n$$L = 1.5J, \\qquad A = 1.25J$$",
+      "your_turn": {
+        "prompt": "Take $J = 4$. How much soda do Liliane and Alice have?",
+        "answer": "$L = 1.5 \\cdot 4 = 6$ and $A = 1.25 \\cdot 4 = 5$."
+      }
+    },
+    {
+      "title": "Percent more means divide, not subtract",
+      "body": "To say how much more Liliane has than Alice, we measure the extra amount against Alice's amount. Careful: you cannot subtract the percents ($50\\% - 25\\%$), because the two percents are of Jacqueline's amount, not Alice's. The right tool is the ratio $\\frac{L}{A}$.",
+      "your_turn": {
+        "prompt": "Practice the idea on other numbers: what percent more is $15$ than $12$?",
+        "answer": "$25\\%$ more, since the extra $3$ is $\\frac{3}{12} = \\frac14$ of $12$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $J = 4$, Liliane has $6$ and Alice has $5$. The extra $1$ is $\\frac{1}{5}$ of Alice's amount, so Liliane has $20\\%$ more. In general, $\\frac{L}{A} = \\frac{1.5}{1.25} = \\frac{6}{5}$, the same result for any $J$. The answer is **(A)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "This comes from subtracting the percents, $50\\% - 25\\% = 25\\%$. Both percents are of Jacqueline's amount, so compare Liliane to Alice by dividing: $\\frac{6}{5}$ means $20\\%$ more."
+  },
+  "verification": {
+    "official_answer": "A",
+    "solver_answer": "A",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

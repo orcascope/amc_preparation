@@ -1,0 +1,65 @@
+{
+  "id": "AMC_10A_2018_P05",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 5
+  },
+  "topic": "algebra",
+  "subtopic": "Inequalities",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P05.png",
+    "text": "Alice, Bob, and Charlie were on a hike and were wondering how far away the nearest town was. When Alice said, “We are at least $6$ miles away,” Bob replied, “We are at most $5$ miles away.” Charlie then remarked, “Actually the nearest town is at most $4$ miles away.” It turned out that none of the three statements was true. Let $d$ be the distance in miles to the nearest town. Which of the following intervals is the set of all possible values of $d$?",
+    "choices": {
+      "A": "$(0,4)$",
+      "B": "$(4,5)$",
+      "C": "$(4,6)$",
+      "D": "$(5,6)$",
+      "E": "$(5,\\infty)$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$(5,6)$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: turn each false statement into its opposite",
+      "body": "The key phrase is \"none of the three statements was true\". So each statement is false, which means its opposite is true. Write each statement as an inequality in $d$, then flip it.",
+      "your_turn": {
+        "prompt": "Alice said $d \\ge 6$. What inequality is true, given that she was wrong?",
+        "answer": "$d < 6$. The opposite of \"at least $6$\" is \"less than $6$\"."
+      }
+    },
+    {
+      "title": "Flip Bob's and Charlie's statements",
+      "body": "Bob said $d \\le 5$, so in fact $d > 5$. Charlie said $d \\le 4$, so in fact $d > 4$. Careful with the endpoints: the opposite of \"at most\" is a strict \"more than\", so the boundary numbers themselves are not allowed.",
+      "your_turn": {
+        "prompt": "Could $d$ be exactly $5$? Explain using Bob's statement.",
+        "answer": "No. If $d = 5$, then \"at most $5$ miles\" is true, but Bob's statement was false."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "All three facts hold at once, so $d$ must satisfy $d < 6$, $d > 5$ and $d > 4$. Any $d > 5$ is automatically greater than $4$, so the overlap is $5 < d < 6$. Be sure to use all three statements: dropping Alice's leaves $(5,\\infty)$, and dropping Bob's leaves $(4,6)$. The answer is **(D)** $(5,6)$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "This comes from ignoring Alice's statement. Since she was wrong about \"at least $6$\", we also know $d < 6$, which cuts the interval off at $6$.",
+    "C": "This comes from ignoring Bob's statement. Since he was wrong about \"at most $5$\", we also know $d > 5$, which raises the lower end from $4$ to $5$."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

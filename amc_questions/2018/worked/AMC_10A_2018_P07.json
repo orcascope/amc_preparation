@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2018_P07",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 7
+  },
+  "topic": "number_theory",
+  "subtopic": "Prime factorization",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P07.png",
+    "text": "For how many (not necessarily positive) integer values of $n$ is the value of $4000\\cdot\\left(\\tfrac{2}{5}\\right)^n$ an integer?",
+    "choices": {
+      "A": "$3$",
+      "B": "$4$",
+      "C": "$6$",
+      "D": "$8$",
+      "E": "$9$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$9$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: factor $4000$ into primes",
+      "body": "The fraction $\\tfrac{2}{5}$ only involves the primes $2$ and $5$. For positive $n$ it puts $5$s in the denominator, and for negative $n$ it flips to $\\tfrac{5}{2}$ and puts $2$s in the denominator. So the question is how many $2$s and $5$s $4000$ has to cancel them.",
+      "your_turn": {
+        "prompt": "Write $4000$ as a product of prime powers.",
+        "answer": "$4000 = 2^5\\cdot 5^3$, since $4000 = 32\\cdot 125$."
+      }
+    },
+    {
+      "title": "Combine the powers",
+      "body": "Now the whole expression is one product of a power of $2$ and a power of $5$.\n$$4000\\cdot\\left(\\tfrac{2}{5}\\right)^n = 2^{5+n}\\cdot 5^{3-n}$$\nA $2$ cannot cancel a $5$, so this is an integer exactly when both exponents are at least $0$.",
+      "your_turn": {
+        "prompt": "What is the largest $n$ that works? What goes wrong one step higher?",
+        "answer": "$n = 3$, which gives $2^8 = 256$. At $n = 4$ the exponent of $5$ is $-1$, so a $5$ is left in the denominator."
+      }
+    },
+    {
+      "title": "Now go negative",
+      "body": "The problem says $n$ need not be positive. Careful: negative $n$ are allowed, and so is $n = 0$. For negative $n$ the exponent of $5$ only grows, so the limit comes from the exponent of $2$: we need $5 + n \\ge 0$.",
+      "your_turn": {
+        "prompt": "What is the smallest $n$ that works? Check its value.",
+        "answer": "$n = -5$, which gives $2^0\\cdot 5^8 = 390625$. At $n = -6$ a factor of $2$ is left in the denominator."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The expression is an integer exactly for $-5 \\le n \\le 3$. These integers are $-5, -4, -3, -2, -1, 0, 1, 2, 3$, which is $3 - (-5) + 1 = 9$ values. The answer is **(E)** $9$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "This counts only $n = 0, 1, 2, 3$. The problem allows negative $n$ too, and $n = -1$ through $n = -5$ also give integers.",
+    "D": "This counts the right range but leaves out $n = 0$. At $n = 0$ the value is $4000$, which is an integer."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

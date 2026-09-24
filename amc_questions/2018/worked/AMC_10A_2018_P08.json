@@ -1,0 +1,64 @@
+{
+  "id": "AMC_10A_2018_P08",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 8
+  },
+  "topic": "algebra",
+  "subtopic": "Systems of equations",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P08.png",
+    "text": "Joe has a collection of $23$ coins, consisting of $5$-cent coins, $10$-cent coins, and $25$-cent coins. He has $3$ more $10$-cent coins than $5$-cent coins, and the total value of his collection is $320$ cents. How many more $25$-cent coins does Joe have than $5$-cent coins?",
+    "choices": {
+      "A": "$0$",
+      "B": "$1$",
+      "C": "$2$",
+      "D": "$3$",
+      "E": "$4$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$2$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: use one variable for everything",
+      "body": "The dimes are described in terms of the nickels, and the total count is fixed. So let $n$ be the number of $5$-cent coins. Then there are $n + 3$ dimes, and the quarters are whatever is left of the $23$ coins. Careful: the question asks about quarters compared with nickels, so keep that goal in mind.",
+      "your_turn": {
+        "prompt": "Write the number of $25$-cent coins in terms of $n$.",
+        "answer": "$23 - n - (n+3) = 20 - 2n$."
+      }
+    },
+    {
+      "title": "Write the value equation",
+      "body": "Each kind of coin contributes its count times its value, and the total is $320$ cents.\n$$5n + 10(n+3) + 25(20 - 2n) = 320$$\nExpanding gives $5n + 10n + 30 + 500 - 50n = 320$, which is $530 - 35n = 320$.",
+      "your_turn": {
+        "prompt": "Solve for $n$, the number of $5$-cent coins.",
+        "answer": "$35n = 210$, so $n = 6$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $n = 6$ there are $9$ dimes and $20 - 12 = 8$ quarters. Check: $6 + 9 + 8 = 23$ coins and $30 + 90 + 200 = 320$ cents. Comparing quarters with nickels (not dimes), the gap is $8 - 6 = 2$. The answer is **(C)** $2$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "$3$ is how many more $10$-cent coins Joe has than $5$-cent coins, which the problem already told you. The question asks about the $25$-cent coins."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

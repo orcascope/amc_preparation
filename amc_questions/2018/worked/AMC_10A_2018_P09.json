@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2018_P09",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 9
+  },
+  "topic": "geometry",
+  "subtopic": "Similar triangles",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P09.png",
+    "text": "All of the triangles in the diagram below are similar to isosceles triangle $ABC$, in which $AB = AC$. Each of the $7$ smallest triangles has area $1$, and $\\triangle ABC$ has area $40$. What is the area of trapezoid $DBCE$?",
+    "choices": {
+      "A": "$16$",
+      "B": "$18$",
+      "C": "$20$",
+      "D": "$22$",
+      "E": "$24$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$24$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: similar triangles scale area by the square",
+      "body": "The trapezoid $DBCE$ is triangle $ABC$ with triangle $ADE$ removed from the top. We know the area of $ABC$, so we need the area of $ADE$. All the triangles are similar, and when a shape is scaled by a factor $k$, its area is multiplied by $k^2$.",
+      "your_turn": {
+        "prompt": "A triangle similar to a smallest triangle has sides $3$ times as long. What is its area?",
+        "answer": "$3^2 \\cdot 1 = 9$."
+      }
+    },
+    {
+      "title": "Measure $DE$ in small triangles",
+      "body": "Look at the strip of $7$ small triangles just above $DE$. The $4$ upward-pointing ones sit side by side with their bases along $DE$, and together their bases fill all of $DE$. So $DE$ is $4$ times the base of a smallest triangle, and triangle $ADE$ is a smallest triangle scaled by $4$.",
+      "your_turn": {
+        "prompt": "What is the area of triangle $ADE$?",
+        "answer": "$4^2 \\cdot 1 = 16$."
+      }
+    },
+    {
+      "title": "Check with the top triangle",
+      "body": "Triangle $ADE$ is made of the triangle with apex $A$ plus the $7$ small triangles. The top triangle's base is the upper edge of the strip, which holds the bases of the $3$ downward-pointing triangles, so it is $3$ small bases wide. Careful: the trapezoid is everything below $DE$, so you must remove all of triangle $ADE$, not only the $7$ small triangles.",
+      "your_turn": {
+        "prompt": "Find the area of the top triangle and add the $7$ small triangles. Does it match?",
+        "answer": "The top triangle has area $3^2 = 9$, and $9 + 7 = 16$, which matches the area of $ADE$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The trapezoid is what is left of triangle $ABC$ after removing triangle $ADE$.\n$$[DBCE] = 40 - 16 = 24$$\nThe answer is **(E)** $24$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "$16$ is the area of triangle $ADE$, the part above $DE$. The trapezoid is the part below $DE$, so subtract it from $40$."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

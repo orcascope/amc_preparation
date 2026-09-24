@@ -1,0 +1,74 @@
+{
+  "id": "AMC_10A_2018_P14",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 14
+  },
+  "topic": "algebra",
+  "subtopic": "Exponents and estimation",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2018_P14.png",
+    "text": "What is the greatest integer less than or equal to $$\\frac{3^{100}+2^{100}}{3^{96}+2^{96}}\\,?$$",
+    "choices": {
+      "A": "$80$",
+      "B": "$81$",
+      "C": "$96$",
+      "D": "$97$",
+      "E": "$625$"
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$80$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: name the repeated powers",
+      "body": "The exponents $100$ and $96$ differ by $4$, so the top can be written using the same powers as the bottom. Let $x = 3^{96}$ and $y = 2^{96}$. Careful: you cannot divide term by term, and $3^{100} + 2^{100}$ is not $5^{100}$.",
+      "your_turn": {
+        "prompt": "Write $3^{100}$ and $2^{100}$ in terms of $x$ and $y$.",
+        "answer": "$3^{100} = 3^4 \\cdot 3^{96} = 81x$ and $2^{100} = 16y$."
+      }
+    },
+    {
+      "title": "Compare the fraction with $81$",
+      "body": "The fraction is now $\\frac{81x + 16y}{x + y}$. The term $x = 3^{96}$ is far bigger than $y = 2^{96}$, so the fraction should be close to $81$. To see exactly how close, write it as $81$ minus something.\n$$\\frac{81x + 16y}{x + y} = 81 - \\frac{65y}{x + y}$$",
+      "your_turn": {
+        "prompt": "Check this: what is $81(x + y) - 65y$?",
+        "answer": "$81x + 81y - 65y = 81x + 16y$, the numerator, so the equation is right."
+      }
+    },
+    {
+      "title": "How big is the part we subtract?",
+      "body": "The subtracted part $\\frac{65y}{x + y}$ is positive. It is less than $1$ exactly when $65y < x + y$, which means $64y < x$. Since $64 = 2^6$, that says $2^{102} < 3^{96}$.",
+      "your_turn": {
+        "prompt": "Show that $2^{102} < 3^{96}$. (Hint: $3^{96} = 9^{48}$.)",
+        "answer": "$9^{48} > 8^{48} = 2^{144}$, and $2^{144}$ is much bigger than $2^{102}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "We subtract a number strictly between $0$ and $1$ from $81$, so the fraction lies strictly between $80$ and $81$. Careful: keeping only the big terms suggests $81$, but the small terms pull the value just below $81$. The greatest integer that is at most the fraction is $80$. The answer is **(A)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "$81$ comes from keeping only the big terms, $\\frac{3^{100}}{3^{96}}$. The value is just under $81$, because $\\frac{81x + 16y}{x + y} = 81 - \\frac{65y}{x + y}$ and the subtracted part is positive.",
+    "D": "$97 = 81 + 16$ comes from dividing term by term. A fraction with a sum on the bottom cannot be split that way.",
+    "E": "$625 = 5^4$ comes from treating the sums as powers of $3 + 2$. But $3^{100} + 2^{100}$ is not $5^{100}$."
+  },
+  "verification": {
+    "official_answer": "A",
+    "solver_answer": "A",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

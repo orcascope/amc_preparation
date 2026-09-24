@@ -1,0 +1,71 @@
+{
+  "id": "AMC_10A_2018_P12",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 12
+  },
+  "topic": "algebra",
+  "subtopic": "Absolute value",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2018_P12.png",
+    "text": "How many ordered pairs of real numbers $(x,y)$ satisfy the following system of equations? $$\\begin{aligned} x+3y&=3 \\\\ \\big|\\,|x|-|y|\\,\\big|&=1 \\end{aligned}$$",
+    "choices": {
+      "A": "$1$",
+      "B": "$2$",
+      "C": "$3$",
+      "D": "$4$",
+      "E": "$8$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$3$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: use the line to remove $x$",
+      "body": "The first equation is a plain line, so solve it for $x$: $x = 3 - 3y$. Now everything depends on $y$ alone. The absolute values are the hard part, and they only change form when $x$ or $y$ changes sign.",
+      "your_turn": {
+        "prompt": "For which values of $y$ is $x = 3 - 3y$ at least $0$?",
+        "answer": "When $y \\le 1$, since $3 - 3y \\ge 0$ means $y \\le 1$."
+      }
+    },
+    {
+      "title": "Split into three ranges of $y$",
+      "body": "The sign of $y$ changes at $0$ and the sign of $x$ changes at $y = 1$. So check three ranges: $y < 0$, then $0 \\le y \\le 1$, then $y > 1$. In each range, write $|x| - |y|$ without absolute values and set it equal to $\\pm 1$. For $y < 0$, $|x| - |y| = (3 - 3y) - (-y) = 3 - 2y$.",
+      "your_turn": {
+        "prompt": "Solve $3 - 2y = 1$ and $3 - 2y = -1$. Do the answers fit $y < 0$?",
+        "answer": "$y = 1$ and $y = 2$. Neither is negative, so this range gives no solutions."
+      }
+    },
+    {
+      "title": "Check the other two ranges",
+      "body": "For $0 \\le y \\le 1$, both $x$ and $y$ are nonnegative, so $|x| - |y| = 3 - 4y$. For $y > 1$, $x$ is negative, so $|x| - |y| = (3y - 3) - y = 2y - 3$. Solve each for $\\pm 1$ and keep only the answers inside the range.",
+      "your_turn": {
+        "prompt": "Solve $3 - 4y = 1$ and $3 - 4y = -1$. Which answers satisfy $0 \\le y \\le 1$?",
+        "answer": "$y = \\frac{1}{2}$ or $y = 1$, and both are allowed."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "In the last range, $2y - 3 = 1$ gives $y = 2$, which is allowed, while $2y - 3 = -1$ gives $y = 1$, which is not greater than $1$, so it is thrown out. Careful: $y = 1$ came up as a candidate in two ranges where it does not belong; it counts only once, as the point $(0, 1)$ from the middle range. The solutions are $(\\frac{3}{2}, \\frac{1}{2})$, $(0, 1)$ and $(-3, 2)$, and each one checks in both equations. That gives $3$ ordered pairs. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "$4$ comes from forgetting to check that each solution lies inside its range. In the range $y > 1$, the equation $2y - 3 = -1$ gives $y = 1$; keeping it counts $(0, 1)$ a second time. But $y = 1$ is not greater than $1$, and it is the same point anyway."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24"
+  }
+}

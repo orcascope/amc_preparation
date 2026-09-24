@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2018_P20",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 20
+  },
+  "topic": "counting_probability",
+  "subtopic": "Symmetry",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2018_P20.png",
+    "text": "A scanning code consists of a $7\\times 7$ grid of squares, with some of its squares colored black and the rest colored white. There must be at least one square of each color in this grid of $49$ squares. A scanning code is called symmetric if its look does not change when the entire square is rotated by a multiple of $90^\\circ$ counterclockwise around its center, nor when it is reflected across a line joining opposite corners or a line joining midpoints of opposite sides. What is the total number of possible symmetric scanning codes?",
+    "choices": {
+      "A": "$510$",
+      "B": "$1022$",
+      "C": "$8190$",
+      "D": "$8192$",
+      "E": "$65{,}534$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$1022$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: cells that move onto each other must match",
+      "body": "A symmetric code looks the same after all $8$ moves: the $4$ rotations and the $4$ reflections. If one of these moves carries cell $P$ onto cell $Q$, then $P$ and $Q$ must have the same color. So split the grid into groups of cells that the moves carry onto each other, and count the groups. Careful: use the reflections as well as the rotations.",
+      "your_turn": {
+        "prompt": "Put the center cell at $(0,0)$. Which cells are in the same group as the cell $(3,1)$?",
+        "answer": "The $8$ cells $(\\pm 3,\\pm 1)$ and $(\\pm 1,\\pm 3)$: rotations and reflections can swap the coordinates and change their signs."
+      }
+    },
+    {
+      "title": "Pick one cell from each group",
+      "body": "Using sign changes and swaps, every cell $(a,b)$ can be moved to exactly one cell with $0\\le b\\le a\\le 3$. That is a thin wedge, roughly one eighth of the grid, and each group has exactly one cell in it. So the number of groups equals the number of cells in the wedge.",
+      "your_turn": {
+        "prompt": "How many cells $(a,b)$ satisfy $0\\le b\\le a\\le 3$?",
+        "answer": "$1+2+3+4=10$: for $a=0,1,2,3$ there are $a+1$ choices of $b$."
+      }
+    },
+    {
+      "title": "Check that the groups fill the grid",
+      "body": "The center is a group by itself. A cell on the middle row or column, like $(2,0)$, is in a group of $4$. A cell on a diagonal, like $(2,2)$, is also in a group of $4$. Every other cell is in a group of $8$.",
+      "your_turn": {
+        "prompt": "How many groups of size $8$ are there, and do all the group sizes add up to $49$?",
+        "answer": "$3$ groups, from $(2,1)$, $(3,1)$ and $(3,2)$. Then $1+3\\cdot 4+3\\cdot 4+3\\cdot 8=49$, so yes."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each of the $10$ groups can be black or white on its own, giving $2^{10}=1024$ symmetric colorings. Two of them, all black and all white, break the rule that both colors appear. So there are $1024-2=1022$ codes. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "$8190=2^{13}-2$ comes from using only the rotations. Rotations alone give $13$ groups, but the reflections join some of them, leaving $10$.",
+    "D": "$8192=2^{13}$ comes from using only the rotations and also forgetting to remove the all-black and all-white grids."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

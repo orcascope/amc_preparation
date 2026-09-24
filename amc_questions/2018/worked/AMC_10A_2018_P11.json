@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2018_P11",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 11
+  },
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2018_P11.png",
+    "text": "When $7$ fair standard $6$-sided dice are thrown, the probability that the sum of the numbers on the top faces is $10$ can be written as $$\\frac{n}{6^7},$$ where $n$ is a positive integer. What is $n$?",
+    "choices": {
+      "A": "$42$",
+      "B": "$49$",
+      "C": "$56$",
+      "D": "$63$",
+      "E": "$84$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$84$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: $n$ counts the ordered outcomes",
+      "body": "There are $6^7$ equally likely outcomes, one for each ordered list of what the $7$ dice show. So $n$ is the number of ordered lists $(d_1, \\dots, d_7)$ with each $d_i$ from $1$ to $6$ and sum $10$. The clue is that $10$ is barely more than the smallest possible sum.",
+      "your_turn": {
+        "prompt": "What is the smallest possible sum of $7$ dice, and how much more than that is $10$?",
+        "answer": "The smallest sum is $7$ (all ones), so $10$ is just $3$ more."
+      }
+    },
+    {
+      "title": "Count only the extra pips",
+      "body": "Every die shows at least $1$, so subtract $1$ from each: let $e_i = d_i - 1$. Now each $e_i \\ge 0$ and the $e_i$ add up to $3$. Since the total extra is only $3$, no die can go above $4$, so the limit \"at most $6$\" never gets in the way.\n$$e_1 + e_2 + \\cdots + e_7 = 3, \\qquad e_i \\ge 0$$",
+      "your_turn": {
+        "prompt": "Give one solution of this equation and the dice roll it stands for.",
+        "answer": "For example $e_1 = 3$ and the rest $0$, which means dice showing $4, 1, 1, 1, 1, 1, 1$."
+      }
+    },
+    {
+      "title": "Use stars and bars",
+      "body": "\"Stars and bars\" is a way to count how to share out identical items among boxes. Draw the $3$ extra pips as stars and use $6$ bars to split them into $7$ boxes (one per die). Each arrangement of $3$ stars and $6$ bars in a row is one way, and each way gives one arrangement.",
+      "your_turn": {
+        "prompt": "How many symbols are in the row, and how many of them are stars?",
+        "answer": "$3 + 6 = 9$ symbols, of which $3$ are stars, so we choose which $3$ spots hold stars."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The count is $\\binom{9}{3} = \\frac{9 \\cdot 8 \\cdot 7}{6} = 84$. Check by cases on the $3$ extra pips: all on one die gives $7$ ways; $2$ on one die and $1$ on another gives $7 \\cdot 6 = 42$ ways (order matters, since the dice are different); $1$ each on three dice gives $\\binom{7}{3} = 35$ ways. Careful not to skip a case: $7 + 42 + 35 = 84$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "$63$ comes from counting the \"$2$ and $1$\" case as $\\binom{7}{2} = 21$. But giving $2$ to die A and $1$ to die B is different from the reverse, so that case is $7 \\cdot 6 = 42$.",
+    "B": "$49 = 7 + 42$ leaves out the case where three different dice each get one extra pip, which adds $\\binom{7}{3} = 35$ more."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

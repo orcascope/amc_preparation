@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2018_P24",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 24
+  },
+  "topic": "geometry",
+  "subtopic": "Area ratios",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10A_2018_P24.png",
+    "text": "Triangle $ABC$ with $AB=50$ and $AC=10$ has area $120$. Let $D$ be the midpoint of $\\overline{AB}$, and let $E$ be the midpoint of $\\overline{AC}$. The angle bisector of $\\angle BAC$ intersects $\\overline{DE}$ and $\\overline{BC}$ at $F$ and $G$, respectively. What is the area of quadrilateral $FDBG$?",
+    "choices": {
+      "A": "$60$",
+      "B": "$65$",
+      "C": "$70$",
+      "D": "$75$",
+      "E": "$80$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$75$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: a big triangle minus a small one",
+      "body": "The quadrilateral $FDBG$ is awkward, but its sides lie on triangle $ABG$. $D$ is on $AB$ and $F$ is on $AG$, so cutting triangle $ABG$ along $DF$ leaves $FDBG$ plus the small triangle $ADF$. So the plan is $[FDBG]=[ABG]-[ADF]$, where $[\\ ]$ means area.",
+      "your_turn": {
+        "prompt": "What two facts about the figure will help? Think about what $G$ does to $BC$, and what $D$, $E$ do to the sides.",
+        "answer": "$AG$ is an angle bisector, so it splits $BC$ in a known ratio; and $DE$ joins two midpoints."
+      }
+    },
+    {
+      "title": "Area of triangle $ABG$",
+      "body": "The angle bisector theorem says the bisector from $A$ cuts $BC$ in the same ratio as the two sides next to angle $A$: $\\frac{BG}{GC}=\\frac{AB}{AC}=\\frac{50}{10}=5$. Triangles $ABG$ and $AGC$ have the same height from $A$, so their areas are in the same ratio $5:1$ as their bases.",
+      "your_turn": {
+        "prompt": "What fraction of the area $120$ is triangle $ABG$? Compute $[ABG]$.",
+        "answer": "$\\frac56$ of it: $[ABG]=\\frac56\\cdot120=100$."
+      }
+    },
+    {
+      "title": "Use the midline",
+      "body": "The midline theorem says the segment joining the midpoints of two sides is parallel to the third side and half as long. Shrinking the whole triangle toward $A$ by a factor $\\frac12$ carries $B$ to $D$ and $C$ to $E$, so it carries $BC$ onto $DE$ and $G$ onto $F$. So $F$ is the midpoint of $AG$, and triangle $ADF$ is triangle $ABG$ shrunk by $\\frac12$ from $A$. Careful: lengths halve, but areas do not.",
+      "your_turn": {
+        "prompt": "If every length of a triangle is halved, what happens to its area?",
+        "answer": "It is multiplied by $\\left(\\frac12\\right)^2=\\frac14$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "$[ADF]=\\frac14\\cdot100=25$, so\n$$[FDBG]=[ABG]-[ADF]=100-25=75.$$\nCheck: $[ADE]=\\frac{120}{4}=30$, and the bisector splits $DE$ in the ratio $DF:FE=AD:AE=25:5=5:1$, so $[ADF]=\\frac56\\cdot30=25$ again. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "$70$ comes from subtracting all of triangle $ADE$ (area $30$) from $[ABG]=100$. Only the part $ADF$ lies inside triangle $ABG$; the piece $AFE$ is on the other side of the bisector."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

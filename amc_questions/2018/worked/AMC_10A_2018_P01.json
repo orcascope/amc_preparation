@@ -1,0 +1,62 @@
+{
+  "id": "AMC_10A_2018_P01",
+  "source": {
+    "year": 2018,
+    "contest": "10A",
+    "session": null,
+    "number": 1
+  },
+  "topic": "arithmetic_logic",
+  "subtopic": "Negative exponents",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2018_P01.png",
+    "text": "What is the value of $$\\left(\\left((2+1)^{-1}+1\\right)^{-1}+1\\right)^{-1}+1\\,?$$",
+    "choices": {
+      "A": "$\\frac{5}{8}$",
+      "B": "$\\frac{11}{7}$",
+      "C": "$\\frac{8}{5}$",
+      "D": "$\\frac{18}{11}$",
+      "E": "$\\frac{15}{8}$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$\\frac{11}{7}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: work from the inside out",
+      "body": "Nested parentheses tell you the order: the innermost part must be done first. An exponent of $-1$ means \"take the reciprocal\", so the whole expression is one move repeated three times: take the reciprocal, then add $1$. Start with $2+1 = 3$.",
+      "your_turn": {
+        "prompt": "Compute the innermost layer, $(2+1)^{-1}+1$.",
+        "answer": "$\\frac{1}{3}+1 = \\frac{4}{3}$."
+      }
+    },
+    {
+      "title": "Do the next layer",
+      "body": "Now apply the same move to $\\frac{4}{3}$. Its reciprocal is $\\frac{3}{4}$, and adding $1$ gives $\\frac{7}{4}$. Notice a shortcut: taking the reciprocal of $\\frac{p}{q}$ and adding $1$ gives $\\frac{q}{p}+1 = \\frac{p+q}{p}$. So the new numerator is the old numerator plus the old denominator, and the new denominator is the old numerator.\n$$\\frac{p}{q} \\;\\longmapsto\\; \\frac{p+q}{p}$$",
+      "your_turn": {
+        "prompt": "Check the shortcut on the first move, from $3 = \\frac{3}{1}$ to $\\frac{4}{3}$.",
+        "answer": "New numerator $3+1 = 4$, new denominator $3$, so $\\frac{4}{3}$. It matches."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Apply the move one last time to $\\frac{7}{4}$: the reciprocal is $\\frac{4}{7}$, and $\\frac{4}{7}+1 = \\frac{11}{7}$. Careful: there are three \"reciprocal, then add $1$\" moves, so do not stop at $\\frac{7}{4}$, and do not forget the final $+1$ (which would leave $\\frac{4}{7}$). Neither of those is a choice, which is a good warning sign. The answer is **(B)** $\\frac{11}{7}$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}
