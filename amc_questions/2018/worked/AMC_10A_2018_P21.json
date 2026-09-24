@@ -62,10 +62,11 @@
     "official_answer": "E",
     "solver_answer": "E",
     "matches_official": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "math-olympiad skill",
-    "generated_at": "2026-09-24"
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Hole found by adversarial verifier, fixed, and re-verified by a fresh verifier."
   }
 }

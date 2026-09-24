@@ -56,7 +56,7 @@
     }
   ],
   "wrong_choices": {
-    "D": "$4$ comes from forgetting to check that each solution lies inside its range. In the range $y > 1$, the equation $2y - 3 = -1$ gives $y = 1$; keeping it counts $(0, 1)$ a second time. But $y = 1$ is not greater than $1$, and it is the same point anyway."
+    "D": "$4$ comes from handling the first two ranges correctly but slipping in the last one: in the range $y > 1$, the equation $2y - 3 = -1$ gives $y = 1$, and keeping it adds the point $(0, 1)$ a second time. But $y = 1$ is not greater than $1$, so it does not belong to that range, and it is the same point already found in the middle range anyway."
   },
   "verification": {
     "official_answer": "C",
