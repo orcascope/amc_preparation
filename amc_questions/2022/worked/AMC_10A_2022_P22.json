@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2022_P22",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 22
+  },
+  "topic": "counting_probability",
+  "subtopic": "Permutations",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10A_2022_P22.png",
+    "text": "Suppose that $13$ cards numbered $1, 2, 3, \\ldots, 13$ are arranged in a row. The task is to pick them up in numerically increasing order, working repeatedly from left to right. In the example below, cards $1, 2, 3$ are picked up on the first pass, $4$ and $5$ on the second pass, $6$ on the third pass, $7, 8, 9, 10$ on the fourth pass, and $11, 12, 13$ on the fifth pass.\n\n$$7\\;\\;11\\;\\;8\\;\\;6\\;\\;4\\;\\;5\\;\\;9\\;\\;12\\;\\;1\\;\\;13\\;\\;10\\;\\;2\\;\\;3$$\n\nFor how many of the $13!$ possible orderings of the cards will the $13$ cards be picked up in exactly two passes?",
+    "choices": {
+      "A": "$4082$",
+      "B": "$4095$",
+      "C": "$4096$",
+      "D": "$8178$",
+      "E": "$8191$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$8178$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: what does one pass pick up?",
+      "body": "A pass always picks up a run of consecutive numbers: $1, 2, \\ldots, k$ on the first pass. It stops at $k$ because card $k+1$ sits to the left of card $k$. So instead of thinking about all $13!$ orderings, describe exactly two passes by the number $k$ where the first pass stops.",
+      "your_turn": {
+        "prompt": "In the example ordering, what is $k$ for the first pass, and where is card $k+1$?",
+        "answer": "$k=3$ (cards $1,2,3$). Card $4$ is to the left of card $3$, so the pass stops."
+      }
+    },
+    {
+      "title": "Turn \"exactly two passes\" into conditions",
+      "body": "Exactly two passes means the second pass picks up all of $k+1, \\ldots, 13$. So three things must hold: cards $1,\\ldots,k$ appear left to right in order; cards $k+1,\\ldots,13$ appear left to right in order; and card $k+1$ is left of card $k$. Here $k$ can be any of $1, 2, \\ldots, 12$.",
+      "your_turn": {
+        "prompt": "Test the idea on $3$ cards. Which orderings of $1,2,3$ need exactly two passes?",
+        "answer": "$132$, $213$, $231$, $312$. That is $4$ orderings."
+      }
+    },
+    {
+      "title": "Count for one value of $k$",
+      "body": "Choose which $k$ of the $13$ positions hold the small cards $1,\\ldots,k$. After that everything is forced, because both groups must be in increasing order. That gives $\\binom{13}{k}$ orderings, but we must throw out the ones where card $k$ is left of card $k+1$.",
+      "your_turn": {
+        "prompt": "If both groups are in order and card $k$ is left of card $k+1$, what does the whole row look like? How many such rows are there?",
+        "answer": "All small cards are left of $k$, and all big cards are right of $k+1$, so the row is $1,2,\\ldots,13$ in order. Just $1$ row, so each $k$ gives $\\binom{13}{k}-1$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Add over $k = 1, \\ldots, 12$. The sum of $\\binom{13}{k}$ over all $k$ from $0$ to $13$ is $2^{13}$, so dropping $k=0$ and $k=13$ leaves $2^{13}-2$. Careful: the sorted row must be removed once for each of the $12$ values of $k$, not just once.\n$$\\sum_{k=1}^{12}\\left(\\binom{13}{k}-1\\right) = (8192-2) - 12 = 8178$$\nThe answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$8191 = 2^{13}-1$ comes from adding $\\binom{13}{k}$ over all $k$ and removing the sorted row only once. The sorted row appears once for every $k$, and $k=0$ and $k=13$ are not two-pass cases at all, so $14$ must be removed in total."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

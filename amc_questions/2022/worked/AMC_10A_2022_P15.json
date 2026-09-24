@@ -1,0 +1,70 @@
+{
+  "id": "AMC_10A_2022_P15",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 15
+  },
+  "topic": "geometry",
+  "subtopic": "Cyclic quadrilaterals",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2022_P15.png",
+    "text": "Quadrilateral $ABCD$ with side lengths $AB=7$, $BC=24$, $CD=20$, and $DA=15$ is inscribed in a circle. The area interior to the circle but exterior to the quadrilateral can be written in the form $\\frac{a\\pi-b}{c}$, where $a$, $b$, and $c$ are positive integers such that $a$ and $c$ have no common prime factor. What is $a+b+c$?",
+    "choices": {
+      "A": "$260$",
+      "B": "$855$",
+      "C": "$1235$",
+      "D": "$1565$",
+      "E": "$1997$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$1565$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: spot the right-triangle numbers",
+      "body": "The side lengths $7, 24$ and $15, 20$ should ring a bell: they are legs of famous right triangles. Sides $AB, BC$ meet at $B$, and sides $CD, DA$ meet at $D$, and both pairs sit across the diagonal $AC$. That suggests $AC$ might be the hypotenuse of two right triangles.",
+      "your_turn": {
+        "prompt": "Compute $7^2 + 24^2$ and $15^2 + 20^2$.",
+        "answer": "Both are $625 = 25^2$."
+      }
+    },
+    {
+      "title": "Show the angles at $B$ and $D$ are right angles",
+      "body": "In a quadrilateral inscribed in a circle, opposite angles add to $180^\\circ$, so $\\cos D = -\\cos B$. The law of cosines gives $AC^2$ from both triangles, and setting them equal forces $\\cos B = 0$. So $\\angle B = \\angle D = 90^\\circ$ and $AC = 25$.\n$$625 - 2 \\cdot 7 \\cdot 24 \\cos B = 625 + 2 \\cdot 15 \\cdot 20 \\cos B$$",
+      "your_turn": {
+        "prompt": "Why does a right angle at $B$ mean $AC$ is a diameter of the circle?",
+        "answer": "An inscribed angle is half its arc, so a $90^\\circ$ angle cuts off a $180^\\circ$ arc, making $AC$ a diameter."
+      }
+    },
+    {
+      "title": "Find the two areas",
+      "body": "The diameter is $25$, so the radius is $\\frac{25}{2}$ and the circle's area is $\\frac{625\\pi}{4}$. Careful: the radius is half of $AC$, not $AC$ itself. The quadrilateral splits along $AC$ into two right triangles.",
+      "your_turn": {
+        "prompt": "What are the areas of triangles $ABC$ and $ACD$?",
+        "answer": "$\\frac{1}{2} \\cdot 7 \\cdot 24 = 84$ and $\\frac{1}{2} \\cdot 15 \\cdot 20 = 150$, for a total of $234$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Subtract and use a common denominator: $234 = \\frac{936}{4}$. Here $a = 625 = 5^4$ and $c = 4 = 2^2$ share no prime factor, so the form is correct.\n$$\\frac{625\\pi}{4} - 234 = \\frac{625\\pi - 936}{4}$$\nSo $a + b + c = 625 + 936 + 4 = 1565$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

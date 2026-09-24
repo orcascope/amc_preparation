@@ -1,0 +1,70 @@
+{
+  "id": "AMC_10A_2022_P14",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 14
+  },
+  "topic": "counting_probability",
+  "subtopic": "Pairings",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2022_P14.png",
+    "text": "How many ways are there to split the integers $1$ through $14$ into $7$ pairs so that in each pair the greater number is at least $2$ times the lesser number?",
+    "choices": {
+      "A": "$108$",
+      "B": "$120$",
+      "C": "$126$",
+      "D": "$132$",
+      "E": "$144$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$144$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: the big numbers cannot pair with each other",
+      "body": "Look at the numbers $8$ through $14$. If two of them formed a pair, the greater would have to be at least $2 \\cdot 8 = 16$, which is too big. So each of these seven numbers needs its own partner from $1$ through $7$. There are exactly seven small numbers, so every pair is one small number with one large number.",
+      "your_turn": {
+        "prompt": "Why can $1$ and $2$ not be paired together, even though $2 \\ge 2 \\cdot 1$?",
+        "answer": "That would leave only $5$ small numbers for the $7$ large ones, so two large numbers would have to pair together, which is impossible."
+      }
+    },
+    {
+      "title": "Start with the most restricted small number",
+      "body": "A small number $s$ needs a large partner that is at least $2s$. The number $7$ needs a partner of at least $14$, so it must pair with $14$. Handling the pickiest number first keeps the count simple, because each later number then has a fixed number of choices.",
+      "your_turn": {
+        "prompt": "After $7$ is paired with $14$, how many choices does $6$ have?",
+        "answer": "$2$: it needs at least $12$, so $12$ or $13$ ($14$ is taken)."
+      }
+    },
+    {
+      "title": "Keep going down the list",
+      "body": "The number $5$ needs at least $10$. That allows $10$ through $14$, minus the two already used, so $3$ choices. The number $4$ needs at least $8$, which allows all seven large numbers minus the three used, so $4$ choices. Careful: always subtract the partners already taken.",
+      "your_turn": {
+        "prompt": "Once $7$, $6$, $5$ and $4$ are paired, in how many ways can $1$, $2$ and $3$ take the three large numbers that are left?",
+        "answer": "$3! = 6$ ways. Every leftover number is at least $8$, which is at least $2 \\cdot 3$, so any matching works."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Multiply the numbers of choices at each stage.\n$$1 \\cdot 2 \\cdot 3 \\cdot 4 \\cdot 6 = 144$$\nThe answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

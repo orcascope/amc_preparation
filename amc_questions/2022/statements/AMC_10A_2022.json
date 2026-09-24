@@ -1,0 +1,135 @@
+{
+  "test_id": "AMC_10A_2022",
+  "source": { "year": 2022, "contest": "10A", "session": null },
+  "problems": [
+    {
+      "number": 1, "topic": "arithmetic_logic", "subtopic": "Fractions",
+      "text": "What is the value of $$3+\\cfrac{1}{3+\\cfrac{1}{3+\\cfrac{1}{3}}}\\,?$$",
+      "choices": { "A": "$\\frac{31}{10}$", "B": "$\\frac{49}{15}$", "C": "$\\frac{33}{10}$", "D": "$\\frac{109}{33}$", "E": "$\\frac{15}{4}$" }
+    },
+    {
+      "number": 2, "topic": "arithmetic_logic", "subtopic": "Rates",
+      "text": "Mike cycled $15$ laps in $57$ minutes. Assume he cycled at a constant speed throughout. Approximately how many laps did he complete in the first $27$ minutes?",
+      "choices": { "A": "$5$", "B": "$7$", "C": "$9$", "D": "$11$", "E": "$13$" }
+    },
+    {
+      "number": 3, "topic": "algebra", "subtopic": "Linear equations",
+      "text": "The sum of three numbers is $96$. The first number is $6$ times the third number, and the third number is $40$ less than the second number. What is the absolute value of the difference between the first and second numbers?",
+      "choices": { "A": "$1$", "B": "$2$", "C": "$3$", "D": "$4$", "E": "$5$" }
+    },
+    {
+      "number": 4, "topic": "algebra", "subtopic": "Unit conversion",
+      "text": "In some countries, automobile fuel efficiency is measured in liters per $100$ kilometers while other countries use miles per gallon. Suppose that $1$ kilometer equals $m$ miles, and $1$ gallon equals $\\ell$ liters. Which of the following gives the fuel efficiency in liters per $100$ kilometers for a car that gets $x$ miles per gallon?",
+      "choices": { "A": "$\\frac{x}{100\\ell m}$", "B": "$\\frac{x\\ell m}{100}$", "C": "$\\frac{\\ell m}{100x}$", "D": "$\\frac{100}{x\\ell m}$", "E": "$\\frac{100\\ell m}{x}$" }
+    },
+    {
+      "number": 5, "topic": "geometry", "subtopic": "Polygons in a square",
+      "text": "Square $ABCD$ has side length $1$. Points $P$, $Q$, $R$, and $S$ each lie on a side of $ABCD$ so that $APQCRS$ is an equilateral convex hexagon with side length $s$. What is $s$?",
+      "choices": { "A": "$\\frac{\\sqrt2}{3}$", "B": "$\\frac12$", "C": "$2-\\sqrt2$", "D": "$1-\\frac{\\sqrt2}{4}$", "E": "$\\frac23$" }
+    },
+    {
+      "number": 6, "topic": "algebra", "subtopic": "Absolute value",
+      "text": "Which expression is equal to $\\left|\\,a-2-\\sqrt{(a-1)^2}\\,\\right|$ for $a<0$?",
+      "choices": { "A": "$3-2a$", "B": "$1-a$", "C": "$1$", "D": "$a+1$", "E": "$3$" }
+    },
+    {
+      "number": 7, "topic": "number_theory", "subtopic": "LCM and GCD",
+      "text": "The least common multiple of a positive integer $n$ and $18$ is $180$, and the greatest common divisor of $n$ and $45$ is $15$. What is the sum of the digits of $n$?",
+      "choices": { "A": "$3$", "B": "$6$", "C": "$8$", "D": "$9$", "E": "$12$" }
+    },
+    {
+      "number": 8, "topic": "arithmetic_logic", "subtopic": "Averages",
+      "text": "A data set consists of $6$ (not distinct) positive integers: $1$, $7$, $5$, $2$, $5$, and $X$. The average (arithmetic mean) of the $6$ numbers equals a value in the data set. What is the sum of all possible values of $X$?",
+      "choices": { "A": "$10$", "B": "$26$", "C": "$32$", "D": "$36$", "E": "$40$" }
+    },
+    {
+      "number": 9, "topic": "counting_probability", "subtopic": "Colorings",
+      "text": "A rectangle is partitioned into $5$ regions as shown. Each region is to be painted a solid color—red, orange, yellow, blue, or green—so that regions that touch are painted different colors, and colors can be used more than once. How many different colorings are possible?",
+      "figure": "A rectangle is cut by one horizontal line into a top strip and a bottom strip. The top strip is split by one vertical line into two regions, top-left (TL) and top-right (TR). The bottom strip is split by two vertical lines into three regions: a narrow bottom-left (BL), a wide bottom-middle (BM) and bottom-right (BR). The vertical line in the top strip lies above BM, not above either bottom line. So: TL touches TR, BL and BM; TR touches TL, BM and BR; BL touches BM; BM touches BR. BL and BR do not touch, TL and BR do not touch, TR and BL do not touch.",
+      "choices": { "A": "$120$", "B": "$270$", "C": "$360$", "D": "$540$", "E": "$720$" }
+    },
+    {
+      "number": 10, "topic": "geometry", "subtopic": "Pythagorean theorem",
+      "text": "Daniel finds a rectangular index card and measures its diagonal to be $8$ centimeters. Daniel then cuts out equal squares of side $1$ cm at two opposite corners of the index card and measures the distance between the two closest vertices of these squares to be $4\\sqrt2$ centimeters, as shown below. What is the area of the original index card?",
+      "figure": "The rectangle has 1-by-1 squares cut from its top-right and bottom-left corners. One dashed segment of length 8 joins the original top-left corner to the original bottom-right corner (the full diagonal of the card). Another dashed segment of length $4\\sqrt2$ joins the inner corner of the bottom-left notch to the inner corner of the top-right notch (the notch vertices that lie 1 cm in from both edges).",
+      "choices": { "A": "$14$", "B": "$10\\sqrt2$", "C": "$16$", "D": "$12\\sqrt2$", "E": "$18$" }
+    },
+    {
+      "number": 11, "topic": "algebra", "subtopic": "Exponents",
+      "text": "Ted mistakenly wrote $2^m\\cdot\\sqrt{\\frac{1}{4096}}$ as $2\\cdot\\sqrt[m]{\\frac{1}{4096}}$. What is the sum of all real numbers $m$ for which these two expressions have the same value?",
+      "choices": { "A": "$5$", "B": "$6$", "C": "$7$", "D": "$8$", "E": "$9$" }
+    },
+    {
+      "number": 12, "topic": "arithmetic_logic", "subtopic": "Logic puzzles",
+      "text": "On Halloween $31$ children walked into the principal's office asking for candy. They can be classified into three types: Some always lie; some always tell the truth; and some alternately lie and tell the truth. The alternaters arbitrarily choose their first response, either a lie or the truth, but each subsequent statement has the opposite truth value from its predecessor. The principal asked everyone the same three questions in this order.\n\n\"Are you a truth-teller?\" The principal gave a piece of candy to each of the $22$ children who answered yes.\n\n\"Are you an alternater?\" The principal gave a piece of candy to each of the $15$ children who answered yes.\n\n\"Are you a liar?\" The principal gave a piece of candy to each of the $9$ children who answered yes.\n\nHow many pieces of candy in all did the principal give to the children who always tell the truth?",
+      "choices": { "A": "$7$", "B": "$12$", "C": "$21$", "D": "$27$", "E": "$31$" }
+    },
+    {
+      "number": 13, "topic": "geometry", "subtopic": "Angle bisectors",
+      "text": "Let $\\triangle ABC$ be a scalene triangle. Point $P$ lies on $\\overline{BC}$ so that $\\overline{AP}$ bisects $\\angle BAC$. The line through $B$ perpendicular to $\\overline{AP}$ intersects the line through $A$ parallel to $\\overline{BC}$ at point $D$. Suppose $BP=2$ and $PC=3$. What is $AD$?",
+      "choices": { "A": "$8$", "B": "$9$", "C": "$10$", "D": "$11$", "E": "$12$" }
+    },
+    {
+      "number": 14, "topic": "counting_probability", "subtopic": "Pairings",
+      "text": "How many ways are there to split the integers $1$ through $14$ into $7$ pairs so that in each pair the greater number is at least $2$ times the lesser number?",
+      "choices": { "A": "$108$", "B": "$120$", "C": "$126$", "D": "$132$", "E": "$144$" }
+    },
+    {
+      "number": 15, "topic": "geometry", "subtopic": "Cyclic quadrilaterals",
+      "text": "Quadrilateral $ABCD$ with side lengths $AB=7$, $BC=24$, $CD=20$, and $DA=15$ is inscribed in a circle. The area interior to the circle but exterior to the quadrilateral can be written in the form $\\frac{a\\pi-b}{c}$, where $a$, $b$, and $c$ are positive integers such that $a$ and $c$ have no common prime factor. What is $a+b+c$?",
+      "choices": { "A": "$260$", "B": "$855$", "C": "$1235$", "D": "$1565$", "E": "$1997$" }
+    },
+    {
+      "number": 16, "topic": "algebra", "subtopic": "Polynomials",
+      "text": "The roots of the polynomial $10x^3-39x^2+29x-6$ are the height, length, and width of a rectangular box (right rectangular prism). A new rectangular box is formed by lengthening each edge of the original box by $2$ units. What is the volume of the new box?",
+      "choices": { "A": "$\\frac{24}{5}$", "B": "$\\frac{42}{5}$", "C": "$\\frac{81}{5}$", "D": "$30$", "E": "$48$" }
+    },
+    {
+      "number": 17, "topic": "number_theory", "subtopic": "Repeating decimals",
+      "text": "How many three-digit positive integers $\\underline{a}\\,\\underline{b}\\,\\underline{c}$ are there whose nonzero digits $a$, $b$, and $c$ satisfy $$0.\\overline{\\underline{a}\\,\\underline{b}\\,\\underline{c}}=\\frac13\\left(0.\\overline{a}+0.\\overline{b}+0.\\overline{c}\\right)?$$ (The bar indicates digit repetition; thus $0.\\overline{\\underline{a}\\,\\underline{b}\\,\\underline{c}}$ is the infinite repeating decimal $0.\\underline{a}\\,\\underline{b}\\,\\underline{c}\\,\\underline{a}\\,\\underline{b}\\,\\underline{c}\\ldots$)",
+      "choices": { "A": "$9$", "B": "$10$", "C": "$11$", "D": "$13$", "E": "$14$" }
+    },
+    {
+      "number": 18, "topic": "geometry", "subtopic": "Transformations",
+      "text": "Let $T_k$ be the transformation of the coordinate plane that first rotates the plane $k$ degrees counterclockwise around the origin and then reflects the plane across the $y$-axis. What is the least positive integer $n$ such that performing the sequence of transformations $T_1, T_2, T_3, \\ldots, T_n$ returns the point $(1,0)$ back to itself?",
+      "choices": { "A": "$359$", "B": "$360$", "C": "$719$", "D": "$720$", "E": "$721$" }
+    },
+    {
+      "number": 19, "topic": "number_theory", "subtopic": "Modular arithmetic",
+      "text": "Let $L_n$ denote the least common multiple of the numbers $1, 2, 3, \\ldots, n$, and let $h$ be the unique positive integer such that $$\\frac11+\\frac12+\\frac13+\\cdots+\\frac1{17}=\\frac{h}{L_{17}}.$$ What is the remainder when $h$ is divided by $17$?",
+      "choices": { "A": "$1$", "B": "$3$", "C": "$5$", "D": "$7$", "E": "$9$" }
+    },
+    {
+      "number": 20, "topic": "algebra", "subtopic": "Sequences",
+      "text": "A four-term sequence is formed by adding each term of a four-term arithmetic sequence of positive integers to the corresponding term of a four-term geometric sequence of positive integers. The first three terms of the resulting four-term sequence are $57$, $60$, and $91$. What is the fourth term of this sequence?",
+      "choices": { "A": "$190$", "B": "$194$", "C": "$198$", "D": "$202$", "E": "$206$" }
+    },
+    {
+      "number": 21, "topic": "geometry", "subtopic": "3D geometry",
+      "text": "A bowl is formed by attaching four regular hexagons of side $1$ to a square of side $1$. The edges of adjacent hexagons coincide, as shown in the figure. What is the area of the octagon obtained by joining the top eight vertices of the four hexagons, situated on the rim of the bowl?",
+      "figure": "The unit square is the flat bottom of the bowl. Each side of the square is one edge of a regular hexagon, and each hexagon tilts up and outward from the square. Next to each corner of the square, two neighbouring hexagons share an edge that runs up from that corner. Each hexagon's top edge is parallel to its bottom edge and lies on the rim, so the rim has $4\\times2=8$ vertices. They form an octagon in a horizontal plane.",
+      "choices": { "A": "$6$", "B": "$7$", "C": "$5+2\\sqrt2$", "D": "$8$", "E": "$9$" }
+    },
+    {
+      "number": 22, "topic": "counting_probability", "subtopic": "Permutations",
+      "text": "Suppose that $13$ cards numbered $1, 2, 3, \\ldots, 13$ are arranged in a row. The task is to pick them up in numerically increasing order, working repeatedly from left to right. In the example below, cards $1, 2, 3$ are picked up on the first pass, $4$ and $5$ on the second pass, $6$ on the third pass, $7, 8, 9, 10$ on the fourth pass, and $11, 12, 13$ on the fifth pass.\n\n$$7\\;\\;11\\;\\;8\\;\\;6\\;\\;4\\;\\;5\\;\\;9\\;\\;12\\;\\;1\\;\\;13\\;\\;10\\;\\;2\\;\\;3$$\n\nFor how many of the $13!$ possible orderings of the cards will the $13$ cards be picked up in exactly two passes?",
+      "choices": { "A": "$4082$", "B": "$4095$", "C": "$4096$", "D": "$8178$", "E": "$8191$" }
+    },
+    {
+      "number": 23, "topic": "geometry", "subtopic": "Trapezoids",
+      "text": "Isosceles trapezoid $ABCD$ has parallel sides $\\overline{AD}$ and $\\overline{BC}$, with $BC<AD$ and $AB=CD$. There is a point $P$ in the plane such that $PA=1$, $PB=2$, $PC=3$, and $PD=4$. What is $\\frac{BC}{AD}$?",
+      "choices": { "A": "$\\frac14$", "B": "$\\frac13$", "C": "$\\frac12$", "D": "$\\frac23$", "E": "$\\frac34$" }
+    },
+    {
+      "number": 24, "topic": "counting_probability", "subtopic": "Counting strings",
+      "text": "How many strings of length $5$ formed from the digits $0, 1, 2, 3, 4$ are there such that for each $j\\in\\{1,2,3,4\\}$, at least $j$ of the digits are less than $j$? (For example, $02214$ satisfies this condition because it contains at least $1$ digit less than $1$, at least $2$ digits less than $2$, at least $3$ digits less than $3$, and at least $4$ digits less than $4$. The string $23404$ does not satisfy the condition because it does not contain at least $2$ digits less than $2$.)",
+      "choices": { "A": "$500$", "B": "$625$", "C": "$1089$", "D": "$1199$", "E": "$1296$" }
+    },
+    {
+      "number": 25, "topic": "number_theory", "subtopic": "Lattice points",
+      "text": "Let $R$, $S$, and $T$ be squares that have vertices at lattice points (i.e., points whose coordinates are both integers) in the coordinate plane, together with their interiors. The bottom edge of each square is on the $x$-axis. The left edge of $R$ and the right edge of $S$ are on the $y$-axis, and $R$ contains $\\frac94$ as many lattice points as does $S$. The top two vertices of $T$ are in $R\\cup S$, and $T$ contains $\\frac14$ of the lattice points contained in $R\\cup S$. See the figure (not drawn to scale).\n\nThe fraction of lattice points in $S$ that are in $S\\cap T$ is $27$ times the fraction of lattice points in $R$ that are in $R\\cap T$. What is the minimum possible value of the edge length of $R$ plus the edge length of $S$ plus the edge length of $T$?",
+      "figure": "$R$ is a large square to the right of the $y$-axis ($x\\ge0$) with its bottom edge on the $x$-axis. $S$ is a smaller square to the left of the $y$-axis ($x\\le0$) with its bottom edge on the $x$-axis. $T$ has its bottom edge on the $x$-axis and straddles the $y$-axis: part of it lies in $S$ and part in $R$. $T$ is shorter than $S$, so its top-left vertex is inside $S$ and its top-right vertex is inside $R$. Lattice points on the boundary count as contained.",
+      "choices": { "A": "$336$", "B": "$337$", "C": "$338$", "D": "$339$", "E": "$340$" }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "AMC_10A_2022_P10",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 10
+  },
+  "topic": "geometry",
+  "subtopic": "Pythagorean theorem",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2022_P10.png",
+    "text": "Daniel finds a rectangular index card and measures its diagonal to be $8$ centimeters. Daniel then cuts out equal squares of side $1$ cm at two opposite corners of the index card and measures the distance between the two closest vertices of these squares to be $4\\sqrt2$ centimeters, as shown below. What is the area of the original index card?",
+    "choices": {
+      "A": "$14$",
+      "B": "$10\\sqrt2$",
+      "C": "$16$",
+      "D": "$12\\sqrt2$",
+      "E": "$18$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$18$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: two distances, two equations",
+      "body": "Call the card's width $x$ and height $y$. We are given two diagonal lengths, and each one is the hypotenuse of a right triangle, so the Pythagorean theorem turns each into an equation. We want the area $xy$, so we may not need $x$ and $y$ one at a time.",
+      "your_turn": {
+        "prompt": "Write the equation that comes from the full diagonal of length $8$.",
+        "answer": "$x^2 + y^2 = 64$."
+      }
+    },
+    {
+      "title": "Locate the notch corners",
+      "body": "Put the bottom-left corner of the card at $(0,0)$. The inner corner of the bottom-left notch is $(1,1)$, and the inner corner of the top-right notch is $(x-1,\\,y-1)$. So the dashed segment between them gives $$(x-2)^2 + (y-2)^2 = 32.$$",
+      "your_turn": {
+        "prompt": "Why is the horizontal gap $x-2$ and not $x-1$?",
+        "answer": "You lose $1$ cm at the left end and $1$ cm at the right end: $(x-1) - 1 = x-2$."
+      }
+    },
+    {
+      "title": "Expand and find x + y",
+      "body": "Expanding gives $x^2 + y^2 - 4(x+y) + 8 = 32$. Now use $x^2+y^2 = 64$ from the first equation, so $72 - 4(x+y) = 32$.",
+      "your_turn": {
+        "prompt": "Solve $72 - 4(x+y) = 32$ for $x+y$.",
+        "answer": "$4(x+y) = 40$, so $x+y = 10$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Use $(x+y)^2 = x^2 + y^2 + 2xy$ to get the area without finding $x$ and $y$: $$xy = \\frac{(x+y)^2 - (x^2+y^2)}{2} = \\frac{100-64}{2} = 18.$$ The sides are $5\\pm\\sqrt7$, which are real and both more than $2$, so the card really exists. The answer is **(E)** $18$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

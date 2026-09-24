@@ -1,0 +1,70 @@
+{
+  "id": "AMC_10A_2022_P13",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 13
+  },
+  "topic": "geometry",
+  "subtopic": "Angle bisectors",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2022_P13.png",
+    "text": "Let $\\triangle ABC$ be a scalene triangle. Point $P$ lies on $\\overline{BC}$ so that $\\overline{AP}$ bisects $\\angle BAC$. The line through $B$ perpendicular to $\\overline{AP}$ intersects the line through $A$ parallel to $\\overline{BC}$ at point $D$. Suppose $BP=2$ and $PC=3$. What is $AD$?",
+    "choices": {
+      "A": "$8$",
+      "B": "$9$",
+      "C": "$10$",
+      "D": "$11$",
+      "E": "$12$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$10$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: reflect $B$ across the bisector",
+      "body": "A line perpendicular to an angle bisector is a strong clue: reflecting across the bisector moves a point along exactly such a line. Reflect $B$ across line $AP$ and call the image $B'$. Since $BB' \\perp AP$, the point $B'$ lies on the line through $B$ perpendicular to $AP$, which is the line $BD$.",
+      "your_turn": {
+        "prompt": "Why does $B'$ land on line $AC$?",
+        "answer": "$AP$ bisects $\\angle BAC$, so reflecting across $AP$ swaps ray $AB$ with ray $AC$."
+      }
+    },
+    {
+      "title": "Locate $B'$ on side $AC$",
+      "body": "The angle bisector theorem says $AB : AC = BP : PC = 2 : 3$, so write $AB = 2k$ and $AC = 3k$. A reflection keeps lengths, so $AB' = AB = 2k$. That puts $B'$ on segment $AC$, strictly between $A$ and $C$.",
+      "your_turn": {
+        "prompt": "What is the ratio $AB' : B'C$?",
+        "answer": "$2 : 1$, since $AB' = 2k$ and $B'C = 3k - 2k = k$."
+      }
+    },
+    {
+      "title": "Spot the similar triangles",
+      "body": "Lines $AC$ and $BD$ cross at $B'$, and $AD \\parallel BC$. So triangles $AB'D$ and $CB'B$ have equal vertical angles at $B'$ and equal alternate angles at $A$ and $C$. They are similar, with ratio $AB' : CB'$. You never need the value of $k$.",
+      "your_turn": {
+        "prompt": "In triangle $CB'B$, which side matches $AD$?",
+        "answer": "$CB$, because $A$ matches $C$ and $D$ matches $B$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The similarity ratio is $AB' : CB' = 2 : 1$, and $CB = BP + PC = 5$.\n$$AD = 2 \\cdot BC = 2 \\cdot 5 = 10$$\nThe answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

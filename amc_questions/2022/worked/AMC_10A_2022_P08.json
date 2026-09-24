@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2022_P08",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 8
+  },
+  "topic": "arithmetic_logic",
+  "subtopic": "Averages",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2022_P08.png",
+    "text": "A data set consists of $6$ (not distinct) positive integers: $1$, $7$, $5$, $2$, $5$, and $X$. The average (arithmetic mean) of the $6$ numbers equals a value in the data set. What is the sum of all possible values of $X$?",
+    "choices": {
+      "A": "$10$",
+      "B": "$26$",
+      "C": "$32$",
+      "D": "$36$",
+      "E": "$40$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$36$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: list what the mean could be",
+      "body": "The mean has to equal a number in the data set, and there are only a few different numbers: $1$, $2$, $5$, $7$ and $X$ itself. So we can try each one in turn. First write the mean in terms of $X$.",
+      "your_turn": {
+        "prompt": "What is the sum $1+7+5+2+5$, and what is the mean of all six numbers?",
+        "answer": "The sum is $20$, so the mean is $\\frac{20+X}{6}$."
+      }
+    },
+    {
+      "title": "Try the fixed values",
+      "body": "If the mean is a number $m$, then $20+X = 6m$, so $X = 6m-20$. Mean $1$ gives $X=-14$ and mean $2$ gives $X=-8$. Both are rejected, because $X$ must be a positive integer. Mean $5$ gives $X = 10$.",
+      "your_turn": {
+        "prompt": "What value of $X$ makes the mean equal to $7$?",
+        "answer": "$X = 6\\cdot 7 - 20 = 22$."
+      }
+    },
+    {
+      "title": "Don't forget X itself",
+      "body": "Careful: $X$ is also a value in the data set, so the mean could equal $X$. This case is easy to miss. Set up the equation $$\\frac{20+X}{6} = X.$$",
+      "your_turn": {
+        "prompt": "Solve $\\frac{20+X}{6} = X$.",
+        "answer": "$20 + X = 6X$, so $5X = 20$ and $X = 4$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The possible values are $X = 4$, $10$ and $22$. Their sum is $4 + 10 + 22 = 36$. The answer is **(D)** $36$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "This is $10 + 22$, which forgets the case where the mean equals $X$ itself. That case gives $X = 4$, which must be added."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

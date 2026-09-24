@@ -1,0 +1,70 @@
+{
+  "id": "AMC_10A_2022_P20",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 20
+  },
+  "topic": "algebra",
+  "subtopic": "Sequences",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2022_P20.png",
+    "text": "A four-term sequence is formed by adding each term of a four-term arithmetic sequence of positive integers to the corresponding term of a four-term geometric sequence of positive integers. The first three terms of the resulting four-term sequence are $57$, $60$, and $91$. What is the fourth term of this sequence?",
+    "choices": {
+      "A": "$190$",
+      "B": "$194$",
+      "C": "$198$",
+      "D": "$202$",
+      "E": "$206$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$206$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: take differences",
+      "body": "Let the arithmetic sequence be $a, a+d, a+2d, a+3d$ and the geometric one be $g, gr, gr^2, gr^3$. That is four unknowns but only three equations. The clue is the word \"arithmetic\": taking differences twice wipes out an arithmetic sequence completely, which leaves only the geometric part.",
+      "your_turn": {
+        "prompt": "Find the differences of $57, 60, 91$, and then the difference of those two differences.",
+        "answer": "The differences are $3$ and $31$, and $31-3=28$."
+      }
+    },
+    {
+      "title": "The second difference",
+      "body": "In the second difference the arithmetic parts cancel, and the geometric parts give $g-2gr+gr^2$:\n$$g(r-1)^2=28$$\nSo $r\\ne 1$. Also $a\\ge 1$ gives $g=57-a\\le 56$. Could $r$ be a fraction $\\frac pq$ in lowest terms with $q\\ge 2$? Then $gr^3=\\frac{gp^3}{q^3}$ is a whole number only if $q^3$ divides $g$. Write $g=kq^3$, and the equation becomes $kq(p-q)^2=28$. So $q$ divides $28$, which leaves $q=2,4,7,14,28$. Each one gives $g=kq^3\\ge 112$. For example, $q=2$ forces $(p-2)^2=1$ and $k=14$, so $g=112$. That is too big, so $r$ is a whole number, and $r\\ge 2$.",
+      "your_turn": {
+        "prompt": "Which whole numbers $r\\ge 2$ make $(r-1)^2$ divide $28$? What is $g$ in each case?",
+        "answer": "$(r-1)^2$ can be $1$ or $4$, so $r=2$ with $g=28$, or $r=3$ with $g=7$."
+      }
+    },
+    {
+      "title": "Test each case",
+      "body": "The first two equations give $a=57-g$ and $d=3-g(r-1)$. Careful: $g(r-1)^2=28$ alone is not enough, because every term of the arithmetic sequence must also be a positive integer.",
+      "your_turn": {
+        "prompt": "Check $r=2$, $g=28$. What are $a$ and $d$, and what goes wrong?",
+        "answer": "$a=29$ and $d=3-28=-25$, so the third arithmetic term is $29-50=-21$, which is negative. This case fails."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $g=7$ and $r=3$, which gives $a=50$ and $d=3-14=-11$. The geometric sequence is $7, 21, 63, 189$ and the arithmetic one is $50, 39, 28, 17$, and their sums $57, 60, 91$ match. The fourth term is $189+17=206$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Hole found by adversarial verifier, fixed, and re-verified by a fresh verifier."
+  }
+}

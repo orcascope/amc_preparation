@@ -1,0 +1,64 @@
+{
+  "id": "AMC_10A_2022_P02",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 2
+  },
+  "topic": "arithmetic_logic",
+  "subtopic": "Rates",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2022_P02.png",
+    "text": "Mike cycled $15$ laps in $57$ minutes. Assume he cycled at a constant speed throughout. Approximately how many laps did he complete in the first $27$ minutes?",
+    "choices": {
+      "A": "$5$",
+      "B": "$7$",
+      "C": "$9$",
+      "D": "$11$",
+      "E": "$13$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$7$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: constant speed means proportional",
+      "body": "The clue is \"constant speed\". It means laps and time grow together: in a certain fraction of the time, Mike rides the same fraction of the laps. So first find what fraction of the $57$ minutes the first $27$ minutes are.",
+      "your_turn": {
+        "prompt": "Write $\\frac{27}{57}$ in lowest terms.",
+        "answer": "$\\frac{9}{19}$: divide top and bottom by $3$."
+      }
+    },
+    {
+      "title": "Find the time for one lap",
+      "body": "Another way to see the rate: $15$ laps in $57$ minutes means each lap takes $$\\frac{57}{15} = 3.8 \\text{ minutes}.$$ Careful: do not round $3.8$ down to $3$. That is almost a whole minute per lap, and over $27$ minutes the error adds up to about two laps.",
+      "your_turn": {
+        "prompt": "How long do $5$ laps take at this pace?",
+        "answer": "$5 \\times 3.8 = 19$ minutes."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The number of laps is $15\\cdot\\frac{9}{19} = \\frac{135}{19} \\approx 7.1$. Check: $7$ laps take $7 \\times 3.8 = 26.6$ minutes, just under $27$. Also, $\\frac{27}{57}$ is a bit less than $\\frac12$, so the answer should be a bit less than half of $15$, which is $7.5$. The answer is **(B)** $7$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "This comes from rounding $3.8$ minutes per lap down to $3$, which gives $27 \\div 3 = 9$. Check it: $9$ laps at $3.8$ minutes each take over $34$ minutes, far more than $27$."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

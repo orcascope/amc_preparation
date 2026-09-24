@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2022_P23",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 23
+  },
+  "topic": "geometry",
+  "subtopic": "Trapezoids",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10A_2022_P23.png",
+    "text": "Isosceles trapezoid $ABCD$ has parallel sides $\\overline{AD}$ and $\\overline{BC}$, with $BC<AD$ and $AB=CD$. There is a point $P$ in the plane such that $PA=1$, $PB=2$, $PC=3$, and $PD=4$. What is $\\frac{BC}{AD}$?",
+    "choices": {
+      "A": "$\\frac14$",
+      "B": "$\\frac13$",
+      "C": "$\\frac12$",
+      "D": "$\\frac23$",
+      "E": "$\\frac34$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$\\frac13$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: use the mirror line",
+      "body": "An isosceles trapezoid is symmetric about the line through the midpoints of its parallel sides. Make that line the $y$-axis: $A(-a,0)$, $D(a,0)$, $B(-b,h)$, $C(b,h)$, and let $P=(x,y)$. There are many unknowns, but $A$ and $D$ are mirror images, so $PA^2$ and $PD^2$ look almost the same. Subtracting them should cancel most of the mess.",
+      "your_turn": {
+        "prompt": "Write $PA^2$ and $PD^2$ in terms of $x$, $y$ and $a$.",
+        "answer": "$PA^2=(x+a)^2+y^2$ and $PD^2=(x-a)^2+y^2$."
+      }
+    },
+    {
+      "title": "Subtract a mirror pair",
+      "body": "In $PD^2-PA^2$ the $y^2$ terms cancel, and so do $x^2$ and $a^2$.\n$$PD^2-PA^2=(x-a)^2-(x+a)^2=-4ax=16-1=15$$\nCareful: always pair two vertices on the same horizontal line ($A$ with $D$, $B$ with $C$). That is what makes $y$ disappear.",
+      "your_turn": {
+        "prompt": "Do the same for $B(-b,h)$ and $C(b,h)$: what is $PC^2-PB^2$?",
+        "answer": "$(x-b)^2-(x+b)^2=-4bx$, and $9-4=5$, so $-4bx=5$. The $(y-h)^2$ terms cancel."
+      }
+    },
+    {
+      "title": "Only one unknown is shared",
+      "body": "Both equations, $-4ax=15$ and $-4bx=5$, contain the same unknown $x$, while $y$ and $h$ are gone. Dividing one equation by the other removes $x$ as well and leaves a relation between $a$ and $b$ only.",
+      "your_turn": {
+        "prompt": "In these coordinates, what are $AD$ and $BC$? So what is $\\frac{BC}{AD}$ in terms of $a$ and $b$?",
+        "answer": "$AD=2a$ and $BC=2b$, so $\\frac{BC}{AD}=\\frac{b}{a}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Divide the equations:\n$$\\frac{-4ax}{-4bx}=\\frac{15}{5}\\quad\\Longrightarrow\\quad \\frac{a}{b}=3.$$\nSo $\\frac{BC}{AD}=\\frac{b}{a}=\\frac13$. (Such a point $P$ really exists, for example with $a=2$.) The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "$\\frac23$ comes from subtracting across diagonals: $PC^2-PA^2=8$ and $PD^2-PB^2=12$. Those vertices are not mirror images, so the $y$ terms do not cancel and the ratio $\\frac{8}{12}$ means nothing. Pair $A$ with $D$ and $B$ with $C$."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

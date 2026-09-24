@@ -1,0 +1,81 @@
+{
+  "id": "AMC_10A_2022_P17",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 17
+  },
+  "topic": "number_theory",
+  "subtopic": "Repeating decimals",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2022_P17.png",
+    "text": "How many three-digit positive integers $\\underline{a}\\,\\underline{b}\\,\\underline{c}$ are there whose nonzero digits $a$, $b$, and $c$ satisfy $$0.\\overline{\\underline{a}\\,\\underline{b}\\,\\underline{c}}=\\frac13\\left(0.\\overline{a}+0.\\overline{b}+0.\\overline{c}\\right)?$$ (The bar indicates digit repetition; thus $0.\\overline{\\underline{a}\\,\\underline{b}\\,\\underline{c}}$ is the infinite repeating decimal $0.\\underline{a}\\,\\underline{b}\\,\\underline{c}\\,\\underline{a}\\,\\underline{b}\\,\\underline{c}\\ldots$)",
+    "choices": {
+      "A": "$9$",
+      "B": "$10$",
+      "C": "$11$",
+      "D": "$13$",
+      "E": "$14$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$13$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: turn the decimals into fractions",
+      "body": "Repeating decimals are hard to compare, but fractions are easy. A block of 3 repeating digits sits over $999$, and a single repeating digit sits over $9$: for example, $0.\\overline{123}=\\frac{123}{999}$ and $0.\\overline{7}=\\frac79$. Rewriting both sides this way turns the condition into an equation about the digits.",
+      "your_turn": {
+        "prompt": "Write the right side, $\\frac13\\left(0.\\overline{a}+0.\\overline{b}+0.\\overline{c}\\right)$, as a single fraction.",
+        "answer": "$\\frac{a+b+c}{27}$: each digit gives $\\frac{d}{9}$, and dividing the sum by $3$ makes the denominator $27$."
+      }
+    },
+    {
+      "title": "Clear the denominators",
+      "body": "The left side is $\\frac{100a+10b+c}{999}$. Since $999=27\\cdot 37$, multiply both sides by $999$ and simplify:\n$$100a+10b+c=37(a+b+c) \\;\\Longrightarrow\\; 7a=3b+4c.$$",
+      "your_turn": {
+        "prompt": "Check the simplification. What equation do you get after moving everything to one side, before dividing?",
+        "answer": "$63a=27b+36c$. Dividing by $9$ gives $7a=3b+4c$."
+      }
+    },
+    {
+      "title": "Use divisibility by 7",
+      "body": "The left side $7a$ is a multiple of $7$, so $3b+4c$ must be one too. Since $4c\\equiv -3c \\pmod 7$, this says $3(b-c)$ is a multiple of $7$, so $b-c$ is a multiple of $7$. With digits from $1$ to $9$, either $b=c$ or $b$ and $c$ differ by exactly $7$.",
+      "your_turn": {
+        "prompt": "Suppose $b=c$. What does $7a=3b+4c$ tell you about $a$, and how many numbers does this case give?",
+        "answer": "$7a=7b$, so $a=b=c$. That gives $111, 222, \\ldots, 999$: $9$ numbers."
+      }
+    },
+    {
+      "title": "The difference-7 case",
+      "body": "Now $(b,c)$ is one of $(8,1)$, $(9,2)$, $(1,8)$, or $(2,9)$. Remember both directions: $b$ can be the larger digit or $c$ can. For each pair, check whether $3b+4c$ is $7$ times a digit. Careful: $(7,0)$ and $(0,7)$ also differ by $7$, but they use the digit $0$, which the problem does not allow.",
+      "your_turn": {
+        "prompt": "Try $(b,c)=(8,1)$. What is $a$, and what is the number?",
+        "answer": "$3\\cdot 8+4\\cdot 1=28=7\\cdot 4$, so $a=4$ and the number is $481$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "All four pairs work: $(8,1)$ gives $481$, $(9,2)$ gives $592$, $(1,8)$ gives $518$, and $(2,9)$ gives $629$. Adding these $4$ numbers to the $9$ numbers with equal digits gives $9+4=13$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "$9$ counts only the numbers with $a=b=c$. The divisibility step allows $b-c=0$ or $b-c=\\pm 7$, and the $\\pm 7$ case adds $4$ more numbers.",
+    "C": "$11$ comes from trying only $b-c=7$ and forgetting $c-b=7$, which gives $518$ and $629$."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

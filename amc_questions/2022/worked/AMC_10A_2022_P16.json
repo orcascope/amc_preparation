@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2022_P16",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 16
+  },
+  "topic": "algebra",
+  "subtopic": "Polynomials",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2022_P16.png",
+    "text": "The roots of the polynomial $10x^3-39x^2+29x-6$ are the height, length, and width of a rectangular box (right rectangular prism). A new rectangular box is formed by lengthening each edge of the original box by $2$ units. What is the volume of the new box?",
+    "choices": {
+      "A": "$\\frac{24}{5}$",
+      "B": "$\\frac{42}{5}$",
+      "C": "$\\frac{81}{5}$",
+      "D": "$30$",
+      "E": "$48$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$30$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: expand the new volume",
+      "body": "Call the roots $a$, $b$, $c$. The new box has edges $a+2$, $b+2$, $c+2$. You do not need the roots themselves: when you expand the product, the volume depends only on the sum of the roots, the sum of their pairwise products, and their product, and those come straight from the coefficients.\n$$(a+2)(b+2)(c+2) = abc + 2(ab+bc+ca) + 4(a+b+c) + 8$$",
+      "your_turn": {
+        "prompt": "Why is the coefficient of $(a+b+c)$ equal to $4$ in this expansion?",
+        "answer": "A term like $4a$ comes from choosing $a$ from one factor and $2$ from each of the other two: $a\\cdot 2\\cdot 2 = 4a$."
+      }
+    },
+    {
+      "title": "Read the sums off with Vieta's formulas",
+      "body": "Vieta's formulas link the coefficients of $px^3+qx^2+rx+s$ to its roots: $a+b+c=-\\frac{q}{p}$, $ab+bc+ca=\\frac{r}{p}$, and $abc=-\\frac{s}{p}$. Careful: the signs alternate, so check each one.",
+      "your_turn": {
+        "prompt": "Find $a+b+c$, $ab+bc+ca$, and $abc$ for $10x^3-39x^2+29x-6$.",
+        "answer": "$a+b+c=\\frac{39}{10}$, $ab+bc+ca=\\frac{29}{10}$, and $abc=\\frac{6}{10}=\\frac35$."
+      }
+    },
+    {
+      "title": "Substitute, and find the roots as a check",
+      "body": "In the expansion, $2(ab+bc+ca)=\\frac{29}{5}$ and $4(a+b+c)=\\frac{78}{5}$, while $abc=\\frac35$. To check your work another way, this polynomial actually factors: try $x=3$.",
+      "your_turn": {
+        "prompt": "Check that $x=3$ is a root. Then find the other two roots from the quotient $10x^2-9x+2$.",
+        "answer": "$270-351+87-6=0$, so $3$ is a root. $10x^2-9x+2=(2x-1)(5x-2)$, so the other roots are $\\frac12$ and $\\frac25$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The volume is $\\frac35+\\frac{29}{5}+\\frac{78}{5}+8 = \\frac{110}{5}+8 = 30$. The roots agree: $5\\cdot\\frac52\\cdot\\frac{12}{5}=30$. (Shortcut: $p(x)=10(x-a)(x-b)(x-c)$, so $p(-2)=-10(a+2)(b+2)(c+2)$, and $p(-2)=-300$.) The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "$\\frac{24}{5}$ is $2^3\\cdot\\frac35$, the volume you get if every edge is doubled. The problem adds $2$ to each edge; it does not multiply each edge by $2$."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

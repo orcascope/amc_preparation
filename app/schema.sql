@@ -1,0 +1,67 @@
+-- Content tables: rebuilt from amc_questions/<year>/worked/*.json by
+-- tools/import_worked.py. Never edit these by hand; edit the JSON and re-import.
+CREATE TABLE IF NOT EXISTS problems (
+    id              TEXT PRIMARY KEY,          -- AMC_10A_2022_P07
+    year            INTEGER NOT NULL,
+    contest         TEXT NOT NULL,             -- 10A / 10B
+    session         TEXT,                      -- Spring / Fall / NULL
+    number          INTEGER NOT NULL,
+    topic           TEXT NOT NULL,
+    subtopic        TEXT NOT NULL,
+    difficulty      INTEGER NOT NULL,          -- 1 easy, 2 medium, 3 hard
+    image           TEXT NOT NULL,             -- path relative to amc_questions/
+    text            TEXT NOT NULL,
+    choices_json    TEXT NOT NULL,
+    answer_choice   TEXT NOT NULL,
+    answer_value    TEXT NOT NULL,
+    verification_json TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS steps (
+    problem_id      TEXT NOT NULL REFERENCES problems(id) ON DELETE CASCADE,
+    idx             INTEGER NOT NULL,          -- 1-based
+    title           TEXT NOT NULL,
+    body            TEXT NOT NULL,
+    your_turn_prompt TEXT,
+    your_turn_answer TEXT,
+    reveals_answer  INTEGER NOT NULL DEFAULT 0,
+    PRIMARY KEY (problem_id, idx)
+);
+
+CREATE TABLE IF NOT EXISTS wrong_choices (
+    problem_id      TEXT NOT NULL REFERENCES problems(id) ON DELETE CASCADE,
+    choice          TEXT NOT NULL,
+    explanation     TEXT NOT NULL,
+    PRIMARY KEY (problem_id, choice)
+);
+
+-- Student tables: never touched by the importer.
+CREATE TABLE IF NOT EXISTS students (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    name            TEXT NOT NULL UNIQUE COLLATE NOCASE,
+    created_at      TEXT NOT NULL DEFAULT (datetime('now')),
+    last_seen       TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS attempts (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    student_id      INTEGER NOT NULL REFERENCES students(id),
+    problem_id      TEXT NOT NULL,
+    choice          TEXT NOT NULL,
+    correct         INTEGER NOT NULL,
+    created_at      TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+-- status: in_progress | solved_own | solved_hints | shown
+-- completed: 1 once the student marks the problem done (or answers correctly).
+CREATE TABLE IF NOT EXISTS progress (
+    student_id      INTEGER NOT NULL REFERENCES students(id),
+    problem_id      TEXT NOT NULL,
+    status          TEXT NOT NULL DEFAULT 'in_progress',
+    hints_used      INTEGER NOT NULL DEFAULT 0,
+    attempts        INTEGER NOT NULL DEFAULT 0,
+    solution_viewed INTEGER NOT NULL DEFAULT 0,
+    completed       INTEGER NOT NULL DEFAULT 0,
+    updated_at      TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (student_id, problem_id)
+);

@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2022_P21",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 21
+  },
+  "topic": "geometry",
+  "subtopic": "3D geometry",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10A_2022_P21.png",
+    "text": "A bowl is formed by attaching four regular hexagons of side $1$ to a square of side $1$. The edges of adjacent hexagons coincide, as shown in the figure. What is the area of the octagon obtained by joining the top eight vertices of the four hexagons, situated on the rim of the bowl?",
+    "choices": {
+      "A": "$6$",
+      "B": "$7$",
+      "C": "$5+2\\sqrt2$",
+      "D": "$8$",
+      "E": "$9$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$7$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: look down from above",
+      "body": "The rim octagon lies in a horizontal plane, so its area equals the area of its shadow on the floor. That turns a 3D problem into a flat one: we only need to know how far out each hexagon's top edge reaches when seen from directly above. Put the square's corners at $(\\pm\\tfrac12, \\pm\\tfrac12)$ and focus on the front hexagon, hinged on the edge $y=-\\tfrac12$.",
+      "your_turn": {
+        "prompt": "In a flat regular hexagon of side $1$, how far is the top edge from the bottom edge? How far are the two middle (side) vertices from the bottom edge?",
+        "answer": "Top edge: $\\sqrt3$ (two equilateral-triangle heights). Middle vertices: $\\tfrac{\\sqrt3}{2}$, exactly half as far."
+      }
+    },
+    {
+      "title": "Use the shared edge at a corner",
+      "body": "Look at the corner $(\\tfrac12, -\\tfrac12)$. The front hexagon's next vertex is $\\tfrac12$ further along its bottom edge's direction, so its shadow has $x = 1$. That same vertex belongs to the right-hand hexagon, where it is $\\tfrac12$ further along that hexagon's bottom edge, so its shadow has $y = -1$. Tilting a hexagon about its bottom edge does not change distances along that edge, which is why these two facts can be read off directly.",
+      "your_turn": {
+        "prompt": "The shared vertex's shadow is at $(1,-1)$. How far outward (away from the line $y=-\\tfrac12$) is it?",
+        "answer": "$\\tfrac12$, since $y$ goes from $-\\tfrac12$ to $-1$."
+      }
+    },
+    {
+      "title": "Scale up to the top edge",
+      "body": "Tilting the front hexagon shrinks every distance perpendicular to its hinge by the same factor. In the flat hexagon the top edge is twice as far from the bottom edge as the middle vertex, so its shadow is also twice as far out: $2\\cdot\\tfrac12 = 1$ unit beyond the square. The top edge's shadow is the segment from $(-\\tfrac12,-\\tfrac32)$ to $(\\tfrac12,-\\tfrac32)$. (As a bonus, the rim height is $\\sqrt{3-1}=\\sqrt2$.)",
+      "your_turn": {
+        "prompt": "By symmetry, list all eight vertices of the octagon's shadow.",
+        "answer": "$(\\pm\\tfrac12, \\pm\\tfrac32)$ and $(\\pm\\tfrac32, \\pm\\tfrac12)$: each hexagon's top edge is 1 unit outside its side of the square."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The eight points fit inside the $3\\times3$ square $[-\\tfrac32,\\tfrac32]^2$, which is missing four corner triangles with legs $1$ and $1$. Careful: this octagon is not regular. Its top edges have length $1$ but its slanted sides have length $\\sqrt2$, so a regular-octagon formula does not apply.\n$$9 - 4\\cdot\\tfrac12 = 7$$\nThe area is $7$. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$9$ is the whole $3\\times3$ square around the octagon. The octagon's corners are cut off: between two neighbouring top edges the rim runs diagonally, removing four triangles of area $\\tfrac12$."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

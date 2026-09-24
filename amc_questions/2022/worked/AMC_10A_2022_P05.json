@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2022_P05",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 5
+  },
+  "topic": "geometry",
+  "subtopic": "Polygons in a square",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2022_P05.png",
+    "text": "Square $ABCD$ has side length $1$. Points $P$, $Q$, $R$, and $S$ each lie on a side of $ABCD$ so that $APQCRS$ is an equilateral convex hexagon with side length $s$. What is $s$?",
+    "choices": {
+      "A": "$\\frac{\\sqrt2}{3}$",
+      "B": "$\\frac12$",
+      "C": "$2-\\sqrt2$",
+      "D": "$1-\\frac{\\sqrt2}{4}$",
+      "E": "$\\frac23$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$2-\\sqrt2$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: sketch the hexagon and find the lengths along the sides",
+      "body": "Two of the hexagon's corners, $A$ and $C$, are corners of the square. Going around $A \\to P \\to Q \\to C$, the point $P$ sits on side $AB$ and $Q$ sits on side $BC$. So the hexagon sides $AP$ and $QC$ lie right along the square's sides, and each has length $s$.",
+      "your_turn": {
+        "prompt": "Side $AB$ has length $1$ and $AP = s$. What are $PB$ and $BQ$ in terms of $s$?",
+        "answer": "Both are $1-s$: $PB = 1 - AP$ and $BQ = 1 - QC$."
+      }
+    },
+    {
+      "title": "Look at the corner triangle",
+      "body": "The hexagon cuts off triangle $PBQ$ at corner $B$. It has a right angle at $B$ and two legs of length $1-s$, so it is a right isosceles (45-45-90) triangle. Careful: the hexagon side $PQ$ is the slanted side, the hypotenuse, not a leg.",
+      "your_turn": {
+        "prompt": "In a right isosceles triangle with legs $L$, how long is the hypotenuse?",
+        "answer": "$L\\sqrt2$, by the Pythagorean theorem: $\\sqrt{L^2+L^2} = L\\sqrt2$."
+      }
+    },
+    {
+      "title": "Set up the equation",
+      "body": "So $PQ = \\sqrt2\\,(1-s)$. But $PQ$ is also a side of the equilateral hexagon, so it equals $s$: $$\\sqrt2\\,(1-s) = s.$$",
+      "your_turn": {
+        "prompt": "Move all the $s$ terms to one side. What equation do you get?",
+        "answer": "$\\sqrt2 = s + \\sqrt2\\,s = s(1+\\sqrt2)$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Divide and rationalize by multiplying top and bottom by $\\sqrt2 - 1$: $$s = \\frac{\\sqrt2}{1+\\sqrt2} = \\frac{\\sqrt2(\\sqrt2-1)}{(\\sqrt2+1)(\\sqrt2-1)} = 2-\\sqrt2.$$ Check: $s \\approx 0.586$ and $1-s \\approx 0.414$, and $0.414 \\times 1.414 \\approx 0.586$. The answer is **(C)** $2-\\sqrt2$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "This comes from treating $PQ$ as if it were a leg of the corner triangle, so $1-s = s$. But $PQ$ is the hypotenuse, which is $\\sqrt2$ times the leg.",
+    "A": "This comes from assuming $A$, $P$, $Q$, $C$ lie on a straight line, so the three sides split the diagonal $AC = \\sqrt2$ into thirds. But the path bends at $P$ and $Q$, so its length is more than the diagonal."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2022_P04",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 4
+  },
+  "topic": "algebra",
+  "subtopic": "Unit conversion",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2022_P04.png",
+    "text": "In some countries, automobile fuel efficiency is measured in liters per $100$ kilometers while other countries use miles per gallon. Suppose that $1$ kilometer equals $m$ miles, and $1$ gallon equals $\\ell$ liters. Which of the following gives the fuel efficiency in liters per $100$ kilometers for a car that gets $x$ miles per gallon?",
+    "choices": {
+      "A": "$\\frac{x}{100\\ell m}$",
+      "B": "$\\frac{x\\ell m}{100}$",
+      "C": "$\\frac{\\ell m}{100x}$",
+      "D": "$\\frac{100}{x\\ell m}$",
+      "E": "$\\frac{100\\ell m}{x}$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$\\frac{100\\ell m}{x}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: follow one trip",
+      "body": "\"Liters per $100$ kilometers\" asks a concrete question: how many liters does the car burn on a $100$ km trip? So follow that trip through the units: kilometers to miles, miles to gallons, gallons to liters.",
+      "your_turn": {
+        "prompt": "How many miles is $100$ kilometers?",
+        "answer": "$100m$ miles, since each kilometer is $m$ miles."
+      }
+    },
+    {
+      "title": "Miles to gallons",
+      "body": "The car goes $x$ miles on each gallon. So a trip of $d$ miles uses $\\frac{d}{x}$ gallons. For example, $60$ miles at $30$ miles per gallon uses $2$ gallons.",
+      "your_turn": {
+        "prompt": "How many gallons does the $100m$-mile trip use?",
+        "answer": "$\\frac{100m}{x}$ gallons: divide the miles by the miles per gallon."
+      }
+    },
+    {
+      "title": "Know which way each letter should push",
+      "body": "Before the last conversion, decide what a correct answer must do. A car with higher mpg $x$ is more efficient, so it burns fewer liters. A bigger $\\ell$ means each gallon holds more liters, and a bigger $m$ means $100$ km is a longer drive in miles, so both should give more liters.",
+      "your_turn": {
+        "prompt": "Which answer choices have $x$ in the denominator and $\\ell$ and $m$ in the numerator?",
+        "answer": "(C) and (E). The other three each fail at least one check, so the last conversion only has to decide between these two."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each gallon is $\\ell$ liters, so the trip uses $$\\frac{100m}{x}\\cdot \\ell = \\frac{100\\ell m}{x} \\text{ liters}.$$ It goes down when $x$ grows and up when $\\ell$ or $m$ grows, just as it should. The answer is **(E)** $\\frac{100\\ell m}{x}$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This is the rate turned upside down: it measures distance per fuel, not fuel per distance. You can spot it because it gets bigger when $x$ gets bigger, but a more efficient car should use fewer liters.",
+    "D": "This comes from applying both conversions backwards, dividing by $m$ to turn kilometers into miles and dividing by $\\ell$ to turn gallons into liters. Check: a bigger $\\ell$ should mean more liters, but here it gives fewer."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

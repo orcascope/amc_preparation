@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2022_P18",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 18
+  },
+  "topic": "geometry",
+  "subtopic": "Transformations",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2022_P18.png",
+    "text": "Let $T_k$ be the transformation of the coordinate plane that first rotates the plane $k$ degrees counterclockwise around the origin and then reflects the plane across the $y$-axis. What is the least positive integer $n$ such that performing the sequence of transformations $T_1, T_2, T_3, \\ldots, T_n$ returns the point $(1,0)$ back to itself?",
+    "choices": {
+      "A": "$359$",
+      "B": "$360$",
+      "C": "$719$",
+      "D": "$720$",
+      "E": "$721$"
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$359$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: follow the angle",
+      "body": "Rotations about the origin and reflections across the $y$-axis never change a point's distance from the origin, so $(1,0)$ stays on the unit circle. That means you only need to track one number: the point's angle $\\theta$, in degrees. A counterclockwise rotation by $k$ degrees adds $k$ to the angle.",
+      "your_turn": {
+        "prompt": "Reflecting across the $y$-axis sends $(\\cos\\theta, \\sin\\theta)$ to $(-\\cos\\theta, \\sin\\theta)$. What is the new angle?",
+        "answer": "$180-\\theta$, because $\\cos(180-\\theta)=-\\cos\\theta$ and $\\sin(180-\\theta)=\\sin\\theta$."
+      }
+    },
+    {
+      "title": "One transformation as a formula",
+      "body": "Rotate first, then reflect: $\\theta$ becomes $\\theta+k$, and then $180-(\\theta+k)$.\n$$T_k:\\ \\theta \\mapsto 180-k-\\theta$$",
+      "your_turn": {
+        "prompt": "Start at $\\theta=0$. What is the angle after $T_1$? After $T_1$ and then $T_2$?",
+        "answer": "After $T_1$: $180-1-0=179$. After $T_2$: $180-2-179=-1$."
+      }
+    },
+    {
+      "title": "Pair up the steps",
+      "body": "Doing $T_k$ and then $T_{k+1}$ gives $180-(k+1)-(180-k-\\theta)=\\theta-1$. So each pair of steps turns the point back by exactly $1^\\circ$. After $2m$ steps the angle is $-m$, and one more step gives $180-(2m+1)-(-m)$.\n$$\\theta_{2m}=-m, \\qquad \\theta_{2m+1}=179-m$$",
+      "your_turn": {
+        "prompt": "For an even number of steps, $n=2m$, what is the smallest $m\\ge 1$ that brings the point back to $(1,0)$?",
+        "answer": "$-m$ must be a multiple of $360$, so $m=360$ and $n=720$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Careful: do not stop at the even case. For odd $n=2m+1$ we need $179-m$ to be a multiple of $360$, and the smallest $m\\ge 0$ that works is $m=179$, giving $n=2\\cdot179+1=359$. Since $359<720$, the least $n$ is $359$. The answer is **(A)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "$720$ is the first time an even number of steps returns the point. An odd number of steps can also bring it back, and that happens sooner.",
+    "C": "$719$ comes from reflecting across the $x$-axis (angle $\\theta \\to -\\theta$) instead of the $y$-axis. Reflecting across the $y$-axis changes the sign of $x$, so the angle becomes $180-\\theta$."
+  },
+  "verification": {
+    "official_answer": "A",
+    "solver_answer": "A",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

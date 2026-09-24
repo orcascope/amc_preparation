@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2022_P12",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 12
+  },
+  "topic": "arithmetic_logic",
+  "subtopic": "Logic puzzles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2022_P12.png",
+    "text": "On Halloween $31$ children walked into the principal's office asking for candy. They can be classified into three types: Some always lie; some always tell the truth; and some alternately lie and tell the truth. The alternaters arbitrarily choose their first response, either a lie or the truth, but each subsequent statement has the opposite truth value from its predecessor. The principal asked everyone the same three questions in this order.\n\n\"Are you a truth-teller?\" The principal gave a piece of candy to each of the $22$ children who answered yes.\n\n\"Are you an alternater?\" The principal gave a piece of candy to each of the $15$ children who answered yes.\n\n\"Are you a liar?\" The principal gave a piece of candy to each of the $9$ children who answered yes.\n\nHow many pieces of candy in all did the principal give to the children who always tell the truth?",
+    "choices": {
+      "A": "$7$",
+      "B": "$12$",
+      "C": "$21$",
+      "D": "$27$",
+      "E": "$31$"
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$7$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: split the alternaters into two kinds",
+      "body": "The clue is that alternaters choose their first response freely. Once that first choice is made, all three of their answers are fixed. So think of four kinds of children: truth-tellers $T$, liars $L$, alternaters who start with the truth $A$, and alternaters who start with a lie $B$.",
+      "your_turn": {
+        "prompt": "An alternater who starts with the truth is asked \"Are you a truth-teller?\" What does it answer?",
+        "answer": "No. It is not a truth-teller, and it is telling the truth this time."
+      }
+    },
+    {
+      "title": "Find each kind's three answers",
+      "body": "A truth-teller answers yes, no, no. A liar flips every true answer, so a liar answers yes, yes, no. Careful: a liar says **no** to \"Are you a liar?\", because the true answer is yes. An alternater who starts with the truth answers no, no, no.",
+      "your_turn": {
+        "prompt": "Work out the three answers of an alternater who starts with a lie.",
+        "answer": "Yes, yes, yes: a lie (yes), then the truth (yes), then a lie (yes)."
+      }
+    },
+    {
+      "title": "Turn the counts into equations",
+      "body": "Now match each question to the kinds that said yes. Question 1 gets yes from $T$, $L$ and $B$. Question 2 gets yes from $L$ and $B$. Question 3 gets yes from $B$ only.\n$$T + L + B = 22, \\qquad L + B = 15, \\qquad B = 9$$",
+      "your_turn": {
+        "prompt": "Find $B$ and $L$.",
+        "answer": "$B = 9$ from the third equation, so $L = 15 - 9 = 6$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "From the first equation, $T = 22 - 15 = 7$. As a check, $A = 31 - 7 - 6 - 9 = 9$, which is a sensible count. Each truth-teller says yes only to the first question, so each gets exactly one piece, for $7$ pieces in all. The answer is **(A)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "$21 = 3 \\cdot 7$ comes from giving each truth-teller a piece for all three questions. But candy only goes to children who answer yes, and a truth-teller says yes only to the first question."
+  },
+  "verification": {
+    "official_answer": "A",
+    "solver_answer": "A",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

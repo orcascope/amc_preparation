@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2022_P07",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 7
+  },
+  "topic": "number_theory",
+  "subtopic": "LCM and GCD",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2022_P07.png",
+    "text": "The least common multiple of a positive integer $n$ and $18$ is $180$, and the greatest common divisor of $n$ and $45$ is $15$. What is the sum of the digits of $n$?",
+    "choices": {
+      "A": "$3$",
+      "B": "$6$",
+      "C": "$8$",
+      "D": "$9$",
+      "E": "$12$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$6$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: factor everything into primes",
+      "body": "LCM and GCD questions are easiest with prime factorizations, because both are decided one prime at a time. Here $18 = 2\\cdot 3^2$ and $45 = 3^2\\cdot 5$. Since $n$ divides its LCM with $18$, $n$ also divides $180$, so $n$ can only use the primes $2$, $3$ and $5$.",
+      "your_turn": {
+        "prompt": "Write $180$ as a product of prime powers.",
+        "answer": "$180 = 2^2\\cdot 3^2\\cdot 5$."
+      }
+    },
+    {
+      "title": "Use the LCM: take the bigger exponent",
+      "body": "For each prime, the LCM uses the larger of the two exponents. The LCM has $2^2$, but $18$ has only $2^1$, so $n$ must supply the $2^2$. In the same way, $18$ has no $5$, so $n$ must supply the $5$. The power of $3$ in $n$ can be anything up to $2$, because $18$ already has $3^2$.",
+      "your_turn": {
+        "prompt": "Why can't $n$ have only $2^1$?",
+        "answer": "Then neither $n$ nor $18$ has $2^2$, so the LCM would have only $2^1$, not $2^2$."
+      }
+    },
+    {
+      "title": "Use the GCD: take the smaller exponent",
+      "body": "The GCD uses the smaller exponent for each prime. Write the power of $3$ in $n$ as $3^b$. Since $45$ has $3^2$ and $\\gcd(n,45) = 15 = 3\\cdot 5$, we need $\\min(b,2) = 1$.",
+      "your_turn": {
+        "prompt": "What must $b$ be? Why not $b=2$?",
+        "answer": "$b=1$. If $b=2$, the GCD would contain $3^2$ and be $45$, not $15$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $n = 2^2\\cdot 3\\cdot 5 = 60$. Check: $\\text{lcm}(60,18) = 180$ and $\\gcd(60,45) = 15$. The digit sum is $6+0 = 6$. The answer is **(B)** $6$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "This comes from guessing $n = 180$ from the LCM alone. But $\\gcd(180,45) = 45$, not $15$, so the GCD condition rules it out.",
+    "A": "This comes from $n = 30$, which forgets that $n$ must supply the $2^2$. Check: $\\text{lcm}(30,18) = 90$, not $180$."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

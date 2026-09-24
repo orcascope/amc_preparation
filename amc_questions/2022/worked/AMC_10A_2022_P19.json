@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10A_2022_P19",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 19
+  },
+  "topic": "number_theory",
+  "subtopic": "Modular arithmetic",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10A_2022_P19.png",
+    "text": "Let $L_n$ denote the least common multiple of the numbers $1, 2, 3, \\ldots, n$, and let $h$ be the unique positive integer such that $$\\frac11+\\frac12+\\frac13+\\cdots+\\frac1{17}=\\frac{h}{L_{17}}.$$ What is the remainder when $h$ is divided by $17$?",
+    "choices": {
+      "A": "$1$",
+      "B": "$3$",
+      "C": "$5$",
+      "D": "$7$",
+      "E": "$9$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$5$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: multiply through by $L_{17}$",
+      "body": "Multiplying both sides by $L_{17}$ turns every fraction into a whole number, so $h$ is a sum of integers. The question asks about remainders mod $17$, so the natural next question is: which of these integers are multiples of $17$?\n$$h=\\frac{L_{17}}{1}+\\frac{L_{17}}{2}+\\cdots+\\frac{L_{17}}{17}$$",
+      "your_turn": {
+        "prompt": "How are $L_{17}$ and $L_{16}$ related?",
+        "answer": "$L_{17}=17\\cdot L_{16}$, because $17$ is prime and does not divide any of $1$ through $16$."
+      }
+    },
+    {
+      "title": "Almost every term drops out",
+      "body": "For $k\\le 16$, the term $\\frac{L_{17}}{k}=17\\cdot\\frac{L_{16}}{k}$, and $\\frac{L_{16}}{k}$ is a whole number, so the term is a multiple of $17$. Only the last term is left.\n$$h\\equiv \\frac{L_{17}}{17}=L_{16} \\pmod{17}$$",
+      "your_turn": {
+        "prompt": "Write $L_{16}$ as a product of prime powers.",
+        "answer": "$2^4\\cdot 3^2\\cdot 5\\cdot 7\\cdot 11\\cdot 13$: take the highest power of each prime that is at most $16$."
+      }
+    },
+    {
+      "title": "Reduce mod 17 in small pieces",
+      "body": "Do not multiply everything out. Reduce pieces as you go: $2^4=16\\equiv -1$ and $5\\cdot 7=35\\equiv 1 \\pmod{17}$, while $3^2=9$ stays as it is. Careful: include every prime below $17$, including $11$ and $13$.",
+      "your_turn": {
+        "prompt": "What is $11\\cdot 13$ mod $17$?",
+        "answer": "$143=8\\cdot 17+7$, so the remainder is $7$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Multiply the pieces: $L_{16}\\equiv(-1)\\cdot 9\\cdot 1\\cdot 7=-63 \\pmod{17}$. Adding $4\\cdot 17=68$ gives $5$, so $h$ leaves remainder $5$. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "$3$ comes from leaving $13$ out of $L_{16}$: then you get $(-1)\\cdot 9\\cdot 1\\cdot 11=-99\\equiv 3$. $L_{16}$ must contain every prime up to $16$."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2022_P09",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 9
+  },
+  "topic": "counting_probability",
+  "subtopic": "Colorings",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2022_P09.png",
+    "text": "A rectangle is partitioned into $5$ regions as shown. Each region is to be painted a solid color—red, orange, yellow, blue, or green—so that regions that touch are painted different colors, and colors can be used more than once. How many different colorings are possible?",
+    "choices": {
+      "A": "$120$",
+      "B": "$270$",
+      "C": "$360$",
+      "D": "$540$",
+      "E": "$720$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$540$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: color the most crowded regions first",
+      "body": "In coloring problems, start with the regions that have the most neighbors, because they have the most rules to follow. Call the regions top-left (TL), top-right (TR), bottom-left (BL), bottom-middle (BM) and bottom-right (BR). Look for a group of regions that all touch each other.",
+      "your_turn": {
+        "prompt": "Which three regions all touch one another?",
+        "answer": "TL, TR and BM: TL touches TR, and both top regions sit above part of BM."
+      }
+    },
+    {
+      "title": "Color the three that touch",
+      "body": "TL, TR and BM must get three different colors. Pick them one at a time: TL has $5$ choices, TR has $4$, and BM has $3$. That gives $5\\cdot 4\\cdot 3 = 60$ ways.",
+      "your_turn": {
+        "prompt": "Why does BM have exactly $3$ choices, and not $4$?",
+        "answer": "BM touches both TL and TR, which already use two different colors, so $5-2 = 3$ colors are left."
+      }
+    },
+    {
+      "title": "Add the two outer regions",
+      "body": "BL touches only TL and BM. Those two already have different colors, so BL has $5-2 = 3$ choices. Careful: BL does not touch TR or BR, so do not rule out their colors too.",
+      "your_turn": {
+        "prompt": "How many choices does BR have? Which regions does it touch?",
+        "answer": "$3$ choices. BR touches only TR and BM, which have different colors."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Multiply the choices: $$60\\cdot 3\\cdot 3 = 540.$$ Another way: color BM first ($5$ ways), then go along BL, TL, TR, BR, where each region must avoid BM and the one before it: $4\\cdot 3\\cdot 3\\cdot 3 = 108$, and $5\\cdot 108 = 540$. The answer is **(D)** $540$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This is $5! = 120$, which counts colorings where all five regions get different colors. But colors can be reused on regions that do not touch, such as BL and BR.",
+    "E": "This comes from missing that BR touches TR, so BR gets $4$ choices instead of $3$: $60\\cdot 3\\cdot 4 = 720$. Check the figure: the top-right region sits above BR."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10A_2022_P06",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 6
+  },
+  "topic": "algebra",
+  "subtopic": "Absolute value",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10A_2022_P06.png",
+    "text": "Which expression is equal to $\\left|\\,a-2-\\sqrt{(a-1)^2}\\,\\right|$ for $a<0$?",
+    "choices": {
+      "A": "$3-2a$",
+      "B": "$1-a$",
+      "C": "$1$",
+      "D": "$a+1$",
+      "E": "$3$"
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$3-2a$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: a square root of a square",
+      "body": "The clue is $\\sqrt{(a-1)^2}$. Squaring throws away the sign, and the square root always gives back a number that is at least $0$. So the square root of a square is an absolute value: $$\\sqrt{t^2} = |t|.$$",
+      "your_turn": {
+        "prompt": "What is $\\sqrt{(-3)^2}$?",
+        "answer": "$3$, not $-3$: $(-3)^2 = 9$ and $\\sqrt{9} = 3$."
+      }
+    },
+    {
+      "title": "Remove the inner absolute value",
+      "body": "So $\\sqrt{(a-1)^2} = |a-1|$. Since $a<0$, the number $a-1$ is negative, so $|a-1| = 1-a$. Careful: writing $\\sqrt{(a-1)^2} = a-1$ is the most common mistake here, and it is wrong whenever $a-1<0$.",
+      "your_turn": {
+        "prompt": "Check with $a=-2$: what is $\\sqrt{(a-1)^2}$, and does it match $1-a$?",
+        "answer": "$\\sqrt{(-3)^2} = 3$, and $1-(-2) = 3$. They match."
+      }
+    },
+    {
+      "title": "Simplify the inside",
+      "body": "Now replace the square root by $1-a$, so the expression inside the outer bars is $a-2-(1-a)$. Careful with the minus sign in front of the parentheses: it changes the sign of both terms inside.",
+      "your_turn": {
+        "prompt": "Simplify $a-2-(1-a)$.",
+        "answer": "$a-2-1+a = 2a-3$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "When $a<0$, the number $2a-3$ is negative, so its absolute value is its opposite: $$|2a-3| = 3-2a.$$ Check with $a=-1$: the original expression is $|-1-2-2| = 5$, and $3-2(-1) = 5$. The answer is **(A)** $3-2a$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "This comes from replacing $\\sqrt{(a-1)^2}$ by $a-1$: then the inside is $a-2-(a-1) = -1$ and you get $1$. But $a-1$ is negative here, so the square root must be $1-a$.",
+    "E": "This comes from a sign slip: writing $a-2-(1-a)$ as $a-2-1-a = -3$. The minus sign must flip both terms, so $-(1-a) = -1+a$."
+  },
+  "verification": {
+    "official_answer": "A",
+    "solver_answer": "A",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

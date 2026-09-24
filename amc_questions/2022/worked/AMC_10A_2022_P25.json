@@ -1,0 +1,80 @@
+{
+  "id": "AMC_10A_2022_P25",
+  "source": {
+    "year": 2022,
+    "contest": "10A",
+    "session": null,
+    "number": 25
+  },
+  "topic": "number_theory",
+  "subtopic": "Lattice points",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10A_2022_P25.png",
+    "text": "Let $R$, $S$, and $T$ be squares that have vertices at lattice points (i.e., points whose coordinates are both integers) in the coordinate plane, together with their interiors. The bottom edge of each square is on the $x$-axis. The left edge of $R$ and the right edge of $S$ are on the $y$-axis, and $R$ contains $\\frac94$ as many lattice points as does $S$. The top two vertices of $T$ are in $R\\cup S$, and $T$ contains $\\frac14$ of the lattice points contained in $R\\cup S$. See the figure (not drawn to scale).\n\nThe fraction of lattice points in $S$ that are in $S\\cap T$ is $27$ times the fraction of lattice points in $R$ that are in $R\\cap T$. What is the minimum possible value of the edge length of $R$ plus the edge length of $S$ plus the edge length of $T$?",
+    "choices": {
+      "A": "$336$",
+      "B": "$337$",
+      "C": "$338$",
+      "D": "$339$",
+      "E": "$340$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$337$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: count lattice points in a square",
+      "body": "Every condition is about counting lattice points, so first get a formula. A lattice square of side $n$ has $n+1$ lattice points along each edge, so it holds $(n+1)^2$ points. Call the edge lengths $r$, $s$, $t$. Then the $\\frac94$ condition says $(r+1)^2=\\frac94(s+1)^2$.",
+      "your_turn": {
+        "prompt": "What does this say about $\\frac{r+1}{s+1}$? How can you write $r+1$ and $s+1$ with one whole-number unknown $m$?",
+        "answer": "$\\frac{r+1}{s+1}=\\frac32$, so $r+1=3m$ and $s+1=2m$ for some positive integer $m$."
+      }
+    },
+    {
+      "title": "Count $R\\cup S$ and use the $\\frac14$ condition",
+      "body": "$R$ has $9m^2$ points and $S$ has $4m^2$. Careful: they share the $2m$ lattice points on the $y$-axis from height $0$ to $s$, so $|R\\cup S|=13m^2-2m$. Since $T$ holds $(t+1)^2$ points, the $\\frac14$ condition gives\n$$4(t+1)^2=m(13m-2).$$",
+      "your_turn": {
+        "prompt": "Why must $m$ be even? Put $m=2n$ and simplify.",
+        "answer": "If $m$ is odd, $m(13m-2)$ is odd, not a multiple of $4$. With $m=2n$: $4(t+1)^2=2n(26n-2)=4n(13n-1)$, so $(t+1)^2=n(13n-1)$."
+      }
+    },
+    {
+      "title": "When is $n(13n-1)$ a perfect square?",
+      "body": "Any common factor of $n$ and $13n-1$ also divides $13\\cdot n-(13n-1)=1$, so they share no factor. Two numbers with no common factor multiply to a perfect square only if each one is a perfect square. So $n=p^2$ and $13p^2-1=q^2$ for whole numbers $p$, $q$, and then $t+1=pq$.",
+      "your_turn": {
+        "prompt": "Try $p=1,2,3,4,5$. What is the smallest $p$ for which $13p^2-1$ is a perfect square?",
+        "answer": "$12, 51, 116, 207$ are not squares, but $p=5$ gives $324=18^2$. So $n=25$, $m=50$, $t+1=5\\cdot18=90$."
+      }
+    },
+    {
+      "title": "Check the $27$ times condition",
+      "body": "Let $T$ run from $x=-a$ to $x=b$, so $a+b=t$. Careful: the column of $T$ on the $y$-axis lies in both $S$ and $R$, so $|S\\cap T|=(a+1)(t+1)$ and $|R\\cap T|=(b+1)(t+1)$. The condition becomes $\\frac{(a+1)(t+1)}{4m^2}=27\\cdot\\frac{(b+1)(t+1)}{9m^2}$, which simplifies to $a+1=12(b+1)$. Adding $b+1$ to both sides gives\n$$t+2=13(b+1).$$",
+      "your_turn": {
+        "prompt": "With $t+1=90$, is $t+2$ a multiple of $13$? If so, find $b$ and $a$.",
+        "answer": "Yes: $t+2=91=13\\cdot7$, so $b+1=7$, giving $b=6$, and $a+1=84$, giving $a=83$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $m=50$: $r=3m-1=149$, $s=2m-1=99$, and $t=89$. $T$ fits, because its height $89$ and its left part $83$ are at most $s=99$. The total $r+s+t=5m-2+t$ grows as $p$ grows, so $p=5$ gives the minimum.\n$$149+99+89=337$$\nThe answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$340=150+100+90$ adds the numbers of lattice points along each edge ($r+1$, $s+1$, $t+1$) instead of the edge lengths. Subtract $1$ from each."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-24",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}
