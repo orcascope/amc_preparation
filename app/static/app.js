@@ -169,8 +169,8 @@ async function showWelcome() {
 
 async function showTopics() {
   const s = getStudent();
-  const { topics, totals, resume, years, year } = await api("/api/topics");
-  if (!year && getYear()) {  // the saved year has no problems any more
+  const { topics, totals, resume, years = [], year = null } = await api("/api/topics");
+  if (!year && getYear() && years.length) {  // the saved year has no problems any more
     setYear(null);
     location.replace("#/topics?year=all");
     return;
