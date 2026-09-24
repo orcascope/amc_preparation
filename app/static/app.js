@@ -4,6 +4,7 @@
 
 const $app = document.getElementById("app");
 const STUDENT_KEY = "amc.student";
+const YEAR_KEY = "amc.year";
 const AVATAR_COLORS = ["#5B3DF0", "#178A4C", "#E0457B", "#0E8F82", "#B25E00", "#C9338F"];
 const TOPIC_ICONS = {
   algebra: "x²", geometry: "△", number_theory: "#", counting_probability: "n!", arithmetic_logic: "%",
@@ -44,10 +45,20 @@ function setStudent(s) {
   try { s ? localStorage.setItem(STUDENT_KEY, JSON.stringify(s)) : localStorage.removeItem(STUDENT_KEY); } catch { /* private mode */ }
 }
 
-async function api(path, { method = "GET", body } = {}) {
+// The year filter picked on the topics page. It also scopes problem lists,
+// numbering and "Next problem", so it is kept while the student moves around.
+function getYear() {
+  try { return localStorage.getItem(YEAR_KEY); } catch { return null; }
+}
+function setYear(y) {
+  try { y ? localStorage.setItem(YEAR_KEY, y) : localStorage.removeItem(YEAR_KEY); } catch { /* private mode */ }
+}
+
+async function api(path, { method = "GET", body, allYears = false } = {}) {
   const student = getStudent();
   const url = new URL(path, location.origin);
   if (student && method === "GET") url.searchParams.set("student", student.id);
+  if (method === "GET" && !allYears && getYear()) url.searchParams.set("year", getYear());
   const res = await fetch(url, {
     method,
     headers: body ? { "Content-Type": "application/json" } : {},
@@ -158,7 +169,12 @@ async function showWelcome() {
 
 async function showTopics() {
   const s = getStudent();
-  const { topics, totals, resume } = await api("/api/topics");
+  const { topics, totals, resume, years, year } = await api("/api/topics");
+  if (!year && getYear()) {  // the saved year has no problems any more
+    setYear(null);
+    location.replace("#/topics?year=all");
+    return;
+  }
   const solved = totals.solved_own + totals.solved_hints;
   const pct = (n, t) => `${(100 * n / t).toFixed(1)}%`;
   $app.innerHTML = topbar() + `<main class="page">
@@ -178,7 +194,14 @@ async function showTopics() {
         <span class="sub">${esc(resume.subtopic)} · ${resume.attempts} attempt${resume.attempts === 1 ? "" : "s"} so far</span>
       </a>` : ""}
     </div>
-    <h2 class="section-title">Choose a problem type</h2>
+    ${years.length > 1 ? `<nav class="year-filter" aria-label="Filter by year">
+      <span class="label">Year</span>
+      ${[["all", "All years"], ...years.map((y) => [String(y), String(y)])].map(([v, label]) => {
+        const on = v === (year ? String(year) : "all");
+        return `<a class="chip ${on ? "on" : ""}" href="#/topics?year=${v}" ${on ? 'aria-current="true"' : ""}>${label}</a>`;
+      }).join("")}
+    </nav>` : ""}
+    <h2 class="section-title">Choose a problem type${year ? ` <span class="year-note">· ${year} problems</span>` : ""}</h2>
     <div class="topic-grid">
       ${topics.map((t) => {
         const c = t.counts;
@@ -237,7 +260,10 @@ function choicesHtml(p, { selected, disabled } = {}) {
 
 async function showProblem(id) {
   const p = await api(`/api/problems/${id}`);
-  const list = await api(`/api/topics/${p.topic}`);
+  let list = await api(`/api/topics/${p.topic}`);
+  if (!list.problems.some((q) => q.id === p.id)) {  // opened from outside the year filter
+    list = await api(`/api/topics/${p.topic}`, { allYears: true });
+  }
   const state = { selected: null, feedback: null };
 
   function render() {
@@ -279,7 +305,7 @@ async function showProblem(id) {
       <main class="pmain">
         <div class="meta-row">
           <span class="topic-tag t-${p.topic}">${esc(p.topic_name)}</span>
-          <span>Problem ${p.number} of ${p.of}</span><span>·</span><span>${esc(p.subtopic)}</span>
+          <span>Problem ${p.number} of ${p.of}</span><span>·</span><span>${esc(p.subtopic)}</span><span>·</span><span>${p.year}</span>
           ${p.attempts ? `<span>·</span><span>${p.attempts} attempt${p.attempts === 1 ? "" : "s"}</span>` : ""}
         </div>
         <div class="statement"><img src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
@@ -471,7 +497,16 @@ async function route() {
     location.replace("#/");
     return;
   }
-  const parts = hash.slice(2).split("/");
+  const [path, query = ""] = hash.slice(2).split("?");
+  const parts = path.split("/");
+  if (parts[0] === "topics") {
+    const year = new URLSearchParams(query).get("year");
+    if (year) setYear(year === "all" ? null : year);
+    else if (getYear()) {  // keep the link in step with the saved filter
+      location.replace(`#/topics?year=${getYear()}`);
+      return;
+    }
+  }
   try {
     if (hash === "#/") await showWelcome();
     else if (parts[0] === "topics") await showTopics();
