@@ -1,0 +1,74 @@
+{
+  "id": "AMC_10B_2018_P15",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 15
+  },
+  "topic": "geometry",
+  "subtopic": "3D geometry",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10B_2018_P15.png",
+    "text": "A closed box with a square base is to be wrapped with a square sheet of wrapping paper. The box is centered on the wrapping paper with the vertices of the base lying on the midlines of the square sheet of paper, as shown in the figure on the left. The four corners of the wrapping paper are to be folded up over the sides and brought together to meet at the center of the top of the box, point $A$ in the figure on the right. The box has base length $w$ and height $h$. What is the area of the sheet of wrapping paper?",
+    "choices": {
+      "A": "$2(w+h)^2$",
+      "B": "$\\frac{(w+h)^2}{2}$",
+      "C": "$2w^2+4wh$",
+      "D": "$2w^2$",
+      "E": "$w^2h$"
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$2(w+h)^2$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: follow one corner of the paper",
+      "body": "Each corner of the sheet ends up at $A$, so follow the straight line from the center of the sheet to one corner, say the top left corner labeled $A$ in the left figure. In the left figure the base is a diamond whose vertices sit on the dotted midlines. So this center-to-corner line runs at a right angle to one edge of the base and crosses that edge at its midpoint.",
+      "your_turn": {
+        "prompt": "How far is the center of the base from the midpoint of one of its edges?",
+        "answer": "Half the side of the square: $\\frac{w}{2}$."
+      }
+    },
+    {
+      "title": "Trace the paper up and over the box",
+      "body": "When the corner is folded up, the paper along this line lies flat against the box. From the center it runs under the base to the edge ($\\frac{w}{2}$), then straight up the side of the box, then across the top to the center point $A$. Careful: the corner does not stop at the top edge; it must travel across the top as well.",
+      "your_turn": {
+        "prompt": "How long is the part of this path that goes up the side, and how long is the part across the top?",
+        "answer": "Up the side is the height $h$. Across the top, from the middle of the top edge to the center $A$, is $\\frac{w}{2}$."
+      }
+    },
+    {
+      "title": "From a diagonal to an area",
+      "body": "The center-to-corner line is half of the sheet's diagonal. Careful: the path you just traced gives this half-diagonal, not the whole diagonal. To finish, you need the area of a square when you know its diagonal: a square with diagonal $d$ has side $\\frac{d}{\\sqrt{2}}$, so its area is $\\frac{d^2}{2}$.",
+      "your_turn": {
+        "prompt": "What is the area of a square whose diagonal is $10$?",
+        "answer": "$\\frac{10^2}{2} = 50$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Adding the pieces, half the diagonal is $\\frac{w}{2} + h + \\frac{w}{2} = w + h$, so the full diagonal is $2(w + h)$ and the area is\n$$\\frac{\\left(2(w + h)\\right)^2}{2} = 2(w + h)^2.$$\nCheck with $h = 0$: a flat square of side $w$ wrapped like an envelope needs a sheet of area $2w^2$, which matches. The answer is **(A)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "$\\frac{(w+h)^2}{2}$ comes from treating $w + h$ as the whole diagonal of the sheet. It is only the distance from the center to a corner, which is half the diagonal.",
+    "C": "$2w^2 + 4wh$ is the surface area of the box. The paper overlaps itself when folded, so the sheet is bigger than the box's surface.",
+    "D": "$2w^2$ ignores the height of the box. It is the right answer only for a flat box with $h = 0$."
+  },
+  "verification": {
+    "official_answer": "A",
+    "solver_answer": "A",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

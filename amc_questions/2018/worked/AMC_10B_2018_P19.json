@@ -1,0 +1,69 @@
+{
+  "id": "AMC_10B_2018_P19",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 19
+  },
+  "topic": "number_theory",
+  "subtopic": "Divisors",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10B_2018_P19.png",
+    "text": "Joey and Chloe and their daughter Zoe all have the same birthday. Joey is $1$ year older than Chloe, and Zoe is exactly $1$ year old today. Today is the first of the $9$ birthdays on which Chloe's age will be an integral multiple of Zoe's age. What will be the sum of the two digits of Joey's age the next time his age is a multiple of Zoe's age?",
+    "choices": {
+      "A": "$7$",
+      "B": "$8$",
+      "C": "$9$",
+      "D": "$10$",
+      "E": "$11$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$11$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: age differences never change",
+      "body": "Ages all go up together, so the difference $d$ between Chloe's age and Zoe's age stays the same forever. When Zoe is $z$, Chloe is $z+d$. Since $z$ always divides $z$, the number $z+d$ is a multiple of $z$ exactly when $z$ divides $d$.",
+      "your_turn": {
+        "prompt": "Suppose the age gap were $d=6$. At which ages $z$ of Zoe would the older person's age be a multiple of Zoe's?",
+        "answer": "When $z$ divides $6$: $z=1, 2, 3, 6$ (ages $7, 8, 9, 12$ for the older person)."
+      }
+    },
+    {
+      "title": "Nine birthdays means nine divisors",
+      "body": "So Chloe's good birthdays match the divisors of $d$ one for one, and today ($z=1$) is the first. We need $d$ to have exactly $9$ divisors. A number $p^a q^b$ has $(a+1)(b+1)$ divisors, so $9$ divisors means the form $p^2q^2$ or $p^8$ for primes $p, q$.",
+      "your_turn": {
+        "prompt": "What is the smallest number with exactly $9$ divisors?",
+        "answer": "$36=2^2\\cdot3^2$. The next ones are $100=2^2\\cdot5^2$, $196=2^2\\cdot7^2$, $225=3^2\\cdot5^2$ and $256=2^8$."
+      }
+    },
+    {
+      "title": "Find the parents' ages",
+      "body": "The smallest choice is $d=36$. The next one, $d=100$, would mean Chloe was $100$ years old when Zoe was born, so $d=36$: today Chloe is $37$ and Joey is $38$. Joey's age is always Zoe's age plus $37$, so by the same reasoning as before, Joey's age is a multiple of Zoe's age exactly when $z$ divides $37$.",
+      "your_turn": {
+        "prompt": "Check the setup: list Zoe's ages at Chloe's nine good birthdays.",
+        "answer": "The divisors of $36$: $z=1, 2, 3, 4, 6, 9, 12, 18, 36$. That is nine, and $z=1$ (today) is the first."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "$37$ is prime, so its only divisors are $1$ and $37$. Today is $z=1$, so the next time is when Zoe is $37$, and Joey is $37+37=74=2\\cdot37$. The sum of the digits is $7+4=11$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25"
+  }
+}

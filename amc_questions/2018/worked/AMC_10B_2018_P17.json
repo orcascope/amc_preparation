@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10B_2018_P17",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 17
+  },
+  "topic": "geometry",
+  "subtopic": "Polygons in a rectangle",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10B_2018_P17.png",
+    "text": "In rectangle $PQRS$, $PQ=8$ and $QR=6$. Points $A$ and $B$ lie on $\\overline{PQ}$, points $C$ and $D$ lie on $\\overline{QR}$, points $E$ and $F$ lie on $\\overline{RS}$, and points $G$ and $H$ lie on $\\overline{SP}$ so that $AP=BQ<4$ and the convex octagon $ABCDEFGH$ is equilateral. The length of a side of this octagon can be expressed in the form $k+m\\sqrt{n}$, where $k$, $m$, and $n$ are integers and $n$ is not divisible by the square of any prime. What is $k+m+n$?",
+    "choices": {
+      "A": "$1$",
+      "B": "$7$",
+      "C": "$21$",
+      "D": "$92$",
+      "E": "$106$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$7$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: the octagon is the rectangle minus four corner triangles",
+      "body": "The octagon is what is left after cutting a right triangle off each corner of the rectangle. So name the legs of those triangles and write every side of the octagon in terms of them. Let $s$ be the side of the octagon and $x=AP=BQ$.",
+      "your_turn": {
+        "prompt": "Write the side $AB$ in terms of $x$.",
+        "answer": "$AB=8-x-x=8-2x$, and this equals $s$."
+      }
+    },
+    {
+      "title": "All four corners match",
+      "body": "The corner triangles at $P$ and $Q$ share leg $x$ and hypotenuse $s$, so their other legs match too: $PH=QC$, which we call $y$. Then $CD=6-y-DR$ and $GH=6-y-SG$ both equal $s$, so $DR=SG$, and the corners at $R$ and $S$ match each other; since $EF=8-2\\cdot RE=s=8-2x$, we get $RE=x$ and then $DR=y$. So all four corner triangles have legs $x$ (along the length-$8$ sides) and $y$ (along the length-$6$ sides):\n$$s=8-2x=6-2y,\\qquad s^2=x^2+y^2.$$",
+      "your_turn": {
+        "prompt": "Solve the first two equations for $x$ and $y$ in terms of $s$.",
+        "answer": "$x=\\frac{8-s}{2}$ and $y=\\frac{6-s}{2}$."
+      }
+    },
+    {
+      "title": "One equation in $s$",
+      "body": "Put these into $s^2=x^2+y^2$ and multiply both sides by $4$ to clear the fractions:\n$$4s^2=(8-s)^2+(6-s)^2.$$",
+      "your_turn": {
+        "prompt": "Expand and simplify this into a quadratic equation with leading coefficient $1$.",
+        "answer": "$4s^2=100-28s+2s^2$, so $2s^2+28s-100=0$, which is $s^2+14s-50=0$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The quadratic formula gives $s=-7\\pm\\sqrt{49+50}=-7\\pm\\sqrt{99}=-7\\pm3\\sqrt{11}$. Careful: a side length is positive, so take $s=-7+3\\sqrt{11}\\approx2.95$ (then $x\\approx2.5<4$, as required), not $-7-3\\sqrt{11}$. Also careful: $k$ is $-7$, not $7$. So $k+m+n=-7+3+11=7$. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This comes from the negative root $-7-3\\sqrt{11}$, giving $-7-3+11=1$. A side length must be positive.",
+    "C": "This comes from dropping the minus sign on $k$ and adding $7+3+11=21$. In $-7+3\\sqrt{11}$, $k=-7$."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25"
+  }
+}

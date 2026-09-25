@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10B_2018_P09",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 9
+  },
+  "topic": "counting_probability",
+  "subtopic": "Symmetry",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10B_2018_P09.png",
+    "text": "The faces of each of $7$ standard dice are labeled with the integers from $1$ to $6$. Let $p$ be the probability that when all $7$ dice are rolled, the sum of the numbers on the top faces is $10$. What other sum occurs with the same probability $p$?",
+    "choices": {
+      "A": "$13$",
+      "B": "$26$",
+      "C": "$32$",
+      "D": "$39$",
+      "E": "$42$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$39$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: look for a symmetry",
+      "body": "We do not need to compute $p$. The question asks which other sum is exactly as likely, which hints at a symmetry that pairs low sums with high sums. A natural pairing on one die is $x \\leftrightarrow 7 - x$, since $1 \\leftrightarrow 6$, $2 \\leftrightarrow 5$, $3 \\leftrightarrow 4$.",
+      "your_turn": {
+        "prompt": "If a die shows $2$, what does the pairing turn it into?",
+        "answer": "$7 - 2 = 5$."
+      }
+    },
+    {
+      "title": "Flip every die",
+      "body": "Replace the number $x$ on every one of the $7$ dice by $7 - x$. Doing this twice gets you back where you started, so it pairs up all the outcomes one-to-one. That means a sum and the sum it turns into happen in the same number of ways, so they are equally likely.",
+      "your_turn": {
+        "prompt": "The roll $1, 2, 3, 4, 5, 6, 6$ has sum $27$. What are the flipped numbers and their sum?",
+        "answer": "$6, 5, 4, 3, 2, 1, 1$, with sum $22$."
+      }
+    },
+    {
+      "title": "Find the matching sum",
+      "body": "Now find the partner of a sum without listing rolls. Each die changes from $x$ to $7 - x$, so a die's number and its flipped number always add to $7$. Careful: the partner of a sum is not found by subtracting it from the largest sum, $42$. That rule would send the largest sum, $42$, to $0$, which is not even a possible sum. The largest sum must be paired with the smallest, $7$.",
+      "your_turn": {
+        "prompt": "Which sum is paired with the smallest possible sum, $7$?",
+        "answer": "$42$: all ones flip to all sixes. Each of these sums happens in exactly one way."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Paired sums always add to $7 \\cdot 7 = 49$ (check: $27 + 22 = 49$ and $7 + 42 = 49$). So sum $10$ is paired with\n$$49 - 10 = 39,$$\nand these two sums have the same probability $p$. The answer is **(D)** $39$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "$32$ comes from reflecting through the maximum, $42 - 10$. The flip sends a sum $S$ to $49 - S$ (for example, $7$ goes to $42$), so the partner of $10$ is $39$."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Hole found by adversarial verifier, fixed, and re-verified by a fresh verifier."
+  }
+}

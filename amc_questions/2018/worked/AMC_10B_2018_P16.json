@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10B_2018_P16",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 16
+  },
+  "topic": "number_theory",
+  "subtopic": "Modular arithmetic",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10B_2018_P16.png",
+    "text": "Let $a_1, a_2, \\ldots, a_{2018}$ be a strictly increasing sequence of positive integers such that $$a_1+a_2+\\cdots+a_{2018}=2018^{2018}.$$ What is the remainder when $a_1^3+a_2^3+\\cdots+a_{2018}^3$ is divided by $6$?",
+    "choices": {
+      "A": "$0$",
+      "B": "$1$",
+      "C": "$2$",
+      "D": "$3$",
+      "E": "$4$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$4$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: compare each cube with the number itself",
+      "body": "We know nothing about the individual numbers, only their sum. So the answer can only depend on the sum, which suggests that $n^3$ and $n$ leave the same remainder when divided by $6$. Check it by factoring the difference:\n$$n^3-n=n(n^2-1)=(n-1)\\,n\\,(n+1).$$",
+      "your_turn": {
+        "prompt": "Why is a product of three consecutive integers always divisible by $6$?",
+        "answer": "Among any two consecutive integers one is even, and among any three consecutive integers one is a multiple of $3$. So the product is divisible by $2$ and by $3$, hence by $6$."
+      }
+    },
+    {
+      "title": "Trade the cubes for the numbers",
+      "body": "Since each $a_i^3-a_i$ is a multiple of $6$, adding them up shows that the sum of the cubes minus the plain sum is also a multiple of $6$. So the sum of the cubes leaves the same remainder mod $6$ as $a_1+a_2+\\cdots+a_{2018}=2018^{2018}$.",
+      "your_turn": {
+        "prompt": "Test the idea on a small case: for the numbers $1, 2, 4$, find the sum and the sum of cubes, and compare their remainders mod $6$.",
+        "answer": "Sum $=7$, remainder $1$. Cubes: $1+8+64=73$, remainder $1$. They match."
+      }
+    },
+    {
+      "title": "Shrink the base",
+      "body": "Now we only need the remainder of $2018^{2018}$ when divided by $6$. Replace the base by its remainder: $2018=6\\cdot336+2$, so $2018^{2018}$ has the same remainder as $2^{2018}$. Careful: the answer is not $2$. That is the remainder of the base, and the exponent still matters. Also careful: being even and huge does not make a number divisible by $6$; it also needs a factor of $3$.",
+      "your_turn": {
+        "prompt": "Can $2^{2018}$ be divisible by $3$?",
+        "answer": "No. Its only prime factor is $2$, so the remainder mod $6$ cannot be $0$ (or $3$)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Powers of $2$ mod $6$ go $2, 4, 2, 4, \\ldots$ (since $2\\cdot4=8$ leaves $2$ and $2\\cdot2=4$), with $4$ at every even exponent. The exponent $2018$ is even, so $2^{2018}$ leaves remainder $4$. Check: $2018^{2018}$ is even and is $1$ more than a multiple of $3$ (because $2018$ is $1$ less than a multiple of $3$ and the power is even), and $4$ is the only remainder mod $6$ with both properties. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This comes from thinking that an even, very large number must be divisible by $6$. But $2018^{2018}$ has no factor of $3$, so it cannot be a multiple of $6$.",
+    "C": "This comes from reducing the base $2018$ to $2$ and then forgetting the exponent. You still need the remainder of $2^{2018}$, not of $2$."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

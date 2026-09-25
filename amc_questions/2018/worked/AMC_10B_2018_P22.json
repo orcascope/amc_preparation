@@ -1,0 +1,74 @@
+{
+  "id": "AMC_10B_2018_P22",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 22
+  },
+  "topic": "counting_probability",
+  "subtopic": "Geometric probability",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10B_2018_P22.png",
+    "text": "Real numbers $x$ and $y$ are chosen independently and uniformly at random from the interval $[0,1]$. Which of the following numbers is closest to the probability that $x$, $y$, and $1$ are the side lengths of an obtuse triangle?",
+    "choices": {
+      "A": "$0.21$",
+      "B": "$0.25$",
+      "C": "$0.29$",
+      "D": "$0.50$",
+      "E": "$0.79$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$0.29$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: probability as area",
+      "body": "Picking $x$ and $y$ independently and uniformly from $[0,1]$ is the same as picking a random point $(x,y)$ in the unit square. The square has area $1$, so the probability of any condition is the area of the region where it holds. So the job is to turn \"obtuse triangle\" into conditions on $x$ and $y$ and draw them.",
+      "your_turn": {
+        "prompt": "Since $x\\le1$ and $y\\le1$, which of the three sides $x$, $y$, $1$ is the longest?",
+        "answer": "The side $1$ (or tied for longest)."
+      }
+    },
+    {
+      "title": "Condition 1: a triangle exists",
+      "body": "Three lengths make a triangle when each one is less than the sum of the other two. With sides $x$, $y$, $1$, two of these checks are automatic, because $1$ is at least as long as $x$ and $y$. Careful: the remaining check really matters, and forgetting it is a common mistake.",
+      "your_turn": {
+        "prompt": "Which triangle inequality is not automatic? Where is it true in the square?",
+        "answer": "$x+y>1$: the part of the square above the line $x+y=1$."
+      }
+    },
+    {
+      "title": "Condition 2: the triangle is obtuse",
+      "body": "The largest angle is across from the longest side, which is $1$. By the converse of the Pythagorean theorem, that angle is more than $90^\\circ$ exactly when the squares of the two shorter sides add up to less than the square of the longest side. Careful: the other direction, $x^2+y^2>1$, means the triangle is acute.",
+      "your_turn": {
+        "prompt": "Write the obtuse condition as an inequality, and describe the region in the square where it holds.",
+        "answer": "$x^2+y^2<1$: the points inside the quarter circle of radius $1$ centered at $(0,0)$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "We need both: inside the quarter circle and above the line $x+y=1$. The line cuts the quarter circle at $(1,0)$ and $(0,1)$, so the region is the quarter disk (area $\\frac{\\pi}{4}$) minus the triangle with vertices $(0,0)$, $(1,0)$, $(0,1)$ (area $\\frac12$):\n$$\\frac{\\pi}{4}-\\frac12\\approx0.785-0.5=0.285.$$\nThe closest choice is $0.29$. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$0.79\\approx\\frac{\\pi}{4}$ is the whole quarter circle. It forgets the triangle condition $x+y>1$; points below that line do not make a triangle at all.",
+    "D": "$0.50$ is the probability that the three lengths make a triangle at all (above $x+y=1$). The question also asks for the triangle to be obtuse.",
+    "A": "$0.21\\approx1-\\frac{\\pi}{4}$ uses $x^2+y^2>1$, which is the acute condition. Obtuse means the two short sides squared add to less than $1$."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

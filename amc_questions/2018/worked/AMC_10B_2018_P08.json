@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10B_2018_P08",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 8
+  },
+  "topic": "algebra",
+  "subtopic": "Patterns",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10B_2018_P08.png",
+    "text": "Sara makes a staircase out of toothpicks as shown. This is a $3$-step staircase and uses $18$ toothpicks. How many steps would be in a staircase that used $180$ toothpicks?",
+    "choices": {
+      "A": "$10$",
+      "B": "$11$",
+      "C": "$12$",
+      "D": "$24$",
+      "E": "$30$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$12$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: find a formula for $n$ steps",
+      "body": "We want the number of toothpicks in an $n$-step staircase as a formula in $n$, then set it equal to $180$. To find the formula, split the toothpicks into horizontal ones and vertical ones, and count the horizontal ones line by line in the picture. Remember that a side shared by two squares is only one toothpick.",
+      "your_turn": {
+        "prompt": "In the $3$-step picture, how many horizontal toothpicks lie on each horizontal line, from top to bottom?",
+        "answer": "$1, 2, 3, 3$: the top of each row, plus the bottom edge of the bottom row. That is $9$ in all."
+      }
+    },
+    {
+      "title": "Count horizontal toothpicks for $n$ steps",
+      "body": "With $n$ steps the rows have $n, n-1, \\dots, 1$ squares. The horizontal lines, from the top, hold $1, 2, \\dots, n$ toothpicks, and then the bottom edge holds $n$ more.\n$$\\text{horizontal} = (1 + 2 + \\cdots + n) + n = \\frac{n(n+1)}{2} + n$$",
+      "your_turn": {
+        "prompt": "How many horizontal toothpicks does a $4$-step staircase have?",
+        "answer": "$\\frac{4 \\cdot 5}{2} + 4 = 10 + 4 = 14$."
+      }
+    },
+    {
+      "title": "Use symmetry for the vertical ones",
+      "body": "The staircase is symmetric about its diagonal: flipping it swaps rows with columns and horizontal toothpicks with vertical ones. So there are just as many vertical toothpicks as horizontal ones, and the total is double.\n$$T(n) = n(n+1) + 2n = n(n+3)$$\nCareful: the count does not grow in proportion to $n$, so $10$ times as many toothpicks does not mean $10$ times as many steps.",
+      "your_turn": {
+        "prompt": "Check the formula: what are $T(3)$ and $T(4)$?",
+        "answer": "$T(3) = 3 \\cdot 6 = 18$, which matches the picture, and $T(4) = 4 \\cdot 7 = 28$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Solve $n(n+3) = 180$. We need two numbers that differ by $3$ and multiply to $180$, and $12 \\cdot 15 = 180$ works, so $n = 12$. You can also check by adding $2n + 2$ toothpicks each time a step is added: $4, 10, 18, 28, \\dots$ reaches $180$ at $n = 12$. The answer is **(C)** $12$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$30$ comes from assuming the toothpick count grows in proportion to the steps ($18 \\to 180$, so $3 \\to 30$). The count is $n(n+3)$, which grows much faster, and $T(30) = 990$."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

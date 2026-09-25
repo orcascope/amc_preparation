@@ -1,0 +1,62 @@
+{
+  "id": "AMC_10B_2018_P18",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 18
+  },
+  "topic": "counting_probability",
+  "subtopic": "Arrangements",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10B_2018_P18.png",
+    "text": "Three young brother-sister pairs from different families need to take a trip in a van. These six children will occupy the second and third rows in the van, each of which has three seats. To avoid disruptions, siblings may not sit right next to each other in the same row, and no child may sit directly in front of his or her sibling. How many seating arrangements are possible for this trip?",
+    "choices": {
+      "A": "$60$",
+      "B": "$72$",
+      "C": "$92$",
+      "D": "$96$",
+      "E": "$120$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$96$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: fill the most restricted seat first",
+      "body": "Name the seats: front row $a_1\\,a_2\\,a_3$ and back row $b_1\\,b_2\\,b_3$, with each $b$ directly behind the matching $a$. The middle front seat $a_2$ touches the most other seats (two neighbors and the seat behind it), so it limits its sibling the most. Start there: any of the $6$ children can sit in $a_2$.",
+      "your_turn": {
+        "prompt": "Which seats can the sibling of the child in $a_2$ take?",
+        "answer": "Only $b_1$ or $b_3$: $a_1$ and $a_3$ are next to $a_2$, and $b_2$ is right behind it. So $2$ ways."
+      }
+    },
+    {
+      "title": "The opposite back corner forces a seat",
+      "body": "Say the sibling took $b_1$ (the case $b_3$ is the mirror image). Now look at the child in $b_3$. Its sibling cannot sit in $b_2$ (next to it) or in $a_3$ (directly in front of it), and $a_2$ and $b_1$ are taken.",
+      "your_turn": {
+        "prompt": "Where must the sibling of the $b_3$ child sit, and how many children could be in $b_3$?",
+        "answer": "It must take $a_1$, the only seat left. Any of the $4$ remaining children can be in $b_3$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The last pair takes $a_3$ and $b_2$. These seats are diagonal, not side by side and not front and back, so the pair can sit either way: $2$ ways. Multiplying the choices:\n$$6\\cdot2\\cdot4\\cdot2=96.$$\nThe answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

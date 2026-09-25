@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10B_2018_P10",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 10
+  },
+  "topic": "geometry",
+  "subtopic": "3D geometry",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10B_2018_P10.png",
+    "text": "In the rectangular parallelepiped shown, $AB=3$, $BC=1$, and $CG=2$. Point $M$ is the midpoint of $\\overline{FG}$. What is the volume of the rectangular pyramid with base $BCHE$ and apex $M$?",
+    "choices": {
+      "A": "$1$",
+      "B": "$\\frac{4}{3}$",
+      "C": "$\\frac{3}{2}$",
+      "D": "$\\frac{5}{3}$",
+      "E": "$2$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$2$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: cut the box, then subtract",
+      "body": "The base $BCHE$ is slanted, so the pyramid's height is awkward to find directly. Instead, notice that the slanted rectangle $BCHE$ runs from the bottom right edge $BC$ to the top left edge $EH$, so it cuts the box into two equal halves. The pyramid sits inside the upper half, the one containing $F$, $G$ and $M$.",
+      "your_turn": {
+        "prompt": "What is the volume of the box, and of each half?",
+        "answer": "The box is $3 \\cdot 1 \\cdot 2 = 6$, so each half is $3$."
+      }
+    },
+    {
+      "title": "Split the upper half into three pyramids",
+      "body": "The upper half is a triangular prism: its front end is triangle $BFE$ (half of the front face $ABFE$), its back end is triangle $CGH$, and its length is $BC = 1$. Point $M$ lies on edge $FG$ of this prism. Joining $M$ to every corner splits the prism into three pyramids with apex $M$: our pyramid on base $BCHE$, one on the front triangle $BFE$, and one on the back triangle $CGH$.",
+      "your_turn": {
+        "prompt": "What is the area of triangle $BFE$?",
+        "answer": "It is a right triangle with legs $BF = 2$ and $FE = 3$, so its area is $\\frac{1}{2} \\cdot 3 \\cdot 2 = 3$."
+      }
+    },
+    {
+      "title": "Height of the small pyramids",
+      "body": "The height of pyramid $M$-$BFE$ is the distance from $M$ to the front face, measured straight back along edge $FG$. The back pyramid $M$-$CGH$ matches it exactly. Careful: a pyramid's volume is $\\frac{1}{3} \\cdot \\text{base} \\cdot \\text{height}$, not $\\frac{1}{6}$.",
+      "your_turn": {
+        "prompt": "How far is $M$ from the front face $ABFE$?",
+        "answer": "$\\frac{1}{2}$, because $FG$ runs from front to back with length $BC = 1$, and $M$ is its midpoint."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each small pyramid has volume $\\frac{1}{3} \\cdot 3 \\cdot \\frac{1}{2} = \\frac{1}{2}$. Take both of them away from the half-box.\n$$3 - \\frac{1}{2} - \\frac{1}{2} = 2$$\nThe answer is **(E)** $2$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "$1$ comes from using $\\frac{1}{6}$ instead of $\\frac{1}{3}$ in the pyramid volume formula: base $BCHE$ times the height from $M$ is $6$, and $\\frac{1}{6}$ of that is $1$. A pyramid is always $\\frac{1}{3} \\cdot \\text{base} \\cdot \\text{height}$."
+  },
+  "verification": {
+    "official_answer": "E",
+    "solver_answer": "E",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}
