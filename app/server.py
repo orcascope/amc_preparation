@@ -42,30 +42,34 @@ def close_db(_exc):
 
 def student_id():
     sid = request.args.get("student") or (request.get_json(silent=True) or {}).get("student")
-    row = db().execute("SELECT id FROM students WHERE id = ?", (sid,)).fetchone()
+    try:
+        sid = int(sid)
+    except (TypeError, ValueError):
+        abort(400, "unknown student")
+    row = db().execute("SELECT id FROM students WHERE id = %s", (sid,)).fetchone()
     if not row:
         abort(400, "unknown student")
-    db().execute("UPDATE students SET last_seen = datetime('now') WHERE id = ?", (row["id"],))
+    db().execute("UPDATE students SET last_seen = now() WHERE id = %s", (row["id"],))
     return row["id"]
 
 
 def problem_row(pid):
-    row = db().execute("SELECT * FROM problems WHERE id = ?", (pid,)).fetchone()
+    row = db().execute("SELECT * FROM problems WHERE id = %s", (pid,)).fetchone()
     if not row:
         abort(404)
     return row
 
 
 def progress_row(sid, pid):
-    db().execute("INSERT OR IGNORE INTO progress (student_id, problem_id) VALUES (?, ?)", (sid, pid))
+    db().execute("INSERT INTO progress (student_id, problem_id) VALUES (%s, %s) ON CONFLICT DO NOTHING", (sid, pid))
     return db().execute(
-        "SELECT * FROM progress WHERE student_id = ? AND problem_id = ?", (sid, pid)).fetchone()
+        "SELECT * FROM progress WHERE student_id = %s AND problem_id = %s", (sid, pid)).fetchone()
 
 
 def update_progress(sid, pid, **fields):
-    sets = ", ".join(f"{k} = ?" for k in fields)
+    sets = ", ".join(f"{k} = %s" for k in fields)
     db().execute(
-        f"UPDATE progress SET {sets}, updated_at = datetime('now') WHERE student_id = ? AND problem_id = ?",
+        f"UPDATE progress SET {sets}, updated_at = now() WHERE student_id = %s AND problem_id = %s",
         (*fields.values(), sid, pid))
     db().commit()
 
@@ -77,7 +81,7 @@ def year_filter():
 
 def collections():
     """[{key, label}] for every collection that has problems: contest years first, then the book."""
-    keys = [r[0] for r in db().execute("SELECT DISTINCT collection FROM problems")]
+    keys = [r["collection"] for r in db().execute("SELECT DISTINCT collection FROM problems")]
     keys.sort(key=lambda k: (not k.isdigit(), k))
     return [{"key": k, "label": "ACE book" if k == "book" else k} for k in keys]
 
@@ -85,7 +89,7 @@ def collections():
 def topic_problems(topic, coll=None):
     """Problems of one type in study order: easiest first. coll=None means every collection."""
     return db().execute(
-        "SELECT id, subtopic, difficulty FROM problems WHERE topic = ? AND (? IS NULL OR collection = ?) "
+        "SELECT id, subtopic, difficulty FROM problems WHERE topic = %s AND (%s::text IS NULL OR collection = %s) "
         "ORDER BY difficulty, year, contest, session, number", (topic, coll, coll)).fetchall()
 
 
@@ -121,10 +125,10 @@ def image(path):
 
 @app.get("/api/students")
 def list_students():
-    total = db().execute("SELECT COUNT(*) FROM problems").fetchone()[0]
+    total = db().execute("SELECT COUNT(*) AS n FROM problems").fetchone()["n"]
     rows = db().execute(
         "SELECT s.id, s.name, s.last_seen, "
-        "  (SELECT COUNT(*) FROM progress p WHERE p.student_id = s.id AND p.completed "
+        "  (SELECT COUNT(*) FROM progress p WHERE p.student_id = s.id AND p.completed = 1 "
         "     AND p.status IN ('solved_own', 'solved_hints')) AS solved, "
         "  (SELECT COUNT(*) FROM progress p WHERE p.student_id = s.id) AS touched "
         "FROM students s ORDER BY s.last_seen DESC").fetchall()
@@ -136,14 +140,14 @@ def add_student():
     name = " ".join(((request.get_json(silent=True) or {}).get("name") or "").split())
     if not 1 <= len(name) <= 40:
         abort(400, "name must be 1-40 characters")
-    db().execute("INSERT OR IGNORE INTO students (name) VALUES (?)", (name,))
+    db().execute("INSERT INTO students (name) VALUES (%s) ON CONFLICT DO NOTHING", (name,))
     db().commit()
-    row = db().execute("SELECT id, name FROM students WHERE name = ?", (name,)).fetchone()
+    row = db().execute("SELECT id, name FROM students WHERE lower(name) = lower(%s)", (name,)).fetchone()
     return jsonify(dict(row))
 
 
 def student_or_404(sid):
-    if not db().execute("SELECT 1 FROM students WHERE id = ?", (sid,)).fetchone():
+    if not db().execute("SELECT 1 FROM students WHERE id = %s", (sid,)).fetchone():
         abort(404)
 
 
@@ -151,8 +155,8 @@ def student_or_404(sid):
 def reset_student(sid):
     """Forget everything a student has done, but keep their name."""
     student_or_404(sid)
-    db().execute("DELETE FROM attempts WHERE student_id = ?", (sid,))
-    db().execute("DELETE FROM progress WHERE student_id = ?", (sid,))
+    db().execute("DELETE FROM attempts WHERE student_id = %s", (sid,))
+    db().execute("DELETE FROM progress WHERE student_id = %s", (sid,))
     db().commit()
     return jsonify(ok=True)
 
@@ -160,9 +164,9 @@ def reset_student(sid):
 @app.delete("/api/students/<int:sid>")
 def delete_student(sid):
     student_or_404(sid)
-    db().execute("DELETE FROM attempts WHERE student_id = ?", (sid,))
-    db().execute("DELETE FROM progress WHERE student_id = ?", (sid,))
-    db().execute("DELETE FROM students WHERE id = ?", (sid,))
+    db().execute("DELETE FROM attempts WHERE student_id = %s", (sid,))
+    db().execute("DELETE FROM progress WHERE student_id = %s", (sid,))
+    db().execute("DELETE FROM students WHERE id = %s", (sid,))
     db().commit()
     return jsonify(ok=True)
 
@@ -177,7 +181,7 @@ def topics():
     if year not in [c["key"] for c in years]:
         year = None
     prog = {r["problem_id"]: r for r in db().execute(
-        "SELECT * FROM progress WHERE student_id = ?", (sid,))}
+        "SELECT * FROM progress WHERE student_id = %s", (sid,))}
     out, totals = [], {"total": 0, "solved_own": 0, "solved_hints": 0, "shown": 0}
     for key, name in TOPIC_NAMES.items():
         rows = topic_problems(key, year)
@@ -196,7 +200,7 @@ def topics():
     cont = db().execute(
         "SELECT p.problem_id, pr.topic, pr.subtopic, p.attempts FROM progress p "
         "JOIN problems pr ON pr.id = p.problem_id "
-        "WHERE p.student_id = ? AND NOT p.completed AND (? IS NULL OR pr.collection = ?) "
+        "WHERE p.student_id = %s AND p.completed = 0 AND (%s::text IS NULL OR pr.collection = %s) "
         "ORDER BY p.updated_at DESC LIMIT 1",
         (sid, year, year)).fetchone()
     resume = None
@@ -214,7 +218,7 @@ def topic_detail(topic):
         abort(404)
     sid = student_id()
     prog = {r["problem_id"]: r for r in db().execute(
-        "SELECT * FROM progress WHERE student_id = ?", (sid,))}
+        "SELECT * FROM progress WHERE student_id = %s", (sid,))}
     problems = [{"id": r["id"], "number": i, "subtopic": r["subtopic"],
                  "difficulty": r["difficulty"], "status": display_status(prog.get(r["id"]))}
                 for i, r in enumerate(topic_problems(topic, year_filter()), 1)]
@@ -231,12 +235,12 @@ def problem(pid):
     if pid not in ids:  # opened from outside the current year filter
         ids = [r["id"] for r in topic_problems(p["topic"])]
     i = ids.index(pid)
-    prog = db().execute("SELECT * FROM progress WHERE student_id = ? AND problem_id = ?",
+    prog = db().execute("SELECT * FROM progress WHERE student_id = %s AND problem_id = %s",
                         (sid, pid)).fetchone()
     tried = [r["choice"] for r in db().execute(
-        "SELECT DISTINCT choice FROM attempts WHERE student_id = ? AND problem_id = ? AND NOT correct",
+        "SELECT DISTINCT choice FROM attempts WHERE student_id = %s AND problem_id = %s AND correct = 0",
         (sid, pid))]
-    n_steps = db().execute("SELECT COUNT(*) FROM steps WHERE problem_id = ?", (pid,)).fetchone()[0]
+    n_steps = db().execute("SELECT COUNT(*) AS n FROM steps WHERE problem_id = %s", (pid,)).fetchone()["n"]
     data = {
         "id": pid, "topic": p["topic"], "topic_name": TOPIC_NAMES[p["topic"]],
         "subtopic": p["subtopic"], "difficulty": p["difficulty"], "source_label": p["source_label"],
@@ -271,7 +275,7 @@ def attempt(pid):
             abort(400, "answer is required")
         correct = matches(choice, json.loads(p["accept_json"]))
     prog = progress_row(sid, pid)
-    db().execute("INSERT INTO attempts (student_id, problem_id, choice, correct) VALUES (?,?,?,?)",
+    db().execute("INSERT INTO attempts (student_id, problem_id, choice, correct) VALUES (%s,%s,%s,%s)",
                  (sid, pid, choice, int(correct)))
     fields = {"attempts": prog["attempts"] + 1}
     if correct and not prog["completed"]:
@@ -287,7 +291,7 @@ def attempt(pid):
         out["status"] = fields.get("status", prog["status"])
         out["hints_used"] = prog["hints_used"]
     else:
-        row = db().execute("SELECT explanation FROM wrong_choices WHERE problem_id = ? AND choice = ?",
+        row = db().execute("SELECT explanation FROM wrong_choices WHERE problem_id = %s AND choice = %s",
                            (pid, choice)).fetchone()
         out["explanation"] = row["explanation"] if row else None
     return jsonify(out)
@@ -298,7 +302,7 @@ def steps(pid):
     """Steps 1..upto. The final (answer) step is only sent with ?upto=all."""
     sid = student_id()
     problem_row(pid)
-    rows = db().execute("SELECT * FROM steps WHERE problem_id = ? ORDER BY idx", (pid,)).fetchall()
+    rows = db().execute("SELECT * FROM steps WHERE problem_id = %s ORDER BY idx", (pid,)).fetchall()
     last_hint = len(rows) - 1  # every step before the answer step
     upto = request.args.get("upto", "1")
     n = len(rows) if upto == "all" else max(1, min(int(upto), last_hint))

@@ -1,23 +1,44 @@
-import sqlite3
+"""Database connection (PostgreSQL).
+
+The connection string comes from DATABASE_URL, read from the environment or
+from a .env file at the repository root, for example:
+
+    DATABASE_URL=postgresql://amc:secret@localhost:5432/amc
+
+Rows come back as dicts. Queries use %s placeholders (psycopg style).
+"""
+import os
 from pathlib import Path
+
+import psycopg
+from dotenv import load_dotenv
+from psycopg.rows import dict_row
 
 APP_DIR = Path(__file__).resolve().parent
 ROOT = APP_DIR.parent
 QUESTIONS_DIR = ROOT / "amc_questions"
-DB_PATH = APP_DIR / "data" / "amc.db"
+
+load_dotenv(ROOT / ".env")
+
+_schema_ready = False
 
 
-def connect(path=DB_PATH):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(path)
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA foreign_keys = ON")
-    conn.executescript((APP_DIR / "schema.sql").read_text(encoding="utf-8"))
-    # Databases made before these columns existed: add them (content is re-imported anyway).
-    have = {r[1] for r in conn.execute("PRAGMA table_info(problems)")}
-    for col, decl in (("collection", "TEXT NOT NULL DEFAULT ''"),
-                      ("source_label", "TEXT NOT NULL DEFAULT ''"),
-                      ("accept_json", "TEXT NOT NULL DEFAULT '[]'")):
-        if col not in have:
-            conn.execute(f"ALTER TABLE problems ADD COLUMN {col} {decl}")
+def database_url():
+    url = os.environ.get("DATABASE_URL", "").strip()
+    if not url:
+        raise RuntimeError(
+            "DATABASE_URL is not set. Add a line like\n"
+            "  DATABASE_URL=postgresql://user:password@localhost:5432/amc\n"
+            f"to {ROOT / '.env'} (see .env.example).")
+    return url
+
+
+def connect():
+    """A new connection; the schema is created the first time in each process."""
+    global _schema_ready
+    conn = psycopg.connect(database_url(), row_factory=dict_row)
+    if not _schema_ready:
+        conn.execute((APP_DIR / "schema.sql").read_text(encoding="utf-8"))
+        conn.commit()
+        _schema_ready = True
     return conn
