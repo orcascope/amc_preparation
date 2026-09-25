@@ -11,8 +11,8 @@ import json
 
 from flask import Flask, abort, g, jsonify, request, send_from_directory
 
-from answers import matches
-from db import APP_DIR, QUESTIONS_DIR, connect
+from app.answers import matches
+from app.db import APP_DIR, QUESTIONS_DIR, connect
 
 app = Flask(__name__, static_folder=str(APP_DIR / "static"), static_url_path="/static")
 

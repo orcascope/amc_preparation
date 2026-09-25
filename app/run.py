@@ -13,11 +13,9 @@ import webbrowser
 from pathlib import Path
 from threading import Timer
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 
-from import_worked import main as import_worked  # noqa: E402
-from server import app  # noqa: E402
+from tools.import_worked import main as import_worked  # noqa: E402
+from app.server import app  # noqa: E402
 
 URL = "http://127.0.0.1:5000"
 

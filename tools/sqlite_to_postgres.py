@@ -12,8 +12,7 @@ import sqlite3
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "app"))
-from db import APP_DIR, connect  # noqa: E402
+from app.db import APP_DIR, connect  # noqa: E402
 
 TABLES = {
     "students": ("id", "name", "created_at", "last_seen"),

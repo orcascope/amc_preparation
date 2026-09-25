@@ -36,7 +36,8 @@ def database_url():
 def connect():
     """A new connection; the schema is created the first time in each process."""
     global _schema_ready
-    conn = psycopg.connect(database_url(), row_factory=dict_row)
+    conn = psycopg.connect(database_url(), row_factory=dict_row,
+                           options="-c search_path=amc_app" )
     if not _schema_ready:
         conn.execute((APP_DIR / "schema.sql").read_text(encoding="utf-8"))
         conn.commit()

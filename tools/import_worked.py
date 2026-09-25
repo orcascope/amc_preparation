@@ -18,9 +18,8 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "app"))
-from answers import matches  # noqa: E402
-from db import QUESTIONS_DIR, connect  # noqa: E402
+from app.answers import matches  # noqa: E402
+from app.db import QUESTIONS_DIR, connect  # noqa: E402
 
 BOOK_DIR = "ace-amc-book"
 
