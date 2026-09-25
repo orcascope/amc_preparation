@@ -211,6 +211,11 @@ button { font: inherit; cursor: pointer; }
 .problem-card .cap { padding-left: 4px; }
 .problem-card .cap .hint { text-transform: none; letter-spacing: 0; font-weight: 600; }
 .zoomable { cursor: zoom-in; }
+.hz-pane { position: fixed; z-index: 50; pointer-events: none; background-color: #fff; background-repeat: no-repeat;
+  border: 1px solid var(--line-strong); border-radius: 14px; box-shadow: 0 12px 32px rgba(31, 23, 71, .18); }
+.hz-lens { position: fixed; z-index: 49; pointer-events: none; border: 2px solid var(--violet); border-radius: 4px;
+  background: rgba(91, 61, 240, .08); }
+@media (hover: none), (pointer: coarse) { .hover-only { display: none; } }
 .zoom { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 24px;
   background: rgba(31, 23, 71, .82); cursor: zoom-out; }
 .zoom img { width: min(94vw, 1250px); height: auto; max-height: 90vh; object-fit: contain; background: #fff; border-radius: 14px; padding: 16px; }

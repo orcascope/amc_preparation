@@ -442,7 +442,7 @@ function stepHtml(step, i, { current, showTurnAnswer } = {}) {
 
 function problemAside(p, tip) {
   return `<aside>
-    <div class="card problem-card"><div class="cap">The problem <span class="hint">· click to enlarge</span></div><img class="zoomable" title="Click to enlarge" src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
+    <div class="card problem-card"><div class="cap">The problem <span class="hint"><span class="hover-only">· hover to magnify </span>· click to enlarge</span></div><img class="zoomable hoverzoom" title="Click to enlarge" src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
     ${tip ? `<div class="tip">${tip}</div>` : ""}
   </aside>`;
 }
@@ -535,7 +535,7 @@ async function showSolution(id) {
         </div>
         ${p.next ? `<a class="next-link" href="#/p/${p.next}"><span class="label">Up next in ${esc(p.topic_name)}</span>
           <b style="font-size:16px">Problem ${p.number + 1}</b></a>` : ""}
-        <div class="card problem-card"><div class="cap">The problem <span class="hint">· click to enlarge</span></div><img class="zoomable" title="Click to enlarge" src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
+        <div class="card problem-card"><div class="cap">The problem <span class="hint"><span class="hover-only">· hover to magnify </span>· click to enlarge</span></div><img class="zoomable hoverzoom" title="Click to enlarge" src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
       </aside>
     </div>`;
     renderMath();
@@ -574,8 +574,71 @@ function openZoom(img) {
 
 document.addEventListener("click", (e) => {
   const img = e.target.closest("img.zoomable");
-  if (img) openZoom(img);
+  if (img) {
+    hideHoverZoom();
+    openZoom(img);
+  }
 });
+
+// ---------- hover magnifier (like a shop's product photo) ----------
+// A lens follows the mouse over the problem image and a panel beside it shows
+// that spot magnified. Only on devices with a real mouse; touch screens keep
+// click-to-enlarge.
+
+const HOVER_ZOOM = 2.2;
+const canHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+let hz = null;  // { img, pane, lens }
+
+function hideHoverZoom() {
+  if (!hz) return;
+  hz.pane.remove();
+  hz.lens.remove();
+  hz = null;
+}
+
+function moveHoverZoom(img, e) {
+  const r = img.getBoundingClientRect();
+  const gap = 16;
+  const roomRight = innerWidth - r.right - 2 * gap;
+  const roomLeft = r.left - 2 * gap;
+  const w = Math.min(760, Math.max(roomRight, roomLeft));
+  if (w < 280 || !r.width) { hideHoverZoom(); return; }  // no room beside it
+  if (!hz || hz.img !== img) {
+    hideHoverZoom();
+    const pane = document.createElement("div");
+    pane.className = "hz-pane";
+    pane.setAttribute("aria-hidden", "true");
+    pane.style.backgroundImage = `url("${img.src}")`;
+    const lens = document.createElement("div");
+    lens.className = "hz-lens";
+    lens.setAttribute("aria-hidden", "true");
+    document.body.append(pane, lens);
+    hz = { img, pane, lens };
+  }
+  const h = Math.min(r.height * HOVER_ZOOM, innerHeight - 2 * gap, 560);
+  const left = roomRight >= roomLeft ? r.right + gap : r.left - gap - w;
+  const top = Math.min(Math.max(r.top, gap), innerHeight - h - gap);
+  const lw = Math.min(r.width, w / HOVER_ZOOM);
+  const lh = Math.min(r.height, h / HOVER_ZOOM);
+  const x = Math.min(Math.max(e.clientX - r.left - lw / 2, 0), r.width - lw);
+  const y = Math.min(Math.max(e.clientY - r.top - lh / 2, 0), r.height - lh);
+  Object.assign(hz.pane.style, {
+    left: `${left}px`, top: `${top}px`, width: `${w}px`, height: `${h}px`,
+    backgroundSize: `${r.width * HOVER_ZOOM}px ${r.height * HOVER_ZOOM}px`,
+    backgroundPosition: `${-x * HOVER_ZOOM}px ${-y * HOVER_ZOOM}px`,
+  });
+  Object.assign(hz.lens.style, {
+    left: `${r.left + x}px`, top: `${r.top + y}px`, width: `${lw}px`, height: `${lh}px`,
+  });
+}
+
+document.addEventListener("mousemove", (e) => {
+  const img = canHover.matches && e.target.closest?.("img.hoverzoom");
+  if (img) moveHoverZoom(img, e);
+  else hideHoverZoom();
+});
+window.addEventListener("scroll", hideHoverZoom, { passive: true });
+window.addEventListener("hashchange", hideHoverZoom);
 
 // ---------- router ----------
 
