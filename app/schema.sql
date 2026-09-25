@@ -1,4 +1,5 @@
--- Content tables: rebuilt from amc_questions/<year>/worked/*.json by
+-- Content tables: rebuilt from amc_questions/<year>/worked/*.json and
+-- amc_questions/ace-amc-book/<topic>/worked/*.json by
 -- tools/import_worked.py. Never edit these by hand; edit the JSON and re-import.
 CREATE TABLE IF NOT EXISTS problems (
     id              TEXT PRIMARY KEY,          -- AMC_10A_2022_P07
@@ -14,7 +15,10 @@ CREATE TABLE IF NOT EXISTS problems (
     choices_json    TEXT NOT NULL,
     answer_choice   TEXT NOT NULL,
     answer_value    TEXT NOT NULL,
-    verification_json TEXT NOT NULL
+    verification_json TEXT NOT NULL,
+    collection      TEXT NOT NULL DEFAULT '',  -- '2018', '2022', ... or 'book'
+    source_label    TEXT NOT NULL DEFAULT '',  -- shown to students, e.g. '2018 AMC 10A'
+    accept_json     TEXT NOT NULL DEFAULT '[]' -- open-ended: accepted answers
 );
 
 CREATE TABLE IF NOT EXISTS steps (

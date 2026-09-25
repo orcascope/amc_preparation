@@ -1,0 +1,62 @@
+{
+  "id": "ACE_2_6_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.6.1",
+    "kind": "problem",
+    "section": "Working with unit digits",
+    "original_source": "2003 AMC 10"
+  },
+  "topic": "number_theory",
+  "subtopic": "Units digit cycles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_6_01.png",
+    "text": "What is the units digit of $13^{2003}$?",
+    "choices": {
+      "A": "$1$",
+      "B": "$3$",
+      "C": "$7$",
+      "D": "$8$",
+      "E": "$9$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$7$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: look for a pattern in the units digits",
+      "body": "$13^{2003}$ is far too big to compute, but we only need its last digit. The units digit of a product depends only on the units digits of the factors, so we can track just the last digit of each power of $13$ and look for a repeat.",
+      "your_turn": {
+        "prompt": "Find the units digits of $13^1$, $13^2$, $13^3$, $13^4$ and $13^5$.",
+        "answer": "$3, 9, 7, 1, 3$. Each is the previous digit times $3$, keeping only the last digit."
+      }
+    },
+    {
+      "title": "The cycle has length $4$",
+      "body": "Once the units digit returns to $3$ at $13^5$, the whole pattern $3, 9, 7, 1$ repeats. So exponents that differ by a multiple of $4$ give the same units digit, and only the remainder of the exponent when divided by $4$ matters.",
+      "your_turn": {
+        "prompt": "What is the remainder when $2003$ is divided by $4$?",
+        "answer": "$3$, because $2000$ is a multiple of $4$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Since $2003$ leaves remainder $3$, $13^{2003}$ has the same units digit as $13^3$, which is the third digit in the cycle $3, 9, 7, 1$. The units digit is $7$. The answer is **(C)** $7$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

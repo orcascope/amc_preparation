@@ -1,0 +1,66 @@
+{
+  "id": "ACE_2_4_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.4.5",
+    "kind": "problem",
+    "section": "Factorials and Palindromes",
+    "original_source": "2020 SMT"
+  },
+  "topic": "number_theory",
+  "subtopic": "Divisors of a factorial",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_4_05.png",
+    "text": "Find the probability that a randomly selected divisor of $20!$ is a multiple of $2000$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{6}{19}$",
+    "accept": [
+      "6/19"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: prime factorize both numbers",
+      "body": "A divisor of $20!$ is built by choosing an exponent for each prime of $20!$, from $0$ up to the exponent in $20!$. Being a multiple of $2000$ is also a condition on exponents. So we need the prime factorizations of $2000$ and $20!$.",
+      "your_turn": {
+        "prompt": "Factor $2000$ into primes.",
+        "answer": "$2000 = 2^4\\cdot 5^3$, since $2000 = 16\\cdot 125$."
+      }
+    },
+    {
+      "title": "Only the primes 2 and 5 matter",
+      "body": "Legendre's formula finds the exponent of a prime $p$ in $20!$: add $\\lfloor 20/p \\rfloor + \\lfloor 20/p^2 \\rfloor + \\dots$. We only need $p = 2$ and $p = 5$, because the other primes in a divisor are free and do not affect whether it is a multiple of $2000$.",
+      "your_turn": {
+        "prompt": "Find the exponents of $2$ and $5$ in $20!$.",
+        "answer": "For $2$: $10 + 5 + 2 + 1 = 18$. For $5$: $4$. So $20! = 2^{18}\\cdot 3^8\\cdot 5^4\\cdot 7^2\\cdot 11\\cdot 13\\cdot 17\\cdot 19$."
+      }
+    },
+    {
+      "title": "Count exponent choices",
+      "body": "A random divisor picks its exponent of $2$ from $0$ to $18$ and its exponent of $5$ from $0$ to $4$, each value equally often, and these choices are independent. It is a multiple of $2000$ when the exponent of $2$ is at least $4$ and the exponent of $5$ is at least $3$. Careful: $0$ is an allowed exponent, so $0$ to $18$ is $19$ choices, not $18$.",
+      "your_turn": {
+        "prompt": "How many allowed exponents of $2$ are at least $4$, out of how many? Same question for $5$ and at least $3$.",
+        "answer": "For $2$: $4$ through $18$ is $15$ out of $19$. For $5$: $3$ or $4$ is $2$ out of $5$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The exponents of the other primes cancel out, since they are free in both the good divisors and all divisors. Multiply the two independent chances.\n$$\\frac{15}{19}\\cdot\\frac{2}{5} = \\frac{30}{95} = \\frac{6}{19}$$\nThe answer is **$\\frac{6}{19}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "6/19",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

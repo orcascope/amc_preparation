@@ -1,0 +1,66 @@
+{
+  "id": "ACE_2_3_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.3.9",
+    "kind": "problem",
+    "section": "Number of Factors and Sum of all Factors",
+    "original_source": "2015 CHMMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Product of divisors",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_3_09.png",
+    "text": "The following number is the product of the divisors of $n$.\n$$2^6\\cdot 3^3$$\nWhat is $n$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$12$",
+    "accept": [
+      "12"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the product-of-divisors formula",
+      "body": "Divisors come in pairs $d$ and $\\tfrac{n}{d}$ that multiply to $n$, so the product of all divisors is $n^{d(n)/2}$, where $d(n)$ is the number of divisors. Setting this equal to the given number and squaring removes the awkward half:\n$$n^{d(n)} = 2^{12}\\cdot 3^6$$",
+      "your_turn": {
+        "prompt": "Which primes can divide $n$? Why?",
+        "answer": "Only $2$ and $3$. Any other prime in $n$ would also show up in $n^{d(n)}$, but the right side has only $2$s and $3$s."
+      }
+    },
+    {
+      "title": "Write $n$ with unknown exponents",
+      "body": "Let $n = 2^a\\cdot 3^b$. Then $d(n) = (a+1)(b+1)$, and raising $n$ to that power multiplies each exponent by $(a+1)(b+1)$. Matching the exponents of $2$ and of $3$ gives two equations:\n$$a(a+1)(b+1) = 12, \\qquad b(a+1)(b+1) = 6$$",
+      "your_turn": {
+        "prompt": "Divide the first equation by the second. What do you learn about $a$ and $b$?",
+        "answer": "$\\tfrac{a}{b} = 2$, so $a = 2b$."
+      }
+    },
+    {
+      "title": "Solve for $b$",
+      "body": "Substitute $a = 2b$ into the second equation to get $b(2b+1)(b+1) = 6$. The left side grows fast as $b$ grows, so try small positive integers.",
+      "your_turn": {
+        "prompt": "Which positive integer $b$ works?",
+        "answer": "$b = 1$, since $1\\cdot 3\\cdot 2 = 6$. Already $b = 2$ gives $2\\cdot 5\\cdot 3 = 30$, which is too big."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $b = 1$ we get $a = 2b = 2$, so $n = 2^2\\cdot 3^1 = 12$. Check: $12$ has $6$ divisors, and their product is $1\\cdot 2\\cdot 3\\cdot 4\\cdot 6\\cdot 12 = 1728 = 12^3 = 2^6\\cdot 3^3$. The answer is **12**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "12",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

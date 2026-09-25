@@ -1,0 +1,66 @@
+{
+  "id": "ACE_2_4_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.4.3",
+    "kind": "problem",
+    "section": "Factorials and Palindromes",
+    "original_source": "2002 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Palindromes and probability",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_4_03.png",
+    "text": "Many states use a sequence of three letters followed by a sequence of three digits as their standard license-plate pattern. Given that each three-letter three-digit arrangement is equally likely, the probability that such a license plate will contain at least one palindrome (a three-letter arrangement or a three-digit arrangement that reads the same left-to-right as it does right-to-left) is $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$59$",
+    "accept": [
+      "59"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: handle the digits and the letters separately",
+      "body": "The plate has two independent parts, the three digits and the three letters. \"At least one palindrome\" means the digit part is a palindrome, or the letter part is, or both. So first find the chance for each part on its own.",
+      "your_turn": {
+        "prompt": "A three-digit string (leading zeros allowed) is a palindrome when it looks like $aba$. How many such strings are there, out of how many total?",
+        "answer": "$10^2 = 100$ palindromes out of $10^3 = 1000$ strings, since choosing $a$ and $b$ fixes the third digit."
+      }
+    },
+    {
+      "title": "The two separate probabilities",
+      "body": "The same idea works for letters with $26$ choices instead of $10$: the first letter fixes the last one.\n$$P(\\text{digits}) = \\frac{10^2}{10^3} = \\frac{1}{10}, \\qquad P(\\text{letters}) = \\frac{26^2}{26^3} = \\frac{1}{26}$$",
+      "your_turn": {
+        "prompt": "Why can't we just add $\\frac{1}{10} + \\frac{1}{26}$ to get the answer?",
+        "answer": "Plates where both parts are palindromes would be counted twice."
+      }
+    },
+    {
+      "title": "Subtract the overlap",
+      "body": "By inclusion-exclusion, $P(\\text{A or B}) = P(\\text{A}) + P(\\text{B}) - P(\\text{both})$. The digits and letters are chosen independently, so the chance that both are palindromes is the product of the two chances. Careful: forgetting this subtraction is the most common mistake here.",
+      "your_turn": {
+        "prompt": "What is the probability that both parts are palindromes?",
+        "answer": "$\\frac{1}{10}\\cdot\\frac{1}{26} = \\frac{1}{260}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Use $260$ as a common denominator.\n$$\\frac{1}{10} + \\frac{1}{26} - \\frac{1}{260} = \\frac{26 + 10 - 1}{260} = \\frac{35}{260} = \\frac{7}{52}$$\nSince $7$ and $52$ share no factor, $m = 7$ and $n = 52$, so $m + n = 59$. The answer is **$59$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "59",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

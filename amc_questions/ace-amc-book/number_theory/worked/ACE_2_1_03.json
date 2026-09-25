@@ -1,0 +1,74 @@
+{
+  "id": "ACE_2_1_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.1.3",
+    "kind": "problem",
+    "section": "The Basics: Prime and Composite Numbers",
+    "original_source": "2020 Purple Comet"
+  },
+  "topic": "number_theory",
+  "subtopic": "Primes and parity",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_1_03.png",
+    "text": "Let $p$, $q$, and $r$ be prime numbers such that $2pqr+p+q+r=2020$. Find $pq+qr+pr$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$585$",
+    "accept": [
+      "585"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: look at even and odd",
+      "body": "When an equation involves primes, a good first question is whether any of them is $2$, the only even prime. Here $2pqr$ is always even and $2020$ is even, so the parity of $p + q + r$ is forced.",
+      "your_turn": {
+        "prompt": "If $p$, $q$, $r$ were all odd, would $2pqr + p + q + r$ be even or odd?",
+        "answer": "Odd, because even plus the sum of three odd numbers is odd. That cannot equal $2020$."
+      }
+    },
+    {
+      "title": "Exactly one prime is $2$",
+      "body": "So at least one prime is $2$. If exactly two were $2$, then $p + q + r$ would be $2 + 2 + \\text{odd}$, which is odd again. If all three were $2$, the left side would be only $22$. So exactly one prime is $2$, and since the equation and $pq + qr + pr$ are symmetric, we can say $p = 2$.",
+      "your_turn": {
+        "prompt": "Put $p = 2$ into the equation and simplify.",
+        "answer": "$4qr + 2 + q + r = 2020$, so $4qr + q + r = 2018$."
+      }
+    },
+    {
+      "title": "Factor with Simon's trick",
+      "body": "The left side almost factors. Simon's Favorite Factoring Trick means adding a constant so a product appears. Multiply both sides by $4$ and add $1$:\n$$(4q+1)(4r+1) = 4\\cdot 2018 + 1 = 8073$$",
+      "your_turn": {
+        "prompt": "Expand $(4q+1)(4r+1)$ to check that this really matches the equation.",
+        "answer": "$16qr + 4q + 4r + 1 = 4(4qr + q + r) + 1 = 4\\cdot 2018 + 1$."
+      }
+    },
+    {
+      "title": "Search the factor pairs",
+      "body": "Now $8073 = 3^3\\cdot 13\\cdot 23$. We need to split it into two factors that each leave remainder $1$ when divided by $4$, and then $q = \\tfrac{\\text{factor} - 1}{4}$ and $r$ must both be prime. The pairs are $1\\cdot 8073$, $3\\cdot 2691$, $9\\cdot 897$, $13\\cdot 621$, $23\\cdot 351$, $27\\cdot 299$, $39\\cdot 207$ and $69\\cdot 117$.",
+      "your_turn": {
+        "prompt": "Test the pairs $9\\cdot 897$ and $13\\cdot 621$. Do they give primes?",
+        "answer": "No. $9\\cdot 897$ gives $q = 2$ and $r = 224$, and $13\\cdot 621$ gives $q = 3$ and $r = 155 = 5\\cdot 31$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Pairs with $3$, $23$, $27$ or $39$ fail because those leave remainder $3$ when divided by $4$, and $1$ would give $q = 0$. The pair that works is $117 = 3^2\\cdot 13$ and $69 = 3\\cdot 23$, giving $q = 29$ and $r = 17$, both prime. Then $pq + qr + pr = 58 + 493 + 34 = 585$. The answer is **$585$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "585",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

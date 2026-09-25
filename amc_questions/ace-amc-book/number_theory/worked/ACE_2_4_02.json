@@ -1,0 +1,72 @@
+{
+  "id": "ACE_2_4_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.4.2",
+    "kind": "problem",
+    "section": "Factorials and Palindromes",
+    "original_source": "2010 AMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Palindromes and divisibility",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_4_02.png",
+    "text": "A palindrome between $1000$ and $10{,}000$ is chosen at random. What is the probability that it is divisible by $7$?",
+    "choices": {
+      "A": "$\\frac{1}{10}$",
+      "B": "$\\frac{1}{9}$",
+      "C": "$\\frac{1}{7}$",
+      "D": "$\\frac{1}{6}$",
+      "E": "$\\frac{1}{5}$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$\\frac{1}{5}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: write the palindrome with digit variables",
+      "body": "Every number between $1000$ and $10{,}000$ that is a palindrome has four digits, so it looks like $abba$. The clue is that the digits come in matching pairs. Writing the number in expanded form lets us group the matching digits together.",
+      "your_turn": {
+        "prompt": "Expand $abba$ in powers of $10$ and collect the $a$ terms and the $b$ terms.",
+        "answer": "$1000a + 100b + 10b + a = 1001a + 110b$."
+      }
+    },
+    {
+      "title": "Look at each part modulo 7",
+      "body": "Now check how $1001$ and $110$ behave when divided by $7$. A term that is always a multiple of $7$ can be ignored.",
+      "your_turn": {
+        "prompt": "What are $1001$ and $110$ modulo $7$?",
+        "answer": "$1001 = 7\\cdot 143$, so it is $0$. $110 = 105 + 5$, so it is $5$."
+      }
+    },
+    {
+      "title": "Which digits b work?",
+      "body": "Since $1001a$ is always a multiple of $7$, the palindrome is divisible by $7$ exactly when $110b$ is, which means $5b$ must be a multiple of $7$. Because $5$ and $7$ share no factor, $b$ itself must be a multiple of $7$. Notice that $a$ does not matter at all.",
+      "your_turn": {
+        "prompt": "Which digits $b$ from $0$ to $9$ are multiples of $7$?",
+        "answer": "$b = 0$ and $b = 7$. Careful: $0$ counts as a multiple of $7$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The digit $a$ can be anything from $1$ to $9$ either way, so the probability depends only on $b$. Out of the $10$ equally likely choices for $b$, exactly $2$ work, so the probability is $\\frac{2}{10} = \\frac{1}{5}$. The answer is **(E)** $\\frac{1}{5}$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This comes from finding only $b = 7$ and forgetting $b = 0$. The number $0$ is a multiple of $7$, and $1001a$ itself (for example $1001$) is divisible by $7$."
+  },
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

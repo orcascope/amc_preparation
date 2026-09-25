@@ -1,0 +1,66 @@
+{
+  "id": "ACE_2_3_11",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.3.11",
+    "kind": "problem",
+    "section": "Number of Factors and Sum of all Factors",
+    "original_source": "1995 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Number of divisors",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_3_11.png",
+    "text": "Let $n=2^{31}3^{19}$. How many positive integer divisors of $n^2$ are less than $n$ but do not divide $n$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$589$",
+    "accept": [
+      "589"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: pair up the divisors of $n^2$",
+      "body": "Listing divisors one by one is hopeless, so look for structure. Divisors of $n^2$ come in pairs $d$ and $\\tfrac{n^2}{d}$ that multiply to $n^2$. If $d < n$, then its partner is bigger than $n$, so each pair has one member below $n$ and one above, except $n$ itself, which is paired with itself.",
+      "your_turn": {
+        "prompt": "Write $n^2$ as a product of prime powers. How many divisors does it have?",
+        "answer": "$n^2 = 2^{62}\\cdot 3^{38}$, so it has $(62+1)(38+1) = 63\\cdot 39 = 2457$ divisors."
+      }
+    },
+    {
+      "title": "Count the divisors of $n^2$ below $n$",
+      "body": "Take away the divisor $n$ itself. The rest split evenly into pairs, and exactly one member of each pair is less than $n$.\n$$\\#\\{d \\mid n^2 : d < n\\} = \\frac{2457 - 1}{2}$$",
+      "your_turn": {
+        "prompt": "Compute that number.",
+        "answer": "$\\tfrac{2456}{2} = 1228$."
+      }
+    },
+    {
+      "title": "Remove the ones that divide $n$",
+      "body": "Some of those $1228$ divisors also divide $n$, and the problem does not want them. Every divisor of $n$ divides $n^2$, and every divisor of $n$ except $n$ itself is less than $n$. Careful: $n$ is a divisor of $n$, but it was never in our count of divisors less than $n$, so do not subtract it.",
+      "your_turn": {
+        "prompt": "How many divisors of $n$ are less than $n$?",
+        "answer": "$n = 2^{31}\\cdot 3^{19}$ has $(31+1)(19+1) = 640$ divisors, so $639$ of them are less than $n$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Subtract the divisors of $n$ from the divisors of $n^2$ below $n$: $1228 - 639 = 589$. The answer is **589**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "589",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

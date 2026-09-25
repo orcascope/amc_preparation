@@ -1,0 +1,73 @@
+{
+  "id": "ACE_2_1_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.1.2",
+    "kind": "problem",
+    "section": "The Basics: Prime and Composite Numbers",
+    "original_source": "2020 AMC 10"
+  },
+  "topic": "number_theory",
+  "subtopic": "Primes",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_1_02.png",
+    "text": "The acute angles of a right triangle are $a^\\circ$ and $b^\\circ$, where $a > b$ and both $a$ and $b$ are prime numbers. What is the least possible value of $b$?",
+    "choices": {
+      "A": "$2$",
+      "B": "$3$",
+      "C": "$5$",
+      "D": "$7$",
+      "E": "$11$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$7$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: the two acute angles are linked",
+      "body": "The angles of any triangle add to $180^\\circ$, and the right angle already uses $90^\\circ$. So $a$ and $b$ are not independent: once you pick $b$, the value of $a$ is fixed. That turns the problem into a short search.",
+      "your_turn": {
+        "prompt": "What must $a + b$ equal? Write $a$ in terms of $b$.",
+        "answer": "$a + b = 90$, so $a = 90 - b$."
+      }
+    },
+    {
+      "title": "Test the smallest primes for $b$",
+      "body": "We want the least $b$, so try primes for $b$ in increasing order and check whether $a = 90 - b$ is also prime. Every prime except $2$ is odd, so after $2$ we only need to try odd values.",
+      "your_turn": {
+        "prompt": "Check $b = 2$ and $b = 3$. Is $a$ prime in either case?",
+        "answer": "No. $b = 2$ gives $a = 88$, which is even. $b = 3$ gives $a = 87 = 3\\cdot 29$."
+      }
+    },
+    {
+      "title": "Checking primes quickly",
+      "body": "Careful: $87$ looks prime, but its digit sum is $15$, so $3$ divides it. To test whether a number below $100$ is prime, you only need to try dividing by $2$, $3$, $5$ and $7$, because $\\sqrt{100} = 10$. For $b = 5$ we get $a = 85$, which ends in $5$, so that fails too.",
+      "your_turn": {
+        "prompt": "Practice the test: is $91$ prime?",
+        "answer": "No. $91 = 7\\cdot 13$, which you find by trying $7$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The next prime is $b = 7$, which gives $a = 90 - 7 = 83$. The number $83$ is odd, has digit sum $11$, does not end in $0$ or $5$, and $83 = 7\\cdot 11 + 6$, so it is prime. Also $83 > 7$, as required. The least possible value of $b$ is $7$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This picks the smallest prime without checking $a$. With $b = 2$ we get $a = 88$, which is even and not prime.",
+    "B": "This happens if you think $87$ is prime. Its digits add to $15$, so $87 = 3\\cdot 29$."
+  },
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

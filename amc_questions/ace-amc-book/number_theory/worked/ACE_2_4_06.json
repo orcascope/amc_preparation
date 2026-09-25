@@ -1,0 +1,66 @@
+{
+  "id": "ACE_2_4_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.4.6",
+    "kind": "problem",
+    "section": "Factorials and Palindromes",
+    "original_source": "2003 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Factorials",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_4_06.png",
+    "text": "Given that $\\frac{((3!)!)!}{3!} = k\\cdot n!$, where $k$ and $n$ are positive integers and $n$ is as large as possible, find $k+n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$839$",
+    "accept": [
+      "839"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: evaluate the nested factorials from the inside",
+      "body": "The expression looks scary, but the inner factorials are small numbers. Work from the innermost parentheses outward until only one big factorial is left.",
+      "your_turn": {
+        "prompt": "What are $3!$ and $(3!)! = 6!$?",
+        "answer": "$3! = 6$ and $6! = 720$, so the left side is $\\frac{720!}{6}$."
+      }
+    },
+    {
+      "title": "How large can n be?",
+      "body": "We want to write $\\frac{720!}{6}$ as a positive integer $k$ times $n!$ with $n$ as big as possible. Try the biggest candidates first.",
+      "your_turn": {
+        "prompt": "Can $n = 720$ (or anything bigger) work? What would $k$ have to be?",
+        "answer": "No. For $n = 720$ we would need $k = \\frac{1}{6}$. For $n > 720$, $n!$ is even bigger than $720!$, so $k$ would be even smaller than $\\frac16$. Neither is a positive integer, so $n \\le 719$."
+      }
+    },
+    {
+      "title": "Peel off one factor",
+      "body": "Split off the largest factor of $720!$: we have $720! = 720\\cdot 719!$. Then the division by $6$ can be done using the $720$ alone.\n$$\\frac{720!}{6} = \\frac{720}{6}\\cdot 719!$$",
+      "your_turn": {
+        "prompt": "What is $\\frac{720}{6}$, and is it a positive integer?",
+        "answer": "$120$, a positive integer, so $n = 719$ works."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $\\frac{720!}{6} = 120\\cdot 719!$, and no $n \\ge 720$ works, so the largest $n$ is $719$ with $k = 120$. Then $k + n = 120 + 719 = 839$. The answer is **$839$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "839",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Pass after fix: step 2 now rules out every n >= 720, not just 720."
+  }
+}

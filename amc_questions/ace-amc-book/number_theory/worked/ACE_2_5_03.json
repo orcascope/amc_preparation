@@ -1,0 +1,66 @@
+{
+  "id": "ACE_2_5_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.5.3",
+    "kind": "problem",
+    "section": "Numbers in Different Bases",
+    "original_source": "2017 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Base conversion",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_5_03.png",
+    "text": "A rational number written in base eight is $\\underline{ab}.\\underline{cd}$, where all digits are nonzero. The same number in base twelve is $\\underline{bb}.\\underline{ba}$. Find the base-ten number $\\underline{abc}$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$321$",
+    "accept": [
+      "321"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: match the whole parts and the fractional parts",
+      "body": "In any base, the digits after the point make a number between $0$ and $1$. So if two numerals name the same number, their whole-number parts must be equal and their fractional parts must be equal. That splits one hard equation into two easier ones.",
+      "your_turn": {
+        "prompt": "Write the whole-number parts $\\underline{ab}_8$ and $\\underline{bb}_{12}$ in base ten.",
+        "answer": "$\\underline{ab}_8 = 8a + b$ and $\\underline{bb}_{12} = 12b + b = 13b$."
+      }
+    },
+    {
+      "title": "Solve the whole-number equation",
+      "body": "Setting them equal gives $8a + b = 13b$, so $8a = 12b$, which simplifies to $2a = 3b$. Careful: $a$ and $b$ are digits of a base-eight numeral, so each is at most $7$, and the problem says they are nonzero.",
+      "your_turn": {
+        "prompt": "List every pair $(a, b)$ of digits from $1$ to $7$ with $2a = 3b$.",
+        "answer": "$b$ must be even: $(a, b) = (3, 2)$ or $(6, 4)$. The next pair, $(9, 6)$, has $a$ too big."
+      }
+    },
+    {
+      "title": "Match the fractional parts and test $(6, 4)$",
+      "body": "The fractional parts give $\\tfrac{c}{8} + \\tfrac{d}{64} = \\tfrac{b}{12} + \\tfrac{a}{144}$. Multiplying both sides by $64$ turns the left side into the whole number $8c + d$. For $(a, b) = (6, 4)$ the right side is $\\tfrac{4}{12} + \\tfrac{6}{144} = \\tfrac{54}{144} = \\tfrac{3}{8}$, so we need $8c + d = 24$.",
+      "your_turn": {
+        "prompt": "Can $8c + d = 24$ hold with $c$ and $d$ nonzero base-eight digits?",
+        "answer": "No. $d = 24 - 8c$ is a multiple of $8$, so $d$ would be $0$ or at least $8$, and neither is allowed."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "That leaves $(a, b) = (3, 2)$. The right side is $\\tfrac{2}{12} + \\tfrac{3}{144} = \\tfrac{27}{144} = \\tfrac{3}{16}$, and $64 \\cdot \\tfrac{3}{16} = 12$, so $8c + d = 12$. With $c, d$ nonzero digits, the only choice is $c = 1$, $d = 4$. Check: $\\underline{32}.\\underline{14}_8$ and $\\underline{22}.\\underline{23}_{12}$ both equal $26.1875$. So $\\underline{abc} = 321$. The answer is **321**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "321",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

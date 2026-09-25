@@ -1,0 +1,74 @@
+{
+  "id": "ACE_2_5_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.5.5",
+    "kind": "problem",
+    "section": "Numbers in Different Bases",
+    "original_source": "2020 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Base conversion",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_5_05.png",
+    "text": "A positive integer $N$ has base-eleven representation $\\underline{a}\\,\\underline{b}\\,\\underline{c}$ and base-eight representation $\\underline{1}\\,\\underline{b}\\,\\underline{c}\\,\\underline{a}$, where $a, b,$ and $c$ represent (not necessarily distinct) digits. Find the least such $N$ expressed in base ten.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$621$",
+    "accept": [
+      "621"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: turn both representations into base ten",
+      "body": "Both digit strings name the same number $N$. If we write each one out using place values, we get two expressions for $N$ that must be equal, which gives an equation in $a$, $b$ and $c$.",
+      "your_turn": {
+        "prompt": "Write $\\underline{a}\\,\\underline{b}\\,\\underline{c}$ in base eleven and $\\underline{1}\\,\\underline{b}\\,\\underline{c}\\,\\underline{a}$ in base eight as base-ten expressions.",
+        "answer": "$121a + 11b + c$ and $512 + 64b + 8c + a$, since $11^2 = 121$ and $8^3 = 512$, $8^2 = 64$."
+      }
+    },
+    {
+      "title": "Set them equal and simplify",
+      "body": "Setting the two expressions equal and moving like terms together gives one clean equation.\n$$120a = 512 + 53b + 7c$$\nThe digits also have limits. The same $a$, $b$, $c$ appear in a base-eight number, so each must be a base-eight digit.",
+      "your_turn": {
+        "prompt": "What values can $a$, $b$ and $c$ take?",
+        "answer": "$0$ through $7$. Base eleven would allow up to $10$, but base eight only allows digits up to $7$."
+      }
+    },
+    {
+      "title": "Find the smallest possible $a$",
+      "body": "The right side is at least $512$, so $120a$ must be at least $512$. To make $N = 121a + 11b + c$ as small as possible we want the smallest $a$ that works, because $11b + c \\le 84$ is always less than $121$, so a smaller $a$ always wins.",
+      "your_turn": {
+        "prompt": "Why can $a$ not be $4$? What is the smallest $a$ to try?",
+        "answer": "$120\\cdot 4 = 480$, which is less than $512$. So try $a = 5$."
+      }
+    },
+    {
+      "title": "Solve for $b$ and $c$",
+      "body": "With $a = 5$ the left side is $600$, so the equation becomes $53b + 7c = 88$. Now $b$ and $c$ must be digits from $0$ to $7$, so only a few values of $b$ are possible.",
+      "your_turn": {
+        "prompt": "Try $b = 0$ and $b = 1$. Which one gives a digit $c$?",
+        "answer": "$b = 0$ needs $7c = 88$, not a whole number. $b = 1$ gives $7c = 35$, so $c = 5$. ($b = 2$ is already too big: $106 > 88$.)"
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The digits are $a = 5$, $b = 1$, $c = 5$. In base eleven, $N = 121\\cdot 5 + 11\\cdot 1 + 5 = 621$. Check with base eight: $1155_8 = 512 + 64 + 40 + 5 = 621$. The least such $N$ is $621$.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "621",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

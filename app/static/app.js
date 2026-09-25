@@ -256,14 +256,14 @@ async function showTopics() {
         <span class="sub">${esc(resume.subtopic)} · ${resume.attempts} attempt${resume.attempts === 1 ? "" : "s"} so far</span>
       </a>` : ""}
     </div>
-    ${years.length > 1 ? `<nav class="year-filter" aria-label="Filter by year">
+    ${years.length > 1 ? `<nav class="year-filter" aria-label="Filter by year or book">
       <span class="label">Year</span>
-      ${[["all", "All years"], ...years.map((y) => [String(y), String(y)])].map(([v, label]) => {
-        const on = v === (year ? String(year) : "all");
+      ${[["all", "All years"], ...years.map((y) => [y.key, y.label])].map(([v, label]) => {
+        const on = v === (year || "all");
         return `<a class="chip ${on ? "on" : ""}" href="#/topics?year=${v}" ${on ? 'aria-current="true"' : ""}>${label}</a>`;
       }).join("")}
     </nav>` : ""}
-    <h2 class="section-title">Choose a problem type${year ? ` <span class="year-note">· ${year} problems</span>` : ""}</h2>
+    <h2 class="section-title">Choose a problem type${year ? ` <span class="year-note">· ${esc(years.find((y) => y.key === year)?.label || year)} problems</span>` : ""}</h2>
     <div class="topic-grid">
       ${topics.map((t) => {
         const c = t.counts;
@@ -305,6 +305,20 @@ function problemCrumbs(p, extra = "") {
             : `<span>${esc(p.topic_name)}</span>`}`;
 }
 
+// "(B) $6$" for multiple choice, "$585$" for an open-ended problem.
+function answerHtml(ans) {
+  return ans.choice ? `<b>(${ans.choice})</b> ${esc(ans.value)}` : `<b>${esc(ans.value)}</b>`;
+}
+
+function openAnswerHtml(p, { typed, disabled } = {}) {
+  return `<div class="open-answer">
+    <label for="typed">${disabled ? "Your answer" : "Type your answer"}</label>
+    <input id="typed" name="typed" type="text" autocomplete="off" maxlength="60" spellcheck="false"
+      placeholder="For example 585, 3/4 or 2sqrt(3)" value="${esc(disabled && p.answer ? p.answer.value.replace(/\$/g, "") : typed || "")}" ${disabled ? "disabled" : ""}>
+    ${p.wrong_tried.length ? `<p class="tried">Already tried: ${p.wrong_tried.map(esc).join(", ")}</p>` : ""}
+  </div>`;
+}
+
 function choicesHtml(p, { selected, disabled } = {}) {
   return `<fieldset class="choices">
     <legend>${disabled ? "Answer choices" : "Choose your answer"}</legend>
@@ -335,7 +349,7 @@ async function showProblem(id) {
       const status = state.feedback?.status || p.status;
       feedback = `<div class="banner good">${ICON_CHECK}<div>
         <div class="celebrate">${state.feedback?.correct ? "Correct!" : "Completed"}</div>
-        The answer is <b>(${p.answer.choice})</b> ${esc(p.answer.value)}. Saved as <b>${outcomeLabel(status, p.hints_used)}</b>.
+        The answer is ${answerHtml(p.answer)}. Saved as <b>${outcomeLabel(status, p.hints_used)}</b>.
       </div></div>
       <div class="actions">
         <a class="btn btn-outline" href="#/p/${p.id}/solution">See the full solution</a>
@@ -344,7 +358,7 @@ async function showProblem(id) {
       </div>`;
     } else if (state.feedback) {
       feedback = `<div class="banner warn">${ICON_WARN}<div>
-        <b>(${state.selected}) isn't right.</b><br>
+        <b>${p.choices ? `(${state.selected})` : `“${esc(state.selected)}”`} isn't right.</b><br>
         ${state.feedback.explanation ? esc(state.feedback.explanation) : "Try again, or pick a way to get help below."}
       </div></div>`;
     }
@@ -367,12 +381,13 @@ async function showProblem(id) {
       <main class="pmain">
         <div class="meta-row">
           <span class="topic-tag t-${p.topic}">${esc(p.topic_name)}</span>
-          <span>Problem ${p.number} of ${p.of}</span><span>·</span><span>${esc(p.subtopic)}</span><span>·</span><span>${p.year}</span>
+          <span>Problem ${p.number} of ${p.of}</span><span>·</span><span>${esc(p.subtopic)}</span><span>·</span><span>${esc(p.source_label)}</span>
           ${p.attempts ? `<span>·</span><span>${p.attempts} attempt${p.attempts === 1 ? "" : "s"}</span>` : ""}
         </div>
         <div class="statement"><img class="zoomable" title="Click to enlarge" src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
         <form class="answer-form">
-          ${choicesHtml(p, { selected: state.selected, disabled: state.feedback?.correct || done })}
+          ${p.choices ? choicesHtml(p, { selected: state.selected, disabled: state.feedback?.correct || done })
+                      : openAnswerHtml(p, { typed: state.feedback?.correct ? "" : state.selected, disabled: state.feedback?.correct || done })}
           ${(state.feedback?.correct || done) ? "" : `<div class="actions" style="margin-top:16px">
             <button class="btn btn-primary" type="submit" ${state.selected ? "" : "disabled"}>Check my answer</button></div>`}
         </form>
@@ -386,6 +401,10 @@ async function showProblem(id) {
 
   function wire() {
     const form = $app.querySelector(".answer-form");
+    form.querySelector("input[name=typed]")?.addEventListener("input", (e) => {
+      state.selected = e.target.value.trim() || null;
+      form.querySelector("button[type=submit]").disabled = !state.selected;
+    });
     form.querySelectorAll("input[name=ans]").forEach((r) => r.addEventListener("change", () => {
       state.selected = r.value;
       state.feedback = null;
@@ -395,7 +414,8 @@ async function showProblem(id) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!state.selected) return;
-      const res = await api(`/api/problems/${p.id}/attempt`, { method: "POST", body: { choice: state.selected } });
+      const res = await api(`/api/problems/${p.id}/attempt`, {
+        method: "POST", body: p.choices ? { choice: state.selected } : { answer: state.selected } });
       p.attempts += 1;
       state.feedback = res;
       if (res.correct) {
@@ -411,7 +431,7 @@ async function showProblem(id) {
       state.selected = null;
       state.feedback = null;
       render();
-      $app.querySelector(".choices input:not(:disabled)")?.focus();
+      $app.querySelector(".choices input:not(:disabled), input[name=typed]:not(:disabled)")?.focus();
     });
   }
 
@@ -515,10 +535,11 @@ async function showSolution(id) {
       <main>
         <div class="answer-card">
           <span class="label">Answer</span>
-          <span class="value">(${data.answer.choice}) ${esc(data.answer.value)}</span>
+          <span class="value">${data.answer.choice ? `(${data.answer.choice}) ` : ""}${esc(data.answer.value)}</span>
         </div>
         ${data.steps.map((s, i) => stepHtml(s, i + 1, { showTurnAnswer: true })).join("")}
-        <p class="done-note">These steps were worked out ahead of time with the math-olympiad solver and checked against the official answer key.</p>
+        <p class="done-note">${id.startsWith("ACE_") ? "These steps follow the solution in the ACE book and were checked by an independent reviewer."
+          : "These steps were worked out ahead of time with the math-olympiad solver and checked against the official answer key."}</p>
       </main>
       <aside>
         <div class="card" style="display:flex;flex-direction:column;gap:16px">

@@ -11,6 +11,7 @@ import json
 
 from flask import Flask, abort, g, jsonify, request, send_from_directory
 
+from answers import matches
 from db import APP_DIR, QUESTIONS_DIR, connect
 
 app = Flask(__name__, static_folder=str(APP_DIR / "static"), static_url_path="/static")
@@ -70,16 +71,22 @@ def update_progress(sid, pid, **fields):
 
 
 def year_filter():
-    """The ?year= filter as an int, or None for all years."""
-    year = request.args.get("year", "")
-    return int(year) if year.isdigit() else None
+    """The ?year= filter: a collection key ('2018', 'book', ...) or None for everything."""
+    return request.args.get("year") or None
 
 
-def topic_problems(topic, year=None):
-    """Problems of one type in study order: easiest first. year=None means every year."""
+def collections():
+    """[{key, label}] for every collection that has problems: contest years first, then the book."""
+    keys = [r[0] for r in db().execute("SELECT DISTINCT collection FROM problems")]
+    keys.sort(key=lambda k: (not k.isdigit(), k))
+    return [{"key": k, "label": "ACE book" if k == "book" else k} for k in keys]
+
+
+def topic_problems(topic, coll=None):
+    """Problems of one type in study order: easiest first. coll=None means every collection."""
     return db().execute(
-        "SELECT id, subtopic, difficulty FROM problems WHERE topic = ? AND (? IS NULL OR year = ?) "
-        "ORDER BY difficulty, year, contest, session, number", (topic, year, year)).fetchall()
+        "SELECT id, subtopic, difficulty FROM problems WHERE topic = ? AND (? IS NULL OR collection = ?) "
+        "ORDER BY difficulty, year, contest, session, number", (topic, coll, coll)).fetchall()
 
 
 def step_dict(row):
@@ -165,9 +172,9 @@ def delete_student(sid):
 @app.get("/api/topics")
 def topics():
     sid = student_id()
-    years = [r[0] for r in db().execute("SELECT DISTINCT year FROM problems ORDER BY year")]
+    years = collections()
     year = year_filter()
-    if year not in years:
+    if year not in [c["key"] for c in years]:
         year = None
     prog = {r["problem_id"]: r for r in db().execute(
         "SELECT * FROM progress WHERE student_id = ?", (sid,))}
@@ -189,7 +196,7 @@ def topics():
     cont = db().execute(
         "SELECT p.problem_id, pr.topic, pr.subtopic, p.attempts FROM progress p "
         "JOIN problems pr ON pr.id = p.problem_id "
-        "WHERE p.student_id = ? AND NOT p.completed AND (? IS NULL OR pr.year = ?) "
+        "WHERE p.student_id = ? AND NOT p.completed AND (? IS NULL OR pr.collection = ?) "
         "ORDER BY p.updated_at DESC LIMIT 1",
         (sid, year, year)).fetchone()
     resume = None
@@ -232,7 +239,7 @@ def problem(pid):
     n_steps = db().execute("SELECT COUNT(*) FROM steps WHERE problem_id = ?", (pid,)).fetchone()[0]
     data = {
         "id": pid, "topic": p["topic"], "topic_name": TOPIC_NAMES[p["topic"]],
-        "subtopic": p["subtopic"], "difficulty": p["difficulty"], "year": p["year"],
+        "subtopic": p["subtopic"], "difficulty": p["difficulty"], "source_label": p["source_label"],
         "number": i + 1, "of": len(ids),
         "next": ids[i + 1] if i + 1 < len(ids) else None,
         "image": f"/images/{p['image']}", "text": p["text"],
@@ -251,10 +258,18 @@ def problem(pid):
 def attempt(pid):
     sid = student_id()
     p = problem_row(pid)
-    choice = (request.get_json(silent=True) or {}).get("choice")
-    if choice not in json.loads(p["choices_json"]):
-        abort(400, "choice must be A-E")
-    correct = choice == p["answer_choice"]
+    body = request.get_json(silent=True) or {}
+    choices = json.loads(p["choices_json"])
+    if choices:
+        choice = body.get("choice")
+        if choice not in choices:
+            abort(400, "choice must be A-E")
+        correct = choice == p["answer_choice"]
+    else:  # open-ended: a typed answer
+        choice = " ".join(str(body.get("answer") or "").split())[:60]
+        if not choice:
+            abort(400, "answer is required")
+        correct = matches(choice, json.loads(p["accept_json"]))
     prog = progress_row(sid, pid)
     db().execute("INSERT INTO attempts (student_id, problem_id, choice, correct) VALUES (?,?,?,?)",
                  (sid, pid, choice, int(correct)))

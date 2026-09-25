@@ -1,0 +1,66 @@
+{
+  "id": "ACE_2_4_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.4.7",
+    "kind": "problem",
+    "section": "Factorials and Palindromes",
+    "original_source": "2020 HMMT"
+  },
+  "topic": "number_theory",
+  "subtopic": "Sums of factorials",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_4_07.png",
+    "text": "How many positive integers less than or equal to $240$ can be expressed as a sum of distinct factorials? Consider $0!$ and $1!$ to be distinct.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$39$",
+    "accept": [
+      "39"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: list the factorials you can use",
+      "body": "Factorials grow very fast, so only a handful of them can appear in a sum up to $240$. List them first: $0! = 1$, $1! = 1$, $2! = 2$, $3! = 6$, $4! = 24$, $5! = 120$. The next one, $6! = 720$, is already far too big.",
+      "your_turn": {
+        "prompt": "What is the largest sum you can make using each of these six factorials at most once? Does the limit of $240$ ever get in the way?",
+        "answer": "$1 + 1 + 2 + 6 + 24 + 120 = 154$. That is below $240$, so every possible sum is allowed."
+      }
+    },
+    {
+      "title": "The small factorials can repeat values",
+      "body": "Careful: $0!$ and $1!$ are both $1$, and $0! + 1! = 2!$. So different choices of the small factorials $1, 1, 2$ can give the same total, and we must count totals, not choices. Split the problem into a small part (from $0!, 1!, 2!$) and a big part (from $3!, 4!, 5!$).",
+      "your_turn": {
+        "prompt": "Which totals can you make from $1, 1, 2$ if you may also use none of them?",
+        "answer": "$0, 1, 2, 3, 4$: five different totals (for example $3 = 1 + 2$ and $4 = 1 + 1 + 2$)."
+      }
+    },
+    {
+      "title": "The big factorials never collide",
+      "body": "Each of $6$, $24$, $120$ is either in the sum or not, which gives $2 \\cdot 2 \\cdot 2 = 8$ big parts: $0, 6, 24, 30, 120, 126, 144, 150$. Any two of these differ by at least $6$, while the small part only adds $0$ to $4$.",
+      "your_turn": {
+        "prompt": "Why can two different (big part, small part) pairs never give the same number?",
+        "answer": "Two big parts differ by at least $6$, but small parts differ by at most $4$, so the gap can never be closed."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Every pair of a big part and a small part gives a different number, so there are $8 \\cdot 5 = 40$ totals. One of them is $0$ (use nothing at all), which is not positive, so we remove it: $40 - 1 = 39$. The answer is **39**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "39",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

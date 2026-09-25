@@ -1,0 +1,66 @@
+{
+  "id": "ACE_2_2_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.2.9",
+    "kind": "problem",
+    "section": "Multiples, Divisors, Prime Factorization",
+    "original_source": "2019 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Number of divisors",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_2_09.png",
+    "text": "Find the number of $7$-tuples of positive integers $(a, b, c, d, e, f, g)$ that satisfy the following system of equations:\n$$abc = 70$$\n$$cde = 71$$\n$$efg = 72.$$",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$96$",
+    "accept": [
+      "96"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: look at the shared variables",
+      "body": "The variable $c$ appears in both the first and second equations, and $e$ appears in both the second and third. So $c$ must divide both $70$ and $71$, and $e$ must divide both $71$ and $72$. The numbers $70$, $71$, $72$ are consecutive, which is the clue that these shared variables are very limited.",
+      "your_turn": {
+        "prompt": "Which positive integers divide both $70$ and $71$?",
+        "answer": "Only $1$. Consecutive integers share no common factor bigger than $1$ (and $71$ is prime)."
+      }
+    },
+    {
+      "title": "The system falls apart into pieces",
+      "body": "The same reasoning gives $e = 1$, since $71$ and $72$ are consecutive. With $c = e = 1$ the equations become\n$$ab = 70,\\qquad d = 71,\\qquad fg = 72.$$\nNow $d$ is fixed, and the pairs $(a, b)$ and $(f, g)$ can be chosen independently.",
+      "your_turn": {
+        "prompt": "Why is $d$ forced to be $71$, with no other choice?",
+        "answer": "From $cde = 71$ with $c = e = 1$, we get $d = 71$ directly."
+      }
+    },
+    {
+      "title": "Count the pairs with divisors",
+      "body": "For $ab = 70$, every divisor $a$ of $70$ gives exactly one $b = 70/a$, so the number of pairs is the number of divisors of $70 = 2\\cdot 5\\cdot 7$. Add $1$ to each exponent and multiply: $(1+1)(1+1)(1+1) = 8$ pairs. Careful: order matters, so $(1, 70)$ and $(70, 1)$ are two different pairs, and the divisor count already counts them both.",
+      "your_turn": {
+        "prompt": "How many ordered pairs $(f, g)$ of positive integers satisfy $fg = 72$?",
+        "answer": "$72 = 2^3\\cdot 3^2$ has $(3+1)(2+1) = 12$ divisors, so $12$ pairs."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The values $c = 1$, $d = 71$, $e = 1$ are fixed, there are $8$ choices for $(a, b)$ and $12$ choices for $(f, g)$, and these choices are independent. So the number of $7$-tuples is $8\\cdot 12 = 96$. The answer is **96**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "96",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

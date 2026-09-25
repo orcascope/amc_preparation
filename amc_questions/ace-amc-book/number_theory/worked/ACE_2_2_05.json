@@ -1,0 +1,58 @@
+{
+  "id": "ACE_2_2_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.2.5",
+    "kind": "example",
+    "section": "Multiples, Divisors, Prime Factorization",
+    "original_source": null
+  },
+  "topic": "number_theory",
+  "subtopic": "LCM and GCD",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_2_2_05.png",
+    "text": "What is the GCD of $15$ and $24$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$3$",
+    "accept": [
+      "3"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: write both numbers as primes",
+      "body": "The GCD (greatest common divisor) is the largest number that divides both. The cleanest way to find it is to break each number into prime powers, because then you can compare them one prime at a time.",
+      "your_turn": {
+        "prompt": "Write $15$ and $24$ as products of primes.",
+        "answer": "$15 = 3\\cdot 5$ and $24 = 2^3\\cdot 3$."
+      }
+    },
+    {
+      "title": "Take the smallest exponent of each prime",
+      "body": "List every prime that appears in either number: $2$, $3$ and $5$. For the GCD, use the smallest exponent of each prime. Careful: a prime that divides only one of the numbers has exponent $0$ in the other, so its smallest exponent is $0$.",
+      "your_turn": {
+        "prompt": "What exponent of $2$ goes into the GCD? What exponent of $5$?",
+        "answer": "Both are $0$: $15$ has no factor of $2$, and $24$ has no factor of $5$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The prime $3$ appears once in each number, so its smallest exponent is $1$.\n$$\\gcd(15, 24) = 2^0\\cdot 3^1\\cdot 5^0 = 3$$\nThe answer is **$3$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "3",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

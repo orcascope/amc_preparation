@@ -1,0 +1,74 @@
+{
+  "id": "ACE_2_3_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.3.10",
+    "kind": "problem",
+    "section": "Number of Factors and Sum of all Factors",
+    "original_source": "2004 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Number of divisors",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_3_10.png",
+    "text": "How many positive integer divisors of $2004^{2004}$ are divisible by exactly $2004$ positive integers?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$54$",
+    "accept": [
+      "54"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: factor $2004$",
+      "body": "\"Divisible by exactly $2004$ positive integers\" means the divisor itself has exactly $2004$ divisors. Both the big number and the count $2004$ are built from $2004$, so its prime factorization is the key to everything.",
+      "your_turn": {
+        "prompt": "Factor $2004$ into primes, and use it to write $2004^{2004}$ as a product of prime powers.",
+        "answer": "$2004 = 2^2\\cdot 3\\cdot 167$, so $2004^{2004} = 2^{4008}\\cdot 3^{2004}\\cdot 167^{2004}$."
+      }
+    },
+    {
+      "title": "Turn it into an equation",
+      "body": "Every divisor of $2004^{2004}$ has the form $2^x\\cdot 3^y\\cdot 167^z$, and it has $(x+1)(y+1)(z+1)$ divisors. So we need to count the ordered triples with\n$$(x+1)(y+1)(z+1) = 2^2\\cdot 3\\cdot 167.$$\nEach choice of how to hand out the prime factors of $2004$ to the three slots $x+1$, $y+1$, $z+1$ gives exactly one triple.",
+      "your_turn": {
+        "prompt": "The largest any of $x$, $y$, $z$ can be here is $2003$. Is that ever too big for a divisor of $2004^{2004}$?",
+        "answer": "No. The exponents allowed are up to $4008$, $2004$ and $2004$, so every triple we build really is a divisor."
+      }
+    },
+    {
+      "title": "Hand out the two factors of $2$",
+      "body": "Either both $2$s go to the same slot, or they go to two different slots. Careful: the two $2$s are identical, so do not count them as if they were different objects.",
+      "your_turn": {
+        "prompt": "How many ways are there to place the two $2$s?",
+        "answer": "$6$: there are $3$ ways to put both in one slot, and $\\binom{3}{2} = 3$ ways to put them in two different slots."
+      }
+    },
+    {
+      "title": "Hand out $3$ and $167$",
+      "body": "The single factor $3$ can go to any of the three slots, and so can the single factor $167$. These choices are independent of each other and of where the $2$s went.",
+      "your_turn": {
+        "prompt": "How many ways are there to place the $3$? And the $167$?",
+        "answer": "$3$ ways each: $x+1$, $y+1$ or $z+1$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Multiply the independent choices: $6\\cdot 3\\cdot 3 = 54$. The answer is **54**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "54",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}
