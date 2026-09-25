@@ -1,0 +1,65 @@
+{
+  "id": "AMC_10B_2018_P01",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 1
+  },
+  "topic": "arithmetic_logic",
+  "subtopic": "Area",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10B_2018_P01.png",
+    "text": "Kate bakes a $20$-inch by $18$-inch pan of cornbread. The cornbread is cut into pieces that measure $2$ inches by $2$ inches. How many pieces of cornbread does the pan contain?",
+    "choices": {
+      "A": "$90$",
+      "B": "$100$",
+      "C": "$180$",
+      "D": "$200$",
+      "E": "$360$"
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$90$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: count the pieces along each side",
+      "body": "The pieces are little squares laid out in rows and columns, like a grid. So count how many pieces fit along each side of the pan. Both $20$ and $18$ are even, so the $2$-inch pieces fit exactly with nothing left over.",
+      "your_turn": {
+        "prompt": "How many $2$-inch pieces fit along the $20$-inch side?",
+        "answer": "$10$, since $20 \\div 2 = 10$."
+      }
+    },
+    {
+      "title": "A piece is not 2 square inches",
+      "body": "Another way to count is to divide the pan's area by the area of one piece. Careful: the pan's area is the number of square inches, not the number of pieces. And each piece is $2$ inches by $2$ inches, so you must divide by its area, not by $2$.",
+      "your_turn": {
+        "prompt": "What is the area of one piece of cornbread?",
+        "answer": "$4$ square inches, since $2 \\times 2 = 4$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Along the $18$-inch side, $18 \\div 2 = 9$ pieces fit. So the pan holds $10$ columns of $9$ pieces.\n$$10 \\times 9 = 90$$\nCheck by area: the pan is $20 \\times 18 = 360$ square inches, and $360 \\div 4 = 90$. The answer is **(A)** $90$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$360$ is the area of the pan in square inches, $20 \\times 18$. Each piece covers $4$ square inches, so the number of pieces is much smaller.",
+    "C": "$180$ comes from dividing the area $360$ by $2$. A piece is $2$ inches by $2$ inches, so its area is $4$, and you must divide by $4$."
+  },
+  "verification": {
+    "official_answer": "A",
+    "solver_answer": "A",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10B_2018_P24",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 24
+  },
+  "topic": "geometry",
+  "subtopic": "Hexagons",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10B_2018_P24.png",
+    "text": "Let $ABCDEF$ be a regular hexagon with side length $1$. Denote by $X$, $Y$, and $Z$ the midpoints of sides $\\overline{AB}$, $\\overline{CD}$, and $\\overline{EF}$, respectively. What is the area of the convex hexagon whose interior is the intersection of the interiors of $\\triangle ACE$ and $\\triangle XYZ$?",
+    "choices": {
+      "A": "$\\frac{3}{8}\\sqrt{3}$",
+      "B": "$\\frac{7}{16}\\sqrt{3}$",
+      "C": "$\\frac{15}{32}\\sqrt{3}$",
+      "D": "$\\frac{1}{2}\\sqrt{3}$",
+      "E": "$\\frac{9}{16}\\sqrt{3}$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$\\frac{15}{32}\\sqrt{3}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: a triangle with its corners cut off",
+      "body": "The overlap of two triangles is hard to measure directly, so start from one whole triangle and remove what sticks out. Each corner of $\\triangle XYZ$ is the midpoint of a hexagon side, and it lies outside $\\triangle ACE$, past one of its sides (for example $X$ lies past side $AC$). So the hexagon is $\\triangle XYZ$ with three small corner triangles cut off, and by symmetry all three are the same size.",
+      "your_turn": {
+        "prompt": "Why are both triangles equilateral? Think about turning the hexagon by $120^\\circ$ about its center.",
+        "answer": "The turn sends $A\\to C\\to E$ and $X\\to Y\\to Z$, so each triangle is carried onto itself and all its sides are equal."
+      }
+    },
+    {
+      "title": "The area of $\\triangle XYZ$",
+      "body": "The center $O$ of the hexagon is at distance $\\frac{\\sqrt3}{2}$ from every side's midpoint (that is the height of one of the six equilateral triangles of side $1$ that make up the hexagon). $X$ and $Y$ are $120^\\circ$ apart around $O$, and a triangle with two sides $\\frac{\\sqrt3}{2}$ and a $120^\\circ$ angle between them has third side $\\sqrt3$ times as long. So $XY=\\frac{\\sqrt3}{2}\\cdot\\sqrt3=\\frac32$.",
+      "your_turn": {
+        "prompt": "An equilateral triangle of side $s$ has area $\\frac{\\sqrt3}{4}s^2$. Find the area of $\\triangle XYZ$.",
+        "answer": "$\\frac{\\sqrt3}{4}\\cdot\\frac94=\\frac{9\\sqrt3}{16}$."
+      }
+    },
+    {
+      "title": "Measure the corner at $X$",
+      "body": "Line $AC$ cuts off the corner at $X$, crossing $XY$ and $XZ$. Put the center at the origin with $A=(1,0)$ and $C=\\left(-\\frac12,\\frac{\\sqrt3}{2}\\right)$; then $X=\\left(\\frac34,\\frac{\\sqrt3}{4}\\right)$ and line $AC$ is $x+\\sqrt3\\,y=1$. Side $XY$ is horizontal, and line $AC$ cuts $XZ$ at distance $\\frac14$ from $X$. Careful: the corner triangle is not equilateral, because its two sides at $X$ have different lengths.",
+      "your_turn": {
+        "prompt": "$XY$ lies on the line $y=\\frac{\\sqrt3}{4}$. Where does it meet line $AC$, and how far is that from $X$?",
+        "answer": "At $x=1-\\frac34=\\frac14$, so the distance from $X$ is $\\frac34-\\frac14=\\frac12$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each corner triangle has sides $\\frac12$ and $\\frac14$ with a $60^\\circ$ angle between them, so its area is $\\frac12\\cdot\\frac12\\cdot\\frac14\\cdot\\sin60^\\circ=\\frac{\\sqrt3}{32}$. Removing three of them:\n$$\\frac{9\\sqrt3}{16}-3\\cdot\\frac{\\sqrt3}{32}=\\frac{18\\sqrt3-3\\sqrt3}{32}=\\frac{15}{32}\\sqrt3.$$\nThe answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$\\frac{9}{16}\\sqrt3$ is the area of the whole triangle $XYZ$. Its three corners stick out past triangle $ACE$ and must be cut off.",
+    "A": "$\\frac38\\sqrt3$ comes from assuming the cut-off corners are equilateral with side $\\frac12$ (or that the hexagon is regular). The corners actually have sides $\\frac12$ and $\\frac14$ at $X$, and the hexagon's sides alternate $\\frac34$ and $\\frac{\\sqrt3}{4}$."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

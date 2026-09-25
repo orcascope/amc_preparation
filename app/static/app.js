@@ -104,8 +104,41 @@ function outcomeLabel(status, hints) {
 // ---------- screen: choose student ----------
 
 async function showWelcome() {
-  const { students, total } = await api("/api/students");
-  $app.innerHTML = `<div class="welcome">
+  let { students, total } = await api("/api/students");
+  let manage = false;
+  let confirming = null;  // { id, action: "reset" | "remove" }
+
+  function studentRow(s) {
+    const meta = s.touched ? `${s.solved} of ${total} solved` : "New · nothing tried yet";
+    if (!manage) {
+      return `<button type="button" class="student" data-id="${s.id}" data-name="${esc(s.name)}">
+          ${avatar(s, "lg")}
+          <span style="flex:1;display:flex;flex-direction:column">
+            <b style="font-size:18px">${esc(s.name)}</b>
+            <span class="meta">${meta}</span>
+          </span>${ICON_NEXT}</button>`;
+    }
+    const c = confirming && confirming.id === s.id ? confirming.action : null;
+    const question = c === "reset"
+      ? `Clear all of ${esc(s.name)}'s answers, hints and progress? Their name stays.`
+      : `Remove ${esc(s.name)} and all of their progress?`;
+    return `<div class="student managing">
+        ${avatar(s, "lg")}
+        <span style="flex:1;display:flex;flex-direction:column;min-width:0">
+          <b style="font-size:18px">${esc(s.name)}</b>
+          <span class="meta">${c ? `${question} This can't be undone.` : meta}</span>
+        </span>
+        <span class="manage-actions">
+          ${c ? `<button type="button" class="btn-small danger" data-do="${c}" data-id="${s.id}">${c === "reset" ? "Reset" : "Remove"}</button>
+                 <button type="button" class="btn-small" data-cancel>Cancel</button>`
+              : `<button type="button" class="btn-small" data-ask="reset" data-id="${s.id}" ${s.touched ? "" : "disabled"}>Reset progress</button>
+                 <button type="button" class="btn-small danger-outline" data-ask="remove" data-id="${s.id}">Remove</button>`}
+        </span>
+      </div>`;
+  }
+
+  function render() {
+    $app.innerHTML = `<div class="welcome">
     <section class="hero">
       <svg class="shapes" viewBox="0 0 640 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <circle cx="560" cy="110" r="70" fill="#FFD84D"/>
@@ -123,54 +156,83 @@ async function showWelcome() {
       <p style="font-size:15px;margin:0">Everyone on this computer can pick their own name, so each student keeps their own progress.</p>
     </section>
     <section class="pick">
-      <h2>Who's practicing today?</h2>
-      <div class="student-list">
-        ${students.map((s) => `<button type="button" class="student" data-id="${s.id}" data-name="${esc(s.name)}">
-          ${avatar(s, "lg")}
-          <span style="flex:1;display:flex;flex-direction:column">
-            <b style="font-size:18px">${esc(s.name)}</b>
-            <span class="meta">${s.touched ? `${s.solved} of ${total} solved` : "New · nothing tried yet"}</span>
-          </span>${ICON_NEXT}</button>`).join("")}
+      <div class="pick-head">
+        <h2>${manage ? "Manage students" : "Who's practicing today?"}</h2>
+        ${students.length ? `<button type="button" class="btn-link" data-act="manage">${manage ? "Done" : "Manage"}</button>` : ""}
       </div>
-      <form class="new-student">
+      <div class="student-list">
+        ${students.map(studentRow).join("")}
+      </div>
+      ${manage ? "" : `<form class="new-student">
         <label for="newname">${students.length ? "New here? Type your name" : "Type your name to start"}</label>
         <div class="row">
           <input id="newname" name="name" type="text" maxlength="40" autocomplete="off" placeholder="Your first name" required>
           <button class="btn btn-primary" type="submit">Start</button>
         </div>
         <p class="error" hidden></p>
-      </form>
+      </form>`}
     </section>
   </div>`;
+    wire();
+  }
 
-  $app.querySelectorAll(".student").forEach((b) => b.addEventListener("click", () => {
-    setStudent({ id: Number(b.dataset.id), name: b.dataset.name });
-    location.hash = "#/topics";
-  }));
-  $app.querySelector("form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const name = e.target.name.value.trim();
-    if (!name) return;
-    try {
-      const s = await fetch("/api/students", {
-        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }),
-      }).then((r) => { if (!r.ok) throw new Error(); return r.json(); });
-      setStudent(s);
+  function wire() {
+    $app.querySelector("[data-act=manage]")?.addEventListener("click", () => {
+      manage = !manage;
+      confirming = null;
+      render();
+    });
+    $app.querySelectorAll("button.student").forEach((b) => b.addEventListener("click", () => {
+      setStudent({ id: Number(b.dataset.id), name: b.dataset.name });
       location.hash = "#/topics";
-    } catch {
-      const err = $app.querySelector(".error");
-      err.textContent = "That name didn't work. Try 1 to 40 letters.";
-      err.hidden = false;
-    }
-  });
+    }));
+    $app.querySelectorAll("[data-ask]").forEach((b) => b.addEventListener("click", () => {
+      confirming = { id: Number(b.dataset.id), action: b.dataset.ask };
+      render();
+      $app.querySelector("[data-do]")?.focus();
+    }));
+    $app.querySelector("[data-cancel]")?.addEventListener("click", () => {
+      confirming = null;
+      render();
+    });
+    $app.querySelector("[data-do]")?.addEventListener("click", async (e) => {
+      const id = Number(e.currentTarget.dataset.id);
+      const action = e.currentTarget.dataset.do;
+      await fetch(action === "reset" ? `/api/students/${id}/reset` : `/api/students/${id}`,
+                  { method: action === "reset" ? "POST" : "DELETE" });
+      if (action === "remove" && getStudent()?.id === id) setStudent(null);
+      ({ students, total } = await api("/api/students"));
+      confirming = null;
+      if (!students.length) manage = false;
+      render();
+    });
+    $app.querySelector("form.new-student")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = e.target.name.value.trim();
+      if (!name) return;
+      try {
+        const s = await fetch("/api/students", {
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }),
+        }).then((r) => { if (!r.ok) throw new Error(); return r.json(); });
+        setStudent(s);
+        location.hash = "#/topics";
+      } catch {
+        const err = $app.querySelector(".error");
+        err.textContent = "That name didn't work. Try 1 to 40 letters.";
+        err.hidden = false;
+      }
+    });
+  }
+
+  render();
 }
 
 // ---------- screen: topics dashboard ----------
 
 async function showTopics() {
   const s = getStudent();
-  const { topics, totals, resume, years, year } = await api("/api/topics");
-  if (!year && getYear()) {  // the saved year has no problems any more
+  const { topics, totals, resume, years = [], year = null } = await api("/api/topics");
+  if (!year && getYear() && years.length) {  // the saved year has no problems any more
     setYear(null);
     location.replace("#/topics?year=all");
     return;
@@ -308,7 +370,7 @@ async function showProblem(id) {
           <span>Problem ${p.number} of ${p.of}</span><span>·</span><span>${esc(p.subtopic)}</span><span>·</span><span>${p.year}</span>
           ${p.attempts ? `<span>·</span><span>${p.attempts} attempt${p.attempts === 1 ? "" : "s"}</span>` : ""}
         </div>
-        <div class="statement"><img src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
+        <div class="statement"><img class="zoomable" title="Click to enlarge" src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
         <form class="answer-form">
           ${choicesHtml(p, { selected: state.selected, disabled: state.feedback?.correct || done })}
           ${(state.feedback?.correct || done) ? "" : `<div class="actions" style="margin-top:16px">
@@ -380,7 +442,7 @@ function stepHtml(step, i, { current, showTurnAnswer } = {}) {
 
 function problemAside(p, tip) {
   return `<aside>
-    <div class="card problem-card"><div class="cap">The problem</div><img src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
+    <div class="card problem-card"><div class="cap">The problem <span class="hint"><span class="hover-only">· hover to magnify </span>· click to enlarge</span></div><img class="zoomable hoverzoom" title="Click to enlarge" src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
     ${tip ? `<div class="tip">${tip}</div>` : ""}
   </aside>`;
 }
@@ -473,7 +535,7 @@ async function showSolution(id) {
         </div>
         ${p.next ? `<a class="next-link" href="#/p/${p.next}"><span class="label">Up next in ${esc(p.topic_name)}</span>
           <b style="font-size:16px">Problem ${p.number + 1}</b></a>` : ""}
-        <div class="card problem-card"><div class="cap">The problem</div><img src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
+        <div class="card problem-card"><div class="cap">The problem <span class="hint"><span class="hover-only">· hover to magnify </span>· click to enlarge</span></div><img class="zoomable hoverzoom" title="Click to enlarge" src="${p.image}" alt="Problem statement: ${esc(p.text.replace(/\$/g, ""))}"></div>
       </aside>
     </div>`;
     renderMath();
@@ -487,6 +549,96 @@ async function showSolution(id) {
 
   render();
 }
+
+// ---------- enlarge a problem image ----------
+
+function openZoom(img) {
+  const back = document.activeElement;
+  const box = document.createElement("div");
+  box.className = "zoom";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "Problem, enlarged");
+  box.innerHTML = `<img src="${img.src}" alt="${esc(img.alt)}"><button type="button" class="zoom-close" aria-label="Close">×</button>`;
+  const close = () => {
+    box.remove();
+    document.removeEventListener("keydown", onKey);
+    back?.focus?.();
+  };
+  const onKey = (e) => { if (e.key === "Escape") close(); };
+  box.addEventListener("click", close);
+  document.addEventListener("keydown", onKey);
+  document.body.appendChild(box);
+  box.querySelector(".zoom-close").focus();
+}
+
+document.addEventListener("click", (e) => {
+  const img = e.target.closest("img.zoomable");
+  if (img) {
+    hideHoverZoom();
+    openZoom(img);
+  }
+});
+
+// ---------- hover magnifier (like a shop's product photo) ----------
+// A lens follows the mouse over the problem image and a panel beside it shows
+// that spot magnified. Only on devices with a real mouse; touch screens keep
+// click-to-enlarge.
+
+const HOVER_ZOOM = 2.2;
+const canHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+let hz = null;  // { img, pane, lens }
+
+function hideHoverZoom() {
+  if (!hz) return;
+  hz.pane.remove();
+  hz.lens.remove();
+  hz = null;
+}
+
+function moveHoverZoom(img, e) {
+  const r = img.getBoundingClientRect();
+  const gap = 16;
+  const roomRight = innerWidth - r.right - 2 * gap;
+  const roomLeft = r.left - 2 * gap;
+  const w = Math.min(760, Math.max(roomRight, roomLeft));
+  if (w < 280 || !r.width) { hideHoverZoom(); return; }  // no room beside it
+  if (!hz || hz.img !== img) {
+    hideHoverZoom();
+    const pane = document.createElement("div");
+    pane.className = "hz-pane";
+    pane.setAttribute("aria-hidden", "true");
+    pane.style.backgroundImage = `url("${img.src}")`;
+    const lens = document.createElement("div");
+    lens.className = "hz-lens";
+    lens.setAttribute("aria-hidden", "true");
+    document.body.append(pane, lens);
+    hz = { img, pane, lens };
+  }
+  const h = Math.min(r.height * HOVER_ZOOM, innerHeight - 2 * gap, 560);
+  const left = roomRight >= roomLeft ? r.right + gap : r.left - gap - w;
+  const top = Math.min(Math.max(r.top, gap), innerHeight - h - gap);
+  const lw = Math.min(r.width, w / HOVER_ZOOM);
+  const lh = Math.min(r.height, h / HOVER_ZOOM);
+  const x = Math.min(Math.max(e.clientX - r.left - lw / 2, 0), r.width - lw);
+  const y = Math.min(Math.max(e.clientY - r.top - lh / 2, 0), r.height - lh);
+  Object.assign(hz.pane.style, {
+    left: `${left}px`, top: `${top}px`, width: `${w}px`, height: `${h}px`,
+    backgroundSize: `${r.width * HOVER_ZOOM}px ${r.height * HOVER_ZOOM}px`,
+    backgroundPosition: `${-x * HOVER_ZOOM}px ${-y * HOVER_ZOOM}px`,
+  });
+  Object.assign(hz.lens.style, {
+    left: `${r.left + x}px`, top: `${r.top + y}px`, width: `${lw}px`, height: `${lh}px`,
+  });
+}
+
+document.addEventListener("mousemove", (e) => {
+  const img = canHover.matches && e.target.closest?.("img.hoverzoom");
+  if (img) moveHoverZoom(img, e);
+  else hideHoverZoom();
+});
+window.addEventListener("scroll", hideHoverZoom, { passive: true });
+window.addEventListener("hashchange", hideHoverZoom);
 
 // ---------- router ----------
 

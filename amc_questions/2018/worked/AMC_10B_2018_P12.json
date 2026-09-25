@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10B_2018_P12",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 12
+  },
+  "topic": "geometry",
+  "subtopic": "Centroids",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10B_2018_P12.png",
+    "text": "Line segment $\\overline{AB}$ is a diameter of a circle with $AB=24$. Point $C$, not equal to $A$ or $B$, lies on the circle. As point $C$ moves around the circle, the centroid (center of mass) of $\\triangle ABC$ traces out a closed curve missing two points. To the nearest positive integer, what is the area of the region bounded by this curve?",
+    "choices": {
+      "A": "$25$",
+      "B": "$38$",
+      "C": "$50$",
+      "D": "$63$",
+      "E": "$75$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$50$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: the centroid is an average",
+      "body": "The centroid of a triangle is its balance point. In coordinates it is easy to find: its $x$-coordinate is the average of the three vertices' $x$-coordinates, and the same for $y$. Since $A$ and $B$ never move, put the circle's center $O$ at the origin so their coordinates are as simple as possible.",
+      "your_turn": {
+        "prompt": "The radius is $12$. If $A = (12, 0)$, what is $B$, and what is $A + B$ (adding coordinates)?",
+        "answer": "$A$ and $B$ are opposite ends of a diameter, so $B = (-12, 0)$ and $A + B = (0, 0)$."
+      }
+    },
+    {
+      "title": "The centroid is C shrunk toward the center",
+      "body": "Now the centroid is\n$$G = \\frac{A + B + C}{3} = \\frac{C}{3}.$$\nSo $G$ always points the same way from $O$ as $C$ does, but is only one third as far away. Another way to see it: $O$ is the midpoint of $AB$, so $OC$ is a median, and the centroid sits one third of the way from $O$ to $C$.",
+      "your_turn": {
+        "prompt": "$C$ is always $12$ from $O$. How far from $O$ is $G$?",
+        "answer": "$12 \\div 3 = 4$, for every position of $C$."
+      }
+    },
+    {
+      "title": "What curve is traced?",
+      "body": "Every point $G$ is the same distance from $O$, so $G$ traces a circle centered at $O$. It misses two points, the ones that would come from $C = A$ and $C = B$, but missing single points does not change the region inside. Careful: the question asks for the area of the region, not the length of the curve.",
+      "your_turn": {
+        "prompt": "With $A = (12, 0)$ and $B = (-12, 0)$, which two points does $G$ never reach?",
+        "answer": "$G = C/3$ would be $(4, 0)$ or $(-4, 0)$, from $C = A$ or $C = B$, which are not allowed."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The region is a disk of radius $4$, so its area is\n$$\\pi \\cdot 4^2 = 16\\pi \\approx 50.27.$$\nTo the nearest integer that is $50$. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "$25$ is the length of the small circle, $2\\pi \\cdot 4 = 8\\pi \\approx 25$. The question asks for the area inside it, not its circumference.",
+    "E": "$75$ comes from using the big radius $12$ in the circumference, $24\\pi \\approx 75$. The centroid's circle has radius $4$, and the question asks for area."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

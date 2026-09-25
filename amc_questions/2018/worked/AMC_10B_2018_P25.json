@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10B_2018_P25",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 25
+  },
+  "topic": "algebra",
+  "subtopic": "Floor function",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10B_2018_P25.png",
+    "text": "Let $\\lfloor x\\rfloor$ denote the greatest integer less than or equal to $x$. How many real numbers $x$ satisfy the equation $x^2+10{,}000\\lfloor x\\rfloor=10{,}000x$?",
+    "choices": {
+      "A": "$197$",
+      "B": "$198$",
+      "C": "$199$",
+      "D": "$200$",
+      "E": "$201$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$199$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: spot the fractional part",
+      "body": "The equation has both $x$ and $\\lfloor x\\rfloor$ with the same coefficient $10{,}000$, which is a hint to group them. The difference $x-\\lfloor x\\rfloor$ is called the fractional part of $x$: it is how far $x$ is above the integer just below it (or equal to it), so it is always at least $0$ and less than $1$. For example, the fractional part of $3.7$ is $0.7$, and of $-2.3$ it is $0.7$ too, since $\\lfloor -2.3\\rfloor=-3$.",
+      "your_turn": {
+        "prompt": "Move terms and divide by $10{,}000$. What does the equation say?",
+        "answer": "$\\frac{x^2}{10000}=x-\\lfloor x\\rfloor$: the fractional part of $x$ equals $\\frac{x^2}{10000}$."
+      }
+    },
+    {
+      "title": "Solutions can only be in a limited range",
+      "body": "The right side is a fractional part, so it lies in $[0,1)$. That means the left side $\\frac{x^2}{10000}$ must also be less than $1$. This already rules out all large $x$, positive or negative.",
+      "your_turn": {
+        "prompt": "For which $x$ is $\\frac{x^2}{10000}<1$?",
+        "answer": "$x^2<10000$, so $-100<x<100$. In particular $x=\\pm100$ are not solutions."
+      }
+    },
+    {
+      "title": "One stretch at a time",
+      "body": "Split the line into stretches $[n,n+1)$ with $n$ an integer. On each stretch the fractional part is $x-n$: it starts at $0$ and climbs toward $1$ with slope $1$. Meanwhile, for $|x|<100$ the curve $\\frac{x^2}{10000}$ has slope $\\frac{x}{5000}$, smaller than $\\frac{1}{50}$ in size, so it barely moves. So on a stretch the fractional part catches up with the curve at most once, and it does catch up if the curve is still below $1$ when $x$ reaches the right end $n+1$.",
+      "your_turn": {
+        "prompt": "At the left end $x=n$ of a stretch, which is bigger: the fractional part or $\\frac{x^2}{10000}$?",
+        "answer": "The fractional part is $0$ and $\\frac{n^2}{10000}\\ge0$, so the curve is at or above it (equal only when $n=0$, giving the solution $x=0$)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "A stretch $[n,n+1)$ has exactly one solution when $(n+1)^2<10000$, that is $-101<n<99$, and none otherwise. Careful at the top: on $[99,100)$ the curve reaches $1$ only at $x=100$, which is not in the stretch, so it has no solution. The bottom stretch $[-100,-99)$ does have one, since $\\frac{99^2}{10000}<1$. So $n$ runs from $-100$ to $98$, which is $98-(-100)+1=199$ stretches with one solution each. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "$200$ counts every stretch from $n=-100$ to $n=99$. On $[99,100)$ the curve $\\frac{x^2}{10000}$ reaches $1$ only at $x=100$, which is not included, so that stretch has no solution.",
+    "E": "$201$ comes from also counting $x=100$ and $x=-100$ as solutions. At both, the fractional part is $0$ but $\\frac{x^2}{10000}=1$, so they fail."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

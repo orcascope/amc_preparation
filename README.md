@@ -75,4 +75,5 @@ tools/
 |---|---|
 | 2022 10A | ✅ 25 of 25 |
 | 2018 10A | ✅ 25 of 25 |
-| 2018 10B, 2019 10A, 2019 10B, 2021 10A Spring, 2021 10A Fall | PDFs downloaded, not yet worked |
+| 2018 10B | ✅ 25 of 25 |
+| 2019 10A, 2019 10B, 2021 10A Spring, 2021 10A Fall | PDFs downloaded, not yet worked |

@@ -1,0 +1,70 @@
+{
+  "id": "AMC_10B_2018_P04",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 4
+  },
+  "topic": "geometry",
+  "subtopic": "3D geometry",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10B_2018_P04.png",
+    "text": "A three-dimensional rectangular box with dimensions $X$, $Y$, and $Z$ has faces whose surface areas are $24$, $24$, $48$, $48$, $72$, and $72$ square units. What is $X+Y+Z$?",
+    "choices": {
+      "A": "$18$",
+      "B": "$22$",
+      "C": "$24$",
+      "D": "$30$",
+      "E": "$36$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$22$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: each face uses two of the edges",
+      "body": "A box has three pairs of opposite faces, and opposite faces are equal. That is why the six areas come in pairs. Each face is a rectangle made from two of the three edges, so we can name the faces so that\n$$XY = 24, \\quad YZ = 48, \\quad ZX = 72.$$",
+      "your_turn": {
+        "prompt": "Each edge letter shows up in how many of the three products $XY$, $YZ$, $ZX$?",
+        "answer": "Two. For example, $X$ is in $XY$ and in $ZX$."
+      }
+    },
+    {
+      "title": "Multiply all three equations",
+      "body": "Since each letter appears exactly twice, multiplying the three products gives $X^2Y^2Z^2$, the square of $XYZ$. Factor the numbers into primes to take the square root easily.\n$$(XYZ)^2 = 24 \\cdot 48 \\cdot 72 = 2^{10} \\cdot 3^4$$",
+      "your_turn": {
+        "prompt": "What is $XYZ$?",
+        "answer": "$288$, since $XYZ = 2^5 \\cdot 3^2 = 32 \\cdot 9 = 288$."
+      }
+    },
+    {
+      "title": "Divide to get each edge",
+      "body": "Now divide $XYZ$ by one face area to get the edge that face does not use. For example, $YZ = 48$ leaves out $X$, so $X = 288 \\div 48$.",
+      "your_turn": {
+        "prompt": "Which edge is left out of the face with area $24$, and how long is it?",
+        "answer": "$Z$, since that face is $XY$. So $Z = 288 \\div 24 = 12$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The edges are $X = 288 \\div 48 = 6$, $Y = 288 \\div 72 = 4$, and $Z = 12$. Check: $6 \\cdot 4 = 24$, $4 \\cdot 12 = 48$, $6 \\cdot 12 = 72$. So $X + Y + Z = 6 + 4 + 12 = 22$. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

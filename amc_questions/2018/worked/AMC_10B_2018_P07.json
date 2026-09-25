@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10B_2018_P07",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 7
+  },
+  "topic": "geometry",
+  "subtopic": "Circle areas",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10B_2018_P07.png",
+    "text": "In the figure below, $N$ congruent semicircles are drawn along a diameter of a large semicircle, with their diameters covering the diameter of the large semicircle with no overlap. Let $A$ be the combined area of the small semicircles and $B$ be the area of the region inside the large semicircle but outside the small semicircles. The ratio $A:B$ is $1:18$. What is $N$?",
+    "choices": {
+      "A": "$16$",
+      "B": "$17$",
+      "C": "$18$",
+      "D": "$19$",
+      "E": "$36$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$19$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: relate the two radii",
+      "body": "Everything in the picture depends on two sizes: the radius of a small semicircle and the radius of the large one. Call the small radius $r$. The small diameters sit side by side and exactly cover the large diameter, so the large diameter is $N$ small diameters long.",
+      "your_turn": {
+        "prompt": "What is the radius of the large semicircle in terms of $N$ and $r$?",
+        "answer": "$Nr$, because the large diameter is $N \\cdot 2r$, and half of that is $Nr$."
+      }
+    },
+    {
+      "title": "Write both areas with the same unit",
+      "body": "A semicircle of radius $r$ has area $\\frac{\\pi r^2}{2}$. Use that as the unit. The $N$ small semicircles together give\n$$A = N \\cdot \\frac{\\pi r^2}{2}.$$",
+      "your_turn": {
+        "prompt": "What is the area of the whole large semicircle, in terms of $N$ and $\\frac{\\pi r^2}{2}$?",
+        "answer": "$\\frac{\\pi (Nr)^2}{2} = N^2 \\cdot \\frac{\\pi r^2}{2}$, since scaling the radius by $N$ multiplies the area by $N^2$."
+      }
+    },
+    {
+      "title": "Find $B$ by subtracting",
+      "body": "$B$ is only the region inside the large semicircle but outside the small ones, so $B$ is the large area minus $A$. Careful: $1:18$ compares $A$ with this leftover region $B$, not with the whole large semicircle.\n$$B = (N^2 - N) \\cdot \\frac{\\pi r^2}{2}$$",
+      "your_turn": {
+        "prompt": "Try a small case, $N = 3$. What is the ratio $A:B$?",
+        "answer": "$A = 3$ units and the whole is $9$ units, so $B = 6$ units and $A:B = 3:6 = 1:2$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "In general, the unit $\\frac{\\pi r^2}{2}$ cancels, and $N^2 - N = N(N-1)$, so\n$$A : B = N : N(N-1) = 1 : (N-1).$$\nThis matches $1:2$ when $N = 3$. We need $N - 1 = 18$, so $N = 19$. The answer is **(D)** $19$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "$18$ comes from reading $1:18$ as $A$ compared with the whole large semicircle. That ratio is $1:N$, but $B$ leaves out the small semicircles, so $A:B$ is $1:(N-1)$."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

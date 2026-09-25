@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10B_2018_P11",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 11
+  },
+  "topic": "number_theory",
+  "subtopic": "Modular arithmetic",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10B_2018_P11.png",
+    "text": "Which of the following expressions is never a prime number when $p$ is a prime number?",
+    "choices": {
+      "A": "$p^2+16$",
+      "B": "$p^2+24$",
+      "C": "$p^2+26$",
+      "D": "$p^2+46$",
+      "E": "$p^2+96$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$p^2+26$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: remainders when dividing by 3",
+      "body": "To show a number is never prime, look for a small factor it always has. Squares behave very neatly when you divide by $3$. Every prime $p$ other than $3$ is not a multiple of $3$, so it leaves remainder $1$ or $2$ when divided by $3$.",
+      "your_turn": {
+        "prompt": "Find the remainders when $1^2$, $2^2$, $4^2$ and $5^2$ are divided by $3$. What pattern do you see?",
+        "answer": "$1$, $4$, $16$, $25$ all leave remainder $1$. A number that is not a multiple of $3$ always has a square that leaves remainder $1$."
+      }
+    },
+    {
+      "title": "What adding a constant does",
+      "body": "So for a prime $p \\ne 3$ we can write $p^2 = 3k + 1$ for some whole number $k$. Adding a constant $c$ gives\n$$p^2 + c = 3k + (c + 1).$$\nIf $c + 1$ is a multiple of $3$, then all of $p^2 + c$ is a multiple of $3$. It is also bigger than $3$, so it cannot be prime.",
+      "your_turn": {
+        "prompt": "Use this idea on a different expression: can $p^2 + 14$ be prime when $p$ is a prime other than $3$?",
+        "answer": "No. $14 + 1 = 15$ is a multiple of $3$, so $p^2 + 14$ is a multiple of $3$ bigger than $3$."
+      }
+    },
+    {
+      "title": "Do not forget p = 3",
+      "body": "Careful: the remainder argument says nothing about $p = 3$ itself, because $3^2 = 9$ leaves remainder $0$, not $1$. So for any expression you suspect, you must also test $p = 3$ by hand.",
+      "your_turn": {
+        "prompt": "Go back to $p^2 + 14$. Is it prime when $p = 3$?",
+        "answer": "$9 + 14 = 23$, which is prime. So $p^2 + 14$ is sometimes prime, even though it fails for every other prime. The $p = 3$ check really matters."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Among $16, 24, 26, 46, 96$, only $26$ has $c + 1 = 27$ a multiple of $3$. So $p^2 + 26$ is not prime for $p \\ne 3$, and for $p = 3$ it is $9 + 26 = 35 = 5 \\cdot 7$, not prime either. Each other choice is prime for some prime $p$: $5^2 + 16 = 41$, $7^2 + 24 = 73$, $5^2 + 46 = 71$, $19^2 + 96 = 457$. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$p^2 + 96$ is composite for every prime from $2$ through $17$, so stopping early makes it look right. But $p = 19$ gives $361 + 96 = 457$, which is prime."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

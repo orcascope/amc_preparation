@@ -135,6 +135,31 @@ def add_student():
     return jsonify(dict(row))
 
 
+def student_or_404(sid):
+    if not db().execute("SELECT 1 FROM students WHERE id = ?", (sid,)).fetchone():
+        abort(404)
+
+
+@app.post("/api/students/<int:sid>/reset")
+def reset_student(sid):
+    """Forget everything a student has done, but keep their name."""
+    student_or_404(sid)
+    db().execute("DELETE FROM attempts WHERE student_id = ?", (sid,))
+    db().execute("DELETE FROM progress WHERE student_id = ?", (sid,))
+    db().commit()
+    return jsonify(ok=True)
+
+
+@app.delete("/api/students/<int:sid>")
+def delete_student(sid):
+    student_or_404(sid)
+    db().execute("DELETE FROM attempts WHERE student_id = ?", (sid,))
+    db().execute("DELETE FROM progress WHERE student_id = ?", (sid,))
+    db().execute("DELETE FROM students WHERE id = ?", (sid,))
+    db().commit()
+    return jsonify(ok=True)
+
+
 # ---------- topics and problem lists ----------
 
 @app.get("/api/topics")

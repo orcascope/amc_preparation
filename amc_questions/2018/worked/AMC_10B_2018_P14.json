@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10B_2018_P14",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 14
+  },
+  "topic": "arithmetic_logic",
+  "subtopic": "Mode",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10B_2018_P14.png",
+    "text": "A list of $2018$ positive integers has a unique mode, which occurs exactly $10$ times. What is the least number of distinct values that can occur in the list?",
+    "choices": {
+      "A": "$202$",
+      "B": "$223$",
+      "C": "$224$",
+      "D": "$225$",
+      "E": "$234$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$225$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: use each value as often as allowed",
+      "body": "To fill $2018$ spots with as few different values as possible, each value should appear as many times as the rules allow. The mode is the value that appears most often, and here it is unique and appears exactly $10$ times. That puts a cap on every other value.",
+      "your_turn": {
+        "prompt": "How many times can a value other than the mode appear at most, and why?",
+        "answer": "At most $9$ times. If it appeared $10$ times, it would tie with the mode, and the mode would not be unique."
+      }
+    },
+    {
+      "title": "The longest list with k values",
+      "body": "Suppose the list has $k$ distinct values. One of them is the mode ($10$ copies), and the other $k - 1$ values have at most $9$ copies each. So the list can hold at most\n$$10 + 9(k - 1)$$\nnumbers.",
+      "your_turn": {
+        "prompt": "With only $3$ distinct values, what is the longest possible list?",
+        "answer": "$10 + 9 \\cdot 2 = 28$ numbers."
+      }
+    },
+    {
+      "title": "Set up the inequality and round carefully",
+      "body": "The list must reach $2018$ numbers, so we need $10 + 9(k - 1) \\ge 2018$, that is $9(k - 1) \\ge 2008$. Careful with two things. First, $k - 1$ is a whole number, so after dividing you must round up, not down. Second, $k - 1$ counts only the non-mode values; you still have to add the mode itself.",
+      "your_turn": {
+        "prompt": "Practice on a smaller list: if the list had $100$ numbers (mode still appearing exactly $10$ times), what is the least $k$?",
+        "answer": "$9(k - 1) \\ge 90$ gives $k - 1 \\ge 10$, so $k = 11$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "$2008 \\div 9 \\approx 223.1$, so $k - 1 \\ge 224$ (with $k - 1 = 223$ the list holds only $10 + 2007 = 2017$ numbers). So $k \\ge 225$, and $225$ works: one value $10$ times, $223$ values $9$ times each, and one value once gives $10 + 2007 + 1 = 2018$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "$223$ comes from two slips together: rounding $2008 \\div 9 \\approx 223.1$ down to $223$ non-mode values, then reporting that as the answer without adding the mode. With $223$ non-mode values the list holds only $10 + 2007 = 2017$ numbers, one short, so you must round up to $224$, then add $1$ for the mode.",
+    "C": "$224$ is the right count of non-mode values, but it forgets to add the mode itself as one more distinct value."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Hole found by adversarial verifier, fixed, and re-verified by a fresh verifier."
+  }
+}

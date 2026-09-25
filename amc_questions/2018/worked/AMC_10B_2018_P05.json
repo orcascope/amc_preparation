@@ -1,0 +1,65 @@
+{
+  "id": "AMC_10B_2018_P05",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 5
+  },
+  "topic": "counting_probability",
+  "subtopic": "Complementary counting",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10B_2018_P05.png",
+    "text": "How many subsets of $\\{2,3,4,5,6,7,8,9\\}$ contain at least one prime number?",
+    "choices": {
+      "A": "$128$",
+      "B": "$192$",
+      "C": "$224$",
+      "D": "$240$",
+      "E": "$256$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$240$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: count the opposite",
+      "body": "The words \"at least one\" are a clue to count the opposite. Counting subsets with one prime, two primes, and so on is slow. It is much easier to count all subsets and then take away the ones with **no** prime.",
+      "your_turn": {
+        "prompt": "How many subsets does a set with $8$ elements have?",
+        "answer": "$2^8 = 256$, since each element is either in the subset or not."
+      }
+    },
+    {
+      "title": "Which subsets have no prime?",
+      "body": "A subset with no prime can only use the numbers that are not prime. Careful: $2$ is prime. It is the only even prime, but it is still prime, so it does not belong with the non-primes.",
+      "your_turn": {
+        "prompt": "Which numbers in $\\{2,3,4,5,6,7,8,9\\}$ are not prime?",
+        "answer": "$4$, $6$, $8$, and $9$. The primes are $2$, $3$, $5$, and $7$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The subsets with no prime are the subsets of $\\{4,6,8,9\\}$. There are $2^4 = 16$ of them, and this includes the empty set, which has no prime either. Take them away from all the subsets:\n$$256 - 16 = 240.$$\nCheck another way: choose any nonempty set of primes ($2^4 - 1 = 15$ ways) and any set of non-primes ($16$ ways), and $15 \\times 16 = 240$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$256$ is the number of all subsets. You still need to take away the $16$ subsets that contain no prime.",
+    "C": "$224$ comes from treating $2$ as not prime, so the non-primes seem to be $2, 4, 6, 8, 9$ and you subtract $2^5 = 32$. But $2$ is prime, so only $2^4 = 16$ subsets have no prime."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

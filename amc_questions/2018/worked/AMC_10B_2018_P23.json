@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10B_2018_P23",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 23
+  },
+  "topic": "number_theory",
+  "subtopic": "LCM and GCD",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10B_2018_P23.png",
+    "text": "How many ordered pairs $(a,b)$ of positive integers satisfy the equation $$a\\cdot b+63=20\\cdot\\operatorname{lcm}(a,b)+12\\cdot\\gcd(a,b),$$ where $\\gcd(a,b)$ denotes the greatest common divisor of $a$ and $b$, and $\\operatorname{lcm}(a,b)$ denotes their least common multiple?",
+    "choices": {
+      "A": "$0$",
+      "B": "$2$",
+      "C": "$4$",
+      "D": "$6$",
+      "E": "$8$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$2$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: write $a\\cdot b$ with the gcd and lcm",
+      "body": "The equation mixes $ab$ with the gcd and lcm, so try to write everything using only $g=\\gcd(a,b)$ and $L=\\operatorname{lcm}(a,b)$. Write $a=gm$ and $b=gn$, where $m$ and $n$ share no common factor (otherwise $g$ would not be the greatest). Then the lcm is $L=gmn$, so\n$$ab=g^2mn=g\\cdot gmn=g\\cdot L.$$",
+      "your_turn": {
+        "prompt": "Rewrite the equation using only $g$ and $L$.",
+        "answer": "$gL+63=20L+12g$."
+      }
+    },
+    {
+      "title": "Factor it",
+      "body": "Move everything to one side: $gL-20L-12g=-63$. This looks like part of the product $(L-12)(g-20)=gL-20L-12g+240$. Adding $240$ to both sides completes that product; this trick is often called Simon's Favorite Factoring Trick.",
+      "your_turn": {
+        "prompt": "What does the equation become? Factor the number on the right into primes.",
+        "answer": "$(L-12)(g-20)=177=3\\cdot59$."
+      }
+    },
+    {
+      "title": "Find the possible $(L,g)$",
+      "body": "Both factors must be positive: if both were negative, $g-20$ and $L-12$ would be negative divisors of $177$, and in every such case $g$ or $L$ comes out negative. So $(L-12,\\,g-20)$ is one of $(1,177)$, $(3,59)$, $(59,3)$, $(177,1)$. Careful: $g$ and $L$ are not free numbers, because the gcd of two numbers always divides their lcm.",
+      "your_turn": {
+        "prompt": "List the four pairs $(L,g)$. Which one has $g$ dividing $L$?",
+        "answer": "$(13,197)$, $(15,79)$, $(71,23)$, $(189,21)$. Only $(189,21)$ works, since $189=9\\cdot21$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $g=21$ and $L=189$. With $a=21m$, $b=21n$ and $L=21mn$, we need $mn=9$ with $m$ and $n$ sharing no factor. That allows $(m,n)=(1,9)$ or $(9,1)$ but not $(3,3)$, giving $(a,b)=(21,189)$ and $(189,21)$. Check: $21\\cdot189+63=4032=20\\cdot189+12\\cdot21$. There are $2$ ordered pairs. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "$4$ comes from counting all four factor pairs of $177$ as solutions. Only one of them has the gcd dividing the lcm, so the other three give no actual numbers $a$ and $b$."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

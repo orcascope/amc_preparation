@@ -1,0 +1,74 @@
+{
+  "id": "AMC_10B_2018_P21",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 21
+  },
+  "topic": "number_theory",
+  "subtopic": "Divisors",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/AMC_10B_2018_P21.png",
+    "text": "Mary chose an even $4$-digit number $n$. She wrote down all the divisors of $n$ in increasing order from left to right: $1, 2, \\ldots, \\frac{n}{2}, n$. At some moment Mary wrote $323$ as a divisor of $n$. What is the smallest possible value of the next divisor written to the right of $323$?",
+    "choices": {
+      "A": "$324$",
+      "B": "$330$",
+      "C": "$340$",
+      "D": "$361$",
+      "E": "$646$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$340$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: factor $323$ and remember $n$ is small",
+      "body": "The clue is the size limit: $n$ has only $4$ digits, so $n\\le 9999$, and $323$ is already a big divisor. Factor it first, because any number that divides $n$ brings all its prime factors along. Then ask what the next divisor $d$ can be without forcing $n$ past $9999$.",
+      "your_turn": {
+        "prompt": "Factor $323$. (Hint: it is close to $18^2=324$.)",
+        "answer": "$323=324-1=18^2-1=17\\cdot19$."
+      }
+    },
+    {
+      "title": "The next divisor must share a factor with $323$",
+      "body": "Suppose the next divisor $d$ shared no prime factor with $323$. If two numbers with no common factor both divide $n$, then their product divides $n$ too. So $n$ would be a multiple of $323\\cdot d$, and $d\\ge 324$. Careful: this is why guesses like $324$ or $330$ fail, even though they are just above $323$.",
+      "your_turn": {
+        "prompt": "Why is $323\\cdot 324$ impossible as a factor of $n$?",
+        "answer": "$323\\cdot324$ is about $100{,}000$, far more than $9999$, so $n$ would have at least $5$ digits."
+      }
+    },
+    {
+      "title": "List the candidates",
+      "body": "So $d$ is a multiple of $17$ or a multiple of $19$, and $d>323$. Since $323=17\\cdot19$, the next multiples come from bumping one of the two factors up by $1$. The smallest candidate is the answer, as long as some even $4$-digit $n$ really works with it.",
+      "your_turn": {
+        "prompt": "What is the smallest multiple of $19$ that is bigger than $323$?",
+        "answer": "$18\\cdot19=342$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The smallest multiple of $17$ above $323$ is $17\\cdot20=340$, which beats $342$. It works: take $n=2^2\\cdot5\\cdot17\\cdot19=6460$, an even $4$-digit number with $323$ and $340$ as divisors. Divisors come in pairs $k$ and $\\frac{6460}{k}$, so a divisor strictly between $323$ and $340$ would pair with one strictly between $\\frac{6460}{340}=19$ and $\\frac{6460}{323}=20$, and there is no integer there. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "$324$ is just the next number, but it shares no factor with $323=17\\cdot19$, so $n$ would have to be a multiple of $323\\cdot324$, which has too many digits.",
+    "B": "$330=2\\cdot3\\cdot5\\cdot11$ shares no factor with $323$, so $n$ would have to be a multiple of $323\\cdot330$, far above $9999$.",
+    "E": "$646=2\\cdot323$ comes from assuming the next divisor must be a multiple of $323$ itself. It only needs to share one factor, $17$ or $19$, with $323$."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

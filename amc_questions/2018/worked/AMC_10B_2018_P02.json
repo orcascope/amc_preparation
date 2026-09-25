@@ -1,0 +1,72 @@
+{
+  "id": "AMC_10B_2018_P02",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 2
+  },
+  "topic": "arithmetic_logic",
+  "subtopic": "Rates",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10B_2018_P02.png",
+    "text": "Sam drove $96$ miles in $90$ minutes. His average speed during the first $30$ minutes was $60$ mph (miles per hour), and his average speed during the second $30$ minutes was $65$ mph. What was his average speed, in mph, during the last $30$ minutes?",
+    "choices": {
+      "A": "$64$",
+      "B": "$65$",
+      "C": "$66$",
+      "D": "$67$",
+      "E": "$68$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$67$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: turn speeds into distances",
+      "body": "The speeds are in miles per hour, but the times are in minutes. Each $30$ minutes is half an hour, so the distance in each piece of the trip is the speed times $\\frac{1}{2}$. Once you know the first two distances, the rest of the $96$ miles belongs to the last half hour.",
+      "your_turn": {
+        "prompt": "How many miles did Sam drive in the first $30$ minutes?",
+        "answer": "$30$ miles, since $60 \\times \\frac{1}{2} = 30$."
+      }
+    },
+    {
+      "title": "The second half hour",
+      "body": "Do the same for the second half hour at $65$ mph. Add it to the first distance to see how far Sam had gone after one hour.",
+      "your_turn": {
+        "prompt": "How far did Sam drive in the second $30$ minutes, and how far had he gone after one hour?",
+        "answer": "$32.5$ miles, since $65 \\times \\frac{1}{2} = 32.5$. After one hour he had gone $30 + 32.5 = 62.5$ miles."
+      }
+    },
+    {
+      "title": "Do not stop at the overall average",
+      "body": "Careful: $96$ miles in $1.5$ hours is an average of $96 \\div 1.5 = 64$ mph for the whole trip. That is not the question. The question asks only about the last $30$ minutes.",
+      "your_turn": {
+        "prompt": "The first two speeds were $60$ and $65$. Should the last speed be above or below $64$? Why?",
+        "answer": "Above. The first two speeds average only $62.5$, so the last half hour must be faster to pull the overall average up to $64$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The last half hour covered $96 - 62.5 = 33.5$ miles. Going $33.5$ miles in half an hour means $33.5 \\times 2 = 67$ miles in a full hour. Check: the three time pieces are equal, so the overall average is the mean of the three speeds, and $(60 + 65 + 67) \\div 3 = 64$. The answer is **(D)** $67$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "$64$ is Sam's average speed for the whole $90$ minutes, $96 \\div 1.5$. The question asks for his speed in the last $30$ minutes only."
+  },
+  "verification": {
+    "official_answer": "D",
+    "solver_answer": "D",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

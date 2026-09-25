@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10B_2018_P03",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 3
+  },
+  "topic": "counting_probability",
+  "subtopic": "Casework",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/AMC_10B_2018_P03.png",
+    "text": "In the expression $(\\underline{\\quad}\\times\\underline{\\quad})+(\\underline{\\quad}\\times\\underline{\\quad})$ each blank is to be filled in with one of the digits $1$, $2$, $3$, or $4$, with each digit being used once. How many different values can be obtained?",
+    "choices": {
+      "A": "$2$",
+      "B": "$3$",
+      "C": "$4$",
+      "D": "$6$",
+      "E": "$24$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$3$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: ways to fill are not the same as values",
+      "body": "The question asks for different **values**, not different ways to fill the blanks. Many fillings give the same value, so the plan is to find which changes to a filling leave its value the same.",
+      "your_turn": {
+        "prompt": "How many ways are there to fill the four blanks with $1$, $2$, $3$, $4$, each used once?",
+        "answer": "$24$, since $4 \\times 3 \\times 2 \\times 1 = 24$. Careful: this counts fillings, not values."
+      }
+    },
+    {
+      "title": "Swaps that do not change the value",
+      "body": "Swapping the two numbers inside a product does not change it, since $a \\times b = b \\times a$. Swapping the two products does not change the sum either. Careful: if you divide out only the swaps inside each product, you still count some sums twice, because the two products can also trade places.",
+      "your_turn": {
+        "prompt": "Do $(2 \\times 1) + (4 \\times 3)$ and $(3 \\times 4) + (1 \\times 2)$ give the same value? Why?",
+        "answer": "Yes, both are $14$. They use the same two pairs, $\\{1,2\\}$ and $\\{3,4\\}$, just in a different order."
+      }
+    },
+    {
+      "title": "Only the pairs matter",
+      "body": "So the value depends only on how the four digits split into two pairs. Every split puts $1$ with some partner, and the other two digits form the second pair. Work out the value for each possible partner of $1$.",
+      "your_turn": {
+        "prompt": "What value do you get when $1$ is paired with $3$?",
+        "answer": "$11$: the other pair is $\\{2,4\\}$, and $1 \\times 3 + 2 \\times 4 = 3 + 8 = 11$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The partner of $1$ can be $2$, $3$, or $4$, and the three splits give\n$$1 \\cdot 2 + 3 \\cdot 4 = 14, \\quad 1 \\cdot 3 + 2 \\cdot 4 = 11, \\quad 1 \\cdot 4 + 2 \\cdot 3 = 10.$$\nThese are all different, so there are $3$ different values. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "$24$ is the number of ways to fill the blanks. Many of those fillings give the same value, so it counts too much.",
+    "D": "$6$ comes from dividing $24$ by $4$ for the swaps inside each product. The two products can also trade places, which gives the same sum, so each value is still counted twice."
+  },
+  "verification": {
+    "official_answer": "B",
+    "solver_answer": "B",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}

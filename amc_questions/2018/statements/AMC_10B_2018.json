@@ -1,0 +1,135 @@
+{
+  "test_id": "AMC_10B_2018",
+  "source": { "year": 2018, "contest": "10B", "session": null },
+  "problems": [
+    {
+      "number": 1, "topic": "arithmetic_logic", "subtopic": "Area",
+      "text": "Kate bakes a $20$-inch by $18$-inch pan of cornbread. The cornbread is cut into pieces that measure $2$ inches by $2$ inches. How many pieces of cornbread does the pan contain?",
+      "choices": { "A": "$90$", "B": "$100$", "C": "$180$", "D": "$200$", "E": "$360$" }
+    },
+    {
+      "number": 2, "topic": "arithmetic_logic", "subtopic": "Rates",
+      "text": "Sam drove $96$ miles in $90$ minutes. His average speed during the first $30$ minutes was $60$ mph (miles per hour), and his average speed during the second $30$ minutes was $65$ mph. What was his average speed, in mph, during the last $30$ minutes?",
+      "choices": { "A": "$64$", "B": "$65$", "C": "$66$", "D": "$67$", "E": "$68$" }
+    },
+    {
+      "number": 3, "topic": "counting_probability", "subtopic": "Casework",
+      "text": "In the expression $(\\underline{\\quad}\\times\\underline{\\quad})+(\\underline{\\quad}\\times\\underline{\\quad})$ each blank is to be filled in with one of the digits $1$, $2$, $3$, or $4$, with each digit being used once. How many different values can be obtained?",
+      "choices": { "A": "$2$", "B": "$3$", "C": "$4$", "D": "$6$", "E": "$24$" }
+    },
+    {
+      "number": 4, "topic": "geometry", "subtopic": "3D geometry",
+      "text": "A three-dimensional rectangular box with dimensions $X$, $Y$, and $Z$ has faces whose surface areas are $24$, $24$, $48$, $48$, $72$, and $72$ square units. What is $X+Y+Z$?",
+      "choices": { "A": "$18$", "B": "$22$", "C": "$24$", "D": "$30$", "E": "$36$" }
+    },
+    {
+      "number": 5, "topic": "counting_probability", "subtopic": "Complementary counting",
+      "text": "How many subsets of $\\{2,3,4,5,6,7,8,9\\}$ contain at least one prime number?",
+      "choices": { "A": "$128$", "B": "$192$", "C": "$224$", "D": "$240$", "E": "$256$" }
+    },
+    {
+      "number": 6, "topic": "counting_probability", "subtopic": "Probability",
+      "text": "A box contains $5$ chips, numbered $1$, $2$, $3$, $4$, and $5$. Chips are drawn randomly one at a time without replacement until the sum of the values drawn exceeds $4$. What is the probability that $3$ draws are required?",
+      "choices": { "A": "$\\frac{1}{15}$", "B": "$\\frac{1}{10}$", "C": "$\\frac{1}{6}$", "D": "$\\frac{1}{5}$", "E": "$\\frac{1}{4}$" }
+    },
+    {
+      "number": 7, "topic": "geometry", "subtopic": "Circle areas",
+      "text": "In the figure below, $N$ congruent semicircles are drawn along a diameter of a large semicircle, with their diameters covering the diameter of the large semicircle with no overlap. Let $A$ be the combined area of the small semicircles and $B$ be the area of the region inside the large semicircle but outside the small semicircles. The ratio $A:B$ is $1:18$. What is $N$?",
+      "figure": "A large semicircle sits on a horizontal diameter. Along that diameter, a row of small equal semicircles (shaded) sit side by side, each bulging upward inside the large semicircle. Together their diameters exactly cover the large diameter. Dots in the middle of the row show that some of the small semicircles are not drawn.",
+      "choices": { "A": "$16$", "B": "$17$", "C": "$18$", "D": "$19$", "E": "$36$" }
+    },
+    {
+      "number": 8, "topic": "algebra", "subtopic": "Patterns",
+      "text": "Sara makes a staircase out of toothpicks as shown. This is a $3$-step staircase and uses $18$ toothpicks. How many steps would be in a staircase that used $180$ toothpicks?",
+      "figure": "A staircase of unit squares outlined with toothpicks, each toothpick one square side long. The bottom row has 3 squares, the middle row has 2 squares, and the top row has 1 square, all lined up on the left. A side shared by two squares is a single toothpick.",
+      "choices": { "A": "$10$", "B": "$11$", "C": "$12$", "D": "$24$", "E": "$30$" }
+    },
+    {
+      "number": 9, "topic": "counting_probability", "subtopic": "Symmetry",
+      "text": "The faces of each of $7$ standard dice are labeled with the integers from $1$ to $6$. Let $p$ be the probability that when all $7$ dice are rolled, the sum of the numbers on the top faces is $10$. What other sum occurs with the same probability $p$?",
+      "choices": { "A": "$13$", "B": "$26$", "C": "$32$", "D": "$39$", "E": "$42$" }
+    },
+    {
+      "number": 10, "topic": "geometry", "subtopic": "3D geometry",
+      "text": "In the rectangular parallelepiped shown, $AB=3$, $BC=1$, and $CG=2$. Point $M$ is the midpoint of $\\overline{FG}$. What is the volume of the rectangular pyramid with base $BCHE$ and apex $M$?",
+      "figure": "A rectangular box. The bottom face is ABCD and the top face is EFGH, with E above A, F above B, G above C and H above D. AB = 3 runs along the front bottom edge, BC = 1 runs from front to back on the right, and CG = 2 is the vertical edge at the back right. M is the midpoint of the top right edge FG. The base BCHE is the slanted rectangle through the bottom right edge BC and the top left edge EH. Segments join M to B, C, E and H.",
+      "choices": { "A": "$1$", "B": "$\\frac{4}{3}$", "C": "$\\frac{3}{2}$", "D": "$\\frac{5}{3}$", "E": "$2$" }
+    },
+    {
+      "number": 11, "topic": "number_theory", "subtopic": "Modular arithmetic",
+      "text": "Which of the following expressions is never a prime number when $p$ is a prime number?",
+      "choices": { "A": "$p^2+16$", "B": "$p^2+24$", "C": "$p^2+26$", "D": "$p^2+46$", "E": "$p^2+96$" }
+    },
+    {
+      "number": 12, "topic": "geometry", "subtopic": "Centroids",
+      "text": "Line segment $\\overline{AB}$ is a diameter of a circle with $AB=24$. Point $C$, not equal to $A$ or $B$, lies on the circle. As point $C$ moves around the circle, the centroid (center of mass) of $\\triangle ABC$ traces out a closed curve missing two points. To the nearest positive integer, what is the area of the region bounded by this curve?",
+      "choices": { "A": "$25$", "B": "$38$", "C": "$50$", "D": "$63$", "E": "$75$" }
+    },
+    {
+      "number": 13, "topic": "number_theory", "subtopic": "Divisibility",
+      "text": "How many of the first $2018$ numbers in the sequence $101, 1001, 10001, 100001, \\ldots$ are divisible by $101$?",
+      "choices": { "A": "$253$", "B": "$504$", "C": "$505$", "D": "$506$", "E": "$1009$" }
+    },
+    {
+      "number": 14, "topic": "arithmetic_logic", "subtopic": "Mode",
+      "text": "A list of $2018$ positive integers has a unique mode, which occurs exactly $10$ times. What is the least number of distinct values that can occur in the list?",
+      "choices": { "A": "$202$", "B": "$223$", "C": "$224$", "D": "$225$", "E": "$234$" }
+    },
+    {
+      "number": 15, "topic": "geometry", "subtopic": "3D geometry",
+      "text": "A closed box with a square base is to be wrapped with a square sheet of wrapping paper. The box is centered on the wrapping paper with the vertices of the base lying on the midlines of the square sheet of paper, as shown in the figure on the left. The four corners of the wrapping paper are to be folded up over the sides and brought together to meet at the center of the top of the box, point $A$ in the figure on the right. The box has base length $w$ and height $h$. What is the area of the sheet of wrapping paper?",
+      "figure": "Left figure: a shaded square sheet of paper. In its center is the box's square base, side w, turned 45 degrees so it looks like a diamond. Each vertex of the diamond lies on one of the sheet's two dotted midlines. Dashed fold lines run near the sheet's corners, and the top left corner of the sheet is labeled A. Right figure: the wrapped box seen from above, drawn as a diamond with both diagonals. The four paper corners meet at the center point A.",
+      "choices": { "A": "$2(w+h)^2$", "B": "$\\frac{(w+h)^2}{2}$", "C": "$2w^2+4wh$", "D": "$2w^2$", "E": "$w^2h$" }
+    },
+    {
+      "number": 16, "topic": "number_theory", "subtopic": "Modular arithmetic",
+      "text": "Let $a_1, a_2, \\ldots, a_{2018}$ be a strictly increasing sequence of positive integers such that $$a_1+a_2+\\cdots+a_{2018}=2018^{2018}.$$ What is the remainder when $a_1^3+a_2^3+\\cdots+a_{2018}^3$ is divided by $6$?",
+      "choices": { "A": "$0$", "B": "$1$", "C": "$2$", "D": "$3$", "E": "$4$" }
+    },
+    {
+      "number": 17, "topic": "geometry", "subtopic": "Polygons in a rectangle",
+      "text": "In rectangle $PQRS$, $PQ=8$ and $QR=6$. Points $A$ and $B$ lie on $\\overline{PQ}$, points $C$ and $D$ lie on $\\overline{QR}$, points $E$ and $F$ lie on $\\overline{RS}$, and points $G$ and $H$ lie on $\\overline{SP}$ so that $AP=BQ<4$ and the convex octagon $ABCDEFGH$ is equilateral. The length of a side of this octagon can be expressed in the form $k+m\\sqrt{n}$, where $k$, $m$, and $n$ are integers and $n$ is not divisible by the square of any prime. What is $k+m+n$?",
+      "choices": { "A": "$1$", "B": "$7$", "C": "$21$", "D": "$92$", "E": "$106$" }
+    },
+    {
+      "number": 18, "topic": "counting_probability", "subtopic": "Arrangements",
+      "text": "Three young brother-sister pairs from different families need to take a trip in a van. These six children will occupy the second and third rows in the van, each of which has three seats. To avoid disruptions, siblings may not sit right next to each other in the same row, and no child may sit directly in front of his or her sibling. How many seating arrangements are possible for this trip?",
+      "choices": { "A": "$60$", "B": "$72$", "C": "$92$", "D": "$96$", "E": "$120$" }
+    },
+    {
+      "number": 19, "topic": "number_theory", "subtopic": "Divisors",
+      "text": "Joey and Chloe and their daughter Zoe all have the same birthday. Joey is $1$ year older than Chloe, and Zoe is exactly $1$ year old today. Today is the first of the $9$ birthdays on which Chloe's age will be an integral multiple of Zoe's age. What will be the sum of the two digits of Joey's age the next time his age is a multiple of Zoe's age?",
+      "choices": { "A": "$7$", "B": "$8$", "C": "$9$", "D": "$10$", "E": "$11$" }
+    },
+    {
+      "number": 20, "topic": "algebra", "subtopic": "Recursion",
+      "text": "A function $f$ is defined recursively by $f(1)=f(2)=1$ and $$f(n)=f(n-1)-f(n-2)+n$$ for all integers $n\\geq 3$. What is $f(2018)$?",
+      "choices": { "A": "$2016$", "B": "$2017$", "C": "$2018$", "D": "$2019$", "E": "$2020$" }
+    },
+    {
+      "number": 21, "topic": "number_theory", "subtopic": "Divisors",
+      "text": "Mary chose an even $4$-digit number $n$. She wrote down all the divisors of $n$ in increasing order from left to right: $1, 2, \\ldots, \\frac{n}{2}, n$. At some moment Mary wrote $323$ as a divisor of $n$. What is the smallest possible value of the next divisor written to the right of $323$?",
+      "choices": { "A": "$324$", "B": "$330$", "C": "$340$", "D": "$361$", "E": "$646$" }
+    },
+    {
+      "number": 22, "topic": "counting_probability", "subtopic": "Geometric probability",
+      "text": "Real numbers $x$ and $y$ are chosen independently and uniformly at random from the interval $[0,1]$. Which of the following numbers is closest to the probability that $x$, $y$, and $1$ are the side lengths of an obtuse triangle?",
+      "choices": { "A": "$0.21$", "B": "$0.25$", "C": "$0.29$", "D": "$0.50$", "E": "$0.79$" }
+    },
+    {
+      "number": 23, "topic": "number_theory", "subtopic": "LCM and GCD",
+      "text": "How many ordered pairs $(a,b)$ of positive integers satisfy the equation $$a\\cdot b+63=20\\cdot\\operatorname{lcm}(a,b)+12\\cdot\\gcd(a,b),$$ where $\\gcd(a,b)$ denotes the greatest common divisor of $a$ and $b$, and $\\operatorname{lcm}(a,b)$ denotes their least common multiple?",
+      "choices": { "A": "$0$", "B": "$2$", "C": "$4$", "D": "$6$", "E": "$8$" }
+    },
+    {
+      "number": 24, "topic": "geometry", "subtopic": "Hexagons",
+      "text": "Let $ABCDEF$ be a regular hexagon with side length $1$. Denote by $X$, $Y$, and $Z$ the midpoints of sides $\\overline{AB}$, $\\overline{CD}$, and $\\overline{EF}$, respectively. What is the area of the convex hexagon whose interior is the intersection of the interiors of $\\triangle ACE$ and $\\triangle XYZ$?",
+      "choices": { "A": "$\\frac{3}{8}\\sqrt{3}$", "B": "$\\frac{7}{16}\\sqrt{3}$", "C": "$\\frac{15}{32}\\sqrt{3}$", "D": "$\\frac{1}{2}\\sqrt{3}$", "E": "$\\frac{9}{16}\\sqrt{3}$" }
+    },
+    {
+      "number": 25, "topic": "algebra", "subtopic": "Floor function",
+      "text": "Let $\\lfloor x\\rfloor$ denote the greatest integer less than or equal to $x$. How many real numbers $x$ satisfy the equation $x^2+10{,}000\\lfloor x\\rfloor=10{,}000x$?",
+      "choices": { "A": "$197$", "B": "$198$", "C": "$199$", "D": "$200$", "E": "$201$" }
+    }
+  ]
+}

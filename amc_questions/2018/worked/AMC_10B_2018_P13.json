@@ -1,0 +1,73 @@
+{
+  "id": "AMC_10B_2018_P13",
+  "source": {
+    "year": 2018,
+    "contest": "10B",
+    "session": null,
+    "number": 13
+  },
+  "topic": "number_theory",
+  "subtopic": "Divisibility",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/AMC_10B_2018_P13.png",
+    "text": "How many of the first $2018$ numbers in the sequence $101, 1001, 10001, 100001, \\ldots$ are divisible by $101$?",
+    "choices": {
+      "A": "$253$",
+      "B": "$504$",
+      "C": "$505$",
+      "D": "$506$",
+      "E": "$1009$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$505$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: write the terms as powers of 10",
+      "body": "Each term is a $1$, some zeros, and a $1$, so it is a power of ten plus one: $101 = 10^2 + 1$, $1001 = 10^3 + 1$, and so on. Now the question becomes: for which exponents $n$ is $10^n + 1$ a multiple of $101$?",
+      "your_turn": {
+        "prompt": "The first term has $n = 2$. What is $n$ for the $2018$th term?",
+        "answer": "The exponent goes up by $1$ each term, so the $2018$th term is $10^{2019} + 1$. The exponents run from $2$ to $2019$."
+      }
+    },
+    {
+      "title": "Track remainders when dividing by 101",
+      "body": "We only care about the remainder of $10^n$ when divided by $101$. Write $a \\equiv b \\pmod{101}$ (read \"$a$ is congruent to $b$ mod $101$\") when $a - b$ is a multiple of $101$. The key fact is $100 = 101 - 1$, so $10^2 \\equiv -1$. Multiplying by $10$ each time, the powers of $10$ go\n$$10^0 \\equiv 1,\\quad 10^1 \\equiv 10,\\quad 10^2 \\equiv -1,\\quad 10^3 \\equiv -10,\\quad 10^4 \\equiv 1, \\ldots$$",
+      "your_turn": {
+        "prompt": "Why is $10^4 \\equiv 1$? Check it with actual numbers.",
+        "answer": "$10^4 = 10^2 \\cdot 10^2 \\equiv (-1)(-1) = 1$. Indeed $10000 = 99 \\cdot 101 + 1$. So the pattern repeats every $4$ steps."
+      }
+    },
+    {
+      "title": "Which exponents work?",
+      "body": "$10^n + 1$ is a multiple of $101$ exactly when $10^n \\equiv -1$, and that happens exactly when $n$ leaves remainder $2$ when divided by $4$. Careful: not every even exponent works. When $n$ is a multiple of $4$, $10^n \\equiv 1$, so $10^n + 1$ leaves remainder $2$.",
+      "your_turn": {
+        "prompt": "Test it: is $10001$ divisible by $101$? And what are the smallest and largest exponents from $2$ to $2019$ that leave remainder $2$ when divided by $4$?",
+        "answer": "$10001 = 99 \\cdot 101 + 2$, so no ($n = 4$ is a multiple of $4$). The exponents that work start at $2$ and end at $2018$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The good exponents are $2, 6, 10, \\ldots, 2018$, going up by $4$. Count them:\n$$\\frac{2018 - 2}{4} + 1 = 504 + 1 = 505.$$\nThe answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "$504$ comes from counting exponents that are multiples of $4$. For those, $10^n$ leaves remainder $1$, so $10^n + 1$ leaves remainder $2$ and is not divisible by $101$.",
+    "E": "$1009$ comes from thinking every even exponent works. Only half of them do: $10^4 + 1 = 10001$, for example, is not a multiple of $101$."
+  },
+  "verification": {
+    "official_answer": "C",
+    "solver_answer": "C",
+    "matches_official": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "math-olympiad skill",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Passed adversarial verifier on first review."
+  }
+}
