@@ -96,7 +96,7 @@ def row_meta(p):
 def main(check_only=False):
     conn = None if check_only else connect()
     if conn:
-        conn.executescript("DELETE FROM wrong_choices; DELETE FROM steps; DELETE FROM problems;")
+        conn.execute("DELETE FROM wrong_choices; DELETE FROM steps; DELETE FROM problems;")
     loaded, skipped = 0, 0
     for folder in content_dirs():
         key_file = folder / "answer_key.json"
@@ -115,7 +115,7 @@ def main(check_only=False):
             conn.execute(
                 "INSERT INTO problems (id, year, contest, session, number, topic, subtopic, difficulty, "
                 "image, text, choices_json, answer_choice, answer_value, verification_json, "
-                "collection, source_label, accept_json) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "collection, source_label, accept_json) VALUES (" + ", ".join(["%s"] * 17) + ")",
                 (p["id"], year, contest, session, number, p["topic"], p["subtopic"], p["difficulty"],
                  f"{folder.relative_to(QUESTIONS_DIR).as_posix()}/{p['problem']['image']}",
                  p["problem"]["text"], json.dumps(choices), p["answer"].get("choice") or "",
@@ -124,13 +124,14 @@ def main(check_only=False):
             for i, st in enumerate(p["steps"], 1):
                 yt = st.get("your_turn") or {}
                 conn.execute(
-                    "INSERT INTO steps VALUES (?,?,?,?,?,?,?)",
+                    "INSERT INTO steps VALUES (%s, %s, %s, %s, %s, %s, %s)",
                     (p["id"], i, st["title"], st["body"], yt.get("prompt"),
                      yt.get("answer"), int(bool(st.get("reveals_answer")))))
             for letter, text in p.get("wrong_choices", {}).items():
-                conn.execute("INSERT INTO wrong_choices VALUES (?,?,?)", (p["id"], letter, text))
+                conn.execute("INSERT INTO wrong_choices VALUES (%s, %s, %s)", (p["id"], letter, text))
     if conn:
         conn.commit()
+        conn.close()
     print(f"{'checked' if check_only else 'imported'} {loaded} problems, skipped {skipped}")
     return skipped == 0
 

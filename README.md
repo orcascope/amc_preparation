@@ -8,18 +8,38 @@ solution was written and checked ahead of time.
 
 ## Running it
 
-```
-python app/run.py
-```
+The app stores its data in PostgreSQL.
 
-This imports the latest worked solutions into the database, starts a local
-server, and opens `http://localhost:5000` in your browser. Everyone on this
-computer uses the same server and shares one progress database
-(`app/data/amc.db`), but each student's progress is kept separate by name.
+1. Install the Python packages:
+   ```
+   pip install -r requirements.txt
+   ```
+2. Create an empty PostgreSQL database, for example:
+   ```
+   createdb amc
+   ```
+3. Copy `.env.example` to `.env` and set the connection string:
+   ```
+   DATABASE_URL=postgresql://user:password@localhost:5432/amc
+   ```
+   `.env` is git-ignored, so the password stays on your machine.
+4. Start the app:
+   ```
+   python app/run.py
+   ```
 
-Stop the server with Ctrl+C. Nothing else needs to run — no internet
-connection is required once the page has loaded once, since KaTeX and the
-fonts are bundled under `app/static/vendor/`.
+The tables are created on first start. `run.py` then imports the latest worked
+solutions into the database, starts a local server, and opens
+`http://localhost:5000` in your browser. Everyone using this server shares one
+database, but each student's progress is kept separate by name.
+
+**Moving from the old SQLite version:** run
+`python tools/sqlite_to_postgres.py` once to copy the students and their
+progress from `app/data/amc.db` into PostgreSQL. It is safe to run twice.
+
+Stop the server with Ctrl+C. Apart from PostgreSQL, nothing else needs to
+run — no internet connection is required once the page has loaded once, since
+KaTeX and the fonts are bundled under `app/static/vendor/`.
 
 ## Project layout
 
@@ -36,9 +56,10 @@ amc_questions/<year>/
 
 app/
   server.py       Flask API (answers/steps stay server-side until asked for)
-  schema.sql       SQLite schema: content tables + student tables
+  db.py            PostgreSQL connection (DATABASE_URL from .env)
+  schema.sql       PostgreSQL schema: content tables + student tables
   static/          the whole front end (plain HTML/CSS/JS, no build step)
-  data/amc.db      the database (created on first run)
+  data/amc.db      the old SQLite database (only read by tools/sqlite_to_postgres.py)
 
 tools/
   crop_problems.py    cut each problem out of a questions PDF into a PNG
@@ -46,6 +67,7 @@ tools/
   import_worked.py    load worked/*.json into the database (content only —
                        never touches student progress)
   check_math.js       render every formula in every lesson with KaTeX
+  sqlite_to_postgres.py  copy students and progress from the old SQLite database
   TUTOR_BRIEF.md       instructions for writing a worked-solution JSON file
   VERIFIER_BRIEF.md    instructions for adversarially checking one
 ```
