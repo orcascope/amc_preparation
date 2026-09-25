@@ -58,4 +58,4 @@ Book support is currently written for one book. For another book:
 6. `answer_key.json` for a book maps `{ID: answer}` (flat), unlike a
    contest's `{TEST_ID: {number: letter}}`. Keep that shape.
 
-Run `import_worked.py --check`, then look at the new chip in the app.
+Run `python -m tools.import_worked --check`, then look at the new chip in the app.

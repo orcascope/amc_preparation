@@ -139,17 +139,20 @@ Put the relevant warnings in the tutor prompt up front.
 
 ## Step 5: assemble, check, load
 
+Run everything from the repository root. `app` and `tools` are packages, so
+scripts that import the app use `python -m` (the cropping and assembling
+scripts can still be run directly).
+
 ```
 python tools/assemble_book.py <topic>        # book only: statements/ACE_<topic>.json + answer_key.json
-python tools/import_worked.py --check        # format + answer-key check, needs no database
+python -m tools.import_worked --check        # format + answer-key check, needs no database
 node tools/check_math.js                     # every formula renders in KaTeX
-python tools/import_worked.py                # load into PostgreSQL (DATABASE_URL in .env)
+python -m tools.import_worked                # load into PostgreSQL (DATABASE_URL in .env)
 ```
 `--check` must report `skipped 0`. After assembling a book batch, delete
 `statements/items/`, because the assembled file is now the source.
 
-Then look at it in the app: start it (`python app/run.py`, or
-`cd app && python server.py`) and use Playwright (Chromium is at
+Then look at it in the app: start it with `python -m app.run` and use Playwright (Chromium is at
 `/opt/pw-browsers`) to:
 - open a new problem with its collection filter
 - submit a wrong answer, then the right one (for open-ended items, try an

@@ -46,7 +46,7 @@ unproven and listed a spoiler.
 
 - The importer rebuilds the content tables only. Student progress is never
   touched, so re-importing is always safe.
-- `import_worked.py --check` needs no database. A full import needs
+- `python -m tools.import_worked --check` needs no database. A full import needs
   `DATABASE_URL` (PostgreSQL) in `.env`.
 - Book rows sort by a zero-padded section (`02.10` after `02.09`), and the
   app lists each topic easiest first (difficulty, then source order).

@@ -80,7 +80,7 @@ The statement file's `book_pages` lists the pages each item needs.
 ```
 python tools/assemble_book.py <topic>     # statements/ACE_<topic>.json + answer_key.json (merges with earlier batches)
 rm -r amc_questions/<book-dir>/<topic>/statements/items
-python tools/import_worked.py --check
+python -m tools.import_worked --check
 node tools/check_math.js
 ```
 
