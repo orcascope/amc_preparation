@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Local HTTPS certificate — contains a private key, never commit it
+app/certs/
+
+# Local database (per-machine student progress)
+app/data/*.db
+app/data/*.db-journal
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
