@@ -19,9 +19,18 @@ function strings(value, where, out) {
   return out;
 }
 
-for (const year of fs.readdirSync(root)) {
-  const dir = path.join(root, year, "worked");
-  if (!fs.existsSync(dir)) continue;
+// Every worked/ folder: amc_questions/<year>/worked and amc_questions/ace-amc-book/<topic>/worked.
+function workedDirs(dir, out = []) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (!e.isDirectory()) continue;
+    const sub = path.join(dir, e.name);
+    if (e.name === "worked") out.push(sub);
+    else workedDirs(sub, out);
+  }
+  return out;
+}
+
+for (const dir of workedDirs(root)) {
   for (const name of fs.readdirSync(dir).filter((n) => n.endsWith(".json"))) {
     files++;
     const data = JSON.parse(fs.readFileSync(path.join(dir, name), "utf8"));
