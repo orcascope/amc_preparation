@@ -1,0 +1,58 @@
+{
+  "id": "ACE_2_3_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.3.2",
+    "kind": "example",
+    "section": "Number of Factors and Sum of all Factors",
+    "original_source": null
+  },
+  "topic": "number_theory",
+  "subtopic": "Sum of divisors",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_2_3_02.png",
+    "text": "What is the sum of the factors of $140$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$336$",
+    "accept": [
+      "336"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: prime factorize $140$",
+      "body": "Listing all the factors and adding them works, but it is easy to miss one. Every factor is built from the primes of $140$, so the prime factorization tells us exactly what the factors are.",
+      "your_turn": {
+        "prompt": "Write $140$ as a product of prime powers.",
+        "answer": "$140 = 2^2\\cdot 5\\cdot 7$, since $140 = 4\\cdot 35$."
+      }
+    },
+    {
+      "title": "Use the sum-of-divisors formula",
+      "body": "Every factor has the form $2^a\\cdot 5^b\\cdot 7^c$ with $0\\le a\\le 2$, $0\\le b\\le 1$, $0\\le c\\le 1$. Multiplying out the product below picks one term from each bracket in every possible way, so it produces each factor exactly once.\n$$(1 + 2 + 2^2)(1 + 5)(1 + 7)$$",
+      "your_turn": {
+        "prompt": "What is the value of each bracket?",
+        "answer": "$1 + 2 + 4 = 7$, $1 + 5 = 6$, and $1 + 7 = 8$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The sum of the factors is $7\\cdot 6\\cdot 8 = 336$. The answer is **336**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "336",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

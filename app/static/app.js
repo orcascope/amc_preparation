@@ -538,7 +538,8 @@ async function showSolution(id) {
           <span class="value">${data.answer.choice ? `(${data.answer.choice}) ` : ""}${esc(data.answer.value)}</span>
         </div>
         ${data.steps.map((s, i) => stepHtml(s, i + 1, { showTurnAnswer: true })).join("")}
-        <p class="done-note">These steps were worked out ahead of time with the math-olympiad solver and checked against the official answer key.</p>
+        <p class="done-note">${id.startsWith("ACE_") ? "These steps follow the solution in the ACE book and were checked by an independent reviewer."
+          : "These steps were worked out ahead of time with the math-olympiad solver and checked against the official answer key."}</p>
       </main>
       <aside>
         <div class="card" style="display:flex;flex-direction:column;gap:16px">

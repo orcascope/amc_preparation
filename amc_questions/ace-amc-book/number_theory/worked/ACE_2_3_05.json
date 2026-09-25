@@ -1,0 +1,59 @@
+{
+  "id": "ACE_2_3_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.3.5",
+    "kind": "example",
+    "section": "Number of Factors and Sum of all Factors",
+    "original_source": null
+  },
+  "topic": "number_theory",
+  "subtopic": "Legendre's formula",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_2_3_05.png",
+    "text": "Find the largest exponent of $14$ that divides $180!$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$28$",
+    "accept": [
+      "28",
+      "14^{28}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: split $14$ into primes",
+      "body": "Legendre's formula only works for primes, and $14$ is not prime: $14 = 2\\cdot 7$. Since $14^n = 2^n\\cdot 7^n$, each factor of $14$ needs one $2$ and one $7$. So we count the $2$s and the $7$s in $180!$ separately, and the scarcer prime is the limit.",
+      "your_turn": {
+        "prompt": "Before computing, which prime do you expect to run out first, $2$ or $7$?",
+        "answer": "$7$. Multiples of $7$ are much rarer than even numbers."
+      }
+    },
+    {
+      "title": "Count each prime with Legendre's formula",
+      "body": "For $2$, divide $180$ by $2, 4, 8, \\dots$ and round each result down:\n$$90 + 45 + 22 + 11 + 5 + 2 + 1 + 0 = 176.$$\nSo $2^{176}$ is the largest power of $2$ dividing $180!$. Now do the same for $7$.",
+      "your_turn": {
+        "prompt": "Find $\\left\\lfloor \\frac{180}{7} \\right\\rfloor$, $\\left\\lfloor \\frac{180}{49} \\right\\rfloor$ and $\\left\\lfloor \\frac{180}{343} \\right\\rfloor$.",
+        "answer": "$25$, $3$ and $0$ (since $343 > 180$)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "There are $25 + 3 = 28$ factors of $7$ in $180!$ but $176$ factors of $2$. Each $14$ uses one of each, so the $7$s run out first and $14^{28}$ divides $180!$ while $14^{29}$ does not. The answer is **28**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "28",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

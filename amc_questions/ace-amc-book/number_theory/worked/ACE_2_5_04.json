@@ -1,0 +1,70 @@
+{
+  "id": "ACE_2_5_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.5.4",
+    "kind": "problem",
+    "section": "Numbers in Different Bases",
+    "original_source": "2015 AMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Base conversion",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_5_04.png",
+    "text": "Hexadecimal (base-$16$) numbers are written using numeric digits $0$ through $9$ as well as the letters $A$ through $F$ to represent $10$ through $15$. Among the first $1000$ positive integers, there are $n$ whose hexadecimal representation contains only numeric digits. What is the sum of the digits of $n$?",
+    "choices": {
+      "A": "$17$",
+      "B": "$18$",
+      "C": "$19$",
+      "D": "$20$",
+      "E": "$21$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$21$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: write $1000$ in base $16$",
+      "body": "The condition is about hexadecimal digits, but the limit $1000$ is given in base $10$. To see which hex digit strings stay at or below the limit, first write the limit itself in base $16$. The place values are $16^2 = 256$, $16^1 = 16$ and $16^0 = 1$.",
+      "your_turn": {
+        "prompt": "Write $1000$ in base $16$.",
+        "answer": "$1000 = 3\\cdot 256 + 14\\cdot 16 + 8$, so it is $3E8_{16}$ (the digit $14$ is written $E$)."
+      }
+    },
+    {
+      "title": "Which digit strings are allowed",
+      "body": "Every number up to $1000$ has at most three hex digits, so write each one as a three-digit string, padding with leading zeros. The first digit can only be $0$, $1$, $2$ or $3$, because a first digit of $4$ already means at least $4\\cdot 256 = 1024$. The other two digits must be numeric, so each is $0$ through $9$.",
+      "your_turn": {
+        "prompt": "The largest such string is $399_{16}$. Is it below $1000$?",
+        "answer": "Yes: $3\\cdot 256 + 9\\cdot 16 + 9 = 921$. So every string with first digit $0$ to $3$ and other digits $0$ to $9$ is inside the range."
+      }
+    },
+    {
+      "title": "Count the strings",
+      "body": "Now count by choices: $4$ options for the first digit and $10$ for each of the other two. Careful: one of these strings is $000$, which stands for the number $0$, and $0$ is not one of the first $1000$ positive integers.",
+      "your_turn": {
+        "prompt": "How many three-digit strings are there in total, before removing anything?",
+        "answer": "$4\\cdot 10\\cdot 10 = 400$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Removing the string $000$ leaves $n = 400 - 1 = 399$ positive integers whose hex form uses only numeric digits. The sum of the digits of $n$ is $3 + 9 + 9 = 21$. The answer is **(E)** $21$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

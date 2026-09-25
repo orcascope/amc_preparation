@@ -1,0 +1,58 @@
+{
+  "id": "ACE_2_2_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.2.6",
+    "kind": "example",
+    "section": "Multiples, Divisors, Prime Factorization",
+    "original_source": null
+  },
+  "topic": "number_theory",
+  "subtopic": "LCM and GCD",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_2_2_06.png",
+    "text": "What is the LCM of $18$, $22$, and $24$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$792$",
+    "accept": [
+      "792"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: write each number as primes",
+      "body": "The LCM (least common multiple) is the smallest number that all three divide. As with the GCD, the easiest way to find it is to break every number into prime powers and compare one prime at a time.",
+      "your_turn": {
+        "prompt": "Write $18$, $22$ and $24$ as products of prime powers.",
+        "answer": "$18 = 2\\cdot 3^2$, $22 = 2\\cdot 11$, $24 = 2^3\\cdot 3$."
+      }
+    },
+    {
+      "title": "Take the largest exponent of each prime",
+      "body": "The LCM must contain enough of each prime for every number, so for each prime you use the largest exponent that appears. The primes involved are $2$, $3$ and $11$. Careful: do not multiply the three numbers together; that product is a common multiple, but far from the least one.",
+      "your_turn": {
+        "prompt": "What is the largest exponent of $2$, of $3$, and of $11$?",
+        "answer": "$3$ (from $24$), $2$ (from $18$), and $1$ (from $22$)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Multiply the prime powers with those largest exponents.\n$$\\text{lcm}(18, 22, 24) = 2^3\\cdot 3^2\\cdot 11 = 8\\cdot 9\\cdot 11 = 792$$\nThe answer is **$792$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "792",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

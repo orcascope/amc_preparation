@@ -1,0 +1,70 @@
+{
+  "id": "ACE_2_3_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.3.8",
+    "kind": "problem",
+    "section": "Number of Factors and Sum of all Factors",
+    "original_source": "2016 AMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Number of divisors",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_3_08.png",
+    "text": "For some positive integer $n$, the number $110n^3$ has $110$ positive integer divisors, including $1$ and the number $110n^3$. How many positive integer divisors does the number $81n^4$ have?",
+    "choices": {
+      "A": "$110$",
+      "B": "$191$",
+      "C": "$261$",
+      "D": "$325$",
+      "E": "$425$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$325$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: count divisors from the exponents",
+      "body": "The number of divisors of $p_1^{e_1}p_2^{e_2}\\cdots$ is $(e_1+1)(e_2+1)\\cdots$. We know this count for $110n^3 = 2\\cdot 5\\cdot 11\\cdot n^3$, so we can work backward from $110$ to the exponents. The primes $2$, $5$ and $11$ are surely there, so there are at least three factors $e+1$, each at least $2$.",
+      "your_turn": {
+        "prompt": "Factor $110$ into primes.",
+        "answer": "$110 = 2\\cdot 5\\cdot 11$."
+      }
+    },
+    {
+      "title": "Work in reverse to the exponents",
+      "body": "$110$ is a product of only three primes, and we already need three factors that are at least $2$. So $110n^3$ has exactly the primes $2$, $5$, $11$, and the factors $e+1$ are $2$, $5$ and $11$ in some order. That makes the exponents $1$, $4$ and $10$.",
+      "your_turn": {
+        "prompt": "Suppose $2$ gets exponent $1$, $5$ gets $4$, and $11$ gets $10$. What is $n^3$?",
+        "answer": "$n^3 = 5^3\\cdot 11^9$, since $110n^3 = 2\\cdot 5^4\\cdot 11^{10}$."
+      }
+    },
+    {
+      "title": "Find $n$ and build $81n^4$",
+      "body": "Take the cube root: $n = 5\\cdot 11^3$. Now $81 = 3^4$ brings in a brand new prime. Careful: do not forget that factor of $3^4$ when you count divisors.",
+      "your_turn": {
+        "prompt": "Write $81n^4$ as a product of prime powers.",
+        "answer": "$81n^4 = 3^4\\cdot 5^4\\cdot 11^{12}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Add $1$ to each exponent and multiply: $(4+1)(4+1)(12+1) = 5\\cdot 5\\cdot 13 = 325$. If the exponents $1, 4, 10$ are given to the primes in a different order, $n$ changes but the exponents of $81n^4$ are still $4, 4, 12$ in some order, so the count is the same. The answer is **(D)** $325$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

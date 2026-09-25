@@ -1,0 +1,58 @@
+{
+  "id": "ACE_2_5_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.5.2",
+    "kind": "problem",
+    "section": "Numbers in Different Bases",
+    "original_source": "2019 SMT"
+  },
+  "topic": "number_theory",
+  "subtopic": "Base conversion",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_5_02.png",
+    "text": "The number $N_b$ is the number such that when written in base $b$, it is $123$. What is the smallest $b$ such that $N_b$ is a cube of a positive integer?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$4$",
+    "accept": [
+      "4"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: write $N_b$ in base ten",
+      "body": "The question asks when $N_b$ is a perfect cube, and we recognise cubes like $8, 27, 64$ in base ten, so first rewrite $N_b$ in base ten. In base $b$ the three digits of $123$ stand for $b^2$, $b$ and $1$.",
+      "your_turn": {
+        "prompt": "Write $N_b = \\underline{123}_b$ as an expression in $b$.",
+        "answer": "$N_b = 1 \\cdot b^2 + 2 \\cdot b + 3 = b^2 + 2b + 3$."
+      }
+    },
+    {
+      "title": "Which bases are allowed?",
+      "body": "Careful: not every $b$ is allowed. In base $b$ the digits run from $0$ to $b - 1$, so a numeral can only use digits smaller than the base. The numeral $123$ uses the digit $3$.",
+      "your_turn": {
+        "prompt": "What condition must $b$ satisfy for $123$ to be a valid numeral in base $b$?",
+        "answer": "$b > 3$, because the digit $3$ must be less than the base $b$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Test the smallest allowed base first. For $b = 4$ we get $N_4 = 16 + 8 + 3 = 27 = 3^3$, a cube. No smaller base is allowed, so this is the smallest $b$. The answer is **4**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "4",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Pass after fix: step 2 no longer states b = 4 early; step 1 reason reworded (recognise cubes in base ten)."
+  }
+}

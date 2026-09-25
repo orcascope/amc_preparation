@@ -1,0 +1,66 @@
+{
+  "id": "ACE_2_2_11",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.2.11",
+    "kind": "problem",
+    "section": "Multiples, Divisors, Prime Factorization",
+    "original_source": "2021 SMT"
+  },
+  "topic": "number_theory",
+  "subtopic": "Sum of divisors and totient",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_2_11.png",
+    "text": "A positive integer $n$ has $4$ positive divisors such that the sum of its divisors is $\\sigma(n) = 2112$. Given that the number of positive integers less than and relative prime to $n$ is $\\phi(n) = 1932$, find the sum of the proper divisors of $n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$91$",
+    "accept": [
+      "91"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: what does \"4 divisors\" allow?",
+      "body": "The number of divisors comes from the prime factorization: add $1$ to each exponent and multiply. The only ways to get a product of $4$ are $4$ itself or $2\\cdot 2$. So $n = p^3$ for a prime $p$, or $n = pq$ for two different primes $p$ and $q$.",
+      "your_turn": {
+        "prompt": "In the case $n = p^3$, the divisor sum is $1 + p + p^2 + p^3$. Can this equal $2112$?",
+        "answer": "No. $p = 11$ gives $1464$ and $p = 13$ gives $2380$, so no prime works. We must have $n = pq$."
+      }
+    },
+    {
+      "title": "Turn both facts into equations",
+      "body": "For $n = pq$ the divisors are $1, p, q, pq$, and their sum factors neatly. The count of numbers relatively prime to $n$ is $\\phi(n) = pq\\cdot\\frac{p-1}{p}\\cdot\\frac{q-1}{q}$. So\n$$(1+p)(1+q) = 2112,\\qquad (p-1)(q-1) = 1932.$$",
+      "your_turn": {
+        "prompt": "Check that $1 + p + q + pq$ equals $(1+p)(1+q)$.",
+        "answer": "Expanding $(1+p)(1+q)$ gives $1 + q + p + pq$, the same four divisors."
+      }
+    },
+    {
+      "title": "Find the primes",
+      "body": "Factor $2112 = 2^6\\cdot 3\\cdot 11$. Careful: several factor pairs are each one more than a prime (for example $8\\cdot 264$ gives the primes $7$ and $263$), so the first equation alone is not enough. Use both equations together. Expanding gives $1 + p + q + pq = 2112$ and $pq - p - q + 1 = 1932$. Subtracting, $2(p + q) = 180$, so $p + q = 90$. Now we need factors of $2112$ that add to $92$: $48 + 44 = 92$ and $48\\cdot 44 = 2112$. That makes the primes $47$ and $43$.",
+      "your_turn": {
+        "prompt": "Check these primes against the second equation.",
+        "answer": "$(47-1)(43-1) = 46\\cdot 42 = 1932$. It matches."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $n = 43\\cdot 47 = 2021$. Careful: proper divisors are all divisors except $n$ itself, so we leave out $2021$. The sum is $1 + 43 + 47 = 91$, which also equals $2112 - 2021$. The answer is **91**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "91",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Pass after fix: step 3 warns that 8*264 also gives primes 7 and 263, and uses both equations (p+q=90) to pick 47 and 43."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "ACE_2_4_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.4.8",
+    "kind": "problem",
+    "section": "Factorials and Palindromes",
+    "original_source": "2006 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Legendre's formula",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_4_08.png",
+    "text": "Let $N$ be the number of consecutive $0$'s at the right end of the decimal representation of the product $1!2!3!4!\\cdots99!100!$. Find the remainder when $N$ is divided by $1000$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$124$",
+    "accept": [
+      "124"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: count factors of $5$",
+      "body": "Each zero at the end of a number comes from one factor of $10 = 2 \\cdot 5$. A product of factorials has far more factors of $2$ than factors of $5$, so the number of trailing zeros equals the number of factors of $5$ in the whole product.",
+      "your_turn": {
+        "prompt": "How many factors of $5$ are in $10!$?",
+        "answer": "Two: one from $5$ and one from $10$."
+      }
+    },
+    {
+      "title": "Use Legendre's formula on each factorial",
+      "body": "Legendre's formula says the number of $5$s in $n!$ is $\\lfloor n/5 \\rfloor + \\lfloor n/25 \\rfloor + \\cdots$, where $\\lfloor x \\rfloor$ means round down. For $n \\le 100$ only the first two terms matter, so we add up over all $n$ from $1$ to $100$:\n$$N = \\sum_{n=1}^{100} \\left\\lfloor \\tfrac{n}{5} \\right\\rfloor + \\sum_{n=1}^{100} \\left\\lfloor \\tfrac{n}{25} \\right\\rfloor$$",
+      "your_turn": {
+        "prompt": "How many factors of $5$ does $100!$ alone contribute?",
+        "answer": "$\\lfloor 100/5 \\rfloor + \\lfloor 100/25 \\rfloor = 20 + 4 = 24$."
+      }
+    },
+    {
+      "title": "The first sum: blocks of five",
+      "body": "$\\lfloor n/5 \\rfloor$ stays the same for five $n$ in a row: it is $0$ for $n = 1$ to $4$, $1$ for $n = 5$ to $9$, $2$ for $n = 10$ to $14$, and so on up to $19$ for $n = 95$ to $99$. Then $n = 100$ adds a single $20$. So the first sum is $5(1 + 2 + \\cdots + 19) + 20$.",
+      "your_turn": {
+        "prompt": "Compute $5(1 + 2 + \\cdots + 19) + 20$.",
+        "answer": "$1 + \\cdots + 19 = \\tfrac{19 \\cdot 20}{2} = 190$, so the sum is $950 + 20 = 970$."
+      }
+    },
+    {
+      "title": "The second sum: extra fives from multiples of $25$",
+      "body": "Careful: stopping at $970$ is the classic trap. Numbers like $25$ and $50$ carry two factors of $5$, and $\\lfloor n/25 \\rfloor$ counts the second one. It is $0$ for $n = 1$ to $24$, $1$ for the $25$ values $n = 25$ to $49$, $2$ for $n = 50$ to $74$, $3$ for $n = 75$ to $99$, and $4$ for $n = 100$.",
+      "your_turn": {
+        "prompt": "Add these up.",
+        "answer": "$25 \\cdot 1 + 25 \\cdot 2 + 25 \\cdot 3 + 4 = 25 + 50 + 75 + 4 = 154$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The total number of factors of $5$, and so the number of trailing zeros, is $N = 970 + 154 = 1124$. Dividing by $1000$ leaves remainder $124$. The answer is **124**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "124",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

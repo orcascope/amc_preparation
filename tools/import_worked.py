@@ -85,9 +85,10 @@ def row_meta(p):
     """(year, contest, session, number, collection, source_label) for the problems table."""
     s = p["source"]
     if "book" in s:
-        section, _, num = s["number"].rpartition(".")
+        ch, sec, num = (int(x) for x in s["number"].split("."))
         label = f"ACE book {s['number']}" + (f" · {s['original_source']}" if s.get("original_source") else "")
-        return 0, "book", section, int(num), "book", label
+        # session is only a sort key: zero-padded so section 2.10 sorts after 2.9
+        return 0, "book", f"{ch:02d}.{sec:02d}", num, "book", label
     label = f"{s['year']} AMC {s['contest']}" + (f" {s['session']}" if s.get("session") else "")
     return s["year"], s["contest"], s.get("session"), s["number"], str(s["year"]), label
 

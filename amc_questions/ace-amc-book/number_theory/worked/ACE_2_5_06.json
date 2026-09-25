@@ -1,0 +1,74 @@
+{
+  "id": "ACE_2_5_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.5.6",
+    "kind": "problem",
+    "section": "Numbers in Different Bases",
+    "original_source": "2020 PUMAC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Palindromes in different bases",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_5_06.png",
+    "text": "Find the sum (in base $10$) of the three greatest numbers less than $1000$ in base $10$ that are palindromes in both base $10$ and base $5$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$1584$",
+    "accept": [
+      "1584"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: write $1000$ in base $5$",
+      "body": "Base-five palindromes are easy to list by their digits, while base-ten palindromes are easy to recognize. So we list base-five palindromes from the largest down and check each one in base ten. To know where to begin, find how many base-five digits a number below $1000$ can have.",
+      "your_turn": {
+        "prompt": "Write $1000$ in base $5$. (The place values are $625$, $125$, $25$, $5$, $1$.)",
+        "answer": "$1000 = 1\\cdot 625 + 3\\cdot 125$, so $1000 = 13000_5$. Numbers below $1000$ have at most $5$ base-five digits."
+      }
+    },
+    {
+      "title": "Five-digit base-five palindromes",
+      "body": "A five-digit palindrome below $13000_5$ must start with $1$, so it looks like $1aba1_5$. Its middle-left digit $a$ can only be $0$, $1$ or $2$, since $a = 3$ would make it larger than $13000_5$.",
+      "your_turn": {
+        "prompt": "Write $1aba1_5$ as a base-ten expression.",
+        "answer": "$625 + 125a + 25b + 5a + 1 = 626 + 130a + 25b$."
+      }
+    },
+    {
+      "title": "Check each value of $a$",
+      "body": "For $a = 2$ the numbers are $886 + 25b$: $886, 911, 936, 961, 986$, and none is a base-ten palindrome. For $a = 1$ they are $756 + 25b$: $756, 781, 806, 831, 856$, again none. That leaves $a = 0$, giving $626 + 25b$ for $b = 0$ to $4$.",
+      "your_turn": {
+        "prompt": "List $626 + 25b$ for $b = 0, 1, 2, 3, 4$. Which are palindromes?",
+        "answer": "$626, 651, 676, 701, 726$. The palindromes are $626$ ($b = 0$) and $676$ ($b = 2$)."
+      }
+    },
+    {
+      "title": "Four-digit base-five palindromes",
+      "body": "We still need a third number, so move to four-digit palindromes $abba_5 = 125a + 25b + 5b + a = 126a + 30b$, with digits up to $4$. For $a = 4$ we get $504, 534, 564, 594, 624$, and for $a = 3$ we get $378, 408, 438, 468, 498$. None of these is a palindrome.",
+      "your_turn": {
+        "prompt": "Now try $a = 2$: list $252 + 30b$. What is the largest palindrome?",
+        "answer": "$252, 282, 312, 342, 372$. Both $252$ and $282$ are palindromes, and the larger is $282$ ($b = 1$)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The three greatest numbers below $1000$ that are palindromes in both bases are $676 = 10201_5$, $626 = 10001_5$ and $282 = 2112_5$. Their sum is $676 + 626 + 282 = 1584$.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1584",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

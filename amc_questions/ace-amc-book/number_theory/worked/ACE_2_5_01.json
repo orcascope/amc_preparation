@@ -1,0 +1,62 @@
+{
+  "id": "ACE_2_5_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.5.1",
+    "kind": "problem",
+    "section": "Numbers in Different Bases",
+    "original_source": "2021 AMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Base conversion",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_5_01.png",
+    "text": "Let $n$ be a positive integer and $d$ be a digit such that the value of the numeral $\\underline{32d}$ in base $n$ equals $263$, and the value of the numeral $\\underline{324}$ in base $n$ equals the value of the numeral $\\underline{11d1}$ in base six. What is $n + d$?",
+    "choices": {
+      "A": "$10$",
+      "B": "$11$",
+      "C": "$13$",
+      "D": "$15$",
+      "E": "$16$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$11$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: turn every numeral into base ten",
+      "body": "Numerals in unknown bases are hard to compare, but in base ten they become ordinary algebra. In base $n$ the digits of a three-digit numeral stand for $n^2$, $n$ and $1$, so the first fact becomes\n$$\\underline{32d}_n = 3n^2 + 2n + d = 263.$$",
+      "your_turn": {
+        "prompt": "Write $\\underline{11d1}$ in base six as a base-ten expression in $d$.",
+        "answer": "$6^3 + 6^2 + 6d + 1 = 216 + 36 + 6d + 1 = 253 + 6d$."
+      }
+    },
+    {
+      "title": "Two equations, one shared piece",
+      "body": "The second fact says $\\underline{324}_n = \\underline{11d1}_6$, which is $3n^2 + 2n + 4 = 253 + 6d$. Both equations contain $3n^2 + 2n$, and the first one tells us $3n^2 + 2n = 263 - d$. Substitute that into the second equation to get rid of $n$.",
+      "your_turn": {
+        "prompt": "Solve $263 - d + 4 = 253 + 6d$ for $d$.",
+        "answer": "$267 - d = 253 + 6d$, so $7d = 14$ and $d = 2$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $d = 2$ the first equation is $3n^2 + 2n + 2 = 263$, so $3n^2 + 2n - 261 = 0$, which factors as $(3n + 29)(n - 9) = 0$. Since $n$ is positive, $n = 9$ (and base $9$ is big enough for the digits $3, 2, 4$). Check: $\\underline{322}_9 = 243 + 18 + 2 = 263$. So $n + d = 9 + 2 = 11$. The answer is **(B)** $11$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "ACE_2_3_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.3.7",
+    "kind": "problem",
+    "section": "Number of Factors and Sum of all Factors",
+    "original_source": "2020 PUMAC Number Theory"
+  },
+  "topic": "number_theory",
+  "subtopic": "Sum of divisors",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_3_07.png",
+    "text": "Compute the sum of all positive integers whose positive divisors sum to $186$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$202$",
+    "accept": [
+      "202"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the divisor sum splits into factors",
+      "body": "If $n = p_1^{e_1} p_2^{e_2}\\cdots$, the sum of its divisors is a product with one factor for each prime:\n$$\\sigma(n) = (1 + p_1 + \\cdots + p_1^{e_1})(1 + p_2 + \\cdots + p_2^{e_2})\\cdots$$\nWe are told this product is $186$. So we should factor $186$ and ask which pieces can be the sum of powers of one prime.",
+      "your_turn": {
+        "prompt": "Factor $186$ into primes.",
+        "answer": "$186 = 2\\cdot 3\\cdot 31$."
+      }
+    },
+    {
+      "title": "Which factors are allowed?",
+      "body": "Each factor $1 + p + \\cdots + p^{e}$ is at least $1 + 2 = 3$, so no factor can be $2$. That means the $2$ in $186$ must be glued to another prime. The possible ways to split $186$ are then $186$ itself, $6\\cdot 31$, and $3\\cdot 62$.",
+      "your_turn": {
+        "prompt": "Can $186$ itself be $1 + p + \\cdots + p^e$ for a single prime $p$? Try $e = 1$ and $e = 2$.",
+        "answer": "No. $e = 1$ needs $p = 185$, which is not prime, and $p^2 + p + 1 = 186$ has no integer solution ($13^2 + 13 + 1 = 183$). Larger $e$ also misses."
+      }
+    },
+    {
+      "title": "The split $6\\cdot 31$",
+      "body": "The only way to get $6$ is $1 + 5$, so one prime is $5$ with exponent $1$. For $31$ there are two options: $1 + 2 + 4 + 8 + 16$ and $1 + 5 + 25$. Careful: the second one uses the prime $5$ again, which is already taken, so only the powers of $2$ work.",
+      "your_turn": {
+        "prompt": "Which number $n$ does this case give?",
+        "answer": "$n = 5\\cdot 2^4 = 80$. Check: $6\\cdot 31 = 186$."
+      }
+    },
+    {
+      "title": "The split $3\\cdot 62$",
+      "body": "The only way to get $3$ is $1 + 2$, so one prime is $2$ with exponent $1$. For $62$, the option $1 + 61$ works because $61$ is prime, while $p^2 + p + 1 = 62$ has no integer solution.",
+      "your_turn": {
+        "prompt": "Which number $n$ does this case give?",
+        "answer": "$n = 2\\cdot 61 = 122$. Check: $3\\cdot 62 = 186$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Exactly two numbers have divisor sum $186$: $80$ and $122$. Their sum is $80 + 122 = 202$. The answer is **202**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "202",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

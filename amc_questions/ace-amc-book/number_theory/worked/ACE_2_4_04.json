@@ -1,0 +1,80 @@
+{
+  "id": "ACE_2_4_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.4.4",
+    "kind": "problem",
+    "section": "Factorials and Palindromes",
+    "original_source": "2013 AMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Palindromes and digit carries",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_4_04.png",
+    "text": "A palindrome is a nonnegative integer number that reads the same forwards and backwards when written in base $10$ with no leading zeros. A $6$-digit palindrome $n$ is chosen uniformly at random. What is the probability that $\\frac{n}{11}$ is also a palindrome?",
+    "choices": {
+      "A": "$\\frac{8}{25}$",
+      "B": "$\\frac{33}{100}$",
+      "C": "$\\frac{7}{20}$",
+      "D": "$\\frac{9}{25}$",
+      "E": "$\\frac{11}{30}$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$\\frac{11}{30}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: work backwards from the smaller palindrome",
+      "body": "Instead of dividing $n$ by $11$, turn it around: call $m = \\frac{n}{11}$ and ask which palindromes $m$ give a $6$-digit palindrome when multiplied by $11$. Multiplying by $11$ is easy to do digit by digit, since $11m = 10m + m$. First figure out how many digits $m$ can have.",
+      "your_turn": {
+        "prompt": "Six-digit numbers run from $100{,}000$ to $999{,}999$. Roughly what range must $m = \\frac{n}{11}$ lie in, and how many digits can it have?",
+        "answer": "About $9091$ to $90909$, so $m$ has $4$ or $5$ digits."
+      }
+    },
+    {
+      "title": "A 4-digit palindrome does not work",
+      "body": "Write $m = ABBA$. Adding $ABBA0 + ABBA$, the digits from left to right are $A,\\ A+B,\\ 2B,\\ A+B,\\ A$ when nothing carries, which is only $5$ digits. To reach $6$ digits a carry must spill off the front, which needs $A = 9$, and then the product starts with $1$ but still ends in $A = 9$.",
+      "your_turn": {
+        "prompt": "Why does that rule out every 4-digit $m$?",
+        "answer": "A palindrome must start and end with the same digit, but the product starts with $1$ and ends with $9$."
+      }
+    },
+    {
+      "title": "The 5-digit case: no carries allowed",
+      "body": "Now write $m = ABCBA$. Adding $ABCBA0 + ABCBA$, the digits are\n$$A,\\ A+B,\\ B+C,\\ B+C,\\ A+B,\\ A$$\nwhen nothing carries, which is a $6$-digit palindrome. Careful: if any column sum reaches $10$, the carry changes one side but not the other and the palindrome breaks. So we need $A + B \\le 9$ and $B + C \\le 9$.",
+      "your_turn": {
+        "prompt": "Take $A = 1$. For each $B$ from $0$ to $8$, how many $C$ work, and what is the total?",
+        "answer": "$B = 0$ gives $10$ choices of $C$, $B = 1$ gives $9$, down to $B = 8$ giving $2$. Total $10 + 9 + \\dots + 2 = 54$."
+      }
+    },
+    {
+      "title": "Count every A",
+      "body": "Repeat for each $A$. For a given $A$, the digit $B$ runs from $0$ to $9 - A$, and each $B$ allows $10 - B$ values of $C$. So $A = 2$ gives $10 + 9 + \\dots + 3 = 52$, and so on, until $A = 9$ allows only $B = 0$.",
+      "your_turn": {
+        "prompt": "Add up the counts for $A = 1$ through $9$.",
+        "answer": "$54 + 52 + 49 + 45 + 40 + 34 + 27 + 19 + 10 = 330$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Every $6$-digit palindrome has the form $ABCCBA$ with $A$ from $1$ to $9$ and $B, C$ from $0$ to $9$, so there are $9\\cdot 10\\cdot 10 = 900$ of them. Of these, $330$ are $11$ times a palindrome, so the probability is $\\frac{330}{900} = \\frac{11}{30}$. The answer is **(E)** $\\frac{11}{30}$.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "This is $\\frac{330}{1000}$, which comes from counting $10\\cdot 10\\cdot 10$ six-digit palindromes. The first digit cannot be $0$, so there are only $900$."
+  },
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

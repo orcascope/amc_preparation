@@ -1,0 +1,70 @@
+{
+  "id": "ACE_2_2_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.2.10",
+    "kind": "problem",
+    "section": "Multiples, Divisors, Prime Factorization",
+    "original_source": "2017 CMIMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Prime factorization",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_2_10.png",
+    "text": "Let $a_1, a_2, a_3, a_4, a_5$ be positive integers such that $a_1, a_2, a_3$ and $a_3, a_4, a_5$ are both geometric sequences and $a_1, a_3, a_5$ is an arithmetic sequence. If $a_3 = 1575$, find all possible values of $|a_4 - a_2|$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$0$ and $1890$",
+    "accept": [
+      "0 and 1890",
+      "0, 1890",
+      "1890 and 0",
+      "1890, 0",
+      "0 or 1890"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: write everything in terms of $a_3$ and two ratios",
+      "body": "Both geometric sequences share the middle term $a_3 = 1575$, so build each one outward from it. Call the ratio of $a_1, a_2, a_3$ by $r$ and the ratio of $a_3, a_4, a_5$ by $s$. Then\n$$a_1 = \\frac{1575}{r^2},\\quad a_2 = \\frac{1575}{r},\\quad a_4 = 1575s,\\quad a_5 = 1575s^2.$$",
+      "your_turn": {
+        "prompt": "The terms $a_1, a_3, a_5$ form an arithmetic sequence. Write that fact as one equation.",
+        "answer": "$a_5 - a_3 = a_3 - a_1$, which is the same as $a_1 + a_5 = 2a_3$."
+      }
+    },
+    {
+      "title": "Get one equation and limit $r$",
+      "body": "Substituting and dividing by $1575$ gives $\\frac{1}{r^2} + s^2 = 2$. Since $a_1$ and $a_2$ are integers, we look for whole-number $r$ with both $r$ and $r^2$ dividing $1575 = 3^2\\cdot 5^2\\cdot 7$, which leaves $r = 1, 3, 5, 15$. Careful: $r$ could also be a fraction. Write $r = \\frac{p}{q}$ in lowest terms. Then $a_1 = \\frac{1575q^2}{p^2}$ is an integer only if $p^2$ divides $1575$, so $p$ is still $1, 3, 5$ or $15$. Also $s^2 = \\frac{2p^2 - q^2}{p^2}$, so $2p^2 - q^2$ must be a perfect square. Since $s^2 > 0$ we need $q^2 < 2p^2$, and $q$ shares no factor with $p$. For $p = 1$ only $q = 1$ is allowed, which is $r = 1$. For $p = 3$, $q \\in \\{1,2,4\\}$ gives $2p^2 - q^2 = 17, 14, 2$, none of them squares. For $p = 15$, the eleven allowed $q$ from $1$ to $19$ give $449, 446, 434, 401, 386, 329, 281, 254, 194, 161, 89$, none of them squares. For $p = 5$, $q \\in \\{1,2,3,4,6,7\\}$ gives $49, 46, 41, 34, 14, 1$. Here $q = 1$ is the whole-number case $r = 5$, and the only new case is $q = 7$: $r = \\frac{5}{7}$ with $s = \\frac{1}{5}$. Then $a_1 = 1575\\cdot\\frac{49}{25}$ and $a_5 = \\frac{1575}{25}$. This is exactly the whole-number case $r = 5$ (which we meet next) read backwards. Reading a sequence backwards swaps $a_2$ and $a_4$, so it cannot give a new value of $|a_4 - a_2|$. From here on we use whole-number $r$.",
+      "your_turn": {
+        "prompt": "Why is $r = 15$ on the list but $r = 7$ is not?",
+        "answer": "$15^2 = 225$ divides $1575 = 225\\cdot 7$, but $7^2 = 49$ does not divide $1575$."
+      }
+    },
+    {
+      "title": "Test each $r$",
+      "body": "For each $r$, solve $s^2 = 2 - \\frac{1}{r^2}$ and check whether $1575s$ and $1575s^2$ are integers. For $r = 1$ we get $s^2 = 1$, so $s = 1$ and every term is $1575$. For $r = 5$ we get $s^2 = \\frac{49}{25}$, so $s = \\frac{7}{5}$, which works because $1575$ is divisible by $25$.",
+      "your_turn": {
+        "prompt": "Show that $r = 3$ fails.",
+        "answer": "$s^2 = 2 - \\frac{1}{9} = \\frac{17}{9}$, and $17$ is not a perfect square, so $s$ is not rational and $a_4$ cannot be an integer. ($r = 15$ fails the same way: $s^2 = \\frac{449}{225}$.)"
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "We have $a_4 - a_2 = 1575s - \\frac{1575}{r}$. For $r = s = 1$ this is $1575 - 1575 = 0$. For $r = 5$, $s = \\frac{7}{5}$ it is $2205 - 315 = 1890$. So the possible values of $|a_4 - a_2|$ are **0 and 1890**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "0 and 1890",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Pass after two fixes: step 2 now rules out fractional ratios r=p/q case by case (only r=5/7, the reversed r=5 sequence) without spoiling the answer. Book prints |a4a2| (typo for |a_4-a_2|)."
+  }
+}

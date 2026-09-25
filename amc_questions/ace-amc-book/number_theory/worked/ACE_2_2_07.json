@@ -1,0 +1,72 @@
+{
+  "id": "ACE_2_2_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.2.7",
+    "kind": "problem",
+    "section": "Multiples, Divisors, Prime Factorization",
+    "original_source": "2022 AMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "LCM and GCD",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_2_07.png",
+    "text": "The least common multiple of a positive integer $n$ and $18$ is $180$, and the greatest common divisor of $n$ and $45$ is $15$. What is the sum of the digits of $n$?",
+    "choices": {
+      "A": "$3$",
+      "B": "$6$",
+      "C": "$8$",
+      "D": "$9$",
+      "E": "$12$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$6$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: factor every number you are given",
+      "body": "LCM and GCD are decided one prime at a time: the LCM takes the largest exponent of each prime and the GCD takes the smallest. So write all four given numbers as prime powers, and then find the exponent of each prime in $n$ separately.",
+      "your_turn": {
+        "prompt": "Factor $18$, $180$, $45$ and $15$.",
+        "answer": "$18 = 2\\cdot 3^2$, $180 = 2^2\\cdot 3^2\\cdot 5$, $45 = 3^2\\cdot 5$, $15 = 3\\cdot 5$."
+      }
+    },
+    {
+      "title": "Use the LCM condition",
+      "body": "The LCM has $2^2$ but $18$ has only $2^1$, so the $2^2$ must come from $n$: $n$ has exactly two factors of $2$. In the same way $18$ has no $5$, so $n$ has exactly one $5$. For the prime $3$, the $3^2$ in $180$ already comes from $18$, so the exponent of $3$ in $n$ could be $0$, $1$ or $2$.",
+      "your_turn": {
+        "prompt": "Why can $n$ not have a factor of $7$ (or any prime other than $2$, $3$, $5$)?",
+        "answer": "That prime would then divide the LCM, but $180$ has only the primes $2$, $3$ and $5$."
+      }
+    },
+    {
+      "title": "Use the GCD condition to fix the $3$",
+      "body": "Now compare with $45 = 3^2\\cdot 5$. The GCD is $15 = 3^1\\cdot 5$, so the smaller of ($3$-exponent of $n$) and $2$ must be exactly $1$. Careful: this means $n$ has one factor of $3$, not zero and not two.",
+      "your_turn": {
+        "prompt": "If $n$ had $3^2$ in it, what would $\\gcd(n, 45)$ be?",
+        "answer": "It would be $3^2\\cdot 5 = 45$, not $15$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $n = 2^2\\cdot 3\\cdot 5 = 60$. Check: $\\text{lcm}(60, 18) = 180$ and $\\gcd(60, 45) = 15$. The digit sum is $6 + 0 = 6$. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "This comes from taking $n = 2^2\\cdot 3^2\\cdot 5 = 180$, which satisfies the LCM condition only. But $\\gcd(180, 45) = 45$, not $15$."
+  },
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "ACE_2_3_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.3.4",
+    "kind": "example",
+    "section": "Number of Factors and Sum of all Factors",
+    "original_source": null
+  },
+  "topic": "number_theory",
+  "subtopic": "Legendre's formula",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_2_3_04.png",
+    "text": "Find the greatest power of $5$ that divides $156!$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$5^{38}$",
+    "accept": [
+      "5^{38}",
+      "38"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: count the factors of $5$ in the product",
+      "body": "$156! = 1\\cdot 2\\cdot 3\\cdots 156$, so the $5$s come only from the multiples of $5$ in that list. Legendre's formula organizes the count: first count every multiple of $5$ once.",
+      "your_turn": {
+        "prompt": "How many multiples of $5$ are there from $1$ to $156$?",
+        "answer": "$\\left\\lfloor \\frac{156}{5} \\right\\rfloor = 31$ (the last one is $155$)."
+      }
+    },
+    {
+      "title": "Count the extra $5$s",
+      "body": "Careful: a number like $25 = 5^2$ contributes two $5$s, and $125 = 5^3$ contributes three, but the first count gave each of them only one. So add one more for each multiple of $25$, and one more again for each multiple of $125$.\n$$\\left\\lfloor \\frac{156}{5} \\right\\rfloor + \\left\\lfloor \\frac{156}{25} \\right\\rfloor + \\left\\lfloor \\frac{156}{125} \\right\\rfloor + \\left\\lfloor \\frac{156}{625} \\right\\rfloor$$",
+      "your_turn": {
+        "prompt": "Find $\\left\\lfloor \\frac{156}{25} \\right\\rfloor$, $\\left\\lfloor \\frac{156}{125} \\right\\rfloor$ and $\\left\\lfloor \\frac{156}{625} \\right\\rfloor$.",
+        "answer": "$6$, $1$ and $0$. Once a term is $0$ we can stop."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The number of $5$s in $156!$ is $31 + 6 + 1 + 0 = 38$. So the greatest power of $5$ that divides $156!$ is **$5^{38}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "5^{38}",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-25",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text against the book image, and found no holes."
+  }
+}

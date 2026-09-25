@@ -1,0 +1,552 @@
+{
+  "book": "ACE The AMC 10 and AMC 12",
+  "topic": "number_theory",
+  "items": [
+    {
+      "id": "ACE_2_1_02",
+      "number": "2.1.2",
+      "kind": "problem",
+      "section": "The Basics: Prime and Composite Numbers",
+      "original_source": "2020 AMC 10",
+      "topic": "number_theory",
+      "subtopic": "Primes",
+      "text": "The acute angles of a right triangle are $a^\\circ$ and $b^\\circ$, where $a > b$ and both $a$ and $b$ are prime numbers. What is the least possible value of $b$?",
+      "choices": {
+        "A": "$2$",
+        "B": "$3$",
+        "C": "$5$",
+        "D": "$7$",
+        "E": "$11$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "ACE_2_1_03",
+      "number": "2.1.3",
+      "kind": "problem",
+      "section": "The Basics: Prime and Composite Numbers",
+      "original_source": "2020 Purple Comet",
+      "topic": "number_theory",
+      "subtopic": "Primes and parity",
+      "text": "Let $p$, $q$, and $r$ be prime numbers such that $2pqr+p+q+r=2020$. Find $pq+qr+pr$.",
+      "choices": null,
+      "book_answer": "585",
+      "book_pages": [
+        11
+      ]
+    },
+    {
+      "id": "ACE_2_2_05",
+      "number": "2.2.5",
+      "kind": "example",
+      "section": "Multiples, Divisors, Prime Factorization",
+      "original_source": null,
+      "topic": "number_theory",
+      "subtopic": "LCM and GCD",
+      "text": "What is the GCD of $15$ and $24$?",
+      "choices": null,
+      "book_answer": "3",
+      "book_pages": [
+        12
+      ]
+    },
+    {
+      "id": "ACE_2_2_06",
+      "number": "2.2.6",
+      "kind": "example",
+      "section": "Multiples, Divisors, Prime Factorization",
+      "original_source": null,
+      "topic": "number_theory",
+      "subtopic": "LCM and GCD",
+      "text": "What is the LCM of $18$, $22$, and $24$.",
+      "choices": null,
+      "book_answer": "792",
+      "book_pages": [
+        13
+      ]
+    },
+    {
+      "id": "ACE_2_2_07",
+      "number": "2.2.7",
+      "kind": "problem",
+      "section": "Multiples, Divisors, Prime Factorization",
+      "original_source": "2022 AMC",
+      "topic": "number_theory",
+      "subtopic": "LCM and GCD",
+      "text": "The least common multiple of a positive integer $n$ and $18$ is $180$, and the greatest common divisor of $n$ and $45$ is $15$. What is the sum of the digits of $n$?",
+      "choices": {
+        "A": "$3$",
+        "B": "$6$",
+        "C": "$8$",
+        "D": "$9$",
+        "E": "$12$"
+      },
+      "book_answer": "B",
+      "book_pages": [
+        13
+      ]
+    },
+    {
+      "id": "ACE_2_2_08",
+      "number": "2.2.8",
+      "kind": "problem",
+      "section": "Multiples, Divisors, Prime Factorization",
+      "original_source": "2021 AMC",
+      "topic": "number_theory",
+      "subtopic": "LCM and GCD",
+      "text": "How many positive integers $n$ are there such that $n$ is a multiple of $5$, and the least common multiple of $5!$ and $n$ equals $5$ times the greatest common divisor of $10!$ and $n$?",
+      "choices": {
+        "A": "$12$",
+        "B": "$24$",
+        "C": "$36$",
+        "D": "$48$",
+        "E": "$72$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        14
+      ]
+    },
+    {
+      "id": "ACE_2_2_09",
+      "number": "2.2.9",
+      "kind": "problem",
+      "section": "Multiples, Divisors, Prime Factorization",
+      "original_source": "2019 AIME",
+      "topic": "number_theory",
+      "subtopic": "Number of divisors",
+      "text": "Find the number of $7$-tuples of positive integers $(a, b, c, d, e, f, g)$ that satisfy the following system of equations:\n$$abc = 70$$\n$$cde = 71$$\n$$efg = 72.$$",
+      "choices": null,
+      "book_answer": "96",
+      "book_pages": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "ACE_2_2_10",
+      "number": "2.2.10",
+      "kind": "problem",
+      "section": "Multiples, Divisors, Prime Factorization",
+      "original_source": "2017 CMIMC",
+      "topic": "number_theory",
+      "subtopic": "Prime factorization",
+      "text": "Let $a_1, a_2, a_3, a_4, a_5$ be positive integers such that $a_1, a_2, a_3$ and $a_3, a_4, a_5$ are both geometric sequences and $a_1, a_3, a_5$ is an arithmetic sequence. If $a_3 = 1575$, find all possible values of $|a_4 - a_2|$.",
+      "choices": null,
+      "book_answer": "0 and 1890",
+      "book_pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "id": "ACE_2_2_11",
+      "number": "2.2.11",
+      "kind": "problem",
+      "section": "Multiples, Divisors, Prime Factorization",
+      "original_source": "2021 SMT",
+      "topic": "number_theory",
+      "subtopic": "Sum of divisors and totient",
+      "text": "A positive integer $n$ has $4$ positive divisors such that the sum of its divisors is $\\sigma(n) = 2112$. Given that the number of positive integers less than and relative prime to $n$ is $\\phi(n) = 1932$, find the sum of the proper divisors of $n$.",
+      "choices": null,
+      "book_answer": "91",
+      "book_pages": [
+        16
+      ]
+    },
+    {
+      "id": "ACE_2_3_02",
+      "number": "2.3.2",
+      "kind": "example",
+      "section": "Number of Factors and Sum of all Factors",
+      "original_source": null,
+      "topic": "number_theory",
+      "subtopic": "Sum of divisors",
+      "text": "What is the sum of the factors of $140$?",
+      "choices": null,
+      "book_answer": "336",
+      "book_pages": [
+        17
+      ]
+    },
+    {
+      "id": "ACE_2_3_04",
+      "number": "2.3.4",
+      "kind": "example",
+      "section": "Number of Factors and Sum of all Factors",
+      "original_source": null,
+      "topic": "number_theory",
+      "subtopic": "Legendre's formula",
+      "text": "Find the greatest power of $5$ that divides $156!$.",
+      "choices": null,
+      "book_answer": "5^{38}",
+      "book_pages": [
+        18
+      ]
+    },
+    {
+      "id": "ACE_2_3_05",
+      "number": "2.3.5",
+      "kind": "example",
+      "section": "Number of Factors and Sum of all Factors",
+      "original_source": null,
+      "topic": "number_theory",
+      "subtopic": "Legendre's formula",
+      "text": "Find the largest exponent of $14$ that divides $180!$.",
+      "choices": null,
+      "book_answer": "28",
+      "book_pages": [
+        18
+      ]
+    },
+    {
+      "id": "ACE_2_3_07",
+      "number": "2.3.7",
+      "kind": "problem",
+      "section": "Number of Factors and Sum of all Factors",
+      "original_source": "2020 PUMAC Number Theory",
+      "topic": "number_theory",
+      "subtopic": "Sum of divisors",
+      "text": "Compute the sum of all positive integers whose positive divisors sum to $186$.",
+      "choices": null,
+      "book_answer": "202",
+      "book_pages": [
+        19
+      ]
+    },
+    {
+      "id": "ACE_2_3_08",
+      "number": "2.3.8",
+      "kind": "problem",
+      "section": "Number of Factors and Sum of all Factors",
+      "original_source": "2016 AMC",
+      "topic": "number_theory",
+      "subtopic": "Number of divisors",
+      "text": "For some positive integer $n$, the number $110n^3$ has $110$ positive integer divisors, including $1$ and the number $110n^3$. How many positive integer divisors does the number $81n^4$ have?",
+      "choices": {
+        "A": "$110$",
+        "B": "$191$",
+        "C": "$261$",
+        "D": "$325$",
+        "E": "$425$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "ACE_2_3_09",
+      "number": "2.3.9",
+      "kind": "problem",
+      "section": "Number of Factors and Sum of all Factors",
+      "original_source": "2015 CHMMC",
+      "topic": "number_theory",
+      "subtopic": "Product of divisors",
+      "text": "The following number is the product of the divisors of $n$.\n$$2^6\\cdot 3^3$$\nWhat is $n$?",
+      "choices": null,
+      "book_answer": "12",
+      "book_pages": [
+        20
+      ]
+    },
+    {
+      "id": "ACE_2_3_10",
+      "number": "2.3.10",
+      "kind": "problem",
+      "section": "Number of Factors and Sum of all Factors",
+      "original_source": "2004 AIME",
+      "topic": "number_theory",
+      "subtopic": "Number of divisors",
+      "text": "How many positive integer divisors of $2004^{2004}$ are divisible by exactly $2004$ positive integers?",
+      "choices": null,
+      "book_answer": "54",
+      "book_pages": [
+        21
+      ]
+    },
+    {
+      "id": "ACE_2_3_11",
+      "number": "2.3.11",
+      "kind": "problem",
+      "section": "Number of Factors and Sum of all Factors",
+      "original_source": "1995 AIME",
+      "topic": "number_theory",
+      "subtopic": "Number of divisors",
+      "text": "Let $n=2^{31}3^{19}$. How many positive integer divisors of $n^2$ are less than $n$ but do not divide $n$?",
+      "choices": null,
+      "book_answer": "589",
+      "book_pages": [
+        21
+      ]
+    },
+    {
+      "id": "ACE_2_4_02",
+      "number": "2.4.2",
+      "kind": "problem",
+      "section": "Factorials and Palindromes",
+      "original_source": "2010 AMC",
+      "topic": "number_theory",
+      "subtopic": "Palindromes and divisibility",
+      "text": "A palindrome between $1000$ and $10{,}000$ is chosen at random. What is the probability that it is divisible by $7$?",
+      "choices": {
+        "A": "$\\frac{1}{10}$",
+        "B": "$\\frac{1}{9}$",
+        "C": "$\\frac{1}{7}$",
+        "D": "$\\frac{1}{6}$",
+        "E": "$\\frac{1}{5}$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        22
+      ]
+    },
+    {
+      "id": "ACE_2_4_03",
+      "number": "2.4.3",
+      "kind": "problem",
+      "section": "Factorials and Palindromes",
+      "original_source": "2002 AIME",
+      "topic": "number_theory",
+      "subtopic": "Palindromes and probability",
+      "text": "Many states use a sequence of three letters followed by a sequence of three digits as their standard license-plate pattern. Given that each three-letter three-digit arrangement is equally likely, the probability that such a license plate will contain at least one palindrome (a three-letter arrangement or a three-digit arrangement that reads the same left-to-right as it does right-to-left) is $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.",
+      "choices": null,
+      "book_answer": "59",
+      "book_pages": [
+        22,
+        23
+      ]
+    },
+    {
+      "id": "ACE_2_4_04",
+      "number": "2.4.4",
+      "kind": "problem",
+      "section": "Factorials and Palindromes",
+      "original_source": "2013 AMC",
+      "topic": "number_theory",
+      "subtopic": "Palindromes and digit carries",
+      "text": "A palindrome is a nonnegative integer number that reads the same forwards and backwards when written in base $10$ with no leading zeros. A $6$-digit palindrome $n$ is chosen uniformly at random. What is the probability that $\\frac{n}{11}$ is also a palindrome?",
+      "choices": {
+        "A": "$\\frac{8}{25}$",
+        "B": "$\\frac{33}{100}$",
+        "C": "$\\frac{7}{20}$",
+        "D": "$\\frac{9}{25}$",
+        "E": "$\\frac{11}{30}$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        23,
+        24
+      ]
+    },
+    {
+      "id": "ACE_2_4_05",
+      "number": "2.4.5",
+      "kind": "problem",
+      "section": "Factorials and Palindromes",
+      "original_source": "2020 SMT",
+      "topic": "number_theory",
+      "subtopic": "Divisors of a factorial",
+      "text": "Find the probability that a randomly selected divisor of $20!$ is a multiple of $2000$.",
+      "choices": null,
+      "book_answer": "6/19",
+      "book_pages": [
+        25
+      ]
+    },
+    {
+      "id": "ACE_2_4_06",
+      "number": "2.4.6",
+      "kind": "problem",
+      "section": "Factorials and Palindromes",
+      "original_source": "2003 AIME",
+      "topic": "number_theory",
+      "subtopic": "Factorials",
+      "text": "Given that $\\frac{((3!)!)!}{3!} = k\\cdot n!$, where $k$ and $n$ are positive integers and $n$ is as large as possible, find $k+n$.",
+      "choices": null,
+      "book_answer": "839",
+      "book_pages": [
+        25
+      ]
+    },
+    {
+      "id": "ACE_2_4_07",
+      "number": "2.4.7",
+      "kind": "problem",
+      "section": "Factorials and Palindromes",
+      "original_source": "2020 HMMT",
+      "topic": "number_theory",
+      "subtopic": "Sums of factorials",
+      "text": "How many positive integers less than or equal to $240$ can be expressed as a sum of distinct factorials? Consider $0!$ and $1!$ to be distinct.",
+      "choices": null,
+      "book_answer": "39",
+      "book_pages": [
+        25,
+        26
+      ]
+    },
+    {
+      "id": "ACE_2_4_08",
+      "number": "2.4.8",
+      "kind": "problem",
+      "section": "Factorials and Palindromes",
+      "original_source": "2006 AIME",
+      "topic": "number_theory",
+      "subtopic": "Legendre's formula",
+      "text": "Let $N$ be the number of consecutive $0$'s at the right end of the decimal representation of the product $1!2!3!4!\\cdots99!100!$. Find the remainder when $N$ is divided by $1000$.",
+      "choices": null,
+      "book_answer": "124",
+      "book_pages": [
+        26
+      ]
+    },
+    {
+      "id": "ACE_2_5_01",
+      "number": "2.5.1",
+      "kind": "problem",
+      "section": "Numbers in Different Bases",
+      "original_source": "2021 AMC",
+      "topic": "number_theory",
+      "subtopic": "Base conversion",
+      "text": "Let $n$ be a positive integer and $d$ be a digit such that the value of the numeral $\\underline{32d}$ in base $n$ equals $263$, and the value of the numeral $\\underline{324}$ in base $n$ equals the value of the numeral $\\underline{11d1}$ in base six. What is $n + d$?",
+      "choices": {
+        "A": "$10$",
+        "B": "$11$",
+        "C": "$13$",
+        "D": "$15$",
+        "E": "$16$"
+      },
+      "book_answer": "B",
+      "book_pages": [
+        26,
+        27
+      ]
+    },
+    {
+      "id": "ACE_2_5_02",
+      "number": "2.5.2",
+      "kind": "problem",
+      "section": "Numbers in Different Bases",
+      "original_source": "2019 SMT",
+      "topic": "number_theory",
+      "subtopic": "Base conversion",
+      "text": "The number $N_b$ is the number such that when written in base $b$, it is $123$. What is the smallest $b$ such that $N_b$ is a cube of a positive integer?",
+      "choices": null,
+      "book_answer": "4",
+      "book_pages": [
+        27
+      ]
+    },
+    {
+      "id": "ACE_2_5_03",
+      "number": "2.5.3",
+      "kind": "problem",
+      "section": "Numbers in Different Bases",
+      "original_source": "2017 AIME",
+      "topic": "number_theory",
+      "subtopic": "Base conversion",
+      "text": "A rational number written in base eight is $\\underline{ab}.\\underline{cd}$, where all digits are nonzero. The same number in base twelve is $\\underline{bb}.\\underline{ba}$. Find the base-ten number $\\underline{abc}$.",
+      "choices": null,
+      "book_answer": "321",
+      "book_pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "id": "ACE_2_5_04",
+      "number": "2.5.4",
+      "kind": "problem",
+      "section": "Numbers in Different Bases",
+      "original_source": "2015 AMC",
+      "topic": "number_theory",
+      "subtopic": "Base conversion",
+      "text": "Hexadecimal (base-$16$) numbers are written using numeric digits $0$ through $9$ as well as the letters $A$ through $F$ to represent $10$ through $15$. Among the first $1000$ positive integers, there are $n$ whose hexadecimal representation contains only numeric digits. What is the sum of the digits of $n$?",
+      "choices": {
+        "A": "$17$",
+        "B": "$18$",
+        "C": "$19$",
+        "D": "$20$",
+        "E": "$21$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        28
+      ]
+    },
+    {
+      "id": "ACE_2_5_05",
+      "number": "2.5.5",
+      "kind": "problem",
+      "section": "Numbers in Different Bases",
+      "original_source": "2020 AIME",
+      "topic": "number_theory",
+      "subtopic": "Base conversion",
+      "text": "A positive integer $N$ has base-eleven representation $\\underline{a}\\,\\underline{b}\\,\\underline{c}$ and base-eight representation $\\underline{1}\\,\\underline{b}\\,\\underline{c}\\,\\underline{a}$, where $a, b,$ and $c$ represent (not necessarily distinct) digits. Find the least such $N$ expressed in base ten.",
+      "choices": null,
+      "book_answer": "621",
+      "book_pages": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "ACE_2_5_06",
+      "number": "2.5.6",
+      "kind": "problem",
+      "section": "Numbers in Different Bases",
+      "original_source": "2020 PUMAC",
+      "topic": "number_theory",
+      "subtopic": "Palindromes in different bases",
+      "text": "Find the sum (in base $10$) of the three greatest numbers less than $1000$ in base $10$ that are palindromes in both base $10$ and base $5$.",
+      "choices": null,
+      "book_answer": "1584",
+      "book_pages": [
+        29,
+        30
+      ]
+    },
+    {
+      "id": "ACE_2_6_01",
+      "number": "2.6.1",
+      "kind": "problem",
+      "section": "Working with unit digits",
+      "original_source": "2003 AMC 10",
+      "topic": "number_theory",
+      "subtopic": "Units digit cycles",
+      "text": "What is the units digit of $13^{2003}$?",
+      "choices": {
+        "A": "$1$",
+        "B": "$3$",
+        "C": "$7$",
+        "D": "$8$",
+        "E": "$9$"
+      },
+      "book_answer": "C",
+      "book_pages": [
+        30
+      ]
+    },
+    {
+      "id": "ACE_2_6_02",
+      "number": "2.6.2",
+      "kind": "problem",
+      "section": "Working with unit digits",
+      "original_source": "2017 AIME",
+      "topic": "number_theory",
+      "subtopic": "Units digit cycles",
+      "text": "For a positive integer $n$, let $d_n$ be the units digit of $1+2+\\cdots+n$. Find the remainder when $$\\sum_{n=1}^{2017} d_n$$ is divided by $1000$.",
+      "choices": null,
+      "book_answer": "69",
+      "book_pages": [
+        30,
+        31
+      ]
+    }
+  ]
+}
