@@ -1,0 +1,15 @@
+{
+  "id": "ACE_3_3_11",
+  "number": "3.3.11",
+  "kind": "problem",
+  "section": "Polynomials",
+  "original_source": "2017 CMIMC Algebra",
+  "topic": "algebra",
+  "subtopic": "Polynomial identities and degrees",
+  "text": "Suppose $P(x)$ is a quadratic polynomial with integer coefficients satisfying the identity $$P(P(x)) - P(x)^2 = x^2 + x + 2016$$ for all real $x$. Find $P(1)$",
+  "choices": null,
+  "book_answer": "1010",
+  "book_pages": [
+    62
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "ACE_3_10_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.10.6",
+    "kind": "problem",
+    "section": "Floor Functions",
+    "original_source": "2015 CHMMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Counting with floor functions",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_10_06.png",
+    "text": "Find the number of positive integers $n$ satisfying $\\lfloor \\frac{n}{2014} \\rfloor = \\lfloor \\frac{n}{2016} \\rfloor$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$1015055$",
+    "accept": ["1015055"]
+  },
+  "steps": [
+    {
+      "title": "Where to start: give the common floor a name",
+      "body": "Two floors are equal, so call their common value $a$. It is an integer, and $a \\ge 0$ because $n$ is positive. Now each floor statement becomes a range for $n$: $\\lfloor \\frac{n}{2014} \\rfloor = a$ means $a \\le \\frac{n}{2014} < a + 1$, that is, $2014a \\le n < 2014a + 2014$.",
+      "your_turn": {
+        "prompt": "What range for $n$ does $\\lfloor \\frac{n}{2016} \\rfloor = a$ give?",
+        "answer": "$2016a \\le n < 2016a + 2016$."
+      }
+    },
+    {
+      "title": "Both ranges must hold at once",
+      "body": "The lower bound that matters is the larger one, $2016a$ (since $a \\ge 0$). The upper bound that matters is the smaller one, $2014a + 2014$, which is less than $2016a + 2016$. So for each $a$ we need\n$$2016a \\le n \\le 2014a + 2013.$$",
+      "your_turn": {
+        "prompt": "How many integers $n$ are in this range, in terms of $a$?",
+        "answer": "$(2014a + 2013) - 2016a + 1 = 2014 - 2a$, as long as this is positive."
+      }
+    },
+    {
+      "title": "Which values of $a$ count",
+      "body": "The count $2014 - 2a$ is positive exactly when $a \\le 1006$; for $a \\ge 1007$ the range is empty. So $a$ runs from $0$ to $1006$ and the counts are $2014, 2012, 2010, \\ldots, 2$. Careful: the $a = 0$ range is $0 \\le n \\le 2013$, which includes $n = 0$, and $0$ is not positive.",
+      "your_turn": {
+        "prompt": "Write out the ranges of $n$ for $a = 1$ and $a = 2$ and check their counts.",
+        "answer": "$a = 1$: $2016$ to $4027$, which is $2012$ numbers. $a = 2$: $4032$ to $6041$, which is $2010$ numbers."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The sum of the even numbers $2 + 4 + \\cdots + 2014$ is $2(1 + 2 + \\cdots + 1007) = 1007\\cdot 1008 = 1015056$. Removing $n = 0$ leaves\n$$1015056 - 1 = 1015055.$$\nThe answer is **$1015055$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1015055",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

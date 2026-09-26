@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_9_04",
+  "number": "2.9.4",
+  "kind": "problem",
+  "section": "Chinese Remainder Theorem",
+  "original_source": "2019 BMT",
+  "topic": "number_theory",
+  "subtopic": "Chinese Remainder Theorem",
+  "text": "Let $2^{1110} \\equiv n \\pmod{1111}$ with $0 \\le n \\le 1111$. Compute $n$.",
+  "choices": null,
+  "book_answer": "1024",
+  "book_pages": [37, 38]
+}

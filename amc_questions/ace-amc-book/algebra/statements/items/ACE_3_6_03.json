@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_6_03",
+  "number": "3.6.3",
+  "kind": "problem",
+  "section": "Systems of Equations",
+  "original_source": "SMT 2012 Algebra Test",
+  "topic": "algebra",
+  "subtopic": "Symmetric systems and factoring",
+  "text": "For real numbers $(x, y, z)$ satisfying the following equations, find all possible values of $x + y + z$.\n\n$x^2y + y^2z + z^2x = -1$\n\n$xy^2 + yz^2 + zx^2 = 5$\n\n$xyz = -2$",
+  "choices": null,
+  "book_answer": "2, \\sqrt[3]{1/2}",
+  "book_pages": [75]
+}

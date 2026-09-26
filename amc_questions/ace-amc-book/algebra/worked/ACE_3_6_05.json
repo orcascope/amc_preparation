@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_6_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.6.5",
+    "kind": "problem",
+    "section": "Systems of Equations",
+    "original_source": "2010 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Systems with a common term",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_6_05.png",
+    "text": "Let $(a, b, c)$ be the real number solution of the system of equations $x^3 - xyz = 2$, $y^3 - xyz = 6$, $z^3 - xyz = 20$. The greatest possible value of $a^3 + b^3 + c^3$ can be written in the form $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$158$",
+    "accept": [
+      "158"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: every equation shares the term $xyz$",
+      "body": "A solution $(a, b, c)$ satisfies $a^3 - abc = 2$, $b^3 - abc = 6$ and $c^3 - abc = 20$. The same product $abc$ appears in all three, so call it $p = abc$. Then $a^3 = 2 + p$, $b^3 = 6 + p$ and $c^3 = 20 + p$: everything depends on the single number $p$.",
+      "your_turn": {
+        "prompt": "Add the three equations $a^3 = 2 + p$, $b^3 = 6 + p$, $c^3 = 20 + p$. What is $a^3 + b^3 + c^3$ in terms of $p$?",
+        "answer": "$a^3 + b^3 + c^3 = 28 + 3p$."
+      }
+    },
+    {
+      "title": "Find an equation for $p$",
+      "body": "So we need the possible values of $p$. Multiplying the three equations gives $a^3b^3c^3 = (2+p)(6+p)(20+p)$, and the left side is $(abc)^3 = p^3$. $$p^3 = (2+p)(6+p)(20+p)$$",
+      "your_turn": {
+        "prompt": "Expand $(2+p)(6+p)(20+p)$.",
+        "answer": "$p^3 + 28p^2 + 172p + 240$ (since $2 + 6 + 20 = 28$, $12 + 40 + 120 = 172$, $2\\cdot 6\\cdot 20 = 240$)."
+      }
+    },
+    {
+      "title": "Solve the quadratic",
+      "body": "The $p^3$ terms cancel, leaving $28p^2 + 172p + 240 = 0$. Dividing by $4$ gives $7p^2 + 43p + 60 = 0$, which factors as $(7p + 15)(p + 4) = 0$. So $p = -\\frac{15}{7}$ or $p = -4$.",
+      "your_turn": {
+        "prompt": "Check the factorization by expanding $(7p + 15)(p + 4)$.",
+        "answer": "$7p^2 + 28p + 15p + 60 = 7p^2 + 43p + 60$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Both values of $p$ really occur: take the real cube roots $a = \\sqrt[3]{2+p}$, $b = \\sqrt[3]{6+p}$, $c = \\sqrt[3]{20+p}$; then $(abc)^3 = p^3$, and since real cube roots are unique, $abc = p$. Now $28 + 3(-4) = 16$ and $28 + 3\\left(-\\frac{15}{7}\\right) = \\frac{151}{7} \\approx 21.6$, so the greatest value is $\\frac{151}{7}$, already in lowest terms because $151$ is prime. Then $m + n = 151 + 7 = 158$. The answer is **$158$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "158",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

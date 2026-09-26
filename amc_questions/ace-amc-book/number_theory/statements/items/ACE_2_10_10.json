@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_10_10",
+  "number": "2.10.10",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2010 AIME",
+  "topic": "number_theory",
+  "subtopic": "Divisibility rules",
+  "text": "Let $N$ be the greatest integer multiple of $36$ all of whose digits are even and no two of whose digits are the same. Find the remainder when $N$ is divided by $1000$.",
+  "choices": null,
+  "book_answer": "640",
+  "book_pages": [44]
+}

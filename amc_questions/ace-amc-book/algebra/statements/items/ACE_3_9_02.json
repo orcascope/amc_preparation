@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_9_02",
+  "number": "3.9.2",
+  "kind": "example",
+  "section": "Telescoping",
+  "original_source": null,
+  "topic": "algebra",
+  "subtopic": "Telescoping products",
+  "text": "Evaluate $\\prod_{i=1}^{10} \\frac{i}{i+1}$.",
+  "choices": null,
+  "book_answer": "1/11",
+  "book_pages": [83]
+}

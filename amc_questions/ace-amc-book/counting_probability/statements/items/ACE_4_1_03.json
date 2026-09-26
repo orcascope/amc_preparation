@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_1_03",
+  "number": "4.1.3",
+  "kind": "example",
+  "section": "Basic Combinatorics Principles",
+  "original_source": null,
+  "topic": "counting_probability",
+  "subtopic": "Arrangements with repeated letters",
+  "text": "a. How many ways are there to rearrange the letters of the word SANDWICH?\n\nb. How many ways are there to rearrange the letters of the word SYNONYMS?",
+  "choices": null,
+  "book_answer": "a) 40320, b) 7! = 5040",
+  "book_pages": [97, 98]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_2_06",
+  "number": "3.2.6",
+  "kind": "problem",
+  "section": "Sequences And Series",
+  "original_source": "2005 AIME",
+  "topic": "algebra",
+  "subtopic": "Arithmetic sequences and divisors",
+  "text": "For each positive integer $k$, let $S_k$ denote the increasing arithmetic sequence of integers whose first term is $1$ and whose common difference is $k$. For example, $S_3$ is the sequence $1, 4, 7, 10, \\ldots$. For how many values of $k$ does $S_k$ contain the term $2005$?",
+  "choices": null,
+  "book_answer": "12",
+  "book_pages": [53]
+}

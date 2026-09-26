@@ -1,0 +1,57 @@
+{
+  "id": "ACE_3_9_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.9.4",
+    "kind": "example",
+    "section": "Telescoping",
+    "original_source": null
+  },
+  "topic": "algebra",
+  "subtopic": "Telescoping sums",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_3_9_04.png",
+    "text": "What is $\\frac{1}{1\\cdot 2}+\\frac{1}{2\\cdot 3}+\\frac{1}{3\\cdot 4}+\\frac{1}{4\\cdot 5}+\\cdots$",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$1$",
+    "accept": [
+      "1"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: split each term into a difference",
+      "body": "Every denominator is a product of two consecutive whole numbers, $n(n+1)$. That is the clue for a popular trick: such a fraction is the difference of two simpler fractions,\n$$\\frac{1}{n(n+1)} = \\frac{1}{n} - \\frac{1}{n+1}$$",
+      "your_turn": {
+        "prompt": "Check the trick for $n = 2$: compute $\\frac{1}{2} - \\frac{1}{3}$.",
+        "answer": "$\\frac{3}{6} - \\frac{2}{6} = \\frac{1}{6}$, which is $\\frac{1}{2\\cdot 3}$."
+      }
+    },
+    {
+      "title": "Rewrite the sum and watch it cancel",
+      "body": "Now the sum becomes\n$$\\left(1 - \\frac{1}{2}\\right) + \\left(\\frac{1}{2} - \\frac{1}{3}\\right) + \\left(\\frac{1}{3} - \\frac{1}{4}\\right) + \\left(\\frac{1}{4} - \\frac{1}{5}\\right) + \\cdots$$\nEach negative piece is cancelled by the positive piece right after it. So if you stop after $N$ terms, everything in the middle is gone and only $1 - \\frac{1}{N+1}$ is left.",
+      "your_turn": {
+        "prompt": "What is the sum of just the first four terms?",
+        "answer": "$1 - \\frac{1}{5} = \\frac{4}{5}$, because everything between the first $1$ and the last $-\\frac{1}{5}$ cancels."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The sum goes on forever, so we look at what $1 - \\frac{1}{N+1}$ approaches as $N$ gets larger and larger. The piece $\\frac{1}{N+1}$ shrinks toward $0$, so the sums get as close to $1$ as we like. Careful: no finite number of terms ever reaches $1$ exactly, but the value of the infinite sum is this limit. The answer is **$1$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

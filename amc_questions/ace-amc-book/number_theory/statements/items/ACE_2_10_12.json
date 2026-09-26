@@ -1,0 +1,15 @@
+{
+  "id": "ACE_2_10_12",
+  "number": "2.10.12",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2018 SMT",
+  "topic": "number_theory",
+  "subtopic": "Sum of cubes factoring",
+  "text": "Positive integer $n$ has the property such that $n-64$ is a positive perfect cube. Suppose that $n$ is divisible by $37$. What is the smallest possible value of $n$?",
+  "choices": null,
+  "book_answer": "407",
+  "book_pages": [
+    46
+  ]
+}

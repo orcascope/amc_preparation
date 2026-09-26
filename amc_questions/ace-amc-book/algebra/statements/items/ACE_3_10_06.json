@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_10_06",
+  "number": "3.10.6",
+  "kind": "problem",
+  "section": "Floor Functions",
+  "original_source": "2015 CHMMC",
+  "topic": "algebra",
+  "subtopic": "Counting with floor functions",
+  "text": "Find the number of positive integers $n$ satisfying $\\lfloor \\frac{n}{2014} \\rfloor = \\lfloor \\frac{n}{2016} \\rfloor$.",
+  "choices": null,
+  "book_answer": "1015055",
+  "book_pages": [88]
+}

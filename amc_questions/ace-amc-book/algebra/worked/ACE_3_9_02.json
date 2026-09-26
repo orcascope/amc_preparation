@@ -1,0 +1,57 @@
+{
+  "id": "ACE_3_9_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.9.2",
+    "kind": "example",
+    "section": "Telescoping",
+    "original_source": null
+  },
+  "topic": "algebra",
+  "subtopic": "Telescoping products",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_3_9_02.png",
+    "text": "Evaluate $\\prod_{i=1}^{10} \\frac{i}{i+1}$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{1}{11}$",
+    "accept": [
+      "\\frac{1}{11}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: write out the factors",
+      "body": "The big $\\Pi$ means product: it works like a sum sign, but you multiply the terms instead of adding them. Here $i$ runs from $1$ to $10$, so there are ten factors. When a product has a pattern like $\\frac{i}{i+1}$, writing out a few factors is the fastest way to see what cancels.",
+      "your_turn": {
+        "prompt": "Write the factors for $i = 1$, $i = 2$ and $i = 3$.",
+        "answer": "$\\frac{1}{2}$, $\\frac{2}{3}$ and $\\frac{3}{4}$."
+      }
+    },
+    {
+      "title": "Look for cancelling",
+      "body": "The whole product is\n$$\\frac{1}{2}\\cdot\\frac{2}{3}\\cdot\\frac{3}{4}\\cdots\\frac{9}{10}\\cdot\\frac{10}{11}$$\nThe denominator of each factor is the same as the numerator of the next factor, so they cancel in pairs. This is called telescoping: the product collapses like a folding telescope.",
+      "your_turn": {
+        "prompt": "Compute $\\frac{1}{2}\\cdot\\frac{2}{3}$. Which number cancelled?",
+        "answer": "$\\frac{1}{3}$. The $2$ on the bottom of the first factor cancels the $2$ on top of the second."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Every number from $2$ to $10$ appears once on top and once on the bottom, so all of them cancel. Only the first numerator, $1$, and the last denominator, $11$, are left. Careful: the last denominator is $10 + 1 = 11$, not $10$. The answer is **$\\frac{1}{11}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1/11",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

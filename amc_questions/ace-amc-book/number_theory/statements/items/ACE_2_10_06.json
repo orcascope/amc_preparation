@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_10_06",
+  "number": "2.10.6",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2015 PUMaC",
+  "topic": "number_theory",
+  "subtopic": "LCM and GCD",
+  "text": "What is the sum of all positive integers $n$ such that $\\text{lcm}(2n, n^2) = 14n - 24$?",
+  "choices": null,
+  "book_answer": "17",
+  "book_pages": [42, 43]
+}

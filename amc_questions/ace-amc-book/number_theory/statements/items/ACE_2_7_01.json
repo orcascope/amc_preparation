@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_7_01",
+  "number": "2.7.1",
+  "kind": "problem",
+  "section": "Modular Arithmetic Introduction",
+  "original_source": "2021 AMC 12",
+  "topic": "number_theory",
+  "subtopic": "Modular arithmetic",
+  "text": "The base-nine representation of the number $N$ is $27{,}006{,}000{,}052_{\\text{nine}}$. What is the remainder when $N$ is divided by $5$?",
+  "choices": { "A": "$0$", "B": "$1$", "C": "$2$", "D": "$3$", "E": "$4$" },
+  "book_answer": "D",
+  "book_pages": [32]
+}

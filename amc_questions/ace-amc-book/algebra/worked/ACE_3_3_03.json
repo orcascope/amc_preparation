@@ -1,0 +1,73 @@
+{
+  "id": "ACE_3_3_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.3.3",
+    "kind": "problem",
+    "section": "Polynomials",
+    "original_source": "2010 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Factoring polynomials",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_3_03.png",
+    "text": "Find the smallest positive integer $n$ with the property that the polynomial $x^4 - nx + 63$ can be written as a product of two nonconstant polynomials with integer coefficients.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$8$",
+    "accept": [
+      "8"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: list the ways degree 4 can split",
+      "body": "The degrees of two factors add up to the degree of the product, and each factor is nonconstant, so the degrees are $1$ and $3$, or $2$ and $2$. We can also take each factor to start with $x^k$ (leading coefficient $1$). Then in each case we multiply out and match coefficients with $x^4 + 0x^3 + 0x^2 - nx + 63$.",
+      "your_turn": {
+        "prompt": "Why may we assume both factors have leading coefficient $1$?",
+        "answer": "The two leading coefficients are integers multiplying to $1$, so both are $1$ or both are $-1$. In the second case, multiply each factor by $-1$."
+      }
+    },
+    {
+      "title": "Case 1: degrees 1 and 3",
+      "body": "Write $(x + a)(x^3 + bx^2 + cx + d)$. Matching coefficients gives $a + b = 0$, $ab + c = 0$, $ac + d = -n$ and $ad = 63$. Substituting $a = -b$ gives $c = b^2$, $bd = -63$, and\n$$n = b^3 - d = b^3 + \\frac{63}{b}$$",
+      "your_turn": {
+        "prompt": "Since $bd = -63$, $b$ divides $63$, and $b$ must be positive (if $b < 0$, both $b^3$ and $\\frac{63}{b}$ are negative, so $n < 0$). Compute $n$ for $b = 1$, $b = 3$ and $b = 7$.",
+        "answer": "$b = 1$: $1 + 63 = 64$. $b = 3$: $27 + 21 = 48$. $b = 7$: $343 + 9 = 352$. Larger $b$ only makes $b^3$ bigger, so Case 1 gives at least $48$."
+      }
+    },
+    {
+      "title": "Case 2: degrees 2 and 2",
+      "body": "Write $(x^2 + ax + b)(x^2 + cx + d)$. Matching coefficients gives $a + c = 0$, $b + d + ac = 0$, $ad + bc = -n$ and $bd = 63$. Substituting $c = -a$ turns the second equation into $b + d = a^2$.",
+      "your_turn": {
+        "prompt": "Substitute $c = -a$ into $ad + bc = -n$ and solve for $n$.",
+        "answer": "$ad - ab = -n$, so $n = a(b - d)$."
+      }
+    },
+    {
+      "title": "Which factor pairs of 63 work?",
+      "body": "We need $bd = 63$ with $b + d = a^2$ a perfect square. Both $b$ and $d$ must be positive, because if both were negative, $b + d$ would be negative and could not equal $a^2$. Once $b$ and $d$ are chosen, we can pick the sign of $a$ so that $n = a(b - d)$ is positive, which gives $n = |a|\\cdot|b - d|$.",
+      "your_turn": {
+        "prompt": "The positive factor pairs of $63$ are $\\{1, 63\\}$, $\\{3, 21\\}$ and $\\{7, 9\\}$. Which have a perfect-square sum?",
+        "answer": "$1 + 63 = 64 = 8^2$ and $7 + 9 = 16 = 4^2$ work; $3 + 21 = 24$ is not a square."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The pair $\\{1, 63\\}$ gives $|a| = 8$ and $n = 8\\cdot 62 = 496$. The pair $\\{7, 9\\}$ gives $|a| = 4$ and $n = 4\\cdot 2 = 8$. That beats Case 1's best of $48$, and indeed $(x^2 - 4x + 7)(x^2 + 4x + 9) = x^4 - 8x + 63$. The answer is **$8$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "8",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

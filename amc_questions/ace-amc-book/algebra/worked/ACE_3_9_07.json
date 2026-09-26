@@ -1,0 +1,73 @@
+{
+  "id": "ACE_3_9_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.9.7",
+    "kind": "problem",
+    "section": "Telescoping",
+    "original_source": "2016 CHMMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Partial fractions and telescoping",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_9_07.png",
+    "text": "Compute $\\sum_{n=1}^{\\infty} \\frac{2^{n+1}}{8\\cdot 4^n - 6\\cdot 2^n + 1}$",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{1}{3}$",
+    "accept": [
+      "\\frac{1}{3}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: let $a = 2^n$",
+      "body": "Every piece of the term is built from $2^n$: $4^n = (2^n)^2$ and $2^{n+1} = 2\\cdot 2^n$. So set $a = 2^n$ to turn the messy term into an ordinary fraction of polynomials in $a$, which we know how to handle.",
+      "your_turn": {
+        "prompt": "Rewrite $\\frac{2^{n+1}}{8\\cdot 4^n - 6\\cdot 2^n + 1}$ using $a = 2^n$.",
+        "answer": "$\\frac{2a}{8a^2 - 6a + 1}$."
+      }
+    },
+    {
+      "title": "Factor the denominator",
+      "body": "The quadratic factors nicely:\n$$8a^2 - 6a + 1 = (4a - 1)(2a - 1)$$\nTwo different linear factors in the denominator are the signal to split the fraction into two simpler fractions (partial fractions).",
+      "your_turn": {
+        "prompt": "Expand $(4a-1)(2a-1)$ to check the factoring.",
+        "answer": "$8a^2 - 4a - 2a + 1 = 8a^2 - 6a + 1$."
+      }
+    },
+    {
+      "title": "Split into partial fractions",
+      "body": "Write $\\frac{2a}{(4a-1)(2a-1)} = \\frac{x}{4a-1} + \\frac{y}{2a-1}$ for numbers $x$ and $y$. Over the common denominator the numerators must agree: $x(2a-1) + y(4a-1) = 2a$, that is $(2x + 4y)a - (x + y) = 2a$. Matching the coefficient of $a$ and the constant term gives $2x + 4y = 2$ and $x + y = 0$.",
+      "your_turn": {
+        "prompt": "Solve $2x + 4y = 2$ and $x + y = 0$.",
+        "answer": "From the second equation $x = -y$; put that into the first: $-2y + 4y = 2$, so $y = 1$ and $x = -1$."
+      }
+    },
+    {
+      "title": "Write out the terms",
+      "body": "So each term is $\\frac{1}{2a - 1} - \\frac{1}{4a - 1}$, and with $a = 2^n$ this is\n$$\\frac{1}{2^{n+1} - 1} - \\frac{1}{2^{n+2} - 1}$$\nFor $n = 1$ this is $\\frac{1}{3} - \\frac{1}{7}$, and for $n = 2$ it is $\\frac{1}{7} - \\frac{1}{15}$. The part subtracted in each term is exactly the part added in the next term.",
+      "your_turn": {
+        "prompt": "Write the term for $n = 3$.",
+        "answer": "$\\frac{1}{15} - \\frac{1}{31}$, since $2^4 - 1 = 15$ and $2^5 - 1 = 31$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Adding the first $N$ terms, everything in the middle cancels and we are left with $\\frac{1}{3} - \\frac{1}{2^{N+2} - 1}$. As $N$ grows, $2^{N+2} - 1$ becomes huge, so the subtracted piece shrinks to $0$. Careful: the infinite sum is this limit, not any single partial sum. The answer is **$\\frac{1}{3}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1/3",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

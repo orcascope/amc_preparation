@@ -1,0 +1,63 @@
+{
+  "id": "ACE_2_8_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.8.5",
+    "kind": "problem",
+    "section": "Fermat's Little Theorem and Euler's Totient Function",
+    "original_source": "2017 AMC 10"
+  },
+  "topic": "number_theory",
+  "subtopic": "Fermat's little theorem",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_8_05.png",
+    "text": "An integer $N$ is selected at random in the range $1 \\le N \\le 2020$. What is the probability that the remainder when $N^{16}$ is divided by $5$ is $1$?",
+    "choices": { "A": "$\\frac{1}{5}$", "B": "$\\frac{2}{5}$", "C": "$\\frac{3}{5}$", "D": "$\\frac{4}{5}$", "E": "$1$" }
+  },
+  "answer": { "choice": "D", "value": "$\\frac{4}{5}$" },
+  "steps": [
+    {
+      "title": "Where to start: a big power of $N$ divided by the prime $5$",
+      "body": "The clue is a large exponent together with division by a prime. Fermat's little theorem says: if $p$ is prime and $N$ is not a multiple of $p$, then $N^{p-1}$ leaves remainder $1$ when divided by $p$. Here $p = 5$, so it tells us about $N^4$.",
+      "your_turn": {
+        "prompt": "Check Fermat's little theorem for $N = 2$ and $p = 5$: what is the remainder of $2^4$ when divided by $5$?",
+        "answer": "$2^4 = 16 = 3\\cdot 5 + 1$, so the remainder is $1$."
+      }
+    },
+    {
+      "title": "Get from $N^4$ to $N^{16}$",
+      "body": "Since $16 = 4\\cdot 4$, we can write $N^{16} = (N^4)^4$. If $N$ is not a multiple of $5$, then $N^4 \\equiv 1 \\pmod 5$, and raising both sides to the fourth power keeps the congruence true:\n$$N^{16} = (N^4)^4 \\equiv 1^4 = 1 \\pmod 5$$",
+      "your_turn": {
+        "prompt": "What remainder does $N^{16}$ leave when $N$ is a multiple of $5$?",
+        "answer": "Remainder $0$, because $N^{16}$ is then a multiple of $5$ too."
+      }
+    },
+    {
+      "title": "Count the numbers that work",
+      "body": "So $N^{16}$ leaves remainder $1$ exactly when $N$ is not a multiple of $5$, that is, when $N$ leaves remainder $1$, $2$, $3$ or $4$ when divided by $5$. Careful: this is not only $N \\equiv 1 \\pmod 5$; every remainder except $0$ works.",
+      "your_turn": {
+        "prompt": "How many multiples of $5$ are there from $1$ to $2020$?",
+        "answer": "$2020 \\div 5 = 404$ of them."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Out of $2020$ numbers, $404$ are multiples of $5$ and fail, and the other $2020 - 404 = 1616$ work. The probability is $\\frac{1616}{2020} = \\frac{4}{5}$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This comes from thinking $N^{16}$ leaves remainder $1$ only when $N$ itself leaves remainder $1$. In fact $N \\equiv 2, 3, 4 \\pmod 5$ work too, for example $2^{16} = 65536$ leaves remainder $1$.",
+    "E": "This forgets the multiples of $5$. If $N$ is a multiple of $5$, then $N^{16}$ is too, so its remainder is $0$, not $1$."
+  },
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

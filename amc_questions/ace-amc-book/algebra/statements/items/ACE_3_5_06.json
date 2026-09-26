@@ -1,0 +1,15 @@
+{
+  "id": "ACE_3_5_06",
+  "number": "3.5.6",
+  "kind": "problem",
+  "section": "Factoring Equations",
+  "original_source": "1987 AIME",
+  "topic": "algebra",
+  "subtopic": "Simon's Favorite Factoring Trick",
+  "text": "$m, n$ are integers such that $m^2 + 3m^2n^2 = 30n^2 + 517$. Find $3m^2n^2$.",
+  "choices": null,
+  "book_answer": "588",
+  "book_pages": [
+    71
+  ]
+}

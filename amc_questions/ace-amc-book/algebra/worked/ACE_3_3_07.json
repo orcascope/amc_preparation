@@ -1,0 +1,60 @@
+{
+  "id": "ACE_3_3_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.3.7",
+    "kind": "problem",
+    "section": "Polynomials",
+    "original_source": "2019 CMC 10"
+  },
+  "topic": "algebra",
+  "subtopic": "Linear functions",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_3_07.png",
+    "text": "Consider a polynomial $p(x)$ of degree $1$ such that for a real number $a$, $p(a) = 2$, $p(p(a)) = 17$ and $p(p(p(a))) = 167$. What is the value of $a$?",
+    "choices": { "A": "$-1$", "B": "$\\frac{-1}{2}$", "C": "$0$", "D": "$\\frac{1}{2}$", "E": "$1$" }
+  },
+  "answer": { "choice": "D", "value": "$\\frac{1}{2}$" },
+  "steps": [
+    {
+      "title": "Where to start: unwrap the nested values",
+      "body": "A polynomial of degree $1$ has the form $p(x) = cx + d$ with $c \\neq 0$, so we only need two numbers. The nested conditions look scary, but each one feeds in the value from the previous one: since $p(a) = 2$, the condition $p(p(a)) = 17$ says exactly that $p(2) = 17$.",
+      "your_turn": {
+        "prompt": "In the same way, rewrite $p(p(p(a))) = 167$ as a condition on $p$ at a plain number.",
+        "answer": "$p(p(a)) = 17$, so it says $p(17) = 167$."
+      }
+    },
+    {
+      "title": "Two equations for $c$ and $d$",
+      "body": "Putting $x = 2$ and $x = 17$ into $p(x) = cx + d$ gives\n$$2c + d = 17, \\qquad 17c + d = 167$$\nBoth equations contain $d$ once, so subtracting them removes $d$.",
+      "your_turn": {
+        "prompt": "Subtract the equation $2c + d = 17$ from $17c + d = 167$. What is $c$?",
+        "answer": "$15c = 150$, so $c = 10$."
+      }
+    },
+    {
+      "title": "Find the whole polynomial",
+      "body": "Put $c = 10$ into $2c + d = 17$ to get $d = -3$. So $p(x) = 10x - 3$.",
+      "your_turn": {
+        "prompt": "Check that $p(x) = 10x - 3$ really gives $p(2) = 17$ and $p(17) = 167$.",
+        "answer": "$p(2) = 20 - 3 = 17$ and $p(17) = 170 - 3 = 167$. Both work."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Now use the first condition $p(a) = 2$: $10a - 3 = 2$, so $10a = 5$ and $a = \\frac{1}{2}$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

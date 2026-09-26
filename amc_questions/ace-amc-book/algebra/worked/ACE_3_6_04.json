@@ -1,0 +1,66 @@
+{
+  "id": "ACE_3_6_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.6.4",
+    "kind": "problem",
+    "section": "Systems of Equations",
+    "original_source": "2000 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Solving systems by substitution",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_6_04.png",
+    "text": "Suppose that $x$, $y$, and $z$ are three positive numbers that satisfy the equations $xyz = 1$, $x + \\frac{1}{z} = 5$, and $y + \\frac{1}{x} = 29$. Then $z + \\frac{1}{y} = \\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$5$",
+    "accept": [
+      "5",
+      "005"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: use $xyz = 1$ to remove $x$",
+      "body": "There are three equations and three unknowns, so we can solve for each number directly. The product condition $xyz = 1$ lets us write $x = \\frac{1}{yz}$, and then $x$ disappears from the other two equations.",
+      "your_turn": {
+        "prompt": "Replace $x$ by $\\frac{1}{yz}$ in $x + \\frac{1}{z} = 5$ and in $y + \\frac{1}{x} = 29$.",
+        "answer": "$\\frac{1}{yz} + \\frac{1}{z} = 5$ and $y + yz = 29$ (since $\\frac{1}{x} = yz$)."
+      }
+    },
+    {
+      "title": "Clear the fraction and combine",
+      "body": "Multiply both sides of $\\frac{1}{yz} + \\frac{1}{z} = 5$ by $yz$ to get $1 + y = 5yz$. The other equation $y + yz = 29$ also contains $yz$, so we can swap $yz$ out.",
+      "your_turn": {
+        "prompt": "Multiply $y + yz = 29$ by $5$, replace $5yz$ with $1 + y$, and solve for $y$.",
+        "answer": "$5y + 1 + y = 145$, so $6y = 144$ and $y = 24$."
+      }
+    },
+    {
+      "title": "Find $z$ and $x$",
+      "body": "Now $1 + y = 5yz$ becomes $25 = 120z$, so $z = \\frac{5}{24}$. Then $x = \\frac{1}{yz} = \\frac{1}{5}$. Check: $y + \\frac{1}{x} = 24 + 5 = 29$.",
+      "your_turn": {
+        "prompt": "Check that these values also satisfy $x + \\frac{1}{z} = 5$.",
+        "answer": "$\\frac{1}{5} + \\frac{24}{5} = \\frac{25}{5} = 5$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "$$z + \\frac{1}{y} = \\frac{5}{24} + \\frac{1}{24} = \\frac{6}{24} = \\frac{1}{4}.$$ So $m = 1$ and $n = 4$, which are relatively prime, and $m + n = 5$. The answer is **$5$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "5",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

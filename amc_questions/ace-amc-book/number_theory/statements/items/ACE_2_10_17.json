@@ -1,0 +1,16 @@
+{
+  "id": "ACE_2_10_17",
+  "number": "2.10.17",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2022 PUMAC",
+  "topic": "number_theory",
+  "subtopic": "Counting factorizations",
+  "text": "Given $k \\geq 1$, let $p_k$ denote the $k$-th smallest prime number. If $N$ is the number of ordered $4$-tuples $(a, b, c, d)$ of positive integers satisfying $abcd = \\prod_{k=1}^{2023} p_k$ with $a < b$ and $c < d$, find $N \\bmod 1000$.",
+  "choices": null,
+  "book_answer": "112",
+  "book_pages": [
+    48,
+    49
+  ]
+}

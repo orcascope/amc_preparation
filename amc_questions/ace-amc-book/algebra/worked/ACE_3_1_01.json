@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_1_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.1.1",
+    "kind": "problem",
+    "section": "Word Problems",
+    "original_source": "2018 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Rate and distance",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_1_01.png",
+    "text": "Points $A$, $B$, and $C$ lie in that order along a straight path where the distance from $A$ to $C$ is $1800$ meters. Ina runs twice as fast as Eve, and Paul runs twice as fast as Ina. The three runners start running at the same time with Ina starting at $A$ and running toward $C$, Paul starting at $B$ and running toward $C$, and Eve starting at $C$ and running toward $A$. When Paul meets Eve, he turns around and runs toward $A$. Paul and Ina both arrive at $B$ at the same time. Find the number of meters from $A$ to $B$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$800$",
+    "accept": [
+      "800"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: give the speeds and the unknown names",
+      "body": "The problem never gives an actual speed, only ratios: Ina is twice Eve, Paul is twice Ina. So call Eve's speed $v$; then Ina's speed is $2v$ and Paul's is $4v$. Let $d$ be the distance from $A$ to $B$, so $B$ to $C$ is $1800 - d$. The key sentence is the last one: Paul and Ina reach $B$ at the same moment, so their travel times are equal.",
+      "your_turn": {
+        "prompt": "How long does Ina take to run from $A$ to $B$?",
+        "answer": "Time is distance over speed, so $\\dfrac{d}{2v}$."
+      }
+    },
+    {
+      "title": "Where Paul meets Eve",
+      "body": "Paul starts at $B$ and Eve starts at $C$, so they begin $1800 - d$ apart and run toward each other. They run for the same amount of time, and Paul is $4$ times as fast, so he covers $4$ times as much ground as Eve. Together they cover the whole gap.",
+      "your_turn": {
+        "prompt": "What fraction of the gap $1800 - d$ does Paul cover before they meet?",
+        "answer": "$\\tfrac{4}{5}$ of it, since the gap splits in the ratio $4 : 1$. So Paul runs $\\tfrac{4}{5}(1800 - d)$."
+      }
+    },
+    {
+      "title": "Paul's whole trip",
+      "body": "After meeting Eve, Paul turns around and runs back to $B$, which is the same distance again. Careful: we only care about when he reaches $B$, not $A$. So his total distance is\n$$2\\cdot \\tfrac{4}{5}(1800 - d) = \\tfrac{8}{5}(1800 - d),$$\nall at speed $4v$.",
+      "your_turn": {
+        "prompt": "Write Paul's total time from the start until he is back at $B$, and simplify.",
+        "answer": "$\\dfrac{\\tfrac{8}{5}(1800 - d)}{4v} = \\dfrac{2(1800 - d)}{5v}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Set Paul's time equal to Ina's time. The $v$ cancels:\n$$\\frac{2(1800 - d)}{5} = \\frac{d}{2} \\;\\Longrightarrow\\; 4(1800 - d) = 5d \\;\\Longrightarrow\\; 7200 = 9d,$$\nso $d = 800$. Check with $v = 1$: Paul and Eve close the $1000$-meter gap at $5$ meters per unit, meeting at time $200$ after Paul runs $800$; his round trip of $1600$ at speed $4$ takes $400$, and Ina's $800$ at speed $2$ also takes $400$. The answer is **$800$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "800",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

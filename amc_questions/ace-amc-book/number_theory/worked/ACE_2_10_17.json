@@ -1,0 +1,73 @@
+{
+  "id": "ACE_2_10_17",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.17",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2022 PUMAC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Counting factorizations",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_17.png",
+    "text": "Given $k \\geq 1$, let $p_k$ denote the $k$-th smallest prime number. If $N$ is the number of ordered $4$-tuples $(a, b, c, d)$ of positive integers satisfying $abcd = \\prod_{k=1}^{2023} p_k$ with $a < b$ and $c < d$, find $N \\bmod 1000$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$112$",
+    "accept": [
+      "112"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: every prime goes to exactly one of $a, b, c, d$",
+      "body": "Let $P = p_1 p_2 \\cdots p_{2023}$. It is a product of $2023$ different primes, each appearing once. So a solution of $abcd = P$ is just a way of sending each prime to one of $a$, $b$, $c$, $d$. The conditions $a < b$ and $c < d$ concern the pairs $(a, b)$ and $(c, d)$ separately, so first decide which primes go to the pair $(a, b)$, that is, which primes divide $ab$.",
+      "your_turn": {
+        "prompt": "Ignoring the conditions $a < b$ and $c < d$, how many ordered $4$-tuples $(a, b, c, d)$ have $abcd = P$?",
+        "answer": "$4^{2023}$, since each of the $2023$ primes independently picks one of the four numbers."
+      }
+    },
+    {
+      "title": "Count one pair with $a < b$",
+      "body": "Suppose exactly $i$ of the primes divide $ab$; there are $\\binom{2023}{i}$ ways to pick them. Those $i$ primes can be split between $a$ and $b$ in $2^i$ ordered ways. When $i \\ge 1$, $ab$ is a product of distinct primes, so it is not a perfect square and $a \\ne b$; swapping $a$ and $b$ pairs the splits up, so exactly half, $2^{i-1}$, have $a < b$. The same reasoning gives $2^{2023 - i - 1} = 2^{2022 - i}$ choices for $(c, d)$ when $2023 - i \\ge 1$.",
+      "your_turn": {
+        "prompt": "Why can $i$ not be $0$ or $2023$?",
+        "answer": "If $i = 0$, then $ab = 1$, forcing $a = b = 1$, which breaks $a < b$. If $i = 2023$, then $cd = 1$ and $c = d = 1$, which breaks $c < d$."
+      }
+    },
+    {
+      "title": "Add up over $i$",
+      "body": "Each term has $2^{i-1} \\cdot 2^{2022 - i} = 2^{2021}$, so\n$$N = \\sum_{i=1}^{2022} \\binom{2023}{i} 2^{2021} = 2^{2021}\\left(2^{2023} - 2\\right).$$\nHere we used $\\sum_{i=0}^{2023} \\binom{2023}{i} = 2^{2023}$ (count all subsets of the primes) and removed the $i = 0$ and $i = 2023$ terms, which are $1$ each.",
+      "your_turn": {
+        "prompt": "Rewrite $2^{2021}(2^{2023} - 2)$ by pulling a $2$ out of the parentheses.",
+        "answer": "$2^{2023} - 2 = 2(2^{2022} - 1)$, so $N = 2^{2022}(2^{2022} - 1)$."
+      }
+    },
+    {
+      "title": "Mod $1000$: split into mod $8$ and mod $125$",
+      "body": "Since $1000 = 8 \\cdot 125$ with no common factor, find $N$ mod $8$ and mod $125$. Mod $8$ it is $0$, because $2^{2022}$ is a multiple of $2^3$. Mod $125$, Euler's theorem gives $2^{100} \\equiv 1$ (as $\\varphi(125) = 100$), so $2^{2022} = (2^{100})^{20} \\cdot 2^{22} \\equiv 2^{22} \\pmod{125}$.",
+      "your_turn": {
+        "prompt": "Using $2^{10} = 1024 \\equiv 24 \\pmod{125}$, find $2^{20}$ and then $2^{22}$ mod $125$.",
+        "answer": "$2^{20} \\equiv 24^2 = 576 \\equiv 76$, and $2^{22} \\equiv 4 \\cdot 76 = 304 \\equiv 54 \\pmod{125}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Mod $125$, $N \\equiv 54 \\cdot (54 - 1) = 54 \\cdot 53 = 2862 \\equiv 2862 - 2750 = 112$. The number $112 = 8 \\cdot 14$ is also $\\equiv 0 \\pmod 8$, so it satisfies both conditions and is the one remainder mod $1000$ that does. So $N \\equiv 112 \\pmod{1000}$. The answer is **$112$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "112",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

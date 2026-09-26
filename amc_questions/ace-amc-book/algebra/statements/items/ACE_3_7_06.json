@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_7_06",
+  "number": "3.7.6",
+  "kind": "problem",
+  "section": "Inequalities",
+  "original_source": "CEMC",
+  "topic": "algebra",
+  "subtopic": "AM-GM inequality",
+  "text": "If $x^2 + 3xy + y^2 = 60$ where $x$ and $y$ are real, then determine the maximum possible value of $xy$.",
+  "choices": null,
+  "book_answer": "12",
+  "book_pages": [79, 80]
+}

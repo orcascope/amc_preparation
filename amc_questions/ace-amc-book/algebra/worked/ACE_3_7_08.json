@@ -1,0 +1,59 @@
+{
+  "id": "ACE_3_7_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.7.8",
+    "kind": "problem",
+    "section": "Inequalities",
+    "original_source": "SMT 2018 Tiebreakers"
+  },
+  "topic": "algebra",
+  "subtopic": "Factoring and AM-GM",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_7_08.png",
+    "text": "If $a, b, c$ are real numbers with $a - b = 4$, find the maximum value of $ac + bc - c^2 - ab$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$4$", "accept": ["4"] },
+  "steps": [
+    {
+      "title": "Where to start: factor the expression",
+      "body": "The only condition we know is about $a - b$, so we want the expression written in pieces that connect to $a - b$. Group it as $a(c - b) - c(c - b)$: both groups share the factor $c - b$, so\n$$ac + bc - c^2 - ab = (a - c)(c - b)$$",
+      "your_turn": {
+        "prompt": "Expand $(a - c)(c - b)$ to check the factoring.",
+        "answer": "$ac - ab - c^2 + bc$, which is the same four terms."
+      }
+    },
+    {
+      "title": "The two factors have a fixed sum",
+      "body": "Call the factors $u = a - c$ and $v = c - b$. We now want the largest possible product $uv$. The variable $c$ is free, so $u$ and $v$ can change, but their sum cannot.",
+      "your_turn": {
+        "prompt": "What is $u + v = (a - c) + (c - b)$?",
+        "answer": "The $c$ cancels, leaving $a - b = 4$."
+      }
+    },
+    {
+      "title": "Use AM-GM, but watch the signs",
+      "body": "For two numbers that are both at least $0$, AM-GM says $\\frac{u + v}{2} \\ge \\sqrt{uv}$. Careful: AM-GM only applies to nonnegative numbers. If one of $u, v$ is negative and the other positive, the product $uv$ is negative, which is smaller than any positive value we can reach, so those cases can never give the maximum.",
+      "your_turn": {
+        "prompt": "Could $u$ and $v$ both be negative?",
+        "answer": "No. Two negative numbers have a negative sum, but $u + v = 4$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $u, v \\ge 0$, AM-GM gives $\\sqrt{uv} \\le \\frac{4}{2} = 2$, so $uv \\le 4$. Equality needs $u = v = 2$, for example $a = 4$, $b = 0$, $c = 2$, which gives $ac + bc - c^2 - ab = 8 + 0 - 4 - 0 = 4$. The maximum value is **$4$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "4",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

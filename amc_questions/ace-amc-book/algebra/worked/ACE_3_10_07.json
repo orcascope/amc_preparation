@@ -1,0 +1,69 @@
+{
+  "id": "ACE_3_10_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.10.7",
+    "kind": "problem",
+    "section": "Floor Functions",
+    "original_source": "2020 AMC 10"
+  },
+  "topic": "algebra",
+  "subtopic": "Floor of a square root",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_3_10_07.png",
+    "text": "How many positive integers $n$ satisfy $$\\frac{n+1000}{70} = \\lfloor \\sqrt{n} \\rfloor?$$ (Recall that $\\lfloor x \\rfloor$ is the greatest integer not exceeding $x$.)",
+    "choices": {
+      "A": "$2$",
+      "B": "$4$",
+      "C": "$6$",
+      "D": "$30$",
+      "E": "$32$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$6$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: the fraction is a floor, so trap $\\sqrt{n}$",
+      "body": "Let $k = \\lfloor \\sqrt{n} \\rfloor$. The equation says $k = \\frac{n+1000}{70}$, so this fraction must be an integer, and by the meaning of the floor, $k \\le \\sqrt{n} < k + 1$. Replacing $k$ by the fraction turns the floor equation into two ordinary inequalities.",
+      "your_turn": {
+        "prompt": "Write $\\frac{n+1000}{70} \\le \\sqrt{n} < \\frac{n+1000}{70} + 1$ without fractions, with everything on one side.",
+        "answer": "Multiply by $70$: $n - 70\\sqrt{n} + 1000 \\le 0$ and $n - 70\\sqrt{n} + 1070 > 0$."
+      }
+    },
+    {
+      "title": "Solve the first inequality",
+      "body": "Treat $\\sqrt{n}$ as the variable. The first inequality factors as\n$$(\\sqrt{n} - 20)(\\sqrt{n} - 50) \\le 0,$$\nso $\\sqrt{n}$ must lie between the two roots: $20 \\le \\sqrt{n} \\le 50$.",
+      "your_turn": {
+        "prompt": "What range of $n$ does this give?",
+        "answer": "$400 \\le n \\le 2500$."
+      }
+    },
+    {
+      "title": "Solve the second inequality",
+      "body": "The quadratic formula gives the roots of $t^2 - 70t + 1070 = 0$ as $t = 35 \\pm \\sqrt{155}$. Careful: we need the quadratic to be positive, and that happens outside the roots, so $\\sqrt{n} < 35 - \\sqrt{155}$ or $\\sqrt{n} > 35 + \\sqrt{155}$. Since $\\sqrt{155} \\approx 12.45$, these say $\\sqrt{n} < 22.55$ or $\\sqrt{n} > 47.45$ (roughly).",
+      "your_turn": {
+        "prompt": "Square $35 - \\sqrt{155}$ and $35 + \\sqrt{155}$ to turn these into bounds on $n$.",
+        "answer": "$1380 \\mp 70\\sqrt{155}$, about $508.5$ and $2251.5$. So $n < 508.5$ or $n > 2251.5$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Combining, $400 \\le n < 508.5$ or $2251.5 < n \\le 2500$. Also $n + 1000$ must be a multiple of $70$, so $n$ is one of $400, 470, 540, \\ldots$ (steps of $70$). In the first range that gives $400$ and $470$ ($540$ is too big), and in the second it gives $2290, 2360, 2430, 2500$ ($2220$ is too small). Check: $\\lfloor\\sqrt{470}\\rfloor = 21 = \\frac{1470}{70}$ and $\\lfloor\\sqrt{2290}\\rfloor = 47 = \\frac{3290}{70}$. That is $6$ values, so the answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

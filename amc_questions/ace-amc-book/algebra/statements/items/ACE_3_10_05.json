@@ -1,0 +1,19 @@
+{
+  "id": "ACE_3_10_05",
+  "number": "3.10.5",
+  "kind": "problem",
+  "section": "Floor Functions",
+  "original_source": "1989 AHSME",
+  "topic": "algebra",
+  "subtopic": "Floor functions and probability",
+  "text": "Let $x$ be a real number selected uniformly at random between $100$ and $200$. If $\\lfloor \\sqrt{x} \\rfloor = 12$, find the probability that $\\lfloor \\sqrt{100x} \\rfloor = 120$. ($\\lfloor v \\rfloor$ means the greatest integer less than or equal to $v$.)",
+  "choices": {
+    "A": "$\\frac{2}{25}$",
+    "B": "$\\frac{241}{2500}$",
+    "C": "$\\frac{1}{10}$",
+    "D": "$\\frac{96}{625}$",
+    "E": "$1$"
+  },
+  "book_answer": "B",
+  "book_pages": [87]
+}

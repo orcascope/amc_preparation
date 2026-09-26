@@ -1,0 +1,73 @@
+{
+  "id": "ACE_2_10_13",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.13",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2018 HMMT"
+  },
+  "topic": "number_theory",
+  "subtopic": "Divisibility by 9 and counting",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_13.png",
+    "text": "Find the number of eight-digit positive integers that are multiples of $9$ and have all distinct digits.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$181440$",
+    "accept": [
+      "181440"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: think about which two digits are missing",
+      "body": "A number is a multiple of $9$ exactly when its digit sum is a multiple of $9$. Eight distinct digits means we use all ten digits $0$ to $9$ except two. So instead of choosing eight digits, choose the two digits we leave out.",
+      "your_turn": {
+        "prompt": "What is $0 + 1 + 2 + \\dots + 9$? What must be true about the two digits we leave out?",
+        "answer": "The sum is $45$, a multiple of $9$. The eight digits we keep sum to $45$ minus the two left out, so the two left-out digits must add to a multiple of $9$."
+      }
+    },
+    {
+      "title": "List the possible missing pairs",
+      "body": "Two different digits add to at least $0 + 1 = 1$ and at most $8 + 9 = 17$, so their sum must be exactly $9$. That gives five pairs: $\\{0,9\\}$, $\\{1,8\\}$, $\\{2,7\\}$, $\\{3,6\\}$ and $\\{4,5\\}$.",
+      "your_turn": {
+        "prompt": "Why can the two left-out digits not add to $18$?",
+        "answer": "The only way to make $18$ with digits is $9 + 9$, but the two digits must be different."
+      }
+    },
+    {
+      "title": "The pair $\\{0,9\\}$: no zero to worry about",
+      "body": "If we leave out $0$ and $9$, the digits $1$ to $8$ can be arranged in any order, since none of them is a leading zero. That gives $8!$ numbers.",
+      "your_turn": {
+        "prompt": "Compute $8!$.",
+        "answer": "$8! = 40320$."
+      }
+    },
+    {
+      "title": "The other four pairs: keep $0$ out of the front",
+      "body": "For each of the other four pairs, the eight digits we keep include $0$, and an eight-digit number cannot start with $0$. Careful: $8!$ would overcount here. Place the $0$ first: it can go in any of the $7$ places except the first, and then the other $7$ digits fill the rest in $7!$ ways. So each pair gives $7 \\cdot 7!$ numbers.",
+      "your_turn": {
+        "prompt": "Check this another way: of the $8!$ orderings of the eight digits, how many start with $0$?",
+        "answer": "$7!$ of them (fix $0$ in front, arrange the other seven). So $8! - 7! = 8 \\cdot 7! - 7! = 7 \\cdot 7!$ are valid, matching."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Add the one pair without $0$ and the four pairs with $0$:\n$$8! + 4 \\cdot 7 \\cdot 7! = 8 \\cdot 7! + 28 \\cdot 7! = 36 \\cdot 5040 = 181440.$$\nThe answer is **$181440$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "181440",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_6_04",
+  "number": "3.6.4",
+  "kind": "problem",
+  "section": "Systems of Equations",
+  "original_source": "2000 AIME",
+  "topic": "algebra",
+  "subtopic": "Solving systems by substitution",
+  "text": "Suppose that $x$, $y$, and $z$ are three positive numbers that satisfy the equations $xyz = 1$, $x + \\frac{1}{z} = 5$, and $y + \\frac{1}{x} = 29$. Then $z + \\frac{1}{y} = \\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+  "choices": null,
+  "book_answer": "5",
+  "book_pages": [76]
+}

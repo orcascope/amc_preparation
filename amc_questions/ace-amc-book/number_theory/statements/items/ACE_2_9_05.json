@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_9_05",
+  "number": "2.9.5",
+  "kind": "problem",
+  "section": "Chinese Remainder Theorem",
+  "original_source": "2014 AIME",
+  "topic": "number_theory",
+  "subtopic": "Chinese Remainder Theorem",
+  "text": "The positive integers $N$ and $N^2$ both end in the same sequence of four digits $abcd$ when written in base $10$, where digit $a$ is not zero. Find the three-digit number $abc$.",
+  "choices": null,
+  "book_answer": "937",
+  "book_pages": [38, 39]
+}

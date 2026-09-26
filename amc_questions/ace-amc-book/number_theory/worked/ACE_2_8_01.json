@@ -1,0 +1,51 @@
+{
+  "id": "ACE_2_8_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.8.1",
+    "kind": "example",
+    "section": "Fermat's Little Theorem and Euler's Totient Function",
+    "original_source": null
+  },
+  "topic": "number_theory",
+  "subtopic": "Euler's totient function",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_2_8_01.png",
+    "text": "How many numbers are relatively prime to $48$?",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$16$", "accept": ["16"] },
+  "steps": [
+    {
+      "title": "Where to start: only the primes of $48$ matter",
+      "body": "Here \"numbers\" means the positive integers from $1$ to $48$, and \"relatively prime to $48$\" means their greatest common divisor with $48$ is $1$. Listing $1, 5, 7, \\dots$ works but is slow. A number shares a factor with $48$ exactly when it shares a prime factor with $48$, so start by factoring $48$.",
+      "your_turn": {
+        "prompt": "Write $48$ as a product of primes.",
+        "answer": "$48 = 2^4 \\cdot 3$, so the only primes are $2$ and $3$."
+      }
+    },
+    {
+      "title": "Use Euler's totient function",
+      "body": "Euler's totient function $\\phi(n)$ counts the numbers from $1$ to $n$ that are relatively prime to $n$. For each prime $p$ dividing $n$, multiply $n$ by $1 - \\frac{1}{p}$: $$\\phi(n) = n\\left(1 - \\frac{1}{p_1}\\right)\\left(1 - \\frac{1}{p_2}\\right)\\cdots$$ The idea: taking out the multiples of $2$ leaves half the numbers, and taking out the multiples of $3$ from what is left keeps two thirds of them.",
+      "your_turn": {
+        "prompt": "The exponent $4$ in $2^4$ does not appear in the formula. Why does it not matter?",
+        "answer": "A number fails to be relatively prime to $48$ exactly when it is divisible by $2$ or by $3$. The exponent does not change which primes those are."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The primes are $2$ and $3$, so $$\\phi(48) = 48 \\cdot \\left(1 - \\frac{1}{2}\\right)\\left(1 - \\frac{1}{3}\\right) = 48 \\cdot \\frac{1}{2} \\cdot \\frac{2}{3} = 16.$$ The answer is **$16$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "16",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

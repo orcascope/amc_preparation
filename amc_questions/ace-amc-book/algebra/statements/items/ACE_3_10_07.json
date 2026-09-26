@@ -1,0 +1,19 @@
+{
+  "id": "ACE_3_10_07",
+  "number": "3.10.7",
+  "kind": "problem",
+  "section": "Floor Functions",
+  "original_source": "2020 AMC 10",
+  "topic": "algebra",
+  "subtopic": "Floor of a square root",
+  "text": "How many positive integers $n$ satisfy $$\\frac{n+1000}{70} = \\lfloor \\sqrt{n} \\rfloor?$$ (Recall that $\\lfloor x \\rfloor$ is the greatest integer not exceeding $x$.)",
+  "choices": {
+    "A": "$2$",
+    "B": "$4$",
+    "C": "$6$",
+    "D": "$30$",
+    "E": "$32$"
+  },
+  "book_answer": "C",
+  "book_pages": [88, 89]
+}

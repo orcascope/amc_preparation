@@ -1,0 +1,57 @@
+{
+  "id": "ACE_3_3_11",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.3.11",
+    "kind": "problem",
+    "section": "Polynomials",
+    "original_source": "2017 CMIMC Algebra"
+  },
+  "topic": "algebra",
+  "subtopic": "Polynomial identities and degrees",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_3_11.png",
+    "text": "Suppose $P(x)$ is a quadratic polynomial with integer coefficients satisfying the identity $$P(P(x)) - P(x)^2 = x^2 + x + 2016$$ for all real $x$. Find $P(1)$",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$1010$",
+    "accept": [
+      "1010"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: compare degrees",
+      "body": "The identity must hold for every $x$, so both sides must be the same polynomial. Write $P(x) = ax^2 + bx + c$ with $a \\neq 0$. Then $P(P(x))$ means: put $P(x)$ in place of $x$, so the left side becomes $$aP(x)^2 + bP(x) + c - P(x)^2 = (a-1)P(x)^2 + bP(x) + c.$$",
+      "your_turn": {
+        "prompt": "If $a \\neq 1$, what would the degree of the left side be? Why must $a = 1$?",
+        "answer": "Degree $4$: $(a-1)P(x)^2$ has leading term $(a-1)a^2x^4$, which is not zero, and $bP(x) + c$ has degree at most $2$, so nothing cancels it. The right side has degree $2$, so $a = 1$."
+      }
+    },
+    {
+      "title": "Match the coefficients",
+      "body": "With $a = 1$ the $P(x)^2$ terms cancel, leaving $bP(x) + c = x^2 + x + 2016$ where $P(x) = x^2 + bx + c$. Expanding the left side gives $$bx^2 + b^2x + bc + c = x^2 + x + 2016.$$ Two polynomials are equal for all $x$ exactly when their matching coefficients are equal.",
+      "your_turn": {
+        "prompt": "Compare the $x^2$ coefficients and the $x$ coefficients. What is $b$?",
+        "answer": "The $x^2$ terms give $b = 1$, and the $x$ terms give $b^2 = 1$, which agrees. So $b = 1$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The constant terms give $bc + c = 2016$, and with $b = 1$ this is $2c = 2016$, so $c = 1008$. So $P(x) = x^2 + x + 1008$, which has integer coefficients as required, and $P(1) = 1 + 1 + 1008 = 1010$. The answer is **$1010$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1010",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

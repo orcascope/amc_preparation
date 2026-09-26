@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_1_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.1.2",
+    "kind": "problem",
+    "section": "Word Problems",
+    "original_source": "2014 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Inequalities and optimization",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_1_02.png",
+    "text": "Alpha and Beta both took part in a two-day problem-solving competition. At the end of the second day, each had attempted questions worth a total of $500$ points. Alpha scored $160$ points out of $300$ points attempted on the first day, and scored $140$ points out of $200$ points attempted on the second day. Beta who did not attempt $300$ points on the first day, had a positive integer score on each of the two days, and Beta's daily success rate (points scored divided by points attempted) on each day was less than Alpha's on that day. Alpha's two-day success ratio was $300/500 = 3/5$. The largest possible two-day success ratio that Beta could achieve is $m/n$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$849$",
+    "accept": [
+      "849"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: name Beta's numbers and write the rules as inequalities",
+      "body": "Everything we know about Beta is a comparison (\"less than Alpha's rate\"), so the problem is really a pair of inequalities. Say Beta attempted $y$ points on day 1 and scored $x$, and scored $z$ on day 2, where Beta attempted $500 - y$. Beta's two-day ratio is $\\frac{x+z}{500}$, and the $500$ is fixed, so we want the largest possible total score $x + z$.",
+      "your_turn": {
+        "prompt": "Write the two conditions \"Beta's rate was less than Alpha's\" using $x$, $y$, $z$, with Alpha's rates reduced.",
+        "answer": "Day 1: $\\frac{x}{y} < \\frac{160}{300} = \\frac{8}{15}$. Day 2: $\\frac{z}{500-y} < \\frac{140}{200} = \\frac{7}{10}$."
+      }
+    },
+    {
+      "title": "Get $x$ and $z$ alone and add",
+      "body": "Multiply each inequality by its (positive) denominator: $x < \\frac{8y}{15}$ and $z < \\frac{7(500-y)}{10}$. Adding them gives a single bound on the total score:\n$$x + z < 350 - \\frac{y}{6}.$$",
+      "your_turn": {
+        "prompt": "Check the right side: simplify $\\frac{8y}{15} + \\frac{7(500 - y)}{10}$.",
+        "answer": "It is $350 + \\frac{16y - 21y}{30} = 350 - \\frac{5y}{30} = 350 - \\frac{y}{6}$."
+      }
+    },
+    {
+      "title": "How small can $y$ be?",
+      "body": "The bound $350 - \\frac{y}{6}$ is always below $350$, and it is largest when $y$ is small, so try to give Beta a tiny day 1. Careful: the problem says Beta's score each day is a positive integer, so $x \\ge 1$, and that rules out some small values of $y$.",
+      "your_turn": {
+        "prompt": "Why is $y = 1$ impossible? What is the only allowed $x$ when $y = 2$?",
+        "answer": "With $y = 1$ we need $x < \\frac{8}{15}$, so $x$ could not be a positive integer. With $y = 2$, $x < \\frac{16}{15}$, so $x = 1$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "For every allowed $y$, $x + z < 350$, so $x + z \\le 349$. Now show $349$ is reached: take $y = 2$, $x = 1$; on day 2 Beta attempts $498$ and needs $z < \\frac{7\\cdot 498}{10} = 348.6$, so $z = 348$ works. Check: $\\frac{1}{2} < \\frac{8}{15}$, $\\frac{348}{498} \\approx 0.699 < 0.7$, and $y = 2 \\ne 300$. So the best ratio is $\\frac{349}{500}$, already in lowest terms because $349$ is prime, and $m + n = 349 + 500 = 849$. The answer is **$849$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "849",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

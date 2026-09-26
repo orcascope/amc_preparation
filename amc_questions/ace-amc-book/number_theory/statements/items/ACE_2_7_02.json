@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_7_02",
+  "number": "2.7.2",
+  "kind": "problem",
+  "section": "Modular Arithmetic Introduction",
+  "original_source": "2010 AIME",
+  "topic": "number_theory",
+  "subtopic": "Modular arithmetic",
+  "text": "Find the remainder when $9 \\times 99 \\times 999 \\times \\cdots \\times \\underbrace{99\\cdots9}_{\\text{999 9's}}$ is divided by $1000$.",
+  "choices": null,
+  "book_answer": "109",
+  "book_pages": [32]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_5_10",
+  "number": "3.5.10",
+  "kind": "problem",
+  "section": "Factoring Equations",
+  "original_source": "2023 CMIMC",
+  "topic": "algebra",
+  "subtopic": "Prime factorization and sums of squares",
+  "text": "Suppose $a, b, c$, and $d$ are non-negative integers such that $$(a + b + c + d)(a^2 + b^2 + c^2 + d^2)^2 = 2023$$ Find $a^3 + b^3 + c^3 + d^3$",
+  "choices": null,
+  "book_answer": "43",
+  "book_pages": [73]
+}

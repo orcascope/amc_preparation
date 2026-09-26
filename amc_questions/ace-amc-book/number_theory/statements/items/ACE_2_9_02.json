@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_9_02",
+  "number": "2.9.2",
+  "kind": "problem",
+  "section": "Chinese Remainder Theorem",
+  "original_source": "2017 AMC",
+  "topic": "number_theory",
+  "subtopic": "Chinese Remainder Theorem",
+  "text": "Let $N = 123456789101112\\dots4344$ be the $79$-digit number that is formed by writing the integers from $1$ to $44$ in order, one after the other. What is the remainder when $N$ is divided by $45$?",
+  "choices": { "A": "$1$", "B": "$4$", "C": "$9$", "D": "$18$", "E": "$44$" },
+  "book_answer": "C",
+  "book_pages": [36, 37]
+}

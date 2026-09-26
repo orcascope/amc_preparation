@@ -1,0 +1,73 @@
+{
+  "id": "ACE_3_9_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.9.5",
+    "kind": "problem",
+    "section": "Telescoping",
+    "original_source": "2002 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Telescoping sums and SFFT",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_9_05.png",
+    "text": "Consider the sequence defined by $a_k = \\frac{1}{k^2+k}$ for $k \\ge 1$. Given that $a_m + a_{m+1} + \\cdots + a_{n-1} = 1/29$, for positive integers $m$ and $n$ with $m < n$, find $m + n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$840$",
+    "accept": [
+      "840"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: split $a_k$ into a difference",
+      "body": "We must add a long run of consecutive terms, and the denominator factors as $k^2 + k = k(k+1)$, a product of consecutive numbers. That is the signal for partial fractions: write each term as a difference so the sum can telescope,\n$$a_k = \\frac{1}{k(k+1)} = \\frac{1}{k} - \\frac{1}{k+1}$$",
+      "your_turn": {
+        "prompt": "Check that $\\frac{1}{k} - \\frac{1}{k+1} = \\frac{1}{k^2+k}$.",
+        "answer": "Over the common denominator $k(k+1)$ the difference is $\\frac{(k+1) - k}{k(k+1)} = \\frac{1}{k^2+k}$."
+      }
+    },
+    {
+      "title": "Telescope the sum",
+      "body": "Writing out the terms from $a_m$ to $a_{n-1}$ gives\n$$\\left(\\frac{1}{m} - \\frac{1}{m+1}\\right) + \\left(\\frac{1}{m+1} - \\frac{1}{m+2}\\right) + \\cdots + \\left(\\frac{1}{n-1} - \\frac{1}{n}\\right)$$\nEverything in the middle cancels, leaving $\\frac{1}{m} - \\frac{1}{n}$. So the condition becomes $\\frac{1}{m} - \\frac{1}{n} = \\frac{1}{29}$.",
+      "your_turn": {
+        "prompt": "Multiply both sides of $\\frac{1}{m} - \\frac{1}{n} = \\frac{1}{29}$ by $29mn$.",
+        "answer": "$29n - 29m = mn$."
+      }
+    },
+    {
+      "title": "Factor with Simon's trick",
+      "body": "Move everything to one side: $mn + 29m - 29n = 0$. Simon's Favorite Factoring Trick means adding a constant so the left side becomes a product. Here subtract $29\\cdot 29 = 841$ from both sides:\n$$(m - 29)(n + 29) = -841$$",
+      "your_turn": {
+        "prompt": "Expand $(m-29)(n+29)$ to check that this matches.",
+        "answer": "$mn + 29m - 29n - 841$, which is $0 - 841 = -841$ because $mn + 29m - 29n = 0$."
+      }
+    },
+    {
+      "title": "Decide the signs and sizes",
+      "body": "Since $n$ is positive, $n + 29 \\ge 30$ is positive, so $m - 29$ must be negative. Also $m \\ge 1$, so $m - 29 \\ge -28$. The divisors of $841 = 29^2$ are only $1$, $29$ and $841$, so $m - 29$ is one of $-1$, $-29$, $-841$.",
+      "your_turn": {
+        "prompt": "Which of $-1$, $-29$, $-841$ can $m - 29$ actually be?",
+        "answer": "Only $-1$. The value $-29$ gives $m = 0$ and $-841$ gives $m < 0$, but $m$ must be positive."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $m - 29 = -1$ and $n + 29 = 841$, which gives $m = 28$ and $n = 812$. These are positive with $m < n$, and $\\frac{1}{28} - \\frac{1}{812} = \\frac{29 - 1}{812} = \\frac{28}{812} = \\frac{1}{29}$ checks. Then $m + n = 28 + 812 = 840$. The answer is **$840$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "840",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

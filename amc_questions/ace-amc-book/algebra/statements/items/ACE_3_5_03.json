@@ -1,0 +1,15 @@
+{
+  "id": "ACE_3_5_03",
+  "number": "3.5.3",
+  "kind": "problem",
+  "section": "Factoring Equations",
+  "original_source": "2019 BMT",
+  "topic": "algebra",
+  "subtopic": "Sum of cubes identity with Vieta",
+  "text": "Let $r_1, r_2, r_3$ be the (possibly complex) roots of the polynomial $x^3 + ax^2 + bx + \\frac{4}{3}$. How many pairs of integers $a, b$ exist such that $r_1^3 + r_2^3 + r_3^3 = 0$",
+  "choices": null,
+  "book_answer": "3",
+  "book_pages": [
+    70
+  ]
+}

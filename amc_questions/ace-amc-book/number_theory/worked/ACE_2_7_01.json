@@ -1,0 +1,62 @@
+{
+  "id": "ACE_2_7_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.7.1",
+    "kind": "problem",
+    "section": "Modular Arithmetic Introduction",
+    "original_source": "2021 AMC 12"
+  },
+  "topic": "number_theory",
+  "subtopic": "Modular arithmetic",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_7_01.png",
+    "text": "The base-nine representation of the number $N$ is $27{,}006{,}000{,}052_{\\text{nine}}$. What is the remainder when $N$ is divided by $5$?",
+    "choices": { "A": "$0$", "B": "$1$", "C": "$2$", "D": "$3$", "E": "$4$" }
+  },
+  "answer": { "choice": "D", "value": "$3$" },
+  "steps": [
+    {
+      "title": "Where to start: write $N$ as a sum of powers of $9$",
+      "body": "We only want a remainder, so we never need the huge base-ten value of $N$. A base-nine number is a sum of its digits times powers of $9$, and remainders can be worked out term by term. So first write out that sum, keeping only the nonzero digits.",
+      "your_turn": {
+        "prompt": "The number has $11$ digits. Which power of $9$ goes with the leading digit $2$, and which nonzero digits are left?",
+        "answer": "The leading $2$ goes with $9^{10}$. The other nonzero digits are $7$ (with $9^9$), $6$ (with $9^6$), $5$ (with $9^1$) and $2$ (with $9^0$)."
+      }
+    },
+    {
+      "title": "Replace $9$ by something small",
+      "body": "So $$N = 2\\cdot 9^{10} + 7\\cdot 9^9 + 6\\cdot 9^6 + 5\\cdot 9 + 2.$$ Since $9 = 10 - 1$, the number $9$ leaves the same remainder as $-1$ when divided by $5$. So in every term we may put $-1$ in place of $9$ without changing the remainder.",
+      "your_turn": {
+        "prompt": "What is $(-1)^k$ when $k$ is even, and when $k$ is odd?",
+        "answer": "$1$ when $k$ is even and $-1$ when $k$ is odd."
+      }
+    },
+    {
+      "title": "Add up the signed digits",
+      "body": "After the swap, each term becomes its digit times $+1$ or $-1$, depending on whether the exponent is even or odd. Careful: $9$ is not $1$ modulo $5$, so you cannot just add the digits as you would when dividing by $8$.",
+      "your_turn": {
+        "prompt": "Which of the digits $2, 7, 6, 5, 2$ get a minus sign?",
+        "answer": "The $7$ (exponent $9$) and the $5$ (exponent $1$), because those exponents are odd. The two $2$s and the $6$ keep a plus sign."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $N$ leaves the same remainder as $2 - 7 + 6 - 5 + 2 = -2$ when divided by $5$. A remainder must be between $0$ and $4$, so add $5$: $-2 + 5 = 3$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "This comes from adding the digits, $2+7+6+5+2 = 22$, which leaves $2$. That treats $9$ as $1$ modulo $5$, but $9$ leaves remainder $4$, which acts like $-1$, so the signs must alternate. Dropping the minus sign of $-2$ also lands here."
+  },
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

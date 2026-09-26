@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_3_07",
+  "number": "3.3.7",
+  "kind": "problem",
+  "section": "Polynomials",
+  "original_source": "2019 CMC 10",
+  "topic": "algebra",
+  "subtopic": "Linear functions",
+  "text": "Consider a polynomial $p(x)$ of degree $1$ such that for a real number $a$, $p(a) = 2$, $p(p(a)) = 17$ and $p(p(p(a))) = 167$. What is the value of $a$?",
+  "choices": { "A": "$-1$", "B": "$\\frac{-1}{2}$", "C": "$0$", "D": "$\\frac{1}{2}$", "E": "$1$" },
+  "book_answer": "D",
+  "book_pages": [59]
+}

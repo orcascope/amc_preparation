@@ -1,0 +1,67 @@
+{
+  "id": "ACE_2_9_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.9.4",
+    "kind": "problem",
+    "section": "Chinese Remainder Theorem",
+    "original_source": "2019 BMT"
+  },
+  "topic": "number_theory",
+  "subtopic": "Chinese Remainder Theorem",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_9_04.png",
+    "text": "Let $2^{1110} \\equiv n \\pmod{1111}$ with $0 \\le n \\le 1111$. Compute $n$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$1024$", "accept": ["1024"] },
+  "steps": [
+    {
+      "title": "Where to start: factor the modulus $1111$",
+      "body": "A huge power modulo a composite number is a signal to split the modulus into primes. Here $1111 = 11\\cdot 101$, and both factors are prime. So we find $2^{1110}$ mod $11$ and mod $101$ separately with Fermat's little theorem ($a^{p-1} \\equiv 1 \\pmod p$ when $p$ is prime and does not divide $a$), then combine the two answers with the Chinese Remainder Theorem.",
+      "your_turn": {
+        "prompt": "Why is $101$ prime?",
+        "answer": "It is not divisible by $2$, $3$, $5$ or $7$, and $11^2 = 121 > 101$, so no larger prime needs checking."
+      }
+    },
+    {
+      "title": "Work mod $11$",
+      "body": "Fermat's little theorem with $p = 11$ gives $2^{10} \\equiv 1 \\pmod{11}$. Since $1110 = 10\\cdot 111$, we get\n$$2^{1110} = \\left(2^{10}\\right)^{111} \\equiv 1^{111} = 1 \\pmod{11}$$",
+      "your_turn": {
+        "prompt": "Check $2^{10} \\equiv 1 \\pmod{11}$ by hand: what is $2^5$ mod $11$, and then what is $2^{10}$ mod $11$?",
+        "answer": "$2^5 = 32 = 2\\cdot 11 + 10$, so $2^5 \\equiv 10 \\equiv -1$. Then $2^{10} \\equiv (-1)^2 = 1$."
+      }
+    },
+    {
+      "title": "Work mod $101$",
+      "body": "Fermat's little theorem with $p = 101$ gives $2^{100} \\equiv 1 \\pmod{101}$, so $2^{1100} = (2^{100})^{11} \\equiv 1$. Since $1110 = 1100 + 10$, what is left is\n$$2^{1110} = 2^{1100}\\cdot 2^{10} \\equiv 2^{10} \\pmod{101}$$",
+      "your_turn": {
+        "prompt": "Find the remainder when $2^{10} = 1024$ is divided by $101$.",
+        "answer": "$1024 = 10\\cdot 101 + 14$, so the remainder is $14$."
+      }
+    },
+    {
+      "title": "Set up the combination",
+      "body": "We now need $n$ with $n \\equiv 1 \\pmod{11}$ and $n \\equiv 14 \\pmod{101}$. The numbers from $0$ to $1110$ that are $\\equiv 14 \\pmod{101}$ are $n = 14 + 101t$ for $t = 0, 1, \\dots, 10$. We want the one that leaves remainder $1$ mod $11$.",
+      "your_turn": {
+        "prompt": "What are the remainders of $14$ and of $101$ when divided by $11$?",
+        "answer": "$14 \\equiv 3$ and $101 = 9\\cdot 11 + 2 \\equiv 2$, so $14 + 101t \\equiv 3 + 2t \\pmod{11}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "We need $3 + 2t \\equiv 1 \\pmod{11}$, so $2t \\equiv -2 \\equiv 9$; among $t = 0$ to $10$ only $t = 10$ works, since $2\\cdot 10 = 20 \\equiv 9$. Then $n = 14 + 1010 = 1024$. (Notice $1024 = 2^{10}$, which fits: we showed $2^{1110}$ and $2^{10}$ agree both mod $11$ and mod $101$.) The number $1111$ is $\\equiv 0$, so it is not a second solution. The answer is **$1024$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1024",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

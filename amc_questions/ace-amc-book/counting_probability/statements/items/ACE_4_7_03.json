@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_7_03",
+  "number": "4.7.3",
+  "kind": "problem",
+  "section": "Conditional Probability",
+  "original_source": "2003 AMC 12",
+  "topic": "counting_probability",
+  "subtopic": "Conditional probability",
+  "text": "Let $S$ be the set of permutations of the sequence $1, 2, 3, 4, 5$ for which the first term is not $1$. A permutation is chosen randomly from $S$. The probability that the second term is $2$, in lowest terms, is $a/b$. What is $a+b$?",
+  "choices": { "A": "$5$", "B": "$6$", "C": "$11$", "D": "$16$", "E": "$19$" },
+  "book_answer": "E",
+  "book_pages": [119]
+}

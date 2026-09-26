@@ -1,0 +1,71 @@
+{
+  "id": "ACE_2_7_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.7.3",
+    "kind": "problem",
+    "section": "Modular Arithmetic Introduction",
+    "original_source": "2010 AMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Modular arithmetic and probability",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_7_03.png",
+    "text": "Positive integers $a$, $b$, and $c$ are randomly and independently selected with replacement from the set $\\{1, 2, 3, \\dots, 2010\\}$. What is the probability that $abc + ab + a$ is divisible by $3$?",
+    "choices": { "A": "$\\frac{1}{3}$", "B": "$\\frac{29}{81}$", "C": "$\\frac{31}{81}$", "D": "$\\frac{11}{27}$", "E": "$\\frac{13}{27}$" }
+  },
+  "answer": { "choice": "E", "value": "$\\frac{13}{27}$" },
+  "steps": [
+    {
+      "title": "Where to start: factor out $a$",
+      "body": "Every term of $abc + ab + a$ contains $a$, so it factors as $$a(bc + b + 1).$$ Divisibility by a prime is much easier to check for a product than for a sum, because a prime divides a product exactly when it divides one of the factors.",
+      "your_turn": {
+        "prompt": "Since $3$ is prime, when is $a(bc + b + 1)$ divisible by $3$?",
+        "answer": "Exactly when $3$ divides $a$, or $3$ divides $bc + b + 1$ (or both)."
+      }
+    },
+    {
+      "title": "Only remainders matter",
+      "body": "Whether $3$ divides $a$ or $bc + b + 1$ depends only on the remainders of $a$, $b$, $c$ when divided by $3$. Since $2010 = 3 \\cdot 670$, each of the remainders $0$, $1$, $2$ happens for exactly one third of the set, and $a$, $b$, $c$ are chosen independently. Split into two cases that cannot overlap: $a$ divisible by $3$, or not.",
+      "your_turn": {
+        "prompt": "What is the probability that $a$ is divisible by $3$? What is it that $a$ is not?",
+        "answer": "$\\frac{1}{3}$ (there are $670$ multiples of $3$), and $\\frac{2}{3}$ that it is not. In the first case $b$ and $c$ can be anything."
+      }
+    },
+    {
+      "title": "When $a$ is not a multiple of $3$",
+      "body": "Now we need $3$ to divide $bc + b + 1$. Try each remainder of $b$ (write $b \\equiv 1$ to mean $b$ leaves remainder $1$ when divided by $3$). If $b \\equiv 0$, the expression is $0 + 0 + 1 = 1$, never divisible by $3$. If $b \\equiv 1$, it becomes $c + 2$, which is divisible by $3$ only when $c \\equiv 1$.",
+      "your_turn": {
+        "prompt": "If $b \\equiv 2 \\pmod 3$, what does $bc + b + 1$ become, and which remainder of $c$ works?",
+        "answer": "It becomes $2c + 3$, which acts like $2c$. That is divisible by $3$ only when $c \\equiv 0$."
+      }
+    },
+    {
+      "title": "Count the good remainder pairs",
+      "body": "So among the $3 \\times 3 = 9$ equally likely pairs of remainders for $(b, c)$, exactly two work: $(1, 1)$ and $(2, 0)$. Careful: both of them count, so do not stop after finding the first one.",
+      "your_turn": {
+        "prompt": "What is the probability that $bc + b + 1$ is divisible by $3$?",
+        "answer": "$\\frac{2}{9}$, since $2$ of the $9$ equally likely pairs work."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The second case has probability $\\frac{2}{3} \\cdot \\frac{2}{9} = \\frac{4}{27}$. The two cases do not overlap, so add: $$\\frac{1}{3} + \\frac{4}{27} = \\frac{9}{27} + \\frac{4}{27} = \\frac{13}{27}.$$ The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This counts only the case where $a$ is divisible by $3$. It misses the cases where $a$ is not a multiple of $3$ but $bc + b + 1$ is.",
+    "D": "This comes from finding only one of the two good pairs for $(b, c)$: $\\frac{1}{3} + \\frac{2}{3}\\cdot\\frac{1}{9} = \\frac{11}{27}$. Both $(1, 1)$ and $(2, 0)$ work."
+  },
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

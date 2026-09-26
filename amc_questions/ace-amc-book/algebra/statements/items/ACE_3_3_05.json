@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_3_05",
+  "number": "3.3.5",
+  "kind": "problem",
+  "section": "Polynomials",
+  "original_source": "2013 CHMMC",
+  "topic": "algebra",
+  "subtopic": "Roots of polynomials",
+  "text": "Suppose $f(x) = x^3 + x - 1$ has roots $r, s, t$. What is $\\frac{r^3}{1-r} + \\frac{s^3}{1-s} + \\frac{t^3}{1-t}$?",
+  "choices": null,
+  "book_answer": "3",
+  "book_pages": [58]
+}

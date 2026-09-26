@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_3_08",
+  "number": "3.3.8",
+  "kind": "problem",
+  "section": "Polynomials",
+  "original_source": "2018 CHMMC",
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas",
+  "text": "Suppose $r, s, t$ are the roots of the polynomial $x^3 - 2x + 3$. Find $$\\frac{1}{r^3 - 2} + \\frac{1}{s^3 - 2} + \\frac{1}{t^3 - 2}$$",
+  "choices": null,
+  "book_answer": "-67/109",
+  "book_pages": [60]
+}

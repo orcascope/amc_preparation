@@ -1,0 +1,63 @@
+{
+  "id": "ACE_3_2_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.2.8",
+    "kind": "problem",
+    "section": "Sequences And Series",
+    "original_source": "2011 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Arithmetic sequences",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_2_08.png",
+    "text": "The degree measures of the angles in a convex $18$-sided polygon form an increasing arithmetic sequence with integer values. Find the degree measure of the smallest angle.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$143$",
+    "accept": ["143"]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the angle sum is fixed",
+      "body": "The problem tells us how many angles there are ($18$) and that they are the angles of a polygon. Any polygon with $n$ sides has interior angles adding to $180(n-2)$ degrees, so the total of all $18$ angles is known before we know any single angle.",
+      "your_turn": {
+        "prompt": "What is the sum of the interior angles of an $18$-sided polygon?",
+        "answer": "$180\\cdot 16 = 2880$ degrees."
+      }
+    },
+    {
+      "title": "Write the angles as a sequence",
+      "body": "Call the smallest angle $a$ and the common difference $d$. The angles are $a, a+d, a+2d, \\dots, a+17d$, and since $1+2+\\dots+17 = \\frac{17\\cdot 18}{2} = 153$, their sum is $18a + 153d$. Setting this equal to $2880$ and dividing by $9$:\n$$2a + 17d = 320$$",
+      "your_turn": {
+        "prompt": "The angles are integers, so $a$ and $d$ are integers. Why must $d$ be even?",
+        "answer": "$17d = 320 - 2a$ is even, and $17$ is odd, so $d$ must be even."
+      }
+    },
+    {
+      "title": "Use convexity",
+      "body": "The sequence is increasing, so $d \\ge 1$, and being even means $d \\ge 2$. Convex means every angle is less than $180^\\circ$; the largest angle is $a + 17d$. From $2a + 17d = 320$ we get $a = 160 - \\frac{17d}{2}$, so the largest angle is $160 + \\frac{17d}{2}$, and it must be below $180$:\n$$\\frac{17d}{2} < 20 \\quad\\Longrightarrow\\quad d < \\frac{40}{17} \\approx 2.35$$",
+      "your_turn": {
+        "prompt": "Careful: why can $d$ not be $4$? Find the largest angle when $d = 4$.",
+        "answer": "With $d = 4$, $a = 160 - 34 = 126$ and the largest angle is $126 + 68 = 194^\\circ$, too big for a convex polygon."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The only positive even integer below $2.35$ is $d = 2$. Then $2a = 320 - 34 = 286$, so $a = 143$. Check: the angles run from $143^\\circ$ up to $143 + 34 = 177^\\circ$, all below $180^\\circ$, and they add to $18\\cdot 143 + 153\\cdot 2 = 2880$. The answer is **$143$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "143",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

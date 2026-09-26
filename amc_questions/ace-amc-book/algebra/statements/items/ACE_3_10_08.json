@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_10_08",
+  "number": "3.10.8",
+  "kind": "problem",
+  "section": "Floor Functions",
+  "original_source": "2022 BMT",
+  "topic": "algebra",
+  "subtopic": "Floor and fractional part",
+  "text": "Compute the sum of the real solutions to $\\lfloor x \\rfloor \\{x\\} = 2020x$. Here, $\\lfloor x \\rfloor$ is defined as the greatest integer less than or equal to $x$, and $\\{x\\} = x - \\lfloor x \\rfloor$.",
+  "choices": null,
+  "book_answer": "-1/2021",
+  "book_pages": [89]
+}

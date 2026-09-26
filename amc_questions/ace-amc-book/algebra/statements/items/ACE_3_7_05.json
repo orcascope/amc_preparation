@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_7_05",
+  "number": "3.7.5",
+  "kind": "problem",
+  "section": "Inequalities",
+  "original_source": "1983 AIME",
+  "topic": "algebra",
+  "subtopic": "AM-GM inequality",
+  "text": "Find the minimum value of $\\frac{9x^2\\sin^2 x + 4}{x\\sin x}$ for $0 < x < \\pi$.",
+  "choices": null,
+  "book_answer": "12",
+  "book_pages": [79]
+}

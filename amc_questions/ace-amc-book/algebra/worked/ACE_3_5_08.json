@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_5_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.5.8",
+    "kind": "problem",
+    "section": "Factoring Equations",
+    "original_source": "2016 CMIMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Adding equations and completing the square",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_5_08.png",
+    "text": "The parabolas $y = x^2 + 15x + 32$ and $x = y^2 + 49y + 593$ meet at one point $(x_0, y_0)$. Find $x_0 + y_0$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$-31$",
+    "accept": [
+      "-31"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: add the two equations",
+      "body": "Solving by substitution would give a degree-4 equation, which is painful. But one equation has an $x^2$ and the other a $y^2$, so adding them puts both squares in one equation, where we can complete the square in $x$ and in $y$ at the same time. The point $(x_0, y_0)$ satisfies both equations, so it satisfies their sum.",
+      "your_turn": {
+        "prompt": "Add the equations $y = x^2 + 15x + 32$ and $x = y^2 + 49y + 593$, and move everything to one side.",
+        "answer": "$x + y = x^2 + y^2 + 15x + 49y + 625$, so $x^2 + 14x + y^2 + 48y + 625 = 0$."
+      }
+    },
+    {
+      "title": "Complete the square in each variable",
+      "body": "We have $x^2 + 14x = (x+7)^2 - 49$ and $y^2 + 48y = (y+24)^2 - 576$. The constant $625$ is exactly $49 + 576$, which is the sign that this is the right move.",
+      "your_turn": {
+        "prompt": "Substitute these into $x^2 + 14x + y^2 + 48y + 625 = 0$ and simplify.",
+        "answer": "$(x+7)^2 + (y+24)^2 = 0$, since $-49 - 576 + 625 = 0$."
+      }
+    },
+    {
+      "title": "A sum of squares equal to zero",
+      "body": "The square of a real number is never negative. So if two squares add to $0$, neither can be positive, and both must be $0$. That pins down $x_0$ and $y_0$ exactly. Careful: adding the equations only gives a condition the point must satisfy, so check the point on both parabolas.",
+      "your_turn": {
+        "prompt": "Could we have $(x+7)^2 = 3$ and $(y+24)^2 = -3$?",
+        "answer": "No. $(y+24)^2$ can never be $-3$, because squares of real numbers are at least $0$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $x_0 + 7 = 0$ and $y_0 + 24 = 0$, giving $x_0 = -7$ and $y_0 = -24$. Check: $49 - 105 + 32 = -24$ and $576 - 1176 + 593 = -7$, so the point is on both parabolas. Then $x_0 + y_0 = -7 + (-24) = -31$. The answer is $-31$.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "-31",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "ACE_4_7_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.7.3",
+    "kind": "problem",
+    "section": "Conditional Probability",
+    "original_source": "2003 AMC 12"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Conditional probability",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_7_03.png",
+    "text": "Let $S$ be the set of permutations of the sequence $1, 2, 3, 4, 5$ for which the first term is not $1$. A permutation is chosen randomly from $S$. The probability that the second term is $2$, in lowest terms, is $a/b$. What is $a+b$?",
+    "choices": {
+      "A": "$5$",
+      "B": "$6$",
+      "C": "$11$",
+      "D": "$16$",
+      "E": "$19$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$19$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: the condition shrinks the sample space",
+      "body": "The permutation is chosen from $S$, not from all $5! = 120$ permutations. So this is a conditional probability: we already know the first term is not $1$. The formula $P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}$ becomes a ratio of counts: (permutations with second term $2$ and first term not $1$) divided by (permutations with first term not $1$).",
+      "your_turn": {
+        "prompt": "How many permutations are in $S$?",
+        "answer": "$96$. The $1$ can go in any of the $4$ places other than the first, and the other four numbers fill the rest in $4! = 24$ ways, so $4 \\cdot 24 = 96$."
+      }
+    },
+    {
+      "title": "Count the favorable permutations",
+      "body": "Now put $2$ in the second place. The $1$ still cannot go first, and the second place is taken, so $1$ must go in the third, fourth or fifth place: $3$ choices. The remaining three numbers fill the remaining three places in $3!$ ways. So there are $3 \\cdot 3!$ favorable permutations.",
+      "your_turn": {
+        "prompt": "Careful: why is the answer not just $\\frac{1}{4}$, since the second term is one of the four numbers that are not first?",
+        "answer": "The first term can itself be $2$ (for example $2, 1, 3, 4, 5$ is in $S$), and then the second term cannot be $2$. So the chances are not spread evenly, and we have to count."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The probability is\n$$\\frac{3 \\cdot 3!}{4 \\cdot 4!} = \\frac{18}{96} = \\frac{3}{16}.$$\nThis is in lowest terms, so $a = 3$, $b = 16$ and $a + b = 19$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "This comes from ignoring the condition and using all $120$ permutations: the second term is $2$ with probability $\\frac{1}{5}$, giving $1 + 5 = 6$. The permutation is chosen from $S$ only.",
+    "A": "This comes from guessing that the second term is equally likely to be any of the four numbers other than $1$, giving $\\frac{1}{4}$. But the first term can be $2$, so the probability is smaller."
+  },
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

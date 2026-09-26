@@ -1,0 +1,15 @@
+{
+  "id": "ACE_2_10_13",
+  "number": "2.10.13",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2018 HMMT",
+  "topic": "number_theory",
+  "subtopic": "Divisibility by 9 and counting",
+  "text": "Find the number of eight-digit positive integers that are multiples of $9$ and have all distinct digits.",
+  "choices": null,
+  "book_answer": "181440",
+  "book_pages": [
+    46
+  ]
+}

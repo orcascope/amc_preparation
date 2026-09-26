@@ -1,0 +1,79 @@
+{
+  "id": "ACE_3_6_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.6.3",
+    "kind": "problem",
+    "section": "Systems of Equations",
+    "original_source": "SMT 2012 Algebra Test"
+  },
+  "topic": "algebra",
+  "subtopic": "Symmetric systems and factoring",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_6_03.png",
+    "text": "For real numbers $(x, y, z)$ satisfying the following equations, find all possible values of $x + y + z$.\n\n$x^2y + y^2z + z^2x = -1$\n\n$xy^2 + yz^2 + zx^2 = 5$\n\n$xyz = -2$",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$2$ and $\\sqrt[3]{\\frac{1}{2}}$",
+    "accept": [
+      "2, \\sqrt[3]{1/2}",
+      "2 and \\sqrt[3]{1/2}",
+      "\\sqrt[3]{1/2}, 2",
+      "\\sqrt[3]{1/2} and 2",
+      "2, \\frac{\\sqrt[3]{4}}{2}",
+      "2 and \\frac{\\sqrt[3]{4}}{2}",
+      "2, (1/2)^{1/3}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: add the first two equations",
+      "body": "Neither long equation factors by itself. But together they contain all six terms of the form $x^2y$, and the third equation gives $xyz$. Those are exactly the pieces that appear when you expand $(x+y)(y+z)(z+x)$.",
+      "your_turn": {
+        "prompt": "Expand $(x+y)(y+z)(z+x)$.",
+        "answer": "$x^2y + y^2z + z^2x + xy^2 + yz^2 + zx^2 + 2xyz$."
+      }
+    },
+    {
+      "title": "One pair must add to zero",
+      "body": "The six terms add to $-1 + 5 = 4$ and $2xyz = -4$, so $(x+y)(y+z)(z+x) = 0$. The system does not change if you rename $x \\to y \\to z \\to x$, so a solution with $y + z = 0$ or $z + x = 0$ can be relabeled into one with $x + y = 0$ and the same sum. So we may take $x = -y$, and then $x + y + z = z$.",
+      "your_turn": {
+        "prompt": "Put $x = -y$ into $xyz = -2$. What do you get?",
+        "answer": "$-y^2z = -2$, so $y^2z = 2$."
+      }
+    },
+    {
+      "title": "Reduce to two variables",
+      "body": "With $x = -y$, the first equation becomes $y^3 + y^2z - yz^2 = -1$, that is $y(y^2 + yz - z^2) = -1$. The second becomes $-y^3 + yz^2 + y^2z = 5$; using $y^2z = 2$ it turns into $y(z^2 - y^2) = 3$. Careful: if you also replace $y^2z$ by $2$ in the first equation, you get the second one again and learn nothing, so keep the first in its full form.",
+      "your_turn": {
+        "prompt": "Divide $y(z^2 - y^2) = 3$ by $y(y^2 + yz - z^2) = -1$ and clear the denominator. Move everything to one side.",
+        "answer": "$z^2 - y^2 = -3(y^2 + yz - z^2)$, so $2y^2 + 3yz - 2z^2 = 0$. (Dividing is safe because the divisor $y(y^2 + yz - z^2)$ equals $-1$, not $0$.)"
+      }
+    },
+    {
+      "title": "Factor into two cases",
+      "body": "The quadratic factors as $$2y^2 + 3yz - 2z^2 = (2y - z)(y + 2z) = 0,$$ so either $z = 2y$ or $y = -2z$. In each case, $y^2z = 2$ pins down the numbers.",
+      "your_turn": {
+        "prompt": "Check the factorization by expanding $(2y - z)(y + 2z)$.",
+        "answer": "$2y^2 + 4yz - yz - 2z^2 = 2y^2 + 3yz - 2z^2$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "If $z = 2y$: $2y^3 = 2$, so $y = 1$, $z = 2$, $x = -1$, and the sum is $z = 2$. If $y = -2z$: $4z^3 = 2$, so $z = \\sqrt[3]{1/2}$ with $y = -2z$, $x = 2z$, and the sum is $z = \\sqrt[3]{1/2}$. Both triples check in all three equations (for example $(-1, 1, 2)$ gives $1 + 2 - 4 = -1$, $-1 + 4 + 2 = 5$ and $-2$). The possible values are **$2$ and $\\sqrt[3]{\\frac{1}{2}}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "2, \\sqrt[3]{1/2}",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

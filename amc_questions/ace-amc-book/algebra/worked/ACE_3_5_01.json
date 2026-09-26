@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_5_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.5.1",
+    "kind": "problem",
+    "section": "Factoring Equations",
+    "original_source": "2019 BMT"
+  },
+  "topic": "algebra",
+  "subtopic": "Completing the square",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_5_01.png",
+    "text": "There are several pairs of integers $(a, b)$ satisfying $a^2 - 4a + b^2 - 8b = 30$. Find the sum of the sum of the coordinates of all such points.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$72$",
+    "accept": [
+      "72"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: complete the square",
+      "body": "The equation has $a^2 - 4a$ and $b^2 - 8b$: a square term and a linear term in each variable, and no $ab$ term. That is the clue to complete the square in each variable, which turns the equation into a sum of two squares, a circle.",
+      "your_turn": {
+        "prompt": "Complete the square: write $a^2 - 4a$ and $b^2 - 8b$ in the form $(\\ldots)^2 - (\\text{number})$.",
+        "answer": "$a^2 - 4a = (a-2)^2 - 4$ and $b^2 - 8b = (b-4)^2 - 16$."
+      }
+    },
+    {
+      "title": "A sum of two squares",
+      "body": "Substituting and moving the constants over gives $$(a-2)^2 + (b-4)^2 = 50.$$ Let $u = a - 2$ and $v = b - 4$. These are integers, so we need all ways to write $50$ as a sum of two perfect squares.",
+      "your_turn": {
+        "prompt": "Which of the squares $0, 1, 4, 9, 16, 25, 36, 49$ leave a perfect square when subtracted from $50$?",
+        "answer": "Only $1$, $25$ and $49$: $50 = 1 + 49 = 25 + 25 = 49 + 1$. (For example $50 - 0 = 50$ and $50 - 16 = 34$ are not squares.)"
+      }
+    },
+    {
+      "title": "List the points",
+      "body": "So $(u^2, v^2)$ is $(1, 49)$, $(25, 25)$ or $(49, 1)$. None of these squares is $0$, so $u$ and $v$ each have two sign choices. That gives $4$ points for each of the three splits, $12$ points in all.",
+      "your_turn": {
+        "prompt": "Write the four points $(u, v)$ with $u^2 = 49$ and $v^2 = 1$.",
+        "answer": "$(7, 1)$, $(7, -1)$, $(-7, 1)$, $(-7, -1)$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "For each point, $a + b = (u + 2) + (v + 4) = u + v + 6$. The points come in sign pairs ($u$ with $-u$, $v$ with $-v$), so the $u$'s add to $0$ and the $v$'s add to $0$ over all $12$ points. The total is $12 \\cdot 6 = 72$. The answer is **$72$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "72",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

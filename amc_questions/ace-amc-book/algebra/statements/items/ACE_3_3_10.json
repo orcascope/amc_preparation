@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_3_10",
+  "number": "3.3.10",
+  "kind": "problem",
+  "section": "Polynomials",
+  "original_source": "2013 PUMAC",
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas with a double root",
+  "text": "Suppose $a, b$ are nonzero integers such that two roots of $x^3 + ax^2 + bx + 9a$ coincide, and all three roots are integers. Find $|ab|$.",
+  "choices": null,
+  "book_answer": "1344",
+  "book_pages": [61, 62]
+}

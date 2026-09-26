@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_5_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.5.3",
+    "kind": "problem",
+    "section": "Factoring Equations",
+    "original_source": "2019 BMT"
+  },
+  "topic": "algebra",
+  "subtopic": "Sum of cubes identity with Vieta",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_5_03.png",
+    "text": "Let $r_1, r_2, r_3$ be the (possibly complex) roots of the polynomial $x^3 + ax^2 + bx + \\frac{4}{3}$. How many pairs of integers $a, b$ exist such that $r_1^3 + r_2^3 + r_3^3 = 0$",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$3$",
+    "accept": [
+      "3"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: link the cubes to Vieta",
+      "body": "We know nothing about the roots one by one, only their symmetric combinations from the coefficients. The identity $$x^3 + y^3 + z^3 - 3xyz = (x+y+z)(x^2+y^2+z^2-xy-yz-zx)$$ connects a sum of cubes to the sum, the pairwise products and the product, which Vieta's formulas give us.",
+      "your_turn": {
+        "prompt": "By Vieta's formulas, what are $r_1+r_2+r_3$, $r_1r_2+r_1r_3+r_2r_3$ and $r_1r_2r_3$?",
+        "answer": "$-a$, $b$ and $-\\frac{4}{3}$."
+      }
+    },
+    {
+      "title": "Use the identity",
+      "body": "Put $x, y, z = r_1, r_2, r_3$. The sum of cubes is $0$, so the left side is $0 - 3\\cdot\\left(-\\frac{4}{3}\\right) = 4$. The first factor on the right is $-a$. For the second factor we need the sum of the squares.",
+      "your_turn": {
+        "prompt": "Write $r_1^2 + r_2^2 + r_3^2$ in terms of $a$ and $b$. (Hint: square $r_1 + r_2 + r_3$.)",
+        "answer": "$(r_1+r_2+r_3)^2 - 2(r_1r_2+r_1r_3+r_2r_3) = a^2 - 2b$."
+      }
+    },
+    {
+      "title": "Get an equation in integers",
+      "body": "The second factor is the sum of squares minus the pairwise products: $(a^2 - 2b) - b = a^2 - 3b$. Careful: do not forget to subtract $b$ this last time. So $$4 = -a(a^2 - 3b).$$ Since $a$ and $a^2 - 3b$ are integers, $a$ divides $4$, so $a$ is one of $\\pm 1, \\pm 2, \\pm 4$.",
+      "your_turn": {
+        "prompt": "Test $a = 1$ and $a = 2$. Which one gives an integer $b$?",
+        "answer": "$a = 1$: $1 - 3b = -4$, so $b = \\frac{5}{3}$, not an integer. $a = 2$: $4 - 3b = -2$, so $b = 2$, which works."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The other four values: $a = -1$ gives $1 - 3b = 4$, $b = -1$ (works); $a = -2$ gives $4 - 3b = 2$, $b = \\frac{2}{3}$ (fails); $a = 4$ gives $16 - 3b = -1$, $b = \\frac{17}{3}$ (fails); $a = -4$ gives $16 - 3b = 1$, $b = 5$ (works). Each step above can be reversed, so these pairs really do make the sum of cubes $0$. The pairs are $(2, 2)$, $(-1, -1)$ and $(-4, 5)$, so there are $3$. The answer is **$3$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "3",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

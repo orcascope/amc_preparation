@@ -1,0 +1,60 @@
+{
+  "id": "ACE_3_3_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.3.9",
+    "kind": "problem",
+    "section": "Polynomials",
+    "original_source": "2017 AMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Common roots and factoring polynomials",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_3_3_09.png",
+    "text": "For certain real numbers $a$, $b$, and $c$, the polynomial $$g(x) = x^3 + ax^2 + x + 10$$ has three distinct roots, and each root of $g(x)$ is also a root of the polynomial $$f(x) = x^4 + x^3 + bx^2 + 100x + c.$$ What is $f(1)$?",
+    "choices": { "A": "$-9009$", "B": "$-8008$", "C": "$-7007$", "D": "$-6006$", "E": "$-5005$" }
+  },
+  "answer": { "choice": "C", "value": "$-7007$" },
+  "steps": [
+    {
+      "title": "Where to start: $g(x)$ divides $f(x)$",
+      "body": "Each of the three distinct roots of $g$ is a root of $f$, so $f$ has a factor $(x - \\text{root})$ for each of them, and their product is exactly $g(x)$. Since $f$ has degree $4$ and $g$ has degree $3$, one more linear factor is left. Call the fourth root of $f$ by the letter $r$, so $f(x) = g(x)\\,(x - r)$.",
+      "your_turn": {
+        "prompt": "Why is the extra factor $(x - r)$ and not, say, $2(x - r)$?",
+        "answer": "Both $f$ and $g$ have leading coefficient $1$, so the leftover factor must also have leading coefficient $1$."
+      }
+    },
+    {
+      "title": "Expand the product",
+      "body": "Multiply out $(x^3 + ax^2 + x + 10)(x - r)$ and collect powers of $x$:\n$$x^4 + (a - r)x^3 + (1 - ar)x^2 + (10 - r)x - 10r$$\nThis must equal $x^4 + x^3 + bx^2 + 100x + c$ term by term.",
+      "your_turn": {
+        "prompt": "Match the $x$ terms. Which equation do you get, and what is $r$?",
+        "answer": "$10 - r = 100$, so $r = -90$."
+      }
+    },
+    {
+      "title": "Find the other letters",
+      "body": "Now match the rest: the $x^3$ terms give $a - r = 1$, the constants give $c = -10r$, and the $x^2$ terms give $b = 1 - ar$.",
+      "your_turn": {
+        "prompt": "Using $r = -90$, find $a$ and $c$.",
+        "answer": "$a = 1 + r = -89$ and $c = -10(-90) = 900$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Then $b = 1 - (-89)(-90) = 1 - 8010 = -8009$, so $f(1) = 1 + 1 + b + 100 + c = 102 - 8009 + 900 = -7007$. As a check, $f(1) = g(1)(1 - r) = (12 + a)(91) = (-77)(91) = -7007$. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_8_04",
+  "number": "3.8.4",
+  "kind": "problem",
+  "section": "Functional Equations",
+  "original_source": "2020 BMT",
+  "topic": "algebra",
+  "subtopic": "Functional equations and repeated squaring",
+  "text": "Let $f: \\mathbb{R}^+ \\to \\mathbb{R}^+$ be a function such that for all $x, y \\in \\mathbb{R}^+$, $f(x)f(y) = f(xy) + f\\left(\\frac{x}{y}\\right)$, where $\\mathbb{R}^+$ represents the positive real numbers. Given that $f(2) = 3$, compute the last two digits of $f\\left(2^{2^{2020}}\\right)$.",
+  "choices": null,
+  "book_answer": "47",
+  "book_pages": [82, 83]
+}

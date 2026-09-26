@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_5_07",
+  "number": "3.5.7",
+  "kind": "problem",
+  "section": "Factoring Equations",
+  "original_source": "2016 MMATH",
+  "topic": "algebra",
+  "subtopic": "Product of consecutive integers plus one",
+  "text": "Express $\\sqrt{25 + 21 \\cdot 22 \\cdot 23 \\cdot 24 \\cdot 25}$ as an integer.",
+  "choices": null,
+  "book_answer": "2525",
+  "book_pages": [71]
+}

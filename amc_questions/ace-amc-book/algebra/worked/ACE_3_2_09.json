@@ -1,0 +1,73 @@
+{
+  "id": "ACE_3_2_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.2.9",
+    "kind": "problem",
+    "section": "Sequences And Series",
+    "original_source": "2002 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Infinite geometric series",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_2_09.png",
+    "text": "Two distinct, real, infinite geometric series each have a sum of $1$ and have the same second term. The third term of one of the series is $\\frac{1}{8}$, and the second term of both series can be written in the form $\\frac{\\sqrt{m}-n}{p}$, where $m$, $n$, and $p$ are positive integers and $m$ is not divisible by the square of any prime. Find $100m+10n+p$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$518$",
+    "accept": [
+      "518"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: name the shared second term",
+      "body": "The question asks about the second term, and it is the one thing both series share, so call it $x$. For the series whose third term is $\\frac{1}{8}$, knowing two neighbouring terms ($x$ and $\\frac{1}{8}$) pins down its ratio and first term in terms of $x$. Then its sum being $1$ gives one equation in $x$.",
+      "your_turn": {
+        "prompt": "For that series, write the common ratio and the first term in terms of $x$.",
+        "answer": "Ratio $= \\frac{1/8}{x} = \\frac{1}{8x}$. First term $= x \\div \\frac{1}{8x} = 8x^2$."
+      }
+    },
+    {
+      "title": "Use the sum formula",
+      "body": "An infinite geometric series with first term $A$ and ratio $r$ (where $|r| < 1$) has sum $\\frac{A}{1-r}$. So\n$$\\frac{8x^2}{1 - \\frac{1}{8x}} = 1$$",
+      "your_turn": {
+        "prompt": "Clear the fractions: multiply both sides by $1 - \\frac{1}{8x}$, then multiply both sides by $8x$. What cubic equation do you get?",
+        "answer": "$8x^2 = 1 - \\frac{1}{8x}$, then $64x^3 = 8x - 1$, so $64x^3 - 8x + 1 = 0$."
+      }
+    },
+    {
+      "title": "Factor the cubic",
+      "body": "Try easy values: $x = \\frac{1}{4}$ gives $1 - 2 + 1 = 0$, so $4x - 1$ is a factor. Dividing it out:\n$$64x^3 - 8x + 1 = (4x - 1)(16x^2 + 4x - 1)$$",
+      "your_turn": {
+        "prompt": "Expand $(4x - 1)(16x^2 + 4x - 1)$ to check the factorization.",
+        "answer": "$64x^3 + 16x^2 - 4x - 16x^2 - 4x + 1 = 64x^3 - 8x + 1$. It matches."
+      }
+    },
+    {
+      "title": "Throw out the roots that cannot work",
+      "body": "Careful: $x = \\frac{1}{4}$ solves the equation but fails the problem. It gives ratio $\\frac{1}{2}$ and first term $\\frac{1}{2}$, and it cannot be written as $\\frac{\\sqrt{m}-n}{p}$ (a rational value needs $m = 1$, and then $1 - n \\le 0$). So the second term must be a root of the quadratic factor $16x^2 + 4x - 1$.",
+      "your_turn": {
+        "prompt": "Another way to rule out $x = \\frac{1}{4}$: a series with sum $1$ and ratio $r$ has first term $1 - r$. If its second term $(1-r)r$ equals $\\frac{1}{4}$, what can $r$ be?",
+        "answer": "$r - r^2 = \\frac{1}{4}$ gives $(2r - 1)^2 = 0$, so only $r = \\frac{1}{2}$. There would be just one such series, not two distinct ones."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The quadratic formula gives $x = \\frac{-4 \\pm \\sqrt{16+64}}{32} = \\frac{-1 \\pm \\sqrt{5}}{8}$. The minus root has a $-\\sqrt{5}$ part, but $\\frac{\\sqrt{m}-n}{p}$ always has a plus sign on its square root, so $x = \\frac{\\sqrt{5} - 1}{8}$. Its ratio $\\frac{1}{8x} = \\frac{\\sqrt{5}+1}{4} \\approx 0.81$ is less than $1$, so the series converges, and a second series with this second term and sum $1$ has ratio $\\frac{3 - \\sqrt{5}}{4}$. Then $m = 5$, $n = 1$, $p = 8$, and $100m + 10n + p = 518$. The answer is **$518$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "518",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "ACE_2_10_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.5",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2018 AMC 10"
+  },
+  "topic": "number_theory",
+  "subtopic": "Units digits of powers",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_10_05.png",
+    "text": "A number $m$ is randomly selected from the set $\\{11, 13, 15, 17, 19\\}$, and a number $n$ is randomly selected from $\\{1999, 2000, 2001, \\ldots, 2018\\}$. What is the probability that $m^n$ has a units digit of $1$?",
+    "choices": { "A": "$\\frac{1}{5}$", "B": "$\\frac{1}{4}$", "C": "$\\frac{3}{10}$", "D": "$\\frac{7}{20}$", "E": "$\\frac{2}{5}$" }
+  },
+  "answer": { "choice": "E", "value": "$\\frac{2}{5}$" },
+  "steps": [
+    {
+      "title": "Where to start: only the units digit of $m$ matters",
+      "body": "The question asks only about the units digit of $m^n$, and the units digit of a product depends only on the units digits of the factors. So we can replace $m$ by its units digit: $1, 3, 5, 7$ or $9$. Then count the pairs $(m, n)$ that work, out of all equally likely pairs.",
+      "your_turn": {
+        "prompt": "How many values can $n$ take, and how many pairs $(m, n)$ are there in total?",
+        "answer": "$2018 - 1999 + 1 = 20$ values of $n$, so $5\\cdot 20 = 100$ pairs."
+      }
+    },
+    {
+      "title": "The easy digits: 1 and 5",
+      "body": "A number ending in $1$ always gives a power ending in $1$, so $m = 11$ works for all $20$ values of $n$. A number ending in $5$ always gives a power ending in $5$.",
+      "your_turn": {
+        "prompt": "How many values of $n$ work for $m = 15$?",
+        "answer": "None: $15^n$ always ends in $5$."
+      }
+    },
+    {
+      "title": "Digits 3 and 7 repeat every 4",
+      "body": "The units digits of $3^1, 3^2, 3^3, 3^4, \\ldots$ are $3, 9, 7, 1$ and then repeat. For $7$ they are $7, 9, 3, 1$ and repeat. So $13^n$ and $17^n$ end in $1$ exactly when $n$ is a multiple of $4$.",
+      "your_turn": {
+        "prompt": "How many multiples of $4$ are in $\\{1999, \\ldots, 2018\\}$?",
+        "answer": "Five: $2000, 2004, 2008, 2012, 2016$. So $m = 13$ and $m = 17$ each give $5$ good values of $n$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Careful with $9$: its powers end in $9, 1, 9, 1, \\ldots$, a cycle of length $2$, not $4$. So $19^n$ ends in $1$ for every even $n$, and there are $10$ even numbers from $2000$ to $2018$. The total is $20 + 5 + 0 + 5 + 10 = 40$ good pairs out of $100$, so the probability is $\\frac{40}{100} = \\frac{2}{5}$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "This comes from treating $9$ like $3$ and $7$ and counting only the $5$ multiples of $4$. But $9^2 = 81$ already ends in $1$, so every even exponent works, giving $10$ values and $40$ good pairs instead of $35$."
+  },
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

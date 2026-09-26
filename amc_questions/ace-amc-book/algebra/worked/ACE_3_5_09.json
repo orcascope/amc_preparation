@@ -1,0 +1,73 @@
+{
+  "id": "ACE_3_5_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.5.9",
+    "kind": "problem",
+    "section": "Factoring Equations",
+    "original_source": "2020 BMT"
+  },
+  "topic": "algebra",
+  "subtopic": "Sum of cubes when the sum is zero",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_5_09.png",
+    "text": "Let $a, b, c$ be real numbers such that $$a + b + c = \\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}$$ and $abc = 5$. The value of $\\left(a - \\frac{1}{b}\\right)^3 + \\left(b - \\frac{1}{c}\\right)^3 + \\left(c - \\frac{1}{a}\\right)^3$ can be written in the form $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$77$",
+    "accept": [
+      "77"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: name the three cubed terms",
+      "body": "We need a sum of three cubes, so give the bases short names: $x = a - \\frac{1}{b}$, $y = b - \\frac{1}{c}$, $z = c - \\frac{1}{a}$. The first condition compares $a + b + c$ with $\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}$, and those are exactly the pieces that make up $x + y + z$. That is the clue that $x + y + z$ is worth computing.",
+      "your_turn": {
+        "prompt": "What is $x + y + z$?",
+        "answer": "$(a + b + c) - \\left(\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}\\right) = 0$, by the first condition."
+      }
+    },
+    {
+      "title": "Use the sum-of-cubes identity",
+      "body": "There is a factoring identity for three cubes: $$x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx).$$ Since $x + y + z = 0$, the right side is $0$, so $x^3 + y^3 + z^3 = 3xyz$. Now we only need the product $xyz$.",
+      "your_turn": {
+        "prompt": "Test the fact with $x = 1$, $y = 2$, $z = -3$ (these add to $0$). Compute $x^3 + y^3 + z^3$ and $3xyz$.",
+        "answer": "$1 + 8 - 27 = -18$ and $3\\cdot 1\\cdot 2\\cdot(-3) = -18$. They match."
+      }
+    },
+    {
+      "title": "Multiply out the product",
+      "body": "Now expand $xyz = \\left(a - \\frac{1}{b}\\right)\\left(b - \\frac{1}{c}\\right)\\left(c - \\frac{1}{a}\\right)$. The first two factors give $ab - \\frac{a}{c} - 1 + \\frac{1}{bc}$.",
+      "your_turn": {
+        "prompt": "Multiply $ab - \\frac{a}{c} - 1 + \\frac{1}{bc}$ by $c - \\frac{1}{a}$ and list the eight terms.",
+        "answer": "$abc - b - a + \\frac{1}{c} - c + \\frac{1}{a} + \\frac{1}{b} - \\frac{1}{abc}$."
+      }
+    },
+    {
+      "title": "Use the first condition again",
+      "body": "Group the eight terms: $$xyz = abc - \\frac{1}{abc} - (a + b + c) + \\left(\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}\\right).$$ The last two groups cancel by the first condition, so $xyz = abc - \\frac{1}{abc}$. Careful: the sum of cubes is $3xyz$, not $xyz$, so do not drop the $3$.",
+      "your_turn": {
+        "prompt": "Why are $a$, $b$, $c$ all nonzero, so that every fraction here makes sense?",
+        "answer": "Their product is $abc = 5$, which is not $0$, so none of them can be $0$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $abc = 5$, $xyz = 5 - \\frac{1}{5} = \\frac{24}{5}$, so the sum of cubes is $3\\cdot\\frac{24}{5} = \\frac{72}{5}$. Since $72$ and $5$ are relatively prime, $m = 72$, $n = 5$ and $m + n = 77$. The answer is $77$.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "77",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

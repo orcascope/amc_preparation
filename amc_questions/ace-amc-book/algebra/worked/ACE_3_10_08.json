@@ -1,0 +1,71 @@
+{
+  "id": "ACE_3_10_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.10.8",
+    "kind": "problem",
+    "section": "Floor Functions",
+    "original_source": "2022 BMT"
+  },
+  "topic": "algebra",
+  "subtopic": "Floor and fractional part",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_10_08.png",
+    "text": "Compute the sum of the real solutions to $\\lfloor x \\rfloor \\{x\\} = 2020x$. Here, $\\lfloor x \\rfloor$ is defined as the greatest integer less than or equal to $x$, and $\\{x\\} = x - \\lfloor x \\rfloor$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$-\\frac{1}{2021}$",
+    "accept": ["-1/2021"]
+  },
+  "steps": [
+    {
+      "title": "Where to start: write $x$ as floor plus fractional part",
+      "body": "The equation already uses $\\lfloor x \\rfloor$ and $\\{x\\}$, and $x$ itself equals their sum. So let $n = \\lfloor x \\rfloor$ (an integer) and $f = \\{x\\}$, with $0 \\le f < 1$, and put $x = n + f$ everywhere.",
+      "your_turn": {
+        "prompt": "What does the equation become in terms of $n$ and $f$?",
+        "answer": "$nf = 2020(n + f)$, that is, $nf = 2020n + 2020f$."
+      }
+    },
+    {
+      "title": "Factor with Simon's trick",
+      "body": "Move everything to one side: $nf - 2020n - 2020f = 0$. Simon's Favorite Factoring Trick means adding a constant so the left side becomes a product. Adding $2020^2$ to both sides gives\n$$(n - 2020)(f - 2020) = 2020^2.$$",
+      "your_turn": {
+        "prompt": "Expand $(n - 2020)(f - 2020)$ to check this.",
+        "answer": "$nf - 2020n - 2020f + 2020^2$, which matches the left side plus $2020^2$."
+      }
+    },
+    {
+      "title": "Trap the integer $n$",
+      "body": "Since $0 \\le f < 1$, the factor $f - 2020$ is between $-2020$ (included) and $-2019$ (not included). Dividing the positive number $2020^2$ by it, $n - 2020 = \\frac{2020^2}{f - 2020}$ is at most $-2020$ and greater than $-\\frac{2020^2}{2019}$. Since $2020^2 = 2019\\cdot 2021 + 1$, this means $-2021 - \\frac{1}{2019} < n - 2020 \\le -2020$, so $n = 0$ or $n = -1$ and no other integer.",
+      "your_turn": {
+        "prompt": "Why is $2020^2 = 2019\\cdot 2021 + 1$?",
+        "answer": "$2019\\cdot 2021 = (2020 - 1)(2020 + 1) = 2020^2 - 1$."
+      }
+    },
+    {
+      "title": "Solve each case",
+      "body": "If $n = 0$, the equation $nf = 2020n + 2020f$ becomes $0 = 2020f$, so $f = 0$ and $x = 0$. That is a real solution: $\\lfloor 0 \\rfloor \\{0\\} = 0 = 2020\\cdot 0$. The other case needs a little more work.",
+      "your_turn": {
+        "prompt": "Put $n = -1$ into $nf = 2020n + 2020f$. What equation in $f$ do you get?",
+        "answer": "$-f = -2020 + 2020f$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "From $-f = -2020 + 2020f$ we get $2021f = 2020$, so $f = \\frac{2020}{2021}$, which is between $0$ and $1$ as needed. Then $x = -1 + \\frac{2020}{2021} = -\\frac{1}{2021}$. Check: $(-1)\\cdot\\frac{2020}{2021} = 2020\\cdot\\left(-\\frac{1}{2021}\\right)$. The sum of the solutions is $0 + \\left(-\\frac{1}{2021}\\right)$, so the answer is **$-\\frac{1}{2021}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "-1/2021",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

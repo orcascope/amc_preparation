@@ -1,0 +1,67 @@
+{
+  "id": "ACE_3_3_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.3.10",
+    "kind": "problem",
+    "section": "Polynomials",
+    "original_source": "2013 PUMAC"
+  },
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas with a double root",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_3_10.png",
+    "text": "Suppose $a, b$ are nonzero integers such that two roots of $x^3 + ax^2 + bx + 9a$ coincide, and all three roots are integers. Find $|ab|$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$1344$", "accept": ["1344"] },
+  "steps": [
+    {
+      "title": "Where to start: name the roots and use Vieta",
+      "body": "\"Two roots coincide\" means there is a double root. Call the double root $r$ and the third root $s$, both integers. The coefficients are given in terms of $a$ and $b$, so Vieta's formulas (which link the roots of $x^3 + px^2 + qx + w$ to its coefficients: sum $= -p$, sum of pairwise products $= q$, product $= -w$) turn the problem into equations in $r$ and $s$.",
+      "your_turn": {
+        "prompt": "Write Vieta's three equations for the roots $r, r, s$.",
+        "answer": "$2r + s = -a$, $r^2 + 2rs = b$, and $r^2 s = -9a$."
+      }
+    },
+    {
+      "title": "Eliminate $a$",
+      "body": "Both the first and the third equation have $a$ on the right. Multiply the first equation, $2r + s = -a$, by $9$ to get $18r + 9s = -9a$, and set it equal to the third:\n$$r^2 s - 18r - 9s = 0$$",
+      "your_turn": {
+        "prompt": "Show that $s$ cannot be $0$.",
+        "answer": "If $s = 0$, the equation gives $-18r = 0$, so $r = 0$, and then $a = -(2r + s) = 0$. But $a$ is nonzero."
+      }
+    },
+    {
+      "title": "Force a perfect square",
+      "body": "Since $s \\neq 0$, read the equation as a quadratic in $r$: $s r^2 - 18r - 9s = 0$. Its discriminant is $18^2 + 36s^2 = 36(s^2 + 9)$. For the root $r$ to be an integer, this must be a perfect square, so $s^2 + 9 = k^2$ for some integer $k \\ge 0$, which means $(k - s)(k + s) = 9$.",
+      "your_turn": {
+        "prompt": "Try the factor pairs of $9$. Which values of $s$ are possible?",
+        "answer": "The pair $1\\cdot 9$ (in either order) gives $k = 5$, $s = \\pm 4$; the pair $3\\cdot 3$ gives $s = 0$, which is ruled out. Negative pairs give negative $k$. So $s = 4$ or $s = -4$."
+      }
+    },
+    {
+      "title": "Find $r$ for each $s$",
+      "body": "For $s = 4$ the equation is $4r^2 - 18r - 36 = 0$, or $2r^2 - 9r - 18 = 0$, with roots $r = 6$ and $r = -\\frac{3}{2}$. Only the integer one counts, so $(r, s) = (6, 4)$.",
+      "your_turn": {
+        "prompt": "Now solve for $r$ when $s = -4$.",
+        "answer": "$-4r^2 - 18r + 36 = 0$ becomes $2r^2 + 9r - 18 = 0$, with roots $r = -6$ and $r = \\frac{3}{2}$. The integer one is $r = -6$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "For $(r, s) = (6, 4)$: $a = -(12 + 4) = -16$ and $b = 36 + 48 = 84$; for $(-6, -4)$: $a = 16$ and $b = 84$. Either way $|ab| = 16\\cdot 84$, and a triple root ($s = r$) is impossible because then $r^3 = 27r$ would force $r = 0$ or $r^2 = 27$. The answer is **$1344$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1344",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

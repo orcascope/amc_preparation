@@ -1,0 +1,65 @@
+{
+  "id": "ACE_2_10_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.10",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2010 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Divisibility rules",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_10.png",
+    "text": "Let $N$ be the greatest integer multiple of $36$ all of whose digits are even and no two of whose digits are the same. Find the remainder when $N$ is divided by $1000$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$640$",
+    "accept": [
+      "640"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: only five digits are available",
+      "body": "The even digits are $0, 2, 4, 6, 8$, and no digit may repeat, so $N$ has at most five digits. That makes the search small. Also $36 = 4\\cdot 9$ with $4$ and $9$ sharing no factor, so $N$ must pass the divisibility tests for both $9$ and $4$.",
+      "your_turn": {
+        "prompt": "State the divisibility tests for $9$ and for $4$.",
+        "answer": "Divisible by $9$: the digit sum is a multiple of $9$. Divisible by $4$: the number formed by the last two digits is a multiple of $4$."
+      }
+    },
+    {
+      "title": "Can $N$ have five digits?",
+      "body": "A five-digit number with distinct even digits must use all of $0, 2, 4, 6, 8$, in some order. The order does not change the digit sum.",
+      "your_turn": {
+        "prompt": "What is $0 + 2 + 4 + 6 + 8$, and is it a multiple of $9$?",
+        "answer": "It is $20$, which is not a multiple of $9$. So no five-digit number works."
+      }
+    },
+    {
+      "title": "Drop one digit to fix the sum",
+      "body": "Any four-digit number is bigger than any number with three or fewer digits, so we look for four digits first. Dropping digit $d$ leaves sum $20 - d$, where $d$ is $0, 2, 4, 6$ or $8$. This sum is between $12$ and $20$, and the only multiple of $9$ in that range is $18$.",
+      "your_turn": {
+        "prompt": "Which digit must be dropped, and which four digits are left?",
+        "answer": "$20 - d = 18$ gives $d = 2$, leaving $0, 4, 6, 8$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The largest arrangement of $0, 4, 6, 8$ puts the digits in decreasing order: $8640$. Its last two digits, $40$, form a multiple of $4$, and its digit sum is $18$, so $8640 = 36\\cdot 240$. No larger arrangement exists, so $N = 8640$, and the remainder when divided by $1000$ is $640$. The answer is **$640$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "640",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

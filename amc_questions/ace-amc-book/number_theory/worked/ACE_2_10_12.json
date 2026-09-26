@@ -1,0 +1,65 @@
+{
+  "id": "ACE_2_10_12",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.12",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2018 SMT"
+  },
+  "topic": "number_theory",
+  "subtopic": "Sum of cubes factoring",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_12.png",
+    "text": "Positive integer $n$ has the property such that $n-64$ is a positive perfect cube. Suppose that $n$ is divisible by $37$. What is the smallest possible value of $n$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$407$",
+    "accept": [
+      "407"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: name the cube and spot the sum of cubes",
+      "body": "Let $x$ be the positive integer with $n - 64 = x^3$, so $n = x^3 + 64$. The clue is that $64 = 4^3$: then $n$ is a sum of two cubes, and a sum of cubes always factors. A factored form is exactly what we want when we need to know which prime divides $n$.",
+      "your_turn": {
+        "prompt": "Use $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$ to factor $x^3 + 64$.",
+        "answer": "$x^3 + 64 = (x+4)(x^2 - 4x + 16)$, taking $a = x$ and $b = 4$."
+      }
+    },
+    {
+      "title": "Use that $37$ is prime",
+      "body": "We need $37 \\mid (x+4)(x^2-4x+16)$. Because $37$ is prime, it must divide one of the two factors. Also, $n = x^3 + 64$ grows as $x$ grows, so the smallest $n$ comes from the smallest positive $x$ that works.",
+      "your_turn": {
+        "prompt": "What is the smallest positive $x$ for which $37$ divides $x + 4$, and what $n$ does it give?",
+        "answer": "$x = 33$ (so $x + 4 = 37$), giving $n = 33^3 + 64 = 35937 + 64 = 36001$. That works, but it is large, so look for a smaller $x$."
+      }
+    },
+    {
+      "title": "Search the other factor for a smaller $x$",
+      "body": "For every $x$ from $1$ to $32$, $x + 4$ is between $5$ and $36$, so $37$ does not divide it. For those $x$ we need $37 \\mid x^2 - 4x + 16$ instead. Write it as $(x-2)^2 + 12$: it is at least $12$, and for $x \\ge 2$ it gets bigger as $x$ grows, so we can test $x = 1, 2, 3, \\dots$ in order.",
+      "your_turn": {
+        "prompt": "Compute $x^2 - 4x + 16$ for $x = 1, 2, 3, 4, 5, 6$. Is any of them a multiple of $37$?",
+        "answer": "The values are $13, 12, 13, 16, 21, 28$. All are between $1$ and $36$, so none is a multiple of $37$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "At $x = 7$ we get $49 - 28 + 16 = 37$, a multiple of $37$, and no smaller positive $x$ works (by the last step and because $x+4 < 37$). So $n = 7^3 + 64 = 343 + 64 = 407$. Check: $407 = 37 \\cdot 11$ and $407 - 64 = 343 = 7^3$. It is far smaller than $36001$ from the other case. The answer is **$407$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "407",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

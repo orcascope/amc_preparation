@@ -1,0 +1,65 @@
+{
+  "id": "ACE_2_10_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.7",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2012 PUMAC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Chinese Remainder Theorem",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_07.png",
+    "text": "Albert has a very large bag of candies and he wants to share all of it with his friends. At first, he splits the candies evenly amongst his $20$ friends and himself and he finds that there are five left over. Ante arrives, and they redistribute the candies evenly again. This time, there are three left over. If the bag contains over $500$ candies, what is the fewest number of candies the bag can contain?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$509$",
+    "accept": [
+      "509"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: turn leftovers into remainders",
+      "body": "The words \"split evenly\" and \"left over\" are describing division with remainder. Let $n$ be the number of candies. Count the people carefully each time, and each sentence becomes a statement about the remainder of $n$.",
+      "your_turn": {
+        "prompt": "How many people share the candies the first time, and how many the second time? Write both conditions.",
+        "answer": "First $20 + 1 = 21$ (Albert counts too), then $22$ once Ante arrives. So $n \\equiv 5 \\pmod{21}$ and $n \\equiv 3 \\pmod{22}$."
+      }
+    },
+    {
+      "title": "Combine the two conditions",
+      "body": "This is a Chinese Remainder Theorem problem: two remainder conditions with moduli that share no factor. Write the first condition as $n = 21a + 5$ for some whole number $a$ and put it into the second. A handy fact: $21 = 22 - 1$, so $21a$ leaves the same remainder as $-a$ when divided by $22$.",
+      "your_turn": {
+        "prompt": "Use $21a + 5 \\equiv 3 \\pmod{22}$ to find the remainder of $a$ when divided by $22$.",
+        "answer": "$-a + 5 \\equiv 3$, so $a \\equiv 2 \\pmod{22}$."
+      }
+    },
+    {
+      "title": "Describe every possible $n$",
+      "body": "So $a = 22k + 2$ for a whole number $k$, and then\n$$n = 21(22k + 2) + 5 = 462k + 47.$$\nSo the possible bag sizes are $47$, then every $462$ more after that.",
+      "your_turn": {
+        "prompt": "Check that $n = 47$ really gives remainder $5$ with $21$ people and remainder $3$ with $22$ people.",
+        "answer": "$47 = 2\\cdot 21 + 5$ and $47 = 2\\cdot 22 + 3$. Both work."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The bag holds over $500$ candies. The list of possible sizes is $47, 509, 971, \\dots$, and $47$ is too small, so the first size over $500$ is $47 + 462 = 509$. The answer is **$509$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "509",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

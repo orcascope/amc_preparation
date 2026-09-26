@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_3_12",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.3.12",
+    "kind": "problem",
+    "section": "Polynomials",
+    "original_source": "2020 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas with shared roots",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_3_12.png",
+    "text": "Let $P(x) = x^2 - 3x - 7$, and let $Q(x)$ and $R(x)$ be two quadratic polynomials also with the coefficient of $x^2$ equal to $1$. David computes each of the three sums $P + Q$, $P + R$, and $Q + R$ and is surprised to find that each pair of these sums has a common root, and these three common roots are distinct. If $Q(0) = 2$, then $R(0) = \\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$71$",
+    "accept": [
+      "71"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: give the common roots names",
+      "body": "The problem is all about shared roots, so name everything: $Q(0) = 2$ means the constant term of $Q$ is $2$, so write $Q(x) = x^2 + ax + 2$ and $R(x) = x^2 + bx + c$; we want $c = R(0)$. Now let $r$ be the common root of $P+Q$ and $P+R$, $s$ the common root of $P+Q$ and $Q+R$, and $t$ the common root of $P+R$ and $Q+R$. Since $r, s, t$ are distinct and a quadratic has at most two roots, $P+Q$ has roots exactly $r, s$; $P+R$ has roots $r, t$; and $Q+R$ has roots $s, t$.",
+      "your_turn": {
+        "prompt": "Write out the three sums $P+Q$, $P+R$ and $Q+R$.",
+        "answer": "$P+Q = 2x^2 + (a-3)x - 5$, $P+R = 2x^2 + (b-3)x + (c-7)$, $Q+R = 2x^2 + (a+b)x + (c+2)$."
+      }
+    },
+    {
+      "title": "Use Vieta on each quadratic",
+      "body": "Vieta's formulas say that for $2x^2 + px + q$ the roots add to $-\\frac{p}{2}$ and multiply to $\\frac{q}{2}$. That gives six equations: $$r+s = \\tfrac{3-a}{2},\\ rs = -\\tfrac{5}{2},\\ r+t = \\tfrac{3-b}{2},\\ rt = \\tfrac{c-7}{2},\\ s+t = -\\tfrac{a+b}{2},\\ st = \\tfrac{c+2}{2}.$$ Careful: the product for $P+R$ is $\\frac{c-7}{2}$, not $-\\frac{7}{2}$; the constant of $R$ is still in it.",
+      "your_turn": {
+        "prompt": "Compute $(r+s) - (r+t) + (s+t)$ using the three sum equations. What does it tell you about $s$, and then about $r$?",
+        "answer": "The left side is $2s$, the right side is $\\frac{(3-a) - (3-b) - (a+b)}{2} = -a$, so $s = -\\frac{a}{2}$. Then $r = \\frac{3-a}{2} - s = \\frac{3}{2}$."
+      }
+    },
+    {
+      "title": "Find $s$ and then $t$",
+      "body": "Now $rs = -\\frac{5}{2}$ with $r = \\frac{3}{2}$ gives $s = -\\frac{5}{3}$. To find $t$ without knowing $c$, subtract the two product equations that contain $c$: $$st - rt = \\frac{c+2}{2} - \\frac{c-7}{2} = \\frac{9}{2}.$$",
+      "your_turn": {
+        "prompt": "Use $t(s - r) = \\frac{9}{2}$ to find $t$.",
+        "answer": "$s - r = -\\frac{5}{3} - \\frac{3}{2} = -\\frac{19}{6}$, so $t = \\frac{9}{2} \\cdot \\left(-\\frac{6}{19}\\right) = -\\frac{27}{19}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "From $st = \\frac{c+2}{2}$ we get $c = 2st - 2 = 2\\cdot\\left(-\\frac{5}{3}\\right)\\left(-\\frac{27}{19}\\right) - 2 = \\frac{90}{19} - \\frac{38}{19} = \\frac{52}{19}$. The three roots $\\frac{3}{2}$, $-\\frac{5}{3}$, $-\\frac{27}{19}$ are distinct, as required. Since $52$ and $19$ share no factor, $m + n = 52 + 19 = 71$. The answer is **$71$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "71",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

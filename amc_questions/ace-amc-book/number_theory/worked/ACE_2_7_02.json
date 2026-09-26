@@ -1,0 +1,59 @@
+{
+  "id": "ACE_2_7_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.7.2",
+    "kind": "problem",
+    "section": "Modular Arithmetic Introduction",
+    "original_source": "2010 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Modular arithmetic",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_7_02.png",
+    "text": "Find the remainder when $9 \\times 99 \\times 999 \\times \\cdots \\times \\underbrace{99\\cdots9}_{\\text{999 9's}}$ is divided by $1000$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$109$", "accept": ["109"] },
+  "steps": [
+    {
+      "title": "Where to start: every factor is one less than a power of $10$",
+      "body": "The product is enormous, but a remainder when dividing by $1000$ only depends on the remainder of each factor. The clue is that every factor is a string of $9$s, which is one less than a power of $10$. Once there are at least three $9$s, that power of $10$ is a multiple of $1000$.",
+      "your_turn": {
+        "prompt": "What remainder does $9999 = 10000 - 1$ leave when divided by $1000$? What negative number acts the same way?",
+        "answer": "It leaves $999$, which acts like $-1$, because $10000$ is a multiple of $1000$."
+      }
+    },
+    {
+      "title": "Count the factors that act like $-1$",
+      "body": "In the same way, $999$ and every longer string of $9$s act like $-1$ modulo $1000$. Only the first two factors, $9$ and $99$, are smaller than $1000$, so we leave those two as they are. The factors have $1, 2, 3, \\dots, 999$ nines, one factor for each length.",
+      "your_turn": {
+        "prompt": "How many of the factors have at least three $9$s?",
+        "answer": "All but the first two, so $999 - 2 = 997$ factors."
+      }
+    },
+    {
+      "title": "Find the sign",
+      "body": "So the product leaves the same remainder as $$9 \\cdot 99 \\cdot (-1)^{997}.$$ A product of $-1$s is $+1$ when there is an even number of them and $-1$ when there is an odd number.",
+      "your_turn": {
+        "prompt": "Is $(-1)^{997}$ equal to $1$ or to $-1$?",
+        "answer": "$-1$, because $997$ is odd."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The product acts like $-9 \\cdot 99 = -891$. Careful: a remainder cannot be negative, so add $1000$ to get $-891 + 1000 = 109$. The answer is **$109$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "109",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

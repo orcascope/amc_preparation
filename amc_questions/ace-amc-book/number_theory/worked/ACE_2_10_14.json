@@ -1,0 +1,65 @@
+{
+  "id": "ACE_2_10_14",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.14",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2018 HMMT"
+  },
+  "topic": "number_theory",
+  "subtopic": "Perfect cubes",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_14.png",
+    "text": "What is the smallest positive integer $n$ such that $2016n$ is a perfect cube?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$294$",
+    "accept": [
+      "294"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: a cube has exponents divisible by $3$",
+      "body": "A positive integer is a perfect cube exactly when every prime in its factorization has an exponent that is a multiple of $3$. The question is about making $2016n$ a cube, so first factor $2016$ and look at its exponents.",
+      "your_turn": {
+        "prompt": "Find the prime factorization of $2016$.",
+        "answer": "$2016 = 2^5 \\cdot 3^2 \\cdot 7$ (divide by $2$ five times to get $63 = 3^2 \\cdot 7$)."
+      }
+    },
+    {
+      "title": "Add as little as possible to each exponent",
+      "body": "Multiplying by $n$ can only raise exponents. To keep $n$ small, $n$ should contain no primes other than $2$, $3$, $7$, and each exponent should be raised only up to the next multiple of $3$. For the prime $2$, the exponent $5$ goes up to $6$, so $n$ needs exactly one factor of $2$.",
+      "your_turn": {
+        "prompt": "How many factors of $3$ must $n$ supply, and why?",
+        "answer": "One: the exponent of $3$ in $2016$ is $2$, and the next multiple of $3$ is $3$."
+      }
+    },
+    {
+      "title": "Now the prime $7$",
+      "body": "The exponent of $7$ in $2016$ is $1$, so it has to reach $3$, and $n$ must supply $7^2$. Careful: multiplying by just one $7$ is a common slip. It makes the exponent $2$, which is not a multiple of $3$.",
+      "your_turn": {
+        "prompt": "With $n$ supplying $2^1$, $3^1$ and $7^2$, what are the exponents of $2$, $3$ and $7$ in $2016n$?",
+        "answer": "$6$, $3$ and $3$, all multiples of $3$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $n = 2 \\cdot 3 \\cdot 7^2 = 294$. Check: $2016 \\cdot 294 = 2^6 \\cdot 3^3 \\cdot 7^3 = (2^2 \\cdot 3 \\cdot 7)^3 = 84^3$. The answer is **$294$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "294",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

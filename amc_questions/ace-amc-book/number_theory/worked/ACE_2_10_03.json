@@ -1,0 +1,67 @@
+{
+  "id": "ACE_2_10_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.3",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2021 PUMAC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Smallest divisors",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_03.png",
+    "text": "The smallest three positive proper divisors of an integer $n$ are $d_1 < d_2 < d_3$ so that $d_1 + d_2 + d_3 = 57$. Find the sum of the possible values of $d_2$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$42$", "accept": ["42"] },
+  "steps": [
+    {
+      "title": "Where to start: the smallest divisor is always 1",
+      "body": "The problem is about the smallest divisors of $n$, and the very smallest positive divisor of any integer is $1$. A proper divisor is any divisor other than $n$ itself, so $1$ counts, and $d_1 = 1$.",
+      "your_turn": {
+        "prompt": "What does $d_2 + d_3$ equal?",
+        "answer": "$d_2 + d_3 = 57 - 1 = 56$."
+      }
+    },
+    {
+      "title": "What can $d_2$ and $d_3$ be?",
+      "body": "Any divisor of $d_2$ also divides $n$, so if $d_2$ had a factor strictly between $1$ and $d_2$, that factor would be a smaller divisor of $n$. So $d_2$ is prime: call it $p$, the smallest prime factor of $n$. In the same way, the only divisors of $d_3$ between $1$ and $d_3$ can be $p$. So $d_3$ is either another prime $q > p$, or $d_3 = p^2$.",
+      "your_turn": {
+        "prompt": "Can $p = 2$? Check what $d_3$ would have to be.",
+        "answer": "No. Then $d_3 = 54$, which is neither prime nor $2^2 = 4$ (and $3$ would divide $n$ and be smaller than $54$)."
+      }
+    },
+    {
+      "title": "Case 1: $d_3$ is a prime $q$",
+      "body": "We need primes $p < q$ with $p + q = 56$. Try each odd prime $p$ below $28$ and check whether $56 - p$ is prime. Every pair that works really occurs with $n = pq$: for example $n = 3\\cdot 53 = 159$ has proper divisors $1, 3, 53$.",
+      "your_turn": {
+        "prompt": "Which of $p = 3, 5, 7, 11, 13, 17, 19, 23$ make $56 - p$ prime?",
+        "answer": "$p = 3, 13, 19$ (giving $53, 43, 37$). The others give $51, 49, 45, 39, 33$, which are not prime."
+      }
+    },
+    {
+      "title": "Case 2: $d_3 = p^2$",
+      "body": "Now $p + p^2 = 56$, that is $p(p+1) = 56 = 7\\cdot 8$. Since $p(p+1)$ grows as $p$ grows, $p = 7$ is the only solution. This happens for $n = 7^3 = 343$, whose proper divisors are $1, 7, 49$.",
+      "your_turn": {
+        "prompt": "Check that $p = 7$ works: what is $1 + 7 + 49$?",
+        "answer": "$57$, as required."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Both cases together give the possible values $d_2 = 3, 13, 19$ (Case 1) and $d_2 = 7$ (Case 2), and there are no others. Careful: do not forget the $p^2$ case. The sum is $3 + 13 + 19 + 7 = 42$. The answer is **$42$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "42",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

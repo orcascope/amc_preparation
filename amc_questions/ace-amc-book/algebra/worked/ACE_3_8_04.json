@@ -1,0 +1,59 @@
+{
+  "id": "ACE_3_8_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.8.4",
+    "kind": "problem",
+    "section": "Functional Equations",
+    "original_source": "2020 BMT"
+  },
+  "topic": "algebra",
+  "subtopic": "Functional equations and repeated squaring",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_8_04.png",
+    "text": "Let $f: \\mathbb{R}^+ \\to \\mathbb{R}^+$ be a function such that for all $x, y \\in \\mathbb{R}^+$, $f(x)f(y) = f(xy) + f\\left(\\frac{x}{y}\\right)$, where $\\mathbb{R}^+$ represents the positive real numbers. Given that $f(2) = 3$, compute the last two digits of $f\\left(2^{2^{2020}}\\right)$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$47$", "accept": ["47"] },
+  "steps": [
+    {
+      "title": "Where to start: find $f(1)$ with $y = 1$",
+      "body": "We only know $f(2)$, so we need more values. Putting $y = 1$ is a good first move: then $xy$ and $\\frac{x}{y}$ are both just $x$, so the equation only involves $f(x)$ and $f(1)$. Use $x = 2$, since that is the value we know.",
+      "your_turn": {
+        "prompt": "Put $x = 2$, $y = 1$ and solve for $f(1)$.",
+        "answer": "$f(2)f(1) = f(2) + f(2)$, so $3f(1) = 6$ and $f(1) = 2$."
+      }
+    },
+    {
+      "title": "Set $x = y$ to get a squaring rule",
+      "body": "The input $2^{2^{2020}}$ is $2$ squared over and over, so we want a rule for $f$ of a square. Putting $x = y = t$ makes $xy = t^2$ and $\\frac{x}{y} = 1$, which gives $f(t)^2 = f(t^2) + f(1)$, that is,\n$$f(t^2) = f(t)^2 - 2$$",
+      "your_turn": {
+        "prompt": "Why does squaring $2^{2^n}$ give $2^{2^{n+1}}$?",
+        "answer": "$(2^{2^n})^2 = 2^{2 \\cdot 2^n} = 2^{2^{n+1}}$, because squaring doubles the exponent."
+      }
+    },
+    {
+      "title": "Compute the first few values",
+      "body": "Start from $f(2) = 3$ and apply the rule: $f(4) = 3^2 - 2 = 7$, $f(16) = 7^2 - 2 = 47$, and $f(256) = 47^2 - 2 = 2207$. The numbers grow very fast, but we only need their last two digits.",
+      "your_turn": {
+        "prompt": "Why are the last two digits of $f(t)$ enough to find the last two digits of $f(t^2) = f(t)^2 - 2$?",
+        "answer": "If a number is $100q + r$, its square is $100(100q^2 + 2qr) + r^2$, so the last two digits of the square depend only on $r$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Write $f(2^{2^n})$ for the $n$-th value. Working with last two digits: $n = 2$ gives $47$, $n = 3$ gives $2207$, ending in $07$, then $07^2 - 2 = 47$ for $n = 4$, then $47^2 - 2 = 2207$ ends in $07$ again. From $n = 2$ on, even $n$ always ends in $47$ and odd $n$ in $07$. Since $2020$ is even, the last two digits of $f(2^{2^{2020}})$ are **$47$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "47",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

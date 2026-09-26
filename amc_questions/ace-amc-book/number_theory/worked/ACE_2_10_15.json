@@ -1,0 +1,73 @@
+{
+  "id": "ACE_2_10_15",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.15",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2022 SMT"
+  },
+  "topic": "number_theory",
+  "subtopic": "Euler's theorem and CRT",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_15.png",
+    "text": "What are the last two digits of $2022^{2022^{2022}}$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$56$",
+    "accept": [
+      "56"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: split mod $100$ into mod $4$ and mod $25$",
+      "body": "The last two digits of a number are its remainder mod $100$. Since $100 = 4 \\cdot 25$ and $4$ and $25$ share no common factor, the Chinese Remainder Theorem says it is enough to find the remainder mod $4$ and mod $25$ separately. Mod $4$ is easy because $2022$ is even and the exponent is enormous.",
+      "your_turn": {
+        "prompt": "What is $2022^{2022^{2022}}$ mod $4$?",
+        "answer": "$0$. Since $2022 = 2 \\cdot 1011$, any power with exponent at least $2$ has a factor $2^2 = 4$."
+      }
+    },
+    {
+      "title": "Mod $25$: Euler's theorem lets us shrink the exponent",
+      "body": "Euler's theorem says that if $\\gcd(a, m) = 1$, then $a^{\\varphi(m)} \\equiv 1 \\pmod m$, where $\\varphi(m)$ counts the numbers from $1$ to $m$ that share no factor with $m$. Here $\\gcd(2022, 25) = 1$ and $\\varphi(25) = 20$, so $2022^{20} \\equiv 1 \\pmod{25}$. Let $E = 2022^{2022}$ be the exponent: we only need $E$ mod $20$.",
+      "your_turn": {
+        "prompt": "Why is $\\varphi(25) = 20$? And what is $2022$ mod $25$?",
+        "answer": "Of $1$ to $25$, only the $5$ multiples of $5$ share a factor with $25$, leaving $20$. And $2022 = 80 \\cdot 25 + 22$, so $2022 \\equiv 22 \\equiv -3 \\pmod{25}$."
+      }
+    },
+    {
+      "title": "Find the exponent $E$ mod $20$",
+      "body": "Split again: $20 = 4 \\cdot 5$. Mod $4$, $E = 2022^{2022} \\equiv 0$ for the same reason as before. Mod $5$, $2022 \\equiv 2$, and powers of $2$ mod $5$ repeat $2, 4, 3, 1$ with period $4$. Since $2022 \\equiv 2 \\pmod 4$, $E \\equiv 2^{2022} \\equiv 2^2 = 4 \\pmod 5$.",
+      "your_turn": {
+        "prompt": "Find the number from $0$ to $19$ that is $\\equiv 0 \\pmod 4$ and $\\equiv 4 \\pmod 5$.",
+        "answer": "$4$. So $E \\equiv 4 \\pmod{20}$."
+      }
+    },
+    {
+      "title": "Back to mod $25$",
+      "body": "Write $E = 20q + 4$ with $q$ a whole number. Then $2022^{E} = (2022^{20})^q \\cdot 2022^4 \\equiv 1^q \\cdot (-3)^4 = 81 \\equiv 6 \\pmod{25}$.",
+      "your_turn": {
+        "prompt": "List the numbers from $0$ to $99$ that leave remainder $6$ when divided by $25$.",
+        "answer": "$6$, $31$, $56$ and $81$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "We need the number from $0$ to $99$ that is $\\equiv 6 \\pmod{25}$ and $\\equiv 0 \\pmod 4$. Among $6, 31, 56, 81$, only $56 = 4 \\cdot 14$ is a multiple of $4$. So the last two digits are $56$. The answer is **$56$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "56",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

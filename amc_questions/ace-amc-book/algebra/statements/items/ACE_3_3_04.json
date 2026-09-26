@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_3_04",
+  "number": "3.3.4",
+  "kind": "problem",
+  "section": "Polynomials",
+  "original_source": "2005 AMC",
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas",
+  "text": "The quadratic equation $x^2 + mx + n$ has roots twice those of $x^2 + px + m$, and none of $m, n,$ and $p$ is zero. What is the value of $n/p$?",
+  "choices": { "A": "$1$", "B": "$2$", "C": "$4$", "D": "$8$", "E": "$16$" },
+  "book_answer": "D",
+  "book_pages": [58]
+}

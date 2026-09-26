@@ -1,0 +1,59 @@
+{
+  "id": "ACE_3_7_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.7.6",
+    "kind": "problem",
+    "section": "Inequalities",
+    "original_source": "CEMC"
+  },
+  "topic": "algebra",
+  "subtopic": "AM-GM inequality",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_7_06.png",
+    "text": "If $x^2 + 3xy + y^2 = 60$ where $x$ and $y$ are real, then determine the maximum possible value of $xy$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$12$", "accept": ["12"] },
+  "steps": [
+    {
+      "title": "Where to start: compare $x^2 + y^2$ with $xy$",
+      "body": "The equation is made of two pieces, $x^2 + y^2$ and $3xy$, and we want $xy$ as large as possible. So look for a fact linking $x^2 + y^2$ to $xy$. The AM-GM inequality for the two squares gives exactly that: for all real $x$ and $y$,\n$$x^2 + y^2 \\ge 2xy$$",
+      "your_turn": {
+        "prompt": "Why is $x^2 + y^2 - 2xy$ never negative, even when $x$ or $y$ is negative?",
+        "answer": "It equals $(x - y)^2$, and a square of a real number is never negative."
+      }
+    },
+    {
+      "title": "Rewrite the equation to isolate $xy$",
+      "body": "Move the squares to the other side: $3xy = 60 - (x^2 + y^2)$. Now $xy$ and $x^2 + y^2$ pull in opposite directions, so the question becomes how small $x^2 + y^2$ can be. The inequality from step 1 says it can never go below $2xy$.",
+      "your_turn": {
+        "prompt": "Why does making $x^2 + y^2$ smaller make $xy$ larger here?",
+        "answer": "Because $3xy = 60 - (x^2 + y^2)$: subtracting a smaller number from $60$ leaves more."
+      }
+    },
+    {
+      "title": "When is the bound reached?",
+      "body": "The inequality $x^2 + y^2 \\ge 2xy$ becomes an equality exactly when $(x - y)^2 = 0$, that is, when $x = y$. Careful: an upper bound is only the maximum if some real $x$ and $y$ that satisfy the original equation actually reach it, so we must check the case $x = y$.",
+      "your_turn": {
+        "prompt": "Why is it not enough to find an inequality of the form $xy \\le (\\text{number})$?",
+        "answer": "The bound might be too big to ever be reached; we also need a real pair $(x, y)$ satisfying the equation that gives exactly that value."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Replace $x^2 + y^2$ by the smaller quantity $2xy$: from $x^2 + y^2 = 60 - 3xy$ we get $60 - 3xy \\ge 2xy$, so $5xy \\le 60$ and $xy \\le 12$. With $x = y$ the equation becomes $5x^2 = 60$, so $x = y = \\sqrt{12}$ works and gives $xy = 12$. The maximum possible value of $xy$ is **$12$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "12",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

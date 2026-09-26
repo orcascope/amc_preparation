@@ -1,0 +1,72 @@
+{
+  "id": "ACE_3_10_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.10.5",
+    "kind": "problem",
+    "section": "Floor Functions",
+    "original_source": "1989 AHSME"
+  },
+  "topic": "algebra",
+  "subtopic": "Floor functions and probability",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_3_10_05.png",
+    "text": "Let $x$ be a real number selected uniformly at random between $100$ and $200$. If $\\lfloor \\sqrt{x} \\rfloor = 12$, find the probability that $\\lfloor \\sqrt{100x} \\rfloor = 120$. ($\\lfloor v \\rfloor$ means the greatest integer less than or equal to $v$.)",
+    "choices": {
+      "A": "$\\frac{2}{25}$",
+      "B": "$\\frac{241}{2500}$",
+      "C": "$\\frac{1}{10}$",
+      "D": "$\\frac{96}{625}$",
+      "E": "$1$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$\\frac{241}{2500}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: turn each floor condition into an interval",
+      "body": "Because $x$ is chosen uniformly, probabilities are ratios of lengths. So translate each floor statement into an interval for $x$. The key fact: $\\lfloor v \\rfloor = k$ means exactly $k \\le v < k + 1$.",
+      "your_turn": {
+        "prompt": "What interval of $x$ does $\\lfloor \\sqrt{x} \\rfloor = 12$ give, and how long is it?",
+        "answer": "$12 \\le \\sqrt{x} < 13$, so $144 \\le x < 169$, an interval of length $25$ (it lies inside $100$ to $200$)."
+      }
+    },
+    {
+      "title": "Translate the second condition",
+      "body": "In the same way, $\\lfloor \\sqrt{100x} \\rfloor = 120$ means $120 \\le \\sqrt{100x} < 121$. Squaring gives $14400 \\le 100x < 14641$, so $144 \\le x < 146.41$. Careful: $\\sqrt{100x} = 10\\sqrt{x}$, but $\\lfloor 10\\sqrt{x} \\rfloor$ is not the same as $10\\lfloor \\sqrt{x} \\rfloor$.",
+      "your_turn": {
+        "prompt": "Find an $x$ with $\\lfloor \\sqrt{x} \\rfloor = 12$ but $\\lfloor \\sqrt{100x} \\rfloor \\ne 120$.",
+        "answer": "For example $x = 150$: $\\sqrt{15000} \\approx 122.5$, so the floor is $122$."
+      }
+    },
+    {
+      "title": "Set up the conditional probability",
+      "body": "We are told that $\\lfloor \\sqrt{x} \\rfloor = 12$, so $x$ is uniform on $144 \\le x < 169$. The probability is the length of the part of that interval where the second condition also holds, divided by the length of the whole interval.",
+      "your_turn": {
+        "prompt": "Why do we divide by $25$ and not by $100$ (the length from $100$ to $200$)?",
+        "answer": "The condition $\\lfloor \\sqrt{x} \\rfloor = 12$ is given, so only $x$ in $[144, 169)$ are still possible."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The interval $144 \\le x < 146.41$ lies entirely inside $144 \\le x < 169$, and its length is $2.41$. So the probability is\n$$\\frac{2.41}{25} = \\frac{241}{2500}.$$\nThe answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "This comes from treating $\\sqrt{x}$ as uniform on $[12, 13)$ and asking for $\\sqrt{x} < 12.1$. But $x$ is the uniform quantity, not $\\sqrt{x}$, so you must compare lengths of $x$-intervals.",
+    "E": "This comes from assuming $\\lfloor \\sqrt{100x} \\rfloor = 10\\lfloor \\sqrt{x} \\rfloor$. That is false: at $x = 150$ the left side is $122$, not $120$."
+  },
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

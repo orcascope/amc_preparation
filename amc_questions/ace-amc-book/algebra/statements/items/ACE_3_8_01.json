@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_8_01",
+  "number": "3.8.1",
+  "kind": "example",
+  "section": "Functional Equations",
+  "original_source": "BMT 2019",
+  "topic": "algebra",
+  "subtopic": "Functional equations",
+  "text": "If $f(x + y) = f(xy)$ for all real numbers $x$ and $y$, and $f(2019) = 17$, what is the value of $f(17)$?",
+  "choices": null,
+  "book_answer": "17",
+  "book_pages": [81]
+}

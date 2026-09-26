@@ -1,0 +1,15 @@
+{
+  "id": "ACE_2_10_16",
+  "number": "2.10.16",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2011 CHMMC",
+  "topic": "number_theory",
+  "subtopic": "Digit equations",
+  "text": "Digits $H, M,$ and $C$ satisfy the following relations where $ABC$ denotes the number whose digits in base $10$ are $A, B,$ and $C$.\n$$\\overline{H} \\times \\overline{H} = \\overline{M} \\times \\overline{C} + 1$$\n$$\\overline{HH} \\times \\overline{H} = \\overline{MC} \\times \\overline{C} + 1$$\n$$\\overline{HHH} \\times \\overline{H} = \\overline{MCC} \\times \\overline{C} + 1$$\nFind $\\overline{HMC}$.",
+  "choices": null,
+  "book_answer": "435",
+  "book_pages": [
+    48
+  ]
+}

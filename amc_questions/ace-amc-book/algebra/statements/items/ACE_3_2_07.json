@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_2_07",
+  "number": "3.2.7",
+  "kind": "problem",
+  "section": "Sequences And Series",
+  "original_source": "2020 HMMT",
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas",
+  "text": "Let $P(x) = x^3 + x^2 - r^2x - 2020$ be a polynomial with roots $r, s, t$. What is $P(1)$?",
+  "choices": null,
+  "book_answer": "-4038",
+  "book_pages": [53, 54]
+}

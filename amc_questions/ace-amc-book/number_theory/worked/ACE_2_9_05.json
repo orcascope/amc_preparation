@@ -1,0 +1,67 @@
+{
+  "id": "ACE_2_9_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.9.5",
+    "kind": "problem",
+    "section": "Chinese Remainder Theorem",
+    "original_source": "2014 AIME"
+  },
+  "topic": "number_theory",
+  "subtopic": "Chinese Remainder Theorem",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_9_05.png",
+    "text": "The positive integers $N$ and $N^2$ both end in the same sequence of four digits $abcd$ when written in base $10$, where digit $a$ is not zero. Find the three-digit number $abc$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$937$", "accept": ["937"] },
+  "steps": [
+    {
+      "title": "Where to start: turn \"same last four digits\" into a congruence",
+      "body": "The last four digits of a number are its remainder mod $10000$. So the statement says $N^2 \\equiv N \\pmod{10000}$, which means $10000$ divides $N^2 - N = N(N-1)$. Since $10000 = 2^4\\cdot 5^4 = 16\\cdot 625$ and $16$ and $625$ share no factor, we can handle the $16$ and the $625$ separately.",
+      "your_turn": {
+        "prompt": "Why can $N$ and $N - 1$ never both be even, or both be multiples of $5$?",
+        "answer": "They are consecutive, so any common divisor divides $N - (N-1) = 1$."
+      }
+    },
+    {
+      "title": "Each prime power goes into one factor",
+      "body": "Because $N$ and $N-1$ share no factor of $2$, all of $16$ must divide one of them; likewise all of $625$ must divide one of them. That leaves four cases: $10000 \\mid N$; $10000 \\mid N - 1$; $16 \\mid N$ and $625 \\mid N-1$; or $625 \\mid N$ and $16 \\mid N-1$.",
+      "your_turn": {
+        "prompt": "What are the last four digits of $N$ in the first two cases, and why are those cases ruled out?",
+        "answer": "$0000$ and $0001$. In both the digit $a$ is $0$, but the problem says $a \\neq 0$."
+      }
+    },
+    {
+      "title": "Case: $625 \\mid N$ and $16 \\mid N - 1$",
+      "body": "Write $N = 625j$ for a whole number $j$. We need $625j \\equiv 1 \\pmod{16}$. Find the remainder of $625$ mod $16$ first; it makes this easy.",
+      "your_turn": {
+        "prompt": "Find $625 \\bmod 16$, then the last four digits of $N$ in this case. Does it work?",
+        "answer": "$625 = 39\\cdot 16 + 1$, so $j \\equiv 1 \\pmod{16}$ and $N \\equiv 625 \\pmod{10000}$. The last four digits are $0625$, so $a = 0$: this case fails."
+      }
+    },
+    {
+      "title": "Case: $16 \\mid N$ and $625 \\mid N - 1$",
+      "body": "This is the only case left. Write $N = 1 + 625j$. We need $1 + 625j$ to be a multiple of $16$, and again $625 \\equiv 1 \\pmod{16}$ helps.",
+      "your_turn": {
+        "prompt": "Reduce $1 + 625j$ mod $16$. What condition on $j$ do you get?",
+        "answer": "$1 + 625j \\equiv 1 + j \\pmod{16}$, so we need $j \\equiv 15 \\pmod{16}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $j = 15$, $N \\equiv 1 + 625\\cdot 15 = 9376 \\pmod{10000}$, so $abcd = 9376$ and $a = 9 \\neq 0$. Check: $9376^2 = 87909376$, which also ends in $9376$. So $abc = 937$. The answer is **$937$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "937",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

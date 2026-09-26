@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_7_08",
+  "number": "3.7.8",
+  "kind": "problem",
+  "section": "Inequalities",
+  "original_source": "SMT 2018 Tiebreakers",
+  "topic": "algebra",
+  "subtopic": "Factoring and AM-GM",
+  "text": "If $a, b, c$ are real numbers with $a - b = 4$, find the maximum value of $ac + bc - c^2 - ab$.",
+  "choices": null,
+  "book_answer": "4",
+  "book_pages": [80, 81]
+}

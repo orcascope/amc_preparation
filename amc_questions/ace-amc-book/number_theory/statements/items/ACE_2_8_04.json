@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_8_04",
+  "number": "2.8.4",
+  "kind": "problem",
+  "section": "Fermat's Little Theorem and Euler's Totient Function",
+  "original_source": "2010 PUMAC",
+  "topic": "number_theory",
+  "subtopic": "Euler's totient function",
+  "text": "Find the largest positive integer $n$ such that $n\\phi(n)$ is a perfect square. ($\\phi(n)$ is the number of integers $k$, $1 \\le k \\le n$ that are relatively prime to $n$)",
+  "choices": null,
+  "book_answer": "1",
+  "book_pages": [34]
+}

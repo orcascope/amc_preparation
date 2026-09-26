@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_6_05",
+  "number": "3.6.5",
+  "kind": "problem",
+  "section": "Systems of Equations",
+  "original_source": "2010 AIME",
+  "topic": "algebra",
+  "subtopic": "Systems with a common term",
+  "text": "Let $(a, b, c)$ be the real number solution of the system of equations $x^3 - xyz = 2$, $y^3 - xyz = 6$, $z^3 - xyz = 20$. The greatest possible value of $a^3 + b^3 + c^3$ can be written in the form $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+  "choices": null,
+  "book_answer": "158",
+  "book_pages": [76, 77]
+}

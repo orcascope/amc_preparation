@@ -1,0 +1,62 @@
+{
+  "id": "ACE_2_9_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.9.2",
+    "kind": "problem",
+    "section": "Chinese Remainder Theorem",
+    "original_source": "2017 AMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Chinese Remainder Theorem",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_9_02.png",
+    "text": "Let $N = 123456789101112\\dots4344$ be the $79$-digit number that is formed by writing the integers from $1$ to $44$ in order, one after the other. What is the remainder when $N$ is divided by $45$?",
+    "choices": { "A": "$1$", "B": "$4$", "C": "$9$", "D": "$18$", "E": "$44$" }
+  },
+  "answer": { "choice": "C", "value": "$9$" },
+  "steps": [
+    {
+      "title": "Where to start: split $45$ into $5$ and $9$",
+      "body": "Dividing a $79$-digit number by $45$ directly is hopeless. But $45 = 5\\cdot 9$, and $5$ and $9$ share no common factor, so by the Chinese Remainder Theorem the remainder mod $45$ is fixed once we know the remainders mod $5$ and mod $9$. Both of those have easy divisibility rules that only look at digits.",
+      "your_turn": {
+        "prompt": "Why would splitting $45$ as $3\\cdot 15$ not work the same way?",
+        "answer": "$3$ and $15$ share the factor $3$. The two moduli must be relatively prime."
+      }
+    },
+    {
+      "title": "The remainder mod $5$",
+      "body": "For division by $5$ only the units digit matters. The number $N$ ends with $\\dots 4344$, so its last digit is $4$, and $N \\equiv 4 \\pmod 5$.",
+      "your_turn": {
+        "prompt": "Why does only the last digit matter when dividing by $5$?",
+        "answer": "Everything except the units digit is a multiple of $10$, which is a multiple of $5$."
+      }
+    },
+    {
+      "title": "The remainder mod $9$",
+      "body": "Since $10 \\equiv 1 \\pmod 9$, every power of $10$ is $\\equiv 1 \\pmod 9$. So each block of $N$ counts as just its own value: $N = 1\\cdot 10^{78} + 2\\cdot 10^{77} + \\dots + 43\\cdot 10^{2} + 44$ gives\n$$N \\equiv 1 + 2 + 3 + \\dots + 44 \\pmod 9$$\nCareful: $1 + 2 + \\dots + 44$ is not the digit sum of $N$, but the two leave the same remainder mod $9$, and that is all we need.",
+      "your_turn": {
+        "prompt": "Compute $1 + 2 + \\dots + 44$ and its remainder when divided by $9$.",
+        "answer": "$\\frac{44\\cdot 45}{2} = 990 = 9\\cdot 110$, so the remainder is $0$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "We need a remainder $r$ from $0$ to $44$ with $r \\equiv 0 \\pmod 9$ and $r \\equiv 4 \\pmod 5$. The multiples of $9$ in that range are $0, 9, 18, 27, 36$, which leave remainders $0, 4, 3, 2, 1$ when divided by $5$. Only $9$ works, so $N \\equiv 9 \\pmod{45}$. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "This is only the remainder mod $5$ (the last digit $4$). The remainder mod $45$ must also be a multiple of $9$, and $4$ is not."
+  },
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

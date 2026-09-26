@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_10_02",
+  "number": "2.10.2",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2012 UNCO",
+  "topic": "number_theory",
+  "subtopic": "Fermat's little theorem",
+  "text": "What is the remainder when $12^{2011}+11^{2012}$ is divided by seven?",
+  "choices": null,
+  "book_answer": "0",
+  "book_pages": [39, 40]
+}

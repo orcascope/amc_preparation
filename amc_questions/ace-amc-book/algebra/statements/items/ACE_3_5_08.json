@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_5_08",
+  "number": "3.5.8",
+  "kind": "problem",
+  "section": "Factoring Equations",
+  "original_source": "2016 CMIMC",
+  "topic": "algebra",
+  "subtopic": "Adding equations and completing the square",
+  "text": "The parabolas $y = x^2 + 15x + 32$ and $x = y^2 + 49y + 593$ meet at one point $(x_0, y_0)$. Find $x_0 + y_0$.",
+  "choices": null,
+  "book_answer": "-31",
+  "book_pages": [72]
+}

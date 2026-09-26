@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_5_09",
+  "number": "3.5.9",
+  "kind": "problem",
+  "section": "Factoring Equations",
+  "original_source": "2020 BMT",
+  "topic": "algebra",
+  "subtopic": "Sum of cubes when the sum is zero",
+  "text": "Let $a, b, c$ be real numbers such that $$a + b + c = \\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}$$ and $abc = 5$. The value of $\\left(a - \\frac{1}{b}\\right)^3 + \\left(b - \\frac{1}{c}\\right)^3 + \\left(c - \\frac{1}{a}\\right)^3$ can be written in the form $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+  "choices": null,
+  "book_answer": "77",
+  "book_pages": [72]
+}

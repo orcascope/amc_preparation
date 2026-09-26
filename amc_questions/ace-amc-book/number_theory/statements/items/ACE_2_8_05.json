@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_8_05",
+  "number": "2.8.5",
+  "kind": "problem",
+  "section": "Fermat's Little Theorem and Euler's Totient Function",
+  "original_source": "2017 AMC 10",
+  "topic": "number_theory",
+  "subtopic": "Fermat's little theorem",
+  "text": "An integer $N$ is selected at random in the range $1 \\le N \\le 2020$. What is the probability that the remainder when $N^{16}$ is divided by $5$ is $1$?",
+  "choices": { "A": "$\\frac{1}{5}$", "B": "$\\frac{2}{5}$", "C": "$\\frac{3}{5}$", "D": "$\\frac{4}{5}$", "E": "$1$" },
+  "book_answer": "D",
+  "book_pages": [35]
+}

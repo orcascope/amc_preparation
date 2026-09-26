@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_8_01",
+  "number": "2.8.1",
+  "kind": "example",
+  "section": "Fermat's Little Theorem and Euler's Totient Function",
+  "original_source": null,
+  "topic": "number_theory",
+  "subtopic": "Euler's totient function",
+  "text": "How many numbers are relatively prime to $48$?",
+  "choices": null,
+  "book_answer": "16",
+  "book_pages": [33]
+}

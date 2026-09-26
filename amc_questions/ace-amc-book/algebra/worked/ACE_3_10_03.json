@@ -1,0 +1,63 @@
+{
+  "id": "ACE_3_10_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.10.3",
+    "kind": "problem",
+    "section": "Floor Functions",
+    "original_source": "ARML"
+  },
+  "topic": "algebra",
+  "subtopic": "Floor and fractional part",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_10_03.png",
+    "text": "Find the smallest real number $x$ such that $\\frac{x}{\\lfloor x \\rfloor} = \\frac{2002}{2003}$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$-\\frac{2002^2}{2003}$",
+    "accept": ["-2002^2/2003", "-4008004/2003"]
+  },
+  "steps": [
+    {
+      "title": "Where to start: split $x$ into its two parts",
+      "body": "The equation mixes $x$ with $\\lfloor x \\rfloor$, so write $x = n + f$, where $n = \\lfloor x \\rfloor$ is an integer and $f = \\{x\\}$ is the fractional part, with $0 \\le f < 1$. Now there are two unknowns, but one is an integer and the other is trapped in a short interval. Note that $n \\ne 0$, since we divide by it.",
+      "your_turn": {
+        "prompt": "Substitute $x = n + f$ into $\\frac{x}{n} = \\frac{2002}{2003}$ and clear the fractions. What relation between $n$ and $f$ do you get?",
+        "answer": "$2003(n + f) = 2002n$, which simplifies to $n = -2003f$."
+      }
+    },
+    {
+      "title": "Use the bound on the fractional part",
+      "body": "From $n = -2003f$ we get $f = \\frac{-n}{2003}$. Since $0 \\le f < 1$, this gives $0 \\le \\frac{-n}{2003} < 1$, so $-2003 < n \\le 0$. Careful: this is a bound on $n = \\lfloor x \\rfloor$, not on $x$ itself.",
+      "your_turn": {
+        "prompt": "The bound allows $n = 0$. Why must we still throw $n = 0$ out?",
+        "answer": "Then $\\lfloor x \\rfloor = 0$ is in the denominator, so the fraction is undefined. So $n$ is one of $-2002, -2001, \\ldots, -1$."
+      }
+    },
+    {
+      "title": "Write $x$ in terms of $n$",
+      "body": "Now $x = n + f = n - \\frac{n}{2003} = \\frac{2002n}{2003}$. Every $n$ from $-2002$ to $-1$ gives a real solution, because then $f = \\frac{-n}{2003}$ really is between $0$ and $1$. Since $\\frac{2002n}{2003}$ grows as $n$ grows, the smallest $x$ comes from the smallest allowed $n$.",
+      "your_turn": {
+        "prompt": "Test the case $n = -1$: find $f$ and $x$, and check that $\\frac{x}{\\lfloor x \\rfloor} = \\frac{2002}{2003}$.",
+        "answer": "$f = \\frac{1}{2003}$ and $x = -\\frac{2002}{2003}$. Its floor is $-1$, and $\\frac{-2002/2003}{-1} = \\frac{2002}{2003}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The smallest allowed value is $n = -2002$, which gives $f = \\frac{2002}{2003}$ (still less than $1$) and\n$$x = \\frac{2002\\cdot(-2002)}{2003} = -\\frac{2002^2}{2003} = -\\frac{4008004}{2003}.$$\nThe answer is **$-\\frac{2002^2}{2003}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "-2002^2/2003",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

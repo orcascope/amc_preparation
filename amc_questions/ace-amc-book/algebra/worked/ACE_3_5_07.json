@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_5_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.5.7",
+    "kind": "problem",
+    "section": "Factoring Equations",
+    "original_source": "2016 MMATH"
+  },
+  "topic": "algebra",
+  "subtopic": "Product of consecutive integers plus one",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_5_07.png",
+    "text": "Express $\\sqrt{25 + 21 \\cdot 22 \\cdot 23 \\cdot 24 \\cdot 25}$ as an integer.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$2525$",
+    "accept": [
+      "2525"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: pull out the common factor 25",
+      "body": "Both terms under the square root are multiples of $25$: the first is $25$ itself and the second ends in $\\cdot 25$. Factoring it out leaves $25(1 + 21\\cdot 22\\cdot 23\\cdot 24)$, and $25$ is a perfect square, so it can leave the root.",
+      "your_turn": {
+        "prompt": "Rewrite $\\sqrt{25(1 + 21\\cdot 22\\cdot 23\\cdot 24)}$ with the $25$ outside the root.",
+        "answer": "$5\\sqrt{1 + 21\\cdot 22\\cdot 23\\cdot 24}$, because $\\sqrt{25} = 5$."
+      }
+    },
+    {
+      "title": "Turn the numbers into a polynomial",
+      "body": "The four numbers are consecutive, so let $x = 21$. Then $22 = x+1$, $23 = x+2$ and $24 = x+3$, and the expression under the root becomes $1 + x(x+1)(x+2)(x+3)$. A neat way to multiply is to pair the outer factors and the inner factors.",
+      "your_turn": {
+        "prompt": "Compute $x(x+3)$ and $(x+1)(x+2)$. What do you notice?",
+        "answer": "$x(x+3) = x^2 + 3x$ and $(x+1)(x+2) = x^2 + 3x + 2$. Both contain the same $x^2 + 3x$."
+      }
+    },
+    {
+      "title": "Spot the perfect square",
+      "body": "Let $u = x^2 + 3x$. Then the expression is $u(u+2) + 1 = u^2 + 2u + 1$, which is $(u+1)^2$. Written in $x$: $$1 + x(x+1)(x+2)(x+3) = x^4 + 6x^3 + 11x^2 + 6x + 1 = (x^2 + 3x + 1)^2.$$ Careful: it is easy to slip when expanding by hand, so check the square by multiplying it back out.",
+      "your_turn": {
+        "prompt": "Why can we take the square root of $(x^2 + 3x + 1)^2$ as $x^2 + 3x + 1$ with no minus sign here?",
+        "answer": "For $x = 21$, $x^2 + 3x + 1$ is positive, and a square root is never negative."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So the original number is $5(x^2 + 3x + 1)$ with $x = 21$: that is $5(441 + 63 + 1) = 5\\cdot 505 = 2525$. The answer is $2525$.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "2525",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

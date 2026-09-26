@@ -1,0 +1,62 @@
+{
+  "id": "ACE_2_10_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.1",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2013 AMC 10"
+  },
+  "topic": "number_theory",
+  "subtopic": "Base representation and divisors",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_2_10_01.png",
+    "text": "In base $10$, the number $2013$ ends in the digit $3$. In base $9$, on the other hand, the same number is written as $(2676)_9$ and ends in the digit $6$. For how many positive integers $b$ does the base-$b$-representation of $2013$ end in the digit $3$?",
+    "choices": { "A": "$6$", "B": "$9$", "C": "$13$", "D": "$16$", "E": "$18$" }
+  },
+  "answer": { "choice": "C", "value": "$13$" },
+  "steps": [
+    {
+      "title": "Where to start: the last digit is a remainder",
+      "body": "The problem shows you two examples: $2013$ ends in $3$ in base $10$ and in $6$ in base $9$. That is no accident. In base $b$, every digit except the last one stands for a multiple of $b$, so the last digit is exactly the remainder when the number is divided by $b$.",
+      "your_turn": {
+        "prompt": "Check the base $9$ example: what is the remainder when $2013$ is divided by $9$?",
+        "answer": "$9\\cdot 223 = 2007$, so the remainder is $2013 - 2007 = 6$, the last digit of $(2676)_9$."
+      }
+    },
+    {
+      "title": "Turn the condition into divisibility",
+      "body": "We want the remainder of $2013$ divided by $b$ to be $3$. Then $2013 = kb + 3$ for some whole number $k$, so $b$ must divide $2013 - 3$:\n$$b \\mid 2010.$$ Keep in mind that a remainder of $3$ also needs $b$ to be bigger than $3$; we will use that at the end.",
+      "your_turn": {
+        "prompt": "Is $b = 10$ one of the bases that work? Use the divisibility test.",
+        "answer": "Yes. $10$ divides $2010$, and indeed $2013$ ends in $3$ in base $10$."
+      }
+    },
+    {
+      "title": "Count the divisors of 2010",
+      "body": "Factor $2010 = 2\\cdot 3\\cdot 5\\cdot 67$. To count divisors, add $1$ to each exponent and multiply. Every exponent here is $1$, so each prime is either in a divisor or not.",
+      "your_turn": {
+        "prompt": "How many positive divisors does $2010$ have?",
+        "answer": "$(1+1)(1+1)(1+1)(1+1) = 16$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Careful: not all $16$ divisors are allowed. In base $b$ the digits are $0$ to $b-1$, so the digit $3$ exists only when $b \\ge 4$. The divisors $1$, $2$ and $3$ of $2010$ are too small (for example, $2013$ divided by $3$ leaves remainder $0$, not $3$). Every other divisor is at least $5$ and works. That leaves $16 - 3 = 13$ bases. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "This is the number of divisors of $2010$, but it forgets that bases $1$, $2$ and $3$ have no digit $3$. Those three must be removed."
+  },
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

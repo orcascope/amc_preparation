@@ -1,0 +1,55 @@
+{
+  "id": "ACE_3_3_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.3.5",
+    "kind": "problem",
+    "section": "Polynomials",
+    "original_source": "2013 CHMMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Roots of polynomials",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_3_05.png",
+    "text": "Suppose $f(x) = x^3 + x - 1$ has roots $r, s, t$. What is $\\frac{r^3}{1-r} + \\frac{s^3}{1-s} + \\frac{t^3}{1-t}$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$3$",
+    "accept": ["3"]
+  },
+  "steps": [
+    {
+      "title": "Where to start: use the equation each root satisfies",
+      "body": "You could combine the three fractions over a common denominator and use Vieta's formulas, but that gets messy fast. The clue is that $1 - r$ in the denominator also appears inside the cubic: $r^3 + r - 1 = 0$ contains both $r^3$ and $1 - r$. So each fraction can be handled on its own, using only the fact that its root solves $f(x) = 0$.",
+      "your_turn": {
+        "prompt": "Before dividing by $1 - r$, $1 - s$ and $1 - t$, make sure none is zero: compute $f(1)$. Can $1$ be a root?",
+        "answer": "$f(1) = 1 + 1 - 1 = 1 \\ne 0$, so $1$ is not a root and no denominator is zero."
+      }
+    },
+    {
+      "title": "Rewrite the numerator",
+      "body": "Since $r$ is a root, $r^3 + r - 1 = 0$. Move the lower terms to the other side:\n$$r^3 = 1 - r$$\nThe same holds for $s$ and $t$, since they are roots of the same cubic. This trick of trading a high power of a root for lower powers is worth remembering.",
+      "your_turn": {
+        "prompt": "Practice the same trick: multiply $r^3 = 1 - r$ by $r$ to write $r^4$ using lower powers of $r$.",
+        "answer": "$r^4 = r - r^2$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each fraction becomes\n$$\\frac{r^3}{1 - r} = \\frac{1 - r}{1 - r} = 1,$$\nand in the same way $\\frac{s^3}{1-s} = \\frac{t^3}{1-t} = 1$. The sum is $1 + 1 + 1 = 3$. The answer is **$3$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "3",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

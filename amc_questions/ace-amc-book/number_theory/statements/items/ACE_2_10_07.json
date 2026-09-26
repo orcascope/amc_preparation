@@ -1,0 +1,13 @@
+{
+  "id": "ACE_2_10_07",
+  "number": "2.10.7",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2012 PUMAC",
+  "topic": "number_theory",
+  "subtopic": "Chinese Remainder Theorem",
+  "text": "Albert has a very large bag of candies and he wants to share all of it with his friends. At first, he splits the candies evenly amongst his $20$ friends and himself and he finds that there are five left over. Ante arrives, and they redistribute the candies evenly again. This time, there are three left over. If the bag contains over $500$ candies, what is the fewest number of candies the bag can contain?",
+  "choices": null,
+  "book_answer": "509",
+  "book_pages": [43]
+}

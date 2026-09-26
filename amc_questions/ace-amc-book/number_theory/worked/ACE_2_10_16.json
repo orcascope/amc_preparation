@@ -1,0 +1,65 @@
+{
+  "id": "ACE_2_10_16",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.16",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2011 CHMMC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Digit equations",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_16.png",
+    "text": "Digits $H, M,$ and $C$ satisfy the following relations where $ABC$ denotes the number whose digits in base $10$ are $A, B,$ and $C$.\n$$\\overline{H} \\times \\overline{H} = \\overline{M} \\times \\overline{C} + 1$$\n$$\\overline{HH} \\times \\overline{H} = \\overline{MC} \\times \\overline{C} + 1$$\n$$\\overline{HHH} \\times \\overline{H} = \\overline{MCC} \\times \\overline{C} + 1$$\nFind $\\overline{HMC}$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$435$",
+    "accept": [
+      "435"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: write the digit strings as algebra",
+      "body": "The bars mean digits written side by side, so each bar number is a sum of place values: $\\overline{HH} = 10H + H = 11H$, $\\overline{HHH} = 111H$, $\\overline{MC} = 10M + C$ and $\\overline{MCC} = 100M + 11C$. With these, the three relations become ordinary equations in $H$, $M$, $C$. The first one reads $H^2 = MC + 1$.",
+      "your_turn": {
+        "prompt": "Rewrite the second relation, $\\overline{HH} \\times \\overline{H} = \\overline{MC} \\times \\overline{C} + 1$, in terms of $H$, $M$, $C$ and expand.",
+        "answer": "$11H \\cdot H = (10M + C)C + 1$, that is $11H^2 = 10MC + C^2 + 1$."
+      }
+    },
+    {
+      "title": "Eliminate $H$",
+      "body": "Multiply the first equation $H^2 = MC + 1$ by $11$ to get $11H^2 = 11MC + 11$. Its left side is the same as the left side of the second equation, so the right sides are equal:\n$$11MC + 11 = 10MC + C^2 + 1.$$",
+      "your_turn": {
+        "prompt": "Move everything to one side and factor out $C$.",
+        "answer": "Subtract $10MC + 11$ from both sides: $0 = C^2 - MC - 10$, so $C^2 - MC = 10$, i.e. $C(C - M) = 10$."
+      }
+    },
+    {
+      "title": "$C$ must divide $10$",
+      "body": "$C$ is a digit and $C(C - M) = 10$. $C$ cannot be $0$ (the product would be $0$), so $C$ is a positive divisor of $10$ that is a single digit: $C = 1$, $2$ or $5$. For each choice, $C - M = 10 / C$ tells us $M$, and $M$ must be a digit from $0$ to $9$.",
+      "your_turn": {
+        "prompt": "Test $C = 1$ and $C = 2$. What would $M$ be?",
+        "answer": "$C = 1$ gives $C - M = 10$, so $M = -9$. $C = 2$ gives $C - M = 5$, so $M = -3$. Neither is a digit, so both fail."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $C = 5$, and then $C - M = 2$ gives $M = 3$. The first equation gives $H^2 = 3 \\cdot 5 + 1 = 16$, so $H = 4$ (a digit is not negative). Check all three: $4 \\cdot 4 = 16 = 3 \\cdot 5 + 1$, $44 \\cdot 4 = 176 = 35 \\cdot 5 + 1$ and $444 \\cdot 4 = 1776 = 355 \\cdot 5 + 1$. So $\\overline{HMC} = 435$. The answer is **$435$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "435",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

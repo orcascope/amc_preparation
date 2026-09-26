@@ -1,0 +1,65 @@
+{
+  "id": "ACE_2_10_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.10.6",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2015 PUMaC"
+  },
+  "topic": "number_theory",
+  "subtopic": "LCM and GCD",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_10_06.png",
+    "text": "What is the sum of all positive integers $n$ such that $\\text{lcm}(2n, n^2) = 14n - 24$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$17$",
+    "accept": [
+      "17"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: pull out the common factor $n$",
+      "body": "Both $2n$ and $n^2$ are $n$ times something: $2n = n\\cdot 2$ and $n^2 = n\\cdot n$. Multiplying two numbers by the same $n$ multiplies their LCM by $n$, so $\\text{lcm}(2n, n^2) = n\\cdot\\text{lcm}(2, n)$. Now $\\text{lcm}(2, n)$ depends only on whether $n$ is odd or even, so we split into those two cases.",
+      "your_turn": {
+        "prompt": "What is $\\text{lcm}(2, n)$ when $n$ is odd? When $n$ is even?",
+        "answer": "If $n$ is odd, $2$ and $n$ share no factor, so it is $2n$. If $n$ is even, $2$ already divides $n$, so it is $n$."
+      }
+    },
+    {
+      "title": "Case 1: $n$ is odd",
+      "body": "Here the LCM is $n\\cdot 2n = 2n^2$, so we need $2n^2 = 14n - 24$. Divide by $2$ and move everything to one side to get a quadratic. Careful: any root you find must also be odd, because that is the case we assumed.",
+      "your_turn": {
+        "prompt": "Solve $n^2 - 7n + 12 = 0$. Which root is allowed in this case?",
+        "answer": "$(n-3)(n-4) = 0$, so $n = 3$ or $n = 4$. Only $n = 3$ is odd, so $4$ is thrown out here."
+      }
+    },
+    {
+      "title": "Case 2: $n$ is even",
+      "body": "Now the LCM is $n\\cdot n = n^2$, so we need $n^2 = 14n - 24$, which is $n^2 - 14n + 24 = 0$. Again, keep only the roots that are even. (Note that $n = 4$ from Case 1 is not lost by accident: it is even, so it belongs to this case, and it must satisfy this equation to count.)",
+      "your_turn": {
+        "prompt": "Factor $n^2 - 14n + 24$ and check the parity of each root.",
+        "answer": "$(n-2)(n-12)$, since $2\\cdot 12 = 24$ and $2 + 12 = 14$. Both $2$ and $12$ are even, so both are allowed. And $4$ is not a root, since $16 - 56 + 24 = -16$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Check in the original equation: $\\text{lcm}(6, 9) = 18 = 14\\cdot 3 - 24$, $\\text{lcm}(4, 4) = 4 = 14\\cdot 2 - 24$, and $\\text{lcm}(24, 144) = 144 = 14\\cdot 12 - 24$. Every positive integer is odd or even, so these are all the solutions: $n = 2$, $3$, $12$. Their sum is $2 + 3 + 12 = 17$. The answer is **$17$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "17",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

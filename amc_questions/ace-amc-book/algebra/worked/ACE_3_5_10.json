@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_5_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.5.10",
+    "kind": "problem",
+    "section": "Factoring Equations",
+    "original_source": "2023 CMIMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Prime factorization and sums of squares",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_5_10.png",
+    "text": "Suppose $a, b, c$, and $d$ are non-negative integers such that $$(a + b + c + d)(a^2 + b^2 + c^2 + d^2)^2 = 2023$$ Find $a^3 + b^3 + c^3 + d^3$",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$43$",
+    "accept": [
+      "43"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: factor 2023",
+      "body": "The left side is a product of two whole numbers, one of them a perfect square, and it equals a specific number. So the prime factorization of $2023$ tells us which values each factor can take.",
+      "your_turn": {
+        "prompt": "Write $2023$ as a product of primes.",
+        "answer": "$2023 = 7\\cdot 289 = 7\\cdot 17^2$."
+      }
+    },
+    {
+      "title": "Which square can divide 2023?",
+      "body": "Let $S = a + b + c + d$ and $Q = a^2 + b^2 + c^2 + d^2$, so $S\\cdot Q^2 = 7\\cdot 17^2$. Both $S$ and $Q$ are non-negative integers, and neither is $0$ since the product is not $0$. So $Q^2$ is a perfect square that divides $7\\cdot 17^2$.",
+      "your_turn": {
+        "prompt": "List the perfect squares that divide $7\\cdot 17^2$.",
+        "answer": "Only $1$ and $17^2$. A square needs each prime an even number of times, and $7$ appears only once."
+      }
+    },
+    {
+      "title": "Rule out Q = 1",
+      "body": "If $Q = 1$, then one of the numbers is $1$ and the rest are $0$, so $S = 1$ and $S\\cdot Q^2 = 1$, not $2023$. So $Q = 17$, and then $S = 2023 / 17^2 = 7$. Now we need four non-negative integers whose squares add to $17$ and which themselves add to $7$.",
+      "your_turn": {
+        "prompt": "Using squares from $0, 1, 4, 9, 16$, find every way to write $17$ as a sum of four of them (order does not matter).",
+        "answer": "$16 + 1 + 0 + 0$ and $9 + 4 + 4 + 0$. Without $16$ or $9$ the most is $4\\cdot 4 = 16$; with $16$ the rest is $1$; with $9$ the other three squares make $8$, which only $4 + 4 + 0$ does."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The first option gives the numbers $4, 1, 0, 0$, which add to $5$, not $7$. The second gives $3, 2, 2, 0$, which add to $7$, so $\\{a, b, c, d\\} = \\{3, 2, 2, 0\\}$ in some order. Then $a^3 + b^3 + c^3 + d^3 = 27 + 8 + 8 + 0 = 43$. The answer is $43$.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "43",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

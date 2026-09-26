@@ -1,0 +1,51 @@
+{
+  "id": "ACE_3_8_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.8.1",
+    "kind": "example",
+    "section": "Functional Equations",
+    "original_source": "BMT 2019"
+  },
+  "topic": "algebra",
+  "subtopic": "Functional equations",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_3_8_01.png",
+    "text": "If $f(x + y) = f(xy)$ for all real numbers $x$ and $y$, and $f(2019) = 17$, what is the value of $f(17)$?",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$17$", "accept": ["17"] },
+  "steps": [
+    {
+      "title": "Where to start: plug in $x = 0$",
+      "body": "The equation holds for all real $x$ and $y$, so we may choose any values we like. A good first try in a functional equation is $0$. Here it is especially useful, because $0$ makes the product $xy$ collapse to a single number while the sum $x + y$ stays free.",
+      "your_turn": {
+        "prompt": "If $x = 0$, what do $x + y$ and $xy$ become?",
+        "answer": "$x + y = y$ and $xy = 0$."
+      }
+    },
+    {
+      "title": "The function is constant",
+      "body": "So the equation becomes $f(y) = f(0)$ for every real $y$. Whatever input we use, the output is the same number $f(0)$: the function is constant.",
+      "your_turn": {
+        "prompt": "Check that any constant function $f(x) = k$ really satisfies $f(x + y) = f(xy)$.",
+        "answer": "Both sides equal $k$, so the equation holds."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Since every output equals $f(0)$, we have $f(0) = f(2019) = 17$, and then $f(17) = f(0) = 17$. The answer is **$17$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "17",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

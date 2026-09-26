@@ -1,0 +1,15 @@
+{
+  "id": "ACE_2_10_15",
+  "number": "2.10.15",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2022 SMT",
+  "topic": "number_theory",
+  "subtopic": "Euler's theorem and CRT",
+  "text": "What are the last two digits of $2022^{2022^{2022}}$?",
+  "choices": null,
+  "book_answer": "56",
+  "book_pages": [
+    47
+  ]
+}

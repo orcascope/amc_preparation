@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_2_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.2.6",
+    "kind": "problem",
+    "section": "Sequences And Series",
+    "original_source": "2005 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "Arithmetic sequences and divisors",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_2_06.png",
+    "text": "For each positive integer $k$, let $S_k$ denote the increasing arithmetic sequence of integers whose first term is $1$ and whose common difference is $k$. For example, $S_3$ is the sequence $1, 4, 7, 10, \\ldots$. For how many values of $k$ does $S_k$ contain the term $2005$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$12$",
+    "accept": [
+      "12"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: write the general term",
+      "body": "Every sequence starts at $1$ and goes up by $k$ each time, so the terms are exactly the numbers $1$ plus a multiple of $k$. If $2005$ is the $m$-th term, then\n$$1 + k(m - 1) = 2005.$$",
+      "your_turn": {
+        "prompt": "Is $2005$ a term of $S_3$? If so, which term?",
+        "answer": "Yes: $2005 - 1 = 2004 = 3\\cdot 668$, so it is term number $669$."
+      }
+    },
+    {
+      "title": "Turn it into a divisibility question",
+      "body": "Subtracting $1$ gives $k(m - 1) = 2004$. So $2005$ is in $S_k$ exactly when $k$ divides $2004$: if it does, $m - 1 = \\frac{2004}{k}$ is a positive integer and gives a real position $m$. So we need to count the positive divisors of $2004$, including $1$ and $2004$ itself.",
+      "your_turn": {
+        "prompt": "Does $S_{2004}$ contain $2005$? Does $S_5$?",
+        "answer": "$S_{2004}$ is $1, 2005, \\ldots$, so yes. $S_5$ does not, because $5$ does not divide $2004$."
+      }
+    },
+    {
+      "title": "Count divisors from the prime factorization",
+      "body": "Factor: $2004 = 4\\cdot 501 = 2^2\\cdot 3\\cdot 167$. A divisor of $2004$ is made by choosing an exponent for each prime separately: $0$, $1$ or $2$ for the prime $2$, and $0$ or $1$ for each of $3$ and $167$. So the number of divisors is the product of (each exponent plus one).",
+      "your_turn": {
+        "prompt": "Check that $167$ is prime. Which primes do you need to test?",
+        "answer": "Only primes up to $\\sqrt{167} < 13$: that is $2$, $3$, $5$, $7$, $11$, and none of them divides $167$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The number of positive divisors of $2004 = 2^2\\cdot 3\\cdot 167$ is $(2+1)(1+1)(1+1) = 12$, and each divisor $k$ gives a sequence $S_k$ containing $2005$. The answer is **$12$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "12",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

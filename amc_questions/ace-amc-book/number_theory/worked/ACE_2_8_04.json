@@ -1,0 +1,59 @@
+{
+  "id": "ACE_2_8_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "2.8.4",
+    "kind": "problem",
+    "section": "Fermat's Little Theorem and Euler's Totient Function",
+    "original_source": "2010 PUMAC"
+  },
+  "topic": "number_theory",
+  "subtopic": "Euler's totient function",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_2_8_04.png",
+    "text": "Find the largest positive integer $n$ such that $n\\phi(n)$ is a perfect square. ($\\phi(n)$ is the number of integers $k$, $1 \\le k \\le n$ that are relatively prime to $n$)",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$1$", "accept": ["1"] },
+  "steps": [
+    {
+      "title": "Where to start: write $n\\phi(n)$ in prime powers",
+      "body": "A number is a perfect square exactly when every prime in its factorization has an even exponent. So we want the prime factorization of $n\\phi(n)$. The totient formula is built from the primes of $n$: if $n = p_1^{e_1} p_2^{e_2} \\cdots p_x^{e_x}$ with different primes $p_i$, then $$\\phi(n) = p_1^{e_1 - 1}(p_1 - 1) \\cdot p_2^{e_2 - 1}(p_2 - 1) \\cdots p_x^{e_x - 1}(p_x - 1).$$",
+      "your_turn": {
+        "prompt": "Multiply by $n$. What is $n\\phi(n)$ in terms of the $p_i$ and $e_i$?",
+        "answer": "$n\\phi(n) = p_1^{2e_1 - 1}(p_1 - 1) \\cdots p_x^{2e_x - 1}(p_x - 1)$, since each $p_i^{e_i} \\cdot p_i^{e_i - 1} = p_i^{2e_i - 1}$."
+      }
+    },
+    {
+      "title": "Look at the largest prime",
+      "body": "Suppose $n > 1$, so $n$ has at least one prime factor, and let $p$ be the largest one, with exponent $e$. The power $p^{2e-1}$ has an odd exponent. The only way the total exponent of $p$ could become even is if some factor $p_i - 1$ also contained $p$.",
+      "your_turn": {
+        "prompt": "Can $p$ divide any of the numbers $p_1 - 1, \\dots, p_x - 1$?",
+        "answer": "No. Each $p_i - 1$ is positive and smaller than $p_i$, which is at most $p$, so all of its prime factors are less than $p$."
+      }
+    },
+    {
+      "title": "The exponent of $p$ is odd",
+      "body": "So the exponent of $p$ in $n\\phi(n)$ is exactly $2e - 1$, and $2e - 1$ is odd for every $e$. Think about what that says for the perfect-square condition.",
+      "your_turn": {
+        "prompt": "Check this on $n = 12$: find $\\phi(12)$, factor $12\\phi(12)$, and look at the exponent of $3$.",
+        "answer": "$\\phi(12) = 4$ (the numbers $1, 5, 7, 11$), so $12\\phi(12) = 48 = 2^4 \\cdot 3$. The largest prime, $3$, has exponent $1$, which is odd, so $48$ is not a square."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Every $n > 1$ has a prime factor, and its largest prime appears in $n\\phi(n)$ with an odd exponent, so $n\\phi(n)$ is not a perfect square. So no $n > 1$ works. That leaves $n = 1$: the only $k$ with $1 \\le k \\le 1$ is $k = 1$, and $\\gcd(1, 1) = 1$, so $\\phi(1) = 1$ and $1 \\cdot \\phi(1) = 1 = 1^2$. The only (and so the largest) such $n$ is **$1$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

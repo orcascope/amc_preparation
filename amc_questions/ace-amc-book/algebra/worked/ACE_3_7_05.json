@@ -1,0 +1,66 @@
+{
+  "id": "ACE_3_7_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.7.5",
+    "kind": "problem",
+    "section": "Inequalities",
+    "original_source": "1983 AIME"
+  },
+  "topic": "algebra",
+  "subtopic": "AM-GM inequality",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_7_05.png",
+    "text": "Find the minimum value of $\\frac{9x^2\\sin^2 x + 4}{x\\sin x}$ for $0 < x < \\pi$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$12$",
+    "accept": [
+      "12",
+      "012"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: treat $x\\sin x$ as one number",
+      "body": "The numerator's first term is $9x^2\\sin^2 x = 9(x\\sin x)^2$, and the denominator is $x\\sin x$. So only the product $x\\sin x$ matters: call it $t = x\\sin x$. For $0 < x < \\pi$, both $x$ and $\\sin x$ are positive, so $t > 0$.",
+      "your_turn": {
+        "prompt": "Rewrite the expression in terms of $t$ and split it into two terms.",
+        "answer": "$\\frac{9t^2 + 4}{t} = 9t + \\frac{4}{t}$."
+      }
+    },
+    {
+      "title": "Use AM-GM",
+      "body": "For positive numbers $u$ and $v$, the AM-GM inequality says $\\frac{u+v}{2} \\ge \\sqrt{uv}$, with equality exactly when $u = v$. Apply it to $u = 9t$ and $v = \\frac{4}{t}$. Careful: you cannot cancel $\\sin x$ and write the expression as $9x + \\frac{4}{x}$; the $\\sin x$ stays inside $t$.",
+      "your_turn": {
+        "prompt": "Compute the product $9t \\cdot \\frac{4}{t}$. Why is this helpful?",
+        "answer": "It is $36$, a constant, so AM-GM gives a lower bound that does not depend on $t$."
+      }
+    },
+    {
+      "title": "Can equality happen?",
+      "body": "The AM-GM bound is only the minimum if equality can occur, which needs $9t = \\frac{4}{t}$, so $t^2 = \\frac{4}{9}$ and $t = \\frac{2}{3}$. So we must check that $x\\sin x = \\frac{2}{3}$ for some $x$ between $0$ and $\\pi$.",
+      "your_turn": {
+        "prompt": "Find $x\\sin x$ at $x = \\frac{\\pi}{2}$ and compare it with $\\frac{2}{3}$. What happens to $x\\sin x$ as $x$ gets close to $0$?",
+        "answer": "At $x = \\frac{\\pi}{2}$ it is $\\frac{\\pi}{2} \\approx 1.57 > \\frac{2}{3}$. Near $x = 0$ it is close to $0$. Since $x\\sin x$ changes continuously, it equals $\\frac{2}{3}$ somewhere in between."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "AM-GM gives $$9t + \\frac{4}{t} \\ge 2\\sqrt{36} = 12,$$ and equality holds at the $x$ where $x\\sin x = \\frac{2}{3}$, which exists. So the minimum value is $12$. The answer is **$12$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "12",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

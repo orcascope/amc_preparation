@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_6_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.6.6",
+    "kind": "problem",
+    "section": "Systems of Equations",
+    "original_source": "2021 CMIMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Symmetric sums substitution",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_6_06.png",
+    "text": "Let $a$ and $b$ be complex numbers such that $$(a+1)(b+1) = 2$$ and $(a^2+1)(b^2+1) = 32$. Compute the sum of all possible values of $(a^4+1)(b^4+1)$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$1160$",
+    "accept": [
+      "1160"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: switch to $a + b$ and $ab$",
+      "body": "Every expression in the problem stays the same if you swap $a$ and $b$. Such expressions can always be written using just $s = a + b$ and $p = ab$, which turns the problem into two equations in two simpler unknowns. Expanding the first equation, $ab + a + b + 1 = 2$, gives $p + s = 1$.",
+      "your_turn": {
+        "prompt": "Expand $(a^2+1)(b^2+1) = 32$ and write it using $s$ and $p$. (Hint: $a^2 + b^2 = (a+b)^2 - 2ab$.)",
+        "answer": "$a^2b^2 + a^2 + b^2 + 1 = 32$, so $p^2 + s^2 - 2p = 31$."
+      }
+    },
+    {
+      "title": "Solve for $p$ and $s$",
+      "body": "From $p + s = 1$ we get $s = 1 - p$. Substituting, $p^2 + (1-p)^2 - 2p = 31$, which simplifies to $2p^2 - 4p - 30 = 0$, or $$p^2 - 2p - 15 = 0.$$",
+      "your_turn": {
+        "prompt": "Solve $p^2 - 2p - 15 = 0$ and find the matching $s$ for each root.",
+        "answer": "$(p - 5)(p + 3) = 0$. So $p = -3$ with $s = 4$, or $p = 5$ with $s = -4$."
+      }
+    },
+    {
+      "title": "Rewrite the target in $s$ and $p$",
+      "body": "Expand: $(a^4+1)(b^4+1) = p^4 + a^4 + b^4 + 1$. Square $a^2 + b^2$ to get $a^4 + b^4 = (a^2 + b^2)^2 - 2p^2$, where $a^2 + b^2 = s^2 - 2p$. Both pairs $(s, p)$ really occur, because $a$ and $b$ are the two roots of $t^2 - st + p = 0$, and complex roots always exist.",
+      "your_turn": {
+        "prompt": "For $p = -3$, $s = 4$, compute $a^2 + b^2$ and then $a^4 + b^4$.",
+        "answer": "$a^2 + b^2 = 16 + 6 = 22$, and $a^4 + b^4 = 484 - 18 = 466$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "For $p = -3$: $81 + 466 + 1 = 548$. For $p = 5$, $s = -4$: $a^2 + b^2 = 16 - 10 = 6$ and $a^4 + b^4 = 36 - 50 = -14$, so the value is $625 - 14 + 1 = 612$. Careful: a negative $a^4 + b^4$ is fine here because $a$ and $b$ are complex. The sum of the possible values is $548 + 612 = 1160$. The answer is **$1160$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1160",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

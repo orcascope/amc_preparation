@@ -1,0 +1,16 @@
+{
+  "id": "ACE_2_10_14",
+  "number": "2.10.14",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2018 HMMT",
+  "topic": "number_theory",
+  "subtopic": "Perfect cubes",
+  "text": "What is the smallest positive integer $n$ such that $2016n$ is a perfect cube?",
+  "choices": null,
+  "book_answer": "294",
+  "book_pages": [
+    46,
+    47
+  ]
+}
