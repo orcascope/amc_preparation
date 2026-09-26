@@ -1,0 +1,35 @@
+bundle:
+  name: amc-prep
+
+variables:
+  lakebase_endpoint:
+    description: Lakebase endpoint the app gets tokens for
+  database_url:
+    description: Lakebase url to connect to
+
+resources:
+  apps:
+    amc_prep:
+      name: amc-prep-${bundle.target}        # amc-prep-dev / amc-prep-prod
+      source_code_path: .
+      config:
+        command: ["python", "-m", "app.run"]
+        env:
+          - name: LAKEBASE_ENDPOINT
+            value: ${var.lakebase_endpoint}
+          - name: DATABASE_URL
+            value: ${var.database_url}            
+
+targets:
+  dev:
+    mode: development
+    default: true
+    variables:
+      lakebase_endpoint: projects/hobby/branches/dev/endpoints/primary
+      database_url: 'postgresql://ars.1001%40gmail.com@ep-orange-glitter-d8rpfph8.database.us-east-2.cloud.databricks.com/databricks_postgres?sslmode=require'
+
+  prod:
+    mode: production
+    variables:
+      lakebase_endpoint: projects/hobby/branches/production/endpoints/primary
+      database_url: 'postgresql://ars.1001%40gmail.com@ep-orange-glitter-d8rpfph8.database.us-east-2.cloud.databricks.com/databricks_postgres?sslmode=require'

@@ -1,4 +1,0 @@
-command:  ["python", "-m", "app.run"]
-env:
-  - name: 'DATABASE_URL'
-    value: 'postgresql://ars.1001%40gmail.com@ep-orange-glitter-d8rpfph8.database.us-east-2.cloud.databricks.com/databricks_postgres?sslmode=require'
