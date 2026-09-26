@@ -1,0 +1,73 @@
+{
+  "id": "ACE_5_7_11",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.7.11",
+    "kind": "problem",
+    "section": "Circles Part 1",
+    "original_source": "2013 AMC 10"
+  },
+  "topic": "geometry",
+  "subtopic": "Power of a point",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_7_11.png",
+    "text": "In $\\triangle ABC$, $AB = 86$, and $AC = 97$. A circle with center $A$ and radius $AB$ intersects $\\overline{BC}$ at points $B$ and $X$. Moreover $\\overline{BX}$ and $\\overline{CX}$ have integer lengths. What is $BC$?",
+    "choices": {
+      "A": "$11$",
+      "B": "$28$",
+      "C": "$33$",
+      "D": "$61$",
+      "E": "$72$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$61$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: two secants from $C$",
+      "body": "Draw a diagram. The circle has center $A$ and radius $86$, and $AC = 97 > 86$, so $C$ is outside the circle. Two lines from $C$ cut the circle: line $CB$ meets it at $X$ and $B$, and line $CA$ meets it at a point $D$ between $A$ and $C$ and at the far end $Y$ of the diameter through $D$. A point outside a circle with two secants is exactly the setup for power of a point: $CX\\cdot CB = CD\\cdot CY$.",
+      "your_turn": {
+        "prompt": "Find $CD$ and $CY$.",
+        "answer": "$AD = AY = 86$ (radii), so $CD = 97 - 86 = 11$ and $CY = 97 + 86 = 183$."
+      }
+    },
+    {
+      "title": "Turn it into a factoring problem",
+      "body": "Power of a point gives $CX\\cdot CB = 11\\cdot 183 = 2013$. Since $CX$ and $BX$ are integers, $CB = CX + BX$ is an integer too, and $X$ lies between $B$ and $C$, so $CX < CB$. So we need a factor pair of $2013$ with the smaller factor equal to $CX$.",
+      "your_turn": {
+        "prompt": "Write $2013$ as a product of primes and list its factor pairs.",
+        "answer": "$2013 = 3\\cdot 11\\cdot 61$. The pairs are $1\\cdot 2013$, $3\\cdot 671$, $11\\cdot 183$ and $33\\cdot 61$."
+      }
+    },
+    {
+      "title": "Use the triangle inequality",
+      "body": "Four pairs are too many, so look for a bound on $CX$. Triangle $ACX$ has $AX = 86$ (a radius) and $AC = 97$.",
+      "your_turn": {
+        "prompt": "What does the triangle inequality in triangle $ACX$ say about $CX$?",
+        "answer": "$AX + CX > AC$, so $86 + CX > 97$, which means $CX > 11$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "$CX > 11$ rules out $CX = 1$, $3$ and $11$ (the pair $11\\cdot 183$ would also make $BC = AB + AC$, a flat triangle). The only pair left is $CX = 33$, $CB = 61$, and then $BX = 61 - 33 = 28$ is an integer as required. So $BC = 61$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "$33$ is $CX$, the piece of $BC$ outside the circle, not the whole side. The question asks for $BC = CX + BX$.",
+    "B": "$28$ is $BX$, the chord inside the circle. The whole side is $BC = BX + CX = 28 + 33$."
+  },
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

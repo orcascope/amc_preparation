@@ -10,22 +10,28 @@ from fractions import Fraction
 
 _FRAC = re.compile(r"\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}")
 _SQRT = re.compile(r"\\sqrt\{([^{}]*)\}")
+_FRAC_SHORT = re.compile(r"\\[dt]?frac(\d)(\d)")
+_DEGREES = re.compile(r"\^\(?circ\)?|°|degrees?(?![a-z])|deg(?![a-z])")
 
 
 def normalize(ans):
     """Lower-case text form with LaTeX, spaces, dollar signs and thousands commas removed."""
     s = str(ans).strip().strip("$").strip()
+    s = _SQRT.sub(r"sqrt(\1)", s)  # before fractions, so \frac{\sqrt{2}}{2} works
     s = _FRAC.sub(r"(\1)/(\2)", s)
-    s = _SQRT.sub(r"sqrt(\1)", s)
+    s = _FRAC_SHORT.sub(r"(\1)/(\2)", s)  # \frac12
     s = s.replace("√", "sqrt").replace("\\cdot", "*").replace("×", "*").replace("\\pi", "pi").replace("π", "pi")
     s = s.replace("\\left", "").replace("\\right", "").replace("\\,", "").replace("\\!", "")
     s = s.replace("\\", "").replace("{", "(").replace("}", ")")
-    s = re.sub(r"(?<=\d),(?=\d{3}(\D|$))", "", s)  # 10,000 -> 10000
     s = re.sub(r"\s+", "", s).lower()
+    if re.fullmatch(r"-?\d{1,3}(,\d{3})+(\.\d+)?", s):  # 10,000 -> 10000, but keep "133,47,133"
+        s = s.replace(",", "")
     s = re.sub(r"^\((-?[\w.]+)\)$", r"\1", s)
     s = re.sub(r"sqrt\((\w+)\)", r"sqrt\1", s)  # sqrt(2) and sqrt2 compare equal
-    s = re.sub(r"\((\d+)\)/\((\d+)\)", r"\1/\2", s)  # (3)/(4) -> 3/4
+    s = re.sub(r"\(([\w.]+)\)(?=/)", r"\1", s)  # (25pi)/(8) -> 25pi/8
+    s = re.sub(r"(?<=/)\(([\w.]+)\)", r"\1", s)
     s = re.sub(r"(?<=\d)\*(?=[a-z(])", "", s)  # 2*sqrt3 -> 2sqrt3
+    s = _DEGREES.sub("", s)  # 60°, 60 degrees, 60^\circ -> 60 (also inside lists)
     s = re.sub(r"\^\((\w+)\)", r"^\1", s)  # 5^{38} and 5^(38) -> 5^38
     return s
 

@@ -44,6 +44,18 @@ def box_around(page, y):
     return best
 
 
+def figure_below(page, y):
+    """An image that starts within 20pt under height y, before any text line does."""
+    imgs = [fitz.Rect(b["bbox"]) for b in page.get_text("dict")["blocks"]
+            if b["type"] == 1 and y <= b["bbox"][1] <= y + 20]
+    if not imgs:
+        return None
+    img = min(imgs, key=lambda r: r.y0)
+    if any(y < r.y0 < img.y0 for t, r in lines(page) if t):
+        return None
+    return img
+
+
 def statement_pieces(doc, pno, y):
     """[(page, clip)] from the item label at height y down to the end of its statement."""
     pieces = []
@@ -60,11 +72,17 @@ def statement_pieces(doc, pno, y):
             bottom = (max(above) + 2) if above else sol - 3
         elif box:
             bottom = box.y1 + 3
+            # A diagram printed just below the frame ("the diagram below") belongs to it.
+            fig = figure_below(page, box.y1)
+            if fig is not None and (sol is None or fig.y1 < sol):
+                bottom = fig.y1 + 3
         else:
             bottom = (sol - 3) if sol is not None else FOOTER_Y
         pieces.append((pno, fitz.Rect(80, max(top, HEADER_Y), 516, min(bottom, FOOTER_Y))))
-        # A box that runs to the foot of the page continues on the next page.
-        if box and box.y1 > FOOTER_Y - 25 and sol is None and pno + 1 < doc.page_count:
+        # A box that runs to the foot of the page continues on the next page,
+        # but only if the next page really starts with the rest of a frame.
+        if (box and box.y1 > FOOTER_Y - 25 and sol is None and pno + 1 < doc.page_count
+                and box_around(doc[pno + 1], HEADER_Y + 10) is not None):
             pno, y = pno + 1, HEADER_Y + 8
             continue
         return pieces

@@ -1,0 +1,70 @@
+{
+  "id": "ACE_5_11_11",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.11",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2012 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Incircle and inradius",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_11.png",
+    "text": "Triangle $ABC$ has $AB=27$, $AC=26$, and $BC=25$. Let $I$ be the intersection of the internal angle bisectors of $\\triangle ABC$. What is $BI$?",
+    "choices": {
+      "A": "$15$",
+      "B": "$5+\\sqrt{26}+3\\sqrt{3}$",
+      "C": "$3\\sqrt{26}$",
+      "D": "$\\frac{2}{3}\\sqrt{546}$",
+      "E": "$9\\sqrt{3}$"
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$15$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: $I$ is the incenter",
+      "body": "The angle bisectors meet at the incenter, the center of the circle that touches all three sides. Draw that incircle and let it touch $AB$ at $F$, $BC$ at $H$ and $CA$ at $G$. Then $BI$ is the hypotenuse of the right triangle $BHI$, whose legs are the inradius $IH$ and the tangent length $BH$.",
+      "your_turn": {
+        "prompt": "Why is the angle at $H$ in triangle $BHI$ a right angle?",
+        "answer": "$IH$ is a radius of the incircle drawn to the point where it touches $BC$, and a radius to a point of tangency is perpendicular to the tangent line."
+      }
+    },
+    {
+      "title": "Find the area two ways",
+      "body": "The area of a triangle equals $r\\cdot s$, where $r$ is the inradius and $s$ is the semiperimeter. Here $s = \\frac{25+26+27}{2} = 39$, so the area is $39r$. Heron's formula, $\\sqrt{s(s-a)(s-b)(s-c)}$, gives the area as a number.",
+      "your_turn": {
+        "prompt": "Use Heron's formula to find the area.",
+        "answer": "$s - a$, $s - b$, $s - c$ are $14$, $13$, $12$, so the area is $\\sqrt{39\\cdot 14\\cdot 13\\cdot 12} = \\sqrt{78^2\\cdot 14} = 78\\sqrt{14}$."
+      }
+    },
+    {
+      "title": "Find the tangent length $BH$",
+      "body": "Tangent segments from one vertex to the incircle are equal: $AF = AG = x$, $BF = BH = y$, $CG = CH = z$. Each side is a sum of two of these, so $x + y = 27$, $x + z = 26$ and $y + z = 25$.",
+      "your_turn": {
+        "prompt": "Solve for $y$. (Hint: add all three equations first.)",
+        "answer": "Adding gives $2(x+y+z) = 78$, so $x + y + z = 39$. Then $y = 39 - (x+z) = 39 - 26 = 13$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "From $39r = 78\\sqrt{14}$ we get $r = 2\\sqrt{14}$, so $IH^2 = 56$. With $BH = 13$, the right triangle $BHI$ gives\n$$BI^2 = 13^2 + 56 = 169 + 56 = 225,$$\nso $BI = 15$. The answer is **(A)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "A",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

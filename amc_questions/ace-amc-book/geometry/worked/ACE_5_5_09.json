@@ -1,0 +1,70 @@
+{
+  "id": "ACE_5_5_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.5.9",
+    "kind": "problem",
+    "section": "Special Points",
+    "original_source": "2022 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Angle bisectors and similar triangles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_5_09.png",
+    "text": "Let $\\triangle ABC$ be a scalene triangle. Point $P$ lies on $\\overline{BC}$ so that $\\overline{AP}$ bisects $\\angle BAC$. The line through $B$ perpendicular to $\\overline{AP}$ intersects the line through $A$ parallel to $\\overline{BC}$ at point $D$. Suppose $BP = 2$ and $PC = 3$. What is $AD$?",
+    "choices": {
+      "A": "$8$",
+      "B": "$9$",
+      "C": "$10$",
+      "D": "$11$",
+      "E": "$12$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$10$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: a bisector plus a perpendicular to it",
+      "body": "The statement gives an angle bisector $AP$ and a line perpendicular to it. That pairing is a strong clue: a line perpendicular to an angle bisector cuts off equal lengths on the two sides of the angle. First, though, use the bisector on its own. By the angle bisector theorem, $\\frac{AB}{AC} = \\frac{BP}{PC}$.",
+      "your_turn": {
+        "prompt": "Write $AB$ and $AC$ in terms of one unknown $k$.",
+        "answer": "$\\frac{AB}{AC} = \\frac23$, so $AB = 2k$ and $AC = 3k$."
+      }
+    },
+    {
+      "title": "The perpendicular cuts off equal lengths",
+      "body": "Let line $BD$ meet $AP$ at $X$ and line $AC$ at $Y$. Triangles $ABX$ and $AYX$ share side $AX$, have equal angles at $A$ (because $AP$ is a bisector) and both have a right angle at $X$. So they are congruent by ASA, and $AY = AB$.",
+      "your_turn": {
+        "prompt": "Find $AY$ and $YC$ in terms of $k$. Is $Y$ between $A$ and $C$?",
+        "answer": "$AY = AB = 2k$. Since $2k < 3k = AC$, $Y$ is between $A$ and $C$, and $YC = 3k - 2k = k$."
+      }
+    },
+    {
+      "title": "Use the parallel line",
+      "body": "Now bring in $D$. Line $AD$ is parallel to $BC$, and line $BD$ crosses both of them, passing through $Y$. This makes triangle $DYA$ similar to triangle $BYC$, with $A$ matching $C$ and $D$ matching $B$.",
+      "your_turn": {
+        "prompt": "Which two pairs of equal angles show that triangles $DYA$ and $BYC$ are similar?",
+        "answer": "$\\angle AYD = \\angle CYB$ (vertical angles), and $\\angle ADY = \\angle CBY$ (alternate angles, since $AD \\parallel BC$)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The scale factor from triangle $BYC$ to triangle $DYA$ is $\\frac{AY}{YC} = \\frac{2k}{k} = 2$. Side $AD$ matches side $CB$, and $BC = BP + PC = 5$, so\n$$AD = 2\\cdot BC = 2\\cdot 5 = 10.$$\nThe answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

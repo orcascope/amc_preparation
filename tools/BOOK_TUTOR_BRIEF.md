@@ -41,6 +41,10 @@ covers what is different for the book.
   "Problem 2.2.7 —" label and the "Source:" line. Numbers go in math mode as in
   the contest files (`$18$`).
 - `choices`: the five choices if the book prints them, otherwise `null`.
+- `figure`: required whenever the item has a diagram. Describe everything a
+  solver needs that the text doesn't say: labels, which points lie on which
+  segments, marked lengths and angles, right-angle marks, shading, tangencies.
+  The lesson itself refers to the diagram by its labels (the app shows the image).
 - `original_source`: the "Source:" line (e.g. "2019 AIME"), or `null` if none
   (Examples usually have none).
 - `book_answer`: the book's final answer: the letter for a multiple-choice item,
@@ -77,7 +81,8 @@ The same shape as a contest lesson (see `TUTOR_BRIEF.md`), with these changes:
   `{ "choice": null, "value": "$585$", "accept": ["585"] }`. `accept` lists the
   answers the app should mark correct, as plain text. The app already treats
   `3/4`, `0.75` and `\frac{3}{4}` as equal, and ignores spaces, `$` and
-  thousands commas, so list only genuinely different forms (for example
+  thousands commas. It also treats `60`, `60°`, `60 degrees` and `60^\circ` as equal,
+  and `\frac{25\pi}{8}` as equal to `25pi/8`. So list only genuinely different forms (for example
   `["5^{38}", "38"]` when the question asks for "the greatest power of 5" and a
   student may reasonably type just the exponent). The book's answer must be one
   of them. Open-ended items have no `wrong_choices` (leave the key out).

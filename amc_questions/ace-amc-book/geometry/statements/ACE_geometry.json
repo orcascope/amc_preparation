@@ -1,0 +1,970 @@
+{
+  "book": "ACE The AMC 10 and AMC 12",
+  "topic": "geometry",
+  "items": [
+    {
+      "id": "ACE_5_1_02",
+      "number": "5.1.2",
+      "kind": "problem",
+      "section": "Angles",
+      "original_source": null,
+      "topic": "geometry",
+      "subtopic": "Straight angles",
+      "text": "Using the diagram below and the concept that you just learned, find the measures of angles $a$, $b$, and $c$.",
+      "choices": null,
+      "figure": "Two straight lines, each with arrowheads at both ends, cross at a single point. One line runs from the upper left down to the lower right. The other is nearly vertical, running from the top (slightly right of the crossing) to the bottom (slightly left). This makes four angles at the crossing. The angle between the upper-left ray and the upward ray is marked $47^\\circ$. Going clockwise from it: angle $a$ is between the upward ray and the lower-right ray (on the right), angle $b$ is between the lower-right ray and the downward ray (at the bottom), and angle $c$ is between the downward ray and the upper-left ray (on the left).",
+      "book_answer": "a=133, b=47, c=133",
+      "book_pages": [
+        127
+      ]
+    },
+    {
+      "id": "ACE_5_1_05",
+      "number": "5.1.5",
+      "kind": "problem",
+      "section": "Angles",
+      "original_source": null,
+      "topic": "geometry",
+      "subtopic": "Complementary angles",
+      "text": "Find the complement of $30$ degrees.",
+      "choices": null,
+      "book_answer": "60",
+      "book_pages": [
+        128
+      ]
+    },
+    {
+      "id": "ACE_5_1_07",
+      "number": "5.1.7",
+      "kind": "problem",
+      "section": "Angles",
+      "original_source": null,
+      "topic": "geometry",
+      "subtopic": "Supplementary angles",
+      "text": "Find the supplement of $85$ degrees.",
+      "choices": null,
+      "book_answer": "95",
+      "book_pages": [
+        128
+      ]
+    },
+    {
+      "id": "ACE_5_1_21",
+      "number": "5.1.21",
+      "kind": "problem",
+      "section": "Angles",
+      "original_source": "1957 AHSME",
+      "topic": "geometry",
+      "subtopic": "Isosceles triangle angles",
+      "text": "In triangle $ABC$, $AC = CD$ and $\\angle CAB - \\angle ABC = 30$ degrees. What is $\\angle BAD$?",
+      "choices": null,
+      "figure": "Triangle $ABC$ with $A$ at the lower left, $B$ at the lower right, and $C$ at the top, left of center. Point $D$ lies on side $BC$, between $C$ and $B$. Segment $AD$ is drawn, splitting the triangle into triangles $ACD$ and $ADB$. No lengths or angles are marked.",
+      "book_answer": "15",
+      "book_pages": [
+        133,
+        134
+      ]
+    },
+    {
+      "id": "ACE_5_1_22",
+      "number": "5.1.22",
+      "kind": "problem",
+      "section": "Angles",
+      "original_source": "2019 AMC 10",
+      "topic": "geometry",
+      "subtopic": "Inscribed angles",
+      "text": "Let $\\triangle ABC$ be an isosceles triangle with $BC = AC$ and $\\angle ACB = 40^{\\circ}$. Construct the circle with diameter $\\overline{BC}$, and let $D$ and $E$ be the other intersection points of the circle with the sides $\\overline{AC}$ and $\\overline{AB}$, respectively. Let $F$ be the intersection of the diagonals of the quadrilateral $BCDE$. What is the degree measure of $\\angle BFC$?",
+      "choices": {
+        "A": "$90$",
+        "B": "$100$",
+        "C": "$105$",
+        "D": "$110$",
+        "E": "$120$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        134,
+        135
+      ]
+    },
+    {
+      "id": "ACE_5_2_06",
+      "number": "5.2.6",
+      "kind": "problem",
+      "section": "Similar Triangles",
+      "original_source": "2018 AMC 10",
+      "topic": "geometry",
+      "subtopic": "Area ratios of similar triangles",
+      "text": "All of the triangles in the diagram below are similar to isosceles triangle $ABC$, in which $AB = AC$. Each of the $7$ smallest triangles has area $1$, and $\\triangle ABC$ has area $40$. What is the area of trapezoid $DBCE$?",
+      "choices": {
+        "A": "$16$",
+        "B": "$18$",
+        "C": "$20$",
+        "D": "$22$",
+        "E": "$24$"
+      },
+      "figure": "Isosceles triangle ABC with apex A at the top and base BC horizontal at the bottom. Point D is on side AB and point E is on side AC, with segment DE parallel to BC (about halfway down from A to BC). Just above DE is a thin strip between DE and a shorter horizontal segment whose ends lie on AB and AC. The strip is cut by a zigzag into 7 small congruent triangles: 4 pointing up, whose bases lie side by side along DE and fill it from D to E, and 3 pointing down between them, whose bases lie along the top segment. The top segment is 3 small bases long. Trapezoid DBCE is the region below DE.",
+      "book_answer": "E",
+      "book_pages": [
+        137
+      ]
+    },
+    {
+      "id": "ACE_5_2_07",
+      "number": "5.2.7",
+      "kind": "problem",
+      "section": "Similar Triangles",
+      "original_source": "1984 AIME",
+      "topic": "geometry",
+      "subtopic": "Area ratios of similar triangles",
+      "text": "A point $P$ is chosen in the interior of $\\triangle ABC$ such that when lines are drawn through $P$ parallel to the sides of $\\triangle ABC$, the resulting smaller triangles $t_1$, $t_2$, and $t_3$ in the figure, have areas $4$, $9$, and $49$, respectively. Find the area of $\\triangle ABC$.",
+      "choices": null,
+      "figure": "Triangle ABC with A at the top, B at the bottom left and C at the bottom right; BC is horizontal. Through an interior point P (not labeled) three segments are drawn, each parallel to one side and ending on the other two sides: a horizontal one parallel to BC, one parallel to AB, and one parallel to AC. They cut ABC into three small triangles, each with a vertex at P, and three parallelograms. Triangle t1 is on the left, next to side AB, just above the horizontal line; its side on the horizontal line runs from AB to P. Triangle t2 is on the right, next to side AC, just above the horizontal line; its side on the horizontal line runs from P to AC. Triangle t3 is at the bottom, with its apex at P and its base on BC. The parallelograms are at the top near A, at the lower left near B (between t1 and BC) and at the lower right near C (between t2 and BC).",
+      "book_answer": "144",
+      "book_pages": [
+        137,
+        138
+      ]
+    },
+    {
+      "id": "ACE_5_2_08",
+      "number": "5.2.8",
+      "kind": "problem",
+      "section": "Similar Triangles",
+      "original_source": "2018 HMMT",
+      "topic": "geometry",
+      "subtopic": "Similar right triangles",
+      "text": "Triangle $GRT$ has $\\overline{GR} = 5$, $\\overline{RT} = 12$, and $\\overline{GT} = 13$. The perpendicular bisector of $\\overline{GT}$ intersects the extension $\\overline{GR}$ at $O$. Find $\\overline{TO}$.",
+      "choices": null,
+      "book_answer": "169/10",
+      "book_pages": [
+        138
+      ]
+    },
+    {
+      "id": "ACE_5_2_09",
+      "number": "5.2.9",
+      "kind": "problem",
+      "section": "Similar Triangles",
+      "original_source": "2021 AIME",
+      "topic": "geometry",
+      "subtopic": "Similar right triangles",
+      "text": "In the diagram below, $ABCD$ is a rectangle with side lengths $AB = 3$ and $BC = 11$, and $AECF$ is a rectangle with side lengths $AF = 7$ and $FC = 9$, as shown. The area of the shaded region common to the interiors of both rectangles is $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+      "choices": null,
+      "figure": "Rectangle ABCD is wide and short: A top left, B bottom left, C bottom right, D top right, with AB = 3 vertical and BC = 11 horizontal. Rectangle AECF is tilted and shares the opposite corners A and C with ABCD: F lies above side AD, E lies below side BC. Side AE goes down to the right from A and crosses BC; side FC goes down to the right from F, crosses AD, and ends at C. AF = 7 (upper left side) and FC = 9. The shaded region is the overlap of the two rectangles: a parallelogram with vertices A, the point where AE crosses BC, C, and the point where FC crosses AD.",
+      "book_answer": "109",
+      "book_pages": [
+        139,
+        140
+      ]
+    },
+    {
+      "id": "ACE_5_2_10",
+      "number": "5.2.10",
+      "kind": "problem",
+      "section": "Similar Triangles",
+      "original_source": "2015 AIME",
+      "topic": "geometry",
+      "subtopic": "Similar right triangles",
+      "text": "In the diagram below, $ABCD$ is a square. Point $E$ is the midpoint of $\\overline{AD}$. Points $F$ and $G$ lie on $\\overline{CE}$, and $H$ and $J$ lie on $\\overline{AB}$ and $\\overline{BC}$, respectively, so that $FGHJ$ is a square. Points $K$ and $L$ lie on $\\overline{GH}$, and $M$ and $N$ lie on $\\overline{AD}$ and $\\overline{AB}$, respectively, so that $KLMN$ is a square. The area of $KLMN$ is $99$. Find the area of $FGHJ$.",
+      "choices": null,
+      "figure": "Square ABCD with A top left, B bottom left, C bottom right, D top right. E is the midpoint of the top side AD, and segment CE runs from the bottom right corner up to E. Square FGHJ is tilted: side FG lies on CE (G nearer E, F nearer C), H is on the left side AB and J is on the bottom side BC. So HJ is parallel to CE, and GH and JF are perpendicular to CE. A smaller tilted square KLMN sits in the top left corner: side KL lies on GH (K nearer H), M is on the top side AD between A and E, and N is on the left side AB between A and H. Going down side AB from A the points are A, N, H, B. The corner right triangles are AMN (right angle at A), KNH (right angle at K), BHJ (right angle at B), FJC (right angle at F) and DCE (right angle at D).",
+      "book_answer": "539",
+      "book_pages": [
+        140,
+        141
+      ]
+    },
+    {
+      "id": "ACE_5_3_04",
+      "number": "5.3.4",
+      "kind": "problem",
+      "section": "Special Triangles",
+      "original_source": "2000 AMC",
+      "topic": "geometry",
+      "subtopic": "30-60-90 triangles",
+      "text": "In rectangle $ABCD$, $AD = 1$, $P$ is on $\\overline{AB}$, and $\\overline{DB}$ and $\\overline{DP}$ trisect $\\angle ADC$. What is the perimeter of $\\triangle BDP$?",
+      "choices": null,
+      "figure": "Rectangle ABCD drawn wider than tall, with A at the top left, B at the top right, C at the bottom right and D at the bottom left, so AB and DC are the long horizontal sides and AD and BC are the short vertical sides. Point P lies on the top side AB, closer to A than to B. Two segments are drawn from D: DP and the diagonal DB. No lengths or angles are marked in the figure.",
+      "book_answer": "2+\\frac{4\\sqrt{3}}{3}",
+      "book_pages": [
+        143
+      ]
+    },
+    {
+      "id": "ACE_5_3_05",
+      "number": "5.3.5",
+      "kind": "problem",
+      "section": "Special Triangles",
+      "original_source": "2014 AMC 10",
+      "topic": "geometry",
+      "subtopic": "Splitting a 15 degree angle",
+      "text": "In rectangle $ABCD$, $\\overline{AB} = 20$ and $\\overline{BC} = 10$. Let $E$ be a point on $\\overline{CD}$ such that $\\angle CBE = 15^\\circ$. What is $\\overline{AE}$?",
+      "choices": {
+        "A": "$\\frac{20\\sqrt{3}}{3}$",
+        "B": "$10\\sqrt{3}$",
+        "C": "$18$",
+        "D": "$11\\sqrt{3}$",
+        "E": "$20$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        143,
+        144,
+        145
+      ]
+    },
+    {
+      "id": "ACE_5_3_06",
+      "number": "5.3.6",
+      "kind": "problem",
+      "section": "Special Triangles",
+      "original_source": "2015 AMC 10",
+      "topic": "geometry",
+      "subtopic": "Angle trisectors and special triangles",
+      "text": "The isosceles right triangle $ABC$ has right angle at $C$ and area $12.5$. The rays trisecting $\\angle ACB$ intersect $AB$ at $D$ and $E$. What is the area of $\\triangle CDE$?",
+      "choices": {
+        "A": "$\\frac{5\\sqrt{2}}{3}$",
+        "B": "$\\frac{50\\sqrt{3}-75}{4}$",
+        "C": "$\\frac{15\\sqrt{3}}{8}$",
+        "D": "$\\frac{50-25\\sqrt{3}}{2}$",
+        "E": "$\\frac{25}{6}$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        145,
+        146
+      ]
+    },
+    {
+      "id": "ACE_5_3_07",
+      "number": "5.3.7",
+      "kind": "problem",
+      "section": "Special Triangles",
+      "original_source": "2001 AIME",
+      "topic": "geometry",
+      "subtopic": "Angle bisector and special triangles",
+      "text": "In triangle $ABC$, angles $A$ and $B$ measure $60$ degrees and $45$ degrees, respectively. The bisector of angle $A$ intersects $\\overline{BC}$ at $T$, and $AT = 24$. The area of triangle $ABC$ can be written in the form $a + b\\sqrt{c}$, where $a$, $b$, and $c$ are positive integers, and $c$ is not divisible by the square of any prime. Find $a + b + c$.",
+      "choices": null,
+      "book_answer": "291",
+      "book_pages": [
+        146,
+        147,
+        148
+      ]
+    },
+    {
+      "id": "ACE_5_4_06",
+      "number": "5.4.6",
+      "kind": "problem",
+      "section": "Area",
+      "original_source": "2016 AMC 10",
+      "topic": "geometry",
+      "subtopic": "Area by decomposition",
+      "text": "Find the area of the shaded region.",
+      "choices": null,
+      "figure": "A rectangle drawn wider than tall. A point on the top side splits it into lengths 1 (left part) and 7 (right part); a point on the bottom side splits it into 7 (left part) and 1 (right part). A point on the left side splits it into 1 (upper part) and 4 (lower part); a point on the right side splits it into 4 (upper part) and 1 (lower part). So the rectangle is 8 wide and 5 tall. One segment joins the top-side point (1 from the top-left corner) to the bottom-side point (1 from the bottom-right corner). A second segment joins the left-side point (1 below the top-left corner) to the right-side point (1 above the bottom-right corner). The two segments cross inside the rectangle. Two regions are shaded gray: the four-sided region at the top-left corner bounded by the corner, the two nearby points and the crossing point, and the matching four-sided region at the bottom-right corner bounded by that corner, its two nearby points and the crossing point.",
+      "book_answer": "13/2",
+      "book_pages": [
+        150,
+        151
+      ]
+    },
+    {
+      "id": "ACE_5_4_07",
+      "number": "5.4.7",
+      "kind": "problem",
+      "section": "Area",
+      "original_source": "2014 AIME",
+      "topic": "geometry",
+      "subtopic": "Area by decomposition",
+      "text": "A rectangle has sides of length $a$ and $36$. A hinge is installed at each vertex of the rectangle, and at the midpoint of each side of length $36$. The sides of length $a$ can be pressed toward each other keeping those two sides parallel so the rectangle becomes a convex hexagon as shown. When the figure is a hexagon with the sides of length $a$ parallel and separated by a distance of $24$, the hexagon has the same area as the original rectangle. Find $a^2$.",
+      "choices": null,
+      "figure": "Two drawings side by side, with no labels or lengths. On the left is the rectangle, taller than it is wide: its short top and bottom sides are the sides of length a, and its long left and right sides are the sides of length 36. On the right is the convex hexagon made from it: the top and bottom sides (length a) are still horizontal and parallel but closer together, and each of the left and right sides has bent outward at its midpoint, so the hexagon has a pointed vertex at the far left and one at the far right.",
+      "book_answer": "720",
+      "book_pages": [
+        151,
+        152
+      ]
+    },
+    {
+      "id": "ACE_5_4_08",
+      "number": "5.4.8",
+      "kind": "problem",
+      "section": "Area",
+      "original_source": "2003 AIME",
+      "topic": "geometry",
+      "subtopic": "Circumradius and area",
+      "text": "Find the area of rhombus $ABCD$ given that the circumradii of triangles $ABD$ and $ACD$ are $12.5$ and $25$, respectively.",
+      "choices": null,
+      "book_answer": "400",
+      "book_pages": [
+        153,
+        154
+      ]
+    },
+    {
+      "id": "ACE_5_5_08",
+      "number": "5.5.8",
+      "kind": "problem",
+      "section": "Special Points",
+      "original_source": "2016 AMC 12",
+      "topic": "geometry",
+      "subtopic": "Angle bisector theorem",
+      "text": "In $\\triangle ABC$, $AB = 6$, $BC = 7$, and $CA = 8$. Point $D$ lies on $\\overline{BC}$, and $\\overline{AD}$ bisects $\\angle BAC$. Point $E$ lies on $\\overline{AC}$, and $\\overline{BE}$ bisects $\\angle ABC$. The bisectors intersect at $F$. What is the ratio $AF : FD$?",
+      "choices": {
+        "A": "$3:2$",
+        "B": "$5:3$",
+        "C": "$2:1$",
+        "D": "$7:3$",
+        "E": "$5:2$"
+      },
+      "figure": "Triangle ABC with A at the bottom left, B at the bottom right and C at the top. Point D is on side BC and point E is on side AC. Segments AD and BE are drawn and cross at point F inside the triangle. No lengths or angle marks are shown.",
+      "book_answer": "C",
+      "book_pages": [
+        156,
+        157
+      ]
+    },
+    {
+      "id": "ACE_5_5_09",
+      "number": "5.5.9",
+      "kind": "problem",
+      "section": "Special Points",
+      "original_source": "2022 AMC",
+      "topic": "geometry",
+      "subtopic": "Angle bisectors and similar triangles",
+      "text": "Let $\\triangle ABC$ be a scalene triangle. Point $P$ lies on $\\overline{BC}$ so that $\\overline{AP}$ bisects $\\angle BAC$. The line through $B$ perpendicular to $\\overline{AP}$ intersects the line through $A$ parallel to $\\overline{BC}$ at point $D$. Suppose $BP = 2$ and $PC = 3$. What is $AD$?",
+      "choices": {
+        "A": "$8$",
+        "B": "$9$",
+        "C": "$10$",
+        "D": "$11$",
+        "E": "$12$"
+      },
+      "book_answer": "C",
+      "book_pages": [
+        157,
+        158
+      ]
+    },
+    {
+      "id": "ACE_5_5_10",
+      "number": "5.5.10",
+      "kind": "problem",
+      "section": "Special Points",
+      "original_source": "2016 AMC",
+      "topic": "geometry",
+      "subtopic": "Angle bisectors and altitudes",
+      "text": "In $\\triangle ABC$ shown in the figure, $AB = 7$, $BC = 8$, $CA = 9$, and $\\overline{AH}$ is an altitude. Points $D$ and $E$ lie on sides $\\overline{AC}$ and $\\overline{AB}$, respectively, so that $\\overline{BD}$ and $\\overline{CE}$ are angle bisectors, intersecting $\\overline{AH}$ at $Q$ and $P$, respectively. What is $PQ$?",
+      "choices": {
+        "A": "$1$",
+        "B": "$\\frac{5}{8}\\sqrt{3}$",
+        "C": "$\\frac{4}{5}\\sqrt{2}$",
+        "D": "$\\frac{8}{15}\\sqrt{5}$",
+        "E": "$\\frac{6}{5}$"
+      },
+      "figure": "Triangle ABC with A at the bottom left, B at the bottom right and C at the top. Side AB is labeled 7, side BC is labeled 8 and side CA is labeled 9. Point H is on side BC, much closer to B than to C, and the altitude AH is drawn (no right-angle mark is shown). Point D is on side AC and segment BD is drawn; point E is on side AB and segment CE is drawn. CE crosses AH at P and BD crosses AH at Q, with P closer to A and Q closer to H.",
+      "book_answer": "D",
+      "book_pages": [
+        158,
+        159
+      ]
+    },
+    {
+      "id": "ACE_5_5_11",
+      "number": "5.5.11",
+      "kind": "problem",
+      "section": "Special Points",
+      "original_source": "2013 AMC",
+      "topic": "geometry",
+      "subtopic": "Centroid and medians",
+      "text": "In triangle $ABC$, medians $AD$ and $CE$ intersect at $P$, $PE = 1.5$, $PD = 2$, and $DE = 2.5$. What is the area of $AEDC$?",
+      "choices": {
+        "A": "$13$",
+        "B": "$13.5$",
+        "C": "$14$",
+        "D": "$14.5$",
+        "E": "$15$"
+      },
+      "figure": "Triangle ABC with A at bottom left, B at bottom right and C at the top, a little left of center. D is the midpoint of side CB and E is the midpoint of side AB. Segments AD and CE are drawn and cross at P, which lies inside the triangle. Segment DE is also drawn, so the quadrilateral AEDC (vertices A, E, D, C) is visible with diagonals AD and CE meeting at P. No lengths or angle marks are shown in the diagram.",
+      "book_answer": "B",
+      "book_pages": [
+        159,
+        160
+      ]
+    },
+    {
+      "id": "ACE_5_5_12",
+      "number": "5.5.12",
+      "kind": "problem",
+      "section": "Special Points",
+      "original_source": "2020 AMC",
+      "topic": "geometry",
+      "subtopic": "Centroid and medians",
+      "text": "Triangle $AMC$ is isosceles with $AM = AC$. Medians $\\overline{MV}$ and $\\overline{CU}$ are perpendicular to each other, and $MV = CU = 12$. What is the area of $\\triangle AMC$?",
+      "choices": {
+        "A": "$48$",
+        "B": "$72$",
+        "C": "$96$",
+        "D": "$144$",
+        "E": "$192$"
+      },
+      "figure": "Tall isosceles triangle AMC with apex A at the top, M at bottom left and C at bottom right, so MC is the horizontal base. U is the midpoint of side AM and V is the midpoint of side AC. Medians MV and CU are drawn and cross at P, which is inside the triangle just above the base. No lengths or right-angle marks are shown in the diagram.",
+      "book_answer": "C",
+      "book_pages": [
+        160,
+        161
+      ]
+    },
+    {
+      "id": "ACE_5_5_13",
+      "number": "5.5.13",
+      "kind": "problem",
+      "section": "Special Points",
+      "original_source": "2013 AIME",
+      "topic": "geometry",
+      "subtopic": "Stewart's theorem",
+      "text": "In $\\triangle ABC$, $AC = BC$, and point $D$ is on $\\overline{BC}$ so that $CD = 3\\cdot BD$. Let $E$ be the midpoint of $\\overline{AD}$. Given that $CE = \\sqrt{7}$ and $BE = 3$, the area of $\\triangle ABC$ can be expressed in the form $m\\sqrt{n}$, where $m$ and $n$ are positive integers and $n$ is not divisible by the square of any prime. Find $m+n$.",
+      "choices": null,
+      "book_answer": "10",
+      "book_pages": [
+        161,
+        162,
+        163
+      ]
+    },
+    {
+      "id": "ACE_5_6_04",
+      "number": "5.6.4",
+      "kind": "problem",
+      "section": "Area Ratios Related to Side Length Ratios",
+      "original_source": "2004 AMC",
+      "topic": "geometry",
+      "subtopic": "Area ratios with a shared angle",
+      "text": "In the right triangle $\\triangle ACE$, we have $AC = 12$, $CE = 16$, and $EA = 20$. Points $B$, $D$, and $F$ are located on $AC$, $CE$, and $EA$, respectively, so that $AB = 3$, $CD = 4$, and $EF = 5$. What is the ratio of the area of $\\triangle DBF$ to that of $\\triangle ACE$?",
+      "choices": {
+        "A": "$\\frac{1}{4}$",
+        "B": "$\\frac{9}{25}$",
+        "C": "$\\frac{3}{8}$",
+        "D": "$\\frac{11}{25}$",
+        "E": "$\\frac{7}{16}$"
+      },
+      "figure": "Right triangle ACE with the right angle at C: A is at the top left, C at the bottom left and E at the bottom right, so AC is vertical and CE is horizontal (no right-angle mark is drawn). B is on AC with AB labeled 3 and BC labeled 9. D is on CE with CD labeled 4 and DE labeled 12. F is on the hypotenuse AE with AF labeled 15 and FE labeled 5. Segments BD, DF and FB are drawn, forming triangle DBF inside triangle ACE.",
+      "book_answer": "E",
+      "book_pages": [
+        165
+      ]
+    },
+    {
+      "id": "ACE_5_6_05",
+      "number": "5.6.5",
+      "kind": "problem",
+      "section": "Area Ratios Related to Side Length Ratios",
+      "original_source": "2002 AIME",
+      "topic": "geometry",
+      "subtopic": "Area ratios and the angle bisector theorem",
+      "text": "In the diagram below, angle $ABC$ is a right angle. Point $D$ is on $\\overline{BC}$, and $\\overline{AD}$ bisects angle $CAB$. Points $E$ and $F$ are on $\\overline{AB}$ and $\\overline{AC}$, respectively, so that $AE = 3$ and $AF = 10$. Given that $EB = 9$ and $FC = 27$, find the integer closest to the area of quadrilateral $DCFG$.",
+      "choices": null,
+      "figure": "Right triangle ABC with the right angle at B (a right-angle mark is drawn at B): A is at the top left, B at the bottom left and C at the bottom right, so AB is vertical and BC is horizontal. E is on AB with AE labeled 3 and EB labeled 9. F is on AC with AF labeled 10 and FC labeled 27. D is on BC. Segment AD (the angle bisector of angle BAC) and segment EF are drawn; they cross at G, which lies on EF between E and F. The quadrilateral DCFG has vertices D, C, F, G. Segment EF looks nearly horizontal in the picture, but nothing says it is parallel to BC.",
+      "book_answer": "148",
+      "book_pages": [
+        166,
+        167
+      ]
+    },
+    {
+      "id": "ACE_5_7_07",
+      "number": "5.7.7",
+      "kind": "problem",
+      "section": "Circles Part 1",
+      "original_source": "2007 AMC",
+      "topic": "geometry",
+      "subtopic": "Tangent circles",
+      "text": "A circle of radius $1$ is surrounded by $4$ circles of radius $r$ as shown. What is $r$?",
+      "choices": {
+        "A": "$\\sqrt{2}$",
+        "B": "$1+\\sqrt{2}$",
+        "C": "$\\sqrt{6}$",
+        "D": "$3$",
+        "E": "$2+\\sqrt{2}$"
+      },
+      "figure": "Four congruent circles of radius r are arranged in a 2-by-2 square: each large circle is tangent to the circle beside it and to the circle above or below it. A small circle of radius 1 sits in the gap at the center and is tangent to all four large circles. Each large circle has a horizontal radius drawn from its center to the right and labeled r; the small circle has a horizontal radius labeled 1.",
+      "book_answer": "B",
+      "book_pages": [
+        170,
+        171
+      ]
+    },
+    {
+      "id": "ACE_5_7_08",
+      "number": "5.7.8",
+      "kind": "problem",
+      "section": "Circles Part 1",
+      "original_source": "2018 AMC",
+      "topic": "geometry",
+      "subtopic": "Tangent circles and similar triangles",
+      "text": "Two circles of radius $5$ are externally tangent to each other and are internally tangent to a circle of radius $13$ at points $A$ and $B$, as shown in the diagram. The distance $AB$ can be written in the form $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?",
+      "choices": {
+        "A": "$21$",
+        "B": "$29$",
+        "C": "$58$",
+        "D": "$69$",
+        "E": "$93$"
+      },
+      "figure": "A large circle of radius 13. Inside it, in the lower part, two equal circles of radius 5 sit side by side and touch each other at one point. The left small circle touches the large circle from inside at point A (lower left), and the right small circle touches the large circle from inside at point B (lower right). Only A and B are labeled; no centers or segments are drawn.",
+      "book_answer": "D",
+      "book_pages": [
+        172,
+        173
+      ]
+    },
+    {
+      "id": "ACE_5_7_09",
+      "number": "5.7.9",
+      "kind": "problem",
+      "section": "Circles Part 1",
+      "original_source": "2006 AMC",
+      "topic": "geometry",
+      "subtopic": "Tangent lines and similar triangles",
+      "text": "A circle of radius $1$ is tangent to a circle of radius $2$. The sides of $\\triangle ABC$ are tangent to the circles as shown, and the sides $\\overline{AB}$ and $\\overline{AC}$ are congruent. What is the area of $\\triangle ABC$?",
+      "choices": {
+        "A": "$\\frac{35}{2}$",
+        "B": "$15\\sqrt{2}$",
+        "C": "$\\frac{64}{3}$",
+        "D": "$16\\sqrt{2}$",
+        "E": "$24$"
+      },
+      "figure": "Tall isosceles triangle ABC with apex A at the top and base BC horizontal at the bottom (B left, C right). Two circles are stacked on the vertical line of symmetry: a small circle of radius 1 near the top and a larger circle of radius 2 below it, touching each other. The small circle is tangent to sides AB and AC. The large circle is tangent to sides AB and AC and to the base BC. A vertical radius is drawn in each circle, labeled 1 in the small circle and 2 in the large circle.",
+      "book_answer": "D",
+      "book_pages": [
+        174,
+        175
+      ]
+    },
+    {
+      "id": "ACE_5_7_10",
+      "number": "5.7.10",
+      "kind": "problem",
+      "section": "Circles Part 1",
+      "original_source": "2011 AMC 10",
+      "topic": "geometry",
+      "subtopic": "Inscribed angles and cyclic quadrilaterals",
+      "text": "In the given circle, the diameter $\\overline{EB}$ is parallel to $\\overline{DC}$, and $\\overline{AB}$ is parallel to $\\overline{ED}$. The angles $AEB$ and $ABE$ are in the ratio $4:5$. What is the degree measure of angle $BCD$?",
+      "choices": {
+        "A": "$120$",
+        "B": "$125$",
+        "C": "$130$",
+        "D": "$135$",
+        "E": "$140$"
+      },
+      "figure": "A circle with its center marked by a dot on the horizontal diameter EB (E on the left, B on the right). Point A is on the upper arc, near the top, and chords AE and AB are drawn, forming triangle EAB above the diameter. Points D and C are close together on the bottom of the circle (D on the left, C on the right); chords ED, DC and CB are drawn, forming quadrilateral EBCD below the diameter.",
+      "book_answer": "C",
+      "book_pages": [
+        175,
+        176
+      ]
+    },
+    {
+      "id": "ACE_5_7_11",
+      "number": "5.7.11",
+      "kind": "problem",
+      "section": "Circles Part 1",
+      "original_source": "2013 AMC 10",
+      "topic": "geometry",
+      "subtopic": "Power of a point",
+      "text": "In $\\triangle ABC$, $AB = 86$, and $AC = 97$. A circle with center $A$ and radius $AB$ intersects $\\overline{BC}$ at points $B$ and $X$. Moreover $\\overline{BX}$ and $\\overline{CX}$ have integer lengths. What is $BC$?",
+      "choices": {
+        "A": "$11$",
+        "B": "$28$",
+        "C": "$33$",
+        "D": "$61$",
+        "E": "$72$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        176,
+        177
+      ]
+    },
+    {
+      "id": "ACE_5_8_04",
+      "number": "5.8.4",
+      "kind": "problem",
+      "section": "Circles Part 2: Cyclic Quadrilaterals",
+      "original_source": "2018 AMC 12",
+      "topic": "geometry",
+      "subtopic": "Cyclic quadrilaterals and Ptolemy's theorem",
+      "text": "Triangle $ABC$ is an isosceles right triangle with $AB=AC=3$. Let $M$ be the midpoint of hypotenuse $\\overline{BC}$. Points $I$ and $E$ lie on sides $\\overline{AC}$ and $\\overline{AB}$, respectively, so that $AI>AE$ and $AIME$ is a cyclic quadrilateral. Given that triangle $EMI$ has area $2$, the length $CI$ can be written as $\\frac{a-\\sqrt{b}}{c}$, where $a$, $b$, and $c$ are positive integers and $b$ is not divisible by the square of any prime. What is the value of $a+b+c$?",
+      "choices": {
+        "A": "$9$",
+        "B": "$10$",
+        "C": "$11$",
+        "D": "$12$",
+        "E": "$13$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "id": "ACE_5_9_06",
+      "number": "5.9.6",
+      "kind": "example",
+      "section": "Analytical Geometry",
+      "original_source": null,
+      "topic": "geometry",
+      "subtopic": "Shoelace Theorem",
+      "text": "We have a right triangle with side lengths $3, 4, 5$. What is the area of this triangle. Find it using the Shoelace Theorem.",
+      "choices": null,
+      "book_answer": "6",
+      "book_pages": [
+        181,
+        182
+      ]
+    },
+    {
+      "id": "ACE_5_9_07",
+      "number": "5.9.7",
+      "kind": "problem",
+      "section": "Analytical Geometry",
+      "original_source": "2004 AMC",
+      "topic": "geometry",
+      "subtopic": "Coordinates and the Shoelace Theorem",
+      "text": "In the right triangle $\\triangle ACE$, we have $AC=12$, $CE=16$, and $EA=20$. Points $B$, $D$, and $F$ are located on $AC$, $CE$, and $EA$, respectively, so that $AB=3$, $CD=4$, and $EF=5$. What is the ratio of the area of $\\triangle DBF$ to that of $\\triangle ACE$?",
+      "choices": null,
+      "book_answer": "7/16",
+      "book_pages": [
+        182,
+        183
+      ]
+    },
+    {
+      "id": "ACE_5_9_08",
+      "number": "5.9.8",
+      "kind": "problem",
+      "section": "Analytical Geometry",
+      "original_source": "2003 AMC",
+      "topic": "geometry",
+      "subtopic": "Intersecting circles with coordinates",
+      "text": "Square $ABCD$ has sides of length $4$, and $M$ is the midpoint of $\\overline{CD}$. A circle with radius $2$ and center $M$ intersects a circle with radius $4$ and center $A$ at points $P$ and $D$. What is the distance from $P$ to $\\overline{AD}$?",
+      "choices": {
+        "A": "$3$",
+        "B": "$\\frac{16}{5}$",
+        "C": "$\\frac{13}{4}$",
+        "D": "$2\\sqrt{3}$",
+        "E": "$\\frac{7}{2}$"
+      },
+      "figure": "Square ABCD drawn with A at the top left, B at the top right, C at the bottom right and D at the bottom left, so AD is the left side and DC is the bottom side. M is marked as a dot at the midpoint of the bottom side DC. Inside the square, the upper half of the circle with center M and radius 2 is drawn as a semicircular arc from D up and over to C. The arc of the circle with center A and radius 4 is drawn inside the square as a quarter circle from D curving up to B. The two arcs cross at the marked point P, which lies inside the square to the right of center and a little below the middle (about three quarters of the way across and about 40 percent of the way up). No lengths are marked on the diagram.",
+      "book_answer": "B",
+      "book_pages": [
+        183,
+        184,
+        185
+      ]
+    },
+    {
+      "id": "ACE_5_10_07",
+      "number": "5.10.7",
+      "kind": "problem",
+      "section": "3D Geometry",
+      "original_source": "2018 AMC",
+      "topic": "geometry",
+      "subtopic": "Volume of a pyramid",
+      "text": "In the rectangular parallelepiped shown, $AB=3$, $BC=1$, and $CG=2$. Point $M$ is the midpoint of $\\overline{FG}$. What is the volume of the rectangular pyramid with base $BCHE$ and apex $M$?",
+      "choices": {
+        "A": "$1$",
+        "B": "$\\frac{4}{3}$",
+        "C": "$\\frac{3}{2}$",
+        "D": "$\\frac{5}{3}$",
+        "E": "$2$"
+      },
+      "figure": "A rectangular box drawn in perspective. The bottom face is ABCD: A at front left, B at front right, C at back right, D at back left. The top face is EFGH, with E directly above A, F above B, G above C and H above D. The front bottom edge AB is labeled 3, the edge BC (going back from B to C) is labeled 1, and the vertical edge CG is labeled 2. The hidden edges AD, DC and DH are dashed. M is marked on the top back-right edge FG at its midpoint. The pyramid is drawn in: segments EB and HC (HC dashed) complete the rectangle BCHE, which slants from the bottom right edge BC up to the top left edge EH, and segments ME, MH, MB and MC join the apex M to the four corners of this base.",
+      "book_answer": "E",
+      "book_pages": [
+        187,
+        188
+      ]
+    },
+    {
+      "id": "ACE_5_10_08",
+      "number": "5.10.8",
+      "kind": "problem",
+      "section": "3D Geometry",
+      "original_source": "2012 AIME",
+      "topic": "geometry",
+      "subtopic": "Pyramid volume from a net",
+      "text": "In the accompanying figure, the outer square $S$ has side length $40$. A second square $S'$ of side length $15$ is constructed inside $S$ with the same center as $S$ and with sides parallel to those of $S$. From each midpoint of a side of $S$, segments are drawn to the two closest vertices of $S'$. The result is a four-pointed starlike figure inscribed in $S$. The star figure is cut out and then folded to form a pyramid with base $S'$. Find the volume of this pyramid.",
+      "choices": null,
+      "figure": "A large outer square S with a smaller square S' drawn in its center, sides parallel to those of S. On each side of S', an isosceles triangle points outward: its base is that side of S' and its apex is the midpoint of the nearest side of S. The four triangles together with S' form a four-pointed star whose points touch the midpoints of the four sides of S. No lengths or angles are marked in the figure.",
+      "book_answer": "750",
+      "book_pages": [
+        188,
+        189
+      ]
+    },
+    {
+      "id": "ACE_5_11_01",
+      "number": "5.11.1",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2009 AMC",
+      "topic": "geometry",
+      "subtopic": "Angles in isosceles trapezoids",
+      "text": "The keystone arch is an ancient architectural feature. It is composed of congruent isosceles trapezoids fitted together along the non-parallel sides, as shown. The bottom sides of the two end trapezoids are horizontal. In an arch made with $9$ trapezoids, let $x$ be the angle measure in degrees of the larger interior angle of the trapezoid. What is $x$?",
+      "choices": {
+        "A": "$100$",
+        "B": "$102$",
+        "C": "$104$",
+        "D": "$106$",
+        "E": "$108$"
+      },
+      "figure": "A semicircular arch standing on a horizontal ground line, built from 9 congruent isosceles trapezoids placed side by side. Neighboring trapezoids share a leg (non-parallel side). The two end trapezoids stand on the ground line with their bottom sides lying along it; the middle (fifth) trapezoid sits at the top of the arch with its parallel sides horizontal. In each trapezoid the longer parallel side is on the outside of the arch and the shorter one on the inside. No angles or lengths are marked.",
+      "book_answer": "A",
+      "book_pages": [
+        189,
+        190
+      ]
+    },
+    {
+      "id": "ACE_5_11_02",
+      "number": "5.11.2",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": null,
+      "topic": "geometry",
+      "subtopic": "Angle chasing",
+      "text": "In $\\triangle ABC$, $\\overline{AC} = \\overline{CD}$ and $\\angle CAB - \\angle ABC = 30^\\circ$. What is $\\angle BAD$?",
+      "choices": null,
+      "figure": "Triangle ABC with A at the bottom left, B at the bottom right and C at the top, to the left of the middle. Point D lies on side BC, and segment AD is drawn, splitting angle CAB into angle CAD and angle DAB. No lengths, angles or tick marks are shown.",
+      "book_answer": "15",
+      "book_pages": [
+        190
+      ]
+    },
+    {
+      "id": "ACE_5_11_03",
+      "number": "5.11.3",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2014 AMC",
+      "topic": "geometry",
+      "subtopic": "Perpendicular slopes",
+      "text": "The $y$-intercepts, $P$ and $Q$, of two perpendicular lines intersecting at the point $A(6,8)$ have a sum of zero. What is the area of $\\triangle APQ$?",
+      "choices": {
+        "A": "$45$",
+        "B": "$48$",
+        "C": "$54$",
+        "D": "$60$",
+        "E": "$72$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        191
+      ]
+    },
+    {
+      "id": "ACE_5_11_04",
+      "number": "5.11.4",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2011 AMC",
+      "topic": "geometry",
+      "subtopic": "Incenter and parallel lines",
+      "text": "Triangle $ABC$ has side-lengths $AB = 12$, $BC = 24$, and $AC = 18$. The line through the incenter of $\\triangle ABC$ parallel to $\\overline{BC}$ intersects $\\overline{AB}$ at $M$ and $\\overline{AC}$ at $N$. What is the perimeter of $\\triangle AMN$?",
+      "choices": {
+        "A": "$27$",
+        "B": "$30$",
+        "C": "$33$",
+        "D": "$36$",
+        "E": "$42$"
+      },
+      "book_answer": "B",
+      "book_pages": [
+        191,
+        192
+      ]
+    },
+    {
+      "id": "ACE_5_11_05",
+      "number": "5.11.5",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2014 AMC",
+      "topic": "geometry",
+      "subtopic": "Regular hexagons and equilateral triangles",
+      "text": "Six regular hexagons surround a regular hexagon of side length $1$ as shown. What is the area of $\\triangle ABC$?",
+      "choices": {
+        "A": "$2\\sqrt{3}$",
+        "B": "$3\\sqrt{3}$",
+        "C": "$1+3\\sqrt{2}$",
+        "D": "$2+2\\sqrt{3}$",
+        "E": "$3+2\\sqrt{3}$"
+      },
+      "figure": "A central regular hexagon of side 1 has two horizontal sides, so its leftmost and rightmost points are vertices. Six congruent regular hexagons surround it, each sharing one side with it (top, upper-right, lower-right, bottom, lower-left, upper-left). Point A is the vertex where the upper-left and lower-left hexagons meet, directly to the left of the central hexagon's left vertex and joined to it by a shared horizontal edge of length 1. Point B is the vertex shared by the top and upper-right hexagons, and C is the vertex shared by the bottom and lower-right hexagons; B is directly above C. Triangle ABC is drawn: side BC is a vertical segment passing through the central hexagon's right vertex, side AB passes through the central hexagon's upper-left vertex, and side AC passes through its lower-left vertex. Extra segments join B to the central hexagon's upper-right vertex and C to its lower-right vertex.",
+      "book_answer": "B",
+      "book_pages": [
+        192
+      ]
+    },
+    {
+      "id": "ACE_5_11_06",
+      "number": "5.11.6",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2012 AMC",
+      "topic": "geometry",
+      "subtopic": "Similar triangles",
+      "text": "Three unit squares and two line segments connecting two pairs of vertices are shown. What is the area of $\\triangle ABC$?",
+      "choices": {
+        "A": "$\\frac{1}{6}$",
+        "B": "$\\frac{1}{5}$",
+        "C": "$\\frac{2}{9}$",
+        "D": "$\\frac{1}{3}$",
+        "E": "$\\frac{\\sqrt{2}}{4}$"
+      },
+      "figure": "Three unit squares form an L shape: two squares are stacked vertically on the left, and the third sits to the right of the upper-left square, so the top edge of the figure has length 2 and the left edge has length 2. A is the top-left corner of the upper-left square and B is its top-right corner (also the top-left corner of the right square), so AB = 1. One segment runs from A to the bottom-right corner of the right square. The other runs from B to the bottom-left corner of the lower-left square. The two segments cross at point C, which lies inside the upper-left square.",
+      "book_answer": "B",
+      "book_pages": [
+        193
+      ]
+    },
+    {
+      "id": "ACE_5_11_07",
+      "number": "5.11.7",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2014 AMC",
+      "topic": "geometry",
+      "subtopic": "Rectangular box diagonals",
+      "text": "A rectangular box has a total surface area of $94$ square inches. The sum of the lengths of all its edges is $48$ inches. What is the sum of the lengths in inches of all of its interior diagonals?",
+      "choices": {
+        "A": "$8\\sqrt{3}$",
+        "B": "$10\\sqrt{2}$",
+        "C": "$16\\sqrt{3}$",
+        "D": "$20\\sqrt{2}$",
+        "E": "$40\\sqrt{2}$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        194
+      ]
+    },
+    {
+      "id": "ACE_5_11_08",
+      "number": "5.11.8",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2014 AMC",
+      "topic": "geometry",
+      "subtopic": "Spheres in a box",
+      "text": "A $4 \\times 4 \\times h$ rectangular box contains a sphere of radius $2$ and eight smaller spheres of radius $1$. The smaller spheres are each tangent to three sides of the box, and the larger sphere is tangent to each of the smaller spheres. What is $h$?",
+      "choices": {
+        "A": "$2+2\\sqrt{7}$",
+        "B": "$3+2\\sqrt{5}$",
+        "C": "$4+2\\sqrt{7}$",
+        "D": "$4\\sqrt{5}$",
+        "E": "$4\\sqrt{7}$"
+      },
+      "figure": "A 3D drawing of a tall box with a square 4 by 4 base standing upright (height h). One small sphere of radius 1 sits in each of the eight corners of the box: four in the top corners and four in the bottom corners, each touching the three faces that meet at its corner. The large sphere of radius 2 sits in the middle of the box, between the top four and bottom four small spheres, touching all eight of them.",
+      "book_answer": "A",
+      "book_pages": [
+        194,
+        195
+      ]
+    },
+    {
+      "id": "ACE_5_11_09",
+      "number": "5.11.9",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2004 AMC",
+      "topic": "geometry",
+      "subtopic": "Equal tangent lengths",
+      "text": "Square $ABCD$ has side length $2$. A semicircle with diameter $\\overline{AB}$ is constructed inside the square, and the tangent to the semicircle from $C$ intersects side $\\overline{AD}$ at $E$. What is the length of $\\overline{CE}$?",
+      "choices": {
+        "A": "$\\frac{2+\\sqrt{5}}{2}$",
+        "B": "$\\sqrt{5}$",
+        "C": "$\\sqrt{6}$",
+        "D": "$\\frac{5}{2}$",
+        "E": "$5-\\sqrt{5}$"
+      },
+      "figure": "Square ABCD with A at the bottom left, B at the bottom right, C at the top right and D at the top left. A semicircle with diameter AB sits on the bottom side and bulges upward inside the square; it touches the left side AD at A and the right side BC at B. A straight segment starts at C, touches the semicircle once on its upper-left part, and ends at point E on the left side AD, with E between A and D and closer to A. No lengths are marked in the figure.",
+      "book_answer": "D",
+      "book_pages": [
+        196,
+        197
+      ]
+    },
+    {
+      "id": "ACE_5_11_10",
+      "number": "5.11.10",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2014 AMC",
+      "topic": "geometry",
+      "subtopic": "Tangent circles",
+      "text": "Eight semicircles line the inside of a square with side length $2$ as shown. What is the radius of the circle tangent to all of these semicircles?",
+      "choices": {
+        "A": "$\\frac{1+\\sqrt{2}}{4}$",
+        "B": "$\\frac{\\sqrt{5}-1}{2}$",
+        "C": "$\\frac{\\sqrt{3}+1}{4}$",
+        "D": "$\\frac{2\\sqrt{3}}{5}$",
+        "E": "$\\frac{\\sqrt{5}}{3}$"
+      },
+      "figure": "A square with no labels. Each side is split at its midpoint into two halves, and on each half a semicircle is drawn with that half as its diameter, bulging into the square: two semicircles per side, eight in all, all the same size. Near each corner the two semicircles from the neighbouring sides overlap, forming a lens shape. In the middle of the square is one circle, centered at the center of the square, that touches each of the eight semicircles from outside. No lengths are marked in the figure.",
+      "book_answer": "B",
+      "book_pages": [
+        197,
+        198
+      ]
+    },
+    {
+      "id": "ACE_5_11_11",
+      "number": "5.11.11",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2012 AMC",
+      "topic": "geometry",
+      "subtopic": "Incircle and inradius",
+      "text": "Triangle $ABC$ has $AB=27$, $AC=26$, and $BC=25$. Let $I$ be the intersection of the internal angle bisectors of $\\triangle ABC$. What is $BI$?",
+      "choices": {
+        "A": "$15$",
+        "B": "$5+\\sqrt{26}+3\\sqrt{3}$",
+        "C": "$3\\sqrt{26}$",
+        "D": "$\\frac{2}{3}\\sqrt{546}$",
+        "E": "$9\\sqrt{3}$"
+      },
+      "book_answer": "A",
+      "book_pages": [
+        198,
+        199
+      ]
+    },
+    {
+      "id": "ACE_5_11_12",
+      "number": "5.11.12",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2019 AMC 10",
+      "topic": "geometry",
+      "subtopic": "Tangent lines to a circle",
+      "text": "Points $A=(6,13)$ and $B=(12,11)$ lie on circle $\\omega$ in the plane. Suppose that the tangent lines to $\\omega$ at $A$ and $B$ intersect at a point on the $x$-axis. What is the area of $\\omega$?",
+      "choices": {
+        "A": "$\\frac{83\\pi}{8}$",
+        "B": "$\\frac{21\\pi}{2}$",
+        "C": "$\\frac{85\\pi}{8}$",
+        "D": "$\\frac{43\\pi}{4}$",
+        "E": "$\\frac{87\\pi}{8}$"
+      },
+      "book_answer": "C",
+      "book_pages": [
+        199,
+        200
+      ]
+    }
+  ]
+}
