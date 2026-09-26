@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_2_06",
+  "number": "5.2.6",
+  "kind": "problem",
+  "section": "Similar Triangles",
+  "original_source": "2018 AMC 10",
+  "topic": "geometry",
+  "subtopic": "Area ratios of similar triangles",
+  "text": "All of the triangles in the diagram below are similar to isosceles triangle $ABC$, in which $AB = AC$. Each of the $7$ smallest triangles has area $1$, and $\\triangle ABC$ has area $40$. What is the area of trapezoid $DBCE$?",
+  "choices": { "A": "$16$", "B": "$18$", "C": "$20$", "D": "$22$", "E": "$24$" },
+  "figure": "Isosceles triangle ABC with apex A at the top and base BC horizontal at the bottom. Point D is on side AB and point E is on side AC, with segment DE parallel to BC (about halfway down from A to BC). Just above DE is a thin strip between DE and a shorter horizontal segment whose ends lie on AB and AC. The strip is cut by a zigzag into 7 small congruent triangles: 4 pointing up, whose bases lie side by side along DE and fill it from D to E, and 3 pointing down between them, whose bases lie along the top segment. The top segment is 3 small bases long. Trapezoid DBCE is the region below DE.",
+  "book_answer": "E",
+  "book_pages": [137]
+}

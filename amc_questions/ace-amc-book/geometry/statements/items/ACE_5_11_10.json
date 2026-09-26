@@ -1,0 +1,20 @@
+{
+  "id": "ACE_5_11_10",
+  "number": "5.11.10",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2014 AMC",
+  "topic": "geometry",
+  "subtopic": "Tangent circles",
+  "text": "Eight semicircles line the inside of a square with side length $2$ as shown. What is the radius of the circle tangent to all of these semicircles?",
+  "choices": {
+    "A": "$\\frac{1+\\sqrt{2}}{4}$",
+    "B": "$\\frac{\\sqrt{5}-1}{2}$",
+    "C": "$\\frac{\\sqrt{3}+1}{4}$",
+    "D": "$\\frac{2\\sqrt{3}}{5}$",
+    "E": "$\\frac{\\sqrt{5}}{3}$"
+  },
+  "figure": "A square with no labels. Each side is split at its midpoint into two halves, and on each half a semicircle is drawn with that half as its diameter, bulging into the square: two semicircles per side, eight in all, all the same size. Near each corner the two semicircles from the neighbouring sides overlap, forming a lens shape. In the middle of the square is one circle, centered at the center of the square, that touches each of the eight semicircles from outside. No lengths are marked in the figure.",
+  "book_answer": "B",
+  "book_pages": [197, 198]
+}

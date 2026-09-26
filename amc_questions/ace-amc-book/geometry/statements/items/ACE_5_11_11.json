@@ -1,0 +1,19 @@
+{
+  "id": "ACE_5_11_11",
+  "number": "5.11.11",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2012 AMC",
+  "topic": "geometry",
+  "subtopic": "Incircle and inradius",
+  "text": "Triangle $ABC$ has $AB=27$, $AC=26$, and $BC=25$. Let $I$ be the intersection of the internal angle bisectors of $\\triangle ABC$. What is $BI$?",
+  "choices": {
+    "A": "$15$",
+    "B": "$5+\\sqrt{26}+3\\sqrt{3}$",
+    "C": "$3\\sqrt{26}$",
+    "D": "$\\frac{2}{3}\\sqrt{546}$",
+    "E": "$9\\sqrt{3}$"
+  },
+  "book_answer": "A",
+  "book_pages": [198, 199]
+}

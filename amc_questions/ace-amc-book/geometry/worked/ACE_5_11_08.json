@@ -1,0 +1,62 @@
+{
+  "id": "ACE_5_11_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.8",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2014 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Spheres in a box",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_08.png",
+    "text": "A $4 \\times 4 \\times h$ rectangular box contains a sphere of radius $2$ and eight smaller spheres of radius $1$. The smaller spheres are each tangent to three sides of the box, and the larger sphere is tangent to each of the smaller spheres. What is $h$?",
+    "choices": { "A": "$2+2\\sqrt{7}$", "B": "$3+2\\sqrt{5}$", "C": "$4+2\\sqrt{7}$", "D": "$4\\sqrt{5}$", "E": "$4\\sqrt{7}$" }
+  },
+  "answer": { "choice": "A", "value": "$2+2\\sqrt{7}$" },
+  "steps": [
+    {
+      "title": "Where to start: work with the centers",
+      "body": "Tangent spheres are hard to picture, but their centers are easy: two tangent spheres have centers exactly (sum of radii) apart, and a sphere tangent to a face has its center one radius from that face. Each small sphere touches three faces, so it sits in a corner with its center $1$ away from each of those faces. Look at the four top small spheres first.",
+      "your_turn": {
+        "prompt": "The four top centers form a square. How long is its side?",
+        "answer": "$2$. Across the $4$-wide box, each center is $1$ in from its wall, so two neighbouring centers are $4 - 1 - 1 = 2$ apart."
+      }
+    },
+    {
+      "title": "Where the big center is",
+      "body": "The big sphere has radius $2$, the same as half the width, and it touches all eight small spheres, so by symmetry its center $G$ is on the vertical line through the middle of the box, straight below the center of that square. The distance from $G$ to each top center is $2 + 1 = 3$ because the spheres are tangent.",
+      "your_turn": {
+        "prompt": "How far is the center of the square from one of its corners?",
+        "answer": "Half the diagonal: $\\tfrac{2\\sqrt{2}}{2} = \\sqrt{2}$."
+      }
+    },
+    {
+      "title": "A right triangle gives the vertical gap",
+      "body": "Join $G$, one top center, and the center of the square. The segment from $G$ up to the square's center is vertical and the square is horizontal, so this triangle has a right angle at the square's center. Its hypotenuse is $3$ and its horizontal leg is $\\sqrt{2}$.",
+      "your_turn": {
+        "prompt": "Find the vertical leg: how far above $G$ is the plane of the top four centers?",
+        "answer": "$\\sqrt{3^2 - (\\sqrt{2})^2} = \\sqrt{9 - 2} = \\sqrt{7}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "By the same argument the bottom four centers are $\\sqrt{7}$ below $G$. Careful: the box does not end at the centers. The top face is $1$ (one small radius) above the top centers, and the bottom face is $1$ below the bottom centers. So\n$$h = 1 + \\sqrt{7} + \\sqrt{7} + 1 = 2 + 2\\sqrt{7}.$$\nThe answer is **(A)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "C": "This adds a full diameter $2$ at each end instead of the radius $1$. The top face is only one radius above the top centers."
+  },
+  "verification": {
+    "book_answer": "A",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

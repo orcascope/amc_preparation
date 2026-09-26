@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_5_12",
+  "number": "5.5.12",
+  "kind": "problem",
+  "section": "Special Points",
+  "original_source": "2020 AMC",
+  "topic": "geometry",
+  "subtopic": "Centroid and medians",
+  "text": "Triangle $AMC$ is isosceles with $AM = AC$. Medians $\\overline{MV}$ and $\\overline{CU}$ are perpendicular to each other, and $MV = CU = 12$. What is the area of $\\triangle AMC$?",
+  "choices": { "A": "$48$", "B": "$72$", "C": "$96$", "D": "$144$", "E": "$192$" },
+  "figure": "Tall isosceles triangle AMC with apex A at the top, M at bottom left and C at bottom right, so MC is the horizontal base. U is the midpoint of side AM and V is the midpoint of side AC. Medians MV and CU are drawn and cross at P, which is inside the triangle just above the base. No lengths or right-angle marks are shown in the diagram.",
+  "book_answer": "C",
+  "book_pages": [160, 161]
+}

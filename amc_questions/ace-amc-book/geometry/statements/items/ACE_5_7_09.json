@@ -1,0 +1,23 @@
+{
+  "id": "ACE_5_7_09",
+  "number": "5.7.9",
+  "kind": "problem",
+  "section": "Circles Part 1",
+  "original_source": "2006 AMC",
+  "topic": "geometry",
+  "subtopic": "Tangent lines and similar triangles",
+  "text": "A circle of radius $1$ is tangent to a circle of radius $2$. The sides of $\\triangle ABC$ are tangent to the circles as shown, and the sides $\\overline{AB}$ and $\\overline{AC}$ are congruent. What is the area of $\\triangle ABC$?",
+  "choices": {
+    "A": "$\\frac{35}{2}$",
+    "B": "$15\\sqrt{2}$",
+    "C": "$\\frac{64}{3}$",
+    "D": "$16\\sqrt{2}$",
+    "E": "$24$"
+  },
+  "figure": "Tall isosceles triangle ABC with apex A at the top and base BC horizontal at the bottom (B left, C right). Two circles are stacked on the vertical line of symmetry: a small circle of radius 1 near the top and a larger circle of radius 2 below it, touching each other. The small circle is tangent to sides AB and AC. The large circle is tangent to sides AB and AC and to the base BC. A vertical radius is drawn in each circle, labeled 1 in the small circle and 2 in the large circle.",
+  "book_answer": "D",
+  "book_pages": [
+    174,
+    175
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_1_02",
+  "number": "5.1.2",
+  "kind": "problem",
+  "section": "Angles",
+  "original_source": null,
+  "topic": "geometry",
+  "subtopic": "Straight angles",
+  "text": "Using the diagram below and the concept that you just learned, find the measures of angles $a$, $b$, and $c$.",
+  "choices": null,
+  "figure": "Two straight lines, each with arrowheads at both ends, cross at a single point. One line runs from the upper left down to the lower right. The other is nearly vertical, running from the top (slightly right of the crossing) to the bottom (slightly left). This makes four angles at the crossing. The angle between the upper-left ray and the upward ray is marked $47^\\circ$. Going clockwise from it: angle $a$ is between the upward ray and the lower-right ray (on the right), angle $b$ is between the lower-right ray and the downward ray (at the bottom), and angle $c$ is between the downward ray and the upper-left ray (on the left).",
+  "book_answer": "a=133, b=47, c=133",
+  "book_pages": [127]
+}

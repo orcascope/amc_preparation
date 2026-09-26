@@ -1,0 +1,69 @@
+{
+  "id": "ACE_5_10_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.10.7",
+    "kind": "problem",
+    "section": "3D Geometry",
+    "original_source": "2018 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Volume of a pyramid",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_10_07.png",
+    "text": "In the rectangular parallelepiped shown, $AB=3$, $BC=1$, and $CG=2$. Point $M$ is the midpoint of $\\overline{FG}$. What is the volume of the rectangular pyramid with base $BCHE$ and apex $M$?",
+    "choices": {
+      "A": "$1$",
+      "B": "$\\frac{4}{3}$",
+      "C": "$\\frac{3}{2}$",
+      "D": "$\\frac{5}{3}$",
+      "E": "$2$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$2$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: base area times height over three",
+      "body": "A pyramid has volume $\\frac{1}{3}\\cdot(\\text{base area})\\cdot(\\text{height})$. The base $BCHE$ is a rectangle that slants across the box: one side is $BC = 1$ and the other side is $BE$, the diagonal of the front face $ABFE$. The base area is easy; the real work is the height, the perpendicular distance from $M$ to that slanted rectangle.",
+      "your_turn": {
+        "prompt": "How long is $BE$? (Use the front face: $AB = 3$ and $AE = CG = 2$.)",
+        "answer": "$BE = \\sqrt{3^2 + 2^2} = \\sqrt{13}$, so the base has area $\\sqrt{13}\\cdot 1 = \\sqrt{13}$."
+      }
+    },
+    {
+      "title": "Slice the box through $M$",
+      "body": "Let $X$ be the midpoint of $HE$ and $Y$ the midpoint of $BC$. Triangle $MXY$ lies in the slice halfway between the front face $ABFE$ and the back face $DCGH$. Edge $BC$ runs straight from front to back, so it is perpendicular to this slice, and since the base contains $BC$, the slice meets the base at a right angle. So the height of the pyramid is the altitude from $M$ to $XY$ in triangle $MXY$.",
+      "your_turn": {
+        "prompt": "Find the three sides of triangle $MXY$.",
+        "answer": "$MX = 3$ (it runs across the top, parallel to $EF$), $MY = 2$ ($M$ is straight above $Y$, like $CG$), and $XY = BE = \\sqrt{13}$."
+      }
+    },
+    {
+      "title": "Set up the altitude",
+      "body": "Drop the altitude from $M$ to $XY$ and call its foot $P$ (we avoid the letter $H$, which is already a vertex of the box). Let $PY = x$, so $XP = \\sqrt{13} - x$, and let the altitude be $h$. The two right triangles $MPY$ and $MPX$ give\n$$h^2 + x^2 = 4, \\qquad h^2 + (\\sqrt{13} - x)^2 = 9.$$",
+      "your_turn": {
+        "prompt": "Subtract the first equation from the second and solve for $x$.",
+        "answer": "$13 - 2\\sqrt{13}\\,x = 5$, so $x = \\frac{4}{\\sqrt{13}} = \\frac{4\\sqrt{13}}{13}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Then $h^2 = 4 - \\frac{16}{13} = \\frac{36}{13}$, so $h = \\frac{6}{\\sqrt{13}}$. (Check: $3^2 + 2^2 = 13$, so $MXY$ has a right angle at $M$, and its altitude is $\\frac{3\\cdot 2}{\\sqrt{13}}$, the same value.) The volume is $\\frac{1}{3}\\cdot\\sqrt{13}\\cdot\\frac{6}{\\sqrt{13}} = 2$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

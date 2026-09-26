@@ -1,0 +1,69 @@
+{
+  "id": "ACE_5_11_12",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.12",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2019 AMC 10"
+  },
+  "topic": "geometry",
+  "subtopic": "Tangent lines to a circle",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_12.png",
+    "text": "Points $A=(6,13)$ and $B=(12,11)$ lie on circle $\\omega$ in the plane. Suppose that the tangent lines to $\\omega$ at $A$ and $B$ intersect at a point on the $x$-axis. What is the area of $\\omega$?",
+    "choices": {
+      "A": "$\\frac{83\\pi}{8}$",
+      "B": "$\\frac{21\\pi}{2}$",
+      "C": "$\\frac{85\\pi}{8}$",
+      "D": "$\\frac{43\\pi}{4}$",
+      "E": "$\\frac{87\\pi}{8}$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$\\frac{85\\pi}{8}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: find where the tangents meet",
+      "body": "The one thing we are told about the tangents is that they meet on the $x$-axis. Call that point $X = (x, 0)$. Two tangent segments from the same point to a circle are equal, so $XA = XB$, and that gives an equation for $x$.",
+      "your_turn": {
+        "prompt": "Write $XA^2 = XB^2$ with the distance formula and solve for $x$.",
+        "answer": "$(x-6)^2 + 13^2 = (x-12)^2 + 11^2$ becomes $-12x + 205 = -24x + 265$, so $12x = 60$ and $x = 5$."
+      }
+    },
+    {
+      "title": "Right angles at $A$ and $B$",
+      "body": "Let $O$ be the center and $r$ the radius. The radius $OA$ is perpendicular to the tangent $XA$, so triangle $OAX$ has a right angle at $A$. Writing $d = OX$, this gives $r^2 + XA^2 = d^2$. We need a second equation linking $r$ and $d$.",
+      "your_turn": {
+        "prompt": "With $X = (5, 0)$, compute $XA^2$ and the length $AB$.",
+        "answer": "$XA^2 = 1^2 + 13^2 = 170$ (and $XB^2 = 7^2 + 11^2 = 170$ too). $AB^2 = 6^2 + 2^2 = 40$, so $AB = 2\\sqrt{10}$."
+      }
+    },
+    {
+      "title": "Ptolemy's theorem on $AXBO$",
+      "body": "In quadrilateral $AXBO$ the angles at $A$ and $B$ are both $90^\\circ$, so two opposite angles add to $180^\\circ$ and the four points lie on one circle. Ptolemy's theorem says that for such a quadrilateral, the product of the diagonals equals the sum of the products of opposite sides:\n$$AO\\cdot BX + BO\\cdot AX = AB\\cdot OX.$$\nCareful: the diagonals are $AB$ and $OX$, since $A$ and $B$ are not next to each other in $AXBO$.",
+      "your_turn": {
+        "prompt": "Plug in $AO = BO = r$, $AX = BX = \\sqrt{170}$, $AB = 2\\sqrt{10}$, $OX = d$, and simplify to get $d$ in terms of $r$.",
+        "answer": "$2r\\sqrt{170} = 2\\sqrt{10}\\,d$, so $d = r\\sqrt{17}$ (because $\\sqrt{170}/\\sqrt{10} = \\sqrt{17}$)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Substitute $d = r\\sqrt{17}$ into $r^2 + 170 = d^2$: $r^2 + 170 = 17r^2$, so $16r^2 = 170$ and $r^2 = \\frac{85}{8}$. The area is $\\pi r^2 = \\frac{85\\pi}{8}$. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

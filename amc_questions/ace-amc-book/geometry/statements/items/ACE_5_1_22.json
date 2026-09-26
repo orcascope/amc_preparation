@@ -1,0 +1,13 @@
+{
+  "id": "ACE_5_1_22",
+  "number": "5.1.22",
+  "kind": "problem",
+  "section": "Angles",
+  "original_source": "2019 AMC 10",
+  "topic": "geometry",
+  "subtopic": "Inscribed angles",
+  "text": "Let $\\triangle ABC$ be an isosceles triangle with $BC = AC$ and $\\angle ACB = 40^{\\circ}$. Construct the circle with diameter $\\overline{BC}$, and let $D$ and $E$ be the other intersection points of the circle with the sides $\\overline{AC}$ and $\\overline{AB}$, respectively. Let $F$ be the intersection of the diagonals of the quadrilateral $BCDE$. What is the degree measure of $\\angle BFC$?",
+  "choices": { "A": "$90$", "B": "$100$", "C": "$105$", "D": "$110$", "E": "$120$" },
+  "book_answer": "D",
+  "book_pages": [134, 135]
+}

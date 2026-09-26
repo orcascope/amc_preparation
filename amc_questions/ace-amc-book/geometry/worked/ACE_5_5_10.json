@@ -1,0 +1,77 @@
+{
+  "id": "ACE_5_5_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.5.10",
+    "kind": "problem",
+    "section": "Special Points",
+    "original_source": "2016 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Angle bisectors and altitudes",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_5_10.png",
+    "text": "In $\\triangle ABC$ shown in the figure, $AB = 7$, $BC = 8$, $CA = 9$, and $\\overline{AH}$ is an altitude. Points $D$ and $E$ lie on sides $\\overline{AC}$ and $\\overline{AB}$, respectively, so that $\\overline{BD}$ and $\\overline{CE}$ are angle bisectors, intersecting $\\overline{AH}$ at $Q$ and $P$, respectively. What is $PQ$?",
+    "choices": {
+      "A": "$1$",
+      "B": "$\\frac{5}{8}\\sqrt{3}$",
+      "C": "$\\frac{4}{5}\\sqrt{2}$",
+      "D": "$\\frac{8}{15}\\sqrt{5}$",
+      "E": "$\\frac{6}{5}$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$\\frac{8}{15}\\sqrt{5}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: both points are on the altitude",
+      "body": "$P$ and $Q$ both lie on $AH$, so $PQ$ is the difference of $AQ$ and $AP$. Each point is where an angle bisector crosses $AH$: in triangle $ABH$, $BQ$ bisects the angle at $B$, and in triangle $ACH$, $CP$ bisects the angle at $C$. The angle bisector theorem will locate them, but first we need $BH$, $CH$ and $AH$. Let $CH = x$ and $AH = h$.",
+      "your_turn": {
+        "prompt": "Write two Pythagorean equations, one for right triangle $ACH$ and one for right triangle $ABH$.",
+        "answer": "$h^2 + x^2 = 9^2$ and $h^2 + (8-x)^2 = 7^2$, since $HB = 8 - x$."
+      }
+    },
+    {
+      "title": "Solve for the pieces of $BC$ and the altitude",
+      "body": "Subtract the second equation from the first. The $h^2$ cancels and so does $x^2$:\n$$x^2 - (8-x)^2 = 81 - 49 \\;\\Rightarrow\\; 16x - 64 = 32 \\;\\Rightarrow\\; x = 6.$$\nSo $CH = 6$ and $HB = 2$.",
+      "your_turn": {
+        "prompt": "Find the altitude $AH$.",
+        "answer": "$AH^2 = 81 - 36 = 45$, so $AH = 3\\sqrt5$."
+      }
+    },
+    {
+      "title": "Locate $Q$ with the angle bisector theorem",
+      "body": "In triangle $ABH$, $BQ$ bisects $\\angle ABH$ (the same angle as $\\angle ABC$, since $H$ is on $BC$). So it splits $AH$ in the ratio of the sides next to $B$: $\\frac{AQ}{QH} = \\frac{AB}{BH} = \\frac72$.",
+      "your_turn": {
+        "prompt": "Find $AQ$.",
+        "answer": "$AQ$ is $\\frac{7}{9}$ of $AH$, so $AQ = \\frac79\\cdot 3\\sqrt5 = \\frac{7\\sqrt5}{3}$."
+      }
+    },
+    {
+      "title": "Locate $P$ the same way",
+      "body": "In triangle $ACH$, $CP$ bisects $\\angle ACH$, so $\\frac{AP}{PH} = \\frac{AC}{CH} = \\frac96 = \\frac32$. That makes $AP$ equal to $\\frac35$ of $AH$.",
+      "your_turn": {
+        "prompt": "Which point is closer to $A$, $P$ or $Q$? Compare the fractions of $AH$.",
+        "answer": "$P$, because $\\frac35 = \\frac{27}{45}$ is less than $\\frac79 = \\frac{35}{45}$. This matches the figure."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "$AP = \\frac35\\cdot 3\\sqrt5 = \\frac{9\\sqrt5}{5}$, and since $P$ is between $A$ and $Q$,\n$$PQ = AQ - AP = \\frac{7\\sqrt5}{3} - \\frac{9\\sqrt5}{5} = \\frac{35\\sqrt5 - 27\\sqrt5}{15} = \\frac{8}{15}\\sqrt5.$$\nThe answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

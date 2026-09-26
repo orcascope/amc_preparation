@@ -1,0 +1,69 @@
+{
+  "id": "ACE_5_11_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.9",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2004 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Equal tangent lengths",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_09.png",
+    "text": "Square $ABCD$ has side length $2$. A semicircle with diameter $\\overline{AB}$ is constructed inside the square, and the tangent to the semicircle from $C$ intersects side $\\overline{AD}$ at $E$. What is the length of $\\overline{CE}$?",
+    "choices": {
+      "A": "$\\frac{2+\\sqrt{5}}{2}$",
+      "B": "$\\sqrt{5}$",
+      "C": "$\\sqrt{6}$",
+      "D": "$\\frac{5}{2}$",
+      "E": "$5-\\sqrt{5}$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$\\frac{5}{2}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: spot all the tangent lines",
+      "body": "The word \"tangent\" is the clue. The two tangent segments drawn from one outside point to a circle always have equal length. Here $CE$ is not the only tangent: the sides $AD$ and $BC$ also touch the semicircle, at $A$ and at $B$.",
+      "your_turn": {
+        "prompt": "Why does side $BC$ touch the semicircle at $B$ instead of cutting through it?",
+        "answer": "$BC$ is perpendicular to the diameter $AB$ at its endpoint $B$, so it is perpendicular to the radius there. A line perpendicular to a radius at its end is a tangent."
+      }
+    },
+    {
+      "title": "Use equal tangents from $C$ and from $E$",
+      "body": "Let $P$ be the point where $CE$ touches the semicircle. From $C$ there are two tangents, $CB$ and $CP$, so $CP = CB = 2$. From $E$ there are two tangents, $EA$ and $EP$, so $EP = EA$. Call this length $a$.",
+      "your_turn": {
+        "prompt": "Write $CE$ and $DE$ in terms of $a$.",
+        "answer": "$CE = EP + PC = a + 2$, and $DE = AD - AE = 2 - a$."
+      }
+    },
+    {
+      "title": "Find a right triangle",
+      "body": "Triangle $CDE$ has a right angle at the corner $D$ of the square, and we know all three of its sides in terms of $a$: $DE = 2 - a$, $DC = 2$ and $CE = 2 + a$. So the Pythagorean theorem gives one equation in $a$. Careful: the hypotenuse is the side opposite the right angle.",
+      "your_turn": {
+        "prompt": "Which side of triangle $CDE$ is the hypotenuse, and what equation does the Pythagorean theorem give?",
+        "answer": "$CE$ is opposite the right angle at $D$, so $(2-a)^2 + 2^2 = (2+a)^2$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Expanding, $a^2 - 4a + 4 + 4 = a^2 + 4a + 4$, so $8a = 4$ and $a = \\frac{1}{2}$. Then $CE = 2 + a = \\frac{5}{2}$. Check: the sides $\\frac{3}{2}$, $2$, $\\frac{5}{2}$ are a $3$-$4$-$5$ triangle scaled by $\\frac{1}{2}$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

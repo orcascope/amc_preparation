@@ -1,0 +1,55 @@
+{
+  "id": "ACE_5_11_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.1",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2009 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Angles in isosceles trapezoids",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_01.png",
+    "text": "The keystone arch is an ancient architectural feature. It is composed of congruent isosceles trapezoids fitted together along the non-parallel sides, as shown. The bottom sides of the two end trapezoids are horizontal. In an arch made with $9$ trapezoids, let $x$ be the angle measure in degrees of the larger interior angle of the trapezoid. What is $x$?",
+    "choices": { "A": "$100$", "B": "$102$", "C": "$104$", "D": "$106$", "E": "$108$" }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$100$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: extend the legs to a common center",
+      "body": "The trapezoids are congruent and the arch is symmetric, and the two end pieces sit flat on the ground. That is the clue: if you extend every leg (non-parallel side) downward, they all meet at one point $X$ on the ground line, the center of the half-circle. The $9$ trapezoids then cut the straight angle at $X$ into $9$ equal wedges.",
+      "your_turn": {
+        "prompt": "How many degrees does each wedge have at $X$?",
+        "answer": "$180^\\circ \\div 9 = 20^\\circ$, since the $9$ equal wedges fill the straight angle along the ground."
+      }
+    },
+    {
+      "title": "Each trapezoid sits inside an isosceles triangle",
+      "body": "Take the right end trapezoid. Let $Y$ be its outer corner on the ground and $Z$ its other outer corner. Its two legs, extended, meet at $X$, so the trapezoid is triangle $XYZ$ with a small triangle cut off near $X$. The angle at $X$ is $20^\\circ$. Because the trapezoid is isosceles, its two angles at the long outer side $YZ$ are equal, so triangle $XYZ$ is isosceles with those as its base angles.",
+      "your_turn": {
+        "prompt": "The trapezoid's short inner side is parallel to $YZ$. How is the trapezoid's angle at $Y$ related to its angle at the inner corner on the same leg?",
+        "answer": "They add up to $180^\\circ$, because they are co-interior angles between two parallel sides."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The base angles of triangle $XYZ$ are $\\tfrac{180^\\circ - 20^\\circ}{2} = 80^\\circ$. These are the trapezoid's angles at the outer side; they are acute, so they are the smaller angles. An isosceles trapezoid has only two angle sizes, and the angles at the inner side are $180^\\circ - 80^\\circ = 100^\\circ$. Careful: $80$ is the smaller angle, not the one asked for. So $x = 100$, and the answer is **(A)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "A",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ACE_5_11_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.10",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2014 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Tangent circles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_10.png",
+    "text": "Eight semicircles line the inside of a square with side length $2$ as shown. What is the radius of the circle tangent to all of these semicircles?",
+    "choices": {
+      "A": "$\\frac{1+\\sqrt{2}}{4}$",
+      "B": "$\\frac{\\sqrt{5}-1}{2}$",
+      "C": "$\\frac{\\sqrt{3}+1}{4}$",
+      "D": "$\\frac{2\\sqrt{3}}{5}$",
+      "E": "$\\frac{\\sqrt{5}}{3}$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$\\frac{\\sqrt{5}-1}{2}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: connect the centers",
+      "body": "When two circles are tangent, the key segment is the one joining their centers, because the point of tangency lies on it. So first find exactly where the centers are. By symmetry the middle circle is centered at the center of the square.",
+      "your_turn": {
+        "prompt": "Two semicircles fit along each side of length $2$. What is the radius of each semicircle, and where on the side is its center?",
+        "answer": "Each diameter is half a side, $1$, so the radius is $\\frac{1}{2}$. The centers sit at the midpoints of the half-sides, $\\frac{1}{2}$ from a corner."
+      }
+    },
+    {
+      "title": "Build a right triangle",
+      "body": "Let $K$ be the center of the square, let $L$ and $M$ be the centers of the two semicircles on the bottom side, and let $N$ be the midpoint of the bottom side (so $N$ is also the midpoint of $LM$). Then $KN$ is perpendicular to the bottom side, so triangle $KNL$ has a right angle at $N$.",
+      "your_turn": {
+        "prompt": "How long are the legs $KN$ and $LN$?",
+        "answer": "$KN = 1$ (half the side of the square) and $LN = \\frac{1}{2}$ (one radius of a semicircle)."
+      }
+    },
+    {
+      "title": "The hypotenuse in terms of $r$",
+      "body": "Let $r$ be the radius of the middle circle. It touches the semicircle centered at $L$ from outside, so the point of tangency lies on segment $KL$ between the two centers. That makes $KL$ equal to the sum of the two radii. Careful: it is the sum, not the difference, because neither circle is inside the other.",
+      "your_turn": {
+        "prompt": "Write $KL$ in terms of $r$, and then the Pythagorean equation for triangle $KNL$.",
+        "answer": "$KL = r + \\frac{1}{2}$, so $\\left(\\frac{1}{2}\\right)^2 + 1^2 = \\left(r + \\frac{1}{2}\\right)^2$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The left side is $\\frac{1}{4} + 1 = \\frac{5}{4}$, so $r + \\frac{1}{2} = \\frac{\\sqrt{5}}{2}$ (the positive root, since lengths are positive). Therefore\n$$r = \\frac{\\sqrt{5}}{2} - \\frac{1}{2} = \\frac{\\sqrt{5}-1}{2}.$$\nThe answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "ACE_5_9_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.9.7",
+    "kind": "problem",
+    "section": "Analytical Geometry",
+    "original_source": "2004 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Coordinates and the Shoelace Theorem",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_9_07.png",
+    "text": "In the right triangle $\\triangle ACE$, we have $AC=12$, $CE=16$, and $EA=20$. Points $B$, $D$, and $F$ are located on $AC$, $CE$, and $EA$, respectively, so that $AB=3$, $CD=4$, and $EF=5$. What is the ratio of the area of $\\triangle DBF$ to that of $\\triangle ACE$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{7}{16}$",
+    "accept": ["\\frac{7}{16}", "7:16"]
+  },
+  "steps": [
+    {
+      "title": "Where to start: a right triangle begs for coordinates",
+      "body": "The problem tells you it is a right triangle and gives exact distances along each side, so every point can get simple coordinates, and then the Shoelace Theorem gives any area. A good habit is to put the right angle at the origin with the legs on the axes. First you need to know which vertex has the right angle.",
+      "your_turn": {
+        "prompt": "Which vertex of $\\triangle ACE$ has the right angle? Check it with the Pythagorean theorem.",
+        "answer": "$C$, because $12^2 + 16^2 = 144 + 256 = 400 = 20^2$, so $EA$ is the hypotenuse."
+      }
+    },
+    {
+      "title": "Place all six points",
+      "body": "Put $C = (0,0)$, $A = (0,12)$ and $E = (16,0)$. Then $B$ is $3$ down from $A$ on the $y$-axis, so $B = (0,9)$, and $D$ is $4$ along from $C$, so $D = (4,0)$. Careful: $EF = 5$ is measured from $E$, not from $A$.",
+      "your_turn": {
+        "prompt": "Since $5$ is $\\frac{1}{4}$ of $EA = 20$, $F$ is a quarter of the way from $E$ to $A$. What are its coordinates?",
+        "answer": "From $E$ to $A$ you move $(-16, 12)$, a quarter of that is $(-4, 3)$, so $F = (12, 3)$."
+      }
+    },
+    {
+      "title": "Set up the shoelace for $\\triangle DBF$",
+      "body": "The big triangle is easy: $[ACE] = \\frac{12\\cdot 16}{2} = 96$. For $\\triangle DBF$ list the vertices in order and repeat the first: $D(4,0)$, $B(0,9)$, $F(12,3)$, $D(4,0)$. Then\n$$[DBF] = \\frac{1}{2}\\left|(x_1y_2 + x_2y_3 + x_3y_1) - (y_1x_2 + y_2x_3 + y_3x_1)\\right|.$$",
+      "your_turn": {
+        "prompt": "Compute the first sum $x_1y_2 + x_2y_3 + x_3y_1$.",
+        "answer": "$4\\cdot 9 + 0\\cdot 3 + 12\\cdot 0 = 36$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The second sum is $y_1x_2 + y_2x_3 + y_3x_1 = 0\\cdot 0 + 9\\cdot 12 + 3\\cdot 4 = 120$. So $[DBF] = \\frac{1}{2}|36 - 120| = 42$, and the ratio is $\\frac{42}{96} = \\frac{7}{16}$. The answer is **$\\frac{7}{16}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "7/16",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

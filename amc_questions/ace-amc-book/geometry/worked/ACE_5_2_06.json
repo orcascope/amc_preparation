@@ -1,0 +1,62 @@
+{
+  "id": "ACE_5_2_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.2.6",
+    "kind": "problem",
+    "section": "Similar Triangles",
+    "original_source": "2018 AMC 10"
+  },
+  "topic": "geometry",
+  "subtopic": "Area ratios of similar triangles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_2_06.png",
+    "text": "All of the triangles in the diagram below are similar to isosceles triangle $ABC$, in which $AB = AC$. Each of the $7$ smallest triangles has area $1$, and $\\triangle ABC$ has area $40$. What is the area of trapezoid $DBCE$?",
+    "choices": { "A": "$16$", "B": "$18$", "C": "$20$", "D": "$22$", "E": "$24$" }
+  },
+  "answer": { "choice": "E", "value": "$24$" },
+  "steps": [
+    {
+      "title": "Where to start: the trapezoid is a big triangle minus a smaller one",
+      "body": "Trapezoid $DBCE$ is $\\triangle ABC$ with $\\triangle ADE$ cut off the top, and we already know the area of $\\triangle ABC$. So we only need the area of $\\triangle ADE$. The problem says every triangle is similar, which is the clue: for similar figures, if the sides are $k$ times as long, the area is $k^2$ times as big.",
+      "your_turn": {
+        "prompt": "A triangle similar to a small one has sides $3$ times as long. What is its area?",
+        "answer": "$3^2 \\cdot 1 = 9$, because area scales by the square of the side ratio."
+      }
+    },
+    {
+      "title": "Compare $DE$ with a small base",
+      "body": "Look at the strip of small triangles just above $DE$. The upward-pointing small triangles sit side by side with their bases on $DE$, and together they fill $DE$ from $D$ to $E$. So $DE$ is a whole number of small bases, and since $\\triangle ADE$ is similar to a small triangle, that number is the side ratio.",
+      "your_turn": {
+        "prompt": "How many of the small triangles have a full side lying on $DE$? What does that tell you about $DE$?",
+        "answer": "$4$ of them, so $DE$ is $4$ times the base of a small triangle."
+      }
+    },
+    {
+      "title": "Area of $\\triangle ADE$",
+      "body": "The side ratio of $\\triangle ADE$ to a small triangle is $4$, so its area is $4^2$ times $1$. You can double-check this another way: $\\triangle ADE$ is made of the $7$ small triangles plus the triangle above the strip. Careful: $\\triangle ADE$ is the piece you remove, not the answer, so do not stop here.",
+      "your_turn": {
+        "prompt": "The triangle above the strip has its base on the top edge of the strip. How many small bases long is that edge, and what is the triangle's area?",
+        "answer": "$3$ small bases (the tops of the $3$ downward triangles), so its area is $3^2 = 9$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The area of $\\triangle ADE$ is $4^2 = 16$, and the check agrees: $9 + 7 = 16$. So the trapezoid has area $40 - 16 = 24$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "$16$ is the area of $\\triangle ADE$, the top triangle. The question asks for the trapezoid below it, so you still have to subtract from $40$."
+  },
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

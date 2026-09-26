@@ -1,0 +1,20 @@
+{
+  "id": "ACE_5_10_07",
+  "number": "5.10.7",
+  "kind": "problem",
+  "section": "3D Geometry",
+  "original_source": "2018 AMC",
+  "topic": "geometry",
+  "subtopic": "Volume of a pyramid",
+  "text": "In the rectangular parallelepiped shown, $AB=3$, $BC=1$, and $CG=2$. Point $M$ is the midpoint of $\\overline{FG}$. What is the volume of the rectangular pyramid with base $BCHE$ and apex $M$?",
+  "choices": {
+    "A": "$1$",
+    "B": "$\\frac{4}{3}$",
+    "C": "$\\frac{3}{2}$",
+    "D": "$\\frac{5}{3}$",
+    "E": "$2$"
+  },
+  "figure": "A rectangular box drawn in perspective. The bottom face is ABCD: A at front left, B at front right, C at back right, D at back left. The top face is EFGH, with E directly above A, F above B, G above C and H above D. The front bottom edge AB is labeled 3, the edge BC (going back from B to C) is labeled 1, and the vertical edge CG is labeled 2. The hidden edges AD, DC and DH are dashed. M is marked on the top back-right edge FG at its midpoint. The pyramid is drawn in: segments EB and HC (HC dashed) complete the rectangle BCHE, which slants from the bottom right edge BC up to the top left edge EH, and segments ME, MH, MB and MC join the apex M to the four corners of this base.",
+  "book_answer": "E",
+  "book_pages": [187, 188]
+}

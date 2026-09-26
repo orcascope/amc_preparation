@@ -1,0 +1,60 @@
+{
+  "id": "ACE_5_11_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.6",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2012 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Similar triangles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_06.png",
+    "text": "Three unit squares and two line segments connecting two pairs of vertices are shown. What is the area of $\\triangle ABC$?",
+    "choices": { "A": "$\\frac{1}{6}$", "B": "$\\frac{1}{5}$", "C": "$\\frac{2}{9}$", "D": "$\\frac{1}{3}$", "E": "$\\frac{\\sqrt{2}}{4}$" }
+  },
+  "answer": { "choice": "B", "value": "$\\frac{1}{5}$" },
+  "steps": [
+    {
+      "title": "Where to start: check the angle where the segments cross",
+      "body": "The figure lives on a grid of unit squares, so the slopes of the two segments are easy to read, and slopes tell you whether they cross at a right angle. Call $E$ the bottom-left corner of the lower-left square and $D$ its bottom-right corner, so $D$ is straight below $B$ and $BD = 2$. Put $E$ at $(0,0)$; then $A = (0,2)$, $B = (1,2)$, and segment $AC$ ends at the corner $(2,1)$.",
+      "your_turn": {
+        "prompt": "What are the slopes of line $BE$ and of line $AC$?",
+        "answer": "$BE$ goes from $(0,0)$ to $(1,2)$: slope $2$. $AC$ goes from $(0,2)$ to $(2,1)$: slope $-\\tfrac{1}{2}$."
+      }
+    },
+    {
+      "title": "A right triangle at $C$",
+      "body": "The slopes multiply to $2\\cdot\\left(-\\tfrac{1}{2}\\right) = -1$, so the segments are perpendicular and $\\angle ACB = 90^\\circ$. That makes $\\triangle ABC$ a right triangle with hypotenuse $AB = 1$, so its area is half the product of the legs $BC$ and $AC$.",
+      "your_turn": {
+        "prompt": "How long is $BE$? (Use right triangle $BDE$.)",
+        "answer": "$BE = \\sqrt{BD^2 + DE^2} = \\sqrt{4 + 1} = \\sqrt{5}$."
+      }
+    },
+    {
+      "title": "Similar triangles give $BC$",
+      "body": "$AB$ and $ED$ are both horizontal, so the transversal $BE$ makes $\\angle ABC = \\angle BED$ (alternate angles). Both triangles also have a right angle ($C$ and $D$), so $\\triangle ACB \\sim \\triangle BDE$, with $A \\leftrightarrow B$, $C \\leftrightarrow D$, $B \\leftrightarrow E$. Matching hypotenuse to hypotenuse and the side next to the equal angle:\n$$\\frac{BC}{AB} = \\frac{ED}{BE}.$$",
+      "your_turn": {
+        "prompt": "Solve for $BC$.",
+        "answer": "$BC = \\tfrac{AB\\cdot ED}{BE} = \\tfrac{1}{\\sqrt{5}} = \\tfrac{\\sqrt{5}}{5}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "By the Pythagorean theorem in $\\triangle ABC$, $AC^2 = 1 - \\tfrac{1}{5} = \\tfrac{4}{5}$, so $AC = \\tfrac{2}{\\sqrt{5}}$. The area is\n$$\\tfrac{1}{2}\\cdot\\tfrac{1}{\\sqrt{5}}\\cdot\\tfrac{2}{\\sqrt{5}} = \\tfrac{1}{5}.$$\nThe answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

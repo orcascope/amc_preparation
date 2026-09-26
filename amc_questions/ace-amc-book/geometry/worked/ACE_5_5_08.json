@@ -1,0 +1,63 @@
+{
+  "id": "ACE_5_5_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.5.8",
+    "kind": "problem",
+    "section": "Special Points",
+    "original_source": "2016 AMC 12"
+  },
+  "topic": "geometry",
+  "subtopic": "Angle bisector theorem",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_5_08.png",
+    "text": "In $\\triangle ABC$, $AB = 6$, $BC = 7$, and $CA = 8$. Point $D$ lies on $\\overline{BC}$, and $\\overline{AD}$ bisects $\\angle BAC$. Point $E$ lies on $\\overline{AC}$, and $\\overline{BE}$ bisects $\\angle ABC$. The bisectors intersect at $F$. What is the ratio $AF : FD$?",
+    "choices": {
+      "A": "$3:2$",
+      "B": "$5:3$",
+      "C": "$2:1$",
+      "D": "$7:3$",
+      "E": "$5:2$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$2:1$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: angle bisectors call for the angle bisector theorem",
+      "body": "Both segments are angle bisectors, and the angle bisector theorem says a bisector splits the opposite side in the same ratio as the two sides next to the angle. Start with $AD$: it splits $BC = 7$ into $BD$ and $DC$ with $\\frac{BD}{DC} = \\frac{AB}{AC}$. Careful: $BD$ is the piece next to $B$, so it goes with $AB$.",
+      "your_turn": {
+        "prompt": "Find $BD$ and $DC$.",
+        "answer": "$\\frac{BD}{DC} = \\frac{6}{8} = \\frac34$, and $BD + DC = 7$, so $BD = 3$ and $DC = 4$."
+      }
+    },
+    {
+      "title": "Look inside triangle $ABD$",
+      "body": "The ratio we want is along $AD$, so find a bisector that cuts $AD$. In triangle $ABD$, the segment $BF$ goes from vertex $B$ to the opposite side $AD$. It is part of $BE$, so it bisects the angle at $B$ of this smaller triangle too. That means the angle bisector theorem applies again, this time in triangle $ABD$.",
+      "your_turn": {
+        "prompt": "Why is the angle at $B$ in triangle $ABD$ the same angle as $\\angle ABC$?",
+        "answer": "Because $D$ lies on side $BC$, so ray $BD$ is the same as ray $BC$. So $BE$, which bisects $\\angle ABC$, also bisects $\\angle ABD$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "In triangle $ABD$, bisector $BF$ splits side $AD$ in the ratio of the sides next to $B$:\n$$\\frac{AF}{FD} = \\frac{AB}{BD} = \\frac{6}{3} = 2.$$\nSo $AF : FD = 2 : 1$. (The point $E$ and the lengths on $AC$ are not needed.) The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This comes from pairing the pieces the wrong way in the first step, getting $BD = 4$ instead of $3$; then $\\frac{AB}{BD} = \\frac64 = \\frac32$. Remember the piece of $BC$ next to $B$ goes with the side $AB$ next to $B$."
+  },
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

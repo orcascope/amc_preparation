@@ -1,0 +1,67 @@
+{
+  "id": "ACE_5_2_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.2.10",
+    "kind": "problem",
+    "section": "Similar Triangles",
+    "original_source": "2015 AIME"
+  },
+  "topic": "geometry",
+  "subtopic": "Similar right triangles",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_5_2_10.png",
+    "text": "In the diagram below, $ABCD$ is a square. Point $E$ is the midpoint of $\\overline{AD}$. Points $F$ and $G$ lie on $\\overline{CE}$, and $H$ and $J$ lie on $\\overline{AB}$ and $\\overline{BC}$, respectively, so that $FGHJ$ is a square. Points $K$ and $L$ lie on $\\overline{GH}$, and $M$ and $N$ lie on $\\overline{AD}$ and $\\overline{AB}$, respectively, so that $KLMN$ is a square. The area of $KLMN$ is $99$. Find the area of $FGHJ$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$539$", "accept": ["539"] },
+  "steps": [
+    {
+      "title": "Where to start: the midpoint fixes the shape of triangle $DCE$",
+      "body": "Every side of both small squares is parallel or perpendicular to $CE$, so the same angle keeps appearing in the corner triangles. The clue is that $E$ is the midpoint of $AD$: if the big square has side $s$, then right triangle $DCE$ has legs $DE = \\frac{s}{2}$ and $DC = s$, in ratio $1 : 2$. Let $a = \\angle DCE$.",
+      "your_turn": {
+        "prompt": "Find the hypotenuse $CE$ in terms of $s$, and write the three sides of $\\triangle DCE$ as a ratio.",
+        "answer": "$CE = \\sqrt{\\frac{s^2}{4} + s^2} = \\frac{s\\sqrt5}{2}$, so $DE : DC : CE = 1 : 2 : \\sqrt5$."
+      }
+    },
+    {
+      "title": "Five similar right triangles",
+      "body": "Chasing angles around the figure, the angle $a$ appears at $\\angle DCE$, $\\angle FJC$, $\\angle BHJ$, $\\angle KNH$ and $\\angle AMN$, so the right triangles $DCE$, $FJC$, $BHJ$, $KNH$, $AMN$ are all similar. In each one, the leg opposite angle $a$ : the leg next to it : the hypotenuse $= 1 : 2 : \\sqrt5$. Careful: in each triangle find which leg is opposite $a$ before using the ratio.",
+      "your_turn": {
+        "prompt": "Why is $\\angle FJC = a$?",
+        "answer": "$\\angle FCJ = 90^\\circ - a$ because $\\angle DCB = 90^\\circ$. Triangle $FJC$ has a right angle at $F$, so its third angle $\\angle FJC$ is $a$."
+      }
+    },
+    {
+      "title": "Use the small square on side $AB$",
+      "body": "Square $KLMN$ has area $99$, so $MN = NK = \\sqrt{99} = 3\\sqrt{11}$. In $\\triangle AMN$ the hypotenuse is $MN$ and $AN$ is opposite $a$ (at $M$), so $AN = \\frac{3\\sqrt{11}}{\\sqrt5} = \\frac{3\\sqrt{55}}{5}$. In $\\triangle KNH$ the angle $a$ is at $N$, so $NK$ is the longer leg and $NH$ is the hypotenuse.",
+      "your_turn": {
+        "prompt": "Find $NH$.",
+        "answer": "$NH = NK \\cdot \\frac{\\sqrt5}{2} = \\frac{3\\sqrt{55}}{2}$."
+      }
+    },
+    {
+      "title": "Use the big square $FGHJ$",
+      "body": "Let the side of $FGHJ$ be $x$. In $\\triangle BHJ$ the hypotenuse is $HJ = x$ and $a$ is at $H$, so $BJ = \\frac{x}{\\sqrt5} = \\frac{x\\sqrt5}{5}$ and $HB = \\frac{2x\\sqrt5}{5}$. In $\\triangle FJC$ the angle $a$ is at $J$, so $JF = x$ is the longer leg and $JC$ is the hypotenuse.",
+      "your_turn": {
+        "prompt": "Find $JC$ in terms of $x$.",
+        "answer": "$JC = x \\cdot \\frac{\\sqrt5}{2} = \\frac{x\\sqrt5}{2}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Side $AB = AN + NH + HB$ and side $BC = BJ + JC$ are equal:\n$$\\frac{3\\sqrt{55}}{5} + \\frac{3\\sqrt{55}}{2} + \\frac{2x\\sqrt5}{5} = \\frac{x\\sqrt5}{5} + \\frac{x\\sqrt5}{2}.$$\nThis simplifies to $\\frac{21\\sqrt{55}}{10} = \\frac{3x\\sqrt5}{10}$, so $x = 7\\sqrt{11}$ and the area of $FGHJ$ is $x^2 = 49 \\cdot 11 = 539$. The answer is **$539$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "539",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

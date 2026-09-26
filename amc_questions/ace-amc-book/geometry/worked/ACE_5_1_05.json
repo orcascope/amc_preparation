@@ -1,0 +1,45 @@
+{
+  "id": "ACE_5_1_05",
+  "source": { "book": "ACE The AMC 10 and AMC 12", "number": "5.1.5", "kind": "problem", "section": "Angles", "original_source": null },
+  "topic": "geometry",
+  "subtopic": "Complementary angles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_1_05.png",
+    "text": "Find the complement of $30$ degrees.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$60^\\circ$", "accept": ["60"] },
+  "steps": [
+    {
+      "title": "Where to start: what \"complement\" means",
+      "body": "The key word is \"complement\". Two angles are complementary when they add up to $90^\\circ$, a right angle. So the complement of an angle is whatever is missing to fill a right angle.",
+      "your_turn": {
+        "prompt": "As a warm-up, what is the complement of $70^\\circ$?",
+        "answer": "$20^\\circ$, because $70 + 20 = 90$."
+      }
+    },
+    {
+      "title": "Set up an equation",
+      "body": "Call the unknown complement $x$. Together with the given $30^\\circ$ it must make a right angle. Careful: do not mix this up with the supplement, which fills $180^\\circ$ instead of $90^\\circ$.\n$$30 + x = 90$$",
+      "your_turn": {
+        "prompt": "Should the complement of $30^\\circ$ be acute or obtuse? Why?",
+        "answer": "Acute. It is less than $90^\\circ$, since the two angles together only make $90^\\circ$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Subtract $30$ from both sides: $x = 90 - 30 = 60$. Check: $30 + 60 = 90$. The answer is **$60^\\circ$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "60",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

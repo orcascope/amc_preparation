@@ -1,0 +1,77 @@
+{
+  "id": "ACE_5_3_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.3.6",
+    "kind": "problem",
+    "section": "Special Triangles",
+    "original_source": "2015 AMC 10"
+  },
+  "topic": "geometry",
+  "subtopic": "Angle trisectors and special triangles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_3_06.png",
+    "text": "The isosceles right triangle $ABC$ has right angle at $C$ and area $12.5$. The rays trisecting $\\angle ACB$ intersect $AB$ at $D$ and $E$. What is the area of $\\triangle CDE$?",
+    "choices": {
+      "A": "$\\frac{5\\sqrt{2}}{3}$",
+      "B": "$\\frac{50\\sqrt{3}-75}{4}$",
+      "C": "$\\frac{15\\sqrt{3}}{8}$",
+      "D": "$\\frac{50-25\\sqrt{3}}{2}$",
+      "E": "$\\frac{25}{6}$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$\\frac{50-25\\sqrt{3}}{2}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: a 45-45-90 triangle cut into 30 degree angles",
+      "body": "The problem gives two special facts: the triangle is an isosceles right triangle (angles $45^\\circ$, $45^\\circ$, $90^\\circ$), and the $90^\\circ$ angle at $C$ is trisected into three $30^\\circ$ angles. Angles of $30^\\circ$ and $45^\\circ$ together are the clue that we can split pieces into $30$-$60$-$90$ and $45$-$45$-$90$ triangles. First find the legs from the area.",
+      "your_turn": {
+        "prompt": "If both legs have length $\\ell$ and the area is $12.5$, what is $\\ell$?",
+        "answer": "$\\frac{1}{2}\\ell^2 = 12.5$, so $\\ell^2 = 25$ and $AC = BC = 5$."
+      }
+    },
+    {
+      "title": "Area of $CDE$ by subtraction",
+      "body": "Say $D$ is the point nearer $A$. Triangle $CDE$ is what is left of $ABC$ after removing triangles $ACD$ and $BCE$. Reflecting the picture across the bisector of $\\angle C$ swaps $A$ with $B$ and swaps the two trisecting rays, so $[ACD] = [BCE]$ (square brackets mean area). So $[CDE] = 12.5 - 2[ACD]$.",
+      "your_turn": {
+        "prompt": "What are the three angles of triangle $ACD$?",
+        "answer": "$\\angle ACD = 30^\\circ$, $\\angle CAD = 45^\\circ$, so $\\angle ADC = 180^\\circ - 30^\\circ - 45^\\circ = 105^\\circ$."
+      }
+    },
+    {
+      "title": "Drop a perpendicular from $D$",
+      "body": "A $30$-$45$-$105$ triangle splits into two special triangles. Drop a perpendicular from $D$ to $AC$, meeting it at $Y$. Triangle $AYD$ has a $45^\\circ$ angle at $A$ and a right angle at $Y$, so it is isosceles: call $AY = YD = x$. Triangle $DYC$ has a right angle at $Y$ and a $30^\\circ$ angle at $C$.",
+      "your_turn": {
+        "prompt": "In triangle $DYC$, write $YC$ in terms of $x$.",
+        "answer": "$YD = x$ is opposite the $30^\\circ$ angle, so it is the short leg, and the long leg is $YC = x\\sqrt{3}$."
+      }
+    },
+    {
+      "title": "Solve for the height $x$",
+      "body": "The two pieces make up side $AC$:\n$$AY + YC = x + x\\sqrt{3} = 5.$$",
+      "your_turn": {
+        "prompt": "Solve for $x$ and rationalize.",
+        "answer": "$x = \\frac{5}{1+\\sqrt{3}} = \\frac{5(\\sqrt{3}-1)}{3-1} = \\frac{5\\sqrt{3}-5}{2}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "In triangle $ACD$, take $AC = 5$ as the base; $YD = x$ is the height. So $[ACD] = \\frac{1}{2}\\cdot 5\\cdot\\frac{5\\sqrt{3}-5}{2} = \\frac{25\\sqrt{3}-25}{4}$, and\n$$[CDE] = \\frac{25}{2} - 2\\cdot\\frac{25\\sqrt{3}-25}{4} = \\frac{25 - 25\\sqrt{3} + 25}{2} = \\frac{50-25\\sqrt{3}}{2}.$$ The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

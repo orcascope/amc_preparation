@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_11_05",
+  "number": "5.11.5",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2014 AMC",
+  "topic": "geometry",
+  "subtopic": "Regular hexagons and equilateral triangles",
+  "text": "Six regular hexagons surround a regular hexagon of side length $1$ as shown. What is the area of $\\triangle ABC$?",
+  "choices": { "A": "$2\\sqrt{3}$", "B": "$3\\sqrt{3}$", "C": "$1+3\\sqrt{2}$", "D": "$2+2\\sqrt{3}$", "E": "$3+2\\sqrt{3}$" },
+  "figure": "A central regular hexagon of side 1 has two horizontal sides, so its leftmost and rightmost points are vertices. Six congruent regular hexagons surround it, each sharing one side with it (top, upper-right, lower-right, bottom, lower-left, upper-left). Point A is the vertex where the upper-left and lower-left hexagons meet, directly to the left of the central hexagon's left vertex and joined to it by a shared horizontal edge of length 1. Point B is the vertex shared by the top and upper-right hexagons, and C is the vertex shared by the bottom and lower-right hexagons; B is directly above C. Triangle ABC is drawn: side BC is a vertical segment passing through the central hexagon's right vertex, side AB passes through the central hexagon's upper-left vertex, and side AC passes through its lower-left vertex. Extra segments join B to the central hexagon's upper-right vertex and C to its lower-right vertex.",
+  "book_answer": "B",
+  "book_pages": [192]
+}

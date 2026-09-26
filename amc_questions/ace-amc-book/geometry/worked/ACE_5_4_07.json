@@ -1,0 +1,65 @@
+{
+  "id": "ACE_5_4_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.4.7",
+    "kind": "problem",
+    "section": "Area",
+    "original_source": "2014 AIME"
+  },
+  "topic": "geometry",
+  "subtopic": "Area by decomposition",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_5_4_07.png",
+    "text": "A rectangle has sides of length $a$ and $36$. A hinge is installed at each vertex of the rectangle, and at the midpoint of each side of length $36$. The sides of length $a$ can be pressed toward each other keeping those two sides parallel so the rectangle becomes a convex hexagon as shown. When the figure is a hexagon with the sides of length $a$ parallel and separated by a distance of $24$, the hexagon has the same area as the original rectangle. Find $a^2$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$720$",
+    "accept": [
+      "720"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the two areas are equal",
+      "body": "The problem tells you the hexagon and the rectangle have the same area, so the plan is to write both areas in terms of $a$ and set them equal. The rectangle is easy: its area is $36a$. For the hexagon, notice what the hinges do: each side of length $36$ folds at its midpoint into two pieces.",
+      "your_turn": {
+        "prompt": "How long is each of the four slanted sides of the hexagon?",
+        "answer": "$18$, since each side of length $36$ is folded at its midpoint into two halves of $18$."
+      }
+    },
+    {
+      "title": "Cut the hexagon into simpler pieces",
+      "body": "Draw a vertical segment joining the ends of the top and bottom sides on the left, and another on the right. This cuts the hexagon into a rectangle in the middle and two isosceles triangles, one on each side. Each triangle has two sides of $18$ and a base of $24$, the distance between the parallel sides.",
+      "your_turn": {
+        "prompt": "What is the area of the middle rectangle, in terms of $a$?",
+        "answer": "$24a$, because its sides are $a$ and $24$."
+      }
+    },
+    {
+      "title": "Area of one isosceles triangle",
+      "body": "In an isosceles triangle, the altitude from the top vertex to the base cuts the base into two equal halves. Here that splits the base $24$ into $12$ and $12$, and the altitude is a leg of a right triangle with hypotenuse $18$.",
+      "your_turn": {
+        "prompt": "Find the altitude and then the area of one of the triangles.",
+        "answer": "Altitude $\\sqrt{18^2-12^2}=\\sqrt{180}=6\\sqrt{5}$, so the area is $\\tfrac{1}{2}\\cdot 24\\cdot 6\\sqrt5 = 72\\sqrt5$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The hexagon's area is $24a + 2\\cdot 72\\sqrt5 = 24a + 144\\sqrt5$. Setting it equal to the rectangle's area:\n$$36a = 24a + 144\\sqrt5 \\;\\Rightarrow\\; 12a = 144\\sqrt5 \\;\\Rightarrow\\; a = 12\\sqrt5.$$\nCareful: the question asks for $a^2$, not $a$. So $a^2 = 144\\cdot 5 = 720$. The answer is **$720$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "720",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

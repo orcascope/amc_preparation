@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_3_04",
+  "number": "5.3.4",
+  "kind": "problem",
+  "section": "Special Triangles",
+  "original_source": "2000 AMC",
+  "topic": "geometry",
+  "subtopic": "30-60-90 triangles",
+  "text": "In rectangle $ABCD$, $AD = 1$, $P$ is on $\\overline{AB}$, and $\\overline{DB}$ and $\\overline{DP}$ trisect $\\angle ADC$. What is the perimeter of $\\triangle BDP$?",
+  "choices": null,
+  "figure": "Rectangle ABCD drawn wider than tall, with A at the top left, B at the top right, C at the bottom right and D at the bottom left, so AB and DC are the long horizontal sides and AD and BC are the short vertical sides. Point P lies on the top side AB, closer to A than to B. Two segments are drawn from D: DP and the diagonal DB. No lengths or angles are marked in the figure.",
+  "book_answer": "2+\\frac{4\\sqrt{3}}{3}",
+  "book_pages": [143]
+}

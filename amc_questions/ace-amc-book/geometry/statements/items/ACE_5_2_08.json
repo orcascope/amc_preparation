@@ -1,0 +1,13 @@
+{
+  "id": "ACE_5_2_08",
+  "number": "5.2.8",
+  "kind": "problem",
+  "section": "Similar Triangles",
+  "original_source": "2018 HMMT",
+  "topic": "geometry",
+  "subtopic": "Similar right triangles",
+  "text": "Triangle $GRT$ has $\\overline{GR} = 5$, $\\overline{RT} = 12$, and $\\overline{GT} = 13$. The perpendicular bisector of $\\overline{GT}$ intersects the extension $\\overline{GR}$ at $O$. Find $\\overline{TO}$.",
+  "choices": null,
+  "book_answer": "169/10",
+  "book_pages": [138]
+}

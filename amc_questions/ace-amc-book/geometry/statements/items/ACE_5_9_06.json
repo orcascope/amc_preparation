@@ -1,0 +1,13 @@
+{
+  "id": "ACE_5_9_06",
+  "number": "5.9.6",
+  "kind": "example",
+  "section": "Analytical Geometry",
+  "original_source": null,
+  "topic": "geometry",
+  "subtopic": "Shoelace Theorem",
+  "text": "We have a right triangle with side lengths $3, 4, 5$. What is the area of this triangle. Find it using the Shoelace Theorem.",
+  "choices": null,
+  "book_answer": "6",
+  "book_pages": [181, 182]
+}

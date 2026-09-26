@@ -1,0 +1,13 @@
+{
+  "id": "ACE_5_5_13",
+  "number": "5.5.13",
+  "kind": "problem",
+  "section": "Special Points",
+  "original_source": "2013 AIME",
+  "topic": "geometry",
+  "subtopic": "Stewart's theorem",
+  "text": "In $\\triangle ABC$, $AC = BC$, and point $D$ is on $\\overline{BC}$ so that $CD = 3\\cdot BD$. Let $E$ be the midpoint of $\\overline{AD}$. Given that $CE = \\sqrt{7}$ and $BE = 3$, the area of $\\triangle ABC$ can be expressed in the form $m\\sqrt{n}$, where $m$ and $n$ are positive integers and $n$ is not divisible by the square of any prime. Find $m+n$.",
+  "choices": null,
+  "book_answer": "10",
+  "book_pages": [161, 162, 163]
+}

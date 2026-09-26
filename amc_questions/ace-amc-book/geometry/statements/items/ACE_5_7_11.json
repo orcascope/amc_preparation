@@ -1,0 +1,22 @@
+{
+  "id": "ACE_5_7_11",
+  "number": "5.7.11",
+  "kind": "problem",
+  "section": "Circles Part 1",
+  "original_source": "2013 AMC 10",
+  "topic": "geometry",
+  "subtopic": "Power of a point",
+  "text": "In $\\triangle ABC$, $AB = 86$, and $AC = 97$. A circle with center $A$ and radius $AB$ intersects $\\overline{BC}$ at points $B$ and $X$. Moreover $\\overline{BX}$ and $\\overline{CX}$ have integer lengths. What is $BC$?",
+  "choices": {
+    "A": "$11$",
+    "B": "$28$",
+    "C": "$33$",
+    "D": "$61$",
+    "E": "$72$"
+  },
+  "book_answer": "D",
+  "book_pages": [
+    176,
+    177
+  ]
+}

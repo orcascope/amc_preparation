@@ -1,0 +1,77 @@
+{
+  "id": "ACE_5_8_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.8.4",
+    "kind": "problem",
+    "section": "Circles Part 2: Cyclic Quadrilaterals",
+    "original_source": "2018 AMC 12"
+  },
+  "topic": "geometry",
+  "subtopic": "Cyclic quadrilaterals and Ptolemy's theorem",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_8_04.png",
+    "text": "Triangle $ABC$ is an isosceles right triangle with $AB=AC=3$. Let $M$ be the midpoint of hypotenuse $\\overline{BC}$. Points $I$ and $E$ lie on sides $\\overline{AC}$ and $\\overline{AB}$, respectively, so that $AI>AE$ and $AIME$ is a cyclic quadrilateral. Given that triangle $EMI$ has area $2$, the length $CI$ can be written as $\\frac{a-\\sqrt{b}}{c}$, where $a$, $b$, and $c$ are positive integers and $b$ is not divisible by the square of any prime. What is the value of $a+b+c$?",
+    "choices": {
+      "A": "$9$",
+      "B": "$10$",
+      "C": "$11$",
+      "D": "$12$",
+      "E": "$13$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$12$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: what the midpoint $M$ gives you",
+      "body": "Draw the triangle with the right angle at $A$, $I$ on $AC$ and $E$ on $AB$. The clue is that $M$ is the midpoint of the hypotenuse of an isosceles right triangle: the segment $AM$ is then a median to the base of an isosceles triangle, so it is also an altitude and an angle bisector. That gives $AM \\perp BC$ and $\\angle MAC = \\angle MAB = 45^\\circ$, and known angles are exactly what a cyclic quadrilateral lets you move around.",
+      "your_turn": {
+        "prompt": "Triangle $AMC$ has a right angle at $M$ and two $45^\\circ$ angles. How long is $AM$?",
+        "answer": "$AC = 3$ is its hypotenuse, so each leg is $\\frac{3}{\\sqrt 2} = \\frac{3\\sqrt 2}{2}$."
+      }
+    },
+    {
+      "title": "Triangle $IME$ is an isosceles right triangle",
+      "body": "In the cyclic quadrilateral $AIME$, the angles $\\angle IAM$ and $\\angle IEM$ stand on the same arc $IM$, so $\\angle IEM = \\angle IAM = 45^\\circ$. Opposite angles of a cyclic quadrilateral add to $180^\\circ$, and $\\angle IAE = 90^\\circ$, so $\\angle IME = 90^\\circ$. So triangle $IME$ has angles $90^\\circ$, $45^\\circ$, $45^\\circ$, and its legs $MI$ and $ME$ are equal.",
+      "your_turn": {
+        "prompt": "Triangle $EMI$ has area $2$. How long are its legs $MI = ME$, and how long is $IE$?",
+        "answer": "$\\frac{s^2}{2} = 2$ gives $s = 2$, and then $IE = 2\\sqrt 2$ by the Pythagorean theorem."
+      }
+    },
+    {
+      "title": "Use Ptolemy's theorem on $AIME$",
+      "body": "Ptolemy's theorem says that in a cyclic quadrilateral the product of the diagonals equals the sum of the products of opposite sides. Going around $A, I, M, E$, the diagonals are $AM$ and $IE$:\n$$AI\\cdot ME + AE\\cdot IM = AM\\cdot IE$$\nPlugging in gives $2\\,AI + 2\\,AE = \\frac{3\\sqrt 2}{2}\\cdot 2\\sqrt 2 = 6$, so $AE + AI = 3$.",
+      "your_turn": {
+        "prompt": "Use $AE + AI = 3$ and $AC = 3$ to explain why $CI$ is the same length as $AE$.",
+        "answer": "$CI = AC - AI = 3 - AI = AE$."
+      }
+    },
+    {
+      "title": "A second equation from the right angle at $A$",
+      "body": "Let $x = AE$ and $y = AI$. Triangle $AIE$ has a right angle at $A$ and hypotenuse $IE = 2\\sqrt 2$, so\n$$x + y = 3, \\qquad x^2 + y^2 = 8.$$\nSo $x$ and $y$ are the two roots of a quadratic, and we only need to know their sum and their product.",
+      "your_turn": {
+        "prompt": "Use $(x+y)^2 = x^2 + 2xy + y^2$ to find $xy$.",
+        "answer": "$9 = 8 + 2xy$, so $xy = \\frac{1}{2}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $x$ and $y$ are the roots of $t^2 - 3t + \\frac{1}{2} = 0$, that is $2t^2 - 6t + 1 = 0$, which gives $t = \\frac{3 \\pm \\sqrt 7}{2}$. Careful: the problem says $AI > AE$, so $AI$ is the larger root $\\frac{3+\\sqrt 7}{2}$ and $AE$ is the smaller one. Then $CI = 3 - AI = AE = \\frac{3-\\sqrt 7}{2}$ (the other choice would give a plus sign, which does not fit the form $\\frac{a-\\sqrt b}{c}$). With $a = 3$, $b = 7$ (no square factor) and $c = 2$, we get $a + b + c = 12$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

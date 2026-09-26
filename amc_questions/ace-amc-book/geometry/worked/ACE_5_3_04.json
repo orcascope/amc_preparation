@@ -1,0 +1,67 @@
+{
+  "id": "ACE_5_3_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.3.4",
+    "kind": "problem",
+    "section": "Special Triangles",
+    "original_source": "2000 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "30-60-90 triangles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_3_04.png",
+    "text": "In rectangle $ABCD$, $AD = 1$, $P$ is on $\\overline{AB}$, and $\\overline{DB}$ and $\\overline{DP}$ trisect $\\angle ADC$. What is the perimeter of $\\triangle BDP$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$2+\\frac{4\\sqrt{3}}{3}$",
+    "accept": [
+      "2+\\frac{4\\sqrt{3}}{3}",
+      "\\frac{6+4\\sqrt{3}}{3}",
+      "2+\\frac{4}{\\sqrt{3}}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the trisected right angle",
+      "body": "The clue is the word \"trisect\". The angle $\\angle ADC$ is a corner of a rectangle, so it is $90^\\circ$, and $DP$ and $DB$ cut it into three equal pieces. Equal pieces of a right angle are $30^\\circ$ each, so the triangles at $D$ will be $30$-$60$-$90$ triangles, whose sides are always in the ratio $1 : \\sqrt{3} : 2$ (short leg : long leg : hypotenuse).",
+      "your_turn": {
+        "prompt": "What are $\\angle ADP$, $\\angle PDB$ and $\\angle BDC$?",
+        "answer": "Each is $30^\\circ$, because $90^\\circ \\div 3 = 30^\\circ$."
+      }
+    },
+    {
+      "title": "Triangle $BCD$ gives $BD$ and $DC$",
+      "body": "Triangle $BCD$ has a right angle at $C$ and $\\angle BDC = 30^\\circ$. The side opposite the $30^\\circ$ angle is $BC$, and $BC = AD = 1$ because opposite sides of a rectangle are equal. So $BC$ is the short leg.",
+      "your_turn": {
+        "prompt": "Use the ratio $1 : \\sqrt{3} : 2$ to find $BD$ and $DC$.",
+        "answer": "$BD = 2$ (the hypotenuse) and $DC = \\sqrt{3}$ (the long leg)."
+      }
+    },
+    {
+      "title": "Triangle $ADP$: watch which leg is which",
+      "body": "Triangle $ADP$ has a right angle at $A$ and $\\angle ADP = 30^\\circ$, so $\\angle APD = 60^\\circ$. Careful: here the known side $AD = 1$ is opposite the $60^\\circ$ angle, so it is the long leg, not the short one. The short leg is $AP$, opposite the $30^\\circ$ angle at $D$.",
+      "your_turn": {
+        "prompt": "Find $AP$.",
+        "answer": "The long leg is $\\sqrt{3}$ times the short leg, so $AP = \\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The hypotenuse of triangle $ADP$ is $DP = 2\\cdot AP = \\frac{2\\sqrt{3}}{3}$. Since $AB = DC = \\sqrt{3}$, we get $PB = \\sqrt{3} - \\frac{\\sqrt{3}}{3} = \\frac{2\\sqrt{3}}{3}$. The perimeter of $\\triangle BDP$ is\n$$PB + DP + BD = \\frac{2\\sqrt{3}}{3} + \\frac{2\\sqrt{3}}{3} + 2 = 2 + \\frac{4\\sqrt{3}}{3}.$$ The answer is **$2 + \\frac{4\\sqrt{3}}{3}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "2+\\frac{4\\sqrt{3}}{3}",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

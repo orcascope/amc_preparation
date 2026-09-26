@@ -1,0 +1,13 @@
+{
+  "id": "ACE_5_11_07",
+  "number": "5.11.7",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2014 AMC",
+  "topic": "geometry",
+  "subtopic": "Rectangular box diagonals",
+  "text": "A rectangular box has a total surface area of $94$ square inches. The sum of the lengths of all its edges is $48$ inches. What is the sum of the lengths in inches of all of its interior diagonals?",
+  "choices": { "A": "$8\\sqrt{3}$", "B": "$10\\sqrt{2}$", "C": "$16\\sqrt{3}$", "D": "$20\\sqrt{2}$", "E": "$40\\sqrt{2}$" },
+  "book_answer": "D",
+  "book_pages": [194]
+}

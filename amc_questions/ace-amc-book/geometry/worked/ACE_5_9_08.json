@@ -1,0 +1,69 @@
+{
+  "id": "ACE_5_9_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.9.8",
+    "kind": "problem",
+    "section": "Analytical Geometry",
+    "original_source": "2003 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Intersecting circles with coordinates",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_9_08.png",
+    "text": "Square $ABCD$ has sides of length $4$, and $M$ is the midpoint of $\\overline{CD}$. A circle with radius $2$ and center $M$ intersects a circle with radius $4$ and center $A$ at points $P$ and $D$. What is the distance from $P$ to $\\overline{AD}$?",
+    "choices": {
+      "A": "$3$",
+      "B": "$\\frac{16}{5}$",
+      "C": "$\\frac{13}{4}$",
+      "D": "$2\\sqrt{3}$",
+      "E": "$\\frac{7}{2}$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$\\frac{16}{5}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: circles with known centers and radii",
+      "body": "Both circles have centers at points of the square and known radii, so each one has a simple equation once the square sits on coordinates. Put $D = (0,0)$, $C = (4,0)$, $B = (4,4)$ and $A = (0,4)$, so $M = (2,0)$. Then side $AD$ lies on the $y$-axis, and the distance from $P = (x,y)$ to $\\overline{AD}$ is just its $x$-coordinate.",
+      "your_turn": {
+        "prompt": "Write the equation of the circle with center $A$ and radius $4$, and of the circle with center $M$ and radius $2$.",
+        "answer": "$x^2 + (y-4)^2 = 16$ and $(x-2)^2 + y^2 = 4$."
+      }
+    },
+    {
+      "title": "Subtract the two equations",
+      "body": "The point $P$ lies on both circles, so its coordinates satisfy both equations. Subtracting one equation from the other cancels the $x^2$ and $y^2$ terms and leaves a straight line through both intersection points $P$ and $D$.",
+      "your_turn": {
+        "prompt": "Expand both equations and subtract them. What relation between $x$ and $y$ do you get?",
+        "answer": "$x^2 + y^2 - 8y = 0$ and $x^2 + y^2 - 4x = 0$; subtracting gives $4x - 8y = 0$, so $x = 2y$."
+      }
+    },
+    {
+      "title": "Use the radius $AP = 4$",
+      "body": "Drop perpendiculars from $P$: the distance to $AD$ is $x = 2y$, and the distance up to side $AB$ is $4 - y$. With $G$ the foot of the perpendicular on $AB$, the right triangle $AGP$ has legs $AG = 2y$ and $PG = 4 - y$ and hypotenuse $AP = 4$ (a radius of the big circle), so\n$$(2y)^2 + (4 - y)^2 = 16.$$",
+      "your_turn": {
+        "prompt": "This equation has the solution $y = 0$. Which point does that give, and why is it not the one we want?",
+        "answer": "$y = 0$ gives $x = 0$, which is the point $D$, the other intersection of the circles. We want $P$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Expanding gives $4y^2 + 16 - 8y + y^2 = 16$, so $5y^2 - 8y = 0$, that is $y(5y - 8) = 0$. Ruling out $y = 0$ (the point $D$) leaves $y = \\frac{8}{5}$. Careful: $\\frac{8}{5}$ is the distance from $P$ to $\\overline{DC}$; the distance to $\\overline{AD}$ is $x = 2y = \\frac{16}{5}$. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_11_06",
+  "number": "5.11.6",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2012 AMC",
+  "topic": "geometry",
+  "subtopic": "Similar triangles",
+  "text": "Three unit squares and two line segments connecting two pairs of vertices are shown. What is the area of $\\triangle ABC$?",
+  "choices": { "A": "$\\frac{1}{6}$", "B": "$\\frac{1}{5}$", "C": "$\\frac{2}{9}$", "D": "$\\frac{1}{3}$", "E": "$\\frac{\\sqrt{2}}{4}$" },
+  "figure": "Three unit squares form an L shape: two squares are stacked vertically on the left, and the third sits to the right of the upper-left square, so the top edge of the figure has length 2 and the left edge has length 2. A is the top-left corner of the upper-left square and B is its top-right corner (also the top-left corner of the right square), so AB = 1. One segment runs from A to the bottom-right corner of the right square. The other runs from B to the bottom-left corner of the lower-left square. The two segments cross at point C, which lies inside the upper-left square.",
+  "book_answer": "B",
+  "book_pages": [193]
+}

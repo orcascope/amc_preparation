@@ -1,0 +1,45 @@
+{
+  "id": "ACE_5_1_07",
+  "source": { "book": "ACE The AMC 10 and AMC 12", "number": "5.1.7", "kind": "problem", "section": "Angles", "original_source": null },
+  "topic": "geometry",
+  "subtopic": "Supplementary angles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_1_07.png",
+    "text": "Find the supplement of $85$ degrees.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$95^\\circ$", "accept": ["95"] },
+  "steps": [
+    {
+      "title": "Where to start: what \"supplement\" means",
+      "body": "The key word is \"supplement\". Two angles are supplementary when they add up to $180^\\circ$, a straight angle. So the supplement of an angle is whatever is missing to make a straight line.",
+      "your_turn": {
+        "prompt": "As a warm-up, what is the supplement of $120^\\circ$?",
+        "answer": "$60^\\circ$, because $120 + 60 = 180$."
+      }
+    },
+    {
+      "title": "Set up an equation",
+      "body": "Call the unknown supplement $x$. Together with $85^\\circ$ it must make $180^\\circ$. Careful: the complement would use $90^\\circ$ instead; here it is $180^\\circ$.\n$$x + 85 = 180$$",
+      "your_turn": {
+        "prompt": "Is $85^\\circ$ acute or obtuse? So will its supplement be acute or obtuse?",
+        "answer": "$85^\\circ$ is acute (less than $90^\\circ$), so its supplement is more than $90^\\circ$, which is obtuse."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Subtract $85$ from both sides: $x = 180 - 85 = 95$. Check: $85 + 95 = 180$. The answer is **$95^\\circ$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "95",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

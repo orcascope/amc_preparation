@@ -1,0 +1,60 @@
+{
+  "id": "ACE_5_6_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.6.4",
+    "kind": "problem",
+    "section": "Area Ratios Related to Side Length Ratios",
+    "original_source": "2004 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Area ratios with a shared angle",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_6_04.png",
+    "text": "In the right triangle $\\triangle ACE$, we have $AC = 12$, $CE = 16$, and $EA = 20$. Points $B$, $D$, and $F$ are located on $AC$, $CE$, and $EA$, respectively, so that $AB = 3$, $CD = 4$, and $EF = 5$. What is the ratio of the area of $\\triangle DBF$ to that of $\\triangle ACE$?",
+    "choices": { "A": "$\\frac{1}{4}$", "B": "$\\frac{9}{25}$", "C": "$\\frac{3}{8}$", "D": "$\\frac{11}{25}$", "E": "$\\frac{7}{16}$" }
+  },
+  "answer": { "choice": "E", "value": "$\\frac{7}{16}$" },
+  "steps": [
+    {
+      "title": "Where to start: subtract the three corner triangles",
+      "body": "Triangle $DBF$ is awkward to measure directly, but the clue is that it leaves three corner triangles $ABF$, $BCD$ and $DEF$, and each one shares a whole angle with $\\triangle ACE$. So we find each corner as a fraction of $[ACE]$ and subtract:\n$$\\frac{[DBF]}{[ACE]} = 1 - \\frac{[ABF]}{[ACE]} - \\frac{[BCD]}{[ACE]} - \\frac{[DEF]}{[ACE]}.$$",
+      "your_turn": {
+        "prompt": "Find the other pieces of the sides: $BC$, $DE$ and $AF$.",
+        "answer": "$BC = 12 - 3 = 9$, $DE = 16 - 4 = 12$ and $AF = 20 - 5 = 15$."
+      }
+    },
+    {
+      "title": "The shared-angle rule at $A$",
+      "body": "The area of a triangle is $\\tfrac{1}{2}ab\\sin\\theta$ for two sides $a$, $b$ and the angle $\\theta$ between them. Triangles $ABF$ and $ACE$ have the same angle at $A$, so the $\\tfrac{1}{2}\\sin A$ cancels and the area ratio is the product of the sides around $A$: $\\frac{[ABF]}{[ACE]} = \\frac{AB\\cdot AF}{AC\\cdot AE}$.",
+      "your_turn": {
+        "prompt": "Compute $\\frac{[ABF]}{[ACE]}$.",
+        "answer": "$\\frac{3\\cdot 15}{12\\cdot 20} = \\frac{45}{240} = \\frac{3}{16}$."
+      }
+    },
+    {
+      "title": "The same rule at $C$",
+      "body": "Triangles $BCD$ and $ACE$ share the angle at $C$, so $\\frac{[BCD]}{[ACE]} = \\frac{CB\\cdot CD}{CA\\cdot CE}$. Careful: use the pieces that touch the angle, so the side on $AC$ is $CB = 9$, not $AB = 3$.",
+      "your_turn": {
+        "prompt": "Compute $\\frac{[BCD]}{[ACE]}$.",
+        "answer": "$\\frac{9\\cdot 4}{12\\cdot 16} = \\frac{36}{192} = \\frac{3}{16}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "At $E$, triangles $DEF$ and $ACE$ share the angle, so $\\frac{[DEF]}{[ACE]} = \\frac{ED\\cdot EF}{EC\\cdot EA} = \\frac{12\\cdot 5}{16\\cdot 20} = \\frac{3}{16}$ as well.\n$$\\frac{[DBF]}{[ACE]} = 1 - \\frac{3}{16} - \\frac{3}{16} - \\frac{3}{16} = \\frac{7}{16}$$\nThe answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

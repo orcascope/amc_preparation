@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_2_10",
+  "number": "5.2.10",
+  "kind": "problem",
+  "section": "Similar Triangles",
+  "original_source": "2015 AIME",
+  "topic": "geometry",
+  "subtopic": "Similar right triangles",
+  "text": "In the diagram below, $ABCD$ is a square. Point $E$ is the midpoint of $\\overline{AD}$. Points $F$ and $G$ lie on $\\overline{CE}$, and $H$ and $J$ lie on $\\overline{AB}$ and $\\overline{BC}$, respectively, so that $FGHJ$ is a square. Points $K$ and $L$ lie on $\\overline{GH}$, and $M$ and $N$ lie on $\\overline{AD}$ and $\\overline{AB}$, respectively, so that $KLMN$ is a square. The area of $KLMN$ is $99$. Find the area of $FGHJ$.",
+  "choices": null,
+  "figure": "Square ABCD with A top left, B bottom left, C bottom right, D top right. E is the midpoint of the top side AD, and segment CE runs from the bottom right corner up to E. Square FGHJ is tilted: side FG lies on CE (G nearer E, F nearer C), H is on the left side AB and J is on the bottom side BC. So HJ is parallel to CE, and GH and JF are perpendicular to CE. A smaller tilted square KLMN sits in the top left corner: side KL lies on GH (K nearer H), M is on the top side AD between A and E, and N is on the left side AB between A and H. Going down side AB from A the points are A, N, H, B. The corner right triangles are AMN (right angle at A), KNH (right angle at K), BHJ (right angle at B), FJC (right angle at F) and DCE (right angle at D).",
+  "book_answer": "539",
+  "book_pages": [140, 141]
+}

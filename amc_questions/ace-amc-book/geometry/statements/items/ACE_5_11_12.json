@@ -1,0 +1,19 @@
+{
+  "id": "ACE_5_11_12",
+  "number": "5.11.12",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2019 AMC 10",
+  "topic": "geometry",
+  "subtopic": "Tangent lines to a circle",
+  "text": "Points $A=(6,13)$ and $B=(12,11)$ lie on circle $\\omega$ in the plane. Suppose that the tangent lines to $\\omega$ at $A$ and $B$ intersect at a point on the $x$-axis. What is the area of $\\omega$?",
+  "choices": {
+    "A": "$\\frac{83\\pi}{8}$",
+    "B": "$\\frac{21\\pi}{2}$",
+    "C": "$\\frac{85\\pi}{8}$",
+    "D": "$\\frac{43\\pi}{4}$",
+    "E": "$\\frac{87\\pi}{8}$"
+  },
+  "book_answer": "C",
+  "book_pages": [199, 200]
+}

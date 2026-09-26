@@ -1,0 +1,53 @@
+{
+  "id": "ACE_5_1_21",
+  "source": { "book": "ACE The AMC 10 and AMC 12", "number": "5.1.21", "kind": "problem", "section": "Angles", "original_source": "1957 AHSME" },
+  "topic": "geometry",
+  "subtopic": "Isosceles triangle angles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_1_21.png",
+    "text": "In triangle $ABC$, $AC = CD$ and $\\angle CAB - \\angle ABC = 30$ degrees. What is $\\angle BAD$?",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$15^\\circ$", "accept": ["15"] },
+  "steps": [
+    {
+      "title": "Where to start: name the unknown angle",
+      "body": "We are told only the difference of two angles, not the angles themselves. That is a hint to name one of them with a letter and write the other in terms of it. Let $\\angle ABC = b$; then $\\angle CAB = b + 30$.",
+      "your_turn": {
+        "prompt": "Use the angle sum of triangle $ABC$ to write $\\angle ACB$ in terms of $b$.",
+        "answer": "$\\angle ACB = 180 - (b + b + 30) = 150 - 2b$."
+      }
+    },
+    {
+      "title": "Use the isosceles triangle $ACD$",
+      "body": "Since $AC = CD$, triangle $ACD$ is isosceles. Careful: the equal angles are the ones opposite the equal sides, so $\\angle CAD = \\angle CDA$, not the angle at $C$. The angle at $C$ is $\\angle ACD$, which is the same as $\\angle ACB = 150 - 2b$ because $D$ lies on $CB$.\n$$2\\,\\angle CAD + (150 - 2b) = 180$$",
+      "your_turn": {
+        "prompt": "Solve for $\\angle CAD$ in terms of $b$.",
+        "answer": "$2\\,\\angle CAD = 30 + 2b$, so $\\angle CAD = b + 15$."
+      }
+    },
+    {
+      "title": "Split the angle at $A$",
+      "body": "Segment $AD$ cuts the angle at $A$ into two pieces. We know the whole angle and one piece in terms of $b$, so the other piece is their difference.",
+      "your_turn": {
+        "prompt": "Why is $\\angle BAD = \\angle CAB - \\angle CAD$?",
+        "answer": "$D$ is on side $BC$, so ray $AD$ lies inside $\\angle CAB$ and splits it into $\\angle CAD$ and $\\angle DAB$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "$\\angle BAD = (b + 30) - (b + 15) = 15$. The unknown $b$ cancels, so the answer does not depend on the exact shape of the triangle. The answer is **$15^\\circ$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "15",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

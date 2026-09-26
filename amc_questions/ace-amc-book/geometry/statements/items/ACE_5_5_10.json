@@ -1,0 +1,23 @@
+{
+  "id": "ACE_5_5_10",
+  "number": "5.5.10",
+  "kind": "problem",
+  "section": "Special Points",
+  "original_source": "2016 AMC",
+  "topic": "geometry",
+  "subtopic": "Angle bisectors and altitudes",
+  "text": "In $\\triangle ABC$ shown in the figure, $AB = 7$, $BC = 8$, $CA = 9$, and $\\overline{AH}$ is an altitude. Points $D$ and $E$ lie on sides $\\overline{AC}$ and $\\overline{AB}$, respectively, so that $\\overline{BD}$ and $\\overline{CE}$ are angle bisectors, intersecting $\\overline{AH}$ at $Q$ and $P$, respectively. What is $PQ$?",
+  "choices": {
+    "A": "$1$",
+    "B": "$\\frac{5}{8}\\sqrt{3}$",
+    "C": "$\\frac{4}{5}\\sqrt{2}$",
+    "D": "$\\frac{8}{15}\\sqrt{5}$",
+    "E": "$\\frac{6}{5}$"
+  },
+  "figure": "Triangle ABC with A at the bottom left, B at the bottom right and C at the top. Side AB is labeled 7, side BC is labeled 8 and side CA is labeled 9. Point H is on side BC, much closer to B than to C, and the altitude AH is drawn (no right-angle mark is shown). Point D is on side AC and segment BD is drawn; point E is on side AB and segment CE is drawn. CE crosses AH at P and BD crosses AH at Q, with P closer to A and Q closer to H.",
+  "book_answer": "D",
+  "book_pages": [
+    158,
+    159
+  ]
+}

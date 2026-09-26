@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_10_08",
+  "number": "5.10.8",
+  "kind": "problem",
+  "section": "3D Geometry",
+  "original_source": "2012 AIME",
+  "topic": "geometry",
+  "subtopic": "Pyramid volume from a net",
+  "text": "In the accompanying figure, the outer square $S$ has side length $40$. A second square $S'$ of side length $15$ is constructed inside $S$ with the same center as $S$ and with sides parallel to those of $S$. From each midpoint of a side of $S$, segments are drawn to the two closest vertices of $S'$. The result is a four-pointed starlike figure inscribed in $S$. The star figure is cut out and then folded to form a pyramid with base $S'$. Find the volume of this pyramid.",
+  "choices": null,
+  "figure": "A large outer square S with a smaller square S' drawn in its center, sides parallel to those of S. On each side of S', an isosceles triangle points outward: its base is that side of S' and its apex is the midpoint of the nearest side of S. The four triangles together with S' form a four-pointed star whose points touch the midpoints of the four sides of S. No lengths or angles are marked in the figure.",
+  "book_answer": "750",
+  "book_pages": [188, 189]
+}

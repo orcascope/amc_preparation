@@ -1,0 +1,60 @@
+{
+  "id": "ACE_5_5_11",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.5.11",
+    "kind": "problem",
+    "section": "Special Points",
+    "original_source": "2013 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Centroid and medians",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_5_11.png",
+    "text": "In triangle $ABC$, medians $AD$ and $CE$ intersect at $P$, $PE = 1.5$, $PD = 2$, and $DE = 2.5$. What is the area of $AEDC$?",
+    "choices": { "A": "$13$", "B": "$13.5$", "C": "$14$", "D": "$14.5$", "E": "$15$" }
+  },
+  "answer": { "choice": "B", "value": "$13.5$" },
+  "steps": [
+    {
+      "title": "Where to start: $P$ is the centroid",
+      "body": "The clue is that $P$ is where two medians cross, so $P$ is the centroid of triangle $ABC$. The centroid cuts every median in the ratio $2:1$, with the longer part next to the vertex. That lets us turn the short pieces $PE$ and $PD$ into the long pieces.",
+      "your_turn": {
+        "prompt": "Use the $2:1$ rule to find $CP$ and $AP$.",
+        "answer": "$CP = 2\\cdot PE = 3$ and $AP = 2\\cdot PD = 4$."
+      }
+    },
+    {
+      "title": "$DE$ is a midsegment",
+      "body": "$D$ is the midpoint of $BC$ and $E$ is the midpoint of $BA$. The segment joining two midpoints is parallel to the third side and half as long, because triangle $DBE$ is a copy of triangle $CBA$ scaled by $\\tfrac{1}{2}$.",
+      "your_turn": {
+        "prompt": "Use $DE = 2.5$ to find $CA$.",
+        "answer": "$CA = 2\\cdot DE = 5$."
+      }
+    },
+    {
+      "title": "Spot the right angle",
+      "body": "Triangle $CPA$ has sides $3$, $4$ and $5$. Since $3^2 + 4^2 = 5^2$, it is a right triangle with the right angle at $P$. So the medians $AD$ and $CE$ are perpendicular.",
+      "your_turn": {
+        "prompt": "The diagonals $AD$ and $CE$ split $AEDC$ into four triangles around $P$. Why is each of them a right triangle?",
+        "answer": "The four angles at $P$ are $\\angle APC$ and the angles vertical or supplementary to it, and all of these are $90^\\circ$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each triangle's area is half the product of its two legs along the diagonals: $[APC] = \\tfrac{3\\cdot 4}{2} = 6$, $[CPD] = \\tfrac{3\\cdot 2}{2} = 3$, $[DPE] = \\tfrac{2\\cdot 1.5}{2} = 1.5$ and $[EPA] = \\tfrac{1.5\\cdot 4}{2} = 3$.\n$$[AEDC] = 6 + 3 + 1.5 + 3 = 13.5$$\nThe answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

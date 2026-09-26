@@ -1,0 +1,16 @@
+{
+  "id": "ACE_5_4_08",
+  "number": "5.4.8",
+  "kind": "problem",
+  "section": "Area",
+  "original_source": "2003 AIME",
+  "topic": "geometry",
+  "subtopic": "Circumradius and area",
+  "text": "Find the area of rhombus $ABCD$ given that the circumradii of triangles $ABD$ and $ACD$ are $12.5$ and $25$, respectively.",
+  "choices": null,
+  "book_answer": "400",
+  "book_pages": [
+    153,
+    154
+  ]
+}

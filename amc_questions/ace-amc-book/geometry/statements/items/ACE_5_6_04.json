@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_6_04",
+  "number": "5.6.4",
+  "kind": "problem",
+  "section": "Area Ratios Related to Side Length Ratios",
+  "original_source": "2004 AMC",
+  "topic": "geometry",
+  "subtopic": "Area ratios with a shared angle",
+  "text": "In the right triangle $\\triangle ACE$, we have $AC = 12$, $CE = 16$, and $EA = 20$. Points $B$, $D$, and $F$ are located on $AC$, $CE$, and $EA$, respectively, so that $AB = 3$, $CD = 4$, and $EF = 5$. What is the ratio of the area of $\\triangle DBF$ to that of $\\triangle ACE$?",
+  "choices": { "A": "$\\frac{1}{4}$", "B": "$\\frac{9}{25}$", "C": "$\\frac{3}{8}$", "D": "$\\frac{11}{25}$", "E": "$\\frac{7}{16}$" },
+  "figure": "Right triangle ACE with the right angle at C: A is at the top left, C at the bottom left and E at the bottom right, so AC is vertical and CE is horizontal (no right-angle mark is drawn). B is on AC with AB labeled 3 and BC labeled 9. D is on CE with CD labeled 4 and DE labeled 12. F is on the hypotenuse AE with AF labeled 15 and FE labeled 5. Segments BD, DF and FB are drawn, forming triangle DBF inside triangle ACE.",
+  "book_answer": "E",
+  "book_pages": [165]
+}

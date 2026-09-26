@@ -1,0 +1,59 @@
+{
+  "id": "ACE_5_2_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.2.7",
+    "kind": "problem",
+    "section": "Similar Triangles",
+    "original_source": "1984 AIME"
+  },
+  "topic": "geometry",
+  "subtopic": "Area ratios of similar triangles",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_5_2_07.png",
+    "text": "A point $P$ is chosen in the interior of $\\triangle ABC$ such that when lines are drawn through $P$ parallel to the sides of $\\triangle ABC$, the resulting smaller triangles $t_1$, $t_2$, and $t_3$ in the figure, have areas $4$, $9$, and $49$, respectively. Find the area of $\\triangle ABC$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$144$", "accept": ["144"] },
+  "steps": [
+    {
+      "title": "Where to start: parallel lines make similar triangles",
+      "body": "Each small triangle has its three sides parallel to the three sides of $\\triangle ABC$, so it has the same angles and is similar to $\\triangle ABC$. For similar triangles, the ratio of areas is the square of the ratio of sides. The areas $4$, $9$, $49$ are perfect squares, which is a strong hint to take square roots.",
+      "your_turn": {
+        "prompt": "What is the ratio of the sides of $t_1$, $t_2$ and $t_3$?",
+        "answer": "$\\sqrt{4} : \\sqrt{9} : \\sqrt{49} = 2 : 3 : 7$."
+      }
+    },
+    {
+      "title": "Name the sides parallel to $BC$",
+      "body": "Let the sides of $t_1$, $t_2$, $t_3$ that are parallel to $BC$ be $2x$, $3x$ and $7x$. The side of $t_3$ lies right on $BC$. The rest of $BC$ is the bottom of the two parallelograms at the lower left and lower right corners.",
+      "your_turn": {
+        "prompt": "The lower-left parallelogram has its top side on the horizontal line through $P$. That top side is a side of which small triangle, and how long is the bottom side of the parallelogram?",
+        "answer": "It is the side of $t_1$, so it is $2x$. Opposite sides of a parallelogram are equal, so the bottom piece of $BC$ is also $2x$."
+      }
+    },
+    {
+      "title": "Add up the pieces of $BC$",
+      "body": "In the same way, the top of the lower-right parallelogram is the side of $t_2$, so its bottom piece of $BC$ is $3x$. So $BC$ splits into three pieces coming from $t_1$, $t_3$ and $t_2$. Careful: each piece matches a different triangle, so all three of $2x$, $3x$, $7x$ appear once.",
+      "your_turn": {
+        "prompt": "Write the length of $BC$ in terms of $x$.",
+        "answer": "$BC = 2x + 7x + 3x = 12x$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Compare $\\triangle ABC$ with $t_1$: the sides are in ratio $12x : 2x = 6$, so the area of $\\triangle ABC$ is $6^2$ times the area of $t_1$:\n$$[ABC] = 6^2 \\cdot 4 = 144.$$\nThe answer is **$144$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "144",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

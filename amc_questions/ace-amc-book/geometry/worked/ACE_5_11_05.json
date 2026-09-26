@@ -1,0 +1,60 @@
+{
+  "id": "ACE_5_11_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.5",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2014 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Regular hexagons and equilateral triangles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_05.png",
+    "text": "Six regular hexagons surround a regular hexagon of side length $1$ as shown. What is the area of $\\triangle ABC$?",
+    "choices": { "A": "$2\\sqrt{3}$", "B": "$3\\sqrt{3}$", "C": "$1+3\\sqrt{2}$", "D": "$2+2\\sqrt{3}$", "E": "$3+2\\sqrt{3}$" }
+  },
+  "answer": { "choice": "B", "value": "$3\\sqrt{3}$" },
+  "steps": [
+    {
+      "title": "Where to start: the triangle is equilateral",
+      "body": "The picture looks the same after a turn of $120^\\circ$ about the center of the middle hexagon, and that turn sends $A$ to $B$, $B$ to $C$ and $C$ to $A$. So $AB = BC = CA$ and $\\triangle ABC$ is equilateral. For an equilateral triangle one length is enough, and the easiest one to read off the grid is the height from $A$ to side $BC$.",
+      "your_turn": {
+        "prompt": "A regular hexagon of side $1$ splits into six equilateral triangles from its center. How long is its longest diagonal (vertex to opposite vertex)?",
+        "answer": "$2$, because it is made of two sides of those small triangles, each of length $1$."
+      }
+    },
+    {
+      "title": "Measure the height along the grid",
+      "body": "Side $BC$ is vertical and passes through the right vertex of the middle hexagon. Go straight right from $A$: first along the shared edge to the middle hexagon's left vertex (length $1$), then across the middle hexagon along its longest diagonal to its right vertex, which lies on $BC$. This horizontal path is perpendicular to $BC$, so it is the height of the triangle.",
+      "your_turn": {
+        "prompt": "How long is the height from $A$ to $BC$?",
+        "answer": "$1 + 2 = 3$: one hexagon side plus one longest diagonal."
+      }
+    },
+    {
+      "title": "Get the side from the height",
+      "body": "The height of an equilateral triangle cuts it into two $30$-$60$-$90$ triangles. In each one the height is the longer leg and half of the base is the shorter leg, and the longer leg is $\\sqrt{3}$ times the shorter leg.",
+      "your_turn": {
+        "prompt": "With height $3$, how long is half of side $BC$, and how long is all of $BC$?",
+        "answer": "Half is $\\tfrac{3}{\\sqrt{3}} = \\sqrt{3}$, so $BC = 2\\sqrt{3}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The area is half of base times height:\n$$\\tfrac{1}{2}\\cdot 2\\sqrt{3}\\cdot 3 = 3\\sqrt{3}.$$\nThe answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

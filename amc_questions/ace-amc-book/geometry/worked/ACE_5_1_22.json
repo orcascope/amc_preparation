@@ -1,0 +1,56 @@
+{
+  "id": "ACE_5_1_22",
+  "source": { "book": "ACE The AMC 10 and AMC 12", "number": "5.1.22", "kind": "problem", "section": "Angles", "original_source": "2019 AMC 10" },
+  "topic": "geometry",
+  "subtopic": "Inscribed angles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_1_22.png",
+    "text": "Let $\\triangle ABC$ be an isosceles triangle with $BC = AC$ and $\\angle ACB = 40^{\\circ}$. Construct the circle with diameter $\\overline{BC}$, and let $D$ and $E$ be the other intersection points of the circle with the sides $\\overline{AC}$ and $\\overline{AB}$, respectively. Let $F$ be the intersection of the diagonals of the quadrilateral $BCDE$. What is the degree measure of $\\angle BFC$?",
+    "choices": { "A": "$90$", "B": "$100$", "C": "$105$", "D": "$110$", "E": "$120$" }
+  },
+  "answer": { "choice": "D", "value": "$110$" },
+  "steps": [
+    {
+      "title": "Where to start: a diameter gives right angles",
+      "body": "The clue is \"circle with diameter $\\overline{BC}$\". An inscribed angle is half of the arc it cuts off, and a diameter cuts off a semicircle of $180^\\circ$. So any point on the circle sees $BC$ at a right angle. Draw the picture: $C$ at the top, $B$ and $A$ at the bottom, with $D$ on $AC$ and $E$ on $AB$.",
+      "your_turn": {
+        "prompt": "Which two angles with vertices at $D$ and $E$ must be $90^\\circ$?",
+        "answer": "$\\angle BDC = 90^\\circ$ and $\\angle BEC = 90^\\circ$, since both cut off the semicircle $BC$."
+      }
+    },
+    {
+      "title": "Find the base angles",
+      "body": "Triangle $ABC$ is isosceles with $BC = AC$, so the angles at $A$ and $B$ (opposite those equal sides) are equal.",
+      "your_turn": {
+        "prompt": "Find $\\angle CBA$.",
+        "answer": "$(180 - 40)/2 = 70^\\circ$."
+      }
+    },
+    {
+      "title": "Look at triangle $BFC$",
+      "body": "The diagonals of $BCDE$ are $CE$ and $BD$, and they meet at $F$. So in triangle $BFC$, the angle at $C$ is $\\angle ECB$ and the angle at $B$ is $\\angle DBC$. Each of these sits in one of the right triangles from Step 1.",
+      "your_turn": {
+        "prompt": "Use right triangle $CEB$ (right angle at $E$) to find $\\angle ECB$.",
+        "answer": "$\\angle EBC = 70^\\circ$, so $\\angle ECB = 180 - 90 - 70 = 20^\\circ$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "In right triangle $CDB$ (right angle at $D$), $\\angle DCB = 40^\\circ$, so $\\angle DBC = 180 - 90 - 40 = 50^\\circ$. Careful: this angle is $\\angle DBC$, not the base angle $\\angle ABC = 70^\\circ$, because $BD$ is a different segment from $BA$. Then $\\angle BFC = 180 - 20 - 50 = 110^\\circ$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This comes from using the base angle $\\angle ABC = 70^\\circ$ as the angle of triangle $BFC$ at $B$: $180 - 20 - 70 = 90$. But $F$ lies on $BD$, not on $BA$, so the angle at $B$ is $\\angle DBC = 50^\\circ$."
+  },
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

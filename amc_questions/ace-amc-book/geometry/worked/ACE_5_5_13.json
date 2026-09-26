@@ -1,0 +1,67 @@
+{
+  "id": "ACE_5_5_13",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.5.13",
+    "kind": "problem",
+    "section": "Special Points",
+    "original_source": "2013 AIME"
+  },
+  "topic": "geometry",
+  "subtopic": "Stewart's theorem",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_5_5_13.png",
+    "text": "In $\\triangle ABC$, $AC = BC$, and point $D$ is on $\\overline{BC}$ so that $CD = 3\\cdot BD$. Let $E$ be the midpoint of $\\overline{AD}$. Given that $CE = \\sqrt{7}$ and $BE = 3$, the area of $\\triangle ABC$ can be expressed in the form $m\\sqrt{n}$, where $m$ and $n$ are positive integers and $n$ is not divisible by the square of any prime. Find $m+n$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$10$", "accept": ["10"] },
+  "steps": [
+    {
+      "title": "Where to start: name the lengths and reach for Stewart's theorem",
+      "body": "The clue is that every given length is a cevian (a segment from a vertex to a point on the opposite side): $ED$, $CE$ and $BE$. Stewart's theorem links a cevian to the sides: if a cevian of length $d$ from a vertex splits the opposite side $a$ into pieces $m$ and $n$, then $b^2 n + c^2 m = a(d^2 + mn)$, where each of the other two sides $b$, $c$ is squared and multiplied by the piece of $a$ that does not touch it. Let $BD = x$ and $AE = ED = y$.",
+      "your_turn": {
+        "prompt": "Write $CD$, $BC$, $AC$ and $AD$ in terms of $x$ and $y$.",
+        "answer": "$CD = 3x$, $BC = 4x$, $AC = BC = 4x$ and $AD = 2y$."
+      }
+    },
+    {
+      "title": "Stewart in triangle $BEC$",
+      "body": "In triangle $BEC$ the cevian is $ED = y$, splitting $BC = 4x$ into $BD = x$ and $DC = 3x$. The side ending at $B$ is $EB = 3$ and the side ending at $C$ is $EC = \\sqrt{7}$, so\n$$3^2\\cdot 3x + 7\\cdot x = 4x\\,(y^2 + 3x^2).$$",
+      "your_turn": {
+        "prompt": "Simplify this equation (divide by $x$).",
+        "answer": "$34 = 4y^2 + 12x^2$, that is $12x^2 + 4y^2 = 34$."
+      }
+    },
+    {
+      "title": "Stewart in triangle $ACD$",
+      "body": "In triangle $ACD$ the cevian is $CE = \\sqrt{7}$, splitting $AD = 2y$ into $AE = ED = y$. The sides are $CA = 4x$ and $CD = 3x$, so\n$$(4x)^2\\cdot y + (3x)^2\\cdot y = 2y\\,(7 + y^2),$$\nwhich simplifies to $25x^2 - 2y^2 = 14$.",
+      "your_turn": {
+        "prompt": "Solve this together with $12x^2 + 4y^2 = 34$ for $x$ and $y^2$.",
+        "answer": "Doubling the second equation and adding gives $62x^2 = 62$, so $x = 1$ and $y^2 = \\tfrac{11}{2}$."
+      }
+    },
+    {
+      "title": "Stewart in triangle $ABD$ to get the base",
+      "body": "Now $AC = BC = 4$ and $BD = 1$, and we still need the base $AB$. In triangle $ABD$ the cevian is $BE = 3$, splitting $AD = 2y$ into $AE = ED = y$, with sides $BA$ and $BD = 1$:\n$$AB^2\\cdot y + 1^2\\cdot y = 2y\\,(9 + y^2).$$",
+      "your_turn": {
+        "prompt": "Use $y^2 = \\tfrac{11}{2}$ to find $AB$.",
+        "answer": "$AB^2 + 1 = 2\\left(9 + \\tfrac{11}{2}\\right) = 29$, so $AB^2 = 28$ and $AB = 2\\sqrt{7}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Triangle $ABC$ is isosceles with equal sides $4$ and base $2\\sqrt{7}$. The altitude from $C$ lands at the midpoint of $AB$, so its height is $\\sqrt{4^2 - (\\sqrt{7})^2} = 3$. The area is $\\tfrac{1}{2}\\cdot 2\\sqrt{7}\\cdot 3 = 3\\sqrt{7}$, so $m = 3$, $n = 7$ and $m + n = 10$. The answer is **$10$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "10",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

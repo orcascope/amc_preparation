@@ -1,0 +1,13 @@
+{
+  "id": "ACE_5_11_04",
+  "number": "5.11.4",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2011 AMC",
+  "topic": "geometry",
+  "subtopic": "Incenter and parallel lines",
+  "text": "Triangle $ABC$ has side-lengths $AB = 12$, $BC = 24$, and $AC = 18$. The line through the incenter of $\\triangle ABC$ parallel to $\\overline{BC}$ intersects $\\overline{AB}$ at $M$ and $\\overline{AC}$ at $N$. What is the perimeter of $\\triangle AMN$?",
+  "choices": { "A": "$27$", "B": "$30$", "C": "$33$", "D": "$36$", "E": "$42$" },
+  "book_answer": "B",
+  "book_pages": [191, 192]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ACE_5_11_03",
+  "number": "5.11.3",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2014 AMC",
+  "topic": "geometry",
+  "subtopic": "Perpendicular slopes",
+  "text": "The $y$-intercepts, $P$ and $Q$, of two perpendicular lines intersecting at the point $A(6,8)$ have a sum of zero. What is the area of $\\triangle APQ$?",
+  "choices": { "A": "$45$", "B": "$48$", "C": "$54$", "D": "$60$", "E": "$72$" },
+  "book_answer": "D",
+  "book_pages": [191]
+}

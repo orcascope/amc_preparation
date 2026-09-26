@@ -1,0 +1,69 @@
+{
+  "id": "ACE_5_7_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.7.8",
+    "kind": "problem",
+    "section": "Circles Part 1",
+    "original_source": "2018 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Tangent circles and similar triangles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_7_08.png",
+    "text": "Two circles of radius $5$ are externally tangent to each other and are internally tangent to a circle of radius $13$ at points $A$ and $B$, as shown in the diagram. The distance $AB$ can be written in the form $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?",
+    "choices": {
+      "A": "$21$",
+      "B": "$29$",
+      "C": "$58$",
+      "D": "$69$",
+      "E": "$93$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$69$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: connect the centers",
+      "body": "Every length we are given is a radius of a tangent circle, so name the centers: $M$ for the big circle, $N$ for the left small circle, $O$ for the right small circle. When one circle touches another from inside, the line through their centers passes through the touching point. So $M$, $N$, $A$ lie on one line with $N$ between $M$ and $A$, and likewise $M$, $O$, $B$.",
+      "your_turn": {
+        "prompt": "How long is $MN$?",
+        "answer": "$8$, because $MA = 13$ is a radius of the big circle and $NA = 5$ is a radius of the small one, so $MN = 13 - 5$."
+      }
+    },
+    {
+      "title": "Collect the lengths",
+      "body": "In the same way $MO = 8$, and $MA = MB = 13$. The two small circles touch from outside, so the segment $NO$ passes through their touching point.",
+      "your_turn": {
+        "prompt": "How long is $NO$?",
+        "answer": "$10$, the sum of the two radii $5 + 5$."
+      }
+    },
+    {
+      "title": "Spot the similar triangles",
+      "body": "Compare triangle $MNO$ with triangle $MAB$. The sides at $M$ are in the same ratio: $\\frac{MN}{MA} = \\frac{MO}{MB} = \\frac{8}{13}$. The angle between them is the same angle, so the triangles are similar by SAS, with $N$ matching $A$ and $O$ matching $B$. That means $NO$ matches $AB$:\n$$\\frac{NO}{AB} = \\frac{MN}{MA}$$",
+      "your_turn": {
+        "prompt": "Why is angle $NMO$ the very same angle as angle $AMB$?",
+        "answer": "$N$ lies on segment $MA$ and $O$ lies on segment $MB$, so both angles are formed by the same two rays from $M$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $\\frac{10}{AB} = \\frac{8}{13}$, which gives $AB = \\frac{130}{8} = \\frac{65}{4}$. Since $65 = 5\\cdot 13$ and $4 = 2^2$ share no factor, $m = 65$ and $n = 4$, and $m + n = 69$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

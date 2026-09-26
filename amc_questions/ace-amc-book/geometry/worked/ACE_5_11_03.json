@@ -1,0 +1,63 @@
+{
+  "id": "ACE_5_11_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.3",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2014 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Perpendicular slopes",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_03.png",
+    "text": "The $y$-intercepts, $P$ and $Q$, of two perpendicular lines intersecting at the point $A(6,8)$ have a sum of zero. What is the area of $\\triangle APQ$?",
+    "choices": { "A": "$45$", "B": "$48$", "C": "$54$", "D": "$60$", "E": "$72$" }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$60$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: name the intercepts with one letter",
+      "body": "The clue is that the two $y$-intercepts add to zero. So they are opposites: $P = (0, p)$ and $Q = (0, -p)$ for some number $p$. Now there is only one unknown, and the word \"perpendicular\" should give us one equation for it.",
+      "your_turn": {
+        "prompt": "Why can we use a single letter $p$ for both intercepts?",
+        "answer": "If the $y$-coordinates add to $0$, one is the negative of the other; both points are on the $y$-axis, so their $x$-coordinates are $0$."
+      }
+    },
+    {
+      "title": "Write the two slopes",
+      "body": "Line $AP$ goes through $A(6,8)$ and $P(0,p)$, and line $AQ$ goes through $A(6,8)$ and $Q(0,-p)$. Perpendicular lines have slopes whose product is $-1$.",
+      "your_turn": {
+        "prompt": "Find the slopes of $AP$ and $AQ$.",
+        "answer": "Slope of $AP = \\tfrac{8-p}{6}$ and slope of $AQ = \\tfrac{8+p}{6}$ (rise over run from the $y$-axis to $A$)."
+      }
+    },
+    {
+      "title": "Solve for $p$",
+      "body": "Set the product of the slopes equal to $-1$: $$\\frac{8-p}{6}\\cdot\\frac{8+p}{6} = -1,$$ so $64 - p^2 = -36$.",
+      "your_turn": {
+        "prompt": "Solve for $p^2$.",
+        "answer": "$p^2 = 64 + 36 = 100$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $p = 10$: take $P = (0, 10)$ and $Q = (0, -10)$ ($p = -10$ just swaps the names). The right angle is at $A$, so the legs are $AP$ and $AQ$. By the distance formula, $AP = \\sqrt{6^2 + 2^2} = 2\\sqrt{10}$ and $AQ = \\sqrt{6^2 + 18^2} = 6\\sqrt{10}$. The area is $\\tfrac{1}{2}\\cdot 2\\sqrt{10}\\cdot 6\\sqrt{10} = 60$. (Check: base $PQ = 20$ on the $y$-axis and height $6$, the distance from $A$ to the $y$-axis, also give $\\tfrac{1}{2}\\cdot 20\\cdot 6 = 60$.) The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

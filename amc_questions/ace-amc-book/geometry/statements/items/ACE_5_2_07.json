@@ -1,0 +1,14 @@
+{
+  "id": "ACE_5_2_07",
+  "number": "5.2.7",
+  "kind": "problem",
+  "section": "Similar Triangles",
+  "original_source": "1984 AIME",
+  "topic": "geometry",
+  "subtopic": "Area ratios of similar triangles",
+  "text": "A point $P$ is chosen in the interior of $\\triangle ABC$ such that when lines are drawn through $P$ parallel to the sides of $\\triangle ABC$, the resulting smaller triangles $t_1$, $t_2$, and $t_3$ in the figure, have areas $4$, $9$, and $49$, respectively. Find the area of $\\triangle ABC$.",
+  "choices": null,
+  "figure": "Triangle ABC with A at the top, B at the bottom left and C at the bottom right; BC is horizontal. Through an interior point P (not labeled) three segments are drawn, each parallel to one side and ending on the other two sides: a horizontal one parallel to BC, one parallel to AB, and one parallel to AC. They cut ABC into three small triangles, each with a vertex at P, and three parallelograms. Triangle t1 is on the left, next to side AB, just above the horizontal line; its side on the horizontal line runs from AB to P. Triangle t2 is on the right, next to side AC, just above the horizontal line; its side on the horizontal line runs from P to AC. Triangle t3 is at the bottom, with its apex at P and its base on BC. The parallelograms are at the top near A, at the lower left near B (between t1 and BC) and at the lower right near C (between t2 and BC).",
+  "book_answer": "144",
+  "book_pages": [137, 138]
+}

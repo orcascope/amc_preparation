@@ -1,0 +1,13 @@
+{
+  "id": "ACE_5_3_06",
+  "number": "5.3.6",
+  "kind": "problem",
+  "section": "Special Triangles",
+  "original_source": "2015 AMC 10",
+  "topic": "geometry",
+  "subtopic": "Angle trisectors and special triangles",
+  "text": "The isosceles right triangle $ABC$ has right angle at $C$ and area $12.5$. The rays trisecting $\\angle ACB$ intersect $AB$ at $D$ and $E$. What is the area of $\\triangle CDE$?",
+  "choices": { "A": "$\\frac{5\\sqrt{2}}{3}$", "B": "$\\frac{50\\sqrt{3}-75}{4}$", "C": "$\\frac{15\\sqrt{3}}{8}$", "D": "$\\frac{50-25\\sqrt{3}}{2}$", "E": "$\\frac{25}{6}$" },
+  "book_answer": "D",
+  "book_pages": [145, 146]
+}
