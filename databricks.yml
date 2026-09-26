@@ -33,3 +33,31 @@ targets:
     variables:
       lakebase_endpoint: projects/hobby/branches/production/endpoints/primary
       database_url: 'postgresql://ars.1001%40gmail.com@ep-orange-glitter-d8rpfph8.database.us-east-2.cloud.databricks.com/databricks_postgres?sslmode=require'
+
+
+sync:
+  exclude:
+    # Python
+    - '__pycache__/'
+    - '*.pyc'
+    - 'venv/'
+    - '.venv/'
+
+    # Local HTTPS certificate — contains a private key, never commit it
+    - 'app/certs/'
+
+    # Local database (per-machine student progress)
+    - 'app/data/*.db'
+    - 'app/data/*.db-journal'
+
+    - 'amc_questions/*/questions'
+    - 'amc_questions/*/solutions'
+
+    # Editor/OS noise
+    - .DS_Store
+    - Thumbs.db
+    - .env
+    - __pycache__/
+
+    - '.claude/*'
+    - 'tools/'
