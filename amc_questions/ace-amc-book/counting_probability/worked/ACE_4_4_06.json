@@ -1,0 +1,59 @@
+{
+  "id": "ACE_4_4_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.4.6",
+    "kind": "problem",
+    "section": "Stars and Bars",
+    "original_source": "2014 PUMAC"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars with distinct parts",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_4_06.png",
+    "text": "How many sets of positive integers $(a,b,c)$ satisfies $a > b > c > 0$ and $a+b+c=103$?",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$833$", "accept": ["833"] },
+  "steps": [
+    {
+      "title": "Where to start: drop the order, then fix the overcount",
+      "body": "The condition $a > b > c$ says the three numbers are different and lists them in one fixed order. Stars and bars counts ordered triples easily, so first count all ordered triples of positive integers with sum $103$, ignoring $a > b > c$. Then we remove the triples with a repeated number and correct for order.",
+      "your_turn": {
+        "prompt": "How many ordered triples of positive integers $(a, b, c)$ have $a + b + c = 103$?",
+        "answer": "By stars and bars, $\\binom{103-1}{3-1} = \\binom{102}{2} = 5151$ (choose $2$ of the $102$ gaps between $103$ stars)."
+      }
+    },
+    {
+      "title": "Which triples break the pattern",
+      "body": "A triple of three different numbers can be put in decreasing order in exactly one way. But a triple with a repeated number can never satisfy $a > b > c$, and it is not counted $6$ times either, so it must be removed first. Three equal numbers are impossible here.",
+      "your_turn": {
+        "prompt": "Why can $a$, $b$, $c$ not all be equal?",
+        "answer": "Then $3a = 103$, but $103$ is not divisible by $3$."
+      }
+    },
+    {
+      "title": "Count triples with exactly two equal numbers",
+      "body": "Say the repeated value is $x$ and the other value is $y$, so $2x + y = 103$ with $y \\ge 1$. That allows $x = 1, 2, \\dots, 51$, which is $51$ choices, and $y$ is never equal to $x$ (that would need $3x = 103$). Each pair $(x, y)$ gives $3$ ordered triples, since $y$ can sit in any of the three places, so there are $51\\cdot 3 = 153$ such ordered triples.",
+      "your_turn": {
+        "prompt": "For $x = 51$, what is $y$, and which ordered triples does it give?",
+        "answer": "$y = 1$, giving $(51, 51, 1)$, $(51, 1, 51)$ and $(1, 51, 51)$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "That leaves $5151 - 153 = 4998$ ordered triples of three different numbers. Each set of three different numbers shows up $3! = 6$ times in that list, and exactly one of those orders has $a > b > c$. So the count is $\\frac{4998}{6} = 833$. The answer is **$833$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "833",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

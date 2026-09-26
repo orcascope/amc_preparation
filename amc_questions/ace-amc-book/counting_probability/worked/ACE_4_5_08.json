@@ -1,0 +1,59 @@
+{
+  "id": "ACE_4_5_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.5.8",
+    "kind": "problem",
+    "section": "Binomial",
+    "original_source": "2014 HMMT"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Binomial expansion",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_5_08.png",
+    "text": "Find the sum of all real numbers $x$ such that $5x^4-10x^3+10x^2-5x-11=0$",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$1$", "accept": ["1"] },
+  "steps": [
+    {
+      "title": "Where to start: spot a row of Pascal's triangle",
+      "body": "The coefficients $5, 10, 10, 5$ are the middle numbers of row $5$ of Pascal's triangle: $\\binom{5}{1}, \\binom{5}{2}, \\binom{5}{3}, \\binom{5}{4}$. Their signs alternate, which points to the expansion of $(x-1)^5$.",
+      "your_turn": {
+        "prompt": "Expand $(x-1)^5$.",
+        "answer": "$x^5 - 5x^4 + 10x^3 - 10x^2 + 5x - 1$."
+      }
+    },
+    {
+      "title": "Rewrite the equation with $(x-1)^5$",
+      "body": "Subtracting, $x^5 - (x-1)^5 = 5x^4 - 10x^3 + 10x^2 - 5x + 1$. Careful with the constant: our polynomial ends in $-11 = 1 - 12$, so the equation becomes\n$$x^5 - (x-1)^5 = 12.$$",
+      "your_turn": {
+        "prompt": "Replace $x$ by $1 - x$ in $x^5 - (x-1)^5$ and simplify. What do you notice?",
+        "answer": "You get $(1-x)^5 - (-x)^5 = -(x-1)^5 + x^5$, the same expression. So if $r$ is a root, so is $1 - r$."
+      }
+    },
+    {
+      "title": "Count the real roots",
+      "body": "The roots come in pairs $r$ and $1 - r$, centered at $\\tfrac12$. So shift to the center: let $u = x - \\tfrac12$. Expanding $(u + \\tfrac12)^5 - (u - \\tfrac12)^5$, the even powers of $u$ survive and the equation becomes\n$$5u^4 + \\tfrac{5}{2}u^2 + \\tfrac{1}{16} = 12.$$",
+      "your_turn": {
+        "prompt": "Write $t = u^2$. Why does $5t^2 + \\tfrac52 t = \\tfrac{191}{16}$ have exactly one solution with $t > 0$?",
+        "answer": "For $t \\ge 0$ the left side starts at $0$ and keeps growing without bound, so it hits $\\tfrac{191}{16}$ exactly once. (The other root of the quadratic is negative.)"
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With that one positive value $t$, the real solutions are $u = \\sqrt{t}$ and $u = -\\sqrt{t}$, which are different since $t > 0$. So there are exactly two real roots, $x = \\tfrac12 + \\sqrt{t}$ and $x = \\tfrac12 - \\sqrt{t}$, a pair $r$ and $1 - r$. Their sum is $1$. The answer is **$1$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

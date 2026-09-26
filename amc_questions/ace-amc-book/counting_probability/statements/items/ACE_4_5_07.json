@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_5_07",
+  "number": "4.5.7",
+  "kind": "problem",
+  "section": "Binomial",
+  "original_source": "2006 AMC 12",
+  "topic": "counting_probability",
+  "subtopic": "Counting terms of an expansion",
+  "text": "The expression $$(x+y+z)^{2006}+(x-y-z)^{2006}$$ is simplified by expanding it and combining like terms. How many terms are in the simplified expression?",
+  "choices": { "A": "$6018$", "B": "$671{,}676$", "C": "$1{,}007{,}514$", "D": "$1{,}008{,}016$", "E": "$2{,}015{,}028$" },
+  "book_answer": "D",
+  "book_pages": [112]
+}

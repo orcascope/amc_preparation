@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_3_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.3.2",
+    "kind": "problem",
+    "section": "Path Counting + Bijections",
+    "original_source": "2001 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Lattice path bijection",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_3_02.png",
+    "text": "A fair die is rolled four times. The probability that each of the final three rolls is at least as large as the roll preceding it may be expressed in the form $m/n$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$79$",
+    "accept": [
+      "79"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: count the good roll sequences",
+      "body": "All ordered results of four rolls are equally likely, so the probability is (number of good sequences) divided by (number of all sequences). The condition \"each roll is at least as large as the one before\" means the rolls never go down, which suggests a path that only moves up or right. Careful: equal rolls are allowed, so $3, 3, 5, 5$ counts.",
+      "your_turn": {
+        "prompt": "How many ordered results are there for four rolls of a die?",
+        "answer": "$6^4 = 1296$."
+      }
+    },
+    {
+      "title": "Turn rolls into a path",
+      "body": "Draw a grid whose horizontal coordinate is the roll number, from $0$ to $4$, and whose vertical coordinate is a die value, from $1$ to $6$. Walk from $(0,1)$ to $(4,6)$ using $4$ right steps (R) and $5$ up steps (U). The height at which you take the $k$-th right step is the value of roll $k$. Since the path never goes down, the rolls never go down, and every non-decreasing list of rolls gives exactly one such path.",
+      "your_turn": {
+        "prompt": "Write the path for the rolls $2, 2, 3, 6$.",
+        "answer": "U R R U R U U U R: go up to $2$, two rights, up to $3$, one right, up to $6$, one right."
+      }
+    },
+    {
+      "title": "Count the paths",
+      "body": "Each path is a string of $9$ letters with $4$ R's and $5$ U's, and any such string is a valid path. So the number of paths is the number of ways to choose which $4$ of the $9$ positions are R.",
+      "your_turn": {
+        "prompt": "Compute $\\binom{9}{4}$.",
+        "answer": "$\\frac{9\\cdot 8\\cdot 7\\cdot 6}{4\\cdot 3\\cdot 2\\cdot 1} = 126$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The probability is $$\\frac{126}{1296} = \\frac{7}{72},$$ after dividing top and bottom by $18$. Since $7$ and $72$ share no factor, $m = 7$ and $n = 72$, so $m + n = 79$. The answer is **$79$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "79",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

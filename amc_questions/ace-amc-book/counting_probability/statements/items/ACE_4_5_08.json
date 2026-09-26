@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_5_08",
+  "number": "4.5.8",
+  "kind": "problem",
+  "section": "Binomial",
+  "original_source": "2014 HMMT",
+  "topic": "counting_probability",
+  "subtopic": "Binomial expansion",
+  "text": "Find the sum of all real numbers $x$ such that $5x^4-10x^3+10x^2-5x-11=0$",
+  "choices": null,
+  "book_answer": "1",
+  "book_pages": [112, 113]
+}

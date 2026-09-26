@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_1_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.1.4",
+    "kind": "problem",
+    "section": "Basic Combinatorics Principles",
+    "original_source": "2007 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Casework on repeated characters",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_1_04.png",
+    "text": "A mathematical organization is producing a set of commemorative license plates. Each plate contains a sequence of five characters chosen from the four letters in AIME and the four digits in $2007$. No character may appear in a sequence more times than it appears among the four letters in AIME or the four digits in $2007$. A set of plates in which each possible sequence appears exactly once contains $N$ license plates. Find $\\frac{N}{10}$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$372$",
+    "accept": [
+      "372"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: find the one character that can repeat",
+      "body": "The available characters are A, I, M, E, 2, 0, 7. Each appears once in AIME or 2007, except $0$, which appears twice. So $0$ is the only character that may be used twice on a plate, and that is what makes counting awkward. The clean way is casework on how many $0$s the plate uses: none, one, or two.",
+      "your_turn": {
+        "prompt": "Apart from $0$, how many different characters are available, and how many times may each be used?",
+        "answer": "Six characters (A, I, M, E, 2, 7), each at most once."
+      }
+    },
+    {
+      "title": "Cases with no $0$ and with one $0$",
+      "body": "With no $0$, all five characters are different and come from the six others: choose them in $\\binom{6}{5} = 6$ ways and order them in $5! = 120$ ways, giving $720$ plates. With exactly one $0$, the plate has the $0$ plus four different characters from the other six, and again all five characters are different.",
+      "your_turn": {
+        "prompt": "How many plates have exactly one $0$?",
+        "answer": "$\\binom{6}{4}\\cdot 5! = 15\\cdot 120 = 1800$."
+      }
+    },
+    {
+      "title": "The case with two $0$s",
+      "body": "Now the plate has two $0$s plus three different characters from the other six, chosen in $\\binom{6}{3} = 20$ ways. Careful: the five characters are not all different, so there are not $5!$ orders. Swapping the two $0$s gives the same plate, so we divide by $2!$.",
+      "your_turn": {
+        "prompt": "How many different orders are there of the characters $0, 0, A, I, M$?",
+        "answer": "$\\frac{5!}{2!} = \\frac{120}{2} = 60$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The two-zero case gives $20\\cdot 60 = 1200$ plates. Adding the three cases,\n$$N = 720 + 1800 + 1200 = 3720,$$ so $\\frac{N}{10} = 372$. The answer is **$372$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "372",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

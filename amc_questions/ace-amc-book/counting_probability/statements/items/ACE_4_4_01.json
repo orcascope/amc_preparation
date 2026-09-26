@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_4_01",
+  "number": "4.4.1",
+  "kind": "example",
+  "section": "Stars and Bars",
+  "original_source": null,
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars",
+  "text": "Let's pretend we have $10$ identical pieces of candies. We want to find the number of ways to give it out to $4$ children so that each student receives at least one piece of candy. How will we proceed from here?",
+  "choices": null,
+  "book_answer": "84",
+  "book_pages": [106]
+}

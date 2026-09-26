@@ -1,0 +1,60 @@
+{
+  "id": "ACE_4_4_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.4.5",
+    "kind": "problem",
+    "section": "Stars and Bars",
+    "original_source": "2016 AMC 10"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars: counting terms",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_4_05.png",
+    "text": "For some particular value of $N$, when $(a+b+c+d+1)^N$ is expanded and like terms are combined, the resulting expression contains exactly $1001$ terms that include all four variables $a, b, c,$ and $d$, each to some positive power. What is $N$?",
+    "choices": { "A": "$9$", "B": "$14$", "C": "$16$", "D": "$17$", "E": "$19$" }
+  },
+  "answer": { "choice": "B", "value": "$14$" },
+  "steps": [
+    {
+      "title": "Where to start: a term is a list of exponents",
+      "body": "The question counts terms after like terms are combined, so we need to know what makes two terms different. Every term of $(a+b+c+d+1)^N$ has the form $a^{x_1}b^{x_2}c^{x_3}d^{x_4}\\cdot 1^{x_5}$, where the five exponents are whole numbers adding up to $N$. Every such list of exponents really appears, with a positive coefficient, so nothing cancels: counting terms means counting exponent lists.",
+      "your_turn": {
+        "prompt": "Take $N = 7$. The term $a^2bcd^2$ comes from which value of $x_5$ (the exponent on the $1$)?",
+        "answer": "$x_5 = 1$, because $2 + 1 + 1 + 2 + x_5$ must equal $7$."
+      }
+    },
+    {
+      "title": "Turn the conditions into an equation",
+      "body": "We want terms where $a$, $b$, $c$, $d$ each appear to a positive power, so $x_1, x_2, x_3, x_4 \\ge 1$, while $x_5 \\ge 0$ is free. To get all five variables starting at $0$, set $y_i = x_i - 1$ for $i = 1, 2, 3, 4$.",
+      "your_turn": {
+        "prompt": "Rewrite $x_1 + x_2 + x_3 + x_4 + x_5 = N$ using $y_1, y_2, y_3, y_4$ and $x_5$.",
+        "answer": "$y_1 + y_2 + y_3 + y_4 + x_5 = N - 4$, with all five variables $\\ge 0$ (we subtracted $1$ four times)."
+      }
+    },
+    {
+      "title": "Count with stars and bars",
+      "body": "Stars and bars says the number of ways to write $n$ as an ordered sum of $k$ whole numbers ($\\ge 0$) is $\\binom{n+k-1}{k-1}$. Here $n = N - 4$ and $k = 5$, so the number of terms is\n$$\\binom{N-4+5-1}{5-1} = \\binom{N}{4}.$$",
+      "your_turn": {
+        "prompt": "Test the formula on a small case: how many solutions in whole numbers does $y_1 + y_2 + y_3 + y_4 + y_5 = 3$ have?",
+        "answer": "$\\binom{3+4}{4} = \\binom{7}{4} = 35$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "We need $\\binom{N}{4} = 1001$. Since $1001 = 7\\cdot 11\\cdot 13$, try $N = 14$: $\\binom{14}{4} = \\frac{14\\cdot 13\\cdot 12\\cdot 11}{24} = 1001$. It is the only choice, because $\\binom{N}{4}$ grows with $N$ ($\\binom{13}{4} = 715$ and $\\binom{15}{4} = 1365$). So $N = 14$. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

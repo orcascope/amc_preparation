@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_7_04",
+  "number": "4.7.4",
+  "kind": "problem",
+  "section": "Conditional Probability",
+  "original_source": "2003 AIME",
+  "topic": "counting_probability",
+  "subtopic": "Random walk on a triangle",
+  "text": "A bug starts at a vertex of an equilateral triangle. On each move, it randomly selects one of the two vertices where it is not currently located, and crawls along a side of the triangle to that vertex. Given that the probability that the bug moves to its starting vertex on its tenth move is $m/n$, where $m$ and $n$ are relatively prime positive integers, find $m+n$.",
+  "choices": null,
+  "book_answer": "683",
+  "book_pages": [119, 120]
+}

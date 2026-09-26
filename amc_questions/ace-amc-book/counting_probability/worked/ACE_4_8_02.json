@@ -1,0 +1,57 @@
+{
+  "id": "ACE_4_8_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.8.2",
+    "kind": "example",
+    "section": "Expected Value",
+    "original_source": null
+  },
+  "topic": "counting_probability",
+  "subtopic": "Expected value",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_4_8_02.png",
+    "text": "If we have a dice with $6$ sides. What is the expected value of one roll?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{7}{2}$",
+    "accept": [
+      "7/2"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: list the outcomes and their probabilities",
+      "body": "The expected value is the sum of each possible value times its probability. A fair six-sided die can show $1$, $2$, $3$, $4$, $5$ or $6$, and each face has probability $\\frac{1}{6}$. So we need one term $\\frac{1}{6} \\cdot k$ for each face $k$.",
+      "your_turn": {
+        "prompt": "Write the full sum for the expected value, one term per face.",
+        "answer": "$\\frac{1}{6} \\cdot 1 + \\frac{1}{6} \\cdot 2 + \\frac{1}{6} \\cdot 3 + \\frac{1}{6} \\cdot 4 + \\frac{1}{6} \\cdot 5 + \\frac{1}{6} \\cdot 6$."
+      }
+    },
+    {
+      "title": "Pull out the common factor",
+      "body": "Every term has the same factor $\\frac{1}{6}$, so we can factor it out:\n$$E = \\frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6).$$\nThis shows that the expected value of a fair die is just the average of its faces.",
+      "your_turn": {
+        "prompt": "Can the expected value be a number that the die can never actually show?",
+        "answer": "Yes. It is an average over many rolls, not a single roll, so it does not have to be a whole number."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The faces add up to $1 + 2 + 3 + 4 + 5 + 6 = 21$, so\n$$E = \\frac{21}{6} = \\frac{7}{2}.$$\nThe answer is **$\\frac{7}{2}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "7/2",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

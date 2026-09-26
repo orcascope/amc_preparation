@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_4_03",
+  "number": "4.4.3",
+  "kind": "problem",
+  "section": "Stars and Bars",
+  "original_source": "2000 AIME",
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars with ordering",
+  "text": "Given eight distinguishable rings, let $n$ be the number of possible five-ring arrangements on the four fingers (not the thumb) of one hand. The order of rings on each finger is significant, but it is not required that each finger have a ring. Find the leftmost three nonzero digits of $n$.",
+  "choices": null,
+  "book_answer": "376",
+  "book_pages": [106, 107]
+}

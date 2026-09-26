@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_12_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.12.1",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2021 BMT"
+  },
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_12_01.png",
+    "text": "Let $a, b, c$ be the solutions of the equation $x^3 - 3\\cdot 2021^2 x = 2\\cdot 2021^3$. Compute $\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}$",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$-\\frac{3}{4042}$",
+    "accept": [
+      "-\\frac{3}{4042}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: combine the fractions",
+      "body": "We are asked about a symmetric expression in the three roots of a cubic, not about any single root. That is the clue to use Vieta's formulas, which give sums and products of roots straight from the coefficients. First rewrite the target so it uses only such sums and products.",
+      "your_turn": {
+        "prompt": "Write $\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}$ as a single fraction.",
+        "answer": "$\\frac{ab + ac + bc}{abc}$, using the common denominator $abc$."
+      }
+    },
+    {
+      "title": "Put the cubic in standard form",
+      "body": "Vieta's formulas need everything on one side. Moving $2\\cdot 2021^3$ to the left gives\n$$x^3 + 0\\cdot x^2 - 3\\cdot 2021^2 x - 2\\cdot 2021^3 = 0.$$ For a cubic $x^3 + px^2 + qx + r = 0$ with roots $a, b, c$, Vieta's formulas say $a + b + c = -p$, $ab + ac + bc = q$ and $abc = -r$. Careful: the constant term changed sign when it moved across.",
+      "your_turn": {
+        "prompt": "Use these formulas to find $abc$.",
+        "answer": "$abc = -(-2\\cdot 2021^3) = 2\\cdot 2021^3$."
+      }
+    },
+    {
+      "title": "Find the pair sum",
+      "body": "The coefficient of $x$ is $-3\\cdot 2021^2$, so $ab + ac + bc = -3\\cdot 2021^2$. Also, none of the roots is $0$, so the fractions in the question make sense.",
+      "your_turn": {
+        "prompt": "Why can $0$ not be a solution of the original equation?",
+        "answer": "Putting $x = 0$ makes the left side $0$, but the right side is $2\\cdot 2021^3 \\neq 0$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Now $\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c} = \\frac{-3\\cdot 2021^2}{2\\cdot 2021^3} = \\frac{-3}{2\\cdot 2021} = -\\frac{3}{4042}$. (Check: the roots are $2\\cdot 2021$, $-2021$ and $-2021$, and $\\frac{1}{4042} - \\frac{2}{2021} = -\\frac{3}{4042}$.) The answer is **$-\\frac{3}{4042}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "-3/4042",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

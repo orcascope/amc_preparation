@@ -1,0 +1,59 @@
+{
+  "id": "ACE_4_1_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.1.3",
+    "kind": "example",
+    "section": "Basic Combinatorics Principles",
+    "original_source": null
+  },
+  "topic": "counting_probability",
+  "subtopic": "Arrangements with repeated letters",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_4_1_03.png",
+    "text": "a. How many ways are there to rearrange the letters of the word SANDWICH?\n\nb. How many ways are there to rearrange the letters of the word SYNONYMS?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$a) 40320$, $b) 5040$",
+    "accept": [
+      "40320, 5040",
+      "40320 and 5040",
+      "8!, 7!"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: count the letters and look for repeats",
+      "body": "Both questions ask how many different orders a word's letters can be put in. If all $n$ letters are different, there are $n!$ orders. If a letter appears $k$ times, swapping those copies among themselves gives the same word, so we divide by $k!$ for each repeated letter:\n$$\\text{arrangements} = \\frac{n!}{(\\text{repeats of 1st letter})!\\cdot(\\text{repeats of 2nd letter})!\\cdots}$$",
+      "your_turn": {
+        "prompt": "Warm up: how many different arrangements does the word TOOT have?",
+        "answer": "$\\frac{4!}{2!\\cdot 2!} = \\frac{24}{4} = 6$, since T and O each appear twice."
+      }
+    },
+    {
+      "title": "Tally the letters of each word",
+      "body": "SANDWICH has $8$ letters: S, A, N, D, W, I, C, H. They are all different, so nothing needs to be divided out and the count is just $8!$. SYNONYMS also has $8$ letters, but some of them repeat. Careful: check every letter, not just the first repeat you notice.",
+      "your_turn": {
+        "prompt": "Which letters of SYNONYMS repeat, and how many times each?",
+        "answer": "S twice, Y twice, N twice; O and M once each ($2+2+2+1+1 = 8$)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "For SANDWICH: $8! = 40320$. For SYNONYMS we divide by $2!$ three times, once each for S, Y and N:\n$$\\frac{8!}{2!\\cdot 2!\\cdot 2!} = \\frac{8!}{8} = 7! = 5040$$ The answers are **a) $40320$** and **b) $5040$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "a) 40320, b) 7! = 5040",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

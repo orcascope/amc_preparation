@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_5_10",
+  "number": "4.5.10",
+  "kind": "problem",
+  "section": "Binomial",
+  "original_source": "2018 SMT",
+  "topic": "counting_probability",
+  "subtopic": "Hockey stick identity",
+  "text": "Let $S$ be the set of all $1000$ element subsets of the set $1, 2, 3, \\ldots, 2018$. What is the expected value of the minimum element of a set chosen uniformly at random from $S$?",
+  "choices": null,
+  "book_answer": "2019/1001",
+  "book_pages": [114, 115]
+}

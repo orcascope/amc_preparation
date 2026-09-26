@@ -1,0 +1,66 @@
+{
+  "id": "ACE_4_1_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.1.7",
+    "kind": "problem",
+    "section": "Basic Combinatorics Principles",
+    "original_source": "2015 MMATHS"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Subsets with an even sum",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_1_07.png",
+    "text": "Define the sum of a finite set of integers to be the sum of the elements of the set. Let $D$ be the set of positive divisors of $700$. How many nonempty subsets of $D$ have an even sum? (Simplify as reasonably as possible)",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$131071$",
+    "accept": [
+      "131071",
+      "2^{17}-1"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: only the odd elements matter for parity",
+      "body": "The question is about whether a sum is even. Even numbers never change the parity of a sum, so what matters is how many odd numbers the subset contains. That means we should sort the divisors of $700$ into odd and even ones. First factor: $700 = 2^2\\cdot 5^2\\cdot 7$.",
+      "your_turn": {
+        "prompt": "How many positive divisors does $700$ have?",
+        "answer": "$18$: a divisor is $2^a 5^b 7^c$ with $3$ choices for $a$, $3$ for $b$ and $2$ for $c$, and $3\\cdot 3\\cdot 2 = 18$."
+      }
+    },
+    {
+      "title": "Split the divisors into odd and even",
+      "body": "A divisor is odd exactly when it has no factor of $2$, so the odd divisors are the divisors of $5^2\\cdot 7$. There are $3\\cdot 2 = 6$ of them. Every other divisor is even.",
+      "your_turn": {
+        "prompt": "How many even divisors does $700$ have, and why?",
+        "answer": "$12$: the exponent of $2$ is $1$ or $2$ ($2$ choices), times the $6$ divisors of $5^2\\cdot 7$. Equivalently, $18 - 6 = 12$."
+      }
+    },
+    {
+      "title": "Count subsets with an even number of odd divisors",
+      "body": "A subset has an even sum exactly when it contains an even number of odd divisors: $0$, $2$, $4$ or $6$ of them. The $12$ even divisors can be included or left out freely, giving $2^{12}$ choices. Careful: the empty subset (no odd and no even divisors) has sum $0$, which is even, so it gets counted here even though the problem excludes it.",
+      "your_turn": {
+        "prompt": "In how many ways can we pick an even number of the $6$ odd divisors?",
+        "answer": "$\\binom{6}{0} + \\binom{6}{2} + \\binom{6}{4} + \\binom{6}{6} = 1 + 15 + 15 + 1 = 32$, which is $2^5$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Multiplying the independent choices gives $2^{12}\\cdot 2^5 = 2^{17} = 131072$ subsets with an even sum, including the empty set. Removing the empty set,\n$$2^{17} - 1 = 131071.$$ The answer is **$131071$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "131071",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_12_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.12.4",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2023 Purple Comet"
+  },
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas with arithmetic progressions",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_12_04.png",
+    "text": "For real numbers $a$, $b$, and $c$, the roots of the polynomial $$x^5 - 10x^4 + ax^3 + bx^2 + cx - 320$$ form an arithmetic progression. Find $a + b + c$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$49$",
+    "accept": [
+      "49"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: center the progression",
+      "body": "We know only two coefficients, $-10$ and $-320$, and Vieta's formulas turn those into the sum and the product of the roots. Five roots in arithmetic progression are easiest to handle when written around the middle one: call the middle root $m$ and the common difference $d$, so the roots are $m - 2d$, $m - d$, $m$, $m + d$, $m + 2d$. Then the $d$'s cancel in the sum. Vieta's formulas say the sum of the roots is $10$ (the negative of the $x^4$ coefficient).",
+      "your_turn": {
+        "prompt": "Add the five roots and find $m$.",
+        "answer": "The sum is $5m = 10$, so $m = 2$."
+      }
+    },
+    {
+      "title": "Use the product of the roots",
+      "body": "For a monic polynomial of degree $5$, the product of the roots is the negative of the constant term, so it is $320$. Pairing $m - d$ with $m + d$ and $m - 2d$ with $m + 2d$:\n$$2(4 - d^2)(4 - 4d^2) = 320, \\quad\\text{so}\\quad (4 - d^2)(1 - d^2) = 40$$",
+      "your_turn": {
+        "prompt": "Let $u = d^2$. Solve $(4 - u)(1 - u) = 40$.",
+        "answer": "$u^2 - 5u + 4 = 40$, so $u^2 - 5u - 36 = (u - 9)(u + 4) = 0$, giving $u = 9$ or $u = -4$."
+      }
+    },
+    {
+      "title": "Find the roots and link them to $a + b + c$",
+      "body": "The terms of the progression are real numbers, so $d$ is real and $d^2 = -4$ is impossible. So $d^2 = 9$, $d = \\pm 3$ (the sign only reverses the order), and the roots are $-4, -1, 2, 5, 8$. The polynomial is therefore $(x + 4)(x + 1)(x - 2)(x - 5)(x - 8)$. To reach $a + b + c$ without expanding, plug in $x = 1$, which adds up all the coefficients.",
+      "your_turn": {
+        "prompt": "Write the value of $x^5 - 10x^4 + ax^3 + bx^2 + cx - 320$ at $x = 1$ in terms of $a + b + c$.",
+        "answer": "$1 - 10 + a + b + c - 320 = a + b + c - 329$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "From the factored form, the value at $x = 1$ is $(5)(2)(-1)(-4)(-7) = -280$. So $a + b + c - 329 = -280$, which gives $a + b + c = 49$. The answer is **$49$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "49",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

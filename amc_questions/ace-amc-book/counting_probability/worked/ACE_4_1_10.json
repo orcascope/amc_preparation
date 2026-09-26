@@ -1,0 +1,71 @@
+{
+  "id": "ACE_4_1_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.1.10",
+    "kind": "problem",
+    "section": "Basic Combinatorics Principles",
+    "original_source": "2021 AMC"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Casework with combinations",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_1_10.png",
+    "text": "A choir director must select a group of singers from among his $6$ tenors and $8$ basses. The only requirements are that the difference between the number of tenors and basses must be a multiple of $4$, and the group must have at least one singer. Let $N$ be the number of different groups that could be selected. What is the remainder when $N$ is divided by $100$?",
+    "choices": {
+      "A": "$47$",
+      "B": "$48$",
+      "C": "$83$",
+      "D": "$95$",
+      "E": "$96$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$95$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: split by how many of each voice",
+      "body": "The rule only cares about the numbers $t$ of tenors and $b$ of basses. Once $t$ and $b$ are fixed, the group is chosen in $\\binom{6}{t}\\binom{8}{b}$ ways. So list the allowed pairs $(t, b)$ by the value of the difference $t - b$, and add up.",
+      "your_turn": {
+        "prompt": "With $0 \\le t \\le 6$ and $0 \\le b \\le 8$, which multiples of $4$ can $t - b$ be?",
+        "answer": "$t - b$ lies between $-8$ and $6$, so it can be $-8$, $-4$, $0$ or $4$."
+      }
+    },
+    {
+      "title": "Case: equal numbers",
+      "body": "If $t = b = k$, the count is $\\binom{6}{k}\\binom{8}{k}$. Careful: $k = 0$ is the empty group, which is not allowed, so $k$ runs from $1$ to $6$: $$48 + 420 + 1120 + 1050 + 336 + 28 = 3002.$$",
+      "your_turn": {
+        "prompt": "Check one term: what is $\\binom{6}{3}\\binom{8}{3}$?",
+        "answer": "$20 \\cdot 56 = 1120$."
+      }
+    },
+    {
+      "title": "Case: the numbers differ by $4$",
+      "body": "If the basses exceed the tenors by $4$, then $(t,b)$ is $(0,4), (1,5), (2,6), (3,7)$ or $(4,8)$. If the tenors exceed the basses by $4$, then $(t,b)$ is $(4,0), (5,1)$ or $(6,2)$. Adding $\\binom{6}{t}\\binom{8}{b}$ over these eight pairs gives $1092$.",
+      "your_turn": {
+        "prompt": "Compute the terms for $(0,4)$ and for $(6,2)$.",
+        "answer": "$\\binom{6}{0}\\binom{8}{4} = 70$ and $\\binom{6}{6}\\binom{8}{2} = 28$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The last case is $b - t = 8$, which forces $t = 0$ and $b = 8$: just $1$ group. So $$N = 3002 + 1092 + 1 = 4095,$$ and the remainder when $N$ is divided by $100$ is $95$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "This comes from forgetting that the group needs at least one singer. Counting the empty group ($t = b = 0$) too gives $4096$, which leaves remainder $96$."
+  },
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

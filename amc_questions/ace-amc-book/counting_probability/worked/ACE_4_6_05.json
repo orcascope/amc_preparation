@@ -1,0 +1,59 @@
+{
+  "id": "ACE_4_6_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.6.5",
+    "kind": "problem",
+    "section": "Recursion",
+    "original_source": "2020 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Periodic recursive sequences",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_6_05.png",
+    "text": "Define a sequence recursively by $t_1 = 20$, $t_2 = 21$, and $$t_n = \\frac{5t_{n-1} + 1}{25t_{n-2}}$$ for all $n \\ge 3$. Then $t_{2020}$ can be expressed as $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. Find $p + q$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$626$", "accept": ["626"] },
+  "steps": [
+    {
+      "title": "Where to start: compute terms and look for a repeat",
+      "body": "Nobody can apply this formula $2020$ times by hand, so the question expects a shortcut. With a recursion like this, a common shortcut is that the terms start repeating. Compute the first few terms carefully and watch for $20$ and $21$ to come back.",
+      "your_turn": {
+        "prompt": "Compute $t_3$ in lowest terms.",
+        "answer": "$t_3 = \\frac{5\\cdot 21 + 1}{25\\cdot 20} = \\frac{106}{500} = \\frac{53}{250}$."
+      }
+    },
+    {
+      "title": "The next term",
+      "body": "For $t_4$ the top is $5\\cdot\\frac{53}{250} + 1 = \\frac{53}{50} + 1 = \\frac{103}{50}$ and the bottom is $25\\cdot 21 = 525$:\n$$t_4 = \\frac{103}{50\\cdot 525} = \\frac{103}{26250}$$",
+      "your_turn": {
+        "prompt": "Compute $t_5 = \\frac{5t_4 + 1}{25t_3}$. (Hint: $5353 = 53\\cdot 101$.)",
+        "answer": "The top is $\\frac{103}{5250} + 1 = \\frac{5353}{5250}$ and the bottom is $\\frac{53}{10}$, so $t_5 = \\frac{5353}{5250}\\cdot\\frac{10}{53} = \\frac{1010}{5250} = \\frac{101}{525}$."
+      }
+    },
+    {
+      "title": "The start comes back",
+      "body": "For $t_6$ the top is $5\\cdot\\frac{101}{525} + 1 = \\frac{101}{105} + 1 = \\frac{206}{105}$ and the bottom is $25\\cdot\\frac{103}{26250} = \\frac{103}{1050}$, so $t_6 = \\frac{206}{105}\\cdot\\frac{1050}{103} = 20$. That is $t_1$ again.",
+      "your_turn": {
+        "prompt": "Compute $t_7 = \\frac{5t_6 + 1}{25t_5}$.",
+        "answer": "$t_7 = \\frac{101}{25\\cdot\\frac{101}{525}} = \\frac{525}{25} = 21$, which is $t_2$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each term is decided by the two before it, and $t_6, t_7$ equal $t_1, t_2$, so from here the sequence repeats with period $5$: $t_{n+5} = t_n$. Since $2020$ is a multiple of $5$, $t_{2020} = t_5 = \\frac{101}{525}$, and this is in lowest terms because $101$ is prime and $525 = 3\\cdot 5^2\\cdot 7$. So $p + q = 101 + 525 = 626$. The answer is **$626$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "626",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "ACE_4_3_02",
+  "number": "4.3.2",
+  "kind": "problem",
+  "section": "Path Counting + Bijections",
+  "original_source": "2001 AIME",
+  "topic": "counting_probability",
+  "subtopic": "Lattice path bijection",
+  "text": "A fair die is rolled four times. The probability that each of the final three rolls is at least as large as the roll preceding it may be expressed in the form $m/n$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.",
+  "choices": null,
+  "book_answer": "79",
+  "book_pages": [
+    103,
+    104
+  ]
+}

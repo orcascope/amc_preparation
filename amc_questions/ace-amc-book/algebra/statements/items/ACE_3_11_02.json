@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_11_02",
+  "number": "3.11.2",
+  "kind": "problem",
+  "section": "Recursive Sequences",
+  "original_source": "2019 AMC",
+  "topic": "algebra",
+  "subtopic": "Recursive sequences and reciprocals",
+  "text": "A sequence of numbers is defined recursively by $a_1 = 1$, $a_2 = \\frac{3}{7}$, and $$a_n = \\frac{a_{n-2}\\cdot a_{n-1}}{2a_{n-2} - a_{n-1}}$$ for all $n \\geq 3$ Then $a_{2019}$ can be written as $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. What is $p+q$?",
+  "choices": { "A": "$2020$", "B": "$4039$", "C": "$6057$", "D": "$6061$", "E": "$8078$" },
+  "book_answer": "E",
+  "book_pages": [90]
+}

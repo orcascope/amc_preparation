@@ -1,0 +1,59 @@
+{
+  "id": "ACE_4_4_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.4.7",
+    "kind": "problem",
+    "section": "Stars and Bars",
+    "original_source": "1984 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Gap method (no two adjacent)",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_4_07.png",
+    "text": "A gardener plants three maple trees, four oaks, and five birch trees in a row. He plants them in random order, each arrangement being equally likely. Let $\\frac{m}{n}$ in lowest terms be the probability that no two birch trees are next to one another. Find $m+n$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$106$", "accept": ["106"] },
+  "steps": [
+    {
+      "title": "Where to start: only the birch spots matter",
+      "body": "The condition is only about birch trees, so whether a non-birch tree is a maple or an oak does not matter. Treat all $7$ maples and oaks as one kind, \"non-birch\". Each set of $5$ birch spots is then equally likely, because every choice of birch spots can be completed by the maples and oaks in the same number of ways.",
+      "your_turn": {
+        "prompt": "In how many ways can we choose the $5$ spots for the birch trees out of the $12$ spots in the row?",
+        "answer": "$\\binom{12}{5} = 792$. This is the total for the denominator."
+      }
+    },
+    {
+      "title": "Lay out the non-birch trees first",
+      "body": "Put the $7$ non-birch trees in a row. They create gaps: one before the first tree, one between each neighboring pair, and one after the last tree. Two birch trees are next to each other exactly when they land in the same gap, so each birch needs its own gap.",
+      "your_turn": {
+        "prompt": "How many gaps do $7$ trees in a row create?",
+        "answer": "$8$: the $6$ spaces between neighbors plus the $2$ ends."
+      }
+    },
+    {
+      "title": "Count the good arrangements",
+      "body": "A good arrangement is the same as choosing $5$ different gaps out of the $8$, and putting one birch in each. Every such choice gives a different set of birch spots with no two birches touching, so the number of good arrangements is $\\binom{8}{5}$.",
+      "your_turn": {
+        "prompt": "Compute $\\binom{8}{5}$.",
+        "answer": "$\\binom{8}{5} = \\binom{8}{3} = \\frac{8\\cdot 7\\cdot 6}{6} = 56$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The probability is $\\frac{56}{792}$. Careful: the problem wants lowest terms. Dividing top and bottom by $8$ gives $\\frac{7}{99}$, and $7$ and $99$ share no factor. So $m = 7$, $n = 99$, and $m + n = 106$. The answer is **$106$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "106",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

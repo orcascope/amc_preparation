@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_8_02",
+  "number": "4.8.2",
+  "kind": "example",
+  "section": "Expected Value",
+  "original_source": null,
+  "topic": "counting_probability",
+  "subtopic": "Expected value",
+  "text": "If we have a dice with $6$ sides. What is the expected value of one roll?",
+  "choices": null,
+  "book_answer": "7/2",
+  "book_pages": [120]
+}

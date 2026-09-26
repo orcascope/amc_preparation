@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_8_06",
+  "number": "4.8.6",
+  "kind": "problem",
+  "section": "Expected Value",
+  "original_source": "2006 AIME",
+  "topic": "counting_probability",
+  "subtopic": "Expected value and symmetry",
+  "text": "Let $\\mathcal{S}$ be the set of real numbers that can be represented as repeating decimals of the form $0.\\overline{abc}$ where $a, b, c$ are distinct digits. Find the sum of the elements of $\\mathcal{S}$.",
+  "choices": null,
+  "book_answer": "360",
+  "book_pages": [121, 122]
+}

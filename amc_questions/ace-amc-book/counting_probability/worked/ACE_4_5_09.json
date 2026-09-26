@@ -1,0 +1,67 @@
+{
+  "id": "ACE_4_5_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.5.9",
+    "kind": "problem",
+    "section": "Binomial",
+    "original_source": "2020 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Vandermonde's identity",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_5_09.png",
+    "text": "A club consisting of $11$ men and $12$ women needs to choose a committee from among its members so that the number of women on the committee is one more than the number of men on the committee. The committee could have as few as $1$ member or as many as $23$ members. Let $N$ be the number of such committees that can be formed. Find the sum of the prime numbers that divide $N$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$81$", "accept": ["81", "081"] },
+  "steps": [
+    {
+      "title": "Where to start: split into cases by the number of women",
+      "body": "The only rule links the number of women to the number of men, so fix the number of women $k$. Then there are $k - 1$ men, and $k$ can be anything from $1$ to $12$. Choose the women and the men separately and multiply:\n$$N = \\sum_{k=1}^{12} \\binom{12}{k}\\binom{11}{k-1}.$$",
+      "your_turn": {
+        "prompt": "How many committees have $2$ women and $1$ man?",
+        "answer": "$\\binom{12}{2}\\binom{11}{1} = 66 \\cdot 11 = 726$."
+      }
+    },
+    {
+      "title": "Turn the sum into one binomial (Vandermonde)",
+      "body": "Use $\\binom{11}{k-1} = \\binom{11}{12-k}$. Now each term is $\\binom{12}{k}\\binom{11}{12-k}$, and the two bottom numbers always add to $12$. Vandermonde's identity says such a sum counts the ways to pick $12$ people from all $23$ club members, split by how many are women. So $N = \\binom{23}{12}$.",
+      "your_turn": {
+        "prompt": "The full Vandermonde sum would also include $k = 0$. Why does leaving it out not change anything?",
+        "answer": "That term is $\\binom{12}{0}\\binom{11}{12} = 0$, since you cannot pick $12$ men out of $11$."
+      }
+    },
+    {
+      "title": "Find the large prime factors",
+      "body": "Write $N = \\binom{23}{12} = \\dfrac{23!}{12!\\,11!}$. A prime between $12$ and $23$ appears exactly once in $23!$ and not at all in $12!$ or $11!$, so it divides $N$.",
+      "your_turn": {
+        "prompt": "Which primes lie between $12$ and $23$ (inclusive)?",
+        "answer": "$13$, $17$, $19$ and $23$."
+      }
+    },
+    {
+      "title": "Check the small primes",
+      "body": "For $2, 3, 5, 7, 11$, count the factors of that prime in $23!$ and subtract those in $12!$ and $11!$. For example, $23!$ has $11 + 5 + 2 + 1 = 19$ factors of $2$, while $12!$ has $10$ and $11!$ has $8$, leaving $1$. So $2$ divides $N$.",
+      "your_turn": {
+        "prompt": "Count the factors of $3$ in $23!$, $12!$ and $11!$. Does $3$ divide $N$?",
+        "answer": "$23!$ has $7 + 2 = 9$, $12!$ has $4 + 1 = 5$, $11!$ has $3 + 1 = 4$. Since $9 - 5 - 4 = 0$, $3$ does not divide $N$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "In the same way $5$ gives $4 - 2 - 2 = 0$, $7$ gives $3 - 1 - 1 = 1$, and $11$ gives $2 - 1 - 1 = 0$. So $N = 1{,}352{,}078 = 2 \\cdot 7 \\cdot 13 \\cdot 17 \\cdot 19 \\cdot 23$, and the sum of its prime divisors is $2 + 7 + 13 + 17 + 19 + 23 = 81$. The answer is **$81$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "81",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

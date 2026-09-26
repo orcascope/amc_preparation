@@ -1,0 +1,57 @@
+{
+  "id": "ACE_4_8_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.8.4",
+    "kind": "example",
+    "section": "Expected Value",
+    "original_source": null
+  },
+  "topic": "counting_probability",
+  "subtopic": "Linearity of expectation",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_4_8_04.png",
+    "text": "What is the expected value of the sum of numbers on six dice if we roll them all at once.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$21$",
+    "accept": [
+      "21"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: too many outcomes to list",
+      "body": "One way is to list every possible roll of six dice with its sum, but there are far too many outcomes. The word \"sum\" is the clue: an expected value of a sum can be split into a sum of expected values. That rule is called linearity of expectation.",
+      "your_turn": {
+        "prompt": "How many different outcomes are there when six dice are rolled?",
+        "answer": "$6^6 = 46656$, since each die has $6$ faces. Far too many to list."
+      }
+    },
+    {
+      "title": "Split the sum die by die",
+      "body": "Let $X_1, X_2, \\dots, X_6$ be the numbers shown on the six dice. Linearity of expectation says\n$$E[X_1 + X_2 + \\dots + X_6] = E[X_1] + E[X_2] + \\dots + E[X_6].$$\nEach die is an ordinary fair die, so each $E[X_i]$ is the expected value of one roll, found in Example 4.8.2.",
+      "your_turn": {
+        "prompt": "Does linearity of expectation need the dice to be independent?",
+        "answer": "No. $E[X + Y] = E[X] + E[Y]$ holds even when $X$ and $Y$ depend on each other."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "One roll has expected value $\\frac{1 + 2 + 3 + 4 + 5 + 6}{6} = \\frac{7}{2}$. There are six dice, so\n$$E[X_1 + \\dots + X_6] = 6 \\cdot \\frac{7}{2} = 21.$$\nThe answer is **$21$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "21",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

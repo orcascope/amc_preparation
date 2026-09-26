@@ -1,0 +1,15 @@
+{
+  "id": "ACE_3_12_03",
+  "number": "3.12.3",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2021 PUMAC",
+  "topic": "algebra",
+  "subtopic": "Exponential substitution",
+  "text": "Compute the sum of all real numbers $x$ which satisfy the following equation: $\\frac{8^x-19\\cdot 4^x}{16-25\\cdot 2^x} = 2$.",
+  "choices": null,
+  "book_answer": "5",
+  "book_pages": [
+    92
+  ]
+}

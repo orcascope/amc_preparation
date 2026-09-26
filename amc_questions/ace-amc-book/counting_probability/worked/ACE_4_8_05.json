@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_8_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.8.5",
+    "kind": "problem",
+    "section": "Expected Value",
+    "original_source": null
+  },
+  "topic": "counting_probability",
+  "subtopic": "Linearity of expectation",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_8_05.png",
+    "text": "A $13$-digit binary number with four $1$'s is chosen at random. What is its expected value?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{20479}{4}$",
+    "accept": [
+      "20479/4"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: a 13-digit number cannot start with 0",
+      "body": "A number written with $13$ digits has a nonzero leading digit, so in binary the leftmost digit is $1$. That digit is worth $2^{12}$ in every such number. The other three $1$'s sit in some $3$ of the remaining $12$ places, and every choice of $3$ places is equally likely.",
+      "your_turn": {
+        "prompt": "How many $13$-digit binary numbers have exactly four $1$'s?",
+        "answer": "$\\binom{12}{3} = 220$: the first digit is $1$, and we choose which $3$ of the other $12$ places hold the remaining $1$'s."
+      }
+    },
+    {
+      "title": "Each remaining place is 1 with the same probability",
+      "body": "By symmetry, each of the $12$ places after the leading digit has the same chance of holding a $1$. Three of the $12$ places are $1$'s, so each place is $1$ with probability $\\frac{3}{12} = \\frac{1}{4}$. Careful: this is only for the $12$ lower places; the leading place is $1$ for sure.",
+      "your_turn": {
+        "prompt": "Check the $\\frac{1}{4}$ by counting: in how many of the $220$ numbers is the $2^0$ place a $1$?",
+        "answer": "$\\binom{11}{2} = 55$ (choose the other two $1$'s from the other $11$ places), and $\\frac{55}{220} = \\frac{1}{4}$."
+      }
+    },
+    {
+      "title": "Add up the places using linearity",
+      "body": "The value of the number is $2^{12}$ plus, for each lower place worth $2^k$, either $2^k$ (if that digit is $1$) or $0$. The expected value of a sum is the sum of the expected values, and the place worth $2^k$ contributes $\\frac{1}{4} \\cdot 2^k$ on average. So\n$$E = 2^{12} + \\frac{1}{4}\\left(2^{11} + 2^{10} + \\dots + 2^1 + 2^0\\right).$$",
+      "your_turn": {
+        "prompt": "What is the expected contribution of the place worth $2^{11}$?",
+        "answer": "$\\frac{1}{4} \\cdot 2^{11} = 2^9 = 512$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The geometric series is $2^0 + 2^1 + \\dots + 2^{11} = \\frac{2^{12} - 1}{2 - 1} = 4095$. So\n$$E = 4096 + \\frac{4095}{4} = \\frac{16384 + 4095}{4} = \\frac{20479}{4}.$$\nThe answer is **$\\frac{20479}{4}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "20479/4",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

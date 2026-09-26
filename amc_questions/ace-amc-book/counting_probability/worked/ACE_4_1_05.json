@@ -1,0 +1,63 @@
+{
+  "id": "ACE_4_1_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.1.5",
+    "kind": "problem",
+    "section": "Basic Combinatorics Principles",
+    "original_source": "2006 AMC 10"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Complementary counting",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_1_05.png",
+    "text": "How many four-digit positive integers have at least one digit that is a $2$ or a $3$?",
+    "choices": {
+      "A": "$2439$",
+      "B": "$4096$",
+      "C": "$4903$",
+      "D": "$4904$",
+      "E": "$5416$"
+    }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$5416$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: \"at least one\" means count the opposite",
+      "body": "Counting numbers with at least one $2$ or $3$ directly means juggling one, two, three or four such digits. The opposite is much simpler: numbers with no $2$ and no $3$ at all. This is complementary counting: count the opposite and subtract it from the total.",
+      "your_turn": {
+        "prompt": "How many four-digit positive integers are there in total?",
+        "answer": "$9000$: they run from $1000$ to $9999$, and $9999 - 1000 + 1 = 9000$."
+      }
+    },
+    {
+      "title": "Count the numbers with no $2$ and no $3$",
+      "body": "Fill the digits one at a time. The thousands digit cannot be $0$ (or it would not be a four-digit number), and it cannot be $2$ or $3$, so it has $7$ choices. Each of the other three digits can be anything except $2$ and $3$, so $8$ choices each. Careful: the leading digit really has only $7$ choices, not $8$.",
+      "your_turn": {
+        "prompt": "How many four-digit numbers use no $2$ and no $3$?",
+        "answer": "$7\\cdot 8\\cdot 8\\cdot 8 = 3584$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Subtract the unwanted numbers from the total:\n$$9000 - 3584 = 5416.$$ The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "D": "This comes from allowing $8$ choices for the thousands digit too, so the complement is $8^4 = 4096$ and $9000 - 4096 = 4904$. But $8^4$ includes strings starting with $0$, which are not four-digit numbers."
+  },
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

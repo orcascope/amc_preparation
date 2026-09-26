@@ -1,0 +1,19 @@
+{
+  "id": "ACE_4_1_05",
+  "number": "4.1.5",
+  "kind": "problem",
+  "section": "Basic Combinatorics Principles",
+  "original_source": "2006 AMC 10",
+  "topic": "counting_probability",
+  "subtopic": "Complementary counting",
+  "text": "How many four-digit positive integers have at least one digit that is a $2$ or a $3$?",
+  "choices": {
+    "A": "$2439$",
+    "B": "$4096$",
+    "C": "$4903$",
+    "D": "$4904$",
+    "E": "$5416$"
+  },
+  "book_answer": "E",
+  "book_pages": [98, 99]
+}

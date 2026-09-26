@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_6_01",
+  "number": "4.6.1",
+  "kind": "example",
+  "section": "Recursion",
+  "original_source": null,
+  "topic": "counting_probability",
+  "subtopic": "Recursion",
+  "text": "Bob wants to climb $8$ stairs. He can climb $1$ or $2$ stairs at a time. How many ways are there for him to climb the $8$ stairs?",
+  "choices": null,
+  "book_answer": "34",
+  "book_pages": [115, 116]
+}

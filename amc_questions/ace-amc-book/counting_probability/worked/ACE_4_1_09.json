@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_1_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.1.9",
+    "kind": "problem",
+    "section": "Basic Combinatorics Principles",
+    "original_source": "2019 CMC 10"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Probability with parity",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_1_09.png",
+    "text": "Let $a, b, c, d$ be four not necessarily distinct integers chosen from the set $0, 1, \\dots, 2019$. What is the probability that $(a+b)(c+d) + (a+c)(b+d) + (a+d)(b+c)$ is divisible by $4$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{3}{8}$",
+    "accept": [
+      "3/8"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: expand the expression",
+      "body": "Each of the three products splits the four letters into two pairs, so expanding should show a pattern. Once the expression is simpler, we can see which remainders of $a, b, c, d$ matter.",
+      "your_turn": {
+        "prompt": "Expand $(a+b)(c+d)$.",
+        "answer": "$ac + ad + bc + bd$."
+      }
+    },
+    {
+      "title": "Reduce to a question about even and odd",
+      "body": "Expanding all three products, every product of two different letters appears exactly twice: $$(a+b)(c+d) + (a+c)(b+d) + (a+d)(b+c) = 2(ab+ac+ad+bc+bd+cd).$$ Since the factor $2$ is already there, the expression is divisible by $4$ exactly when $S = ab+ac+ad+bc+bd+cd$ is even. So only whether each letter is even or odd matters.",
+      "your_turn": {
+        "prompt": "How many even numbers and how many odd numbers are in $0, 1, \\dots, 2019$?",
+        "answer": "$1010$ of each ($0, 2, \\dots, 2018$ are even and $1, 3, \\dots, 2019$ are odd), so each letter is even or odd with probability $\\tfrac12$, independently."
+      }
+    },
+    {
+      "title": "When is $S$ even?",
+      "body": "Say exactly $k$ of the four letters are odd. A product of two letters is odd only when both letters are odd, so the number of odd terms in $S$ is the number of pairs of odd letters, $\\binom{k}{2}$. If $k = 0$ or $k = 1$ there are no such pairs, and if $k = 4$ there are $\\binom{4}{2} = 6$, so $S$ is even in these cases.",
+      "your_turn": {
+        "prompt": "What is the parity of $S$ when $k = 2$ and when $k = 3$?",
+        "answer": "Odd both times: there are $\\binom{2}{2} = 1$ and $\\binom{3}{2} = 3$ odd terms."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each of the $2^4 = 16$ even/odd patterns has probability $\\tfrac{1}{16}$. The good patterns are: all even ($1$ pattern), exactly one odd ($4$ patterns, one for each letter), and all odd ($1$ pattern). So the probability is $$\\frac{1 + 4 + 1}{16} = \\frac{6}{16} = \\frac{3}{8}.$$ The answer is **$\\frac{3}{8}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "3/8",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

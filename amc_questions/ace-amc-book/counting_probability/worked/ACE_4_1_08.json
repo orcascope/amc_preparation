@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_1_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.1.8",
+    "kind": "problem",
+    "section": "Basic Combinatorics Principles",
+    "original_source": "2017 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Complementary counting",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_1_08.png",
+    "text": "Find the number of subsets of $\\{1,2,3,4,5,6,7,8\\}$ that are subsets of neither $\\{1,2,3,4,5\\}$ nor $\\{4,5,6,7,8\\}$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$196$",
+    "accept": [
+      "196"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: count the complement",
+      "body": "The word \"neither\" is the clue. It is hard to count the subsets that avoid both conditions directly, but it is easy to count the subsets that are inside $A = \\{1,2,3,4,5\\}$ or inside $B = \\{4,5,6,7,8\\}$. So count all subsets of $\\{1,\\dots,8\\}$ and subtract the ones we do not want.",
+      "your_turn": {
+        "prompt": "How many subsets does $\\{1,2,3,4,5,6,7,8\\}$ have (including the empty set)?",
+        "answer": "$2^8 = 256$, because each of the $8$ elements is either in or out."
+      }
+    },
+    {
+      "title": "Count the subsets of each small set",
+      "body": "A subset of $A$ is made by deciding in or out for each of its $5$ elements, and the same goes for $B$.",
+      "your_turn": {
+        "prompt": "How many subsets does $A$ have, and how many does $B$ have?",
+        "answer": "Each has $2^5 = 32$ subsets."
+      }
+    },
+    {
+      "title": "Fix the double count",
+      "body": "Careful: we cannot just subtract $32 + 32$. A set that is a subset of both $A$ and $B$ would be subtracted twice. Such a set can only use elements in both, that is, elements of $A \\cap B = \\{4,5\\}$. By inclusion-exclusion, the number of subsets inside $A$ or $B$ is $32 + 32 - (\\text{subsets of } \\{4,5\\})$.",
+      "your_turn": {
+        "prompt": "List all the subsets of $\\{4,5\\}$. How many are there?",
+        "answer": "$\\varnothing$, $\\{4\\}$, $\\{5\\}$, $\\{4,5\\}$: there are $4$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The unwanted subsets number $32 + 32 - 4 = 60$. So the count we want is $$256 - 60 = 196.$$ The answer is **$196$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "196",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_9_03",
+  "number": "4.9.3",
+  "kind": "problem",
+  "section": "States (Markov Chains)",
+  "original_source": "2019 AIME",
+  "topic": "counting_probability",
+  "subtopic": "Recursive probability",
+  "text": "Lily pads $1, 2, 3, \\ldots$ lie in a row on a pond. A frog makes a sequence of jumps starting on pad $1$. From any pad $k$ the frog jumps to either pad $k+1$ or pad $k+2$ chosen randomly with probability $\\frac{1}{2}$ and independently of other jumps. The probability that the frog visits pad $7$ is $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. Find $p+q$.",
+  "choices": null,
+  "book_answer": "107",
+  "book_pages": [123]
+}

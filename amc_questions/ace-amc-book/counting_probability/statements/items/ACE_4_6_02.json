@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_6_02",
+  "number": "4.6.2",
+  "kind": "problem",
+  "section": "Recursion",
+  "original_source": "2010 AMC 8 Problem 25",
+  "topic": "counting_probability",
+  "subtopic": "Recursive counting",
+  "text": "Everyday at school, Jo climbs a flight of $6$ stairs. Jo can take the stairs $1$, $2$, or $3$ at a time. For example, Jo could climb $3$, then $1$, then $2$. In how many ways can Jo climb the stairs?",
+  "choices": { "A": "$13$", "B": "$18$", "C": "$20$", "D": "$22$", "E": "$24$" },
+  "book_answer": "E",
+  "book_pages": [116]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_9_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.9.1",
+    "kind": "problem",
+    "section": "States (Markov Chains)",
+    "original_source": "2020 AMC 10"
+  },
+  "topic": "counting_probability",
+  "subtopic": "States and symmetry",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_9_01.png",
+    "text": "A frog sitting at the point $(1, 2)$ begins a sequence of jumps, where each jump is parallel to one of the coordinate axes and has length $1$, and the direction of each jump (up, down, right, or left) is chosen independently at random. The sequence ends when the frog reaches a side of the square with vertices $(0,0), (0,4), (4,4)$, and $(4,0)$. What is the probability that the sequence of jumps ends on a vertical side of the square?",
+    "choices": { "A": "$\\frac{1}{2}$", "B": "$\\frac{5}{8}$", "C": "$\\frac{2}{3}$", "D": "$\\frac{3}{4}$", "E": "$\\frac{7}{8}$" }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$\\frac{5}{8}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: look one jump ahead",
+      "body": "The frog's future depends only on where it is now, so split on the first jump. Each of the four directions has probability $\\frac{1}{4}$. The vertical sides are $x = 0$ and $x = 4$, and the start $(1, 2)$ is just one step from $x = 0$.",
+      "your_turn": {
+        "prompt": "List the four points the frog can reach with its first jump. Does any of them end the sequence right away?",
+        "answer": "$(1,1)$, $(1,3)$, $(0,2)$, $(2,2)$. The point $(0,2)$ is on the vertical side $x = 0$, so that jump ends on a vertical side."
+      }
+    },
+    {
+      "title": "The center point by symmetry",
+      "body": "From $(2,2)$, the center, use a reflection. Reflecting across the diagonal $y = x$ keeps the square and the point $(2,2)$ in place but swaps vertical sides with horizontal sides. So every path to a vertical side matches an equally likely path to a horizontal side, and the chance of ending on a vertical side from $(2,2)$ is $\\frac{1}{2}$.",
+      "your_turn": {
+        "prompt": "Reflecting across $y = x$ sends $(x, y)$ to $(y, x)$. Which side does the side $x = 0$ go to?",
+        "answer": "The side $y = 0$, which is horizontal. In the same way $x = 4$ goes to $y = 4$."
+      }
+    },
+    {
+      "title": "The points $(1,1)$ and $(1,3)$",
+      "body": "The point $(1,1)$ lies on the diagonal $y = x$, so the same reflection gives probability $\\frac{1}{2}$ from there. The point $(1,3)$ lies on the other diagonal $x + y = 4$. Reflecting across that diagonal also keeps the square in place and swaps vertical and horizontal sides, so $(1,3)$ also gives $\\frac{1}{2}$.",
+      "your_turn": {
+        "prompt": "Reflecting across $x + y = 4$ sends $(x, y)$ to $(4 - y, 4 - x)$. Where do $(1,3)$ and the side $x = 0$ go?",
+        "answer": "$(1,3)$ goes to itself, and $x = 0$ goes to $y = 4$, a horizontal side."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Weight each first jump by $\\frac{1}{4}$: the jump to $(0,2)$ succeeds for sure, and the other three succeed with probability $\\frac{1}{2}$ each.\n$$\\frac{1}{4}(1) + \\frac{1}{4}\\cdot\\frac{1}{2} + \\frac{1}{4}\\cdot\\frac{1}{2} + \\frac{1}{4}\\cdot\\frac{1}{2} = \\frac{2}{8} + \\frac{3}{8} = \\frac{5}{8}$$\nThe answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This comes from saying the answer is $\\frac{1}{2}$ by symmetry right away. But $(1,2)$ is not on a diagonal of the square, and it is closer to the vertical side $x = 0$, so the symmetry only works after the first jump."
+  },
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

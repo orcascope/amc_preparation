@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_8_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.8.6",
+    "kind": "problem",
+    "section": "Expected Value",
+    "original_source": "2006 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Expected value and symmetry",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_8_06.png",
+    "text": "Let $\\mathcal{S}$ be the set of real numbers that can be represented as repeating decimals of the form $0.\\overline{abc}$ where $a, b, c$ are distinct digits. Find the sum of the elements of $\\mathcal{S}$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$360$",
+    "accept": [
+      "360"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: turn the repeating decimal into a fraction",
+      "body": "A sum of repeating decimals is hard to add directly, but fractions are easy. The block $abc$ repeats every $3$ digits, so let $x = 0.\\overline{abc}$ and multiply by $1000$: then $1000x - x$ cancels the repeating tail.\n$$999x = 100a + 10b + c$$",
+      "your_turn": {
+        "prompt": "Write $0.\\overline{123}$ as a fraction using this idea.",
+        "answer": "$\\frac{123}{999}$, because $999x = 123$."
+      }
+    },
+    {
+      "title": "Count the elements of $\\mathcal{S}$",
+      "body": "Each ordered choice of distinct digits $a, b, c$ gives a numerator $100a + 10b + c$, the whole number with digits $a$, $b$, $c$. Different triples give different numerators, so different numbers. The digit $a$ is allowed to be $0$ (for example $0.\\overline{012}$).",
+      "your_turn": {
+        "prompt": "How many ordered triples $(a, b, c)$ of distinct digits are there?",
+        "answer": "$10 \\cdot 9 \\cdot 8 = 720$: ten choices for $a$, then nine for $b$, then eight for $c$."
+      }
+    },
+    {
+      "title": "Use the average digit instead of listing everything",
+      "body": "The sum of the $720$ numbers is $720$ times their average, and the average of $\\frac{100a+10b+c}{999}$ only needs the average of each digit. By symmetry every digit $0$ through $9$ appears equally often in each place, so each place has average digit $4.5$. Careful: the digits being distinct does not change this average.",
+      "your_turn": {
+        "prompt": "In how many of the $720$ triples is $a = 7$? Is the count the same for every digit?",
+        "answer": "$9 \\cdot 8 = 72$ (choose $b$, then $c$ from the rest). Yes, it is $72$ for every digit, so each digit is equally likely in that place."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The average numerator is $100(4.5) + 10(4.5) + 4.5 = 499.5$, so the sum is\n$$720 \\cdot \\frac{499.5}{999} = \\frac{359640}{999} = 360.$$\nThe answer is **$360$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "360",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

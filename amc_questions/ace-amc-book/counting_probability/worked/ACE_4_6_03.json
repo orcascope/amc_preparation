@@ -1,0 +1,60 @@
+{
+  "id": "ACE_4_6_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.6.3",
+    "kind": "problem",
+    "section": "Recursion",
+    "original_source": "2007 AMC 12"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Recursive counting",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_6_03.png",
+    "text": "Call a set of integers \"spacy\" if it contains no more than one out of any three consecutive integers. How many subsets of $\\{1, 2, 3, \\ldots, 12\\}$, including the empty set, are spacy?",
+    "choices": { "A": "$121$", "B": "$123$", "C": "$125$", "D": "$127$", "E": "$129$" }
+  },
+  "answer": { "choice": "E", "value": "$129$" },
+  "steps": [
+    {
+      "title": "Where to start: count for smaller sets first",
+      "body": "The spacy rule only looks at numbers that are close together, so the question for $\\{1, \\ldots, n\\}$ should depend on the answers for a slightly shorter list. Let $a_n$ be the number of spacy subsets of $\\{1, 2, \\ldots, n\\}$, including the empty set. Start with the smallest cases.",
+      "your_turn": {
+        "prompt": "Find $a_1$, $a_2$ and $a_3$.",
+        "answer": "$a_1 = 2$, $a_2 = 3$, $a_3 = 4$. With $n \\le 3$ all the numbers lie in one block of three consecutive integers, so a spacy subset is empty or has one element."
+      }
+    },
+    {
+      "title": "Split on whether $n$ is in the subset",
+      "body": "If the subset does not contain $n$, it is just a spacy subset of $\\{1, \\ldots, n-1\\}$: that gives $a_{n-1}$ subsets. If it does contain $n$, then $n-1$ and $n-2$ must be left out, and the rest is any spacy subset of $\\{1, \\ldots, n-3\\}$: that gives $a_{n-3}$ subsets. So\n$$a_n = a_{n-1} + a_{n-3}$$",
+      "your_turn": {
+        "prompt": "In the case where $n$ is in the subset, why is every spacy subset of $\\{1, \\ldots, n-3\\}$ allowed for the rest?",
+        "answer": "The only block of three consecutive numbers in $\\{1, \\ldots, n\\}$ that contains $n$ is $n-2, n-1, n$, and $n-1$, $n-2$ are left out. Every other block lies inside $\\{1, \\ldots, n-1\\}$, where only numbers up to $n-3$ can be chosen, and those form a spacy set."
+      }
+    },
+    {
+      "title": "Check the rule and build up",
+      "body": "The rule gives $a_4 = a_3 + a_1 = 4 + 2 = 6$. Check by listing: the empty set, $\\{1\\}$, $\\{2\\}$, $\\{3\\}$, $\\{4\\}$ and $\\{1, 4\\}$. Careful: the step back is to $a_{n-3}$ (three places back), not $a_{n-2}$.",
+      "your_turn": {
+        "prompt": "Find $a_5$, $a_6$ and $a_7$.",
+        "answer": "$a_5 = 6 + 3 = 9$, $a_6 = 9 + 4 = 13$, $a_7 = 13 + 6 = 19$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Keep going: $a_8 = 19 + 9 = 28$, $a_9 = 28 + 13 = 41$, $a_{10} = 41 + 19 = 60$, $a_{11} = 60 + 28 = 88$, and $a_{12} = 88 + 41 = 129$. So $129$ subsets of $\\{1, \\ldots, 12\\}$ are spacy. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

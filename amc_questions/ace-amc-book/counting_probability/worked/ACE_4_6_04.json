@@ -1,0 +1,60 @@
+{
+  "id": "ACE_4_6_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.6.4",
+    "kind": "problem",
+    "section": "Recursion",
+    "original_source": "2019 AMC 10"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Recursive counting",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_6_04.png",
+    "text": "How many sequences of $0$s and $1$s of length $19$ are there that begin with a $0$, end with a $0$, contain no two consecutive $0$s, and contain no three consecutive $1$s?",
+    "choices": { "A": "$55$", "B": "$60$", "C": "$65$", "D": "$70$", "E": "$75$" }
+  },
+  "answer": { "choice": "C", "value": "$65$" },
+  "steps": [
+    {
+      "title": "Where to start: what can come after a $0$?",
+      "body": "Both rules are about runs: $0$s can never touch, and $1$s come in runs of length at most $2$. So after any $0$ that is not the last digit, the next $0$ comes after a run of one or two $1$s. That means a valid sequence is a single $0$ followed by blocks, each block being $10$ or $110$.",
+      "your_turn": {
+        "prompt": "Why can a block not be just $0$ or $1110$?",
+        "answer": "A block $0$ would put two $0$s next to each other, and $1110$ contains three consecutive $1$s."
+      }
+    },
+    {
+      "title": "Set up the recursion",
+      "body": "Let $a_n$ be the number of valid sequences of length $n$ (starting and ending with $0$). Look at the last block: removing a final $10$ leaves a valid sequence of length $n-2$, and removing a final $110$ leaves one of length $n-3$. Adding either block to a valid sequence always gives a valid one, so\n$$a_n = a_{n-2} + a_{n-3}$$",
+      "your_turn": {
+        "prompt": "Find $a_3$, $a_4$ and $a_5$ by listing.",
+        "answer": "Each is $1$: $010$, $0110$, and $01010$ (the other candidate $01110$ has three $1$s in a row)."
+      }
+    },
+    {
+      "title": "Build up the table",
+      "body": "Now $a_6 = a_4 + a_3 = 2$, $a_7 = a_5 + a_4 = 2$, $a_8 = a_6 + a_5 = 3$, $a_9 = 4$ and $a_{10} = 5$. Careful: the rule skips back two and three places, so $a_n$ does not use $a_{n-1}$ at all.",
+      "your_turn": {
+        "prompt": "Find $a_{11}$ through $a_{14}$.",
+        "answer": "$a_{11} = 4 + 3 = 7$, $a_{12} = 5 + 4 = 9$, $a_{13} = 7 + 5 = 12$, $a_{14} = 9 + 7 = 16$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Continue: $a_{15} = 12 + 9 = 21$, $a_{16} = 16 + 12 = 28$, $a_{17} = 21 + 16 = 37$, $a_{18} = 28 + 21 = 49$, and $a_{19} = a_{17} + a_{16} = 37 + 28 = 65$. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

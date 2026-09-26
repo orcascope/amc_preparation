@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_12_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.12.3",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2021 PUMAC"
+  },
+  "topic": "algebra",
+  "subtopic": "Exponential substitution",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_12_03.png",
+    "text": "Compute the sum of all real numbers $x$ which satisfy the following equation: $\\frac{8^x-19\\cdot 4^x}{16-25\\cdot 2^x} = 2$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$5$",
+    "accept": [
+      "5"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: every power is a power of $2^x$",
+      "body": "The bases $8$, $4$ and $2$ are all powers of $2$, so $8^x = (2^x)^3$ and $4^x = (2^x)^2$. That is the clue to substitute $a = 2^x$, which turns the equation into an ordinary polynomial equation. Keep in mind that $a = 2^x$ is always positive.",
+      "your_turn": {
+        "prompt": "Rewrite the equation using $a = 2^x$.",
+        "answer": "$\\frac{a^3 - 19a^2}{16 - 25a} = 2$."
+      }
+    },
+    {
+      "title": "Clear the denominator",
+      "body": "Multiply both sides by $16 - 25a$ to get $a^3 - 19a^2 = 32 - 50a$. Moving everything to the left side gives a cubic:\n$$a^3 - 19a^2 + 50a - 32 = 0$$",
+      "your_turn": {
+        "prompt": "Is $a = 1$ a root of this cubic?",
+        "answer": "Yes: $1 - 19 + 50 - 32 = 0$."
+      }
+    },
+    {
+      "title": "Factor the cubic",
+      "body": "Since $a = 1$ is a root, $a - 1$ is a factor. Dividing it out leaves a quadratic:\n$$a^3 - 19a^2 + 50a - 32 = (a - 1)(a^2 - 18a + 32)$$",
+      "your_turn": {
+        "prompt": "Factor $a^2 - 18a + 32$.",
+        "answer": "$(a - 2)(a - 16)$, since $2 \\cdot 16 = 32$ and $2 + 16 = 18$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $a = 1$, $2$ or $16$. Careful: we multiplied by $16 - 25a$, which is zero only at $a = \\tfrac{16}{25}$, so none of these is lost, and all three are positive, so each gives a real $x$. From $2^x = 1, 2, 16$ we get $x = 0, 1, 4$, and their sum is $0 + 1 + 4 = 5$. The answer is **$5$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "5",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

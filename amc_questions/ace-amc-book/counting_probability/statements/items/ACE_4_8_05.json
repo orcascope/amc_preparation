@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_8_05",
+  "number": "4.8.5",
+  "kind": "problem",
+  "section": "Expected Value",
+  "original_source": null,
+  "topic": "counting_probability",
+  "subtopic": "Linearity of expectation",
+  "text": "A $13$-digit binary number with four $1$'s is chosen at random. What is its expected value?",
+  "choices": null,
+  "book_answer": "20479/4",
+  "book_pages": [121]
+}

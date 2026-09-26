@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_9_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.9.2",
+    "kind": "problem",
+    "section": "States (Markov Chains)",
+    "original_source": "2009 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Geometric series in probability",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_9_02.png",
+    "text": "Dave rolls a fair six-sided die until a six appears for the first time. Independently, Linda rolls a fair six-sided die until a six appears for the first time. Let $m$ and $n$ be relatively prime positive integers such that $\\dfrac{m}{n}$ is the probability that the number of times Dave rolls his die is equal to or within one of the number of times Linda rolls her die. Find $m+n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$41$",
+    "accept": [
+      "41"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the chance that the first six comes on roll $k$",
+      "body": "Both players do the same thing, so first find one number: let $p_k$ be the probability that the first six comes on roll $k$. That needs $k - 1$ non-sixes and then a six.\n$$p_k = \\left(\\tfrac{5}{6}\\right)^{k-1}\\cdot\\tfrac{1}{6}$$",
+      "your_turn": {
+        "prompt": "Find $p_1$, $p_2$ and $p_3$.",
+        "answer": "$p_1 = \\frac{1}{6}$, $p_2 = \\frac{5}{36}$, $p_3 = \\frac{25}{216}$. Each is $\\frac{5}{6}$ of the one before."
+      }
+    },
+    {
+      "title": "Split on Dave's number of rolls",
+      "body": "If Dave rolls $k$ times, Linda must roll $k - 1$, $k$ or $k + 1$ times. The two players are independent, so this case has probability $p_k(p_{k-1} + p_k + p_{k+1})$. Careful: when $k = 1$ Linda cannot roll $0$ times, so that first term is only $p_1(p_1 + p_2)$.\n$$P = p_1(p_1+p_2) + p_2(p_1+p_2+p_3) + p_3(p_2+p_3+p_4) + \\cdots$$",
+      "your_turn": {
+        "prompt": "Compute the first term $p_1(p_1 + p_2)$.",
+        "answer": "$\\frac{1}{6}\\cdot\\frac{11}{36} = \\frac{11}{216}$."
+      }
+    },
+    {
+      "title": "The rest is a geometric series",
+      "body": "Going from the term for $k$ to the term for $k + 1$, the factor outside the brackets gets multiplied by $\\frac{5}{6}$ and so does every $p$ inside the brackets. So from $k = 2$ on, each term is $\\frac{5}{6}\\cdot\\frac{5}{6} = \\frac{25}{36}$ times the one before, and the sum of those terms is $\\dfrac{p_2(p_1+p_2+p_3)}{1 - \\frac{25}{36}}$.",
+      "your_turn": {
+        "prompt": "Compute $p_2(p_1 + p_2 + p_3)$. (Hint: write $p_1 + p_2 + p_3$ over $216$.)",
+        "answer": "$p_1 + p_2 + p_3 = \\frac{36 + 30 + 25}{216} = \\frac{91}{216}$, so the term is $\\frac{5}{36}\\cdot\\frac{91}{216} = \\frac{455}{7776}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The series part is $\\frac{455}{7776}\\cdot\\frac{36}{11} = \\frac{455}{2376}$, and the first term is $\\frac{11}{216} = \\frac{121}{2376}$.\n$$P = \\frac{121 + 455}{2376} = \\frac{576}{2376} = \\frac{8}{33}$$\nSo $m = 8$, $n = 33$, and $m + n = 41$. The answer is **$41$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "41",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

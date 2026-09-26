@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_11_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.11.1",
+    "kind": "problem",
+    "section": "Recursive Sequences",
+    "original_source": "COMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Periodic recursive sequences",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_11_01.png",
+    "text": "The sequence of numbers $t_1, t_2, t_3, \\ldots$ is defined by $t_1 = 2$ and $$t_{n+1} = \\frac{t_n - 1}{t_n + 1}$$ for every positive integer $n$. Determine the value of $t_{999}$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$-\\frac{1}{2}$",
+    "accept": [
+      "-\\frac{1}{2}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: work out the first few terms",
+      "body": "The question asks for term number $999$, far too many to compute one by one. When a rule like this asks for a very late term, the sequence often repeats. So compute the first few terms and watch for a value you have already seen.",
+      "your_turn": {
+        "prompt": "Use $t_1 = 2$ to find $t_2$.",
+        "answer": "$t_2 = \\frac{2 - 1}{2 + 1} = \\frac{1}{3}$."
+      }
+    },
+    {
+      "title": "Keep going until a value comes back",
+      "body": "Next, $t_3 = \\frac{\\frac{1}{3} - 1}{\\frac{1}{3} + 1} = \\frac{-2/3}{4/3} = -\\frac{1}{2}$, and $t_4 = \\frac{-\\frac{1}{2} - 1}{-\\frac{1}{2} + 1} = \\frac{-3/2}{1/2} = -3$.",
+      "your_turn": {
+        "prompt": "Use $t_4 = -3$ to find $t_5$.",
+        "answer": "$t_5 = \\frac{-3 - 1}{-3 + 1} = \\frac{-4}{-2} = 2$, the same as $t_1$."
+      }
+    },
+    {
+      "title": "The sequence repeats every $4$ terms",
+      "body": "Each term is computed only from the term before it. Since $t_5 = t_1$, the next terms copy the old ones: $t_6 = t_2$, $t_7 = t_3$, and so on. So the pattern $2, \\frac{1}{3}, -\\frac{1}{2}, -3$ repeats forever, and $t_n$ depends only on the remainder of $n$ when divided by $4$.",
+      "your_turn": {
+        "prompt": "List every $n$ below $20$ with $t_n = -3$.",
+        "answer": "$n = 4, 8, 12, 16$: the multiples of $4$, because $t_4 = -3$ and the pattern has length $4$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Since $996 = 4\\cdot 249$ is a multiple of $4$, $t_{996} = -3$. Going forward three terms: $t_{997} = 2$, $t_{998} = \\frac{1}{3}$ and $t_{999} = -\\frac{1}{2}$. The answer is **$-\\frac{1}{2}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "-1/2",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_7_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.7.4",
+    "kind": "problem",
+    "section": "Conditional Probability",
+    "original_source": "2003 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Random walk on a triangle",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_7_04.png",
+    "text": "A bug starts at a vertex of an equilateral triangle. On each move, it randomly selects one of the two vertices where it is not currently located, and crawls along a side of the triangle to that vertex. Given that the probability that the bug moves to its starting vertex on its tenth move is $m/n$, where $m$ and $n$ are relatively prime positive integers, find $m+n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$683$",
+    "accept": [
+      "683"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: each move is clockwise or counterclockwise",
+      "body": "From any vertex, the two other vertices are one step clockwise and one step counterclockwise. So every move is a choice between CW (clockwise) and CCW (counterclockwise), each with probability $\\frac{1}{2}$, and the $10$ moves form one of $2^{10}$ equally likely sequences. Let $X$ be the number of CW moves and $Y$ the number of CCW moves, so $X + Y = 10$.",
+      "your_turn": {
+        "prompt": "Where is the bug after $3$ CW moves in a row? And after one CW move followed by one CCW move?",
+        "answer": "Back at the start both times: three CW moves go once around the triangle, and a CW move is undone by a CCW move."
+      }
+    },
+    {
+      "title": "When is the bug back at the start?",
+      "body": "Each CW move cancels a CCW move, and every $3$ extra moves in the same direction make a full lap. So the bug is at its starting vertex after the tenth move exactly when $X - Y$ is a multiple of $3$, that is, $X \\equiv Y \\pmod 3$. If $X$ and $Y$ were both $0 \\bmod 3$, their sum would be $0 \\bmod 3$; if both were $1 \\bmod 3$, the sum would be $2 \\bmod 3$. But $10 \\equiv 1 \\pmod 3$, so both must be $2 \\bmod 3$ (then the sum is $4 \\equiv 1$).",
+      "your_turn": {
+        "prompt": "List all pairs $(X, Y)$ of nonnegative integers with $X + Y = 10$ and both $X$ and $Y$ equal to $2 \\bmod 3$.",
+        "answer": "$(2, 8)$, $(5, 5)$ and $(8, 2)$. The values $X = 2, 5, 8$ are the only ones from $0$ to $10$ that are $2 \\bmod 3$."
+      }
+    },
+    {
+      "title": "Count the good move sequences",
+      "body": "For a pair $(X, Y)$, a move sequence is a string of $10$ letters with $X$ CW's and $Y$ CCW's. The number of such strings is $\\binom{10}{X}$, the number of ways to choose which moves are CW. So the good sequences number $\\binom{10}{2} + \\binom{10}{5} + \\binom{10}{8}$.",
+      "your_turn": {
+        "prompt": "Find $\\binom{10}{2}$ and $\\binom{10}{5}$. What is $\\binom{10}{8}$?",
+        "answer": "$\\binom{10}{2} = 45$ and $\\binom{10}{5} = 252$. Also $\\binom{10}{8} = \\binom{10}{2} = 45$, since choosing $8$ moves is the same as choosing the $2$ left out."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "There are $45 + 252 + 45 = 342$ good sequences out of $2^{10} = 1024$, so the probability is\n$$\\frac{342}{1024} = \\frac{171}{512}.$$\nSince $171 = 9 \\cdot 19$ is odd and $512 = 2^9$, this is in lowest terms. So $m + n = 171 + 512 = 683$. The answer is **$683$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "683",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

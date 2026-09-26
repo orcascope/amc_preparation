@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_4_06",
+  "number": "4.4.6",
+  "kind": "problem",
+  "section": "Stars and Bars",
+  "original_source": "2014 PUMAC",
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars with distinct parts",
+  "text": "How many sets of positive integers $(a,b,c)$ satisfies $a > b > c > 0$ and $a+b+c=103$?",
+  "choices": null,
+  "book_answer": "833",
+  "book_pages": [108]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "ACE_4_4_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.4.1",
+    "kind": "example",
+    "section": "Stars and Bars",
+    "original_source": null
+  },
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_4_4_01.png",
+    "text": "Let's pretend we have $10$ identical pieces of candies. We want to find the number of ways to give it out to $4$ children so that each student receives at least one piece of candy. How will we proceed from here?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$84$",
+    "accept": ["84"]
+  },
+  "steps": [
+    {
+      "title": "Where to start: draw the candies as stars",
+      "body": "The candies are identical, so a way of handing them out is decided only by how many candies each child gets. Line the $10$ candies up as stars and drop in $3$ bars: the bars cut the row into $4$ groups, and the groups from left to right are what children $1$, $2$, $3$ and $4$ receive.",
+      "your_turn": {
+        "prompt": "Which handout does $\\ast\\ast \\mid \\ast\\ast\\ast \\mid \\ast\\ast\\ast\\ast \\mid \\ast$ stand for?",
+        "answer": "Child $1$ gets $2$, child $2$ gets $3$, child $3$ gets $4$ and child $4$ gets $1$ (total $10$)."
+      }
+    },
+    {
+      "title": "Where the bars are allowed to go",
+      "body": "Every child needs at least one candy, so no group may be empty. That means no bar at the far left or far right, and no two bars in the same spot. So each bar goes into a different gap between two neighboring stars, and choosing the gaps decides the handout.",
+      "your_turn": {
+        "prompt": "Try a small case: $4$ candies for $2$ children, each getting at least one. How many gaps are there between the stars, and how many handouts?",
+        "answer": "$3$ gaps and we pick $1$ of them, so $3$ handouts: $(1,3)$, $(2,2)$, $(3,1)$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $10$ stars in a row there are $9$ gaps between neighbors, and we choose $3$ of them for the bars:\n$$\\binom{9}{3} = \\frac{9\\cdot 8\\cdot 7}{3\\cdot 2\\cdot 1} = 84.$$\nThe answer is **$84$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "84",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

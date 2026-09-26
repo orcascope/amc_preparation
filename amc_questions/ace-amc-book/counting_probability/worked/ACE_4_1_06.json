@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_1_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.1.6",
+    "kind": "problem",
+    "section": "Basic Combinatorics Principles",
+    "original_source": "2012 SMT"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Casework with binomial coefficients",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_1_06.png",
+    "text": "How many ordered sequences of $1$'s and $3$'s sum to $16$? (Examples of such sequences are $1, 3, 3, 3, 3, 3$ and $1, 3, 1, 3, 1, 3, 1, 3$.)",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$277$",
+    "accept": [
+      "277"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: first decide how many 1s and 3s",
+      "body": "A sequence is fixed by two things: how many $1$s and $3$s it has, and the order they come in. So let $x$ be the number of $1$s and $y$ the number of $3$s. The sum is $16$, which gives one equation:\n$$x + 3y = 16.$$",
+      "your_turn": {
+        "prompt": "List every pair of whole numbers $(x, y)$ with $x + 3y = 16$.",
+        "answer": "$y$ can be $0$ to $5$ (since $3y \\le 16$): $(16,0), (13,1), (10,2), (7,3), (4,4), (1,5)$."
+      }
+    },
+    {
+      "title": "Count the orders for one pair",
+      "body": "For a fixed pair, the sequence has $x + y$ terms. Choosing which of those positions hold the $3$s decides the whole sequence, so there are $\\binom{x+y}{y}$ orders. This is the same as arranging a word with $x$ copies of one letter and $y$ of another: $\\frac{(x+y)!}{x!\\,y!}$.",
+      "your_turn": {
+        "prompt": "How many sequences use four $1$s and four $3$s?",
+        "answer": "$\\binom{8}{4} = 70$."
+      }
+    },
+    {
+      "title": "Write down every case",
+      "body": "The six cases give $\\binom{16}{0}$, $\\binom{14}{1}$, $\\binom{12}{2}$, $\\binom{10}{3}$, $\\binom{8}{4}$ and $\\binom{6}{5}$. Careful: the top number is the length $x + y$ and the bottom number is the number of $3$s, and both change from case to case.",
+      "your_turn": {
+        "prompt": "Compute $\\binom{12}{2}$ and $\\binom{10}{3}$.",
+        "answer": "$\\binom{12}{2} = \\frac{12\\cdot 11}{2} = 66$ and $\\binom{10}{3} = \\frac{10\\cdot 9\\cdot 8}{6} = 120$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The other cases are $\\binom{16}{0} = 1$, $\\binom{14}{1} = 14$ and $\\binom{6}{5} = 6$. Adding all six,\n$$1 + 14 + 66 + 120 + 70 + 6 = 277.$$ The answer is **$277$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "277",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

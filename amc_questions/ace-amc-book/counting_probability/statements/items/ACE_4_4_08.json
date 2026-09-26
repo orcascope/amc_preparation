@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_4_08",
+  "number": "4.4.8",
+  "kind": "problem",
+  "section": "Stars and Bars",
+  "original_source": "2019 SMT",
+  "topic": "counting_probability",
+  "subtopic": "Arrangements with no two letters adjacent",
+  "text": "Connie finds a whiteboard that has magnet letters spelling MISSISSIPPI on it. She can rearrange the letters, in which identical letters are indistinguishable. If she uses all the letters and does not want to place any Is next to each other, how many distinct rearrangements are possible?",
+  "choices": null,
+  "book_answer": "7350",
+  "book_pages": [109, 110]
+}

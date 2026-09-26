@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_11_01",
+  "number": "3.11.1",
+  "kind": "problem",
+  "section": "Recursive Sequences",
+  "original_source": "COMC",
+  "topic": "algebra",
+  "subtopic": "Periodic recursive sequences",
+  "text": "The sequence of numbers $t_1, t_2, t_3, \\ldots$ is defined by $t_1 = 2$ and $$t_{n+1} = \\frac{t_n - 1}{t_n + 1}$$ for every positive integer $n$. Determine the value of $t_{999}$.",
+  "choices": null,
+  "book_answer": "-1/2",
+  "book_pages": [90]
+}

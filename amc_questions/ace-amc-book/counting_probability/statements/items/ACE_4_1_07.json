@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_1_07",
+  "number": "4.1.7",
+  "kind": "problem",
+  "section": "Basic Combinatorics Principles",
+  "original_source": "2015 MMATHS",
+  "topic": "counting_probability",
+  "subtopic": "Subsets with an even sum",
+  "text": "Define the sum of a finite set of integers to be the sum of the elements of the set. Let $D$ be the set of positive divisors of $700$. How many nonempty subsets of $D$ have an even sum? (Simplify as reasonably as possible)",
+  "choices": null,
+  "book_answer": "131071",
+  "book_pages": [99, 100]
+}

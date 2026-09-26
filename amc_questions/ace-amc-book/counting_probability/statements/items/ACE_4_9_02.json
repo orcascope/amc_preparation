@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_9_02",
+  "number": "4.9.2",
+  "kind": "problem",
+  "section": "States (Markov Chains)",
+  "original_source": "2009 AIME",
+  "topic": "counting_probability",
+  "subtopic": "Geometric series in probability",
+  "text": "Dave rolls a fair six-sided die until a six appears for the first time. Independently, Linda rolls a fair six-sided die until a six appears for the first time. Let $m$ and $n$ be relatively prime positive integers such that $\\dfrac{m}{n}$ is the probability that the number of times Dave rolls his die is equal to or within one of the number of times Linda rolls her die. Find $m+n$.",
+  "choices": null,
+  "book_answer": "41",
+  "book_pages": [123]
+}

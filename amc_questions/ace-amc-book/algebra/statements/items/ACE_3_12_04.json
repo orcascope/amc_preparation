@@ -1,0 +1,15 @@
+{
+  "id": "ACE_3_12_04",
+  "number": "3.12.4",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2023 Purple Comet",
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas with arithmetic progressions",
+  "text": "For real numbers $a$, $b$, and $c$, the roots of the polynomial $$x^5 - 10x^4 + ax^3 + bx^2 + cx - 320$$ form an arithmetic progression. Find $a + b + c$.",
+  "choices": null,
+  "book_answer": "49",
+  "book_pages": [
+    93
+  ]
+}

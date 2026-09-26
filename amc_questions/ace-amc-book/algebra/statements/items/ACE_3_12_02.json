@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_12_02",
+  "number": "3.12.2",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2018 HMMT",
+  "topic": "algebra",
+  "subtopic": "Equations with primes and divisibility",
+  "text": "Distinct prime numbers $p, q, r$ satisfy the equation $$2pqr + 50pq = 7pqr + 55pr = 8pqr + 12qr = A$$ for some positive integer $A$. What is $A$?",
+  "choices": null,
+  "book_answer": "1980",
+  "book_pages": [92]
+}

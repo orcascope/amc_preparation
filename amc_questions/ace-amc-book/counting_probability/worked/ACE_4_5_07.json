@@ -1,0 +1,62 @@
+{
+  "id": "ACE_4_5_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.5.7",
+    "kind": "problem",
+    "section": "Binomial",
+    "original_source": "2006 AMC 12"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Counting terms of an expansion",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_5_07.png",
+    "text": "The expression $$(x+y+z)^{2006}+(x-y-z)^{2006}$$ is simplified by expanding it and combining like terms. How many terms are in the simplified expression?",
+    "choices": { "A": "$6018$", "B": "$671{,}676$", "C": "$1{,}007{,}514$", "D": "$1{,}008{,}016$", "E": "$2{,}015{,}028$" }
+  },
+  "answer": { "choice": "D", "value": "$1{,}008{,}016$" },
+  "steps": [
+    {
+      "title": "Where to start: compare the two expansions term by term",
+      "body": "Both powers expand into terms of the form $x^a y^b z^c$ with $a + b + c = 2006$, where $a$, $b$, $c$ are nonnegative integers. In $(x+y+z)^{2006}$ every such term has a positive coefficient. In $(x-y-z)^{2006}$ the same term gets the same number times $(-1)^{b+c}$, because $y$ and $z$ come with minus signs. So a term doubles when $b + c$ is even and cancels when $b + c$ is odd.",
+      "your_turn": {
+        "prompt": "Find the coefficient of $x^{2005}y$ in each of the two powers. What happens when you add them?",
+        "answer": "It is $2006$ in the first and $-2006$ in the second, so the term cancels."
+      }
+    },
+    {
+      "title": "Count every possible term with stars and bars",
+      "body": "First count all terms $x^a y^b z^c$ with $a + b + c = 2006$. Choosing nonnegative $a$, $b$, $c$ with a fixed sum is a stars and bars count: $2006$ stars and $2$ bars.\n$$\\binom{2006+2}{2} = \\binom{2008}{2} = 2{,}015{,}028$$",
+      "your_turn": {
+        "prompt": "Use the same idea to count the terms of $(x+y+z)^2$, and list them to check.",
+        "answer": "$\\binom{4}{2} = 6$: $x^2$, $y^2$, $z^2$, $xy$, $yz$, $zx$."
+      }
+    },
+    {
+      "title": "Count the terms that cancel",
+      "body": "A term cancels when $b + c$ is odd. Since $a + b + c = 2006$ is even, that happens exactly when $a$ is odd. For a fixed odd $a$, the pairs $(b, c)$ with $b + c = 2006 - a$ are $(0, 2006-a), (1, 2005-a), \\ldots$, so there are $2007 - a$ of them.",
+      "your_turn": {
+        "prompt": "How many cancelling terms are there with $a = 1$? With $a = 2005$?",
+        "answer": "$2007 - 1 = 2006$ and $2007 - 2005 = 2$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "As $a$ runs over $1, 3, 5, \\ldots, 2005$, the counts are $2006, 2004, \\ldots, 2$: the even numbers from $2$ to $2006$. There are $1003$ of them with average $1004$, so $1003 \\cdot 1004 = 1{,}007{,}012$ terms cancel. The remaining count is $2{,}015{,}028 - 1{,}007{,}012 = 1{,}008{,}016$. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "This is the number of terms in one expansion, $\\binom{2008}{2}$. It forgets that every term with an odd power of $x$ cancels when the two expansions are added."
+  },
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

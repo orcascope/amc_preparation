@@ -1,0 +1,16 @@
+{
+  "id": "ACE_4_1_09",
+  "number": "4.1.9",
+  "kind": "problem",
+  "section": "Basic Combinatorics Principles",
+  "original_source": "2019 CMC 10",
+  "topic": "counting_probability",
+  "subtopic": "Probability with parity",
+  "text": "Let $a, b, c, d$ be four not necessarily distinct integers chosen from the set $0, 1, \\dots, 2019$. What is the probability that $(a+b)(c+d) + (a+c)(b+d) + (a+d)(b+c)$ is divisible by $4$?",
+  "choices": null,
+  "book_answer": "3/8",
+  "book_pages": [
+    100,
+    101
+  ]
+}

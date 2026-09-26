@@ -1,0 +1,63 @@
+{
+  "id": "ACE_3_11_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.11.2",
+    "kind": "problem",
+    "section": "Recursive Sequences",
+    "original_source": "2019 AMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Recursive sequences and reciprocals",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_3_11_02.png",
+    "text": "A sequence of numbers is defined recursively by $a_1 = 1$, $a_2 = \\frac{3}{7}$, and $$a_n = \\frac{a_{n-2}\\cdot a_{n-1}}{2a_{n-2} - a_{n-1}}$$ for all $n \\geq 3$ Then $a_{2019}$ can be written as $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. What is $p+q$?",
+    "choices": { "A": "$2020$", "B": "$4039$", "C": "$6057$", "D": "$6061$", "E": "$8078$" }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$8078$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: compute a few terms",
+      "body": "Term number $2019$ is much too far to reach one step at a time, so the answer must come from a pattern. The quickest way to find one is to compute the next couple of terms and compare them with $a_1$ and $a_2$.",
+      "your_turn": {
+        "prompt": "Find $a_3$ from $a_1 = 1$ and $a_2 = \\frac{3}{7}$.",
+        "answer": "$a_3 = \\frac{1\\cdot \\frac{3}{7}}{2 - \\frac{3}{7}} = \\frac{3/7}{11/7} = \\frac{3}{11}$."
+      }
+    },
+    {
+      "title": "Spot the pattern",
+      "body": "Next, $a_4 = \\frac{\\frac{3}{7}\\cdot \\frac{3}{11}}{\\frac{6}{7} - \\frac{3}{11}} = \\frac{9/77}{45/77} = \\frac{1}{5} = \\frac{3}{15}$. If we also write $a_1 = \\frac{3}{3}$, the first four terms are $\\frac{3}{3}, \\frac{3}{7}, \\frac{3}{11}, \\frac{3}{15}$: the numerator stays $3$ and the denominator goes up by $4$ each time.",
+      "your_turn": {
+        "prompt": "Write a formula for the denominator of $a_n$ in terms of $n$ that fits $n = 1, 2, 3, 4$.",
+        "answer": "$4n - 1$, which gives $3, 7, 11, 15$."
+      }
+    },
+    {
+      "title": "Why the pattern keeps going: flip to reciprocals",
+      "body": "A guess from four terms is not a proof, so take reciprocals of the rule and split the fraction:\n$$\\frac{1}{a_n} = \\frac{2a_{n-2} - a_{n-1}}{a_{n-2}a_{n-1}} = \\frac{2}{a_{n-1}} - \\frac{1}{a_{n-2}}.$$ This says $\\frac{1}{a_n} - \\frac{1}{a_{n-1}} = \\frac{1}{a_{n-1}} - \\frac{1}{a_{n-2}}$, so the reciprocals go up by the same amount every time: they form an arithmetic sequence.",
+      "your_turn": {
+        "prompt": "What is the common difference $\\frac{1}{a_2} - \\frac{1}{a_1}$, and what formula for $\\frac{1}{a_n}$ follows?",
+        "answer": "$\\frac{7}{3} - 1 = \\frac{4}{3}$, so $\\frac{1}{a_n} = 1 + \\frac{4}{3}(n-1) = \\frac{4n-1}{3}$, which confirms $a_n = \\frac{3}{4n-1}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $a_{2019} = \\frac{3}{4\\cdot 2019 - 1} = \\frac{3}{8075}$. This is in lowest terms, because the digits of $8075$ add to $20$, so $3$ does not divide $8075$. Then $p + q = 3 + 8075 = 8078$. The answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ACE_4_1_10",
+  "number": "4.1.10",
+  "kind": "problem",
+  "section": "Basic Combinatorics Principles",
+  "original_source": "2021 AMC",
+  "topic": "counting_probability",
+  "subtopic": "Casework with combinations",
+  "text": "A choir director must select a group of singers from among his $6$ tenors and $8$ basses. The only requirements are that the difference between the number of tenors and basses must be a multiple of $4$, and the group must have at least one singer. Let $N$ be the number of different groups that could be selected. What is the remainder when $N$ is divided by $100$?",
+  "choices": {
+    "A": "$47$",
+    "B": "$48$",
+    "C": "$83$",
+    "D": "$95$",
+    "E": "$96$"
+  },
+  "book_answer": "D",
+  "book_pages": [
+    101,
+    102
+  ]
+}

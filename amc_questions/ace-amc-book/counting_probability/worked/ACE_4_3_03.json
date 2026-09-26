@@ -1,0 +1,63 @@
+{
+  "id": "ACE_4_3_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.3.3",
+    "kind": "problem",
+    "section": "Path Counting + Bijections",
+    "original_source": "2006 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Bijection with subsets",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_3_03.png",
+    "text": "Let $(a_1, a_2, a_3, \\ldots, a_{12})$ be a permutation of $(1, 2, 3, \\ldots, 12)$ for which $$a_1 > a_2 > a_3 > a_4 > a_5 > a_6 \\text{ and } a_6 < a_7 < a_8 < a_9 < a_{10} < a_{11} < a_{12}.$$ An example of such a permutation is $(6, 5, 4, 3, 2, 1, 7, 8, 9, 10, 11, 12)$. Find the number of such permutations.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$462$",
+    "accept": ["462"]
+  },
+  "steps": [
+    {
+      "title": "Where to start: find the position of $1$",
+      "body": "Both chains of inequalities meet at $a_6$: it is smaller than $a_5$ (and so smaller than $a_1$ through $a_5$), and it is smaller than $a_7$ through $a_{12}$. So $a_6$ is smaller than every other entry, which pins down one entry right away.",
+      "your_turn": {
+        "prompt": "Which number must $a_6$ be, and why could it not be $2$?",
+        "answer": "$a_6 = 1$. If $a_6$ were $2$, the number $1$ would sit in some other position, but every other position must be larger than $a_6$."
+      }
+    },
+    {
+      "title": "Choosing the left group decides everything",
+      "body": "The other $11$ numbers are $2, 3, \\ldots, 12$. Suppose we only decide which five of them go into positions $a_1$ to $a_5$. Those five must be written in decreasing order, so there is exactly one way to place them. The six numbers left over go into $a_7$ to $a_{12}$, and they must be in increasing order, so there is again exactly one way.",
+      "your_turn": {
+        "prompt": "If the set $\\{a_1, \\ldots, a_5\\}$ is $\\{3, 5, 8, 10, 12\\}$, write out the whole permutation.",
+        "answer": "$(12, 10, 8, 5, 3, 1, 2, 4, 6, 7, 9, 11)$."
+      }
+    },
+    {
+      "title": "Every choice works, and each gives a different permutation",
+      "body": "Any five numbers from $2$ to $12$ are bigger than $1$, and so are the six left over, so every choice of five numbers gives a valid permutation. Different choices give different permutations. So the permutations match up one-to-one with the ways to choose $5$ numbers from $\\{2, 3, \\ldots, 12\\}$. Careful: choose from these $11$ numbers, not from all $12$, because $1$ is already fixed in position $6$.",
+      "your_turn": {
+        "prompt": "Test the idea on a small case: permutations $(a_1, a_2, a_3, a_4)$ of $(1, 2, 3, 4)$ with $a_1 > a_2$ and $a_2 < a_3 < a_4$. List them all.",
+        "answer": "$a_2 = 1$ and we choose the one number for $a_1$ from $\\{2, 3, 4\\}$: $(2,1,3,4)$, $(3,1,2,4)$, $(4,1,2,3)$. That is $3$ permutations, one for each choice."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The number of ways to choose $5$ numbers from $11$ is\n$$\\binom{11}{5} = \\frac{11\\cdot 10\\cdot 9\\cdot 8\\cdot 7}{5\\cdot 4\\cdot 3\\cdot 2\\cdot 1} = 462.$$\nThe answer is **$462$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "462",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

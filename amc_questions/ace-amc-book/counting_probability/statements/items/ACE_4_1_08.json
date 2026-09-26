@@ -1,0 +1,15 @@
+{
+  "id": "ACE_4_1_08",
+  "number": "4.1.8",
+  "kind": "problem",
+  "section": "Basic Combinatorics Principles",
+  "original_source": "2017 AIME",
+  "topic": "counting_probability",
+  "subtopic": "Complementary counting",
+  "text": "Find the number of subsets of $\\{1,2,3,4,5,6,7,8\\}$ that are subsets of neither $\\{1,2,3,4,5\\}$ nor $\\{4,5,6,7,8\\}$.",
+  "choices": null,
+  "book_answer": "196",
+  "book_pages": [
+    100
+  ]
+}

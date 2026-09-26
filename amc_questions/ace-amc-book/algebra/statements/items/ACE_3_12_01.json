@@ -1,0 +1,13 @@
+{
+  "id": "ACE_3_12_01",
+  "number": "3.12.1",
+  "kind": "problem",
+  "section": "Cumulative Problems",
+  "original_source": "2021 BMT",
+  "topic": "algebra",
+  "subtopic": "Vieta's formulas",
+  "text": "Let $a, b, c$ be the solutions of the equation $x^3 - 3\\cdot 2021^2 x = 2\\cdot 2021^3$. Compute $\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}$",
+  "choices": null,
+  "book_answer": "-3/4042",
+  "book_pages": [91, 92]
+}

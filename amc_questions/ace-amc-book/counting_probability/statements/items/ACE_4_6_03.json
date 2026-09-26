@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_6_03",
+  "number": "4.6.3",
+  "kind": "problem",
+  "section": "Recursion",
+  "original_source": "2007 AMC 12",
+  "topic": "counting_probability",
+  "subtopic": "Recursive counting",
+  "text": "Call a set of integers \"spacy\" if it contains no more than one out of any three consecutive integers. How many subsets of $\\{1, 2, 3, \\ldots, 12\\}$, including the empty set, are spacy?",
+  "choices": { "A": "$121$", "B": "$123$", "C": "$125$", "D": "$127$", "E": "$129$" },
+  "book_answer": "E",
+  "book_pages": [116, 117]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_1_04",
+  "number": "4.1.4",
+  "kind": "problem",
+  "section": "Basic Combinatorics Principles",
+  "original_source": "2007 AIME",
+  "topic": "counting_probability",
+  "subtopic": "Casework on repeated characters",
+  "text": "A mathematical organization is producing a set of commemorative license plates. Each plate contains a sequence of five characters chosen from the four letters in AIME and the four digits in $2007$. No character may appear in a sequence more times than it appears among the four letters in AIME or the four digits in $2007$. A set of plates in which each possible sequence appears exactly once contains $N$ license plates. Find $\\frac{N}{10}$.",
+  "choices": null,
+  "book_answer": "372",
+  "book_pages": [98]
+}
