@@ -15,11 +15,17 @@
     "text": "In $\\triangle ABC$, $AC = BC$, and point $D$ is on $\\overline{BC}$ so that $CD = 3\\cdot BD$. Let $E$ be the midpoint of $\\overline{AD}$. Given that $CE = \\sqrt{7}$ and $BE = 3$, the area of $\\triangle ABC$ can be expressed in the form $m\\sqrt{n}$, where $m$ and $n$ are positive integers and $n$ is not divisible by the square of any prime. Find $m+n$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$10$", "accept": ["10"] },
+  "answer": {
+    "choice": null,
+    "value": "$10$",
+    "accept": [
+      "10"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: name the lengths and reach for Stewart's theorem",
-      "body": "The clue is that every given length is a cevian (a segment from a vertex to a point on the opposite side): $ED$, $CE$ and $BE$. Stewart's theorem links a cevian to the sides: if a cevian of length $d$ from a vertex splits the opposite side $a$ into pieces $m$ and $n$, then $b^2 n + c^2 m = a(d^2 + mn)$, where each of the other two sides $b$, $c$ is squared and multiplied by the piece of $a$ that does not touch it. Let $BD = x$ and $AE = ED = y$.",
+      "body": "The clue is that $E$ is the midpoint of $AD$, and the two given lengths $CE = \\sqrt{7}$ and $BE = 3$ both run from a vertex to that midpoint. So each is a cevian (a segment from a vertex to a point on the opposite side) of a smaller triangle: $CE$ in $\\triangle ACD$ and $BE$ in $\\triangle ABD$. Also, $ED$ is a cevian of $\\triangle BEC$, because $D$ lies on $BC$ at a known ratio. Stewart's theorem turns each cevian into an equation. Stewart's theorem links a cevian to the sides: if a cevian of length $d$ from a vertex splits the opposite side $a$ into pieces $m$ and $n$, then $b^2 n + c^2 m = a(d^2 + mn)$, where each of the other two sides $b$, $c$ is squared and multiplied by the piece of $a$ that does not touch it. Let $BD = x$ and $AE = ED = y$.",
       "your_turn": {
         "prompt": "Write $CD$, $BC$, $AC$ and $AD$ in terms of $x$ and $y$.",
         "answer": "$CD = 3x$, $BC = 4x$, $AC = BC = 4x$ and $AD = 2y$."

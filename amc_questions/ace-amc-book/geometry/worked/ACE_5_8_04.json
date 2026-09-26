@@ -39,7 +39,7 @@
       "body": "In the cyclic quadrilateral $AIME$, the angles $\\angle IAM$ and $\\angle IEM$ stand on the same arc $IM$, so $\\angle IEM = \\angle IAM = 45^\\circ$. Opposite angles of a cyclic quadrilateral add to $180^\\circ$, and $\\angle IAE = 90^\\circ$, so $\\angle IME = 90^\\circ$. So triangle $IME$ has angles $90^\\circ$, $45^\\circ$, $45^\\circ$, and its legs $MI$ and $ME$ are equal.",
       "your_turn": {
         "prompt": "Triangle $EMI$ has area $2$. How long are its legs $MI = ME$, and how long is $IE$?",
-        "answer": "$\\frac{s^2}{2} = 2$ gives $s = 2$, and then $IE = 2\\sqrt 2$ by the Pythagorean theorem."
+        "answer": "Call each leg $s = MI = ME$. The area is $\\frac{s^2}{2} = 2$, so $s = 2$, and then $IE = \\sqrt{2^2+2^2} = 2\\sqrt 2$ by the Pythagorean theorem."
       }
     },
     {
