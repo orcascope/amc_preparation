@@ -99,3 +99,8 @@ tools/
 | 2018 10A | ✅ 25 of 25 |
 | 2018 10B | ✅ 25 of 25 |
 | 2019 10A, 2019 10B, 2021 10A Spring, 2021 10A Fall | PDFs downloaded, not yet worked |
+
+
+## Databricks APP
+
+databricks sync . /Workspace/Users/ars.1001@gmail.com/amc-prep --exclude-from .dbkignore -p ars.1001
