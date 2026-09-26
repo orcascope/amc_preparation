@@ -43,7 +43,8 @@ and `amc_questions/<year>/solutions/`, then run Mode A. Each contest year
 
 Book support is currently written for one book. For another book:
 1. Folder: `amc_questions/<book-dir>/<topic>/` with the same subfolders.
-2. `tools/import_worked.py`: `BOOK_DIR` names the one book folder, and
+2. `app/import_worked.py` (the importer; `tools/import_worked.py` only forwards
+   to it): `BOOK_DIR` names the one book folder, and
    `content_dirs()` treats **every other folder as a contest year**, so a second
    book folder breaks the import until this is changed. Turn `BOOK_DIR`
    into a list (or detect book folders, e.g. by a `book.json` marker), and in `row_meta()` give each book

@@ -2,7 +2,7 @@
 
 Usage:
     python tools/crop_book.py <book.pdf> <topic> <first_section> <last_section>
-    python tools/crop_book.py ace-the-amc-book/references/ACE_The_AMC_10_and_12.pdf number_theory 2.1 2.6
+    python tools/crop_book.py .claude/skills/ace-the-amc-book/references/ACE_The_AMC_10_and_12.pdf number_theory 2.1 2.6
 
 Writes amc_questions/ace-amc-book/<topic>/images/ACE_<ch>_<sec>_<nn>.png (for
 example Problem 2.2.7 -> ACE_2_2_07.png) and prints an index of what it found:

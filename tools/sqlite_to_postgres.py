@@ -5,7 +5,7 @@ Usage:
 
 Copies the students, attempts and progress tables, keeping their ids, into the
 database named by DATABASE_URL (.env). Content tables are not copied: run
-tools/import_worked.py for those. Rows that already exist are left alone, so
+python -m app.import_worked for those. Rows that already exist are left alone, so
 running it twice is harmless.
 """
 import sqlite3
