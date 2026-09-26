@@ -1,6 +1,12 @@
 {
   "id": "ACE_5_1_05",
-  "source": { "book": "ACE The AMC 10 and AMC 12", "number": "5.1.5", "kind": "problem", "section": "Angles", "original_source": null },
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.1.5",
+    "kind": "problem",
+    "section": "Angles",
+    "original_source": null
+  },
   "topic": "geometry",
   "subtopic": "Complementary angles",
   "difficulty": 2,
@@ -9,7 +15,13 @@
     "text": "Find the complement of $30$ degrees.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$60^\\circ$", "accept": ["60"] },
+  "answer": {
+    "choice": null,
+    "value": "$60^\\circ$",
+    "accept": [
+      "60"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: what \"complement\" means",
@@ -36,10 +48,11 @@
   "verification": {
     "book_answer": "60",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
   }
 }

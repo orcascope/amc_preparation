@@ -13,7 +13,13 @@
   "problem": {
     "image": "images/ACE_5_11_04.png",
     "text": "Triangle $ABC$ has side-lengths $AB = 12$, $BC = 24$, and $AC = 18$. The line through the incenter of $\\triangle ABC$ parallel to $\\overline{BC}$ intersects $\\overline{AB}$ at $M$ and $\\overline{AC}$ at $N$. What is the perimeter of $\\triangle AMN$?",
-    "choices": { "A": "$27$", "B": "$30$", "C": "$33$", "D": "$36$", "E": "$42$" }
+    "choices": {
+      "A": "$27$",
+      "B": "$30$",
+      "C": "$33$",
+      "D": "$36$",
+      "E": "$42$"
+    }
   },
   "answer": {
     "choice": "B",
@@ -48,10 +54,11 @@
   "verification": {
     "book_answer": "B",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
   }
 }

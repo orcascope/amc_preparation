@@ -18,7 +18,10 @@
   "answer": {
     "choice": null,
     "value": "$\\frac{7}{16}$",
-    "accept": ["\\frac{7}{16}", "7:16"]
+    "accept": [
+      "\\frac{7}{16}",
+      "7:16"
+    ]
   },
   "steps": [
     {
@@ -54,10 +57,11 @@
   "verification": {
     "book_answer": "7/16",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Pass. Reviewer asked for 7/16 and 0.4375 in accept; the app already matches those forms by value, so no change."
   }
 }

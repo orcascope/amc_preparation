@@ -1,6 +1,12 @@
 {
   "id": "ACE_5_1_21",
-  "source": { "book": "ACE The AMC 10 and AMC 12", "number": "5.1.21", "kind": "problem", "section": "Angles", "original_source": "1957 AHSME" },
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.1.21",
+    "kind": "problem",
+    "section": "Angles",
+    "original_source": "1957 AHSME"
+  },
   "topic": "geometry",
   "subtopic": "Isosceles triangle angles",
   "difficulty": 2,
@@ -9,7 +15,13 @@
     "text": "In triangle $ABC$, $AC = CD$ and $\\angle CAB - \\angle ABC = 30$ degrees. What is $\\angle BAD$?",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$15^\\circ$", "accept": ["15"] },
+  "answer": {
+    "choice": null,
+    "value": "$15^\\circ$",
+    "accept": [
+      "15"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: name the unknown angle",
@@ -44,10 +56,11 @@
   "verification": {
     "book_answer": "15",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
   }
 }

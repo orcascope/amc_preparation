@@ -48,10 +48,11 @@
   "verification": {
     "book_answer": "13/2",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Pass. Reviewer asked for 13/2 and 6.5 in accept; the app already matches those forms by value, so no change."
   }
 }

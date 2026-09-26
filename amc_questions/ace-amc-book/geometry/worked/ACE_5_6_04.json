@@ -13,9 +13,18 @@
   "problem": {
     "image": "images/ACE_5_6_04.png",
     "text": "In the right triangle $\\triangle ACE$, we have $AC = 12$, $CE = 16$, and $EA = 20$. Points $B$, $D$, and $F$ are located on $AC$, $CE$, and $EA$, respectively, so that $AB = 3$, $CD = 4$, and $EF = 5$. What is the ratio of the area of $\\triangle DBF$ to that of $\\triangle ACE$?",
-    "choices": { "A": "$\\frac{1}{4}$", "B": "$\\frac{9}{25}$", "C": "$\\frac{3}{8}$", "D": "$\\frac{11}{25}$", "E": "$\\frac{7}{16}$" }
+    "choices": {
+      "A": "$\\frac{1}{4}$",
+      "B": "$\\frac{9}{25}$",
+      "C": "$\\frac{3}{8}$",
+      "D": "$\\frac{11}{25}$",
+      "E": "$\\frac{7}{16}$"
+    }
   },
-  "answer": { "choice": "E", "value": "$\\frac{7}{16}$" },
+  "answer": {
+    "choice": "E",
+    "value": "$\\frac{7}{16}$"
+  },
   "steps": [
     {
       "title": "Where to start: subtract the three corner triangles",
@@ -51,10 +60,11 @@
   "verification": {
     "book_answer": "E",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
   }
 }

@@ -13,9 +13,18 @@
   "problem": {
     "image": "images/ACE_5_2_06.png",
     "text": "All of the triangles in the diagram below are similar to isosceles triangle $ABC$, in which $AB = AC$. Each of the $7$ smallest triangles has area $1$, and $\\triangle ABC$ has area $40$. What is the area of trapezoid $DBCE$?",
-    "choices": { "A": "$16$", "B": "$18$", "C": "$20$", "D": "$22$", "E": "$24$" }
+    "choices": {
+      "A": "$16$",
+      "B": "$18$",
+      "C": "$20$",
+      "D": "$22$",
+      "E": "$24$"
+    }
   },
-  "answer": { "choice": "E", "value": "$24$" },
+  "answer": {
+    "choice": "E",
+    "value": "$24$"
+  },
   "steps": [
     {
       "title": "Where to start: the trapezoid is a big triangle minus a smaller one",
@@ -53,10 +62,11 @@
   "verification": {
     "book_answer": "E",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
   }
 }

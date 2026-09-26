@@ -13,9 +13,18 @@
   "problem": {
     "image": "images/ACE_5_5_11.png",
     "text": "In triangle $ABC$, medians $AD$ and $CE$ intersect at $P$, $PE = 1.5$, $PD = 2$, and $DE = 2.5$. What is the area of $AEDC$?",
-    "choices": { "A": "$13$", "B": "$13.5$", "C": "$14$", "D": "$14.5$", "E": "$15$" }
+    "choices": {
+      "A": "$13$",
+      "B": "$13.5$",
+      "C": "$14$",
+      "D": "$14.5$",
+      "E": "$15$"
+    }
   },
-  "answer": { "choice": "B", "value": "$13.5$" },
+  "answer": {
+    "choice": "B",
+    "value": "$13.5$"
+  },
   "steps": [
     {
       "title": "Where to start: $P$ is the centroid",
@@ -51,10 +60,11 @@
   "verification": {
     "book_answer": "B",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
   }
 }

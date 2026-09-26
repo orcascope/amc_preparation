@@ -13,9 +13,18 @@
   "problem": {
     "image": "images/ACE_5_5_12.png",
     "text": "Triangle $AMC$ is isosceles with $AM = AC$. Medians $\\overline{MV}$ and $\\overline{CU}$ are perpendicular to each other, and $MV = CU = 12$. What is the area of $\\triangle AMC$?",
-    "choices": { "A": "$48$", "B": "$72$", "C": "$96$", "D": "$144$", "E": "$192$" }
+    "choices": {
+      "A": "$48$",
+      "B": "$72$",
+      "C": "$96$",
+      "D": "$144$",
+      "E": "$192$"
+    }
   },
-  "answer": { "choice": "C", "value": "$96$" },
+  "answer": {
+    "choice": "C",
+    "value": "$96$"
+  },
   "steps": [
     {
       "title": "Where to start: cut the medians at the centroid",
@@ -53,10 +62,11 @@
   "verification": {
     "book_answer": "C",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
   }
 }

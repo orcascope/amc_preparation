@@ -1,6 +1,12 @@
 {
   "id": "ACE_5_1_02",
-  "source": { "book": "ACE The AMC 10 and AMC 12", "number": "5.1.2", "kind": "problem", "section": "Angles", "original_source": null },
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.1.2",
+    "kind": "problem",
+    "section": "Angles",
+    "original_source": null
+  },
   "topic": "geometry",
   "subtopic": "Straight angles",
   "difficulty": 2,
@@ -12,7 +18,11 @@
   "answer": {
     "choice": null,
     "value": "$a = 133^\\circ,\\ b = 47^\\circ,\\ c = 133^\\circ$",
-    "accept": ["a=133, b=47, c=133", "133, 47, 133", "a=133 b=47 c=133"]
+    "accept": [
+      "a=133, b=47, c=133",
+      "133, 47, 133",
+      "a=133 b=47 c=133"
+    ]
   },
   "steps": [
     {
@@ -48,10 +58,11 @@
   "verification": {
     "book_answer": "a=133, b=47, c=133",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
   }
 }
