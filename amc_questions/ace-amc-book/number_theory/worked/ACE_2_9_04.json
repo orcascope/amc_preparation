@@ -15,7 +15,13 @@
     "text": "Let $2^{1110} \\equiv n \\pmod{1111}$ with $0 \\le n \\le 1111$. Compute $n$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$1024$", "accept": ["1024"] },
+  "answer": {
+    "choice": null,
+    "value": "$1024$",
+    "accept": [
+      "1024"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: factor the modulus $1111$",
@@ -58,10 +64,11 @@
   "verification": {
     "book_answer": "1024",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

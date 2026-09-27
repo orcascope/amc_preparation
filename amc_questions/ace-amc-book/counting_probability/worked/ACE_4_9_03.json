@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_9_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.9.3",
+    "kind": "problem",
+    "section": "States (Markov Chains)",
+    "original_source": "2019 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Recursive probability",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_9_03.png",
+    "text": "Lily pads $1, 2, 3, \\ldots$ lie in a row on a pond. A frog makes a sequence of jumps starting on pad $1$. From any pad $k$ the frog jumps to either pad $k+1$ or pad $k+2$ chosen randomly with probability $\\frac{1}{2}$ and independently of other jumps. The probability that the frog visits pad $7$ is $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. Find $p+q$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$107$",
+    "accept": [
+      "107"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: ask how the frog can land on a pad",
+      "body": "The frog only moves forward by $1$ or $2$, so it can land on pad $n$ only by jumping from pad $n - 1$ or from pad $n - 2$. That suggests building the answer pad by pad. Let $p_n$ be the probability that the frog ever visits pad $n$. The frog starts on pad $1$, so $p_1 = 1$.",
+      "your_turn": {
+        "prompt": "What is $p_2$, and why?",
+        "answer": "$p_2 = \\frac{1}{2}$: the only way to visit pad $2$ is for the very first jump to be $+1$."
+      }
+    },
+    {
+      "title": "Write the rule for $p_n$",
+      "body": "For $n \\ge 3$, the frog visits pad $n$ exactly when it visits pad $n-1$ and then jumps $+1$, or visits pad $n-2$ and then jumps $+2$. These two ways cannot both happen, because a $+2$ jump from pad $n-2$ skips pad $n-1$. So we can add them:\n$$p_n = \\tfrac{1}{2}p_{n-1} + \\tfrac{1}{2}p_{n-2}$$",
+      "your_turn": {
+        "prompt": "Use the rule to find $p_3$.",
+        "answer": "$p_3 = \\frac{1}{2}(1) + \\frac{1}{2}\\cdot\\frac{1}{2} = \\frac{3}{4}$."
+      }
+    },
+    {
+      "title": "Keep going up the row",
+      "body": "Each new value is the average of the two before it. Careful: these probabilities do not add up to $1$, since the frog visits many pads, so do not try to normalize them. Just keep averaging.",
+      "your_turn": {
+        "prompt": "Find $p_4$ and $p_5$.",
+        "answer": "$p_4 = \\frac{1}{2}\\left(\\frac{3}{4} + \\frac{1}{2}\\right) = \\frac{5}{8}$ and $p_5 = \\frac{1}{2}\\left(\\frac{5}{8} + \\frac{3}{4}\\right) = \\frac{11}{16}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Two more averages give $p_6 = \\frac{1}{2}\\left(\\frac{11}{16} + \\frac{5}{8}\\right) = \\frac{21}{32}$ and\n$$p_7 = \\tfrac{1}{2}\\left(\\tfrac{21}{32} + \\tfrac{11}{16}\\right) = \\tfrac{43}{64}.$$\nSince $43$ is odd, the fraction is in lowest terms, so $p + q = 43 + 64 = 107$. The answer is **$107$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "107",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

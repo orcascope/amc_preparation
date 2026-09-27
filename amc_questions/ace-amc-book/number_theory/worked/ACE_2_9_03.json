@@ -15,7 +15,13 @@
     "text": "It is known that, for all positive integers $k$, $1^2 + 2^2 + 3^2 + \\dots + k^2 = \\frac{k(k+1)(2k+1)}{6}$. Find the smallest positive integer $k$ such that $1^2 + 2^2 + 3^2 + \\dots + k^2$ is a multiple of $200$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$112$", "accept": ["112"] },
+  "answer": {
+    "choice": null,
+    "value": "$112$",
+    "accept": [
+      "112"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: clear the $6$ and split $1200$",
@@ -58,10 +64,11 @@
   "verification": {
     "book_answer": "112",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

@@ -1,0 +1,67 @@
+{
+  "id": "ACE_4_5_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.5.10",
+    "kind": "problem",
+    "section": "Binomial",
+    "original_source": "2018 SMT"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Hockey stick identity",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_5_10.png",
+    "text": "Let $S$ be the set of all $1000$ element subsets of the set $1, 2, 3, \\ldots, 2018$. What is the expected value of the minimum element of a set chosen uniformly at random from $S$?",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$\\frac{2019}{1001}$", "accept": ["2019/1001"] },
+  "steps": [
+    {
+      "title": "Where to start: count the subsets with each minimum",
+      "body": "Every subset is equally likely, so the expected minimum is (sum of the minimums of all subsets) divided by (number of subsets), and the denominator is $\\binom{2018}{1000}$. For the numerator, group the subsets by their minimum $m$. If the minimum is $m$, the other $999$ elements must come from $m+1, \\ldots, 2018$, which gives $\\binom{2018-m}{999}$ subsets.",
+      "your_turn": {
+        "prompt": "What is the largest possible minimum $m$?",
+        "answer": "$1019$, because we need $2018 - m \\ge 999$ numbers above $m$."
+      }
+    },
+    {
+      "title": "Write the multiplier $m$ as a stack of rows",
+      "body": "The numerator is $1\\cdot\\binom{2017}{999} + 2\\cdot\\binom{2016}{999} + \\cdots + 1019\\cdot\\binom{999}{999}$. Split it into rows: row $j$ adds up $\\binom{2018-m}{999}$ for all $m \\ge j$. The term for minimum $m$ then appears in rows $1, 2, \\ldots, m$, which is exactly $m$ times.",
+      "your_turn": {
+        "prompt": "Write out row $1$ as a sum. What does it count?",
+        "answer": "$\\binom{2017}{999} + \\binom{2016}{999} + \\cdots + \\binom{999}{999}$. It counts every subset once, so it equals $\\binom{2018}{1000}$."
+      }
+    },
+    {
+      "title": "Add each row with the hockey stick identity",
+      "body": "The hockey stick identity says $\\binom{r}{r} + \\binom{r+1}{r} + \\cdots + \\binom{n}{r} = \\binom{n+1}{r+1}$. Row $j$ runs from $\\binom{999}{999}$ up to $\\binom{2018-j}{999}$, so it equals $\\binom{2019-j}{1000}$.",
+      "your_turn": {
+        "prompt": "What are rows $2$ and $1019$ equal to?",
+        "answer": "Row $2$ is $\\binom{2017}{1000}$. Row $1019$ is just $\\binom{999}{999} = 1 = \\binom{1000}{1000}$."
+      }
+    },
+    {
+      "title": "Add the rows",
+      "body": "The numerator is the sum of all rows:\n$$\\binom{1000}{1000} + \\binom{1001}{1000} + \\cdots + \\binom{2018}{1000}.$$ This is another hockey stick, with $r = 1000$ and $n = 2018$.",
+      "your_turn": {
+        "prompt": "Which row gives $\\binom{1000}{1000}$ and which gives $\\binom{2018}{1000}$? How many rows are there?",
+        "answer": "Row $1019$ gives $\\binom{1000}{1000}$ and row $1$ gives $\\binom{2018}{1000}$, so there are $1019$ rows, one for each bottom-$1000$ binomial from $\\binom{1000}{1000}$ to $\\binom{2018}{1000}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "By the hockey stick identity the numerator is $\\binom{2019}{1001}$. So the expected minimum is\n$$\\frac{\\binom{2019}{1001}}{\\binom{2018}{1000}} = \\frac{2019!}{1001!\\,1018!} \\cdot \\frac{1000!\\,1018!}{2018!} = \\frac{2019}{1001}.$$ The answer is **$\\frac{2019}{1001}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "2019/1001",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

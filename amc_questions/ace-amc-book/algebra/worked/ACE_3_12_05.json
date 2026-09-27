@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_12_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.12.5",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2020 CMIMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Double roots and Vieta's formulas",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_12_05.png",
+    "text": "Find the unique real number $c$ such that the polynomial $x^3 + cx + c$ has exactly two real roots.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$-\\frac{27}{4}$",
+    "accept": [
+      "-\\frac{27}{4}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: two real roots means a double root",
+      "body": "A cubic has three roots counted with repeats. With real coefficients, nonreal roots come in conjugate pairs, so a lone third root cannot be nonreal. So all three roots are real, and to have only two different values one of them must repeat. Call the repeated root $r$ and the other root $s$, with $r \\ne s$.",
+      "your_turn": {
+        "prompt": "Why can the cubic not have two different real roots and one nonreal root?",
+        "answer": "A nonreal root of a real polynomial always comes with its conjugate, which would be a fourth root. A cubic has only three."
+      }
+    },
+    {
+      "title": "Write Vieta's formulas",
+      "body": "The roots are $r$, $r$, $s$ and the polynomial is $x^3 + 0x^2 + cx + c$. Vieta's formulas give the sum, the sum of products in pairs, and the product:\n$$2r + s = 0, \\qquad r^2 + 2rs = c, \\qquad r^2 s = -c$$\nThe first equation gives $s = -2r$.",
+      "your_turn": {
+        "prompt": "Substitute $s = -2r$ into the second and third equations and write $c$ in terms of $r$ in two ways.",
+        "answer": "Second: $c = r^2 - 4r^2 = -3r^2$. Third: $-2r^3 = -c$, so $c = 2r^3$."
+      }
+    },
+    {
+      "title": "Set the two expressions equal",
+      "body": "Both expressions equal $c$, so $2r^3 = -3r^2$, which factors as $r^2(2r + 3) = 0$. Careful with the sign here: moving $-3r^2$ across gives $2r + 3$, not $2r - 3$.",
+      "your_turn": {
+        "prompt": "The factor $r^2$ gives $r = 0$. Why must we reject it?",
+        "answer": "Then $s = -2r = 0$ too, so $r = s$ and all three roots are $0$. The polynomial would be $x^3$, with only one real root."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $2r + 3 = 0$, $r = -\\tfrac{3}{2}$, $s = 3$ and $c = -3r^2 = -\\tfrac{27}{4}$ (check: $2r^3 = -\\tfrac{27}{4}$ as well). Indeed $\\left(x + \\tfrac{3}{2}\\right)^2(x - 3) = x^3 - \\tfrac{27}{4}x - \\tfrac{27}{4}$, which has exactly the two real roots $-\\tfrac{3}{2}$ and $3$. The answer is **$-\\frac{27}{4}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "-27/4",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -35,7 +35,7 @@
     },
     {
       "title": "Build up one stair at a time",
-      "body": "Now use the recursion, always adding the three values just before. Careful: it is easy to forget the $3$-stair move and add only the two previous values. That is the Fibonacci rule from the previous example, and it undercounts here.",
+      "body": "Now use the recursion, always adding the three values just before. Careful: it is easy to forget the $3$-stair move and add only the two previous values. That is the rule for climbing $1$ or $2$ stairs at a time, and it undercounts here.",
       "your_turn": {
         "prompt": "Use the recursion to find $a_4$.",
         "answer": "$a_4 = a_3 + a_2 + a_1 = 4 + 2 + 1 = 7$."

@@ -13,9 +13,18 @@
   "problem": {
     "image": "images/ACE_2_9_02.png",
     "text": "Let $N = 123456789101112\\dots4344$ be the $79$-digit number that is formed by writing the integers from $1$ to $44$ in order, one after the other. What is the remainder when $N$ is divided by $45$?",
-    "choices": { "A": "$1$", "B": "$4$", "C": "$9$", "D": "$18$", "E": "$44$" }
+    "choices": {
+      "A": "$1$",
+      "B": "$4$",
+      "C": "$9$",
+      "D": "$18$",
+      "E": "$44$"
+    }
   },
-  "answer": { "choice": "C", "value": "$9$" },
+  "answer": {
+    "choice": "C",
+    "value": "$9$"
+  },
   "steps": [
     {
       "title": "Where to start: split $45$ into $5$ and $9$",
@@ -53,10 +62,11 @@
   "verification": {
     "book_answer": "C",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

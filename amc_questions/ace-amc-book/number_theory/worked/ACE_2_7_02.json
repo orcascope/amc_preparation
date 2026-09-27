@@ -15,7 +15,13 @@
     "text": "Find the remainder when $9 \\times 99 \\times 999 \\times \\cdots \\times \\underbrace{99\\cdots9}_{\\text{999 9's}}$ is divided by $1000$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$109$", "accept": ["109"] },
+  "answer": {
+    "choice": null,
+    "value": "$109$",
+    "accept": [
+      "109"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: every factor is one less than a power of $10$",
@@ -50,10 +56,11 @@
   "verification": {
     "book_answer": "109",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

@@ -1,0 +1,63 @@
+{
+  "id": "ACE_4_4_03",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.4.3",
+    "kind": "problem",
+    "section": "Stars and Bars",
+    "original_source": "2000 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars with ordering",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_4_03.png",
+    "text": "Given eight distinguishable rings, let $n$ be the number of possible five-ring arrangements on the four fingers (not the thumb) of one hand. The order of rings on each finger is significant, but it is not required that each finger have a ring. Find the leftmost three nonzero digits of $n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$376$",
+    "accept": ["376"]
+  },
+  "steps": [
+    {
+      "title": "Where to start: split the job into separate choices",
+      "body": "An arrangement involves three things at once: which rings are used, what order they are in, and how many sit on each finger. The rings are all different and order matters, which is the clue to handle these one at a time and multiply. First decide which $5$ of the $8$ rings are worn.",
+      "your_turn": {
+        "prompt": "In how many ways can we choose the $5$ rings that are worn?",
+        "answer": "$\\binom{8}{5} = 56$."
+      }
+    },
+    {
+      "title": "Line the rings up, then cut the line",
+      "body": "Put the $5$ chosen rings in a single row, in one of $5! = 120$ orders. Let $x_1, x_2, x_3, x_4$ be the number of rings on fingers $1$ to $4$. Then the first $x_1$ rings of the row go on finger $1$ in that order, the next $x_2$ on finger $2$, and so on. Every arrangement comes from exactly one row and one list of counts.",
+      "your_turn": {
+        "prompt": "With the row $R_1R_2R_3R_4R_5$ and counts $(x_1, x_2, x_3, x_4) = (2, 0, 3, 0)$, where does each ring go?",
+        "answer": "$R_1, R_2$ on finger $1$, nothing on finger $2$, $R_3, R_4, R_5$ on finger $3$, nothing on finger $4$."
+      }
+    },
+    {
+      "title": "Count the finger totals with stars and bars",
+      "body": "Now count the lists of counts with $x_1 + x_2 + x_3 + x_4 = 5$. Careful: a finger may have no ring, so each $x_i$ may be $0$. That calls for the nonnegative version of stars and bars, which counts $\\binom{n + k - 1}{k - 1}$ solutions for $n$ stars and $k$ groups, not the positive version $\\binom{n-1}{k-1}$.",
+      "your_turn": {
+        "prompt": "How many nonnegative solutions does $x_1 + x_2 + x_3 + x_4 = 5$ have?",
+        "answer": "$\\binom{5 + 4 - 1}{4 - 1} = \\binom{8}{3} = 56$ (arrange $5$ stars and $3$ bars in $8$ spots)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Multiply the three independent choices:\n$$n = \\binom{8}{5}\\cdot 5!\\cdot \\binom{8}{3} = 56\\cdot 120\\cdot 56 = 376320.$$\nThe leftmost three nonzero digits are $3$, $7$, $6$. The answer is **$376$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "376",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

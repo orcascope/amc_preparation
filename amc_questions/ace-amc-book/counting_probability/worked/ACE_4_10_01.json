@@ -1,0 +1,65 @@
+{
+  "id": "ACE_4_10_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.10.1",
+    "kind": "problem",
+    "section": "Geometric Probability",
+    "original_source": "1998 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Geometric probability",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_10_01.png",
+    "text": "Two mathematicians take a morning coffee break each day. They arrive at the cafeteria independently, at random times between $9$ a.m. and $10$ a.m., and stay for exactly $m$ minutes. The probability that either one arrives while the other is in the cafeteria is $40\\%$, and $m = a - b\\sqrt{c}$, where $a, b$, and $c$ are positive integers, and $c$ is not divisible by the square of any prime. Find $a+b+c$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$87$",
+    "accept": [
+      "87"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: draw the two arrival times as a point in a square",
+      "body": "The arrival times can be any real numbers in an hour, so there is nothing to count. Instead, let $x$ and $y$ be the two arrival times in minutes after $9$ a.m. The pair $(x, y)$ is a random point in the square $0 \\le x \\le 60$, $0 \\le y \\le 60$, and a probability is the area of the good region divided by the area of the square.",
+      "your_turn": {
+        "prompt": "What is the area of the whole square?",
+        "answer": "$60 \\cdot 60 = 3600$."
+      }
+    },
+    {
+      "title": "Describe the event as a region",
+      "body": "If $x \\le y$, the second person arrives while the first is still there exactly when $y - x \\le m$. If $y \\le x$, the condition is $x - y \\le m$. Together: $|x - y| \\le m$, a band along the diagonal of the square. Outside the band are two corner triangles, one where $y - x > m$ and one where $x - y > m$.",
+      "your_turn": {
+        "prompt": "The triangle where $y - x > m$ has its right angle at $(0, 60)$. How long are its legs, and what is the total area of the two triangles?",
+        "answer": "Each leg is $60 - m$ (from $(0, m)$ up to $(0, 60)$, and from $(0,60)$ across to $(60 - m, 60)$). Each triangle has area $\\frac{(60-m)^2}{2}$, so both together have area $(60 - m)^2$."
+      }
+    },
+    {
+      "title": "Set up the equation",
+      "body": "The band is the $40\\%$ we are told about, so the two triangles are the other $60\\%$ of the square. Careful: do not set the triangles equal to $40\\%$.\n$$(60 - m)^2 = 0.6 \\cdot 3600 = 2160$$",
+      "your_turn": {
+        "prompt": "When you take the square root, should $60 - m$ be $+\\sqrt{2160}$ or $-\\sqrt{2160}$? Why?",
+        "answer": "$+\\sqrt{2160}$, because if $m \\ge 60$ the two would always meet (probability $100\\%$, not $40\\%$). So $m < 60$ and $60 - m$ is positive."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Since $2160 = 144 \\cdot 15$, we get $60 - m = 12\\sqrt{15}$, so $m = 60 - 12\\sqrt{15}$ (about $13.5$ minutes). Here $15 = 3 \\cdot 5$ has no square factor, so $a = 60$, $b = 12$, $c = 15$ and $a + b + c = 87$. The answer is **$87$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "87",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

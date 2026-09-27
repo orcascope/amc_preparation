@@ -1,0 +1,63 @@
+{
+  "id": "ACE_4_4_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.4.4",
+    "kind": "problem",
+    "section": "Stars and Bars",
+    "original_source": "2018 AMC 10"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_4_04.png",
+    "text": "When $7$ fair standard $6$-sided dice are thrown, the probability that the sum of the numbers on the top faces is $10$ can be written as $$\\frac{n}{6^7},$$ where $n$ is a positive integer. What is $n$?",
+    "choices": { "A": "$42$", "B": "$49$", "C": "$56$", "D": "$63$", "E": "$84$" }
+  },
+  "answer": {
+    "choice": "E",
+    "value": "$84$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: $n$ is a count of outcomes",
+      "body": "Think of the dice as die $1$ to die $7$ and call their values $x_1, x_2, \\ldots, x_7$. All $6^7$ ordered outcomes are equally likely, and the denominator is already $6^7$, so $n$ is the number of lists $(x_1, \\ldots, x_7)$ with each $x_i$ from $1$ to $6$ and $x_1 + x_2 + \\cdots + x_7 = 10$.",
+      "your_turn": {
+        "prompt": "Why do we count ordered lists, so that die $1$ showing $4$ and die $2$ showing $1$ is different from the reverse?",
+        "answer": "Each of the $6^7$ equally likely outcomes is an ordered list, one value per die, so the favorable outcomes must be counted the same way."
+      }
+    },
+    {
+      "title": "Stars and bars for positive values",
+      "body": "Ignore the limit of $6$ for now. Each die shows at least $1$, so we are counting positive solutions. Picture $10$ stars in a row and place $6$ bars in different gaps between neighboring stars, which cuts the row into $7$ nonempty groups, one per die.",
+      "your_turn": {
+        "prompt": "Check the method on a small case: how many ordered ways can $3$ dice sum to $5$?",
+        "answer": "$5$ stars have $4$ gaps and we choose $2$: $\\binom{4}{2} = 6$. They are the $3$ orders of $(1,1,3)$ and the $3$ orders of $(1,2,2)$."
+      }
+    },
+    {
+      "title": "Check the upper limit",
+      "body": "Stars and bars might count lists where some $x_i$ is $7$ or more, which a die cannot show. But if one die were at least $7$, the other six dice would add at least $6$, making the total at least $13$. So no list has to be removed.",
+      "your_turn": {
+        "prompt": "What is the largest value any single die can show when the seven dice sum to $10$?",
+        "answer": "$4$, because the other six dice show at least $1$ each, and $10 - 6 = 4$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "With $10$ stars there are $9$ gaps, and we choose $6$ of them for the bars:\n$$n = \\binom{9}{6} = \\binom{9}{3} = 84.$$\nThe answer is **(E)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "E",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

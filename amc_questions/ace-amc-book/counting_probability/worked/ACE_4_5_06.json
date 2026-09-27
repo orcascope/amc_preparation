@@ -1,0 +1,67 @@
+{
+  "id": "ACE_4_5_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.5.6",
+    "kind": "problem",
+    "section": "Binomial",
+    "original_source": "2000 AIME"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Sums of binomial coefficients",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_4_5_06.png",
+    "text": "Given that $\\frac{1}{2!17!}+\\frac{1}{3!16!}+\\frac{1}{4!15!}+\\frac{1}{5!14!}+\\frac{1}{6!13!}+\\frac{1}{7!12!}+\\frac{1}{8!11!}+\\frac{1}{9!10!}=\\frac{N}{1!18!}$ find the greatest integer that is less than $\\frac{N}{100}$.",
+    "choices": null
+  },
+  "answer": { "choice": null, "value": "$137$", "accept": ["137"] },
+  "steps": [
+    {
+      "title": "Where to start: the numbers in each denominator add to 19",
+      "body": "Look at the pairs of factorials: $2 + 17$, $3 + 16$, and so on up to $9 + 10$, and also $1 + 18$ on the right, all add to $19$. That is exactly the shape of a binomial coefficient, $\\binom{19}{k} = \\frac{19!}{k!\\,(19-k)!}$. So multiply both sides of the equation by $19!$.",
+      "your_turn": {
+        "prompt": "What is $\\frac{19!}{1!\\,18!}$?",
+        "answer": "$\\binom{19}{1} = 19$."
+      }
+    },
+    {
+      "title": "Rewrite as binomial coefficients",
+      "body": "After multiplying by $19!$, each fraction $\\frac{19!}{k!\\,(19-k)!}$ on the left becomes $\\binom{19}{k}$, and the right side becomes $19N$:\n$$\\binom{19}{2} + \\binom{19}{3} + \\cdots + \\binom{19}{9} = 19N.$$",
+      "your_turn": {
+        "prompt": "Which binomial coefficient does the term $\\frac{19!}{5!\\,14!}$ become?",
+        "answer": "$\\binom{19}{5}$ (it equals $\\binom{19}{14}$ too)."
+      }
+    },
+    {
+      "title": "Use the whole row of Pascal's triangle",
+      "body": "The whole row adds to a power of two: $\\binom{19}{0} + \\binom{19}{1} + \\cdots + \\binom{19}{19} = 2^{19}$. By symmetry $\\binom{19}{k} = \\binom{19}{19-k}$, so the $20$ terms split into two equal halves, $k = 0$ to $9$ and $k = 10$ to $19$. Since $19$ is odd there is no middle term, so each half is $2^{18}$.",
+      "your_turn": {
+        "prompt": "Our sum starts at $k = 2$, not $k = 0$. What is $\\binom{19}{0} + \\binom{19}{1}$, the part we must remove from $2^{18}$?",
+        "answer": "$1 + 19 = 20$."
+      }
+    },
+    {
+      "title": "Solve for $N$",
+      "body": "So $19N = 2^{18} - 20$. Now find the number on the right and divide by $19$.",
+      "your_turn": {
+        "prompt": "Compute $2^{18} - 20$.",
+        "answer": "$2^{18} = 262144$, so $2^{18} - 20 = 262124$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Then $N = \\frac{262124}{19} = 13796$, so $\\frac{N}{100} = 137.96$. Careful: the problem asks for the greatest integer less than $\\frac{N}{100}$, so round down, not to the nearest integer. The answer is **$137$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "137",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

@@ -15,7 +15,13 @@
     "text": "The positive integers $N$ and $N^2$ both end in the same sequence of four digits $abcd$ when written in base $10$, where digit $a$ is not zero. Find the three-digit number $abc$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$937$", "accept": ["937"] },
+  "answer": {
+    "choice": null,
+    "value": "$937$",
+    "accept": [
+      "937"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: turn \"same last four digits\" into a congruence",
@@ -58,10 +64,11 @@
   "verification": {
     "book_answer": "937",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

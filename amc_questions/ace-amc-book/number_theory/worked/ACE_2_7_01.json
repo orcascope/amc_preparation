@@ -13,9 +13,18 @@
   "problem": {
     "image": "images/ACE_2_7_01.png",
     "text": "The base-nine representation of the number $N$ is $27{,}006{,}000{,}052_{\\text{nine}}$. What is the remainder when $N$ is divided by $5$?",
-    "choices": { "A": "$0$", "B": "$1$", "C": "$2$", "D": "$3$", "E": "$4$" }
+    "choices": {
+      "A": "$0$",
+      "B": "$1$",
+      "C": "$2$",
+      "D": "$3$",
+      "E": "$4$"
+    }
   },
-  "answer": { "choice": "D", "value": "$3$" },
+  "answer": {
+    "choice": "D",
+    "value": "$3$"
+  },
   "steps": [
     {
       "title": "Where to start: write $N$ as a sum of powers of $9$",
@@ -53,10 +62,11 @@
   "verification": {
     "book_answer": "D",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

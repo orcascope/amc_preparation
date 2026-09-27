@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_4_04",
+  "number": "4.4.4",
+  "kind": "problem",
+  "section": "Stars and Bars",
+  "original_source": "2018 AMC 10",
+  "topic": "counting_probability",
+  "subtopic": "Stars and bars",
+  "text": "When $7$ fair standard $6$-sided dice are thrown, the probability that the sum of the numbers on the top faces is $10$ can be written as $$\\frac{n}{6^7},$$ where $n$ is a positive integer. What is $n$?",
+  "choices": { "A": "$42$", "B": "$49$", "C": "$56$", "D": "$63$", "E": "$84$" },
+  "book_answer": "E",
+  "book_pages": [107]
+}

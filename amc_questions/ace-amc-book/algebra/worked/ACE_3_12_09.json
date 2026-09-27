@@ -1,0 +1,65 @@
+{
+  "id": "ACE_3_12_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.12.9",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2016 CMIMC Team"
+  },
+  "topic": "algebra",
+  "subtopic": "Symmetric expressions",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_12_09.png",
+    "text": "Suppose $x$, $y$, and $z$ are nonzero complex numbers such that $$(x + y + z)(x^2 + y^2 + z^2) = x^3 + y^3 + z^3$$ Compute $(x + y + z)\\left(\\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z}\\right)$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$3$",
+    "accept": [
+      "3"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: expand and cancel the cubes",
+      "body": "When you expand the left side, the products $x \\cdot x^2$, $y \\cdot y^2$ and $z \\cdot z^2$ give exactly $x^3 + y^3 + z^3$, the right side. So those cancel, and the equation really says something about the leftover mixed terms.",
+      "your_turn": {
+        "prompt": "Expand $(x + y + z)(x^2 + y^2 + z^2)$ and list the terms other than the cubes.",
+        "answer": "$x^2y + x^2z + y^2x + y^2z + z^2x + z^2y$ (six terms)."
+      }
+    },
+    {
+      "title": "What the condition says",
+      "body": "Subtracting $x^3 + y^3 + z^3$ from both sides leaves\n$$x^2y + x^2z + y^2x + y^2z + z^2x + z^2y = 0.$$\nNow turn to the expression we want. Since $x$, $y$, $z$ are nonzero, the reciprocals can be combined over the common denominator $xyz$.",
+      "your_turn": {
+        "prompt": "Write $\\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z}$ as a single fraction.",
+        "answer": "$\\frac{xy + yz + zx}{xyz}$."
+      }
+    },
+    {
+      "title": "Expand the numerator",
+      "body": "So the expression is $\\frac{(x + y + z)(xy + yz + zx)}{xyz}$. Expand the numerator one piece at a time and compare with the six-term sum above.",
+      "your_turn": {
+        "prompt": "Expand $x(xy + yz + zx)$.",
+        "answer": "$x^2y + xyz + x^2z$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Doing the same for $y$ and $z$, the numerator is the six-term sum plus three copies of $xyz$:\n$$(x + y + z)(xy + yz + zx) = (x^2y + x^2z + y^2x + y^2z + z^2x + z^2y) + 3xyz = 0 + 3xyz.$$\nSo the expression equals $\\frac{3xyz}{xyz} = 3$. The answer is **$3$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "3",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

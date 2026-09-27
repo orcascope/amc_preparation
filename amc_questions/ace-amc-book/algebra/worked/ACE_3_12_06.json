@@ -1,0 +1,73 @@
+{
+  "id": "ACE_3_12_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.12.6",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2016 CMIMC"
+  },
+  "topic": "algebra",
+  "subtopic": "Symmetric sums and AM-GM",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_12_06.png",
+    "text": "Let $a$, $b$, $c$, and $d$ be positive real numbers which satisfy the system of equations $$(a+b)(c+d) = 143,$$ $$(a+c)(b+d) = 150,$$ $$(a+d)(b+c) = 169.$$ Find the smallest possible value of $a^2 + b^2 + c^2 + d^2$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$214$",
+    "accept": [
+      "214"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: squares from a squared sum",
+      "body": "Let $S = a + b + c + d$ and let $P = ab + ac + ad + bc + bd + cd$ be the sum of all six pairwise products. Squaring $S$ gives every square once and every pairwise product twice, so\n$$a^2 + b^2 + c^2 + d^2 = S^2 - 2P.$$\nThe given equations are products of two sums, and expanding them produces exactly pairwise products, which is why this identity is the right tool.",
+      "your_turn": {
+        "prompt": "Expand $(a+b)(c+d)$.",
+        "answer": "$ac + ad + bc + bd$."
+      }
+    },
+    {
+      "title": "Add the three equations",
+      "body": "In the same way, $(a+c)(b+d) = ab + ad + bc + cd$ and $(a+d)(b+c) = ab + ac + bd + cd$. Across the three expansions, each of the six pairwise products appears exactly twice, so adding them gives $2P = 143 + 150 + 169 = 462$. So $a^2 + b^2 + c^2 + d^2 = S^2 - 462$, and we need the smallest possible $S^2$.",
+      "your_turn": {
+        "prompt": "In each given equation, the two factors add up to the same thing. What is it?",
+        "answer": "$S$. For example $(a + b) + (c + d) = a + b + c + d$."
+      }
+    },
+    {
+      "title": "Bound $S$ with AM-GM",
+      "body": "AM-GM says two positive numbers with product $Q$ have sum at least $2\\sqrt{Q}$, with equality only when the two numbers are equal. Applied to each equation this gives $S^2 \\ge 4\\cdot 143 = 572$, $S^2 \\ge 4\\cdot 150 = 600$ and $S^2 \\ge 4\\cdot 169 = 676$. All three must hold at once, so $S^2 \\ge 676$.",
+      "your_turn": {
+        "prompt": "For $S^2 = 676$ we need equality in the third bound. What does that force?",
+        "answer": "$a + d = b + c$, and since their product is $169$, both equal $13$ (so $S = 26$)."
+      }
+    },
+    {
+      "title": "Check that $S = 26$ really happens",
+      "body": "Careful: a lower bound is only the minimum if some positive $a, b, c, d$ reach it. With $S = 26$, the numbers $a + b$ and $c + d$ add to $26$ and multiply to $143$, and $a + c$ and $b + d$ add to $26$ and multiply to $150$. Choosing $a + b = 13 + \\sqrt{26}$, $a + c = 13 + \\sqrt{19}$ and $a + d = 13$ gives $a = \\tfrac{13 + \\sqrt{26} + \\sqrt{19}}{2}$, $b = \\tfrac{13 + \\sqrt{26} - \\sqrt{19}}{2}$, $c = \\tfrac{13 - \\sqrt{26} + \\sqrt{19}}{2}$, $d = \\tfrac{13 - \\sqrt{26} - \\sqrt{19}}{2}$.",
+      "your_turn": {
+        "prompt": "Why are $a + b$ and $c + d$ equal to $13 \\pm \\sqrt{26}$? And is $d$ positive?",
+        "answer": "They are the roots of $t^2 - 26t + 143 = 0$, which are $13 \\pm \\sqrt{26}$. And $\\sqrt{26} + \\sqrt{19} < 5.2 + 4.4 = 9.6 < 13$, so $d > 0$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "These positive values satisfy all three equations, since $(13 + \\sqrt{26})(13 - \\sqrt{26}) = 143$, $(13 + \\sqrt{19})(13 - \\sqrt{19}) = 150$ and $13 \\cdot 13 = 169$. So the smallest possible $S^2$ is $676$, and the smallest value of $a^2 + b^2 + c^2 + d^2$ is $676 - 462 = 214$. The answer is **$214$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "214",
+    "matches_book": true,
+    "verifier_verdict": "pending",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26"
+  }
+}

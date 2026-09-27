@@ -1,0 +1,13 @@
+{
+  "id": "ACE_4_10_01",
+  "number": "4.10.1",
+  "kind": "problem",
+  "section": "Geometric Probability",
+  "original_source": "1998 AIME",
+  "topic": "counting_probability",
+  "subtopic": "Geometric probability",
+  "text": "Two mathematicians take a morning coffee break each day. They arrive at the cafeteria independently, at random times between $9$ a.m. and $10$ a.m., and stay for exactly $m$ minutes. The probability that either one arrives while the other is in the cafeteria is $40\\%$, and $m = a - b\\sqrt{c}$, where $a, b$, and $c$ are positive integers, and $c$ is not divisible by the square of any prime. Find $a+b+c$.",
+  "choices": null,
+  "book_answer": "87",
+  "book_pages": [124, 125]
+}
