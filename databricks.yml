@@ -18,18 +18,53 @@ resources:
           - name: LAKEBASE_ENDPOINT
             value: ${var.lakebase_endpoint}
           - name: DATABASE_URL
-            value: ${var.database_url}            
+            value: ${var.database_url}
+
+  jobs:
+    # Loads amc_questions/ worked solutions into Lakebase. Not run automatically —
+    # trigger by hand: databricks bundle run load_content -t prod [-- --all | <folder> ...]
+    # Serverless compute (no new_cluster): falls back to the workspace's Default
+    # Automated Compute, so there's nothing to pin here.
+    load_content:
+      name: amc-prep-load-content
+      tasks:
+        - task_key: load
+          spark_python_task:
+            python_file: ./run_content_loader.py
+            # task parameters (argv) are the one mechanism guaranteed to reach a job
+            # task on any compute type; run_content_loader.py turns these into the
+            # env vars app/db.py expects. Everything after them (here just --all)
+            # forwards straight to app/content_loader.py's own CLI.
+            parameters:
+              - "--database-url"
+              - ${var.database_url}
+              - "--lakebase-endpoint"
+              - ${var.lakebase_endpoint}
+              - "--all"
+          environment_key: default
+      environments:
+        - environment_key: default
+          spec:
+            environment_version: "2"
+            dependencies:
+              - "psycopg[binary]"
+              - "databricks-sdk>=0.142.0"
+              - "python-dotenv"
 
 targets:
   dev:
     mode: development
     default: true
+    workspace:
+      root_path: /Workspace/Users/ars.1001@gmail.com/.bundle/${bundle.name}/${bundle.target}
     variables:
       lakebase_endpoint: projects/hobby/branches/dev/endpoints/primary
       database_url: 'postgresql://ars.1001%40gmail.com@ep-orange-glitter-d8rpfph8.database.us-east-2.cloud.databricks.com/databricks_postgres?sslmode=require'
 
   prod:
     mode: production
+    workspace:
+      root_path: /Workspace/Users/ars.1001@gmail.com/.bundle/${bundle.name}/${bundle.target}
     variables:
       lakebase_endpoint: projects/hobby/branches/production/endpoints/primary
       database_url: 'postgresql://ars.1001%40gmail.com@ep-weathered-dew-d8vbfjbw.database.us-east-2.cloud.databricks.com/databricks_postgres?sslmode=require'

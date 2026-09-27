@@ -32,8 +32,13 @@ TOKEN_REUSE_SECONDS = 45 * 60
 # DATABRICKS_APP_PORT is set only inside a running Databricks App. (DATABRICKS_HOST
 # is not a safe signal: the Databricks CLI often sets it on developers' machines.)
 ON_DATABRICKS_APP = bool(os.environ.get("DATABRICKS_APP_PORT"))
+# USE_LAKEBASE is set explicitly (by databricks.yml's load_content job — there is no
+# reliable ambient signal for "running as a Databricks job": DATABRICKS_RUNTIME_VERSION
+# is not set on serverless task compute) so app/content_loader.py can reach Lakebase
+# the same way the App does, when run as that job.
+ON_DATABRICKS_JOB = bool(os.environ.get("USE_LAKEBASE"))
 
-if not ON_DATABRICKS_APP:
+if not (ON_DATABRICKS_APP or ON_DATABRICKS_JOB):
     load_dotenv(ROOT / ".env")
 
 _schema_ready = False
@@ -80,12 +85,12 @@ def lakebase_connect():
 def connect():
     """A new connection; the schema is created the first time in each process."""
     global _schema_ready
-    if ON_DATABRICKS_APP:
+    if ON_DATABRICKS_APP or ON_DATABRICKS_JOB:
         conn = lakebase_connect()
     else:
         conn = psycopg.connect(database_url(), row_factory=dict_row, options=SEARCH_PATH)
-    if not _schema_ready:
-        conn.execute((APP_DIR / "schema.sql").read_text(encoding="utf-8"))
-        conn.commit()
-        _schema_ready = True
+    # if not _schema_ready:
+    #     conn.execute((APP_DIR / "schema.sql").read_text(encoding="utf-8"))
+    #     conn.commit()
+    #     _schema_ready = True
     return conn
