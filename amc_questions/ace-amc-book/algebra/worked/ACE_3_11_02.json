@@ -13,7 +13,13 @@
   "problem": {
     "image": "images/ACE_3_11_02.png",
     "text": "A sequence of numbers is defined recursively by $a_1 = 1$, $a_2 = \\frac{3}{7}$, and $$a_n = \\frac{a_{n-2}\\cdot a_{n-1}}{2a_{n-2} - a_{n-1}}$$ for all $n \\geq 3$ Then $a_{2019}$ can be written as $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. What is $p+q$?",
-    "choices": { "A": "$2020$", "B": "$4039$", "C": "$6057$", "D": "$6061$", "E": "$8078$" }
+    "choices": {
+      "A": "$2020$",
+      "B": "$4039$",
+      "C": "$6057$",
+      "D": "$6061$",
+      "E": "$8078$"
+    }
   },
   "answer": {
     "choice": "E",
@@ -54,10 +60,11 @@
   "verification": {
     "book_answer": "E",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

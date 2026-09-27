@@ -35,7 +35,7 @@
     },
     {
       "title": "Tally the letters of each word",
-      "body": "SANDWICH has $8$ letters: S, A, N, D, W, I, C, H. They are all different, so nothing needs to be divided out and the count is just $8!$. SYNONYMS also has $8$ letters, but some of them repeat. Careful: check every letter, not just the first repeat you notice.",
+      "body": "SANDWICH has $8$ letters: S, A, N, D, W, I, C, H. They are all different, so nothing needs to be divided out. SYNONYMS also has $8$ letters, but some of them repeat. Careful: check every letter, not just the first repeat you notice.",
       "your_turn": {
         "prompt": "Which letters of SYNONYMS repeat, and how many times each?",
         "answer": "S twice, Y twice, N twice; O and M once each ($2+2+2+1+1 = 8$)."

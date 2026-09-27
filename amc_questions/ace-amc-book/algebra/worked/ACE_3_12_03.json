@@ -49,7 +49,7 @@
     },
     {
       "title": "Put it together",
-      "body": "So $a = 1$, $2$ or $16$. Careful: we multiplied by $16 - 25a$, which is zero only at $a = \\tfrac{16}{25}$, so none of these is lost, and all three are positive, so each gives a real $x$. From $2^x = 1, 2, 16$ we get $x = 0, 1, 4$, and their sum is $0 + 1 + 4 = 5$. The answer is **$5$**.",
+      "body": "So $a = 1$, $2$ or $16$. Careful: we multiplied by $16 - 25a$, which can create a fake solution if a root makes that denominator zero. That happens only at $a = \\tfrac{16}{25}$, which is not one of our roots, so all three really solve the original equation. All three are also positive, so each gives a real $x$. From $2^x = 1, 2, 16$ we get $x = 0, 1, 4$, and their sum is $0 + 1 + 4 = 5$. The answer is **$5$**.",
       "reveals_answer": true
     }
   ],
