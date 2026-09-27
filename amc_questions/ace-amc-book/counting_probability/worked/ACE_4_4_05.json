@@ -13,9 +13,18 @@
   "problem": {
     "image": "images/ACE_4_4_05.png",
     "text": "For some particular value of $N$, when $(a+b+c+d+1)^N$ is expanded and like terms are combined, the resulting expression contains exactly $1001$ terms that include all four variables $a, b, c,$ and $d$, each to some positive power. What is $N$?",
-    "choices": { "A": "$9$", "B": "$14$", "C": "$16$", "D": "$17$", "E": "$19$" }
+    "choices": {
+      "A": "$9$",
+      "B": "$14$",
+      "C": "$16$",
+      "D": "$17$",
+      "E": "$19$"
+    }
   },
-  "answer": { "choice": "B", "value": "$14$" },
+  "answer": {
+    "choice": "B",
+    "value": "$14$"
+  },
   "steps": [
     {
       "title": "Where to start: a term is a list of exponents",
@@ -51,10 +60,11 @@
   "verification": {
     "book_answer": "B",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

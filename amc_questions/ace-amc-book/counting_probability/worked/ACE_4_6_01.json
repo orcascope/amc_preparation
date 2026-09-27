@@ -15,7 +15,13 @@
     "text": "Bob wants to climb $8$ stairs. He can climb $1$ or $2$ stairs at a time. How many ways are there for him to climb the $8$ stairs?",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$34$", "accept": ["34"] },
+  "answer": {
+    "choice": null,
+    "value": "$34$",
+    "accept": [
+      "34"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: look at Bob's last move",
@@ -42,10 +48,11 @@
   "verification": {
     "book_answer": "34",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

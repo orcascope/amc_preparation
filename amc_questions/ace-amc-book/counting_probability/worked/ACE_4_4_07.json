@@ -15,7 +15,13 @@
     "text": "A gardener plants three maple trees, four oaks, and five birch trees in a row. He plants them in random order, each arrangement being equally likely. Let $\\frac{m}{n}$ in lowest terms be the probability that no two birch trees are next to one another. Find $m+n$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$106$", "accept": ["106"] },
+  "answer": {
+    "choice": null,
+    "value": "$106$",
+    "accept": [
+      "106"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: only the birch spots matter",
@@ -50,10 +56,11 @@
   "verification": {
     "book_answer": "106",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

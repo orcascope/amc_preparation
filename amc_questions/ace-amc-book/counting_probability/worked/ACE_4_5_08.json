@@ -15,7 +15,13 @@
     "text": "Find the sum of all real numbers $x$ such that $5x^4-10x^3+10x^2-5x-11=0$",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$1$", "accept": ["1"] },
+  "answer": {
+    "choice": null,
+    "value": "$1$",
+    "accept": [
+      "1"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: spot a row of Pascal's triangle",
@@ -50,10 +56,11 @@
   "verification": {
     "book_answer": "1",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

@@ -547,6 +547,396 @@
         30,
         31
       ]
+    },
+    {
+      "id": "ACE_2_7_01",
+      "number": "2.7.1",
+      "kind": "problem",
+      "section": "Modular Arithmetic Introduction",
+      "original_source": "2021 AMC 12",
+      "topic": "number_theory",
+      "subtopic": "Modular arithmetic",
+      "text": "The base-nine representation of the number $N$ is $27{,}006{,}000{,}052_{\\text{nine}}$. What is the remainder when $N$ is divided by $5$?",
+      "choices": {
+        "A": "$0$",
+        "B": "$1$",
+        "C": "$2$",
+        "D": "$3$",
+        "E": "$4$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        32
+      ]
+    },
+    {
+      "id": "ACE_2_7_02",
+      "number": "2.7.2",
+      "kind": "problem",
+      "section": "Modular Arithmetic Introduction",
+      "original_source": "2010 AIME",
+      "topic": "number_theory",
+      "subtopic": "Modular arithmetic",
+      "text": "Find the remainder when $9 \\times 99 \\times 999 \\times \\cdots \\times \\underbrace{99\\cdots9}_{\\text{999 9's}}$ is divided by $1000$.",
+      "choices": null,
+      "book_answer": "109",
+      "book_pages": [
+        32
+      ]
+    },
+    {
+      "id": "ACE_2_7_03",
+      "number": "2.7.3",
+      "kind": "problem",
+      "section": "Modular Arithmetic Introduction",
+      "original_source": "2010 AMC",
+      "topic": "number_theory",
+      "subtopic": "Modular arithmetic and probability",
+      "text": "Positive integers $a$, $b$, and $c$ are randomly and independently selected with replacement from the set $\\{1, 2, 3, \\dots, 2010\\}$. What is the probability that $abc + ab + a$ is divisible by $3$?",
+      "choices": {
+        "A": "$\\frac{1}{3}$",
+        "B": "$\\frac{29}{81}$",
+        "C": "$\\frac{31}{81}$",
+        "D": "$\\frac{11}{27}$",
+        "E": "$\\frac{13}{27}$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "ACE_2_8_01",
+      "number": "2.8.1",
+      "kind": "example",
+      "section": "Fermat's Little Theorem and Euler's Totient Function",
+      "original_source": null,
+      "topic": "number_theory",
+      "subtopic": "Euler's totient function",
+      "text": "How many numbers are relatively prime to $48$?",
+      "choices": null,
+      "book_answer": "16",
+      "book_pages": [
+        33
+      ]
+    },
+    {
+      "id": "ACE_2_8_04",
+      "number": "2.8.4",
+      "kind": "problem",
+      "section": "Fermat's Little Theorem and Euler's Totient Function",
+      "original_source": "2010 PUMAC",
+      "topic": "number_theory",
+      "subtopic": "Euler's totient function",
+      "text": "Find the largest positive integer $n$ such that $n\\phi(n)$ is a perfect square. ($\\phi(n)$ is the number of integers $k$, $1 \\le k \\le n$ that are relatively prime to $n$)",
+      "choices": null,
+      "book_answer": "1",
+      "book_pages": [
+        34
+      ]
+    },
+    {
+      "id": "ACE_2_8_05",
+      "number": "2.8.5",
+      "kind": "problem",
+      "section": "Fermat's Little Theorem and Euler's Totient Function",
+      "original_source": "2017 AMC 10",
+      "topic": "number_theory",
+      "subtopic": "Fermat's little theorem",
+      "text": "An integer $N$ is selected at random in the range $1 \\le N \\le 2020$. What is the probability that the remainder when $N^{16}$ is divided by $5$ is $1$?",
+      "choices": {
+        "A": "$\\frac{1}{5}$",
+        "B": "$\\frac{2}{5}$",
+        "C": "$\\frac{3}{5}$",
+        "D": "$\\frac{4}{5}$",
+        "E": "$1$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        35
+      ]
+    },
+    {
+      "id": "ACE_2_9_02",
+      "number": "2.9.2",
+      "kind": "problem",
+      "section": "Chinese Remainder Theorem",
+      "original_source": "2017 AMC",
+      "topic": "number_theory",
+      "subtopic": "Chinese Remainder Theorem",
+      "text": "Let $N = 123456789101112\\dots4344$ be the $79$-digit number that is formed by writing the integers from $1$ to $44$ in order, one after the other. What is the remainder when $N$ is divided by $45$?",
+      "choices": {
+        "A": "$1$",
+        "B": "$4$",
+        "C": "$9$",
+        "D": "$18$",
+        "E": "$44$"
+      },
+      "book_answer": "C",
+      "book_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "id": "ACE_2_9_03",
+      "number": "2.9.3",
+      "kind": "problem",
+      "section": "Chinese Remainder Theorem",
+      "original_source": "2002 AIME",
+      "topic": "number_theory",
+      "subtopic": "Chinese Remainder Theorem",
+      "text": "It is known that, for all positive integers $k$, $1^2 + 2^2 + 3^2 + \\dots + k^2 = \\frac{k(k+1)(2k+1)}{6}$. Find the smallest positive integer $k$ such that $1^2 + 2^2 + 3^2 + \\dots + k^2$ is a multiple of $200$.",
+      "choices": null,
+      "book_answer": "112",
+      "book_pages": [
+        37
+      ]
+    },
+    {
+      "id": "ACE_2_9_04",
+      "number": "2.9.4",
+      "kind": "problem",
+      "section": "Chinese Remainder Theorem",
+      "original_source": "2019 BMT",
+      "topic": "number_theory",
+      "subtopic": "Chinese Remainder Theorem",
+      "text": "Let $2^{1110} \\equiv n \\pmod{1111}$ with $0 \\le n \\le 1111$. Compute $n$.",
+      "choices": null,
+      "book_answer": "1024",
+      "book_pages": [
+        37,
+        38
+      ]
+    },
+    {
+      "id": "ACE_2_9_05",
+      "number": "2.9.5",
+      "kind": "problem",
+      "section": "Chinese Remainder Theorem",
+      "original_source": "2014 AIME",
+      "topic": "number_theory",
+      "subtopic": "Chinese Remainder Theorem",
+      "text": "The positive integers $N$ and $N^2$ both end in the same sequence of four digits $abcd$ when written in base $10$, where digit $a$ is not zero. Find the three-digit number $abc$.",
+      "choices": null,
+      "book_answer": "937",
+      "book_pages": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "ACE_2_10_01",
+      "number": "2.10.1",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2013 AMC 10",
+      "topic": "number_theory",
+      "subtopic": "Base representation and divisors",
+      "text": "In base $10$, the number $2013$ ends in the digit $3$. In base $9$, on the other hand, the same number is written as $(2676)_9$ and ends in the digit $6$. For how many positive integers $b$ does the base-$b$-representation of $2013$ end in the digit $3$?",
+      "choices": {
+        "A": "$6$",
+        "B": "$9$",
+        "C": "$13$",
+        "D": "$16$",
+        "E": "$18$"
+      },
+      "book_answer": "C",
+      "book_pages": [
+        39
+      ]
+    },
+    {
+      "id": "ACE_2_10_02",
+      "number": "2.10.2",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2012 UNCO",
+      "topic": "number_theory",
+      "subtopic": "Fermat's little theorem",
+      "text": "What is the remainder when $12^{2011}+11^{2012}$ is divided by seven?",
+      "choices": null,
+      "book_answer": "0",
+      "book_pages": [
+        39,
+        40
+      ]
+    },
+    {
+      "id": "ACE_2_10_03",
+      "number": "2.10.3",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2021 PUMAC",
+      "topic": "number_theory",
+      "subtopic": "Smallest divisors",
+      "text": "The smallest three positive proper divisors of an integer $n$ are $d_1 < d_2 < d_3$ so that $d_1 + d_2 + d_3 = 57$. Find the sum of the possible values of $d_2$.",
+      "choices": null,
+      "book_answer": "42",
+      "book_pages": [
+        40
+      ]
+    },
+    {
+      "id": "ACE_2_10_05",
+      "number": "2.10.5",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2018 AMC 10",
+      "topic": "number_theory",
+      "subtopic": "Units digits of powers",
+      "text": "A number $m$ is randomly selected from the set $\\{11, 13, 15, 17, 19\\}$, and a number $n$ is randomly selected from $\\{1999, 2000, 2001, \\ldots, 2018\\}$. What is the probability that $m^n$ has a units digit of $1$?",
+      "choices": {
+        "A": "$\\frac{1}{5}$",
+        "B": "$\\frac{1}{4}$",
+        "C": "$\\frac{3}{10}$",
+        "D": "$\\frac{7}{20}$",
+        "E": "$\\frac{2}{5}$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        41,
+        42
+      ]
+    },
+    {
+      "id": "ACE_2_10_06",
+      "number": "2.10.6",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2015 PUMaC",
+      "topic": "number_theory",
+      "subtopic": "LCM and GCD",
+      "text": "What is the sum of all positive integers $n$ such that $\\text{lcm}(2n, n^2) = 14n - 24$?",
+      "choices": null,
+      "book_answer": "17",
+      "book_pages": [
+        42,
+        43
+      ]
+    },
+    {
+      "id": "ACE_2_10_07",
+      "number": "2.10.7",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2012 PUMAC",
+      "topic": "number_theory",
+      "subtopic": "Chinese Remainder Theorem",
+      "text": "Albert has a very large bag of candies and he wants to share all of it with his friends. At first, he splits the candies evenly amongst his $20$ friends and himself and he finds that there are five left over. Ante arrives, and they redistribute the candies evenly again. This time, there are three left over. If the bag contains over $500$ candies, what is the fewest number of candies the bag can contain?",
+      "choices": null,
+      "book_answer": "509",
+      "book_pages": [
+        43
+      ]
+    },
+    {
+      "id": "ACE_2_10_10",
+      "number": "2.10.10",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2010 AIME",
+      "topic": "number_theory",
+      "subtopic": "Divisibility rules",
+      "text": "Let $N$ be the greatest integer multiple of $36$ all of whose digits are even and no two of whose digits are the same. Find the remainder when $N$ is divided by $1000$.",
+      "choices": null,
+      "book_answer": "640",
+      "book_pages": [
+        44
+      ]
+    },
+    {
+      "id": "ACE_2_10_12",
+      "number": "2.10.12",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2018 SMT",
+      "topic": "number_theory",
+      "subtopic": "Sum of cubes factoring",
+      "text": "Positive integer $n$ has the property such that $n-64$ is a positive perfect cube. Suppose that $n$ is divisible by $37$. What is the smallest possible value of $n$?",
+      "choices": null,
+      "book_answer": "407",
+      "book_pages": [
+        46
+      ]
+    },
+    {
+      "id": "ACE_2_10_13",
+      "number": "2.10.13",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2018 HMMT",
+      "topic": "number_theory",
+      "subtopic": "Divisibility by 9 and counting",
+      "text": "Find the number of eight-digit positive integers that are multiples of $9$ and have all distinct digits.",
+      "choices": null,
+      "book_answer": "181440",
+      "book_pages": [
+        46
+      ]
+    },
+    {
+      "id": "ACE_2_10_14",
+      "number": "2.10.14",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2018 HMMT",
+      "topic": "number_theory",
+      "subtopic": "Perfect cubes",
+      "text": "What is the smallest positive integer $n$ such that $2016n$ is a perfect cube?",
+      "choices": null,
+      "book_answer": "294",
+      "book_pages": [
+        46,
+        47
+      ]
+    },
+    {
+      "id": "ACE_2_10_15",
+      "number": "2.10.15",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2022 SMT",
+      "topic": "number_theory",
+      "subtopic": "Euler's theorem and CRT",
+      "text": "What are the last two digits of $2022^{2022^{2022}}$?",
+      "choices": null,
+      "book_answer": "56",
+      "book_pages": [
+        47
+      ]
+    },
+    {
+      "id": "ACE_2_10_16",
+      "number": "2.10.16",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2011 CHMMC",
+      "topic": "number_theory",
+      "subtopic": "Digit equations",
+      "text": "Digits $H, M,$ and $C$ satisfy the following relations where $ABC$ denotes the number whose digits in base $10$ are $A, B,$ and $C$.\n$$\\overline{H} \\times \\overline{H} = \\overline{M} \\times \\overline{C} + 1$$\n$$\\overline{HH} \\times \\overline{H} = \\overline{MC} \\times \\overline{C} + 1$$\n$$\\overline{HHH} \\times \\overline{H} = \\overline{MCC} \\times \\overline{C} + 1$$\nFind $\\overline{HMC}$.",
+      "choices": null,
+      "book_answer": "435",
+      "book_pages": [
+        48
+      ]
+    },
+    {
+      "id": "ACE_2_10_17",
+      "number": "2.10.17",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2022 PUMAC",
+      "topic": "number_theory",
+      "subtopic": "Counting factorizations",
+      "text": "Given $k \\geq 1$, let $p_k$ denote the $k$-th smallest prime number. If $N$ is the number of ordered $4$-tuples $(a, b, c, d)$ of positive integers satisfying $abcd = \\prod_{k=1}^{2023} p_k$ with $a < b$ and $c < d$, find $N \\bmod 1000$.",
+      "choices": null,
+      "book_answer": "112",
+      "book_pages": [
+        48,
+        49
+      ]
     }
   ]
 }

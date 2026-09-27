@@ -15,7 +15,14 @@
     "text": "A club consisting of $11$ men and $12$ women needs to choose a committee from among its members so that the number of women on the committee is one more than the number of men on the committee. The committee could have as few as $1$ member or as many as $23$ members. Let $N$ be the number of such committees that can be formed. Find the sum of the prime numbers that divide $N$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$81$", "accept": ["81", "081"] },
+  "answer": {
+    "choice": null,
+    "value": "$81$",
+    "accept": [
+      "81",
+      "081"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: split into cases by the number of women",
@@ -58,10 +65,11 @@
   "verification": {
     "book_answer": "81",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

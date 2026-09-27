@@ -15,7 +15,13 @@
     "text": "Let $S$ be the set of all $1000$ element subsets of the set $1, 2, 3, \\ldots, 2018$. What is the expected value of the minimum element of a set chosen uniformly at random from $S$?",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$\\frac{2019}{1001}$", "accept": ["2019/1001"] },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{2019}{1001}$",
+    "accept": [
+      "2019/1001"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: count the subsets with each minimum",
@@ -58,10 +64,11 @@
   "verification": {
     "book_answer": "2019/1001",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

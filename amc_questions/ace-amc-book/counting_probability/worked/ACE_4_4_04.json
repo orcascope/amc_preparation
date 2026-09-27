@@ -13,7 +13,13 @@
   "problem": {
     "image": "images/ACE_4_4_04.png",
     "text": "When $7$ fair standard $6$-sided dice are thrown, the probability that the sum of the numbers on the top faces is $10$ can be written as $$\\frac{n}{6^7},$$ where $n$ is a positive integer. What is $n$?",
-    "choices": { "A": "$42$", "B": "$49$", "C": "$56$", "D": "$63$", "E": "$84$" }
+    "choices": {
+      "A": "$42$",
+      "B": "$49$",
+      "C": "$56$",
+      "D": "$63$",
+      "E": "$84$"
+    }
   },
   "answer": {
     "choice": "E",
@@ -54,10 +60,11 @@
   "verification": {
     "book_answer": "E",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }
