@@ -141,7 +141,10 @@ Put the relevant warnings in the tutor prompt up front.
 
 Run everything from the repository root. `app` and `tools` are packages, so
 scripts that import the app use `python -m` (the cropping and assembling
-scripts can still be run directly).
+scripts can still be run directly). The importer's code is in
+`app/import_worked.py`, because the Databricks app runs it at startup and
+`tools/` is not deployed. `tools.import_worked` only forwards to it. Change the
+importer only in `app/`.
 
 ```
 python tools/assemble_book.py <topic>        # book only: statements/ACE_<topic>.json + answer_key.json

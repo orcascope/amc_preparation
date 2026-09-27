@@ -1,0 +1,74 @@
+{
+  "id": "ACE_5_3_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.3.7",
+    "kind": "problem",
+    "section": "Special Triangles",
+    "original_source": "2001 AIME"
+  },
+  "topic": "geometry",
+  "subtopic": "Angle bisector and special triangles",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_5_3_07.png",
+    "text": "In triangle $ABC$, angles $A$ and $B$ measure $60$ degrees and $45$ degrees, respectively. The bisector of angle $A$ intersects $\\overline{BC}$ at $T$, and $AT = 24$. The area of triangle $ABC$ can be written in the form $a + b\\sqrt{c}$, where $a$, $b$, and $c$ are positive integers, and $c$ is not divisible by the square of any prime. Find $a + b + c$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$291$",
+    "accept": [
+      "291"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the bisector makes special angles",
+      "body": "Bisecting the $60^\\circ$ angle at $A$ gives two $30^\\circ$ angles, and $\\angle B = 45^\\circ$. Angles of $30^\\circ$ and $45^\\circ$ are the clue to cut the figure into $30$-$60$-$90$ and $45$-$45$-$90$ triangles, where the known length $AT = 24$ spreads to the other sides. So drop a perpendicular from $T$ to $AB$, meeting it at $H$.",
+      "your_turn": {
+        "prompt": "What are $\\angle TAB$ and $\\angle C$?",
+        "answer": "$\\angle TAB = 30^\\circ$ (half of $60^\\circ$), and $\\angle C = 180^\\circ - 60^\\circ - 45^\\circ = 75^\\circ$."
+      }
+    },
+    {
+      "title": "Triangle $AHT$ is 30-60-90",
+      "body": "Triangle $AHT$ has a right angle at $H$ and a $30^\\circ$ angle at $A$, and its hypotenuse is $AT = 24$. The sides of a $30$-$60$-$90$ triangle are in the ratio $1 : \\sqrt{3} : 2$.",
+      "your_turn": {
+        "prompt": "Find $HT$ and $AH$.",
+        "answer": "$HT = 12$ (opposite $30^\\circ$, half the hypotenuse) and $AH = 12\\sqrt{3}$."
+      }
+    },
+    {
+      "title": "Triangle $THB$ is 45-45-90",
+      "body": "Triangle $THB$ has a right angle at $H$ and a $45^\\circ$ angle at $B$, so it is isosceles and $HB = HT$. This gives the full base $AB = AH + HB$.",
+      "your_turn": {
+        "prompt": "Find $AB$.",
+        "answer": "$HB = 12$, so $AB = 12\\sqrt{3} + 12$."
+      }
+    },
+    {
+      "title": "Find side $AC$",
+      "body": "To get the height of $ABC$ we need another side. Look at triangle $ATC$: it has $\\angle CAT = 30^\\circ$ and $\\angle C = 75^\\circ$.",
+      "your_turn": {
+        "prompt": "Find $\\angle ATC$. What does it tell you about $AC$?",
+        "answer": "$\\angle ATC = 180^\\circ - 30^\\circ - 75^\\circ = 75^\\circ = \\angle C$, so triangle $ATC$ is isosceles with $AC = AT = 24$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Drop the altitude from $C$ to $AB$, meeting it at $M$. Triangle $ACM$ has a right angle at $M$ and $\\angle A = 60^\\circ$, so it is $30$-$60$-$90$ with hypotenuse $24$, and $CM = 12\\sqrt{3}$. Then\n$$[ABC] = \\frac{1}{2}\\cdot 12\\sqrt{3}\\cdot(12\\sqrt{3}+12) = 216 + 72\\sqrt{3}.$$ Here $c = 3$ has no square factor, so $a = 216$, $b = 72$, $c = 3$, and $a + b + c = 291$. The answer is **$291$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "291",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

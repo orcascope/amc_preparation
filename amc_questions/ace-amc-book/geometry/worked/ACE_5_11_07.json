@@ -1,0 +1,72 @@
+{
+  "id": "ACE_5_11_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.7",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2014 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Rectangular box diagonals",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_07.png",
+    "text": "A rectangular box has a total surface area of $94$ square inches. The sum of the lengths of all its edges is $48$ inches. What is the sum of the lengths in inches of all of its interior diagonals?",
+    "choices": {
+      "A": "$8\\sqrt{3}$",
+      "B": "$10\\sqrt{2}$",
+      "C": "$16\\sqrt{3}$",
+      "D": "$20\\sqrt{2}$",
+      "E": "$40\\sqrt{2}$"
+    }
+  },
+  "answer": {
+    "choice": "D",
+    "value": "$20\\sqrt{2}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: name the three dimensions",
+      "body": "The box is described only by two totals, surface area and edge length, so call its dimensions $x$, $y$, $z$ and turn each total into an equation. There are three unknowns and only two equations, so do not try to find $x$, $y$, $z$ themselves; look for a combination of them that the equations do pin down.",
+      "your_turn": {
+        "prompt": "Write the surface area and the total edge length in terms of $x$, $y$, $z$, and simplify both equations.",
+        "answer": "$2(xy + yz + zx) = 94$ gives $xy + yz + zx = 47$. The box has $12$ edges, four of each length, so $4(x + y + z) = 48$ gives $x + y + z = 12$."
+      }
+    },
+    {
+      "title": "What the diagonals need",
+      "body": "An interior diagonal joins two opposite corners through the inside of the box. Each one has length $\\sqrt{x^2 + y^2 + z^2}$ (the Pythagorean theorem used twice), so all of them are equal, and we only need $x^2 + y^2 + z^2$ and the number of diagonals.",
+      "your_turn": {
+        "prompt": "How many interior diagonals does a box have?",
+        "answer": "$4$. Each of the $8$ corners has exactly one opposite corner, and each diagonal uses two corners, so $8 \\div 2 = 4$."
+      }
+    },
+    {
+      "title": "Find $x^2+y^2+z^2$ without finding $x, y, z$",
+      "body": "Squaring the sum gives the squares plus twice the pairwise products:\n$$(x+y+z)^2 = x^2 + y^2 + z^2 + 2(xy + yz + zx).$$\nBoth $x + y + z$ and $xy + yz + zx$ are known from step 1.",
+      "your_turn": {
+        "prompt": "Compute $x^2 + y^2 + z^2$.",
+        "answer": "$12^2 - 2\\cdot 47 = 144 - 94 = 50$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Each diagonal has length $\\sqrt{50} = 5\\sqrt{2}$, and there are $4$ of them, so the sum is $4\\cdot 5\\sqrt{2} = 20\\sqrt{2}$. Careful: count each diagonal once, not once from each end. The answer is **(D)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "This counts $8$ diagonals, one from each corner, so every diagonal is counted twice. There are only $4$, giving $4\\cdot 5\\sqrt{2}$, not $8\\cdot 5\\sqrt{2}$."
+  },
+  "verification": {
+    "book_answer": "D",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

@@ -1,0 +1,691 @@
+{
+  "book": "ACE The AMC 10 and AMC 12",
+  "topic": "counting_probability",
+  "items": [
+    {
+      "id": "ACE_4_1_03",
+      "number": "4.1.3",
+      "kind": "example",
+      "section": "Basic Combinatorics Principles",
+      "original_source": null,
+      "topic": "counting_probability",
+      "subtopic": "Arrangements with repeated letters",
+      "text": "a. How many ways are there to rearrange the letters of the word SANDWICH?\n\nb. How many ways are there to rearrange the letters of the word SYNONYMS?",
+      "choices": null,
+      "book_answer": "40320, 5040",
+      "book_pages": [
+        97,
+        98
+      ]
+    },
+    {
+      "id": "ACE_4_1_04",
+      "number": "4.1.4",
+      "kind": "problem",
+      "section": "Basic Combinatorics Principles",
+      "original_source": "2007 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Casework on repeated characters",
+      "text": "A mathematical organization is producing a set of commemorative license plates. Each plate contains a sequence of five characters chosen from the four letters in AIME and the four digits in $2007$. No character may appear in a sequence more times than it appears among the four letters in AIME or the four digits in $2007$. A set of plates in which each possible sequence appears exactly once contains $N$ license plates. Find $\\frac{N}{10}$.",
+      "choices": null,
+      "book_answer": "372",
+      "book_pages": [
+        98
+      ]
+    },
+    {
+      "id": "ACE_4_1_05",
+      "number": "4.1.5",
+      "kind": "problem",
+      "section": "Basic Combinatorics Principles",
+      "original_source": "2006 AMC 10",
+      "topic": "counting_probability",
+      "subtopic": "Complementary counting",
+      "text": "How many four-digit positive integers have at least one digit that is a $2$ or a $3$?",
+      "choices": {
+        "A": "$2439$",
+        "B": "$4096$",
+        "C": "$4903$",
+        "D": "$4904$",
+        "E": "$5416$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        98,
+        99
+      ]
+    },
+    {
+      "id": "ACE_4_1_06",
+      "number": "4.1.6",
+      "kind": "problem",
+      "section": "Basic Combinatorics Principles",
+      "original_source": "2012 SMT",
+      "topic": "counting_probability",
+      "subtopic": "Casework with binomial coefficients",
+      "text": "How many ordered sequences of $1$'s and $3$'s sum to $16$? (Examples of such sequences are $1, 3, 3, 3, 3, 3$ and $1, 3, 1, 3, 1, 3, 1, 3$.)",
+      "choices": null,
+      "book_answer": "277",
+      "book_pages": [
+        99
+      ]
+    },
+    {
+      "id": "ACE_4_1_07",
+      "number": "4.1.7",
+      "kind": "problem",
+      "section": "Basic Combinatorics Principles",
+      "original_source": "2015 MMATHS",
+      "topic": "counting_probability",
+      "subtopic": "Subsets with an even sum",
+      "text": "Define the sum of a finite set of integers to be the sum of the elements of the set. Let $D$ be the set of positive divisors of $700$. How many nonempty subsets of $D$ have an even sum? (Simplify as reasonably as possible)",
+      "choices": null,
+      "book_answer": "131071",
+      "book_pages": [
+        99,
+        100
+      ]
+    },
+    {
+      "id": "ACE_4_1_08",
+      "number": "4.1.8",
+      "kind": "problem",
+      "section": "Basic Combinatorics Principles",
+      "original_source": "2017 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Complementary counting",
+      "text": "Find the number of subsets of $\\{1,2,3,4,5,6,7,8\\}$ that are subsets of neither $\\{1,2,3,4,5\\}$ nor $\\{4,5,6,7,8\\}$.",
+      "choices": null,
+      "book_answer": "196",
+      "book_pages": [
+        100
+      ]
+    },
+    {
+      "id": "ACE_4_1_09",
+      "number": "4.1.9",
+      "kind": "problem",
+      "section": "Basic Combinatorics Principles",
+      "original_source": "2019 CMC 10",
+      "topic": "counting_probability",
+      "subtopic": "Probability with parity",
+      "text": "Let $a, b, c, d$ be four not necessarily distinct integers chosen from the set $0, 1, \\dots, 2019$. What is the probability that $(a+b)(c+d) + (a+c)(b+d) + (a+d)(b+c)$ is divisible by $4$?",
+      "choices": null,
+      "book_answer": "3/8",
+      "book_pages": [
+        100,
+        101
+      ]
+    },
+    {
+      "id": "ACE_4_1_10",
+      "number": "4.1.10",
+      "kind": "problem",
+      "section": "Basic Combinatorics Principles",
+      "original_source": "2021 AMC",
+      "topic": "counting_probability",
+      "subtopic": "Casework with combinations",
+      "text": "A choir director must select a group of singers from among his $6$ tenors and $8$ basses. The only requirements are that the difference between the number of tenors and basses must be a multiple of $4$, and the group must have at least one singer. Let $N$ be the number of different groups that could be selected. What is the remainder when $N$ is divided by $100$?",
+      "choices": {
+        "A": "$47$",
+        "B": "$48$",
+        "C": "$83$",
+        "D": "$95$",
+        "E": "$96$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        101,
+        102
+      ]
+    },
+    {
+      "id": "ACE_4_3_02",
+      "number": "4.3.2",
+      "kind": "problem",
+      "section": "Path Counting + Bijections",
+      "original_source": "2001 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Lattice path bijection",
+      "text": "A fair die is rolled four times. The probability that each of the final three rolls is at least as large as the roll preceding it may be expressed in the form $m/n$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.",
+      "choices": null,
+      "book_answer": "79",
+      "book_pages": [
+        103,
+        104
+      ]
+    },
+    {
+      "id": "ACE_4_3_03",
+      "number": "4.3.3",
+      "kind": "problem",
+      "section": "Path Counting + Bijections",
+      "original_source": "2006 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Bijection with subsets",
+      "text": "Let $(a_1, a_2, a_3, \\ldots, a_{12})$ be a permutation of $(1, 2, 3, \\ldots, 12)$ for which $$a_1 > a_2 > a_3 > a_4 > a_5 > a_6 \\text{ and } a_6 < a_7 < a_8 < a_9 < a_{10} < a_{11} < a_{12}.$$ An example of such a permutation is $(6, 5, 4, 3, 2, 1, 7, 8, 9, 10, 11, 12)$. Find the number of such permutations.",
+      "choices": null,
+      "book_answer": "462",
+      "book_pages": [
+        104
+      ]
+    },
+    {
+      "id": "ACE_4_3_04",
+      "number": "4.3.4",
+      "kind": "problem",
+      "section": "Path Counting + Bijections",
+      "original_source": "2019 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Lattice paths and probability",
+      "text": "A moving particle starts at the point $(4, 4)$ and moves until it hits one of the coordinate axes for the first time. When the particle is at the point $(a, b)$, it moves at random to one of the points $(a-1, b)$, $(a, b-1)$, or $(a-1, b-1)$, each with probability $\\frac{1}{3}$, independently of its previous moves. The probability that it will hit the coordinate axes at $(0, 0)$ is $\\frac{m}{3^n}$, where $m$ and $n$ are positive integers such that $m$ is not divisible by $3$. Find $m + n$.",
+      "choices": null,
+      "book_answer": "252",
+      "book_pages": [
+        104,
+        105
+      ]
+    },
+    {
+      "id": "ACE_4_4_01",
+      "number": "4.4.1",
+      "kind": "example",
+      "section": "Stars and Bars",
+      "original_source": null,
+      "topic": "counting_probability",
+      "subtopic": "Stars and bars",
+      "text": "Let's pretend we have $10$ identical pieces of candies. We want to find the number of ways to give it out to $4$ children so that each student receives at least one piece of candy. How will we proceed from here?",
+      "choices": null,
+      "book_answer": "84",
+      "book_pages": [
+        106
+      ]
+    },
+    {
+      "id": "ACE_4_4_03",
+      "number": "4.4.3",
+      "kind": "problem",
+      "section": "Stars and Bars",
+      "original_source": "2000 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Stars and bars with ordering",
+      "text": "Given eight distinguishable rings, let $n$ be the number of possible five-ring arrangements on the four fingers (not the thumb) of one hand. The order of rings on each finger is significant, but it is not required that each finger have a ring. Find the leftmost three nonzero digits of $n$.",
+      "choices": null,
+      "book_answer": "376",
+      "book_pages": [
+        106,
+        107
+      ]
+    },
+    {
+      "id": "ACE_4_4_04",
+      "number": "4.4.4",
+      "kind": "problem",
+      "section": "Stars and Bars",
+      "original_source": "2018 AMC 10",
+      "topic": "counting_probability",
+      "subtopic": "Stars and bars",
+      "text": "When $7$ fair standard $6$-sided dice are thrown, the probability that the sum of the numbers on the top faces is $10$ can be written as $$\\frac{n}{6^7},$$ where $n$ is a positive integer. What is $n$?",
+      "choices": {
+        "A": "$42$",
+        "B": "$49$",
+        "C": "$56$",
+        "D": "$63$",
+        "E": "$84$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        107
+      ]
+    },
+    {
+      "id": "ACE_4_4_05",
+      "number": "4.4.5",
+      "kind": "problem",
+      "section": "Stars and Bars",
+      "original_source": "2016 AMC 10",
+      "topic": "counting_probability",
+      "subtopic": "Stars and bars: counting terms",
+      "text": "For some particular value of $N$, when $(a+b+c+d+1)^N$ is expanded and like terms are combined, the resulting expression contains exactly $1001$ terms that include all four variables $a, b, c,$ and $d$, each to some positive power. What is $N$?",
+      "choices": {
+        "A": "$9$",
+        "B": "$14$",
+        "C": "$16$",
+        "D": "$17$",
+        "E": "$19$"
+      },
+      "book_answer": "B",
+      "book_pages": [
+        107,
+        108
+      ]
+    },
+    {
+      "id": "ACE_4_4_06",
+      "number": "4.4.6",
+      "kind": "problem",
+      "section": "Stars and Bars",
+      "original_source": "2014 PUMAC",
+      "topic": "counting_probability",
+      "subtopic": "Stars and bars with distinct parts",
+      "text": "How many sets of positive integers $(a,b,c)$ satisfies $a > b > c > 0$ and $a+b+c=103$?",
+      "choices": null,
+      "book_answer": "833",
+      "book_pages": [
+        108
+      ]
+    },
+    {
+      "id": "ACE_4_4_07",
+      "number": "4.4.7",
+      "kind": "problem",
+      "section": "Stars and Bars",
+      "original_source": "1984 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Gap method (no two adjacent)",
+      "text": "A gardener plants three maple trees, four oaks, and five birch trees in a row. He plants them in random order, each arrangement being equally likely. Let $\\frac{m}{n}$ in lowest terms be the probability that no two birch trees are next to one another. Find $m+n$.",
+      "choices": null,
+      "book_answer": "106",
+      "book_pages": [
+        109
+      ]
+    },
+    {
+      "id": "ACE_4_4_08",
+      "number": "4.4.8",
+      "kind": "problem",
+      "section": "Stars and Bars",
+      "original_source": "2019 SMT",
+      "topic": "counting_probability",
+      "subtopic": "Arrangements with no two letters adjacent",
+      "text": "Connie finds a whiteboard that has magnet letters spelling MISSISSIPPI on it. She can rearrange the letters, in which identical letters are indistinguishable. If she uses all the letters and does not want to place any Is next to each other, how many distinct rearrangements are possible?",
+      "choices": null,
+      "book_answer": "7350",
+      "book_pages": [
+        109,
+        110
+      ]
+    },
+    {
+      "id": "ACE_4_5_06",
+      "number": "4.5.6",
+      "kind": "problem",
+      "section": "Binomial",
+      "original_source": "2000 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Sums of binomial coefficients",
+      "text": "Given that $\\frac{1}{2!17!}+\\frac{1}{3!16!}+\\frac{1}{4!15!}+\\frac{1}{5!14!}+\\frac{1}{6!13!}+\\frac{1}{7!12!}+\\frac{1}{8!11!}+\\frac{1}{9!10!}=\\frac{N}{1!18!}$ find the greatest integer that is less than $\\frac{N}{100}$.",
+      "choices": null,
+      "book_answer": "137",
+      "book_pages": [
+        111
+      ]
+    },
+    {
+      "id": "ACE_4_5_07",
+      "number": "4.5.7",
+      "kind": "problem",
+      "section": "Binomial",
+      "original_source": "2006 AMC 12",
+      "topic": "counting_probability",
+      "subtopic": "Counting terms of an expansion",
+      "text": "The expression $$(x+y+z)^{2006}+(x-y-z)^{2006}$$ is simplified by expanding it and combining like terms. How many terms are in the simplified expression?",
+      "choices": {
+        "A": "$6018$",
+        "B": "$671{,}676$",
+        "C": "$1{,}007{,}514$",
+        "D": "$1{,}008{,}016$",
+        "E": "$2{,}015{,}028$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        112
+      ]
+    },
+    {
+      "id": "ACE_4_5_08",
+      "number": "4.5.8",
+      "kind": "problem",
+      "section": "Binomial",
+      "original_source": "2014 HMMT",
+      "topic": "counting_probability",
+      "subtopic": "Binomial expansion",
+      "text": "Find the sum of all real numbers $x$ such that $5x^4-10x^3+10x^2-5x-11=0$",
+      "choices": null,
+      "book_answer": "1",
+      "book_pages": [
+        112,
+        113
+      ]
+    },
+    {
+      "id": "ACE_4_5_09",
+      "number": "4.5.9",
+      "kind": "problem",
+      "section": "Binomial",
+      "original_source": "2020 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Vandermonde's identity",
+      "text": "A club consisting of $11$ men and $12$ women needs to choose a committee from among its members so that the number of women on the committee is one more than the number of men on the committee. The committee could have as few as $1$ member or as many as $23$ members. Let $N$ be the number of such committees that can be formed. Find the sum of the prime numbers that divide $N$.",
+      "choices": null,
+      "book_answer": "81",
+      "book_pages": [
+        113
+      ]
+    },
+    {
+      "id": "ACE_4_5_10",
+      "number": "4.5.10",
+      "kind": "problem",
+      "section": "Binomial",
+      "original_source": "2018 SMT",
+      "topic": "counting_probability",
+      "subtopic": "Hockey stick identity",
+      "text": "Let $S$ be the set of all $1000$ element subsets of the set $1, 2, 3, \\ldots, 2018$. What is the expected value of the minimum element of a set chosen uniformly at random from $S$?",
+      "choices": null,
+      "book_answer": "2019/1001",
+      "book_pages": [
+        114,
+        115
+      ]
+    },
+    {
+      "id": "ACE_4_6_01",
+      "number": "4.6.1",
+      "kind": "example",
+      "section": "Recursion",
+      "original_source": null,
+      "topic": "counting_probability",
+      "subtopic": "Recursion",
+      "text": "Bob wants to climb $8$ stairs. He can climb $1$ or $2$ stairs at a time. How many ways are there for him to climb the $8$ stairs?",
+      "choices": null,
+      "book_answer": "34",
+      "book_pages": [
+        115,
+        116
+      ]
+    },
+    {
+      "id": "ACE_4_6_02",
+      "number": "4.6.2",
+      "kind": "problem",
+      "section": "Recursion",
+      "original_source": "2010 AMC 8 Problem 25",
+      "topic": "counting_probability",
+      "subtopic": "Recursive counting",
+      "text": "Everyday at school, Jo climbs a flight of $6$ stairs. Jo can take the stairs $1$, $2$, or $3$ at a time. For example, Jo could climb $3$, then $1$, then $2$. In how many ways can Jo climb the stairs?",
+      "choices": {
+        "A": "$13$",
+        "B": "$18$",
+        "C": "$20$",
+        "D": "$22$",
+        "E": "$24$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        116
+      ]
+    },
+    {
+      "id": "ACE_4_6_03",
+      "number": "4.6.3",
+      "kind": "problem",
+      "section": "Recursion",
+      "original_source": "2007 AMC 12",
+      "topic": "counting_probability",
+      "subtopic": "Recursive counting",
+      "text": "Call a set of integers \"spacy\" if it contains no more than one out of any three consecutive integers. How many subsets of $\\{1, 2, 3, \\ldots, 12\\}$, including the empty set, are spacy?",
+      "choices": {
+        "A": "$121$",
+        "B": "$123$",
+        "C": "$125$",
+        "D": "$127$",
+        "E": "$129$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        116,
+        117
+      ]
+    },
+    {
+      "id": "ACE_4_6_04",
+      "number": "4.6.4",
+      "kind": "problem",
+      "section": "Recursion",
+      "original_source": "2019 AMC 10",
+      "topic": "counting_probability",
+      "subtopic": "Recursive counting",
+      "text": "How many sequences of $0$s and $1$s of length $19$ are there that begin with a $0$, end with a $0$, contain no two consecutive $0$s, and contain no three consecutive $1$s?",
+      "choices": {
+        "A": "$55$",
+        "B": "$60$",
+        "C": "$65$",
+        "D": "$70$",
+        "E": "$75$"
+      },
+      "book_answer": "C",
+      "book_pages": [
+        117
+      ]
+    },
+    {
+      "id": "ACE_4_6_05",
+      "number": "4.6.5",
+      "kind": "problem",
+      "section": "Recursion",
+      "original_source": "2020 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Periodic recursive sequences",
+      "text": "Define a sequence recursively by $t_1 = 20$, $t_2 = 21$, and $$t_n = \\frac{5t_{n-1} + 1}{25t_{n-2}}$$ for all $n \\ge 3$. Then $t_{2020}$ can be expressed as $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. Find $p + q$.",
+      "choices": null,
+      "book_answer": "626",
+      "book_pages": [
+        117,
+        118
+      ]
+    },
+    {
+      "id": "ACE_4_7_01",
+      "number": "4.7.1",
+      "kind": "example",
+      "section": "Conditional Probability",
+      "original_source": null,
+      "topic": "counting_probability",
+      "subtopic": "Conditional probability",
+      "text": "Given that the number we roll on a dice is even, what is the probability that our number is $2$.",
+      "choices": null,
+      "book_answer": "1/3",
+      "book_pages": [
+        118
+      ]
+    },
+    {
+      "id": "ACE_4_7_03",
+      "number": "4.7.3",
+      "kind": "problem",
+      "section": "Conditional Probability",
+      "original_source": "2003 AMC 12",
+      "topic": "counting_probability",
+      "subtopic": "Conditional probability",
+      "text": "Let $S$ be the set of permutations of the sequence $1, 2, 3, 4, 5$ for which the first term is not $1$. A permutation is chosen randomly from $S$. The probability that the second term is $2$, in lowest terms, is $a/b$. What is $a+b$?",
+      "choices": {
+        "A": "$5$",
+        "B": "$6$",
+        "C": "$11$",
+        "D": "$16$",
+        "E": "$19$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        119
+      ]
+    },
+    {
+      "id": "ACE_4_7_04",
+      "number": "4.7.4",
+      "kind": "problem",
+      "section": "Conditional Probability",
+      "original_source": "2003 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Random walk on a triangle",
+      "text": "A bug starts at a vertex of an equilateral triangle. On each move, it randomly selects one of the two vertices where it is not currently located, and crawls along a side of the triangle to that vertex. Given that the probability that the bug moves to its starting vertex on its tenth move is $m/n$, where $m$ and $n$ are relatively prime positive integers, find $m+n$.",
+      "choices": null,
+      "book_answer": "683",
+      "book_pages": [
+        119,
+        120
+      ]
+    },
+    {
+      "id": "ACE_4_8_02",
+      "number": "4.8.2",
+      "kind": "example",
+      "section": "Expected Value",
+      "original_source": null,
+      "topic": "counting_probability",
+      "subtopic": "Expected value",
+      "text": "If we have a dice with $6$ sides. What is the expected value of one roll?",
+      "choices": null,
+      "book_answer": "7/2",
+      "book_pages": [
+        120
+      ]
+    },
+    {
+      "id": "ACE_4_8_04",
+      "number": "4.8.4",
+      "kind": "example",
+      "section": "Expected Value",
+      "original_source": null,
+      "topic": "counting_probability",
+      "subtopic": "Linearity of expectation",
+      "text": "What is the expected value of the sum of numbers on six dice if we roll them all at once.",
+      "choices": null,
+      "book_answer": "21",
+      "book_pages": [
+        121
+      ]
+    },
+    {
+      "id": "ACE_4_8_05",
+      "number": "4.8.5",
+      "kind": "problem",
+      "section": "Expected Value",
+      "original_source": null,
+      "topic": "counting_probability",
+      "subtopic": "Linearity of expectation",
+      "text": "A $13$-digit binary number with four $1$'s is chosen at random. What is its expected value?",
+      "choices": null,
+      "book_answer": "20479/4",
+      "book_pages": [
+        121
+      ]
+    },
+    {
+      "id": "ACE_4_8_06",
+      "number": "4.8.6",
+      "kind": "problem",
+      "section": "Expected Value",
+      "original_source": "2006 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Expected value and symmetry",
+      "text": "Let $\\mathcal{S}$ be the set of real numbers that can be represented as repeating decimals of the form $0.\\overline{abc}$ where $a, b, c$ are distinct digits. Find the sum of the elements of $\\mathcal{S}$.",
+      "choices": null,
+      "book_answer": "360",
+      "book_pages": [
+        121,
+        122
+      ]
+    },
+    {
+      "id": "ACE_4_9_01",
+      "number": "4.9.1",
+      "kind": "problem",
+      "section": "States (Markov Chains)",
+      "original_source": "2020 AMC 10",
+      "topic": "counting_probability",
+      "subtopic": "States and symmetry",
+      "text": "A frog sitting at the point $(1, 2)$ begins a sequence of jumps, where each jump is parallel to one of the coordinate axes and has length $1$, and the direction of each jump (up, down, right, or left) is chosen independently at random. The sequence ends when the frog reaches a side of the square with vertices $(0,0), (0,4), (4,4)$, and $(4,0)$. What is the probability that the sequence of jumps ends on a vertical side of the square?",
+      "choices": {
+        "A": "$\\frac{1}{2}$",
+        "B": "$\\frac{5}{8}$",
+        "C": "$\\frac{2}{3}$",
+        "D": "$\\frac{3}{4}$",
+        "E": "$\\frac{7}{8}$"
+      },
+      "book_answer": "B",
+      "book_pages": [
+        122
+      ]
+    },
+    {
+      "id": "ACE_4_9_02",
+      "number": "4.9.2",
+      "kind": "problem",
+      "section": "States (Markov Chains)",
+      "original_source": "2009 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Geometric series in probability",
+      "text": "Dave rolls a fair six-sided die until a six appears for the first time. Independently, Linda rolls a fair six-sided die until a six appears for the first time. Let $m$ and $n$ be relatively prime positive integers such that $\\dfrac{m}{n}$ is the probability that the number of times Dave rolls his die is equal to or within one of the number of times Linda rolls her die. Find $m+n$.",
+      "choices": null,
+      "book_answer": "41",
+      "book_pages": [
+        123
+      ]
+    },
+    {
+      "id": "ACE_4_9_03",
+      "number": "4.9.3",
+      "kind": "problem",
+      "section": "States (Markov Chains)",
+      "original_source": "2019 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Recursive probability",
+      "text": "Lily pads $1, 2, 3, \\ldots$ lie in a row on a pond. A frog makes a sequence of jumps starting on pad $1$. From any pad $k$ the frog jumps to either pad $k+1$ or pad $k+2$ chosen randomly with probability $\\frac{1}{2}$ and independently of other jumps. The probability that the frog visits pad $7$ is $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. Find $p+q$.",
+      "choices": null,
+      "book_answer": "107",
+      "book_pages": [
+        123
+      ]
+    },
+    {
+      "id": "ACE_4_10_01",
+      "number": "4.10.1",
+      "kind": "problem",
+      "section": "Geometric Probability",
+      "original_source": "1998 AIME",
+      "topic": "counting_probability",
+      "subtopic": "Geometric probability",
+      "text": "Two mathematicians take a morning coffee break each day. They arrive at the cafeteria independently, at random times between $9$ a.m. and $10$ a.m., and stay for exactly $m$ minutes. The probability that either one arrives while the other is in the cafeteria is $40\\%$, and $m = a - b\\sqrt{c}$, where $a, b$, and $c$ are positive integers, and $c$ is not divisible by the square of any prime. Find $a+b+c$.",
+      "choices": null,
+      "book_answer": "87",
+      "book_pages": [
+        124,
+        125
+      ]
+    },
+    {
+      "id": "ACE_4_10_02",
+      "number": "4.10.2",
+      "kind": "problem",
+      "section": "Geometric Probability",
+      "original_source": "2015 AMC",
+      "topic": "counting_probability",
+      "subtopic": "Geometric probability",
+      "text": "Let $S$ be a square of side length $1$. Two points are chosen independently at random on the sides of $S$. The probability that the straight-line distance between the points is at least $\\dfrac{1}{2}$ is $\\dfrac{a-b\\pi}{c}$, where $a$, $b$, and $c$ are positive integers with $\\gcd(a,b,c)=1$. What is $a+b+c$?",
+      "choices": {
+        "A": "$59$",
+        "B": "$60$",
+        "C": "$61$",
+        "D": "$62$",
+        "E": "$63$"
+      },
+      "book_answer": "A",
+      "book_pages": [
+        125,
+        126
+      ]
+    }
+  ]
+}

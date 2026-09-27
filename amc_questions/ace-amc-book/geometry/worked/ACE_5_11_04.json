@@ -1,0 +1,64 @@
+{
+  "id": "ACE_5_11_04",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.4",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2011 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Incenter and parallel lines",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_04.png",
+    "text": "Triangle $ABC$ has side-lengths $AB = 12$, $BC = 24$, and $AC = 18$. The line through the incenter of $\\triangle ABC$ parallel to $\\overline{BC}$ intersects $\\overline{AB}$ at $M$ and $\\overline{AC}$ at $N$. What is the perimeter of $\\triangle AMN$?",
+    "choices": {
+      "A": "$27$",
+      "B": "$30$",
+      "C": "$33$",
+      "D": "$36$",
+      "E": "$42$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$30$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: draw the angle bisectors to the incenter",
+      "body": "The incenter $I$ is where the angle bisectors meet, and the line $MN$ is parallel to $BC$. Bisectors and parallel lines together make equal angles, so draw $BI$ and $CI$. Call $\\angle ABC = 2b$ and $\\angle ACB = 2c$; then $\\angle MBI = b$ and $\\angle NCI = c$. Since $MN \\parallel BC$, corresponding angles give $\\angle AMN = 2b$, so $\\angle BMI = 180^\\circ - 2b$.",
+      "your_turn": {
+        "prompt": "In triangle $BIM$, $\\angle MBI = b$ and $\\angle BMI = 180^\\circ - 2b$. Find $\\angle BIM$.",
+        "answer": "$180^\\circ - b - (180^\\circ - 2b) = b$."
+      }
+    },
+    {
+      "title": "Two isosceles triangles appear",
+      "body": "Triangle $BIM$ has two angles equal to $b$ (at $B$ and at $I$), so it is isosceles and $MI = MB$. The same argument at $C$ gives $\\angle CIN = c = \\angle NCI$.",
+      "your_turn": {
+        "prompt": "In triangle $CIN$, which segment equals $NI$?",
+        "answer": "$NC$, because the angles at $C$ and $I$ are both $c$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Let $MI = MB = x$ and $NI = NC = y$. Then $AM = 12 - x$, $AN = 18 - y$ and $MN = MI + IN = x + y$. The perimeter is $$(12 - x) + (18 - y) + (x + y) = 30,$$ which is just $AB + AC$; the side $BC = 24$ is never needed. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "A": "This is half the perimeter of $\\triangle ABC$ ($54 \\div 2$), which you get by assuming $MN$ is the midsegment. But the incenter is not halfway up, so $M$ and $N$ are not midpoints."
+  },
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

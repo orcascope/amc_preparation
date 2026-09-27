@@ -7,7 +7,7 @@ Reads amc_questions/ace-amc-book/<topic>/statements/items/*.json (one file per
 item, written by the tutor step) and writes, in book order:
   statements/ACE_<topic>.json   every statement, as one list
   answer_key.json               {"ACE_2_2_07": "B", "ACE_2_3_10": "54", ...}
-The answer key holds the book's own answers; tools/import_worked.py checks each
+The answer key holds the book's own answers; app/import_worked.py checks each
 lesson against it. Existing entries for other items are kept.
 """
 import json

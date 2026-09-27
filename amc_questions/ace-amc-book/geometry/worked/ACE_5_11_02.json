@@ -1,0 +1,66 @@
+{
+  "id": "ACE_5_11_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.11.2",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": null
+  },
+  "topic": "geometry",
+  "subtopic": "Angle chasing",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_11_02.png",
+    "text": "In $\\triangle ABC$, $\\overline{AC} = \\overline{CD}$ and $\\angle CAB - \\angle ABC = 30^\\circ$. What is $\\angle BAD$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$15^\\circ$",
+    "accept": [
+      "15"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the equal sides make an isosceles triangle",
+      "body": "The given $AC = CD$ is the clue: triangle $ACD$ is isosceles. Its base angles are equal, so call $\\angle CAD = \\angle CDA = x$. Also call the angle we want $\\angle BAD = y$. Naming angles with letters turns the angle chase into a little algebra.",
+      "your_turn": {
+        "prompt": "Why are $\\angle CAD$ and $\\angle CDA$ equal?",
+        "answer": "They are opposite the equal sides $CD$ and $CA$ of triangle $ACD$."
+      }
+    },
+    {
+      "title": "Use the $30^\\circ$ condition",
+      "body": "Segment $AD$ splits $\\angle CAB$ into two parts, so $\\angle CAB = x + y$. The problem says $\\angle CAB$ is $30^\\circ$ more than $\\angle ABC$, which lets us write $\\angle ABC$ in terms of $x$ and $y$ too.",
+      "your_turn": {
+        "prompt": "Write $\\angle ABC$ in terms of $x$ and $y$.",
+        "answer": "$\\angle ABC = \\angle CAB - 30^\\circ = x + y - 30^\\circ$."
+      }
+    },
+    {
+      "title": "Look at triangle $ABD$",
+      "body": "Triangle $ABD$ has angles $\\angle BAD = y$ and $\\angle ABD = x + y - 30^\\circ$. Its third angle is at $D$. Since $D$ lies on segment $BC$, the angles $\\angle CDA$ and $\\angle BDA$ sit side by side on a straight line.",
+      "your_turn": {
+        "prompt": "Write $\\angle BDA$ in terms of $x$.",
+        "answer": "$180^\\circ - x$, because it is supplementary to $\\angle CDA = x$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The angles of triangle $ABD$ add to $180^\\circ$: $$y + (180 - x) + (x + y - 30) = 180.$$ The $x$ cancels, leaving $2y = 30$, so $y = 15$. That means $\\angle BAD$ is the same no matter how the triangle is shaped. The answer is **$15^\\circ$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "15",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

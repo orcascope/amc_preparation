@@ -3,7 +3,7 @@
 
 -- Content tables: rebuilt from amc_questions/<year>/worked/*.json and
 -- amc_questions/ace-amc-book/<topic>/worked/*.json by
--- tools/import_worked.py. Never edit these by hand; edit the JSON and re-import.
+-- app/import_worked.py. Never edit these by hand; edit the JSON and re-import.
 CREATE SCHEMA IF NOT EXISTS amc_app;
 
 CREATE TABLE IF NOT EXISTS problems (

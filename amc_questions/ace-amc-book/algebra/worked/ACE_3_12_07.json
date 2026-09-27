@@ -1,0 +1,66 @@
+{
+  "id": "ACE_3_12_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.12.7",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2012 PUMAC"
+  },
+  "topic": "algebra",
+  "subtopic": "Completing the square in a system",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_12_07.png",
+    "text": "Let $a$, $b$, and $c$ be positive integers satisfying $$a^4 + a^2b^2 + b^4 = 9633$$ $$2a^2 + a^2b^2 + 2b^2 + c^5 = 3605$$ What is the sum of all distinct values of $a + b + c$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$18$",
+    "accept": [
+      "18"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: add the equations to build a square",
+      "body": "The first equation has $a^4 + b^4$ and one copy of $a^2b^2$, and the second has another $a^2b^2$. Together that makes $a^4 + 2a^2b^2 + b^4 = (a^2 + b^2)^2$, and the second equation also has $2a^2 + 2b^2$, which looks like the middle term of a bigger square. So add the two equations.",
+      "your_turn": {
+        "prompt": "Add the two equations.",
+        "answer": "$a^4 + 2a^2b^2 + b^4 + 2a^2 + 2b^2 + c^5 = 13238$."
+      }
+    },
+    {
+      "title": "Complete the square",
+      "body": "Adding $1$ to both sides turns the $a$ and $b$ terms into a perfect square:\n$$(a^2 + b^2 + 1)^2 + c^5 = 13239$$\nSince $a$ and $b$ are integers, $a^2 + b^2 + 1$ is an integer, so $13239 - c^5$ must be a perfect square.",
+      "your_turn": {
+        "prompt": "Expand $(a^2 + b^2 + 1)^2$ to check the step.",
+        "answer": "$a^4 + b^4 + 1 + 2a^2b^2 + 2a^2 + 2b^2$, which is the left side of the sum plus $1$."
+      }
+    },
+    {
+      "title": "Test the possible values of $c$",
+      "body": "We need $c^5 < 13239$. Since $6^5 = 7776$ and $7^5 = 16807$, $c$ can be $1$ to $6$ (careful: do not stop at $5$). The values of $13239 - c^5$ are $13238$, $13207$, $12996$, $12215$, $10114$, $5463$. Only $12996 = 114^2$ is a perfect square, so $c = 3$ and $a^2 + b^2 = 113$.",
+      "your_turn": {
+        "prompt": "Show that $5463$ (from $c = 6$) is not a perfect square.",
+        "answer": "$73^2 = 5329$ and $74^2 = 5476$, and $5463$ lies strictly between them."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Checking $113 - a^2$ for $a = 1, \\ldots, 10$, the only way to write $113$ as a sum of two positive squares is $49 + 64$, so $\\{a, b\\} = \\{7, 8\\}$. Adding the equations can lose information, so check the originals: $7^4 + 7^2 \\cdot 8^2 + 8^4 = 2401 + 3136 + 4096 = 9633$ and $98 + 3136 + 128 + 243 = 3605$. Both orders give $a + b + c = 7 + 8 + 3 = 18$, so there is only one distinct value. The answer is **$18$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "18",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
+  }
+}

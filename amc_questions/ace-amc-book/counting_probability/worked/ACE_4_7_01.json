@@ -1,0 +1,58 @@
+{
+  "id": "ACE_4_7_01",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.7.1",
+    "kind": "example",
+    "section": "Conditional Probability",
+    "original_source": null
+  },
+  "topic": "counting_probability",
+  "subtopic": "Conditional probability",
+  "difficulty": 1,
+  "problem": {
+    "image": "images/ACE_4_7_01.png",
+    "text": "Given that the number we roll on a dice is even, what is the probability that our number is $2$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{1}{3}$",
+    "accept": [
+      "\\frac{1}{3}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the condition shrinks the outcomes",
+      "body": "The words \"given that\" tell you we already know something about the roll: it is even. So we only look at the outcomes where that is true and ignore the rest. This is called conditional probability.",
+      "your_turn": {
+        "prompt": "On a standard six-sided die, which outcomes are even?",
+        "answer": "$2$, $4$ and $6$: three outcomes, all equally likely."
+      }
+    },
+    {
+      "title": "The formula",
+      "body": "Let $A$ be \"the roll is $2$\" and $B$ be \"the roll is even\". The probability of $A$ given $B$ is\n$$P(A \\mid B) = \\frac{P(A \\text{ and } B)}{P(B)}$$\nCareful: the answer is not $P(A) = \\frac{1}{6}$, because that ignores what we were told.",
+      "your_turn": {
+        "prompt": "What is $P(B)$, the probability that a roll is even?",
+        "answer": "$\\frac{3}{6} = \\frac{1}{2}$, since $3$ of the $6$ faces are even."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Rolling a $2$ already means the roll is even, so $P(A \\text{ and } B) = P(A) = \\frac{1}{6}$. Then $P(A \\mid B) = \\frac{1/6}{1/2} = \\frac{1}{3}$. This matches the direct view: $2$ is one of the three equally likely even outcomes. The answer is **$\\frac{1}{3}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1/3",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
+  }
+}

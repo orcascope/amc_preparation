@@ -1,0 +1,68 @@
+{
+  "id": "ACE_5_1_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.1.2",
+    "kind": "problem",
+    "section": "Angles",
+    "original_source": null
+  },
+  "topic": "geometry",
+  "subtopic": "Straight angles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_1_02.png",
+    "text": "Using the diagram below and the concept that you just learned, find the measures of angles $a$, $b$, and $c$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$a = 133^\\circ,\\ b = 47^\\circ,\\ c = 133^\\circ$",
+    "accept": [
+      "a=133, b=47, c=133",
+      "133, 47, 133",
+      "a=133 b=47 c=133"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: each line is a straight angle",
+      "body": "The only number given is $47^\\circ$, and the diagram is just two straight lines crossing. A straight line makes an angle of $180^\\circ$, so two angles that sit side by side along the same line add up to $180^\\circ$. Start by finding which of $a$, $b$, $c$ sit right next to the $47^\\circ$ angle.",
+      "your_turn": {
+        "prompt": "Which of the angles $a$, $b$, $c$ share a side with the $47^\\circ$ angle?",
+        "answer": "$a$ and $c$. Angle $a$ is on the other side of the upward ray, and $c$ is on the other side of the upper-left ray."
+      }
+    },
+    {
+      "title": "Write the straight-line equations",
+      "body": "The $47^\\circ$ angle and $c$ together fill the angle from the upward ray to the downward ray, which is the nearly vertical line. The $47^\\circ$ angle and $a$ together fill the angle from the upper-left ray to the lower-right ray, which is the other line.\n$$47 + c = 180, \\qquad 47 + a = 180$$",
+      "your_turn": {
+        "prompt": "Without computing anything, explain why $a$ and $c$ must be equal.",
+        "answer": "Both are $180$ minus the same angle, $47^\\circ$."
+      }
+    },
+    {
+      "title": "Bring in angle $b$",
+      "body": "Angle $b$ is not next to the $47^\\circ$ angle; it is across from it. But $b$ does sit next to $a$ and next to $c$, so it is tied to them by a straight line as well.",
+      "your_turn": {
+        "prompt": "Write one straight-line equation that links $a$ and $b$.",
+        "answer": "$a + b = 180$, because $a$ and $b$ together go from the upward ray to the downward ray."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "From $47 + c = 180$ we get $c = 133^\\circ$, and in the same way $a = 133^\\circ$. Then $a + b = 180$ gives $b = 180 - 133 = 47^\\circ$. Notice that the angles across from each other came out equal ($b$ matches $47^\\circ$ and $a$ matches $c$); this is the vertical angle theorem. The answer is **$a = 133^\\circ$, $b = 47^\\circ$, $c = 133^\\circ$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "a=133, b=47, c=133",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

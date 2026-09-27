@@ -1,0 +1,72 @@
+{
+  "id": "ACE_5_5_12",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.5.12",
+    "kind": "problem",
+    "section": "Special Points",
+    "original_source": "2020 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Centroid and medians",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_5_12.png",
+    "text": "Triangle $AMC$ is isosceles with $AM = AC$. Medians $\\overline{MV}$ and $\\overline{CU}$ are perpendicular to each other, and $MV = CU = 12$. What is the area of $\\triangle AMC$?",
+    "choices": {
+      "A": "$48$",
+      "B": "$72$",
+      "C": "$96$",
+      "D": "$144$",
+      "E": "$192$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$96$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: cut the medians at the centroid",
+      "body": "The clue is that we know the full lengths of two medians and the angle between them. The medians meet at the centroid $P$, which splits each median in the ratio $2:1$, with the longer part next to the vertex. Knowing all four pieces around $P$ gives us right triangles to work with.",
+      "your_turn": {
+        "prompt": "Find $MP$, $PV$, $CP$ and $PU$.",
+        "answer": "$MP = CP = 8$ and $PV = PU = 4$, since $12$ splits into $8$ and $4$."
+      }
+    },
+    {
+      "title": "Find the base $MC$",
+      "body": "The medians are perpendicular, so $\\angle MPC = 90^\\circ$. Triangle $MPC$ is a right triangle with legs $MP = CP = 8$, and its hypotenuse is the base $MC$ of the big triangle.",
+      "your_turn": {
+        "prompt": "Compute $MC$.",
+        "answer": "$MC = \\sqrt{8^2 + 8^2} = 8\\sqrt{2}$."
+      }
+    },
+    {
+      "title": "Find the equal sides",
+      "body": "Triangle $UPM$ also has a right angle at $P$, with legs $UP = 4$ and $PM = 8$. Because $CU$ is a median, $U$ is the midpoint of $AM$, so $AM = 2\\cdot UM$.",
+      "your_turn": {
+        "prompt": "Find $UM$ and then $AM$.",
+        "answer": "$UM = \\sqrt{8^2 + 4^2} = 4\\sqrt{5}$, so $AM = AC = 8\\sqrt{5}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Drop the altitude from $A$ to $MC$. In an isosceles triangle it lands at the midpoint of the base, so the height is $\\sqrt{(8\\sqrt{5})^2 - (4\\sqrt{2})^2} = \\sqrt{320 - 32} = \\sqrt{288} = 12\\sqrt{2}$.\n$$[AMC] = \\tfrac{1}{2}\\cdot 8\\sqrt{2}\\cdot 12\\sqrt{2} = 96$$\nThe answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "B": "$\\tfrac{1}{2}\\cdot 12\\cdot 12 = 72$ is the area of quadrilateral $MCVU$, whose diagonals are the two perpendicular medians. That quadrilateral is only part of triangle $AMC$; the top triangle $AUV$ is missing."
+  },
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

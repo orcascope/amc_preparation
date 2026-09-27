@@ -1,0 +1,72 @@
+{
+  "id": "ACE_5_7_10",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.7.10",
+    "kind": "problem",
+    "section": "Circles Part 1",
+    "original_source": "2011 AMC 10"
+  },
+  "topic": "geometry",
+  "subtopic": "Inscribed angles and cyclic quadrilaterals",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_7_10.png",
+    "text": "In the given circle, the diameter $\\overline{EB}$ is parallel to $\\overline{DC}$, and $\\overline{AB}$ is parallel to $\\overline{ED}$. The angles $AEB$ and $ABE$ are in the ratio $4:5$. What is the degree measure of angle $BCD$?",
+    "choices": {
+      "A": "$120$",
+      "B": "$125$",
+      "C": "$130$",
+      "D": "$135$",
+      "E": "$140$"
+    }
+  },
+  "answer": {
+    "choice": "C",
+    "value": "$130$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: the diameter gives a right angle",
+      "body": "The statement tells us $EB$ is a diameter, and $A$ is on the circle. An inscribed angle that stands on a diameter is always $90^\\circ$ (it is half of the $180^\\circ$ arc). So triangle $EAB$ has a right angle at $A$.",
+      "your_turn": {
+        "prompt": "What is $\\angle AEB + \\angle ABE$?",
+        "answer": "$90^\\circ$, since the three angles of triangle $EAB$ add to $180^\\circ$ and $\\angle EAB = 90^\\circ$."
+      }
+    },
+    {
+      "title": "Split $90^\\circ$ in the ratio $4:5$",
+      "body": "Write $\\angle AEB = 4k$ and $\\angle ABE = 5k$. Then $4k + 5k = 90^\\circ$.",
+      "your_turn": {
+        "prompt": "Find $\\angle AEB$ and $\\angle ABE$.",
+        "answer": "$k = 10^\\circ$, so $\\angle AEB = 40^\\circ$ and $\\angle ABE = 50^\\circ$."
+      }
+    },
+    {
+      "title": "Move an angle across the parallel lines",
+      "body": "Now use $AB \\parallel ED$. The diameter $EB$ crosses both of these lines, and $A$ and $D$ are on opposite sides of it, so $\\angle ABE$ and $\\angle BED$ are alternate interior angles. Careful: the angle that transfers is the one at $B$, not the one at $E$.",
+      "your_turn": {
+        "prompt": "How big is $\\angle BED$?",
+        "answer": "$50^\\circ$, because it equals the alternate angle $\\angle ABE$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "All four points $B$, $C$, $D$, $E$ are on the circle, so $BCDE$ is a cyclic quadrilateral, and its opposite angles add to $180^\\circ$. The angle opposite $\\angle BCD$ is $\\angle BED$, so $\\angle BCD = 180^\\circ - 50^\\circ = 130^\\circ$. Check with the last condition $DC \\parallel EB$: it makes $EBCD$ an isosceles trapezoid, so $\\angle CBE = \\angle BED = 50^\\circ$, and co-interior angles give $\\angle BCD = 180^\\circ - 50^\\circ$ again. The answer is **(C)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {
+    "E": "This comes from using $\\angle AEB = 40^\\circ$ as the angle opposite $\\angle BCD$ and getting $180^\\circ - 40^\\circ$. With $AB \\parallel ED$, the angle equal to $\\angle BED$ is $\\angle ABE = 50^\\circ$, not $\\angle AEB$."
+  },
+  "verification": {
+    "book_answer": "C",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

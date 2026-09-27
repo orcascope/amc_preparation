@@ -1,0 +1,74 @@
+{
+  "id": "ACE_5_6_05",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.6.5",
+    "kind": "problem",
+    "section": "Area Ratios Related to Side Length Ratios",
+    "original_source": "2002 AIME"
+  },
+  "topic": "geometry",
+  "subtopic": "Area ratios and the angle bisector theorem",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_5_6_05.png",
+    "text": "In the diagram below, angle $ABC$ is a right angle. Point $D$ is on $\\overline{BC}$, and $\\overline{AD}$ bisects angle $CAB$. Points $E$ and $F$ are on $\\overline{AB}$ and $\\overline{AC}$, respectively, so that $AE = 3$ and $AF = 10$. Given that $EB = 9$ and $FC = 27$, find the integer closest to the area of quadrilateral $DCFG$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$148$",
+    "accept": [
+      "148"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: find the whole triangle, then cut away the rest",
+      "body": "Quadrilateral $DCFG$ is an odd shape, but everything else in triangle $ABC$ is made of triangles that share an angle or a height with $ABC$, so their areas come from length ratios. The clue is the right angle at $B$: it gives the full area. Then\n$$[DCFG] = [ABC] - [ABD] - [AEF] + [AEG],$$\nwhere we add back $[AEG]$ because that small triangle lies inside both $ABD$ and $AEF$.",
+      "your_turn": {
+        "prompt": "With $AB = 12$ and $AC = 37$, find $BC$ and $[ABC]$.",
+        "answer": "$BC = \\sqrt{37^2 - 12^2} = 35$, so $[ABC] = \\tfrac{1}{2}\\cdot 12\\cdot 35 = 210$."
+      }
+    },
+    {
+      "title": "Triangle $AEF$ shares the angle at $A$",
+      "body": "Triangles $AEF$ and $ABC$ have the same angle at $A$, so their area ratio is the product of the sides around that angle:\n$$\\frac{[AEF]}{[ABC]} = \\frac{AE\\cdot AF}{AB\\cdot AC} = \\frac{3\\cdot 10}{12\\cdot 37} = \\frac{5}{74}.$$",
+      "your_turn": {
+        "prompt": "Find $[AEF]$.",
+        "answer": "$[AEF] = \\frac{5}{74}\\cdot 210 = \\frac{525}{37}$, about $14.19$."
+      }
+    },
+    {
+      "title": "Triangle $ABD$ from the angle bisector theorem",
+      "body": "Since $AD$ bisects angle $A$, the angle bisector theorem gives $\\frac{BD}{DC} = \\frac{AB}{AC} = \\frac{12}{37}$. Triangles $ABD$ and $ADC$ have the same height from $A$ to line $BC$, so their areas are in the same ratio $12:37$.",
+      "your_turn": {
+        "prompt": "Split $210$ in the ratio $12:37$ to find $[ABD]$.",
+        "answer": "$[ABD] = 210\\cdot \\frac{12}{49} = \\frac{360}{7}$, about $51.43$."
+      }
+    },
+    {
+      "title": "The overlap triangle $AEG$",
+      "body": "Inside triangle $AEF$, the segment $AG$ is part of the bisector of angle $A$. So the angle bisector theorem in triangle $AEF$ gives $\\frac{EG}{GF} = \\frac{AE}{AF} = \\frac{3}{10}$. Triangles $AEG$ and $AGF$ share the height from $A$, so $[AEG]$ is $\\frac{3}{13}$ of $[AEF]$.",
+      "your_turn": {
+        "prompt": "Find $[AEG]$.",
+        "answer": "$[AEG] = \\frac{3}{13}\\cdot\\frac{525}{37} = \\frac{1575}{481}$, about $3.27$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The part of triangle $ABC$ outside $DCFG$ has area $[ABD] + [AEF] - [AEG] = \\frac{360}{7} + \\frac{525}{37} - \\frac{1575}{481} = \\frac{209910}{3367} \\approx 62.34$. So $[DCFG] = 210 - \\frac{209910}{3367} \\approx 147.66$, and the closest integer is $148$. The answer is **$148$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "148",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

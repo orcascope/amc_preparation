@@ -1,0 +1,70 @@
+{
+  "id": "ACE_4_10_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "4.10.2",
+    "kind": "problem",
+    "section": "Geometric Probability",
+    "original_source": "2015 AMC"
+  },
+  "topic": "counting_probability",
+  "subtopic": "Geometric probability",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_4_10_02.png",
+    "text": "Let $S$ be a square of side length $1$. Two points are chosen independently at random on the sides of $S$. The probability that the straight-line distance between the points is at least $\\dfrac{1}{2}$ is $\\dfrac{a-b\\pi}{c}$, where $a$, $b$, and $c$ are positive integers with $\\gcd(a,b,c)=1$. What is $a+b+c$?",
+    "choices": {
+      "A": "$59$",
+      "B": "$60$",
+      "C": "$61$",
+      "D": "$62$",
+      "E": "$63$"
+    }
+  },
+  "answer": {
+    "choice": "A",
+    "value": "$59$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: split by which side each point lands on",
+      "body": "The distance formula changes depending on how the two sides sit, so split into cases. Call the points $A$ and $B$. By symmetry we may say $A$ is on some fixed side; then $B$ is on the same side, an adjacent side, or the opposite side. Each of the four sides is equally likely for $B$.",
+      "your_turn": {
+        "prompt": "What is the probability of each case: same side, adjacent side, opposite side?",
+        "answer": "Same side $\\frac{1}{4}$, adjacent side $\\frac{2}{4} = \\frac{1}{2}$ (there are two adjacent sides), opposite side $\\frac{1}{4}$."
+      }
+    },
+    {
+      "title": "Case 1: the same side",
+      "body": "Put the side on a number line from $0$ to $1$, with $A$ at $x$ and $B$ at $y$. The point $(x, y)$ is random in the unit square, and we need $|x - y| \\ge \\frac{1}{2}$. That is two corner triangles, near $(0, 1)$ and near $(1, 0)$, each with legs $\\frac{1}{2}$.",
+      "your_turn": {
+        "prompt": "What is the total area of the two triangles, and what does this case add to the answer?",
+        "answer": "Each has area $\\frac{1}{2}\\cdot\\frac{1}{2}\\cdot\\frac{1}{2} = \\frac{1}{8}$, so together $\\frac{1}{4}$. This case adds $\\frac{1}{4}\\cdot\\frac{1}{4} = \\frac{1}{16}$."
+      }
+    },
+    {
+      "title": "Case 2: adjacent sides",
+      "body": "Put the shared corner at the origin, with $A = (x, 0)$ and $B = (0, y)$ where $x$ and $y$ are between $0$ and $1$. The distance is $\\sqrt{x^2 + y^2}$, and it is less than $\\frac{1}{2}$ exactly inside a quarter circle of radius $\\frac{1}{2}$ centered at the origin. That quarter circle has area $\\frac{1}{4}\\pi\\left(\\frac{1}{2}\\right)^2 = \\frac{\\pi}{16}$, so the good part of the unit square has area $1 - \\frac{\\pi}{16}$.",
+      "your_turn": {
+        "prompt": "Multiply by the chance of this case. What does Case 2 add to the answer?",
+        "answer": "$\\frac{1}{2}\\left(1 - \\frac{\\pi}{16}\\right) = \\frac{16 - \\pi}{32}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Case 3: on opposite sides the points are always at least $1$ apart, so this case always works and adds $\\frac{1}{4}$. In total,\n$$\\frac{1}{16} + \\frac{16 - \\pi}{32} + \\frac{1}{4} = \\frac{2 + 16 - \\pi + 8}{32} = \\frac{26 - \\pi}{32}.$$\nSo $a = 26$, $b = 1$, $c = 32$ (and $\\gcd(26, 1, 32) = 1$), giving $a + b + c = 59$. The answer is **(A)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "A",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
+  }
+}

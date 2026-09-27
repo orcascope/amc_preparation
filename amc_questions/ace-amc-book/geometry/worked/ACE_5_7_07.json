@@ -1,0 +1,70 @@
+{
+  "id": "ACE_5_7_07",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.7.7",
+    "kind": "problem",
+    "section": "Circles Part 1",
+    "original_source": "2007 AMC"
+  },
+  "topic": "geometry",
+  "subtopic": "Tangent circles",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_7_07.png",
+    "text": "A circle of radius $1$ is surrounded by $4$ circles of radius $r$ as shown. What is $r$?",
+    "choices": {
+      "A": "$\\sqrt{2}$",
+      "B": "$1+\\sqrt{2}$",
+      "C": "$\\sqrt{6}$",
+      "D": "$3$",
+      "E": "$2+\\sqrt{2}$"
+    }
+  },
+  "answer": {
+    "choice": "B",
+    "value": "$1+\\sqrt{2}$"
+  },
+  "steps": [
+    {
+      "title": "Where to start: connect the centers",
+      "body": "The picture is all tangent circles, and the lengths we know are radii. When two circles touch from outside, the segment joining their centers passes through the touching point, so its length is the sum of the two radii. So join the center of the small circle to the centers of the two big circles on the left, and join those two big centers to each other.",
+      "your_turn": {
+        "prompt": "How long is each of the three segments you just drew?",
+        "answer": "Small center to each big center: $r+1$. The two left big centers: $r+r = 2r$, since those circles touch."
+      }
+    },
+    {
+      "title": "An isosceles triangle and its altitude",
+      "body": "So the three centers form an isosceles triangle with two sides $r+1$ and base $2r$. Draw the altitude from the small center to that base. By the symmetry of the picture it lands at the midpoint of the base, which is the point where the two left circles touch, and the horizontal line through the small center also passes through the point where the two right circles touch.",
+      "your_turn": {
+        "prompt": "The two touching points on that horizontal line lie directly below the top-left and top-right centers. How far apart are they, and so how long is the altitude?",
+        "answer": "They are $2r$ apart, because the two top circles touch, so their centers are $2r$ apart. The small center is halfway, so the altitude is $r$."
+      }
+    },
+    {
+      "title": "Use the Pythagorean theorem",
+      "body": "The altitude splits the isosceles triangle into two right triangles. Each has legs $r$ (the altitude) and $r$ (half of the base $2r$), and hypotenuse $r+1$:\n$$r^2 + r^2 = (r+1)^2$$",
+      "your_turn": {
+        "prompt": "Expand and move everything to one side to get a quadratic equation in $r$.",
+        "answer": "$2r^2 = r^2 + 2r + 1$, so $r^2 - 2r - 1 = 0$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The quadratic formula gives $r = \\frac{2 \\pm \\sqrt{4+4}}{2} = 1 \\pm \\sqrt{2}$. Careful: $1 - \\sqrt{2}$ is negative, and a radius cannot be negative, so it is ruled out. Therefore $r = 1 + \\sqrt{2}$. The answer is **(B)**.",
+      "reveals_answer": true
+    }
+  ],
+  "wrong_choices": {},
+  "verification": {
+    "book_answer": "B",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

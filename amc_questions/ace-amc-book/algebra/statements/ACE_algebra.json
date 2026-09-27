@@ -1,0 +1,881 @@
+{
+  "book": "ACE The AMC 10 and AMC 12",
+  "topic": "algebra",
+  "items": [
+    {
+      "id": "ACE_3_1_01",
+      "number": "3.1.1",
+      "kind": "problem",
+      "section": "Word Problems",
+      "original_source": "2018 AIME",
+      "topic": "algebra",
+      "subtopic": "Rate and distance",
+      "text": "Points $A$, $B$, and $C$ lie in that order along a straight path where the distance from $A$ to $C$ is $1800$ meters. Ina runs twice as fast as Eve, and Paul runs twice as fast as Ina. The three runners start running at the same time with Ina starting at $A$ and running toward $C$, Paul starting at $B$ and running toward $C$, and Eve starting at $C$ and running toward $A$. When Paul meets Eve, he turns around and runs toward $A$. Paul and Ina both arrive at $B$ at the same time. Find the number of meters from $A$ to $B$.",
+      "choices": null,
+      "book_answer": "800",
+      "book_pages": [
+        50
+      ]
+    },
+    {
+      "id": "ACE_3_1_02",
+      "number": "3.1.2",
+      "kind": "problem",
+      "section": "Word Problems",
+      "original_source": "2014 AIME",
+      "topic": "algebra",
+      "subtopic": "Inequalities and optimization",
+      "text": "Alpha and Beta both took part in a two-day problem-solving competition. At the end of the second day, each had attempted questions worth a total of $500$ points. Alpha scored $160$ points out of $300$ points attempted on the first day, and scored $140$ points out of $200$ points attempted on the second day. Beta who did not attempt $300$ points on the first day, had a positive integer score on each of the two days, and Beta's daily success rate (points scored divided by points attempted) on each day was less than Alpha's on that day. Alpha's two-day success ratio was $300/500 = 3/5$. The largest possible two-day success ratio that Beta could achieve is $m/n$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?",
+      "choices": null,
+      "book_answer": "849",
+      "book_pages": [
+        51
+      ]
+    },
+    {
+      "id": "ACE_3_1_03",
+      "number": "3.1.3",
+      "kind": "problem",
+      "section": "Word Problems",
+      "original_source": "2016 AIME",
+      "topic": "algebra",
+      "subtopic": "Arithmetic series sums",
+      "text": "Anh read a book. On the first day she read $n$ pages in $t$ minutes, where $n$ and $t$ are positive integers. On the second day Anh read $n+1$ pages in $t+1$ minutes. Each day thereafter Anh read one more page than she read on the previous day, and it took her one more minute than on the previous day until she completely read the $374$ page book. It took her a total of $319$ minutes to read the book. Find $n+t$.",
+      "choices": null,
+      "book_answer": "53",
+      "book_pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "ACE_3_2_06",
+      "number": "3.2.6",
+      "kind": "problem",
+      "section": "Sequences And Series",
+      "original_source": "2005 AIME",
+      "topic": "algebra",
+      "subtopic": "Arithmetic sequences and divisors",
+      "text": "For each positive integer $k$, let $S_k$ denote the increasing arithmetic sequence of integers whose first term is $1$ and whose common difference is $k$. For example, $S_3$ is the sequence $1, 4, 7, 10, \\ldots$. For how many values of $k$ does $S_k$ contain the term $2005$?",
+      "choices": null,
+      "book_answer": "12",
+      "book_pages": [
+        53
+      ]
+    },
+    {
+      "id": "ACE_3_2_07",
+      "number": "3.2.7",
+      "kind": "problem",
+      "section": "Sequences And Series",
+      "original_source": "2020 HMMT",
+      "topic": "algebra",
+      "subtopic": "Vieta's formulas",
+      "text": "Let $P(x) = x^3 + x^2 - r^2x - 2020$ be a polynomial with roots $r, s, t$. What is $P(1)$?",
+      "choices": null,
+      "book_answer": "-4038",
+      "book_pages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "ACE_3_2_08",
+      "number": "3.2.8",
+      "kind": "problem",
+      "section": "Sequences And Series",
+      "original_source": "2011 AIME",
+      "topic": "algebra",
+      "subtopic": "Arithmetic sequences",
+      "text": "The degree measures of the angles in a convex $18$-sided polygon form an increasing arithmetic sequence with integer values. Find the degree measure of the smallest angle.",
+      "choices": null,
+      "book_answer": "143",
+      "book_pages": [
+        54
+      ]
+    },
+    {
+      "id": "ACE_3_2_09",
+      "number": "3.2.9",
+      "kind": "problem",
+      "section": "Sequences And Series",
+      "original_source": "2002 AIME",
+      "topic": "algebra",
+      "subtopic": "Infinite geometric series",
+      "text": "Two distinct, real, infinite geometric series each have a sum of $1$ and have the same second term. The third term of one of the series is $\\frac{1}{8}$, and the second term of both series can be written in the form $\\frac{\\sqrt{m}-n}{p}$, where $m$, $n$, and $p$ are positive integers and $m$ is not divisible by the square of any prime. Find $100m+10n+p$.",
+      "choices": null,
+      "book_answer": "518",
+      "book_pages": [
+        54,
+        55
+      ]
+    },
+    {
+      "id": "ACE_3_3_03",
+      "number": "3.3.3",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2010 AIME",
+      "topic": "algebra",
+      "subtopic": "Factoring polynomials",
+      "text": "Find the smallest positive integer $n$ with the property that the polynomial $x^4 - nx + 63$ can be written as a product of two nonconstant polynomials with integer coefficients.",
+      "choices": null,
+      "book_answer": "8",
+      "book_pages": [
+        56,
+        57
+      ]
+    },
+    {
+      "id": "ACE_3_3_04",
+      "number": "3.3.4",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2005 AMC",
+      "topic": "algebra",
+      "subtopic": "Vieta's formulas",
+      "text": "The quadratic equation $x^2 + mx + n$ has roots twice those of $x^2 + px + m$, and none of $m, n,$ and $p$ is zero. What is the value of $n/p$?",
+      "choices": {
+        "A": "$1$",
+        "B": "$2$",
+        "C": "$4$",
+        "D": "$8$",
+        "E": "$16$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        58
+      ]
+    },
+    {
+      "id": "ACE_3_3_05",
+      "number": "3.3.5",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2013 CHMMC",
+      "topic": "algebra",
+      "subtopic": "Roots of polynomials",
+      "text": "Suppose $f(x) = x^3 + x - 1$ has roots $r, s, t$. What is $\\frac{r^3}{1-r} + \\frac{s^3}{1-s} + \\frac{t^3}{1-t}$?",
+      "choices": null,
+      "book_answer": "3",
+      "book_pages": [
+        58
+      ]
+    },
+    {
+      "id": "ACE_3_3_06",
+      "number": "3.3.6",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2000 AMC",
+      "topic": "algebra",
+      "subtopic": "Function substitution and Vieta's formulas",
+      "text": "Let $f$ be a function for which $f\\left(\\dfrac{x}{3}\\right) = x^2 + x + 1$. Find the sum of all values of $z$ for which $f(3z) = 7$.",
+      "choices": {
+        "A": "$-1/3$",
+        "B": "$-1/9$",
+        "C": "$0$",
+        "D": "$5/9$",
+        "E": "$5/3$"
+      },
+      "book_answer": "B",
+      "book_pages": [
+        59
+      ]
+    },
+    {
+      "id": "ACE_3_3_07",
+      "number": "3.3.7",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2019 CMC 10",
+      "topic": "algebra",
+      "subtopic": "Linear functions",
+      "text": "Consider a polynomial $p(x)$ of degree $1$ such that for a real number $a$, $p(a) = 2$, $p(p(a)) = 17$ and $p(p(p(a))) = 167$. What is the value of $a$?",
+      "choices": {
+        "A": "$-1$",
+        "B": "$\\frac{-1}{2}$",
+        "C": "$0$",
+        "D": "$\\frac{1}{2}$",
+        "E": "$1$"
+      },
+      "book_answer": "D",
+      "book_pages": [
+        59
+      ]
+    },
+    {
+      "id": "ACE_3_3_08",
+      "number": "3.3.8",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2018 CHMMC",
+      "topic": "algebra",
+      "subtopic": "Vieta's formulas",
+      "text": "Suppose $r, s, t$ are the roots of the polynomial $x^3 - 2x + 3$. Find $$\\frac{1}{r^3 - 2} + \\frac{1}{s^3 - 2} + \\frac{1}{t^3 - 2}$$",
+      "choices": null,
+      "book_answer": "-67/109",
+      "book_pages": [
+        60
+      ]
+    },
+    {
+      "id": "ACE_3_3_09",
+      "number": "3.3.9",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2017 AMC",
+      "topic": "algebra",
+      "subtopic": "Common roots and factoring polynomials",
+      "text": "For certain real numbers $a$, $b$, and $c$, the polynomial $$g(x) = x^3 + ax^2 + x + 10$$ has three distinct roots, and each root of $g(x)$ is also a root of the polynomial $$f(x) = x^4 + x^3 + bx^2 + 100x + c.$$ What is $f(1)$?",
+      "choices": {
+        "A": "$-9009$",
+        "B": "$-8008$",
+        "C": "$-7007$",
+        "D": "$-6006$",
+        "E": "$-5005$"
+      },
+      "book_answer": "C",
+      "book_pages": [
+        60,
+        61
+      ]
+    },
+    {
+      "id": "ACE_3_3_10",
+      "number": "3.3.10",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2013 PUMAC",
+      "topic": "algebra",
+      "subtopic": "Vieta's formulas with a double root",
+      "text": "Suppose $a, b$ are nonzero integers such that two roots of $x^3 + ax^2 + bx + 9a$ coincide, and all three roots are integers. Find $|ab|$.",
+      "choices": null,
+      "book_answer": "1344",
+      "book_pages": [
+        61,
+        62
+      ]
+    },
+    {
+      "id": "ACE_3_3_11",
+      "number": "3.3.11",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2017 CMIMC Algebra",
+      "topic": "algebra",
+      "subtopic": "Polynomial identities and degrees",
+      "text": "Suppose $P(x)$ is a quadratic polynomial with integer coefficients satisfying the identity $$P(P(x)) - P(x)^2 = x^2 + x + 2016$$ for all real $x$. Find $P(1)$",
+      "choices": null,
+      "book_answer": "1010",
+      "book_pages": [
+        62
+      ]
+    },
+    {
+      "id": "ACE_3_3_12",
+      "number": "3.3.12",
+      "kind": "problem",
+      "section": "Polynomials",
+      "original_source": "2020 AIME",
+      "topic": "algebra",
+      "subtopic": "Vieta's formulas with shared roots",
+      "text": "Let $P(x) = x^2 - 3x - 7$, and let $Q(x)$ and $R(x)$ be two quadratic polynomials also with the coefficient of $x^2$ equal to $1$. David computes each of the three sums $P + Q$, $P + R$, and $Q + R$ and is surprised to find that each pair of these sums has a common root, and these three common roots are distinct. If $Q(0) = 2$, then $R(0) = \\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+      "choices": null,
+      "book_answer": "71",
+      "book_pages": [
+        63
+      ]
+    },
+    {
+      "id": "ACE_3_5_01",
+      "number": "3.5.1",
+      "kind": "problem",
+      "section": "Factoring Equations",
+      "original_source": "2019 BMT",
+      "topic": "algebra",
+      "subtopic": "Completing the square",
+      "text": "There are several pairs of integers $(a, b)$ satisfying $a^2 - 4a + b^2 - 8b = 30$. Find the sum of the sum of the coordinates of all such points.",
+      "choices": null,
+      "book_answer": "72",
+      "book_pages": [
+        69,
+        70
+      ]
+    },
+    {
+      "id": "ACE_3_5_03",
+      "number": "3.5.3",
+      "kind": "problem",
+      "section": "Factoring Equations",
+      "original_source": "2019 BMT",
+      "topic": "algebra",
+      "subtopic": "Sum of cubes identity with Vieta",
+      "text": "Let $r_1, r_2, r_3$ be the (possibly complex) roots of the polynomial $x^3 + ax^2 + bx + \\frac{4}{3}$. How many pairs of integers $a, b$ exist such that $r_1^3 + r_2^3 + r_3^3 = 0$",
+      "choices": null,
+      "book_answer": "3",
+      "book_pages": [
+        70
+      ]
+    },
+    {
+      "id": "ACE_3_5_06",
+      "number": "3.5.6",
+      "kind": "problem",
+      "section": "Factoring Equations",
+      "original_source": "1987 AIME",
+      "topic": "algebra",
+      "subtopic": "Simon's Favorite Factoring Trick",
+      "text": "$m, n$ are integers such that $m^2 + 3m^2n^2 = 30n^2 + 517$. Find $3m^2n^2$.",
+      "choices": null,
+      "book_answer": "588",
+      "book_pages": [
+        71
+      ]
+    },
+    {
+      "id": "ACE_3_5_07",
+      "number": "3.5.7",
+      "kind": "problem",
+      "section": "Factoring Equations",
+      "original_source": "2016 MMATH",
+      "topic": "algebra",
+      "subtopic": "Product of consecutive integers plus one",
+      "text": "Express $\\sqrt{25 + 21 \\cdot 22 \\cdot 23 \\cdot 24 \\cdot 25}$ as an integer.",
+      "choices": null,
+      "book_answer": "2525",
+      "book_pages": [
+        71
+      ]
+    },
+    {
+      "id": "ACE_3_5_08",
+      "number": "3.5.8",
+      "kind": "problem",
+      "section": "Factoring Equations",
+      "original_source": "2016 CMIMC",
+      "topic": "algebra",
+      "subtopic": "Adding equations and completing the square",
+      "text": "The parabolas $y = x^2 + 15x + 32$ and $x = y^2 + 49y + 593$ meet at one point $(x_0, y_0)$. Find $x_0 + y_0$.",
+      "choices": null,
+      "book_answer": "-31",
+      "book_pages": [
+        72
+      ]
+    },
+    {
+      "id": "ACE_3_5_09",
+      "number": "3.5.9",
+      "kind": "problem",
+      "section": "Factoring Equations",
+      "original_source": "2020 BMT",
+      "topic": "algebra",
+      "subtopic": "Sum of cubes when the sum is zero",
+      "text": "Let $a, b, c$ be real numbers such that $$a + b + c = \\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}$$ and $abc = 5$. The value of $\\left(a - \\frac{1}{b}\\right)^3 + \\left(b - \\frac{1}{c}\\right)^3 + \\left(c - \\frac{1}{a}\\right)^3$ can be written in the form $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+      "choices": null,
+      "book_answer": "77",
+      "book_pages": [
+        72
+      ]
+    },
+    {
+      "id": "ACE_3_5_10",
+      "number": "3.5.10",
+      "kind": "problem",
+      "section": "Factoring Equations",
+      "original_source": "2023 CMIMC",
+      "topic": "algebra",
+      "subtopic": "Prime factorization and sums of squares",
+      "text": "Suppose $a, b, c$, and $d$ are non-negative integers such that $$(a + b + c + d)(a^2 + b^2 + c^2 + d^2)^2 = 2023$$ Find $a^3 + b^3 + c^3 + d^3$",
+      "choices": null,
+      "book_answer": "43",
+      "book_pages": [
+        73
+      ]
+    },
+    {
+      "id": "ACE_3_6_01",
+      "number": "3.6.1",
+      "kind": "problem",
+      "section": "Systems of Equations",
+      "original_source": "2002 AMC",
+      "topic": "algebra",
+      "subtopic": "Linear systems",
+      "text": "Let $a, b$, and $c$ be real numbers such that $a - 7b + 8c = 4$ and $8a + 4b - c = 7$. Then $a^2 - b^2 + c^2$ is",
+      "choices": {
+        "A": "$0$",
+        "B": "$1$",
+        "C": "$4$",
+        "D": "$7$",
+        "E": "$8$"
+      },
+      "book_answer": "B",
+      "book_pages": [
+        73,
+        74
+      ]
+    },
+    {
+      "id": "ACE_3_6_03",
+      "number": "3.6.3",
+      "kind": "problem",
+      "section": "Systems of Equations",
+      "original_source": "SMT 2012 Algebra Test",
+      "topic": "algebra",
+      "subtopic": "Symmetric systems and factoring",
+      "text": "For real numbers $(x, y, z)$ satisfying the following equations, find all possible values of $x + y + z$.\n\n$x^2y + y^2z + z^2x = -1$\n\n$xy^2 + yz^2 + zx^2 = 5$\n\n$xyz = -2$",
+      "choices": null,
+      "book_answer": "2, \\sqrt[3]{1/2}",
+      "book_pages": [
+        75
+      ]
+    },
+    {
+      "id": "ACE_3_6_04",
+      "number": "3.6.4",
+      "kind": "problem",
+      "section": "Systems of Equations",
+      "original_source": "2000 AIME",
+      "topic": "algebra",
+      "subtopic": "Solving systems by substitution",
+      "text": "Suppose that $x$, $y$, and $z$ are three positive numbers that satisfy the equations $xyz = 1$, $x + \\frac{1}{z} = 5$, and $y + \\frac{1}{x} = 29$. Then $z + \\frac{1}{y} = \\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+      "choices": null,
+      "book_answer": "5",
+      "book_pages": [
+        76
+      ]
+    },
+    {
+      "id": "ACE_3_6_05",
+      "number": "3.6.5",
+      "kind": "problem",
+      "section": "Systems of Equations",
+      "original_source": "2010 AIME",
+      "topic": "algebra",
+      "subtopic": "Systems with a common term",
+      "text": "Let $(a, b, c)$ be the real number solution of the system of equations $x^3 - xyz = 2$, $y^3 - xyz = 6$, $z^3 - xyz = 20$. The greatest possible value of $a^3 + b^3 + c^3$ can be written in the form $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+      "choices": null,
+      "book_answer": "158",
+      "book_pages": [
+        76,
+        77
+      ]
+    },
+    {
+      "id": "ACE_3_6_06",
+      "number": "3.6.6",
+      "kind": "problem",
+      "section": "Systems of Equations",
+      "original_source": "2021 CMIMC",
+      "topic": "algebra",
+      "subtopic": "Symmetric sums substitution",
+      "text": "Let $a$ and $b$ be complex numbers such that $$(a+1)(b+1) = 2$$ and $(a^2+1)(b^2+1) = 32$. Compute the sum of all possible values of $(a^4+1)(b^4+1)$.",
+      "choices": null,
+      "book_answer": "1160",
+      "book_pages": [
+        77
+      ]
+    },
+    {
+      "id": "ACE_3_7_05",
+      "number": "3.7.5",
+      "kind": "problem",
+      "section": "Inequalities",
+      "original_source": "1983 AIME",
+      "topic": "algebra",
+      "subtopic": "AM-GM inequality",
+      "text": "Find the minimum value of $\\frac{9x^2\\sin^2 x + 4}{x\\sin x}$ for $0 < x < \\pi$.",
+      "choices": null,
+      "book_answer": "12",
+      "book_pages": [
+        79
+      ]
+    },
+    {
+      "id": "ACE_3_7_06",
+      "number": "3.7.6",
+      "kind": "problem",
+      "section": "Inequalities",
+      "original_source": "CEMC",
+      "topic": "algebra",
+      "subtopic": "AM-GM inequality",
+      "text": "If $x^2 + 3xy + y^2 = 60$ where $x$ and $y$ are real, then determine the maximum possible value of $xy$.",
+      "choices": null,
+      "book_answer": "12",
+      "book_pages": [
+        79,
+        80
+      ]
+    },
+    {
+      "id": "ACE_3_7_08",
+      "number": "3.7.8",
+      "kind": "problem",
+      "section": "Inequalities",
+      "original_source": "SMT 2018 Tiebreakers",
+      "topic": "algebra",
+      "subtopic": "Factoring and AM-GM",
+      "text": "If $a, b, c$ are real numbers with $a - b = 4$, find the maximum value of $ac + bc - c^2 - ab$.",
+      "choices": null,
+      "book_answer": "4",
+      "book_pages": [
+        80,
+        81
+      ]
+    },
+    {
+      "id": "ACE_3_8_01",
+      "number": "3.8.1",
+      "kind": "example",
+      "section": "Functional Equations",
+      "original_source": "BMT 2019",
+      "topic": "algebra",
+      "subtopic": "Functional equations",
+      "text": "If $f(x + y) = f(xy)$ for all real numbers $x$ and $y$, and $f(2019) = 17$, what is the value of $f(17)$?",
+      "choices": null,
+      "book_answer": "17",
+      "book_pages": [
+        81
+      ]
+    },
+    {
+      "id": "ACE_3_8_04",
+      "number": "3.8.4",
+      "kind": "problem",
+      "section": "Functional Equations",
+      "original_source": "2020 BMT",
+      "topic": "algebra",
+      "subtopic": "Functional equations and repeated squaring",
+      "text": "Let $f: \\mathbb{R}^+ \\to \\mathbb{R}^+$ be a function such that for all $x, y \\in \\mathbb{R}^+$, $f(x)f(y) = f(xy) + f\\left(\\frac{x}{y}\\right)$, where $\\mathbb{R}^+$ represents the positive real numbers. Given that $f(2) = 3$, compute the last two digits of $f\\left(2^{2^{2020}}\\right)$.",
+      "choices": null,
+      "book_answer": "47",
+      "book_pages": [
+        82,
+        83
+      ]
+    },
+    {
+      "id": "ACE_3_9_02",
+      "number": "3.9.2",
+      "kind": "example",
+      "section": "Telescoping",
+      "original_source": null,
+      "topic": "algebra",
+      "subtopic": "Telescoping products",
+      "text": "Evaluate $\\prod_{i=1}^{10} \\frac{i}{i+1}$.",
+      "choices": null,
+      "book_answer": "1/11",
+      "book_pages": [
+        83
+      ]
+    },
+    {
+      "id": "ACE_3_9_04",
+      "number": "3.9.4",
+      "kind": "example",
+      "section": "Telescoping",
+      "original_source": null,
+      "topic": "algebra",
+      "subtopic": "Telescoping sums",
+      "text": "What is $\\frac{1}{1\\cdot 2}+\\frac{1}{2\\cdot 3}+\\frac{1}{3\\cdot 4}+\\frac{1}{4\\cdot 5}+\\cdots$",
+      "choices": null,
+      "book_answer": "1",
+      "book_pages": [
+        84
+      ]
+    },
+    {
+      "id": "ACE_3_9_05",
+      "number": "3.9.5",
+      "kind": "problem",
+      "section": "Telescoping",
+      "original_source": "2002 AIME",
+      "topic": "algebra",
+      "subtopic": "Telescoping sums and SFFT",
+      "text": "Consider the sequence defined by $a_k = \\frac{1}{k^2+k}$ for $k \\ge 1$. Given that $a_m + a_{m+1} + \\cdots + a_{n-1} = 1/29$, for positive integers $m$ and $n$ with $m < n$, find $m + n$.",
+      "choices": null,
+      "book_answer": "840",
+      "book_pages": [
+        84
+      ]
+    },
+    {
+      "id": "ACE_3_9_06",
+      "number": "3.9.6",
+      "kind": "problem",
+      "section": "Telescoping",
+      "original_source": "2016 HMMT",
+      "topic": "algebra",
+      "subtopic": "Telescoping a recurrence",
+      "text": "An infinite sequence of real numbers $a_1, a_2, \\dots$ satisfies the recurrence $a_{n+3} = a_{n+2} - 2a_{n+1} + a_n$ for every positive integer $n$. Given that $a_1 = a_3 = 1$ and $a_{98} = a_{99}$, compute $a_1 + a_2 + \\cdots + a_{100}$.",
+      "choices": null,
+      "book_answer": "3",
+      "book_pages": [
+        84,
+        85
+      ]
+    },
+    {
+      "id": "ACE_3_9_07",
+      "number": "3.9.7",
+      "kind": "problem",
+      "section": "Telescoping",
+      "original_source": "2016 CHMMC",
+      "topic": "algebra",
+      "subtopic": "Partial fractions and telescoping",
+      "text": "Compute $\\sum_{n=1}^{\\infty} \\frac{2^{n+1}}{8\\cdot 4^n - 6\\cdot 2^n + 1}$",
+      "choices": null,
+      "book_answer": "1/3",
+      "book_pages": [
+        85
+      ]
+    },
+    {
+      "id": "ACE_3_10_03",
+      "number": "3.10.3",
+      "kind": "problem",
+      "section": "Floor Functions",
+      "original_source": "ARML",
+      "topic": "algebra",
+      "subtopic": "Floor and fractional part",
+      "text": "Find the smallest real number $x$ such that $\\frac{x}{\\lfloor x \\rfloor} = \\frac{2002}{2003}$.",
+      "choices": null,
+      "book_answer": "-2002^2/2003",
+      "book_pages": [
+        86,
+        87
+      ]
+    },
+    {
+      "id": "ACE_3_10_05",
+      "number": "3.10.5",
+      "kind": "problem",
+      "section": "Floor Functions",
+      "original_source": "1989 AHSME",
+      "topic": "algebra",
+      "subtopic": "Floor functions and probability",
+      "text": "Let $x$ be a real number selected uniformly at random between $100$ and $200$. If $\\lfloor \\sqrt{x} \\rfloor = 12$, find the probability that $\\lfloor \\sqrt{100x} \\rfloor = 120$. ($\\lfloor v \\rfloor$ means the greatest integer less than or equal to $v$.)",
+      "choices": {
+        "A": "$\\frac{2}{25}$",
+        "B": "$\\frac{241}{2500}$",
+        "C": "$\\frac{1}{10}$",
+        "D": "$\\frac{96}{625}$",
+        "E": "$1$"
+      },
+      "book_answer": "B",
+      "book_pages": [
+        87
+      ]
+    },
+    {
+      "id": "ACE_3_10_06",
+      "number": "3.10.6",
+      "kind": "problem",
+      "section": "Floor Functions",
+      "original_source": "2015 CHMMC",
+      "topic": "algebra",
+      "subtopic": "Counting with floor functions",
+      "text": "Find the number of positive integers $n$ satisfying $\\lfloor \\frac{n}{2014} \\rfloor = \\lfloor \\frac{n}{2016} \\rfloor$.",
+      "choices": null,
+      "book_answer": "1015055",
+      "book_pages": [
+        88
+      ]
+    },
+    {
+      "id": "ACE_3_10_07",
+      "number": "3.10.7",
+      "kind": "problem",
+      "section": "Floor Functions",
+      "original_source": "2020 AMC 10",
+      "topic": "algebra",
+      "subtopic": "Floor of a square root",
+      "text": "How many positive integers $n$ satisfy $$\\frac{n+1000}{70} = \\lfloor \\sqrt{n} \\rfloor?$$ (Recall that $\\lfloor x \\rfloor$ is the greatest integer not exceeding $x$.)",
+      "choices": {
+        "A": "$2$",
+        "B": "$4$",
+        "C": "$6$",
+        "D": "$30$",
+        "E": "$32$"
+      },
+      "book_answer": "C",
+      "book_pages": [
+        88,
+        89
+      ]
+    },
+    {
+      "id": "ACE_3_10_08",
+      "number": "3.10.8",
+      "kind": "problem",
+      "section": "Floor Functions",
+      "original_source": "2022 BMT",
+      "topic": "algebra",
+      "subtopic": "Floor and fractional part",
+      "text": "Compute the sum of the real solutions to $\\lfloor x \\rfloor \\{x\\} = 2020x$. Here, $\\lfloor x \\rfloor$ is defined as the greatest integer less than or equal to $x$, and $\\{x\\} = x - \\lfloor x \\rfloor$.",
+      "choices": null,
+      "book_answer": "-1/2021",
+      "book_pages": [
+        89
+      ]
+    },
+    {
+      "id": "ACE_3_11_01",
+      "number": "3.11.1",
+      "kind": "problem",
+      "section": "Recursive Sequences",
+      "original_source": "COMC",
+      "topic": "algebra",
+      "subtopic": "Periodic recursive sequences",
+      "text": "The sequence of numbers $t_1, t_2, t_3, \\ldots$ is defined by $t_1 = 2$ and $$t_{n+1} = \\frac{t_n - 1}{t_n + 1}$$ for every positive integer $n$. Determine the value of $t_{999}$.",
+      "choices": null,
+      "book_answer": "-1/2",
+      "book_pages": [
+        90
+      ]
+    },
+    {
+      "id": "ACE_3_11_02",
+      "number": "3.11.2",
+      "kind": "problem",
+      "section": "Recursive Sequences",
+      "original_source": "2019 AMC",
+      "topic": "algebra",
+      "subtopic": "Recursive sequences and reciprocals",
+      "text": "A sequence of numbers is defined recursively by $a_1 = 1$, $a_2 = \\frac{3}{7}$, and $$a_n = \\frac{a_{n-2}\\cdot a_{n-1}}{2a_{n-2} - a_{n-1}}$$ for all $n \\geq 3$ Then $a_{2019}$ can be written as $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. What is $p+q$?",
+      "choices": {
+        "A": "$2020$",
+        "B": "$4039$",
+        "C": "$6057$",
+        "D": "$6061$",
+        "E": "$8078$"
+      },
+      "book_answer": "E",
+      "book_pages": [
+        90
+      ]
+    },
+    {
+      "id": "ACE_3_12_01",
+      "number": "3.12.1",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2021 BMT",
+      "topic": "algebra",
+      "subtopic": "Vieta's formulas",
+      "text": "Let $a, b, c$ be the solutions of the equation $x^3 - 3\\cdot 2021^2 x = 2\\cdot 2021^3$. Compute $\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}$",
+      "choices": null,
+      "book_answer": "-3/4042",
+      "book_pages": [
+        91,
+        92
+      ]
+    },
+    {
+      "id": "ACE_3_12_02",
+      "number": "3.12.2",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2018 HMMT",
+      "topic": "algebra",
+      "subtopic": "Equations with primes and divisibility",
+      "text": "Distinct prime numbers $p, q, r$ satisfy the equation $$2pqr + 50pq = 7pqr + 55pr = 8pqr + 12qr = A$$ for some positive integer $A$. What is $A$?",
+      "choices": null,
+      "book_answer": "1980",
+      "book_pages": [
+        92
+      ]
+    },
+    {
+      "id": "ACE_3_12_03",
+      "number": "3.12.3",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2021 PUMAC",
+      "topic": "algebra",
+      "subtopic": "Exponential substitution",
+      "text": "Compute the sum of all real numbers $x$ which satisfy the following equation: $\\frac{8^x-19\\cdot 4^x}{16-25\\cdot 2^x} = 2$.",
+      "choices": null,
+      "book_answer": "5",
+      "book_pages": [
+        92
+      ]
+    },
+    {
+      "id": "ACE_3_12_04",
+      "number": "3.12.4",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2023 Purple Comet",
+      "topic": "algebra",
+      "subtopic": "Vieta's formulas with arithmetic progressions",
+      "text": "For real numbers $a$, $b$, and $c$, the roots of the polynomial $$x^5 - 10x^4 + ax^3 + bx^2 + cx - 320$$ form an arithmetic progression. Find $a + b + c$.",
+      "choices": null,
+      "book_answer": "49",
+      "book_pages": [
+        93
+      ]
+    },
+    {
+      "id": "ACE_3_12_05",
+      "number": "3.12.5",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2020 CMIMC",
+      "topic": "algebra",
+      "subtopic": "Double roots and Vieta's formulas",
+      "text": "Find the unique real number $c$ such that the polynomial $x^3 + cx + c$ has exactly two real roots.",
+      "choices": null,
+      "book_answer": "-27/4",
+      "book_pages": [
+        93,
+        94
+      ]
+    },
+    {
+      "id": "ACE_3_12_06",
+      "number": "3.12.6",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2016 CMIMC",
+      "topic": "algebra",
+      "subtopic": "Symmetric sums and AM-GM",
+      "text": "Let $a$, $b$, $c$, and $d$ be positive real numbers which satisfy the system of equations $$(a+b)(c+d) = 143,$$ $$(a+c)(b+d) = 150,$$ $$(a+d)(b+c) = 169.$$ Find the smallest possible value of $a^2 + b^2 + c^2 + d^2$.",
+      "choices": null,
+      "book_answer": "214",
+      "book_pages": [
+        94
+      ]
+    },
+    {
+      "id": "ACE_3_12_07",
+      "number": "3.12.7",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2012 PUMAC",
+      "topic": "algebra",
+      "subtopic": "Completing the square in a system",
+      "text": "Let $a$, $b$, and $c$ be positive integers satisfying $$a^4 + a^2b^2 + b^4 = 9633$$ $$2a^2 + a^2b^2 + 2b^2 + c^5 = 3605$$ What is the sum of all distinct values of $a + b + c$?",
+      "choices": null,
+      "book_answer": "18",
+      "book_pages": [
+        95
+      ]
+    },
+    {
+      "id": "ACE_3_12_09",
+      "number": "3.12.9",
+      "kind": "problem",
+      "section": "Cumulative Problems",
+      "original_source": "2016 CMIMC Team",
+      "topic": "algebra",
+      "subtopic": "Symmetric expressions",
+      "text": "Suppose $x$, $y$, and $z$ are nonzero complex numbers such that $$(x + y + z)(x^2 + y^2 + z^2) = x^3 + y^3 + z^3$$ Compute $(x + y + z)\\left(\\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z}\\right)$.",
+      "choices": null,
+      "book_answer": "3",
+      "book_pages": [
+        96
+      ]
+    }
+  ]
+}

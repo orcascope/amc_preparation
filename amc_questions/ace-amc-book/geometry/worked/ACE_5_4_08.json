@@ -1,0 +1,74 @@
+{
+  "id": "ACE_5_4_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.4.8",
+    "kind": "problem",
+    "section": "Area",
+    "original_source": "2003 AIME"
+  },
+  "topic": "geometry",
+  "subtopic": "Circumradius and area",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_5_4_08.png",
+    "text": "Find the area of rhombus $ABCD$ given that the circumradii of triangles $ABD$ and $ACD$ are $12.5$ and $25$, respectively.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$400$",
+    "accept": [
+      "400"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: circumradius means $K = \\frac{abc}{4R}$",
+      "body": "The only numbers given are circumradii, and the formula that links a circumradius $R$ to side lengths is $K = \\frac{abc}{4R}$, where $K$ is the area and $a$, $b$, $c$ are the sides. So describe the rhombus with two variables: the diagonals of a rhombus bisect each other at right angles, so let the half-diagonals be $x$ (half of $AC$) and $y$ (half of $BD$).",
+      "your_turn": {
+        "prompt": "Write the side length $s$ of the rhombus in terms of $x$ and $y$.",
+        "answer": "$s=\\sqrt{x^2+y^2}$, by the Pythagorean theorem in one of the four right triangles made by the diagonals."
+      }
+    },
+    {
+      "title": "Write both triangle areas with the formula",
+      "body": "Triangle $ABD$ has sides $s$, $s$ and $BD = 2y$, with $R = 12.5$, so its area is\n$$\\frac{s\\cdot s\\cdot 2y}{4\\cdot 12.5} = \\frac{s^2 y}{25}.$$\nTriangle $ACD$ has sides $s$, $s$ and $AC = 2x$, with $R = 25$.",
+      "your_turn": {
+        "prompt": "Write the area of triangle $ACD$ the same way.",
+        "answer": "$\\frac{s\\cdot s\\cdot 2x}{4\\cdot 25} = \\frac{s^2 x}{50}$."
+      }
+    },
+    {
+      "title": "The two triangles have equal areas",
+      "body": "Each diagonal cuts the rhombus into two congruent halves, so triangle $ABD$ and triangle $ACD$ are both exactly half of the rhombus. Their areas are therefore equal, which gives a relation between $x$ and $y$.",
+      "your_turn": {
+        "prompt": "Set $\\frac{s^2 y}{25} = \\frac{s^2 x}{50}$ and find how $x$ and $y$ are related.",
+        "answer": "Divide by $s^2$ (it is not $0$): $\\frac{y}{25}=\\frac{x}{50}$, so $x = 2y$."
+      }
+    },
+    {
+      "title": "A second way to write the same area",
+      "body": "Now find the area of triangle $ABD$ without the circumradius. Its base is $BD = 2y$ and its height is the distance from $A$ to $BD$, which is $x$, because the diagonals are perpendicular. Comparing this with $\\frac{s^2 y}{25}$ will pin down $y$.",
+      "your_turn": {
+        "prompt": "Using $x = 2y$, write both $s^2$ and the base-height area of triangle $ABD$ in terms of $y$ only.",
+        "answer": "$s^2 = (2y)^2 + y^2 = 5y^2$, and the area is $\\tfrac12\\cdot 2y\\cdot 2y = 2y^2$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The circumradius formula gives the area of $ABD$ as $\\frac{5y^2\\cdot y}{25} = \\frac{y^3}{5}$, so\n$$\\frac{y^3}{5} = 2y^2 \\;\\Rightarrow\\; y = 10,\\quad x = 20.$$\nThe diagonals are $2x = 40$ and $2y = 20$, so the rhombus has area $\\frac{40\\cdot 20}{2} = 400$. (Check: triangle $ABD$ has sides $10\\sqrt5$, $10\\sqrt5$, $20$ and area $200$, so $R = \\frac{500\\cdot 20}{800} = 12.5$.) The answer is **$400$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "400",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}

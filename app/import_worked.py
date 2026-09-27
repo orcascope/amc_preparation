@@ -4,8 +4,11 @@ Contest years live in amc_questions/<year>/ and the ACE book in
 amc_questions/ace-amc-book/<topic>/; both have worked/ and answer_key.json.
 
 Usage:
-    python tools/import_worked.py            # import all years
-    python tools/import_worked.py --check    # validate only, write nothing
+    python -m app.import_worked              # import all years (from the repo root)
+    python -m app.import_worked --check      # validate only, write nothing
+
+(python -m tools.import_worked does the same: tools/ only holds a wrapper,
+because tools/ is not deployed with the Databricks app.)
 
 Content tables (problems, steps, wrong_choices) are rebuilt from scratch.
 Student tables are never touched, so re-importing keeps everyone's progress.

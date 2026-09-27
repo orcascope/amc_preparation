@@ -1,0 +1,66 @@
+{
+  "id": "ACE_5_2_08",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.2.8",
+    "kind": "problem",
+    "section": "Similar Triangles",
+    "original_source": "2018 HMMT"
+  },
+  "topic": "geometry",
+  "subtopic": "Similar right triangles",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_5_2_08.png",
+    "text": "Triangle $GRT$ has $\\overline{GR} = 5$, $\\overline{RT} = 12$, and $\\overline{GT} = 13$. The perpendicular bisector of $\\overline{GT}$ intersects the extension $\\overline{GR}$ at $O$. Find $\\overline{TO}$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{169}{10}$",
+    "accept": [
+      "\\frac{169}{10}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: spot the right angles",
+      "body": "There is no picture, so draw one. The sides $5$, $12$, $13$ are a famous Pythagorean triple, so $\\triangle GRT$ has a right angle. The perpendicular bisector gives a second right angle: let $M$ be the midpoint of $GT$, so $MG = MT = \\tfrac{13}{2}$ and $\\angle OMT = 90^\\circ$. Two right triangles sharing an angle is the classic setup for similar triangles.",
+      "your_turn": {
+        "prompt": "Which angle of $\\triangle GRT$ is the right angle, and why?",
+        "answer": "$\\angle R$, because $5^2 + 12^2 = 25 + 144 = 169 = 13^2$ and $GT = 13$ is the side opposite $R$."
+      }
+    },
+    {
+      "title": "Where $O$ is, and the shared angle",
+      "body": "Triangles $MOT$ and $MOG$ share side $MO$, have $MT = MG$ and both have a right angle at $M$, so they are congruent (SAS). So $OT = OG$ and $\\angle MTO = \\angle MGO$. Now $O$ lies on line $GR$ extended past $R$, so ray $GO$ is ray $GR$ and $\\angle MGO$ is just $\\angle TGR$ of the original triangle.",
+      "your_turn": {
+        "prompt": "Why must $O$ be on the $R$ side of $G$ and not on the extension beyond $G$?",
+        "answer": "In right triangle $GMO$ the angle at $G$ must be acute. On ray $GR$ that angle is $\\angle TGR$, which is acute; on the opposite ray it would be $180^\\circ - \\angle TGR$, which is obtuse."
+      }
+    },
+    {
+      "title": "Two similar right triangles",
+      "body": "$\\triangle TMO$ has a right angle at $M$ and angle $\\angle MTO = \\angle TGR$ at $T$. $\\triangle GRT$ has a right angle at $R$ and the same angle at $G$. By AA, $\\triangle TMO \\sim \\triangle GRT$, with $T \\leftrightarrow G$, $M \\leftrightarrow R$, $O \\leftrightarrow T$.",
+      "your_turn": {
+        "prompt": "Using that matching, which side of $\\triangle GRT$ corresponds to $TO$, and which corresponds to $TM$?",
+        "answer": "$TO$ matches the hypotenuse $GT$, and $TM$ matches $GR$ (the leg next to the equal angle)."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "Corresponding sides are in proportion:\n$$\\frac{TO}{TM} = \\frac{GT}{GR} \\quad\\Longrightarrow\\quad TO = \\frac{13}{2}\\cdot\\frac{13}{5} = \\frac{169}{10}.$$\nThis is bigger than $GR = 5$, so $O$ is indeed past $R$. The answer is **$\\frac{169}{10}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "169/10",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Pass. Reviewer asked for 169/10 and 16.9 in accept; the app already matches those forms by value, so no change."
+  }
+}

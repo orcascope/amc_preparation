@@ -1,0 +1,58 @@
+{
+  "id": "ACE_5_4_06",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.4.6",
+    "kind": "problem",
+    "section": "Area",
+    "original_source": "2016 AMC 10"
+  },
+  "topic": "geometry",
+  "subtopic": "Area by decomposition",
+  "difficulty": 2,
+  "problem": {
+    "image": "images/ACE_5_4_06.png",
+    "text": "Find the area of the shaded region.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$\\frac{13}{2}$",
+    "accept": [
+      "\\frac{13}{2}"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: the picture is symmetric",
+      "body": "Look at the labels: $1, 7$ on top and $7, 1$ on the bottom; $1, 4$ on the left and $4, 1$ on the right. Turning the rectangle $180^\\circ$ about its center moves each marked point onto the opposite one, so each drawn segment joins a point to its partner and passes through the center. That is the clue: the segments cross at the center, the two shaded pieces are identical, and we only need one of them.",
+      "your_turn": {
+        "prompt": "What are the width and height of the rectangle, and how far is the center from the top side and from the left side?",
+        "answer": "Width $1 + 7 = 8$ and height $1 + 4 = 5$. The center is $\\frac{5}{2}$ below the top side and $4$ to the right of the left side."
+      }
+    },
+    {
+      "title": "Split the top-left piece into two triangles",
+      "body": "The top-left shaded piece has four corners: the top-left corner of the rectangle, the point $1$ along the top, the center, and the point $1$ down the left side. Draw a segment from the rectangle's corner to the center. This cuts the piece into two triangles, each with a side of length $1$ lying on the rectangle's edge.",
+      "your_turn": {
+        "prompt": "For the triangle whose base is the length-$1$ piece of the top side, what is its height (the distance from the center to the top side)? What is its area?",
+        "answer": "Height $\\frac{5}{2}$, so area $\\frac{1}{2}\\cdot 1\\cdot\\frac{5}{2} = \\frac{5}{4}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The other triangle has base $1$ on the left side and height $4$ (the distance from the center to the left side), so its area is $\\frac{1}{2}\\cdot 1\\cdot 4 = 2$. One shaded piece has area $\\frac{5}{4} + 2 = \\frac{13}{4}$, and the two pieces together have area $2\\cdot\\frac{13}{4} = \\frac{13}{2}$. The answer is **$\\frac{13}{2}$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "13/2",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Pass. Reviewer asked for 13/2 and 6.5 in accept; the app already matches those forms by value, so no change."
+  }
+}

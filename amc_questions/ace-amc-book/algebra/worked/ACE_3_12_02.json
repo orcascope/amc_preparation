@@ -1,0 +1,66 @@
+{
+  "id": "ACE_3_12_02",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "3.12.2",
+    "kind": "problem",
+    "section": "Cumulative Problems",
+    "original_source": "2018 HMMT"
+  },
+  "topic": "algebra",
+  "subtopic": "Equations with primes and divisibility",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_3_12_02.png",
+    "text": "Distinct prime numbers $p, q, r$ satisfy the equation $$2pqr + 50pq = 7pqr + 55pr = 8pqr + 12qr = A$$ for some positive integer $A$. What is $A$?",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$1980$",
+    "accept": [
+      "1980"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: divide everything by $pqr$",
+      "body": "Each expression is a multiple of $pqr$ plus a product of just two of the primes. Dividing by $pqr$ cancels those two primes and leaves only one prime in each expression, which is much easier to work with.",
+      "your_turn": {
+        "prompt": "Divide each of the three expressions by $pqr$.",
+        "answer": "$2 + \\frac{50}{r} = 7 + \\frac{55}{q} = 8 + \\frac{12}{p} = \\frac{A}{pqr}$."
+      }
+    },
+    {
+      "title": "Find the choices for $q$",
+      "body": "Take the middle and last expressions: $7 + \\frac{55}{q} = 8 + \\frac{12}{p}$, so $\\frac{55}{q} = 1 + \\frac{12}{p}$. Multiplying by $pq$ gives\n$$55p = q(p + 12).$$ So the prime $q$ divides $55p$. A prime that divides a product divides one of its factors, and $q \\neq p$ because the primes are distinct, so $q$ divides $55 = 5\\cdot 11$.",
+      "your_turn": {
+        "prompt": "Which primes can $q$ be?",
+        "answer": "Only $5$ or $11$, the prime factors of $55$."
+      }
+    },
+    {
+      "title": "Test $q = 5$",
+      "body": "For each choice of $q$, the value $7 + \\frac{55}{q}$ is known, and then $8 + \\frac{12}{p}$ and $2 + \\frac{50}{r}$ must equal it. That pins down $p$ and $r$, and we only keep the case where both are primes.",
+      "your_turn": {
+        "prompt": "If $q = 5$, what would $p$ have to be? Is it a prime?",
+        "answer": "$7 + 11 = 18$, so $\\frac{12}{p} = 10$ and $p = \\frac{6}{5}$. That is not a prime, so $q \\neq 5$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "So $q = 11$ and the common value is $7 + 5 = 12$. Then $\\frac{12}{p} = 4$ gives $p = 3$, and $\\frac{50}{r} = 10$ gives $r = 5$. These are distinct primes, and $\\frac{A}{pqr} = 12$ with $pqr = 3\\cdot 11\\cdot 5 = 165$, so $A = 12\\cdot 165 = 1980$. Check: $2\\cdot 165 + 50\\cdot 33 = 330 + 1650 = 1980$. The answer is **$1980$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "1980",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
+  }
+}

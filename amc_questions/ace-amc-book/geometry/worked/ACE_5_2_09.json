@@ -1,0 +1,74 @@
+{
+  "id": "ACE_5_2_09",
+  "source": {
+    "book": "ACE The AMC 10 and AMC 12",
+    "number": "5.2.9",
+    "kind": "problem",
+    "section": "Similar Triangles",
+    "original_source": "2021 AIME"
+  },
+  "topic": "geometry",
+  "subtopic": "Similar right triangles",
+  "difficulty": 3,
+  "problem": {
+    "image": "images/ACE_5_2_09.png",
+    "text": "In the diagram below, $ABCD$ is a rectangle with side lengths $AB = 3$ and $BC = 11$, and $AECF$ is a rectangle with side lengths $AF = 7$ and $FC = 9$, as shown. The area of the shaded region common to the interiors of both rectangles is $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+    "choices": null
+  },
+  "answer": {
+    "choice": null,
+    "value": "$109$",
+    "accept": [
+      "109"
+    ]
+  },
+  "steps": [
+    {
+      "title": "Where to start: find where $AE$ crosses $BC$",
+      "body": "The shaded region is bounded by lines that cross each other, so we need the crossing points. Call $Z$ the point where $AE$ crosses $BC$. Triangles $ABZ$ and $CEZ$ each have a right angle (at $B$ and at $E$, corners of the rectangles), and their angles at $Z$ are vertical angles, so they are similar by AA. First collect the lengths you know.",
+      "your_turn": {
+        "prompt": "In rectangle $AECF$, how long are $CE$ and $AE$?",
+        "answer": "Opposite sides of a rectangle are equal, so $CE = AF = 7$ and $AE = FC = 9$."
+      }
+    },
+    {
+      "title": "Write $BZ$ and $CZ$ in terms of $x$",
+      "body": "Let $AZ = x$, so $EZ = 9 - x$. Match the similar triangles: the right angles match, so $AB \\leftrightarrow CE$, $BZ \\leftrightarrow EZ$ and the hypotenuses $AZ \\leftrightarrow CZ$. From $\\frac{AB}{BZ} = \\frac{CE}{EZ}$ we get $\\frac{3}{BZ} = \\frac{7}{9-x}$, so $BZ = \\frac{27 - 3x}{7}$.",
+      "your_turn": {
+        "prompt": "Use $\\frac{AB}{AZ} = \\frac{CE}{CZ}$ to write $CZ$ in terms of $x$.",
+        "answer": "$\\frac{3}{x} = \\frac{7}{CZ}$, so $CZ = \\frac{7x}{3}$."
+      }
+    },
+    {
+      "title": "Use $BC = 11$",
+      "body": "$Z$ is on $BC$, so $BZ + CZ = 11$:\n$$\\frac{27 - 3x}{7} + \\frac{7x}{3} = 11.$$\nMultiply by $21$ to clear the fractions.",
+      "your_turn": {
+        "prompt": "Solve for $x$.",
+        "answer": "$81 - 9x + 49x = 231$, so $40x = 150$ and $x = \\frac{15}{4}$. Check: then $BZ = \\frac{9}{4}$, and $3, \\frac{9}{4}, \\frac{15}{4}$ is a $3$-$4$-$5$ triangle scaled by $\\frac34$."
+      }
+    },
+    {
+      "title": "Cut two triangles off rectangle $AECF$",
+      "body": "The shaded region is rectangle $AECF$ with two right triangles removed: $\\triangle CEZ$ at the bottom and a matching triangle at $F$ at the top. They are congruent because both rectangles are symmetric about the midpoint of $AC$ (a half turn about that point swaps the two corners). Rectangle $AECF$ has area $7 \\cdot 9 = 63$.",
+      "your_turn": {
+        "prompt": "Find $EZ$ and the area of $\\triangle CEZ$.",
+        "answer": "$EZ = 9 - \\frac{15}{4} = \\frac{21}{4}$, so the area is $\\frac12 \\cdot 7 \\cdot \\frac{21}{4} = \\frac{147}{8}$."
+      }
+    },
+    {
+      "title": "Put it together",
+      "body": "The shaded area is $63 - 2\\cdot\\frac{147}{8} = 63 - \\frac{147}{4} = \\frac{105}{4}$. (Check: the shaded parallelogram has base $CZ = \\frac{35}{4}$ on $BC$ and height $3$, giving $\\frac{105}{4}$ again.) Since $105$ and $4$ share no factor, $m + n = 105 + 4 = 109$. The answer is **$109$**.",
+      "reveals_answer": true
+    }
+  ],
+  "verification": {
+    "book_answer": "109",
+    "matches_book": true,
+    "verifier_verdict": "pass",
+    "confidence": "high",
+    "reviewed_by_teacher": false,
+    "generated_with": "ACE book solution",
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Independent reviewer re-derived the answer, checked the text and figure description against the book image, and found no holes."
+  }
+}
