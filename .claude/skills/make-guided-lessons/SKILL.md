@@ -141,19 +141,22 @@ Put the relevant warnings in the tutor prompt up front.
 
 Run everything from the repository root. `app` and `tools` are packages, so
 scripts that import the app use `python -m` (the cropping and assembling
-scripts can still be run directly). The importer's code is in
-`app/import_worked.py`, because the Databricks app runs it at startup and
-`tools/` is not deployed. `tools.import_worked` only forwards to it. Change the
-importer only in `app/`.
+scripts can still be run directly). The loader's code is in
+`app/content_loader.py`, because it's part of the deployed app and
+`tools/` is not deployed. `tools.content_loader` only forwards to it. Change the
+loader only in `app/`. It is never run automatically (not at app startup) —
+name the folder(s) you just touched:
 
 ```
-python tools/assemble_book.py <topic>        # book only: statements/ACE_<topic>.json + answer_key.json
-python -m tools.import_worked --check        # format + answer-key check, needs no database
-node tools/check_math.js                     # every formula renders in KaTeX
-python -m tools.import_worked                # load into PostgreSQL (DATABASE_URL in .env)
+python tools/assemble_book.py <topic>              # book only: statements/ACE_<topic>.json + answer_key.json
+python -m tools.content_loader <folder> --check     # format + answer-key check, needs no database
+node tools/check_math.js                            # every formula renders in KaTeX
+python -m tools.content_loader <folder>             # upsert into PostgreSQL (DATABASE_URL in .env)
 ```
-`--check` must report `skipped 0`. After assembling a book batch, delete
-`statements/items/`, because the assembled file is now the source.
+`<folder>` is the path under `amc_questions/` you changed, e.g. `2019` or
+`ace-amc-book/geometry`. `--check` must report `0 skipped`. After assembling a
+book batch, delete `statements/items/`, because the assembled file is now the
+source.
 
 Then look at it in the app: start it with `python -m app.run` and use Playwright (Chromium is at
 `/opt/pw-browsers`) to:

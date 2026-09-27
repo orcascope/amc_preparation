@@ -44,10 +44,12 @@ unproven and listed a spoiler.
 
 ## App and database
 
-- The importer rebuilds the content tables only. Student progress is never
-  touched, so re-importing is always safe.
-- `python -m tools.import_worked --check` needs no database. A full import needs
-  `DATABASE_URL` (PostgreSQL) in `.env`.
+- The loader upserts the content tables only, scoped to the folder(s) you name
+  (nothing is deleted first). Student progress is never touched, so
+  re-loading is always safe.
+- It runs only when you run it — never automatically at app startup.
+- `python -m tools.content_loader <folder> --check` needs no database. A real
+  load needs `DATABASE_URL` (PostgreSQL) in `.env`.
 - Book rows sort by a zero-padded section (`02.10` after `02.09`), and the
   app lists each topic easiest first (difficulty, then source order).
 - Playwright: a hash-only navigation doesn't re-render the page. After
