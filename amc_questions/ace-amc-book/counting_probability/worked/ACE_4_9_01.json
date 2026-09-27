@@ -13,7 +13,13 @@
   "problem": {
     "image": "images/ACE_4_9_01.png",
     "text": "A frog sitting at the point $(1, 2)$ begins a sequence of jumps, where each jump is parallel to one of the coordinate axes and has length $1$, and the direction of each jump (up, down, right, or left) is chosen independently at random. The sequence ends when the frog reaches a side of the square with vertices $(0,0), (0,4), (4,4)$, and $(4,0)$. What is the probability that the sequence of jumps ends on a vertical side of the square?",
-    "choices": { "A": "$\\frac{1}{2}$", "B": "$\\frac{5}{8}$", "C": "$\\frac{2}{3}$", "D": "$\\frac{3}{4}$", "E": "$\\frac{7}{8}$" }
+    "choices": {
+      "A": "$\\frac{1}{2}$",
+      "B": "$\\frac{5}{8}$",
+      "C": "$\\frac{2}{3}$",
+      "D": "$\\frac{3}{4}$",
+      "E": "$\\frac{7}{8}$"
+    }
   },
   "answer": {
     "choice": "B",
@@ -56,10 +62,11 @@
   "verification": {
     "book_answer": "B",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

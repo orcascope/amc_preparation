@@ -48,7 +48,7 @@
     }
   ],
   "verification": {
-    "book_answer": "a) 40320, b) 7! = 5040",
+    "book_answer": "40320, 5040",
     "matches_book": true,
     "verifier_verdict": "pass",
     "confidence": "high",

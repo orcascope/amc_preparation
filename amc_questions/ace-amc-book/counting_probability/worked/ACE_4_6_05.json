@@ -15,7 +15,13 @@
     "text": "Define a sequence recursively by $t_1 = 20$, $t_2 = 21$, and $$t_n = \\frac{5t_{n-1} + 1}{25t_{n-2}}$$ for all $n \\ge 3$. Then $t_{2020}$ can be expressed as $\\frac{p}{q}$, where $p$ and $q$ are relatively prime positive integers. Find $p + q$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$626$", "accept": ["626"] },
+  "answer": {
+    "choice": null,
+    "value": "$626$",
+    "accept": [
+      "626"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: compute terms and look for a repeat",
@@ -50,10 +56,11 @@
   "verification": {
     "book_answer": "626",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

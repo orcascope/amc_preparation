@@ -13,7 +13,13 @@
   "problem": {
     "image": "images/ACE_4_10_02.png",
     "text": "Let $S$ be a square of side length $1$. Two points are chosen independently at random on the sides of $S$. The probability that the straight-line distance between the points is at least $\\dfrac{1}{2}$ is $\\dfrac{a-b\\pi}{c}$, where $a$, $b$, and $c$ are positive integers with $\\gcd(a,b,c)=1$. What is $a+b+c$?",
-    "choices": { "A": "$59$", "B": "$60$", "C": "$61$", "D": "$62$", "E": "$63$" }
+    "choices": {
+      "A": "$59$",
+      "B": "$60$",
+      "C": "$61$",
+      "D": "$62$",
+      "E": "$63$"
+    }
   },
   "answer": {
     "choice": "A",
@@ -54,10 +60,11 @@
   "verification": {
     "book_answer": "A",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }
