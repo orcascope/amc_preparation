@@ -1,9 +1,10 @@
 -- PostgreSQL schema. Applied on startup by app/db.py; every statement is
 -- idempotent, so it is safe to run against an existing database.
 
--- Content tables: rebuilt from amc_questions/<year>/worked/*.json and
--- amc_questions/ace-amc-book/<topic>/worked/*.json by
--- app/import_worked.py. Never edit these by hand; edit the JSON and re-import.
+-- Content tables: upserted from amc_questions/<year>/worked/*.json and
+-- amc_questions/ace-amc-book/<topic>/worked/*.json by app/content_loader.py,
+-- run manually per-folder (never automatically on app startup). Never edit
+-- these by hand; edit the JSON and re-run the loader on that folder.
 CREATE SCHEMA IF NOT EXISTS amc_app;
 
 CREATE TABLE IF NOT EXISTS problems (

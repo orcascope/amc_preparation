@@ -28,9 +28,14 @@ The app stores its data in PostgreSQL.
    python app/run.py
    ```
 
-The tables are created on first start. `run.py` then imports the latest worked
-solutions into the database, starts a local server, and opens
-`http://localhost:5000` in your browser. Everyone using this server shares one
+The tables are created on first start. `run.py` starts a local server at
+`http://localhost:5000`; it no longer loads any content itself. Load content
+once, separately, with:
+```
+python -m app.content_loader --all
+```
+and after that, only load the folder(s) you actually changed, e.g.
+`python -m app.content_loader 2019`. Everyone using this server shares one
 database, but each student's progress is kept separate by name.
 
 **Moving from the old SQLite version:** run
@@ -64,8 +69,9 @@ app/
 tools/
   crop_problems.py    cut each problem out of a questions PDF into a PNG
   extract_answers.py  read the official answer key from a solutions PDF
-  import_worked.py    load worked/*.json into the database (content only —
-                       never touches student progress)
+  content_loader.py   wrapper for app/content_loader.py: upsert worked/*.json
+                       for one or more folders into the database (content
+                       only — never touches student progress)
   check_math.js       render every formula in every lesson with KaTeX
   sqlite_to_postgres.py  copy students and progress from the old SQLite database
   TUTOR_BRIEF.md       instructions for writing a worked-solution JSON file
@@ -89,7 +95,7 @@ tools/
 6. Follow `tools/VERIFIER_BRIEF.md` to adversarially check each lesson file
    with a fresh reviewer, and fix anything it finds.
 7. `node tools/check_math.js` to confirm every formula renders.
-8. `python tools/import_worked.py` to load it into the app.
+8. `python -m tools.content_loader <year>` to load it into the app.
 
 ## Status
 

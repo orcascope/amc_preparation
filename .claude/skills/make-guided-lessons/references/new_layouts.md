@@ -43,10 +43,10 @@ and `amc_questions/<year>/solutions/`, then run Mode A. Each contest year
 
 Book support is currently written for one book. For another book:
 1. Folder: `amc_questions/<book-dir>/<topic>/` with the same subfolders.
-2. `app/import_worked.py` (the importer; `tools/import_worked.py` only forwards
+2. `app/content_loader.py` (the loader; `tools/content_loader.py` only forwards
    to it): `BOOK_DIR` names the one book folder, and
-   `content_dirs()` treats **every other folder as a contest year**, so a second
-   book folder breaks the import until this is changed. Turn `BOOK_DIR`
+   `all_content_dirs()` treats **every other folder as a contest year**, so a
+   second book folder breaks the load until this is changed. Turn `BOOK_DIR`
    into a list (or detect book folders, e.g. by a `book.json` marker), and in `row_meta()` give each book
    its own `collection` key and label (currently `"book"` and
    `"ACE book …"`).
@@ -59,4 +59,4 @@ Book support is currently written for one book. For another book:
 6. `answer_key.json` for a book maps `{ID: answer}` (flat), unlike a
    contest's `{TEST_ID: {number: letter}}`. Keep that shape.
 
-Run `python -m tools.import_worked --check`, then look at the new chip in the app.
+Run `python -m tools.content_loader <new-book-dir>/<topic> --check`, then look at the new chip in the app.
