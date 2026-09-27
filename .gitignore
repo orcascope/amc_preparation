@@ -16,5 +16,3 @@ app/data/*.db-journal
 Thumbs.db
 .env
 __pycache__/
-app/__pycache__/db.cpython-312.pyc
-app/__pycache__/db.cpython-312.pyc
