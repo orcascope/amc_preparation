@@ -15,7 +15,13 @@
     "text": "Suppose $r, s, t$ are the roots of the polynomial $x^3 - 2x + 3$. Find $$\\frac{1}{r^3 - 2} + \\frac{1}{s^3 - 2} + \\frac{1}{t^3 - 2}$$",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$-\\frac{67}{109}$", "accept": ["-67/109"] },
+  "answer": {
+    "choice": null,
+    "value": "$-\\frac{67}{109}$",
+    "accept": [
+      "-67/109"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: lower the cubes",
@@ -50,10 +56,11 @@
   "verification": {
     "book_answer": "-67/109",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

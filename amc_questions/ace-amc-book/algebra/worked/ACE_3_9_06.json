@@ -56,10 +56,11 @@
   "verification": {
     "book_answer": "3",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds. Misprinted recurrence restored as a_{n+3}=a_{n+2}-2a_{n+1}+a_n per the book's solution."
   }
 }

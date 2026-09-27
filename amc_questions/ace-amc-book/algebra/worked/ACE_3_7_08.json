@@ -15,7 +15,13 @@
     "text": "If $a, b, c$ are real numbers with $a - b = 4$, find the maximum value of $ac + bc - c^2 - ab$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$4$", "accept": ["4"] },
+  "answer": {
+    "choice": null,
+    "value": "$4$",
+    "accept": [
+      "4"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: factor the expression",
@@ -50,10 +56,11 @@
   "verification": {
     "book_answer": "4",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

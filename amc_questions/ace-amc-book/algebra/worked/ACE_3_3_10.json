@@ -15,7 +15,13 @@
     "text": "Suppose $a, b$ are nonzero integers such that two roots of $x^3 + ax^2 + bx + 9a$ coincide, and all three roots are integers. Find $|ab|$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$1344$", "accept": ["1344"] },
+  "answer": {
+    "choice": null,
+    "value": "$1344$",
+    "accept": [
+      "1344"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: name the roots and use Vieta",
@@ -58,10 +64,11 @@
   "verification": {
     "book_answer": "1344",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

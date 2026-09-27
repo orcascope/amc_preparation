@@ -15,7 +15,13 @@
     "text": "If $f(x + y) = f(xy)$ for all real numbers $x$ and $y$, and $f(2019) = 17$, what is the value of $f(17)$?",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$17$", "accept": ["17"] },
+  "answer": {
+    "choice": null,
+    "value": "$17$",
+    "accept": [
+      "17"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: plug in $x = 0$",
@@ -42,10 +48,11 @@
   "verification": {
     "book_answer": "17",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

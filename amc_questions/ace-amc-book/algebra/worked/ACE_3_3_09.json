@@ -13,9 +13,18 @@
   "problem": {
     "image": "images/ACE_3_3_09.png",
     "text": "For certain real numbers $a$, $b$, and $c$, the polynomial $$g(x) = x^3 + ax^2 + x + 10$$ has three distinct roots, and each root of $g(x)$ is also a root of the polynomial $$f(x) = x^4 + x^3 + bx^2 + 100x + c.$$ What is $f(1)$?",
-    "choices": { "A": "$-9009$", "B": "$-8008$", "C": "$-7007$", "D": "$-6006$", "E": "$-5005$" }
+    "choices": {
+      "A": "$-9009$",
+      "B": "$-8008$",
+      "C": "$-7007$",
+      "D": "$-6006$",
+      "E": "$-5005$"
+    }
   },
-  "answer": { "choice": "C", "value": "$-7007$" },
+  "answer": {
+    "choice": "C",
+    "value": "$-7007$"
+  },
   "steps": [
     {
       "title": "Where to start: $g(x)$ divides $f(x)$",
@@ -51,10 +60,11 @@
   "verification": {
     "book_answer": "C",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

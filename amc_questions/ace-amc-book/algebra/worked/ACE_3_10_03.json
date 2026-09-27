@@ -18,7 +18,10 @@
   "answer": {
     "choice": null,
     "value": "$-\\frac{2002^2}{2003}$",
-    "accept": ["-2002^2/2003", "-4008004/2003"]
+    "accept": [
+      "-2002^2/2003",
+      "-4008004/2003"
+    ]
   },
   "steps": [
     {
@@ -54,10 +57,11 @@
   "verification": {
     "book_answer": "-2002^2/2003",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }
