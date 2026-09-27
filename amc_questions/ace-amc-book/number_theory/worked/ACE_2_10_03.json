@@ -15,7 +15,13 @@
     "text": "The smallest three positive proper divisors of an integer $n$ are $d_1 < d_2 < d_3$ so that $d_1 + d_2 + d_3 = 57$. Find the sum of the possible values of $d_2$.",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$42$", "accept": ["42"] },
+  "answer": {
+    "choice": null,
+    "value": "$42$",
+    "accept": [
+      "42"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: the smallest divisor is always 1",
@@ -58,10 +64,11 @@
   "verification": {
     "book_answer": "42",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

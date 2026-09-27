@@ -49,7 +49,7 @@
     },
     {
       "title": "Mod $1000$: split into mod $8$ and mod $125$",
-      "body": "Since $1000 = 8 \\cdot 125$ with no common factor, find $N$ mod $8$ and mod $125$. Mod $8$ it is $0$, because $2^{2022}$ is a multiple of $2^3$. Mod $125$, Euler's theorem gives $2^{100} \\equiv 1$ (as $\\varphi(125) = 100$), so $2^{2022} = (2^{100})^{20} \\cdot 2^{22} \\equiv 2^{22} \\pmod{125}$.",
+      "body": "Since $1000 = 8 \\cdot 125$ with no common factor, find $N$ mod $8$ and mod $125$. Mod $8$ it is $0$, because $2^{2022}$ is a multiple of $2^3$. Mod $125$, Euler's theorem says that if $a$ shares no factor with $n$, then $a^{\\varphi(n)} \\equiv 1 \\pmod n$, where $\\varphi(n)$ counts the numbers from $1$ to $n$ that share no factor with $n$. Here $\\varphi(125) = 125 - 25 = 100$ (the $25$ multiples of $5$ are removed), so $2^{100} \\equiv 1 \\pmod{125}$, and $2^{2022} = (2^{100})^{20} \\cdot 2^{22} \\equiv 2^{22} \\pmod{125}$.",
       "your_turn": {
         "prompt": "Using $2^{10} = 1024 \\equiv 24 \\pmod{125}$, find $2^{20}$ and then $2^{22}$ mod $125$.",
         "answer": "$2^{20} \\equiv 24^2 = 576 \\equiv 76$, and $2^{22} \\equiv 4 \\cdot 76 = 304 \\equiv 54 \\pmod{125}$."

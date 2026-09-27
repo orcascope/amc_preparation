@@ -15,7 +15,13 @@
     "text": "What is the remainder when $12^{2011}+11^{2012}$ is divided by seven?",
     "choices": null
   },
-  "answer": { "choice": null, "value": "$0$", "accept": ["0"] },
+  "answer": {
+    "choice": null,
+    "value": "$0$",
+    "accept": [
+      "0"
+    ]
+  },
   "steps": [
     {
       "title": "Where to start: huge exponents, prime modulus",
@@ -50,10 +56,11 @@
   "verification": {
     "book_answer": "0",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }

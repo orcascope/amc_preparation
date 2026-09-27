@@ -13,9 +13,18 @@
   "problem": {
     "image": "images/ACE_2_10_05.png",
     "text": "A number $m$ is randomly selected from the set $\\{11, 13, 15, 17, 19\\}$, and a number $n$ is randomly selected from $\\{1999, 2000, 2001, \\ldots, 2018\\}$. What is the probability that $m^n$ has a units digit of $1$?",
-    "choices": { "A": "$\\frac{1}{5}$", "B": "$\\frac{1}{4}$", "C": "$\\frac{3}{10}$", "D": "$\\frac{7}{20}$", "E": "$\\frac{2}{5}$" }
+    "choices": {
+      "A": "$\\frac{1}{5}$",
+      "B": "$\\frac{1}{4}$",
+      "C": "$\\frac{3}{10}$",
+      "D": "$\\frac{7}{20}$",
+      "E": "$\\frac{2}{5}$"
+    }
   },
-  "answer": { "choice": "E", "value": "$\\frac{2}{5}$" },
+  "answer": {
+    "choice": "E",
+    "value": "$\\frac{2}{5}$"
+  },
   "steps": [
     {
       "title": "Where to start: only the units digit of $m$ matters",
@@ -53,10 +62,11 @@
   "verification": {
     "book_answer": "E",
     "matches_book": true,
-    "verifier_verdict": "pending",
+    "verifier_verdict": "pass",
     "confidence": "high",
     "reviewed_by_teacher": false,
     "generated_with": "ACE book solution",
-    "generated_at": "2026-09-26"
+    "generated_at": "2026-09-26",
+    "verifier_notes": "Fresh verifier: holds, no changes."
   }
 }
