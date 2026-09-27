@@ -4,7 +4,7 @@ Two ways to connect:
 - Locally: DATABASE_URL from the environment or from a .env file at the
   repository root, for example
       DATABASE_URL=postgresql://amc:secret@localhost:5432/amc
-- Inside a Databricks App: DATABASE_URL (from app.yaml) names the Lakebase
+- Inside a Databricks App: DATABASE_URL (set per target in databricks.yml) names the Lakebase
   host, and the password is a short-lived OAuth token from the Databricks SDK.
 
 Rows come back as dicts. Queries use %s placeholders (psycopg style). All
